@@ -1,17 +1,18 @@
+#!/bin/bash
+
+# fill it
 pkgname=mate-screensaver
 pkgver=2011.11.04
 pkgrel=1
 pkgdesc='Screensaver for MATE'
-arch=('i686' 'x86_64')
-license=('GPL')
 depends=('gtk2' 'dbus' 'mate-conf' 'mate-desktop' 'mate-menus')
 makedepends=('pkgconfig' 'intltool' 'mate-doc-utils')
-options=('!libtool' '!emptydirs')
-source=(http://ftp.gnome.org/pub/gnome/sources/${pkgname}/2.10/${pkgname}.tar.gz)
-install=mate-screensaver.install
-sha256sums=('5b0dabd93635c9cb15bb150cb2f2093232764a97227fe9b4f927db640d35775f')
-
+# editar esta funcion!
 build() {
+	cd $pkgsrc
+	# descomprimir
+	tar xvzf download
+	# entramos a la carpeta
 	cd ${pkgname}
 
 	./autogen.sh \
@@ -21,14 +22,12 @@ build() {
 		--libexecdir=/usr/lib/${pkgname} || return 1
 
 	make || return 1
-}
+	make MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 DESTDIR="${pkgdir}" install || return 1
 
-package() {
-	cd ${pkgname}
-
-	make MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 DESTDIR=${pkgdir} install || return 1
-	
 	install -m755 -d "${pkgdir}/usr/share/mateconf/schemas"
 	mateconf-merge-schema "${pkgdir}/usr/share/mateconf/schemas/${pkgname}.schemas" --domain ${pkgname} ${pkgdir}/etc/mateconf/schemas/*.schemas || return 1
 	rm -f ${pkgdir}/etc/mateconf/schemas/*.schemas
 }
+
+# esto incluye la parte que se repite en la mayoria de los builds
+. /usr/share/mate-doc-utils/mate-debian.sh
