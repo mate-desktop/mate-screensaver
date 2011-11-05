@@ -1,0 +1,1142 @@
+# Finnish messages for mate-screensaver package.
+# Copyright (C) 2005-2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the mate-screensaver package.
+#
+# Tommi Vainikainen <Tommi.Vainikainen@iki.fi>, 2005, 2009.
+# Ilkka Tuohela <hile@iki.fi>, 2005-2009.
+# Timo Jyrinki <timo.jyrinki@iki.fi>, 2008
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mate-screensaver\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-12 21:34+0300\n"
+"PO-Revision-Date: 2009-09-12 21:33+0300\n"
+"Last-Translator: Tommi Vainikainen <thv@iki.fi>\n"
+"Language-Team: Finnish <mate-fi-laatu@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:1
+#: ../src/mate-screensaver.desktop.in.in.h:2
+msgid "Screensaver"
+msgstr "Näytönsäästäjä"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:2
+msgid "Set your screensaver preferences"
+msgstr "Aseta näytönsäästäjän asetukset"
+
+#: ../data/mate-screensaver-preferences.ui.h:1
+msgid "<b>Screensaver preview</b>"
+msgstr "<b>Näytönsäästäjän esikatselu</b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:2
+msgid "<b>Warning: the screen will not be locked for the root user.</b>"
+msgstr "<b>Varoitus: näyttöä ei lukita pääkäyttäjälle (root).</b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:3
+msgid "Power _Management"
+msgstr "Virran_hallinta"
+
+#: ../data/mate-screensaver-preferences.ui.h:4
+msgid "Regard the computer as _idle after:"
+msgstr "Näytönsäästäjän _käynnistysviive:"
+
+#: ../data/mate-screensaver-preferences.ui.h:5
+msgid "Screensaver Preferences"
+msgstr "Näytönsäästäjän asetukset"
+
+#: ../data/mate-screensaver-preferences.ui.h:6
+msgid "Screensaver Preview"
+msgstr "Näytönsäästäjän esikatselu"
+
+#: ../data/mate-screensaver-preferences.ui.h:7
+msgid "_Activate screensaver when computer is idle"
+msgstr "_Käynnistä näytönsäästäjä, kun tietokone on joutilas"
+
+#: ../data/mate-screensaver-preferences.ui.h:8
+msgid "_Lock screen when screensaver is active"
+msgstr "_Lukitse näyttö, kun näytönsäästäjä on aktiivinen"
+
+#: ../data/mate-screensaver-preferences.ui.h:9
+msgid "_Preview"
+msgstr "_Esikatselu"
+
+#: ../data/mate-screensaver-preferences.ui.h:10
+msgid "_Screensaver theme:"
+msgstr "_Näytönsäästäjän teema:"
+
+#: ../data/mate-screensaver.directory.in.h:1
+#: ../data/mate-screensaver.schemas.in.h:11
+msgid "Screensaver themes"
+msgstr "Näytönsäästäjän teemat"
+
+#: ../data/mate-screensaver.directory.in.h:2
+msgid "Screensavers"
+msgstr "Näytönsäästäjät"
+
+#: ../data/mate-screensaver.schemas.in.h:1
+msgid "Activate when idle"
+msgstr "Käynnistä joutilaana"
+
+#: ../data/mate-screensaver.schemas.in.h:2
+msgid "Allow embedding a keyboard into the window"
+msgstr "Salli näppäimistön upottaminen ikkunaan"
+
+#: ../data/mate-screensaver.schemas.in.h:3
+msgid "Allow logout"
+msgstr "Salli uloskirjautuminen"
+
+#: ../data/mate-screensaver.schemas.in.h:4
+msgid "Allow the session status message to be displayed"
+msgstr "Salli istunnon tilaviestin näyttäminen"
+
+#: ../data/mate-screensaver.schemas.in.h:5
+msgid ""
+"Allow the session status message to be displayed when the screen is locked."
+msgstr "Salli istunnon tilaviestin näyttäminen, kun istunto on lukittu."
+
+#: ../data/mate-screensaver.schemas.in.h:6
+msgid "Allow user switching"
+msgstr "Salli käyttäjän vaihto"
+
+#: ../data/mate-screensaver.schemas.in.h:7
+msgid "Embedded keyboard command"
+msgstr "Upotetun näppäimistön komento"
+
+#: ../data/mate-screensaver.schemas.in.h:8
+msgid "Lock on activation"
+msgstr "Lukitse aktivoitaessa"
+
+#: ../data/mate-screensaver.schemas.in.h:9
+msgid "Logout command"
+msgstr "Uloskirjautumiskomento"
+
+#: ../data/mate-screensaver.schemas.in.h:10
+msgid "Screensaver theme selection mode"
+msgstr "Näytönsäästäjän teeman valinta"
+
+#: ../data/mate-screensaver.schemas.in.h:12
+msgid "Set this to TRUE to activate the screensaver when the session is idle."
+msgstr ""
+"Aseta todeksi, jos haluat käynnistää näytönsäästäjän, kun istunto ei ole "
+"käytössä."
+
+#: ../data/mate-screensaver.schemas.in.h:13
+msgid ""
+"Set this to TRUE to allow embedding a keyboard into the window when trying "
+"to unlock. The \"keyboard_command\" key must be set with the appropriate "
+"command."
+msgstr ""
+"Aseta arvoksi TRUE, jos haluat sallia näppäimistön upottamisen ikkunaan "
+"yritettäessä avata lukitusta. Avaimen \"keyboard_command\" arvon tulee olla "
+"asetettu sisältämään haluttu komento."
+
+#: ../data/mate-screensaver.schemas.in.h:14
+msgid "Set this to TRUE to lock the screen when the screensaver goes active."
+msgstr "Aseta todeksi, jos haluat lukita näytön näytönsäästäjän aktivoituessa."
+
+#: ../data/mate-screensaver.schemas.in.h:15
+msgid ""
+"Set this to TRUE to offer an option in the unlock dialog to switch to a "
+"different user account."
+msgstr ""
+"Aseta todeksi, jos haluat lukituksen avausikkunan näyttävän valinnan, josta "
+"voi vaihtaa toiseksi käyttäjäksi."
+
+#: ../data/mate-screensaver.schemas.in.h:16
+msgid ""
+"Set this to TRUE to offer an option in unlock dialog to logging out after a "
+"delay. The Delay is specified in the \"logout_delay\" key."
+msgstr ""
+"Aseta todeksi, jos haluat lukituksen avausikkunan näyttävä valinnan, josta "
+"käyttäjän voi kirjata ulos järjestelmästä tietyn ajan kuluttua. Viiveen voi "
+"asettaa avaimesta \"logout_delay\"."
+
+#: ../data/mate-screensaver.schemas.in.h:17
+msgid ""
+"The command that will be run, if the \"embedded_keyboard_enabled\" key is "
+"set to TRUE, to embed a keyboard widget into the window. This command should "
+"implement an XEMBED plug interface and output a window XID on the standard "
+"output."
+msgstr ""
+"Suoritettava komento näppäimistön upottamiseksi ikkunaan, kun avaimen "
+"\"embedded_keyboard_enabled\" arvo on TRUE. Tämän komennon täytyy toteuttaa "
+"XEMBED-liitännäisrajapinta ja muodostaa ikkunan XID oletussyötteeseen."
+
+#: ../data/mate-screensaver.schemas.in.h:18
+msgid ""
+"The command to invoke when the logout button is clicked. This command should "
+"simply log the user out without any interaction. This key has effect only if "
+"the \"logout_enable\" key is set to TRUE."
+msgstr ""
+"Uloskirjautumispainiketta painettaessa suoritettava komento . Tämän komennon "
+"tulee kirjata käyttäjä ulos vaatimatta mitään toimenpiteitä. Avain on "
+"käytössä vain silloin, kun avain \"logout_enable\" on asetettu arvoon TRUE."
+
+#: ../data/mate-screensaver.schemas.in.h:19
+msgid ""
+"The number of minutes after screensaver activation before locking the screen."
+msgstr ""
+"Kuinka monen minuutin kuluttua näytönsäästäjän aktivoinnista näyttö lukitaan."
+
+#: ../data/mate-screensaver.schemas.in.h:20
+msgid ""
+"The number of minutes after the screensaver activation before a logout "
+"option will appear in unlock dialog. This key has effect only if the "
+"\"logout_enable\" key is set to TRUE."
+msgstr ""
+"Kuinka monen minuutin kuluttua näytönsäästäjän aktivoinnista lukituksen "
+"avausikkunaan lisätään uloskirjautumispainike. Tämä avain on käytössä vain "
+"silloin, kun avain \"logout_enable\" on asetettu arvoon TRUE."
+
+#: ../data/mate-screensaver.schemas.in.h:21
+msgid ""
+"The number of minutes of inactivity before the session is considered idle."
+msgstr "Kuinka monen minuutin kuluttua istunnon katsotaan olevan jouten."
+
+#: ../data/mate-screensaver.schemas.in.h:22
+msgid "The number of minutes to run before changing the screensaver theme."
+msgstr "Kuinka pitkän joutenolon kuluttua näytönsäästäjän teemaa vaihdetaan."
+
+#: ../data/mate-screensaver.schemas.in.h:23
+msgid ""
+"The number of seconds of inactivity before signalling to power-management. "
+"This key is set and maintained by the session power-management agent."
+msgstr ""
+"Aika sekunteja, jonka jälkeen virranhallintaa signaloidaan. Tämän avaimen "
+"asettaa ja sitä ylläpitää istunnon virranhallinnan ohjaaja."
+
+#: ../data/mate-screensaver.schemas.in.h:24
+msgid ""
+"The selection mode used by screensaver. May be \"blank-only\" to enable the "
+"screensaver without using any theme on activation, \"single\" to enable "
+"screensaver using only one theme on activation (specified in \"themes\" "
+"key), and \"random\" to enable the screensaver using a random theme on "
+"activation."
+msgstr ""
+"Näytönsäästäjän valintatila. Arvo voi olla joko \"blank-only\", jolloin "
+"näytönsäästäjä käynnistetään ilman teemaa, \"single\", jolloin "
+"näytönsäästäjä näyttää aina \"themes\" avaimessa valittua näytönsäästäjää, "
+"tai \"random\", jolloin näytönsäästäjä valitsee näytettävän teeman "
+"satunnaisesti."
+
+#: ../data/mate-screensaver.schemas.in.h:25
+msgid "Theme for lock dialog"
+msgstr "Lukitusikkunan teema"
+
+#: ../data/mate-screensaver.schemas.in.h:26
+msgid "Theme to use for the lock dialog."
+msgstr "Lukitusikkunan näyttämisessä käytettävä teema."
+
+#: ../data/mate-screensaver.schemas.in.h:27
+msgid ""
+"This key specifies the list of themes to be used by the screensaver. It's "
+"ignored when \"mode\" key is \"blank-only\", should provide the theme name "
+"when \"mode\" is \"single\", and should provide a list of themes when \"mode"
+"\" is \"random\"."
+msgstr ""
+"Tämä avain määrittelee näytönsäästäjän käyttämät teemat. Arvolla ei ole "
+"vaikutusta, jos avain \"mode\" on joko \"disabled\" tai \"blank-only\". Sen "
+"tulee sisältää teeman nimen, kun arvo on \"single\", ja sen tulee sisältää "
+"lista teemoista, kun \"mode\"-avaimen arvo on \"random\"."
+
+#: ../data/mate-screensaver.schemas.in.h:28
+msgid "Time before locking"
+msgstr "Viive ennen lukitsemista"
+
+#: ../data/mate-screensaver.schemas.in.h:29
+msgid "Time before logout option"
+msgstr "Viive ennen uloskirjautumispainiketta"
+
+#: ../data/mate-screensaver.schemas.in.h:30
+msgid "Time before power-management baseline"
+msgstr "Aika ennen virranhallinnan huomautusta"
+
+#: ../data/mate-screensaver.schemas.in.h:31
+msgid "Time before session is considered idle"
+msgstr "Aika, jonka jälkeen istunnon katsotaan olevan jouten."
+
+#: ../data/mate-screensaver.schemas.in.h:32
+msgid "Time before theme change"
+msgstr "Viive ennen teeman vaihtoa"
+
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<b>Leave a message for %R:</b>"
+msgstr "<b>Jätä viesti vastaanottajalle %R:</b>"
+
+#: ../data/lock-dialog-default.ui.h:4
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U@%h</span>"
+
+#: ../data/lock-dialog-default.ui.h:6
+#, no-c-format
+msgid "<span size=\"x-large\">%R</span>"
+msgstr "<span size=\"x-large\">%R</span>"
+
+#: ../data/lock-dialog-default.ui.h:7
+msgid "_Cancel"
+msgstr "_Peru"
+
+#: ../data/lock-dialog-default.ui.h:8
+msgid "_Leave Message"
+msgstr "_Jätä viesti"
+
+#: ../data/lock-dialog-default.ui.h:9
+msgid "_Log Out"
+msgstr "Kirjaudu _ulos"
+
+#: ../data/lock-dialog-default.ui.h:10
+msgid "_Switch User"
+msgstr "_Vaihda käyttäjää"
+
+#: ../data/lock-dialog-default.ui.h:11 ../src/gs-lock-plug.c:1382
+msgid "_Unlock"
+msgstr "_Avaa lukitus"
+
+#. Translators: This is the name of a desktop background image that shows outer space images.
+#. You might want to translate it into the equivalent words of your language
+#: ../data/images/cosmos/cosmos.xml.in.in.h:3
+#: ../savers/cosmos-slideshow.desktop.in.in.h:1
+msgid "Cosmos"
+msgstr "Maailmankaikkeus"
+
+#: ../savers/cosmos-slideshow.desktop.in.in.h:2
+msgid "Display a slideshow of pictures of the cosmos"
+msgstr "Näyttää diaesityksen maailmankaikkeuden kuvista"
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:1
+msgid "Bubbles the MATE foot logo around the screen"
+msgstr "\"Kuplii\" Maten logoa ympäri näyttöä"
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:2
+msgid "Floating Feet"
+msgstr "Kelluvat jalat"
+
+#: ../savers/personal-slideshow.desktop.in.in.h:1
+msgid "Display a slideshow from your Pictures folder"
+msgstr "Näyttää diaesityksen kuvakansiossasi olevista kuvista"
+
+#: ../savers/personal-slideshow.desktop.in.in.h:2
+msgid "Pictures folder"
+msgstr "Kuvakansio"
+
+#: ../savers/popsquares.desktop.in.in.h:1
+msgid "A pop-art-ish grid of pulsing colors."
+msgstr "Pop-Art-tyylinen ruudukko sykkiviä värejä."
+
+#: ../savers/popsquares.desktop.in.in.h:2
+msgid "Pop art squares"
+msgstr "Poptaide-neliöt"
+
+#: ../savers/floaters.c:84
+msgid "Show paths that images follow"
+msgstr "Näytä polut, joita kuvat seuraavat"
+
+#: ../savers/floaters.c:87
+msgid "Occasionally rotate images as they move"
+msgstr "Kierrä kuvia silloin tällöin niiden liikkuessa"
+
+#: ../savers/floaters.c:90
+msgid "Print out frame rate and other statistics"
+msgstr "Näytä ruutunopeus ja muita tilastoja"
+
+#: ../savers/floaters.c:93
+msgid "The maximum number of images to keep on screen"
+msgstr "Suurin määrä kuvia kerralla näytöllä"
+
+#: ../savers/floaters.c:93
+msgid "MAX_IMAGES"
+msgstr "MAX_KUVIA"
+
+#: ../savers/floaters.c:96
+msgid "The initial size and position of window"
+msgstr "Ikkunan koko ja sijainti aloitettaessa"
+
+#: ../savers/floaters.c:96
+msgid "WIDTHxHEIGHT+X+Y"
+msgstr "LEVEYSxKORKEUS+X+Y"
+
+#: ../savers/floaters.c:99
+msgid "The source image to use"
+msgstr "Käytettävä lähdekuva"
+
+#. translators: the word "image" here
+#. * represents a command line argument
+#.
+#: ../savers/floaters.c:1194
+msgid "image - floats images around the screen"
+msgstr "kuva - kelluttaa kuvia ympäri näyttöä"
+
+#: ../savers/floaters.c:1200
+#, c-format
+msgid "%s. See --help for usage information.\n"
+msgstr "%s. Katso --help jos haluat lisätietoja.\n"
+
+#: ../savers/floaters.c:1209
+#, c-format
+msgid "You must specify one image.  See --help for usage information.\n"
+msgstr "Yksi kuva täytyy antaa. Katso käyttöohje valitsimella --help.\n"
+
+#: ../savers/slideshow.c:53
+msgid "Location to get images from"
+msgstr "Sijainti, josta kuvat haetaan"
+
+#: ../savers/slideshow.c:53
+msgid "PATH"
+msgstr "POLKU"
+
+#: ../savers/slideshow.c:55
+msgid "Color to use for images background"
+msgstr "Kuvien taustalla käytettävä väri"
+
+#: ../savers/slideshow.c:55
+msgid "\"#rrggbb\""
+msgstr "\"#rrggbb\""
+
+#: ../savers/slideshow.c:57
+msgid "Do not randomize pictures from location"
+msgstr "Älä sekoita kuvia kuvalähteestä"
+
+#: ../savers/slideshow.c:59
+msgid "Do not try to stretch images on screen"
+msgstr "Älä yritä venyttää kuvia näytöllä"
+
+#: ../src/copy-theme-dialog.c:212
+msgid "Copying files"
+msgstr "Kopioidaan tiedostoja"
+
+#: ../src/copy-theme-dialog.c:230
+msgid "From:"
+msgstr "Mistä:"
+
+#: ../src/copy-theme-dialog.c:234
+msgid "To:"
+msgstr "Mihin:"
+
+#: ../src/copy-theme-dialog.c:254
+msgid "Copying themes"
+msgstr "Kopioidaan teemoja"
+
+#: ../src/copy-theme-dialog.c:298
+msgid "Invalid screensaver theme"
+msgstr "Virheellinen näytönsäästäjäteema"
+
+#: ../src/copy-theme-dialog.c:301
+#, c-format
+msgid "%s does not appear to be a valid screensaver theme."
+msgstr "%s ei näytä olevan kelvollinen näytönsäästäjäteema."
+
+#: ../src/copy-theme-dialog.c:481
+#, c-format
+msgid "Copying file: %u of %u"
+msgstr "Kopioidaan tiedostoa: %u/%u"
+
+#: ../src/mate-screensaver-command.c:62
+msgid "Causes the screensaver to exit gracefully"
+msgstr "Sammuta näytönsäästäjäohjelma kokonaan"
+
+#: ../src/mate-screensaver-command.c:64
+msgid "Query the state of the screensaver"
+msgstr "Näytä näytönsäästäjän tila"
+
+#: ../src/mate-screensaver-command.c:66
+msgid "Query the length of time the screensaver has been active"
+msgstr "Näytä, kuinka pitkään näytönsäästäjä on ollut päällä"
+
+#: ../src/mate-screensaver-command.c:68
+msgid "Tells the running screensaver process to lock the screen immediately"
+msgstr "Lukitse näyttö heti käynnissä olevan näytönsäästäjäprosessin avulla"
+
+#: ../src/mate-screensaver-command.c:70
+msgid "If the screensaver is active then switch to another graphics demo"
+msgstr "Vaihtaa uuteen demoon, jos näytönsäästäjä on käynnissä"
+
+#: ../src/mate-screensaver-command.c:72
+msgid "Turn the screensaver on (blank the screen)"
+msgstr "Laita näytönsäästäjä päälle (tyhjentää näytön)"
+
+#: ../src/mate-screensaver-command.c:74
+msgid "If the screensaver is active then deactivate it (un-blank the screen)"
+msgstr "Lopeta näytönsäästäjä, jos se on käynnissä (palauta näyttö)"
+
+#: ../src/mate-screensaver-command.c:76
+msgid "Poke the running screensaver to simulate user activity"
+msgstr "Simuloi käyttäjän syötettä lähettämällä viesti näytönsäästäjälle"
+
+#: ../src/mate-screensaver-command.c:78
+msgid ""
+"Inhibit the screensaver from activating.  Command blocks while inhibit is "
+"active."
+msgstr ""
+"Estä näytönsäästäjän käynnistyminen. Komento pysähtyy niin pitkäksi aikaa "
+"kun esto on päällä."
+
+#: ../src/mate-screensaver-command.c:80
+msgid "The calling application that is inhibiting the screensaver"
+msgstr "Kutsuva ohjelma, joka estää näytönsäästäjän käynnistymisen"
+
+#: ../src/mate-screensaver-command.c:82
+msgid "The reason for inhibiting the screensaver"
+msgstr "Syy näytönsäästäjän käynnistymisen ehkäisemiseen"
+
+#: ../src/mate-screensaver-command.c:84 ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver.c:56
+msgid "Version of this application"
+msgstr "Tämän ohjelman versio"
+
+#: ../src/mate-screensaver-command.c:311
+#, c-format
+msgid "The screensaver is %s\n"
+msgstr "Näytönsäästäjä on %s\n"
+
+#: ../src/mate-screensaver-command.c:311
+msgid "active"
+msgstr "käytössä"
+
+#: ../src/mate-screensaver-command.c:311
+msgid "inactive"
+msgstr "pois käytöstä"
+
+#: ../src/mate-screensaver-command.c:325
+#, c-format
+msgid "The screensaver is not inhibited\n"
+msgstr "Näytönsäästäjä ei ole estetty\n"
+
+#: ../src/mate-screensaver-command.c:331
+#, c-format
+msgid "The screensaver is being inhibited by:\n"
+msgstr "Näytönsäästäjän estää ohjelma:\n"
+
+#: ../src/mate-screensaver-command.c:362
+#, c-format
+msgid "The screensaver has been active for %d seconds.\n"
+msgstr "Näytönsäästäjä on ollut päällä %d sekuntia.\n"
+
+#: ../src/mate-screensaver-command.c:366
+#, c-format
+msgid "The screensaver is not currently active.\n"
+msgstr "Näytönsäästäjä ei ole tällä hetkellä aktiivinen.\n"
+
+#: ../src/mate-screensaver-dialog.c:56
+msgid "Show debugging output"
+msgstr "Näytä vianetsintätuloste"
+
+#: ../src/mate-screensaver-dialog.c:60
+msgid "Show the logout button"
+msgstr "Näytä uloskirjautumispainike"
+
+#: ../src/mate-screensaver-dialog.c:62
+msgid "Command to invoke from the logout button"
+msgstr "Uloskirjautumispainikkeesta suoritettava komento"
+
+#: ../src/mate-screensaver-dialog.c:64
+msgid "Show the switch user button"
+msgstr "Näytä käyttäjän vaihtopainike"
+
+#: ../src/mate-screensaver-dialog.c:66
+msgid "Message to show in the dialog"
+msgstr "Ikkunassa näytettävä viesti"
+
+#: ../src/mate-screensaver-dialog.c:66 ../src/mate-screensaver-dialog.c:68
+msgid "MESSAGE"
+msgstr "VIESTI"
+
+#: ../src/mate-screensaver-dialog.c:68
+msgid "Not used"
+msgstr "Ei käytössä"
+
+#. login: is whacked always translate to Username:
+#: ../src/mate-screensaver-dialog.c:178 ../src/mate-screensaver-dialog.c:179
+#: ../src/mate-screensaver-dialog.c:180 ../src/gs-auth-pam.c:698
+msgid "Username:"
+msgstr "Käyttäjä:"
+
+#: ../src/mate-screensaver-dialog.c:181 ../src/mate-screensaver-dialog.c:182
+#: ../src/gs-auth-pam.c:166
+msgid "Password:"
+msgstr "Salasana:"
+
+#: ../src/mate-screensaver-dialog.c:183
+msgid "You are required to change your password immediately (password aged)"
+msgstr "Salasana täytyy vaihtaa heti (salasana on vanhentunut)"
+
+#: ../src/mate-screensaver-dialog.c:184
+msgid "You are required to change your password immediately (root enforced)"
+msgstr "Salasana täytyy vaihtaa heti (ylläpitäjän pakottama salasanan vaihto)"
+
+#: ../src/mate-screensaver-dialog.c:185
+msgid "Your account has expired; please contact your system administrator"
+msgstr "Käyttäjätunnuksesi on vanhentunut; ota yhteyttä ylläpitäjääsi"
+
+#: ../src/mate-screensaver-dialog.c:186
+msgid "No password supplied"
+msgstr "Salasanaa ei annettu"
+
+#: ../src/mate-screensaver-dialog.c:187
+msgid "Password unchanged"
+msgstr "Salasanaa ei vaihdettu"
+
+#: ../src/mate-screensaver-dialog.c:188
+msgid "Can not get username"
+msgstr "Käyttäjätunnusta ei löydy"
+
+#: ../src/mate-screensaver-dialog.c:189
+msgid "Retype new UNIX password:"
+msgstr "Syötä toiseen kertaan uusi UNIX-salasana:"
+
+#: ../src/mate-screensaver-dialog.c:190
+msgid "Enter new UNIX password:"
+msgstr "Syötä uusi UNIX-salasana:"
+
+#: ../src/mate-screensaver-dialog.c:191
+msgid "(current) UNIX password:"
+msgstr "Nykyinen UNIX-salasana:"
+
+#: ../src/mate-screensaver-dialog.c:192
+msgid "Error while changing NIS password."
+msgstr "Virhe vaihdettaessa NIS-salasanaa."
+
+#: ../src/mate-screensaver-dialog.c:193
+msgid "You must choose a longer password"
+msgstr "Salasanan täytyy olla pidempi"
+
+#: ../src/mate-screensaver-dialog.c:194
+msgid "Password has been already used. Choose another."
+msgstr "Salasana on jo käytetty, valitse toinen salasana."
+
+#: ../src/mate-screensaver-dialog.c:195
+msgid "You must wait longer to change your password"
+msgstr "Et voi vaihtaa salasanaa näin usein"
+
+#: ../src/mate-screensaver-dialog.c:196
+msgid "Sorry, passwords do not match"
+msgstr "Salasanat eivät vastaa toisiaan"
+
+#: ../src/mate-screensaver-dialog.c:262
+msgid "Checking..."
+msgstr "Tarkistetaan..."
+
+#: ../src/mate-screensaver-dialog.c:304 ../src/gs-auth-pam.c:457
+msgid "Authentication failed."
+msgstr "Tunnistautuminen epäonnistui."
+
+#: ../src/mate-screensaver-preferences.c:524
+msgid "Blank screen"
+msgstr "Tyhjä näyttö"
+
+#: ../src/mate-screensaver-preferences.c:530
+msgid "Random"
+msgstr "Satunnainen"
+
+#: ../src/mate-screensaver-preferences.c:980
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d tunti"
+msgstr[1] "%d tuntia"
+
+#: ../src/mate-screensaver-preferences.c:983
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minuutti"
+msgstr[1] "%d minuuttia"
+
+#: ../src/mate-screensaver-preferences.c:986
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d sekunti"
+msgstr[1] "%d sekuntia"
+
+#. hour:minutes:seconds
+#: ../src/mate-screensaver-preferences.c:992
+#, c-format
+msgid "%s %s %s"
+msgstr "%s, %s, %s"
+
+#. hour:minutes
+#. minutes:seconds
+#: ../src/mate-screensaver-preferences.c:995
+#: ../src/mate-screensaver-preferences.c:1003
+#, c-format
+msgid "%s %s"
+msgstr "%s, %s"
+
+#. hour
+#. minutes
+#. seconds
+#: ../src/mate-screensaver-preferences.c:998
+#: ../src/mate-screensaver-preferences.c:1006
+#: ../src/mate-screensaver-preferences.c:1010
+#, c-format
+msgid "%s"
+msgstr "%s"
+
+#: ../src/mate-screensaver-preferences.c:1025
+#, c-format
+msgid "Never"
+msgstr "Ei koskaan"
+
+#: ../src/mate-screensaver-preferences.c:1467
+msgid "Could not load the main interface"
+msgstr "Pääkäyttöliittymää ei voitu ladata"
+
+#: ../src/mate-screensaver-preferences.c:1469
+msgid "Please make sure that the screensaver is properly installed"
+msgstr "Varmista, että näytönsäästäjä on kunnolla asennettu"
+
+#: ../src/mate-screensaver.c:57
+msgid "Don't become a daemon"
+msgstr "Älä käynnistä palvelinprosessina"
+
+#: ../src/mate-screensaver.c:58
+msgid "Enable debugging code"
+msgstr "Käytä debuggauskoodia"
+
+#: ../src/mate-screensaver.desktop.in.in.h:1
+msgid "Launch screen saver and locker program"
+msgstr "Käynnistä näytönsäästäjä ja lukitusohjelma"
+
+#: ../src/gs-auth-pam.c:397
+#, c-format
+msgid "Unable to establish service %s: %s\n"
+msgstr "Palvelua %s ei voi avata: %s\n"
+
+#: ../src/gs-auth-pam.c:423
+#, c-format
+msgid "Can't set PAM_TTY=%s"
+msgstr "Muuttujaa PAM_TTY=%s ei voi asettaa"
+
+#: ../src/gs-auth-pam.c:455
+msgid "Incorrect password."
+msgstr "Virheellinen salasana."
+
+#: ../src/gs-auth-pam.c:471
+msgid "Not permitted to gain access at this time."
+msgstr "Pääsy ei ole sallittu tällä hetkellä."
+
+#: ../src/gs-auth-pam.c:477
+msgid "No longer permitted to access the system."
+msgstr "Pääsy ei ole enää sallittu järjestelmään."
+
+#: ../src/gs-listener-dbus.c:1851
+msgid "failed to register with the message bus"
+msgstr "viestiväylään rekisteröityminen epäonnistui"
+
+#: ../src/gs-listener-dbus.c:1861
+msgid "not connected to the message bus"
+msgstr "viestiväylään ei ole yhteyttä"
+
+#: ../src/gs-listener-dbus.c:1870
+msgid "screensaver already running in this session"
+msgstr "näytönsäästäjä on jo käynnissä tässä istunnossa"
+
+#: ../src/gs-lock-plug.c:270
+msgid "Time has expired."
+msgstr "Aika loppui."
+
+#: ../src/gs-lock-plug.c:298
+msgid "You have the Caps Lock key on."
+msgstr "Näppäimistössä on Caps Lock päällä."
+
+#: ../src/gs-lock-plug.c:1362
+msgid "S_witch User..."
+msgstr "_Vaihda käyttäjää..."
+
+#: ../src/gs-lock-plug.c:1371
+msgid "Log _Out"
+msgstr "Kirjaudu _ulos"
+
+#. To translators: This expands to USERNAME on HOSTNAME
+#: ../src/gs-lock-plug.c:1547
+msgid "%U on %h"
+msgstr "%s@%s"
+
+#: ../src/gs-lock-plug.c:1561
+msgid "_Password:"
+msgstr "_Salasana:"
+
+#~ msgid "Reason for being away"
+#~ msgstr "Syy poissaoloon"
+
+#~ msgid "The reason for being away from the computer."
+#~ msgstr "Syy tietokoneen äärestä poissaolemiseen."
+
+#~ msgid "Copying '%s'"
+#~ msgstr "Kopioidaan \"%s\""
+
+#~ msgid "From URI"
+#~ msgstr "URI:sta"
+
+#~ msgid "URI currently transferring from"
+#~ msgstr "URI, josta nyt siirretään"
+
+#~ msgid "To URI"
+#~ msgstr "URI:in"
+
+#~ msgid "URI currently transferring to"
+#~ msgstr "URI, jonne nyt siirretään"
+
+#~ msgid "Fraction completed"
+#~ msgstr "Siirretty osa"
+
+#~ msgid "Fraction of transfer currently completed"
+#~ msgstr "Siirron jo suoritettu osa"
+
+#~ msgid "Current URI index"
+#~ msgstr "Nykyinen URI-hakemisto"
+
+#~ msgid "Current URI index - starts from 1"
+#~ msgstr "Nykyinen URI-hakemisto - alkaa ykkösestä"
+
+#~ msgid "Total URIs"
+#~ msgstr "Kaikki URIt"
+
+#~ msgid "Total number of URIs"
+#~ msgstr "URI:en kokonaismäärä"
+
+#~ msgid "Connecting..."
+#~ msgstr "Otetaan yhteyttä..."
+
+#~ msgid "Authentication"
+#~ msgstr "Tunnistautuminen"
+
+#~ msgid "S_witch to user:"
+#~ msgstr "Vaihda käyttäjäksi:"
+
+#~ msgid "_Switch user..."
+#~ msgstr "_Vaihda käyttäjää..."
+
+#~ msgid "N"
+#~ msgstr "n"
+
+#~ msgid "Manager"
+#~ msgstr "Johtaja"
+
+#~ msgid "The manager which owns this object."
+#~ msgstr "Hallitsin, jonka tämä olio on."
+
+#~ msgid "Name"
+#~ msgstr "Nimi"
+
+#~ msgid "The name of the X11 display this object refers to."
+#~ msgstr "X11-näytön nimi, johon tämä olio viittaa."
+
+#~ msgid "User"
+#~ msgstr "Käyttäjä"
+
+#~ msgid "The user currently logged in on this virtual terminal."
+#~ msgstr "Tällä hetkellä sisäänkirjautunut käyttäjä tällä päätteellä."
+
+#~ msgid "Console"
+#~ msgstr "Konsoli"
+
+#~ msgid ""
+#~ "The number of the virtual console this display can be found on, or %-1."
+#~ msgstr "Virtuaalikonsolin numero, jolta tämä näyttö löytyy, tai %-1."
+
+#~ msgid "Whether or not this display is a windowed (Xnest) display."
+#~ msgstr "Onko tämä näyttö ikkunoitu (Xnest) näyttö."
+
+#~ msgid "The display manager could not be contacted for unknown reasons."
+#~ msgstr "Kirjautumisohjelmaan ei saatu yhteyttä tuntemattomasta syystä."
+
+#~ msgid "The display manager is not running or too old."
+#~ msgstr "Kirjautumisohjelma ei käynnissä tai liian vanha."
+
+#~ msgid "The configured limit of flexible servers has been reached."
+#~ msgstr "Siirtyville palvelimille asetettu raja on tullut täyteen."
+
+#~ msgid "There was an unknown error starting X."
+#~ msgstr "Tuntematon virhe käynnistettäessä X:ää."
+
+#~ msgid "The X server failed to finish starting."
+#~ msgstr "X-palvelin ei onnistunut päättämään käynnistymistä."
+
+#~ msgid "There are too many X sessions running."
+#~ msgstr "Liian monta X-istuntoa käynnissä."
+
+#~ msgid "The nested X server (Xnest) cannot connect to your current X server."
+#~ msgstr ""
+#~ "Sisäkkäinen X-palvelin (Xnest) ei saanut yhteyttä nykyiseen X-palvelimeen."
+
+#~ msgid "The X server in the MDM configuration could not be found."
+#~ msgstr "MDM:n asetuksien X-palvelinta ei löytynyt."
+
+#~ msgid ""
+#~ "Trying to set an unknown logout action, or trying to set a logout action "
+#~ "which is not available."
+#~ msgstr ""
+#~ "Yritetään asettaa tuntematonta uloskirjautumistoimintoa, tai yritetään "
+#~ "asettaa toimintoa, joka ei ole käytettävissä."
+
+#~ msgid "Virtual terminals not supported."
+#~ msgstr "Virtuaalipäätteitä ei tueta."
+
+#~ msgid "Invalid virtual terminal number."
+#~ msgstr "Virheellinen virtuaalipäätenumero."
+
+#~ msgid "Trying to update an unsupported configuration key."
+#~ msgstr "Yritetään päivittää ei-tuettua asetusavainta."
+
+#~ msgid "~/.Xauthority file badly configured or missing."
+#~ msgstr "~/.Xauthority-tiedosto on rikki tai puuttuu."
+
+#~ msgid "Too many messages were sent to the display manager, and it hung up."
+#~ msgstr "Kirjautumisohjelmalle tukehtui liian moneen lähetettyyn viestiin."
+
+#~ msgid "The display manager sent an unknown error message."
+#~ msgstr "Kirjautumisohjelma lähetti tuntemattoman virheviestin."
+
+#~ msgid "The user this menu item represents."
+#~ msgstr "Käyttäjä, jota tämä valikko esittää."
+
+#~ msgid "Icon Size"
+#~ msgstr "Kuvakekoko"
+
+#~ msgid "The size of the icon to use."
+#~ msgstr "Kuvakkeissa käytettävä koko."
+
+#~ msgid "Indicator Size"
+#~ msgstr "Ilmaisimen koko"
+
+#~ msgid "Size of check indicator"
+#~ msgstr "Tarkistusilmaisimen koko"
+
+#~ msgid "Indicator Spacing"
+#~ msgstr "Ilmaisimien väli"
+
+#~ msgid "Space between the username and the indicator"
+#~ msgstr "Tila käyttäjätunnuksen ja ilmaisimen välissä"
+
+#~ msgid "The user manager object this user is controlled by."
+#~ msgstr "Käyttäjänhallintaolio, jolla tätä käyttää hallitaan."
+
+#~ msgid "Show Details"
+#~ msgstr "Näytä yksityiskohdat"
+
+#~ msgid "MDM (The MATE Display Manager) is not running."
+#~ msgstr "MDM (Maten kirjautumisohjelman) ei ole käynnissä."
+
+#~ msgid ""
+#~ "You might in fact be using a different display manager, such as KDM (KDE "
+#~ "Display Manager) or xdm."
+#~ msgstr ""
+#~ "Itse asiassa käytössä saattaa olla jokin toinen kirjautumisohjelma, kuten "
+#~ "KDM (KDE:n kirjautumisohjelma) tai xdm."
+
+#~ msgid ""
+#~ "If you still wish to use this feature, either start MDM yourself or ask "
+#~ "your system administrator to start MDM."
+#~ msgstr ""
+#~ "Jos haluat edelleen käyttää tätä ominaisuutta, käynnistä itse tai pyydä "
+#~ "järjestelmän ylläpitäjää käynnistämään MDM."
+
+#~ msgid "Cannot communicate with MDM (The MATE Display Manager)"
+#~ msgstr "Kommunikointi MDM:n (Maten kirjautumisohjelman) kanssa ei onnistu"
+
+#~ msgid "Perhaps you have an old version of MDM running."
+#~ msgstr "Kenties käynnissä on MDM:n vanha versio.."
+
+#~ msgid ""
+#~ "Cannot communicate with mdm, perhaps you have an old version running."
+#~ msgstr ""
+#~ "Kommunikointi MDM:n kanssa ei onnistu. Käytössä on ehkä vanha versio."
+
+#~ msgid "The allowed limit of flexible X servers reached."
+#~ msgstr "Joustavien X-palvelinten yläraja saavutettiin."
+
+#~ msgid "There were errors trying to start the X server."
+#~ msgstr "X-palvelinta käynnistäessä tuli virheitä."
+
+#~ msgid "The X server failed.  Perhaps it is not configured well."
+#~ msgstr "X-palvelin kaatui. Sitä ei ole ehkä asetettu oikein."
+
+#~ msgid "Too many X sessions running."
+#~ msgstr "Liian monta X-istuntoa käynnissä."
+
+#~ msgid ""
+#~ "The nested X server (Xnest) cannot connect to your current X server.  You "
+#~ "may be missing an X authorization file."
+#~ msgstr ""
+#~ "Sisäkkäinen X-palvelin (Xnest) ei onnistunut ottamaan yhteyttä X-"
+#~ "palvelimeen. Syynä voi olla puuttuva X-todennustiedosto."
+
+#~ msgid ""
+#~ "The nested X server (Xnest) is not available, or mdm is badly "
+#~ "configured.\n"
+#~ "Please install the Xnest package in order to use the nested login."
+#~ msgstr ""
+#~ "Sisäkkäinen X-palvelin (Xnest) ei ole käytettävissä, tai MDM:n asetukset "
+#~ "ovat\n"
+#~ "väärät. Asenna Xnest-paketti sisäkkäisen kirjautumisen käyttämiseksi."
+
+#~ msgid ""
+#~ "The X server is not available, it is likely that mdm is badly configured."
+#~ msgstr "X-palvelinta ei ole saatavilla. MDM on luultavasti väärin asetettu."
+
+#~ msgid "Trying to change to an invalid virtual terminal number."
+#~ msgstr "Yritetään vaihtaa virheellisen numeroiseen virtuaalipäätteeseen."
+
+#~ msgid ""
+#~ "You do not seem to have authentication needed be for this operation.  "
+#~ "Perhaps your .Xauthority file is not set up correctly."
+#~ msgstr ""
+#~ "Toimintoon tarvittavaa todennusta ei näy olevan. Tiedosto .Xauthority voi "
+#~ "olla väärin asetettu."
+
+#~ msgid "Too many messages were sent to mdm and it hung upon us."
+#~ msgstr "Liian monta viestiä lähetettiin mdm:lle ja se kaatui päällemme."
+
+#~ msgid "Unknown error occurred."
+#~ msgstr "Tapahtui tuntematon virhe."
+
+#~ msgid "Time before activation"
+#~ msgstr "Viive ennen aktivointia"
+
+#~ msgid "_Screensaver"
+#~ msgstr "_Näytönsäästäjä"
+
+#~ msgid "Disable running graphical themes while blanked"
+#~ msgstr "Poista graafiset teemat käytöstä kun tyhjennetty"
+
+#~ msgid "Enable running graphical themes while blanked (if applicable)"
+#~ msgstr "Ota graafiset teemat käyttöön kun tyhjennetty (jos sovellettavissa)"
+
+#~ msgid "0 seconds"
+#~ msgstr "0 sekuntia"
+
+#~ msgid "That password was incorrect."
+#~ msgstr "Salasana oli väärä."
+
+#~ msgid "Allow monitor power management"
+#~ msgstr "Salli näytön virranhallinta"
+
+#~ msgid "Set this to TRUE to allow the screensaver to power down the monitor."
+#~ msgstr "Aseta todeksi, jos haluat näytönsäästäjän voivan sammuttaa näytön."
+
+#~ msgid ""
+#~ "The number of minutes after the screensaver activation until the monitor "
+#~ "goes into standby power mode."
+#~ msgstr ""
+#~ "Kuinka monen minuutin kuluttua näytönsäästäjän aktivoitumisesta näyttö "
+#~ "siirtyy valmiustilaan."
+
+#~ msgid ""
+#~ "The number of minutes after the screensaver activation until the monitor "
+#~ "goes into suspend power mode."
+#~ msgstr ""
+#~ "Kuinka monen minuutin kuluttua näytönsäästäjän aktivoitumisesta näyttö "
+#~ "siirtyy keskeytystilaan."
+
+#~ msgid ""
+#~ "The number of minutes after the screensaver activation until the monitor "
+#~ "powers off."
+#~ msgstr ""
+#~ "Kuinka monen minuutin kuluttua näytönsäästäjän aktivoitumisesta näyttö "
+#~ "sammutetaan."
+
+#~ msgid "Time before power off"
+#~ msgstr "Viive ennen näytön virran sammuttamista"
+
+#~ msgid "Time before standby"
+#~ msgstr "Viive ennen lepotilaa"
+
+#~ msgid "Time before suspend"
+#~ msgstr "Viive ennen säästötilaa"
+
+#~ msgid "    "
+#~ msgstr "    "
+
+#~ msgid "_Activate after:"
+#~ msgstr "_Käynnistä ajan kuluttua:"
+
+#~ msgid ""
+#~ "The number of minutes of idle time before activating the screensaver."
+#~ msgstr "Kuinka pitkän joutenolon kuluttua näytönsäästäjä aktivoidaan."
+
+#~ msgid "Disabled"
+#~ msgstr "Ei käytössä"
+
+#~ msgid "Welcome to %s"
+#~ msgstr "Tervetuloa koneelle %s"
+
+#~ msgid "How many minutes until the monitor goes black"
+#~ msgstr "Kuinka monen minuutin kuluttua näyttö menee mustaksi"
+
+#~ msgid "How many minutes until the monitor goes black."
+#~ msgstr "Kuinka monen minuutin kuluttua näyttö menee mustaksi."
+
+#~ msgid "How many minutes until the monitor power-saves"
+#~ msgstr "Kuinka monen minuutin kuluttua näyttö menee virransäästötilaan"
+
+#~ msgid "How many minutes until the monitor power-saves."
+#~ msgstr "Kuinka monen minuutin kuluttua näyttö menee virransäästötilaan."
+
+#~ msgid "How many minutes until the monitor powers down"
+#~ msgstr "Kuinka monen minuutin kuluttua näyttö sammuu"
+
+#~ msgid "How many minutes until the monitor powers down."
+#~ msgstr "Kuinka monen minuutin kuluttua näyttö sammuu."
+
+#~ msgid ""
+#~ "The number of minutes after blanking the screen before a logout option "
+#~ "will appear"
+#~ msgstr ""
+#~ "Minuuttimäärä näytön tyhjentämisestä ennen kuin uloskirjautumisvalinta "
+#~ "tulee esiin"
+
+#~ msgid "The number of minutes after blanking the screen before locking"
+#~ msgstr "Minuuttimäärä näytön tyhjentämisestä ennen lukitsemista"
+
+#~ msgid "The number of minutes after blanking the screen before locking."
+#~ msgstr "Minuuttimäärä näytön tyhjentämisestä ennen lukitsemista."
+
+#~ msgid "The selected screensaver themes"
+#~ msgstr "Valitut näytönsäästäjäteemat"
+
+#~ msgid ""
+#~ "This key specifies the selection mode used by the screensaver. Possible "
+#~ "values are \"disabled\", \"blank-only\", \"single\", and \"random\"."
+#~ msgstr ""
+#~ "Tämä avain määrittää valintatavan, jota näytönsäästäjä käyttää. "
+#~ "Mahdolliset arvot ovat \"disabled\" (ei käytössä), \"blank-only\" (vain "
+#~ "tyhjennys), \"single\" (yksittäinen) ja \"random\" (satunnainen)."
+
+#~ msgid "This key specifies the themes to be used by the screensaver."
+#~ msgstr "Tämä avain määrittää teemat, joita näytönsäästäjä käyttää."
+
+#~ msgid "Whether to lock as well as blank"
+#~ msgstr "Lukitaanko myös kun tyhjennetään"
+
+#~ msgid "Whether to lock as well as blank."
+#~ msgstr "Lukitaanko myös kun tyhjennetään."
+
+#~ msgid "Whether to offer the option of logging out after logout_delay"
+#~ msgstr "Tarjotaanko uloskirjautumisvaihtoehto logout_delay:n jälkeen"
+
+#~ msgid "Whether to offer the option of logging out after logout_delay."
+#~ msgstr "Tarjotaanko uloskirjautumisvaihtoehto logout_delay:n jälkeen."
+
+#~ msgid "Whether to power down the monitor"
+#~ msgstr "Sammutetaanko näyttö"
+
+#~ msgid "About %ld second left"
+#~ msgid_plural "About %ld seconds left"
+#~ msgstr[0] "Noin %ld sekunti jäljellä"
+#~ msgstr[1] "Noin %ld sekuntia jäljellä"
+
+#~ msgid "Log in as a new user"
+#~ msgstr "Kirjaudu sisään uutena käyttäjänä"
+
+#~ msgid "Enter a password to unlock the screen"
+#~ msgstr "Syötä salasana avataksesi näytön"
+
+#~ msgid "Name:"
+#~ msgstr "Nimi:"

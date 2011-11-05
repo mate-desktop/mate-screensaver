@@ -1,0 +1,10 @@
+[Desktop Entry]
+_Name=Cosmos
+_Comment=Display a slideshow of pictures of the cosmos
+Exec=@SAVERDIR@/slideshow --location=@SLIDESHOW_COSMOS_DIR@
+TryExec=@SAVERDIR@/slideshow
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=MATE;Screensaver;
+OnlyShowIn=MATE;

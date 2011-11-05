@@ -1,0 +1,13 @@
+[Desktop Entry]
+_Name=Screensaver
+_Comment=Set your screensaver preferences
+Icon=preferences-desktop-screensaver
+Exec=mate-screensaver-preferences
+Terminal=false
+Type=Application
+Categories=GTK;MATE;Settings;DesktopSettings;
+OnlyShowIn=MATE;
+StartupNotify=true
+X-MATE-Bugzilla-Bugzilla=MATE
+X-MATE-Bugzilla-Product=mate-screensaver
+X-MATE-Bugzilla-Component=general

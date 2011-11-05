@@ -1,0 +1,35 @@
+pkgname=mate-screensaver
+pkgver=2.10.2
+pkgrel=1
+pkgdesc='Screensaver for MATE'
+arch=('i686' 'x86_64')
+url='http://system-tools-backends.freedesktop.org/'
+license=('GPL')
+depends=('gtk2' 'dbus' 'mate-conf' 'mate-desktop' 'mate-menus')
+makedepends=('pkgconfig' 'intltool')
+options=('!libtool' '!emptydirs')
+source=(http://ftp.gnome.org/pub/gnome/sources/${pkgname}/2.10/${pkgname}.tar.gz)
+#install=system-tools-backends.install
+sha256sums=('5b0dabd93635c9cb15bb150cb2f2093232764a97227fe9b4f927db640d35775f')
+
+build() {
+	cd ${pkgname}
+
+	./configure \
+		--prefix=/usr --sysconfdir=/etc \
+		--mandir=/usr/share \
+		--disable-static \
+		--libexecdir=/usr/lib/${pkgname} || return 1
+
+	make || return 1
+}
+
+package() {
+	cd ${pkgname}
+
+	make MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 DESTDIR=${pkgdir} install || return 1
+	
+	install -m755 -d "${pkgdir}/usr/share/mateconf/schemas"
+	mateconf-merge-schema "${pkgdir}/usr/share/mateconf/schemas/${pkgname}.schemas" --domain ${pkgname} ${pkgdir}/etc/mateconf/schemas/*.schemas || return 1
+	rm -f ${pkgdir}/etc/mateconf/schemas/*.schemas
+}

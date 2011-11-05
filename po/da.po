@@ -1,0 +1,1056 @@
+# Danish translation of mate-screensaver.
+# Copyright (C) 2006-2008
+# This file is distributed under the same license as the mate-screensaver package.
+# David Nielsen <david@lovesunix.net>, 2006.
+# Kenneth Nielsen <k.nielsen@gmail.com>, 2007-08.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mate-screensaver\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-13 03:30+0200\n"
+"PO-Revision-Date: 2009-09-12 18:13+0200\n"
+"Last-Translator: Kenneth Nielsen <k.nielsen81@gmail.com>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8-bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:1
+#: ../src/mate-screensaver.desktop.in.in.h:2
+msgid "Screensaver"
+msgstr "Pauseskærm"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:2
+msgid "Set your screensaver preferences"
+msgstr "Sæt dine indstillinger for pauseskærm"
+
+#: ../data/mate-screensaver-preferences.ui.h:1
+msgid "<b>Screensaver preview</b>"
+msgstr "<b>Forhåndsvisning af pauseskærm</b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:2
+msgid "<b>Warning: the screen will not be locked for the root user.</b>"
+msgstr "<b>Advarsel: skærmen vil ikke være låst for administratoren.</b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:3
+msgid "Power _Management"
+msgstr "Strø_mstyring"
+
+#: ../data/mate-screensaver-preferences.ui.h:4
+msgid "Regard the computer as _idle after:"
+msgstr "Betragt computeren som værende _i tomgang efter:"
+
+#: ../data/mate-screensaver-preferences.ui.h:5
+msgid "Screensaver Preferences"
+msgstr "Indstillinger for pauseskærm"
+
+#: ../data/mate-screensaver-preferences.ui.h:6
+msgid "Screensaver Preview"
+msgstr "Pauseskærms-forhåndsvisning"
+
+#: ../data/mate-screensaver-preferences.ui.h:7
+msgid "_Activate screensaver when computer is idle"
+msgstr "_Aktivér pauseskærm når computeren er i tomgang"
+
+#: ../data/mate-screensaver-preferences.ui.h:8
+msgid "_Lock screen when screensaver is active"
+msgstr "_Lås skærm mens pauseskærmen er aktiv"
+
+#: ../data/mate-screensaver-preferences.ui.h:9
+msgid "_Preview"
+msgstr "_Forhåndsvisning"
+
+#: ../data/mate-screensaver-preferences.ui.h:10
+msgid "_Screensaver theme:"
+msgstr "Tema for pause_skærm:"
+
+#: ../data/mate-screensaver.directory.in.h:1
+#: ../data/mate-screensaver.schemas.in.h:11
+msgid "Screensaver themes"
+msgstr "Pauseskærm temaer"
+
+#: ../data/mate-screensaver.directory.in.h:2
+msgid "Screensavers"
+msgstr "Pauseskærme"
+
+#: ../data/mate-screensaver.schemas.in.h:1
+msgid "Activate when idle"
+msgstr "Aktivér i tomgang"
+
+#: ../data/mate-screensaver.schemas.in.h:2
+msgid "Allow embedding a keyboard into the window"
+msgstr "Tillad at indlejre et tastatur i vinduet"
+
+#: ../data/mate-screensaver.schemas.in.h:3
+msgid "Allow logout"
+msgstr "Tillad at logge ud"
+
+#: ../data/mate-screensaver.schemas.in.h:4
+msgid "Allow the session status message to be displayed"
+msgstr "Tillad visning af sessionstatusmeddelelser"
+
+#: ../data/mate-screensaver.schemas.in.h:5
+msgid ""
+"Allow the session status message to be displayed when the screen is locked."
+msgstr "Tillad visning af sessionstatusmeddelelser når skærmen er låst."
+
+#: ../data/mate-screensaver.schemas.in.h:6
+msgid "Allow user switching"
+msgstr "Tillad brugerskift"
+
+#: ../data/mate-screensaver.schemas.in.h:7
+msgid "Embedded keyboard command"
+msgstr "Indlejret tastatur-kommando"
+
+#: ../data/mate-screensaver.schemas.in.h:8
+msgid "Lock on activation"
+msgstr "Lås ved aktivering"
+
+#: ../data/mate-screensaver.schemas.in.h:9
+msgid "Logout command"
+msgstr "Log ud-kommando"
+
+#: ../data/mate-screensaver.schemas.in.h:10
+msgid "Screensaver theme selection mode"
+msgstr "Temavalgstilstand for pauseskærm"
+
+#: ../data/mate-screensaver.schemas.in.h:12
+msgid "Set this to TRUE to activate the screensaver when the session is idle."
+msgstr ""
+"Sæt denne til SAND for at aktivere pauseskærmen når sessionen er i tomgang."
+
+#: ../data/mate-screensaver.schemas.in.h:13
+msgid ""
+"Set this to TRUE to allow embedding a keyboard into the window when trying "
+"to unlock. The \"keyboard_command\" key must be set with the appropriate "
+"command."
+msgstr ""
+"Sæt denne til TRUE for at muliggøre indlejringen af et tastatur i vinduet "
+"når man prøver at låse skærmen op. Nøglen \"keyboard_command\" skal være sat "
+"til en passende kommando."
+
+#: ../data/mate-screensaver.schemas.in.h:14
+msgid "Set this to TRUE to lock the screen when the screensaver goes active."
+msgstr "Sæt denne til TRUE for at låse skærmen når pauseskærmen bliver aktiv."
+
+#: ../data/mate-screensaver.schemas.in.h:15
+msgid ""
+"Set this to TRUE to offer an option in the unlock dialog to switch to a "
+"different user account."
+msgstr ""
+"Sæt denne til TRUE for at tilbyde mulighed for at skifte bruger i "
+"oplåsningsdialogen."
+
+#: ../data/mate-screensaver.schemas.in.h:16
+msgid ""
+"Set this to TRUE to offer an option in unlock dialog to logging out after a "
+"delay. The Delay is specified in the \"logout_delay\" key."
+msgstr ""
+"Sæt denne til SAND for at tilbyde mulighed for at logge ud efter et tidsrum. "
+"Tidsrummet er specificeret i \"logout_delay\"-nøglen."
+
+#: ../data/mate-screensaver.schemas.in.h:17
+msgid ""
+"The command that will be run, if the \"embedded_keyboard_enabled\" key is "
+"set to TRUE, to embed a keyboard widget into the window. This command should "
+"implement an XEMBED plug interface and output a window XID on the standard "
+"output."
+msgstr ""
+"Kommandoen der skal køres for at indlejre et tastatur i vinduet til at låse "
+"skærmen op med, forudsat at \"embedded_keyboard_enabled\"-nøglen er sat til "
+"TRUE. Kommandoen bør implementere en \"XEMBED plug\"-grænseflade og lave et "
+"XID vindue på stadard-ud."
+
+#: ../data/mate-screensaver.schemas.in.h:18
+msgid ""
+"The command to invoke when the logout button is clicked. This command should "
+"simply log the user out without any interaction. This key has effect only if "
+"the \"logout_enable\" key is set to TRUE."
+msgstr ""
+"Kommandoien som skal køres når der trykkes på log ud knappen. Denne kommando "
+"bør logge brugeren af uden interaktion. Denne nøgle har kun effekt hvis "
+"\"logout_enable\"-nøglen er sat til SAND."
+
+#: ../data/mate-screensaver.schemas.in.h:19
+msgid ""
+"The number of minutes after screensaver activation before locking the screen."
+msgstr "Antallet af minutter efter aktivering af pauseskærm før skærmen låses."
+
+#: ../data/mate-screensaver.schemas.in.h:20
+msgid ""
+"The number of minutes after the screensaver activation before a logout "
+"option will appear in unlock dialog. This key has effect only if the "
+"\"logout_enable\" key is set to TRUE."
+msgstr ""
+"Antallet af minutter efter aktivering af pauseskærm før en "
+"udlogningsmulighed vises i oplåsningsdialogen. Denne nøgle har kun effekt "
+"hvis \"logout_enable\"-nøglen er sat til SAND."
+
+#: ../data/mate-screensaver.schemas.in.h:21
+msgid ""
+"The number of minutes of inactivity before the session is considered idle."
+msgstr ""
+"Antallet af minutters inaktivitet før sessionen anses for værende i tomgang."
+
+#: ../data/mate-screensaver.schemas.in.h:22
+msgid "The number of minutes to run before changing the screensaver theme."
+msgstr "Antallet af minutter der skal køres før der skiftes pauseskærm tema."
+
+#: ../data/mate-screensaver.schemas.in.h:23
+msgid ""
+"The number of seconds of inactivity before signalling to power-management. "
+"This key is set and maintained by the session power-management agent."
+msgstr ""
+"Antallet af sekunders inaktivitet før der sendes signal til strømstyringen. "
+"Denne nøgle bliver sat og vedligeholdt af sessions strømstyrings-agent."
+
+#: ../data/mate-screensaver.schemas.in.h:24
+msgid ""
+"The selection mode used by screensaver. May be \"blank-only\" to enable the "
+"screensaver without using any theme on activation, \"single\" to enable "
+"screensaver using only one theme on activation (specified in \"themes\" "
+"key), and \"random\" to enable the screensaver using a random theme on "
+"activation."
+msgstr ""
+"Den udvælgingsmåde der bliver brugt af pauseskærmen. Kan være \"blank-only\" "
+"for at sætte pauseskærmen uden noget tema ved aktivering, \"single\" for at "
+"sætte pauseskærmen til kun at bruge ét tema ved aktivering (specificeret i "
+"\"themes\" nøglen), og \"random\" for at sætte pauseskærmen til at bruge et "
+"tilfældigt tema ved aktivering."
+
+#: ../data/mate-screensaver.schemas.in.h:25
+msgid "Theme for lock dialog"
+msgstr "Tema for låsnings-dialog"
+
+#: ../data/mate-screensaver.schemas.in.h:26
+msgid "Theme to use for the lock dialog."
+msgstr "Tema der skal bruger til låsnings-dialogen."
+
+#: ../data/mate-screensaver.schemas.in.h:27
+msgid ""
+"This key specifies the list of themes to be used by the screensaver. It's "
+"ignored when \"mode\" key is \"blank-only\", should provide the theme name "
+"when \"mode\" is \"single\", and should provide a list of themes when \"mode"
+"\" is \"random\"."
+msgstr ""
+"Denne nøgle specificere listen af temaer til brug af skærmskøneren. Den "
+"bliver ignoreret når \"mode\" nøglen er \"blank-only\", bør give temanavnet "
+"når \"mode\" er \"single\" og bør give en liste af temaer når \"mode\" er "
+"\"random\"."
+
+#: ../data/mate-screensaver.schemas.in.h:28
+msgid "Time before locking"
+msgstr "Tid før låsning"
+
+#: ../data/mate-screensaver.schemas.in.h:29
+msgid "Time before logout option"
+msgstr "Tid før udlogningsmulighed"
+
+#: ../data/mate-screensaver.schemas.in.h:30
+msgid "Time before power-management baseline"
+msgstr "Tid før grundlinje for strømstyring"
+
+#: ../data/mate-screensaver.schemas.in.h:31
+msgid "Time before session is considered idle"
+msgstr "Tid før sessionen anses for at være i tomgang"
+
+#: ../data/mate-screensaver.schemas.in.h:32
+msgid "Time before theme change"
+msgstr "Tid før temaskift"
+
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<b>Leave a message for %R:</b>"
+msgstr "<b>Efterlad en besked til %R:</b>"
+
+#: ../data/lock-dialog-default.ui.h:4
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U på %h</span>"
+
+#: ../data/lock-dialog-default.ui.h:6
+#, no-c-format
+msgid "<span size=\"x-large\">%R</span>"
+msgstr "<span size=\"x-large\">%R</span>"
+
+#: ../data/lock-dialog-default.ui.h:7
+msgid "_Cancel"
+msgstr "_Afbryd"
+
+#: ../data/lock-dialog-default.ui.h:8
+msgid "_Leave Message"
+msgstr "_Efterlad besked"
+
+#: ../data/lock-dialog-default.ui.h:9
+msgid "_Log Out"
+msgstr "Log _ud"
+
+#: ../data/lock-dialog-default.ui.h:10
+msgid "_Switch User"
+msgstr "_Skift bruger"
+
+#: ../data/lock-dialog-default.ui.h:11 ../src/gs-lock-plug.c:1382
+msgid "_Unlock"
+msgstr "_Lås op"
+
+#. Translators: This is the name of a desktop background image that shows outer space images.
+#. You might want to translate it into the equivalent words of your language
+#: ../data/images/cosmos/cosmos.xml.in.in.h:3
+#: ../savers/cosmos-slideshow.desktop.in.in.h:1
+msgid "Cosmos"
+msgstr "Kosmos"
+
+#: ../savers/cosmos-slideshow.desktop.in.in.h:2
+msgid "Display a slideshow of pictures of the cosmos"
+msgstr "Viser et billedeshow af billeder af kosmos"
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:1
+msgid "Bubbles the MATE foot logo around the screen"
+msgstr "Bobler MATE-fodlogoet omkring på skærmen"
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:2
+msgid "Floating Feet"
+msgstr "Flydende fødder"
+
+#: ../savers/personal-slideshow.desktop.in.in.h:1
+msgid "Display a slideshow from your Pictures folder"
+msgstr "Viser et billedeshow af billeder fra din billedemappe"
+
+#: ../savers/personal-slideshow.desktop.in.in.h:2
+msgid "Pictures folder"
+msgstr "Billedemappe"
+
+#: ../savers/popsquares.desktop.in.in.h:1
+msgid "A pop-art-ish grid of pulsing colors."
+msgstr "Et popkunstagtigt net af pulserende farver."
+
+#: ../savers/popsquares.desktop.in.in.h:2
+msgid "Pop art squares"
+msgstr "Firkantet popkunst"
+
+#: ../savers/floaters.c:84
+msgid "Show paths that images follow"
+msgstr "Vis stier som billeder følger"
+
+#: ../savers/floaters.c:87
+msgid "Occasionally rotate images as they move"
+msgstr "Rotér billeder i ny og næ mens de flyttes"
+
+#: ../savers/floaters.c:90
+msgid "Print out frame rate and other statistics"
+msgstr "Udskriv billedraten og anden statistik"
+
+#: ../savers/floaters.c:93
+msgid "The maximum number of images to keep on screen"
+msgstr "Det maksimale antal billeder der skal holdes på skærmen"
+
+#: ../savers/floaters.c:93
+msgid "MAX_IMAGES"
+msgstr "MAX_BILLEDER"
+
+#: ../savers/floaters.c:96
+msgid "The initial size and position of window"
+msgstr "Startstørrelse og -position af vindue"
+
+#: ../savers/floaters.c:96
+msgid "WIDTHxHEIGHT+X+Y"
+msgstr "BREDDExHØJDE+X+Y"
+
+#: ../savers/floaters.c:99
+msgid "The source image to use"
+msgstr "Kildebilledet der skal bruges"
+
+#. translators: the word "image" here
+#. * represents a command line argument
+#.
+#: ../savers/floaters.c:1194
+msgid "image - floats images around the screen"
+msgstr "billede - flyder billeder rundt på skærmen"
+
+#: ../savers/floaters.c:1200
+#, c-format
+msgid "%s. See --help for usage information.\n"
+msgstr "%s. Se --help fori hjælp til benyttelse.\n"
+
+#: ../savers/floaters.c:1209
+#, c-format
+msgid "You must specify one image.  See --help for usage information.\n"
+msgstr "Du skal specificere et billede. Se --help for hjælp til benyttelse.\n"
+
+#: ../savers/slideshow.c:53
+msgid "Location to get images from"
+msgstr "Sted hvor billeder skal hentes fra"
+
+#: ../savers/slideshow.c:53
+msgid "PATH"
+msgstr "STI"
+
+#: ../savers/slideshow.c:55
+msgid "Color to use for images background"
+msgstr "Farven der bruges til billedbaggrund"
+
+#: ../savers/slideshow.c:55
+msgid "\"#rrggbb\""
+msgstr "\"#rrggbb\""
+
+#: ../savers/slideshow.c:57
+msgid "Do not randomize pictures from location"
+msgstr "Sammenbland ikke billeder fra placeringen"
+
+#: ../savers/slideshow.c:59
+msgid "Do not try to stretch images on screen"
+msgstr "Forsøg ikke at strække billeder på skærmen"
+
+#: ../src/copy-theme-dialog.c:212
+msgid "Copying files"
+msgstr "Kopierer filer"
+
+#: ../src/copy-theme-dialog.c:230
+msgid "From:"
+msgstr "Fra:"
+
+#: ../src/copy-theme-dialog.c:234
+msgid "To:"
+msgstr "Til:"
+
+#: ../src/copy-theme-dialog.c:254
+msgid "Copying themes"
+msgstr "Kopierer temaer"
+
+#: ../src/copy-theme-dialog.c:298
+msgid "Invalid screensaver theme"
+msgstr "Ugyldigt pauseskærmtema"
+
+#: ../src/copy-theme-dialog.c:301
+#, c-format
+msgid "%s does not appear to be a valid screensaver theme."
+msgstr "%s lader ikke til at være et gyldigt pauseskærmstema."
+
+#: ../src/copy-theme-dialog.c:481
+#, c-format
+msgid "Copying file: %u of %u"
+msgstr "Kopierer fil: %u af %u"
+
+#: ../src/mate-screensaver-command.c:62
+msgid "Causes the screensaver to exit gracefully"
+msgstr "For pauseskærmen til at afslutte med ynde"
+
+#: ../src/mate-screensaver-command.c:64
+msgid "Query the state of the screensaver"
+msgstr "Forespørg pauseskærmens tilstand"
+
+#: ../src/mate-screensaver-command.c:66
+msgid "Query the length of time the screensaver has been active"
+msgstr "Forespørg til hvor lang tid pauseskærmen har været aktiv"
+
+#: ../src/mate-screensaver-command.c:68
+msgid "Tells the running screensaver process to lock the screen immediately"
+msgstr "Beordre den kørende pauseskærmproces at låse skærmen øjeblikkeligt"
+
+#: ../src/mate-screensaver-command.c:70
+msgid "If the screensaver is active then switch to another graphics demo"
+msgstr "Hvis pauseskærmen er aktiv, skift da til en anden grafik demonstration"
+
+#: ../src/mate-screensaver-command.c:72
+msgid "Turn the screensaver on (blank the screen)"
+msgstr "Slå pauseskærmen til (sorten skærmen)"
+
+#: ../src/mate-screensaver-command.c:74
+msgid "If the screensaver is active then deactivate it (un-blank the screen)"
+msgstr "Hvis pauseskærmen er aktiv, deaktivér den (genopret skærmen)"
+
+#: ../src/mate-screensaver-command.c:76
+msgid "Poke the running screensaver to simulate user activity"
+msgstr "Prik den kørende pauseskærm for at simulere brugeraktivitet"
+
+#: ../src/mate-screensaver-command.c:78
+msgid ""
+"Inhibit the screensaver from activating.  Command blocks while inhibit is "
+"active."
+msgstr ""
+"Forhindrer pauseskærmen i at aktiveres. Kommandoen blokerer så længe "
+"hindringen er aktiv."
+
+#: ../src/mate-screensaver-command.c:80
+msgid "The calling application that is inhibiting the screensaver"
+msgstr "Programmet der undertrykker pauseskærmen"
+
+#: ../src/mate-screensaver-command.c:82
+msgid "The reason for inhibiting the screensaver"
+msgstr "Grunden til at pauseskærmen undertrykkes"
+
+#: ../src/mate-screensaver-command.c:84 ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver.c:56
+msgid "Version of this application"
+msgstr "Version af dette programmel"
+
+#: ../src/mate-screensaver-command.c:311
+#, c-format
+msgid "The screensaver is %s\n"
+msgstr "Denne pauseskærm er %s\n"
+
+#: ../src/mate-screensaver-command.c:311
+msgid "active"
+msgstr "aktiv"
+
+#: ../src/mate-screensaver-command.c:311
+msgid "inactive"
+msgstr "inaktiv"
+
+#: ../src/mate-screensaver-command.c:325
+#, c-format
+msgid "The screensaver is not inhibited\n"
+msgstr "Pauseskærm er ikke undertrykt\n"
+
+#: ../src/mate-screensaver-command.c:331
+#, c-format
+msgid "The screensaver is being inhibited by:\n"
+msgstr "Pauseskærm bliver undertrykt af:\n"
+
+#: ../src/mate-screensaver-command.c:362
+#, c-format
+msgid "The screensaver has been active for %d seconds.\n"
+msgstr "Pauseskærmen har været aktiv i %d sekunder.\n"
+
+#: ../src/mate-screensaver-command.c:366
+#, c-format
+msgid "The screensaver is not currently active.\n"
+msgstr "Pauseskærmen er ikke aktiv i øjeblikket.\n"
+
+#: ../src/mate-screensaver-dialog.c:56
+msgid "Show debugging output"
+msgstr "Vis fejlfindingsuddata"
+
+#: ../src/mate-screensaver-dialog.c:60
+msgid "Show the logout button"
+msgstr "Vis log ud-knappen"
+
+#: ../src/mate-screensaver-dialog.c:62
+msgid "Command to invoke from the logout button"
+msgstr "Kommando er skal køres fra log ud-knappen"
+
+#: ../src/mate-screensaver-dialog.c:64
+msgid "Show the switch user button"
+msgstr "Vis skift bruger-knappen"
+
+#: ../src/mate-screensaver-dialog.c:66
+msgid "Message to show in the dialog"
+msgstr "Besked der skal vises i dialogen"
+
+#: ../src/mate-screensaver-dialog.c:66 ../src/mate-screensaver-dialog.c:68
+msgid "MESSAGE"
+msgstr "BESKED"
+
+#: ../src/mate-screensaver-dialog.c:68
+msgid "Not used"
+msgstr "Bruges ikke"
+
+#. login: is whacked always translate to Username:
+#: ../src/mate-screensaver-dialog.c:178 ../src/mate-screensaver-dialog.c:179
+#: ../src/mate-screensaver-dialog.c:180 ../src/gs-auth-pam.c:698
+msgid "Username:"
+msgstr "Brugernavn:"
+
+#: ../src/mate-screensaver-dialog.c:181 ../src/mate-screensaver-dialog.c:182
+#: ../src/gs-auth-pam.c:166
+msgid "Password:"
+msgstr "Adgangskode:"
+
+#: ../src/mate-screensaver-dialog.c:183
+msgid "You are required to change your password immediately (password aged)"
+msgstr ""
+"Det er påkrævet at du ændrer din adgangskode med det samme (adgangskode er "
+"for gammelt)"
+
+#: ../src/mate-screensaver-dialog.c:184
+msgid "You are required to change your password immediately (root enforced)"
+msgstr ""
+"Det er påkrævet at du ændrer din adgangskode med det samme (påtvunget af "
+"administrator)"
+
+#: ../src/mate-screensaver-dialog.c:185
+msgid "Your account has expired; please contact your system administrator"
+msgstr "Din konto er udløbet; kontakt venligst din system-administrator"
+
+#: ../src/mate-screensaver-dialog.c:186
+msgid "No password supplied"
+msgstr "Ingen adgangskode udleveret"
+
+#: ../src/mate-screensaver-dialog.c:187
+msgid "Password unchanged"
+msgstr "Adgangskode er uændret"
+
+#: ../src/mate-screensaver-dialog.c:188
+msgid "Can not get username"
+msgstr "Kan ikke hente brugernavn"
+
+#: ../src/mate-screensaver-dialog.c:189
+msgid "Retype new UNIX password:"
+msgstr "Skriv ny UNIX-adgangskode igen:"
+
+#: ../src/mate-screensaver-dialog.c:190
+msgid "Enter new UNIX password:"
+msgstr "Skriv ny UNIX-adgangskode:"
+
+#: ../src/mate-screensaver-dialog.c:191
+msgid "(current) UNIX password:"
+msgstr "(nuværende) UNIX-adgangskode:"
+
+#: ../src/mate-screensaver-dialog.c:192
+msgid "Error while changing NIS password."
+msgstr "Fejl under ændring af NIS adgangskode."
+
+#: ../src/mate-screensaver-dialog.c:193
+msgid "You must choose a longer password"
+msgstr "Du skal vælge en længere adgangskode"
+
+#: ../src/mate-screensaver-dialog.c:194
+msgid "Password has been already used. Choose another."
+msgstr "Adgangskoden har allerede været brugt. Vælg en anden."
+
+#: ../src/mate-screensaver-dialog.c:195
+msgid "You must wait longer to change your password"
+msgstr "Du skal vente længere før du kan ændre din adgangskode"
+
+#: ../src/mate-screensaver-dialog.c:196
+msgid "Sorry, passwords do not match"
+msgstr "Beklager, adgangskoderne passer ikke sammen"
+
+#: ../src/mate-screensaver-dialog.c:262
+msgid "Checking..."
+msgstr "Kontrollerer..."
+
+#: ../src/mate-screensaver-dialog.c:304 ../src/gs-auth-pam.c:457
+msgid "Authentication failed."
+msgstr "Godkendelse fejlede."
+
+#: ../src/mate-screensaver-preferences.c:524
+msgid "Blank screen"
+msgstr "Sort skærm"
+
+#: ../src/mate-screensaver-preferences.c:530
+msgid "Random"
+msgstr "Tilfældig"
+
+#: ../src/mate-screensaver-preferences.c:980
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d time"
+msgstr[1] "%d timer"
+
+#: ../src/mate-screensaver-preferences.c:983
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minut"
+msgstr[1] "%d minutter"
+
+#: ../src/mate-screensaver-preferences.c:986
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d sekund"
+msgstr[1] "%d sekunder"
+
+#. hour:minutes:seconds
+#: ../src/mate-screensaver-preferences.c:992
+#, c-format
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
+#. hour:minutes
+#. minutes:seconds
+#: ../src/mate-screensaver-preferences.c:995
+#: ../src/mate-screensaver-preferences.c:1003
+#, c-format
+msgid "%s %s"
+msgstr "%s %s"
+
+#. hour
+#. minutes
+#. seconds
+#: ../src/mate-screensaver-preferences.c:998
+#: ../src/mate-screensaver-preferences.c:1006
+#: ../src/mate-screensaver-preferences.c:1010
+#, c-format
+msgid "%s"
+msgstr "%s"
+
+#: ../src/mate-screensaver-preferences.c:1025
+#, c-format
+msgid "Never"
+msgstr "Aldrig"
+
+#: ../src/mate-screensaver-preferences.c:1467
+msgid "Could not load the main interface"
+msgstr "Kunne ikke indlæse hovedgrænsefladen"
+
+#: ../src/mate-screensaver-preferences.c:1469
+msgid "Please make sure that the screensaver is properly installed"
+msgstr "Kontrollér venligst at pauseskærmen er installeret korrekt"
+
+#: ../src/mate-screensaver.c:57
+msgid "Don't become a daemon"
+msgstr "Kør ikke som tjeneste"
+
+#: ../src/mate-screensaver.c:58
+msgid "Enable debugging code"
+msgstr "Slå fejlfindingskode til"
+
+#: ../src/mate-screensaver.desktop.in.in.h:1
+msgid "Launch screen saver and locker program"
+msgstr "Start pauseskærm og skærmlåseprogram"
+
+#: ../src/gs-auth-pam.c:397
+#, c-format
+msgid "Unable to establish service %s: %s\n"
+msgstr "Er ikke i stand til at etablere service %s: %s\n"
+
+#: ../src/gs-auth-pam.c:423
+#, c-format
+msgid "Can't set PAM_TTY=%s"
+msgstr "Kan ikke sætte PAM_TTY=%s"
+
+#: ../src/gs-auth-pam.c:455
+msgid "Incorrect password."
+msgstr "Forkert adgangskode."
+
+#: ../src/gs-auth-pam.c:471
+msgid "Not permitted to gain access at this time."
+msgstr "Adgang er ikke tilladt på dette tidspunkt."
+
+#: ../src/gs-auth-pam.c:477
+msgid "No longer permitted to access the system."
+msgstr "Adgang til systemet er ikke længere tilladt."
+
+#: ../src/gs-listener-dbus.c:1851
+msgid "failed to register with the message bus"
+msgstr "kunne ikke registere med kommunikationsbussen"
+
+#: ../src/gs-listener-dbus.c:1861
+msgid "not connected to the message bus"
+msgstr "ikke tilsluttet kommunikationsbussen"
+
+#: ../src/gs-listener-dbus.c:1870
+msgid "screensaver already running in this session"
+msgstr "pauseskærm kører allerede i denne session"
+
+#: ../src/gs-lock-plug.c:270
+msgid "Time has expired."
+msgstr "Tiden er udløbet."
+
+#: ../src/gs-lock-plug.c:298
+msgid "You have the Caps Lock key on."
+msgstr "Du har aktiveret Caps Lock-tasten."
+
+#: ../src/gs-lock-plug.c:1362
+msgid "S_witch User..."
+msgstr "_Skift bruger..."
+
+#: ../src/gs-lock-plug.c:1371
+msgid "Log _Out"
+msgstr "Log _ud"
+
+#. To translators: This expands to USERNAME on HOSTNAME
+#: ../src/gs-lock-plug.c:1547
+msgid "%U on %h"
+msgstr "%U på %h"
+
+#: ../src/gs-lock-plug.c:1561
+msgid "_Password:"
+msgstr "_Adgangskode:"
+
+#~ msgid "Reason for being away"
+#~ msgstr "Årsag til fravær"
+
+#~ msgid "The reason for being away from the computer."
+#~ msgstr "Grunden til at du ikke er ved computeren."
+
+#~ msgid "Copying '%s'"
+#~ msgstr "Kopierer \"%s\""
+
+#~ msgid "From URI"
+#~ msgstr "Fra URI"
+
+#~ msgid "URI currently transferring from"
+#~ msgstr "URI der overføres fra i øjeblikket"
+
+#~ msgid "To URI"
+#~ msgstr "Til URI"
+
+#~ msgid "URI currently transferring to"
+#~ msgstr "URI der overføres til i øjeblikket"
+
+#~ msgid "Fraction completed"
+#~ msgstr "Brøkdel færdiggjort"
+
+#~ msgid "Fraction of transfer currently completed"
+#~ msgstr "Brøkdel af overførelse færdiggjort"
+
+#~ msgid "Current URI index"
+#~ msgstr "Nuværende URI-indeks"
+
+#~ msgid "Current URI index - starts from 1"
+#~ msgstr "Nuværende URI-indeks - starter fra 1"
+
+#~ msgid "Total URIs"
+#~ msgstr "Total URI'er"
+
+#~ msgid "Total number of URIs"
+#~ msgstr "Total antal af URI'er"
+
+#~ msgid "Connecting..."
+#~ msgstr "Tilslutter..."
+
+#~ msgid "N"
+#~ msgstr "X"
+
+#~ msgid "_Switch user..."
+#~ msgstr "_Skift bruger..."
+
+#~ msgid "S_witch to user:"
+#~ msgstr "S_kift til bruger:"
+
+#~ msgid "Manager"
+#~ msgstr "Agent"
+
+#~ msgid "The manager which owns this object."
+#~ msgstr "Agenten som ejer dette objekt."
+
+#~ msgid "Name"
+#~ msgstr "Navn"
+
+#~ msgid "The name of the X11 display this object refers to."
+#~ msgstr "Navnet på den X11-skærm dette objekt henviser til."
+
+#~ msgid "User"
+#~ msgstr "Bruger"
+
+#~ msgid "The user currently logged in on this virtual terminal."
+#~ msgstr "Den bruger som er logget ind på denne virtuelle terminal."
+
+#~ msgid "Console"
+#~ msgstr "Konsol"
+
+#~ msgid ""
+#~ "The number of the virtual console this display can be found on, or %-1."
+#~ msgstr ""
+#~ "Antallet af virtuelle konsoller denne skærm kan findes på, eller %-1."
+
+#~ msgid "Whether or not this display is a windowed (Xnest) display."
+#~ msgstr "Om denne skærm er en indlejret (Xnest) visning."
+
+#~ msgid "The display manager could not be contacted for unknown reasons."
+#~ msgstr "Skærmhåndteringen kunne ikke kontaktes af ukendte årsager."
+
+#~ msgid "The display manager is not running or too old."
+#~ msgstr "Skærmhåndteringen kører ikke eller er for gammel."
+
+#~ msgid "The configured limit of flexible servers has been reached."
+#~ msgstr "Den prækonfigurerede grænse af fleksible servere er nået"
+
+#~ msgid "There was an unknown error starting X."
+#~ msgstr "Der opstod en ukendt fejl ved opstart af X."
+
+#~ msgid "The X server failed to finish starting."
+#~ msgstr "X-serveren kunne ikke færdiggøre opstarting."
+
+#~ msgid "There are too many X sessions running."
+#~ msgstr "Der er for mange X-sessioner kørende."
+
+#~ msgid "The nested X server (Xnest) cannot connect to your current X server."
+#~ msgstr ""
+#~ "Den indlejrede X-server (Xnest) kunne ikke forbinde til din nuværende X "
+#~ "server."
+
+#~ msgid "The X server in the MDM configuration could not be found."
+#~ msgstr "X-serveren i MDM konfigurationen kunne ikke findes."
+
+#~ msgid ""
+#~ "Trying to set an unknown logout action, or trying to set a logout action "
+#~ "which is not available."
+#~ msgstr ""
+#~ "Prøver at sætte en ukendt udlogningshandling, eller forsøger at sætte en "
+#~ "udlogningshandling som ikke er tilgængelig."
+
+#~ msgid "Virtual terminals not supported."
+#~ msgstr "Virtuelle terminaler er ikke understøttet."
+
+#~ msgid "Invalid virtual terminal number."
+#~ msgstr "Ugyldigt nummer på virtual terminal."
+
+#~ msgid "Trying to update an unsupported configuration key."
+#~ msgstr "Prøver at opdatere en ikke-understøttet konfigurationsnøgle."
+
+#~ msgid "~/.Xauthority file badly configured or missing."
+#~ msgstr "~/.Xauthority fil forkert konfigureret eller mangler."
+
+#~ msgid "Too many messages were sent to the display manager, and it hung up."
+#~ msgstr ""
+#~ "For mange beskeder blev sendt til skærmhåndteringen og den lagde på."
+
+#~ msgid "The display manager sent an unknown error message."
+#~ msgstr "Skærmhåndteringen sendte en ukendt fejlbesked."
+
+#~ msgid "The user this menu item represents."
+#~ msgstr "Den bruger dette menupunkt repræsenterer."
+
+#~ msgid "Icon Size"
+#~ msgstr "Ikonstørrelse"
+
+#~ msgid "The size of the icon to use."
+#~ msgstr "Den størrelse ikon der skal bruges."
+
+#~ msgid "Indicator Size"
+#~ msgstr "Indikatorstørrelse"
+
+#~ msgid "Size of check indicator"
+#~ msgstr "Størrelse af kontrol-indikator"
+
+#~ msgid "Indicator Spacing"
+#~ msgstr "Indikator mellemrum"
+
+#~ msgid "Space between the username and the indicator"
+#~ msgstr "Afstand mellem brugernavnet og indikatoren"
+
+#~ msgid "The user manager object this user is controlled by."
+#~ msgstr "Det brugerhåndteringsobjekt denne bruger er kontrolleret af."
+
+#~ msgid "Show Details"
+#~ msgstr "Vis detajler"
+
+#~ msgid "MDM (The MATE Display Manager) is not running."
+#~ msgstr "MDM (MATEs skærmhåndteringien) kører ikke."
+
+#~ msgid ""
+#~ "You might in fact be using a different display manager, such as KDM (KDE "
+#~ "Display Manager) or xdm."
+#~ msgstr ""
+#~ "Du bruger måske en anden skærmhåndtering, såsom KDM (KDE skærmhåndtering) "
+#~ "eller xdm."
+
+#~ msgid ""
+#~ "If you still wish to use this feature, either start MDM yourself or ask "
+#~ "your system administrator to start MDM."
+#~ msgstr ""
+#~ "Hvis du stadig ønsker at bruge denne facilitet, skal du selv starte MDM "
+#~ "eller bede din systemadministrator om det."
+
+#~ msgid "Cannot communicate with MDM (The MATE Display Manager)"
+#~ msgstr "Kan ikke kommunikere med MDM (MATE skærmhåndteringien)"
+
+#~ msgid "Perhaps you have an old version of MDM running."
+#~ msgstr "Måske har du en gammel version af MDM kørende."
+
+#~ msgid ""
+#~ "Cannot communicate with mdm, perhaps you have an old version running."
+#~ msgstr ""
+#~ "Kan ikke kommunikere med MDM, måske har du en gammel version kørende."
+
+#~ msgid "The allowed limit of flexible X servers reached."
+#~ msgstr "Det tilladte antal af fleksible X-servere blev nået."
+
+#~ msgid "There were errors trying to start the X server."
+#~ msgstr "Der opstod en fejl ved forsøg på at starte X-serveren."
+
+#~ msgid "The X server failed.  Perhaps it is not configured well."
+#~ msgstr "X-serveren fejlede. Måske er den ikke konfiguret korrekt."
+
+#~ msgid "Too many X sessions running."
+#~ msgstr "For many X-sessioner kørende."
+
+#~ msgid ""
+#~ "The nested X server (Xnest) cannot connect to your current X server.  You "
+#~ "may be missing an X authorization file."
+#~ msgstr ""
+#~ "Den indlejrede X-server (Xnest) kan ikke forbinde til din nuværende X-"
+#~ "server. Du mangler måske en X-godkendelsesfil."
+
+#~ msgid ""
+#~ "The nested X server (Xnest) is not available, or mdm is badly "
+#~ "configured.\n"
+#~ "Please install the Xnest package in order to use the nested login."
+#~ msgstr ""
+#~ "Den indlejrede X-server (Xnest) er ikke tilgængelig eller MDM er forkert "
+#~ "konfigureret.\n"
+#~ "Installér venligst Xnest-pakken for at kunne benyttet det indlejrede log "
+#~ "ind."
+
+#~ msgid ""
+#~ "The X server is not available, it is likely that mdm is badly configured."
+#~ msgstr ""
+#~ "X-serveren er ikke tilgængelig, det er sandsynligt at MDM er konfiguret "
+#~ "forkert"
+
+#~ msgid "Trying to change to an invalid virtual terminal number."
+#~ msgstr "Forsøger at skifte et ugyldigt virtuel terminal nummer."
+
+#~ msgid ""
+#~ "You do not seem to have authentication needed be for this operation.  "
+#~ "Perhaps your .Xauthority file is not set up correctly."
+#~ msgstr ""
+#~ "Du lader ikke til at have den nødvendige godkendelse til denne handling. "
+#~ "Måske er din .Xauthority-fil ikke sat korrekt op."
+
+#~ msgid "Too many messages were sent to mdm and it hung upon us."
+#~ msgstr "For mange beskeder blev sendt til MDM og den lagde på."
+
+#~ msgid "Unknown error occurred."
+#~ msgstr "En ukendt fejl opstod."
+
+#~ msgid "_Screensaver"
+#~ msgstr "_Pauseskærm"
+
+#~ msgid "Allow monitor power management"
+#~ msgstr "Tillad strømstyringshåndtering for skærm"
+
+#~ msgid "Set this to TRUE to allow the screensaver to power down the monitor."
+#~ msgstr "Sæt denne til SAND for at tillade pauseskærmen at slukke skærmen."
+
+#~ msgid ""
+#~ "The number of minutes after the screensaver activation until the monitor "
+#~ "goes into standby power mode."
+#~ msgstr ""
+#~ "Antallet af minutter efter aktivering af pauseskærm til skærmen sættes i "
+#~ "dvale tilstand."
+
+#~ msgid ""
+#~ "The number of minutes after the screensaver activation until the monitor "
+#~ "goes into suspend power mode."
+#~ msgstr ""
+#~ "Antallet af minutter efter pauseskærm aktivering til skærmen sættes i "
+#~ "frakoblet tilstand."
+
+#~ msgid ""
+#~ "The number of minutes after the screensaver activation until the monitor "
+#~ "powers off."
+#~ msgstr ""
+#~ "Antallet af minutter efter pauseskærm aktivering til skærmen slukkes."
+
+#~ msgid "Time before activation"
+#~ msgstr "Tid før aktivering"
+
+#~ msgid "Time before power off"
+#~ msgstr "Time før maskinen slukkes"
+
+#~ msgid "Time before standby"
+#~ msgstr "Tid før maskinen sættes i dvale"
+
+#~ msgid "Time before suspend"
+#~ msgstr "Tid før maskinen sættes frakoblet tilstand"
+
+#~ msgid "Disable running graphical themes while blanked"
+#~ msgstr "Deaktivér kørsel af grafiske temaer, når skærmen er sortnet"
+
+#~ msgid "Enable running graphical themes while blanked (if applicable)"
+#~ msgstr ""
+#~ "Aktivér kørsel af grafiske temaer, når skærmen er sortnet (hvis relevant)"
+
+#~ msgid "0 seconds"
+#~ msgstr "0 sekunder"
+
+#~ msgid "That password was incorrect."
+#~ msgstr "Adgangskoden var ikke korrekt."

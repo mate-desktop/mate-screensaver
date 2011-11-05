@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+_Name=Screensaver
+_Comment=Launch screen saver and locker program
+Icon=preferences-desktop-screensaver
+Exec=mate-screensaver
+OnlyShowIn=MATE;
+NoDisplay=true
+X-MATE-Autostart-Phase=Application
+X-MATE-Autostart-Notify=true
+X-MATE-Bugzilla-Bugzilla=MATE
+X-MATE-Bugzilla-Product=mate-screensaver
+X-MATE-Bugzilla-Component=general
+X-MATE-Bugzilla-Version=@VERSION@

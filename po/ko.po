@@ -1,0 +1,1031 @@
+# mate-screensaver Korean message translation.
+# This file is distributed under the same license as the mate-screensaver package.
+# Young-Ho Cha <ganadist@gmail.com>, 2006.
+# Changwoo Ryu <cwryu@debian.org>, 2006, 2007, 2008, 2009, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mate-screensaver\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-screensaver&component=general\n"
+"POT-Creation-Date: 2009-09-20 08:07+0900\n"
+"PO-Revision-Date: 2010-03-06 23:22+0900\n"
+"Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
+"Language-Team: MATE Korea <mate-kr@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:1
+#: ../src/mate-screensaver.desktop.in.in.h:2
+msgid "Screensaver"
+msgstr "화면 보호기"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:2
+msgid "Set your screensaver preferences"
+msgstr "화면 보호기를 설정합니다"
+
+#: ../data/mate-screensaver-preferences.ui.h:1
+msgid "<b>Screensaver preview</b>"
+msgstr "<b>화면 보호기 미리 보기</b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:2
+msgid "<b>Warning: the screen will not be locked for the root user.</b>"
+msgstr "<b>경고: 루트 사용자의 경우에는 화면을 잠그지 않습니다.</b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:3
+msgid "Power _Management"
+msgstr "전원 관리(_M)"
+
+#: ../data/mate-screensaver-preferences.ui.h:4
+msgid "Regard the computer as _idle after:"
+msgstr "다음 시간이 지나면 입력 없는 상태로 취급(_I):"
+
+#: ../data/mate-screensaver-preferences.ui.h:5
+msgid "Screensaver Preferences"
+msgstr "화면 보호기 기본 설정"
+
+#: ../data/mate-screensaver-preferences.ui.h:6
+msgid "Screensaver Preview"
+msgstr "화면 보호기 미리 보기"
+
+#: ../data/mate-screensaver-preferences.ui.h:7
+msgid "_Activate screensaver when computer is idle"
+msgstr "입력이 없는 상태일 때 화면 보호기 켜기(_A)"
+
+#: ../data/mate-screensaver-preferences.ui.h:8
+msgid "_Lock screen when screensaver is active"
+msgstr "화면 보호기가 켜지면 화면 잠그기(_L)"
+
+#: ../data/mate-screensaver-preferences.ui.h:9
+msgid "_Preview"
+msgstr "미리 보기(_P)"
+
+#: ../data/mate-screensaver-preferences.ui.h:10
+msgid "_Screensaver theme:"
+msgstr "화면 보호기 테마(_S):"
+
+#: ../data/mate-screensaver.directory.in.h:1
+#: ../data/mate-screensaver.schemas.in.h:11
+msgid "Screensaver themes"
+msgstr "화면 보호기 테마"
+
+#: ../data/mate-screensaver.directory.in.h:2
+msgid "Screensavers"
+msgstr "화면 보호기"
+
+#: ../data/mate-screensaver.schemas.in.h:1
+msgid "Activate when idle"
+msgstr "세션이 정지되면 시작"
+
+#: ../data/mate-screensaver.schemas.in.h:2
+msgid "Allow embedding a keyboard into the window"
+msgstr "키보드를 창에 포함시킬 수 있음"
+
+#: ../data/mate-screensaver.schemas.in.h:3
+msgid "Allow logout"
+msgstr "로그아웃 허용"
+
+#: ../data/mate-screensaver.schemas.in.h:4
+msgid "Allow the session status message to be displayed"
+msgstr "세션 상태 메시지 표시를 허용"
+
+#: ../data/mate-screensaver.schemas.in.h:5
+msgid ""
+"Allow the session status message to be displayed when the screen is locked."
+msgstr "화면을 잠갔을 때 세션 상태 메시지의 표시를 허용합니다."
+
+#: ../data/mate-screensaver.schemas.in.h:6
+msgid "Allow user switching"
+msgstr "사용자 전환 허용"
+
+#: ../data/mate-screensaver.schemas.in.h:7
+msgid "Embedded keyboard command"
+msgstr "내장 키보드 명령어"
+
+#: ../data/mate-screensaver.schemas.in.h:8
+msgid "Lock on activation"
+msgstr "활성화 되면 잠그기"
+
+#: ../data/mate-screensaver.schemas.in.h:9
+msgid "Logout command"
+msgstr "로그아웃 명령"
+
+#: ../data/mate-screensaver.schemas.in.h:10
+msgid "Screensaver theme selection mode"
+msgstr "화면 보호기 선택 모드"
+
+#: ../data/mate-screensaver.schemas.in.h:12
+msgid "Set this to TRUE to activate the screensaver when the session is idle."
+msgstr "세션이 정지될 때 화면 보호기를 시작하려면 이 값을 TRUE로 설정하십시오."
+
+#: ../data/mate-screensaver.schemas.in.h:13
+msgid ""
+"Set this to TRUE to allow embedding a keyboard into the window when trying "
+"to unlock. The \"keyboard_command\" key must be set with the appropriate "
+"command."
+msgstr ""
+"이 값이 참이면 잠금을 풀 때 키보드를 창 안에 내장합니다. \"keyboard_command"
+"\" 키도 적당한 명령어로 설정해야 합니다."
+
+#: ../data/mate-screensaver.schemas.in.h:14
+msgid "Set this to TRUE to lock the screen when the screensaver goes active."
+msgstr "화면 보호기가 켜질 때 화면을 잠그려면 이 값을 TRUE로 설정하십시오."
+
+#: ../data/mate-screensaver.schemas.in.h:15
+msgid ""
+"Set this to TRUE to offer an option in the unlock dialog to switch to a "
+"different user account."
+msgstr ""
+"잠금 풀기 창에서 다른 사용자 계정으로 바꾸는 옵션을 보이려면 이 값을 TRUE로 "
+"설정하십시오."
+
+#: ../data/mate-screensaver.schemas.in.h:16
+msgid ""
+"Set this to TRUE to offer an option in unlock dialog to logging out after a "
+"delay. The Delay is specified in the \"logout_delay\" key."
+msgstr ""
+"지연 시간이 지난 후, 잠금 풀기 창에서 로그아웃 옵션을 제공하려면 이 값을 TRUE"
+"로 설정하십시오. 지연 시간 값은 \"logout_delay\" 키로 지정합니다."
+
+#: ../data/mate-screensaver.schemas.in.h:17
+msgid ""
+"The command that will be run, if the \"embedded_keyboard_enabled\" key is "
+"set to TRUE, to embed a keyboard widget into the window. This command should "
+"implement an XEMBED plug interface and output a window XID on the standard "
+"output."
+msgstr ""
+"\"embedded_keyboard_enabled\" 키가 참이면, 키보드 위젯을 창에 집어 넣을 때 "
+"이 명령을 실행합니다. 이 명령은 XEMBED 플러그 인터페이스에 맞아야 하고 표준 "
+"출력으로 창의 XID를 출력해야 합니다."
+
+#: ../data/mate-screensaver.schemas.in.h:18
+msgid ""
+"The command to invoke when the logout button is clicked. This command should "
+"simply log the user out without any interaction. This key has effect only if "
+"the \"logout_enable\" key is set to TRUE."
+msgstr ""
+"로그아웃 단추를 누를 때 실행할 명령. 이 명령은 아무 상호 작용없이 로그아웃 하"
+"도록 합니다. 이 키 값은 \"logout_enable\"키 값이 TRUE로 설정되어 있을 때만 영"
+"향을 끼칩니다."
+
+#: ../data/mate-screensaver.schemas.in.h:19
+msgid ""
+"The number of minutes after screensaver activation before locking the screen."
+msgstr "화면 보호기가 켜진 후 화면이 잠기는데 걸리는 시간(분)."
+
+#: ../data/mate-screensaver.schemas.in.h:20
+msgid ""
+"The number of minutes after the screensaver activation before a logout "
+"option will appear in unlock dialog. This key has effect only if the "
+"\"logout_enable\" key is set to TRUE."
+msgstr ""
+"화면 보호기가 켜진 후, 잠금 풀기 창에서 로그아웃 옵션이 나타나기 까지 시간. "
+"이 키는 \"logout_enable\"키가 TRUE로 설정되어 있을 때 만 영향을 끼칩니다."
+
+#: ../data/mate-screensaver.schemas.in.h:21
+msgid ""
+"The number of minutes of inactivity before the session is considered idle."
+msgstr "세션이 정지되었다고 판단되는 시간(분)."
+
+#: ../data/mate-screensaver.schemas.in.h:22
+msgid "The number of minutes to run before changing the screensaver theme."
+msgstr "화면 보호기 테마가 바뀌기 전 실행 시간(분)."
+
+#: ../data/mate-screensaver.schemas.in.h:23
+msgid ""
+"The number of seconds of inactivity before signalling to power-management. "
+"This key is set and maintained by the session power-management agent."
+msgstr ""
+"전원 관리에 신호를 보내기까지의 입력이 없는 시간 (초 단위). 이 키 값은 전원 "
+"관리 에이전트가 설정하고 관리합니다."
+
+#: ../data/mate-screensaver.schemas.in.h:24
+msgid ""
+"The selection mode used by screensaver. May be \"blank-only\" to enable the "
+"screensaver without using any theme on activation, \"single\" to enable "
+"screensaver using only one theme on activation (specified in \"themes\" "
+"key), and \"random\" to enable the screensaver using a random theme on "
+"activation."
+msgstr ""
+"화면 보호기에서 쓸 선택 모드. \"blank-only\"는 테마를 쓰지 않고 화면보호기를 "
+"켭니다. \"single\"은 화면보호기에서 (\"themes\"키에서 지정한) 하나의 테마만 "
+"씁니다. \"random\"은 아무 테마나 써서 화면보호기를 켭니다."
+
+#: ../data/mate-screensaver.schemas.in.h:25
+msgid "Theme for lock dialog"
+msgstr "잠금 대화 상자의 테마"
+
+#: ../data/mate-screensaver.schemas.in.h:26
+msgid "Theme to use for the lock dialog."
+msgstr "잠금 대화 상자에 사용할 테마."
+
+#: ../data/mate-screensaver.schemas.in.h:27
+msgid ""
+"This key specifies the list of themes to be used by the screensaver. It's "
+"ignored when \"mode\" key is \"blank-only\", should provide the theme name "
+"when \"mode\" is \"single\", and should provide a list of themes when \"mode"
+"\" is \"random\"."
+msgstr ""
+"화면 보호기에서 쓸 테마 목록이 이 키에 지정됩니다. \"mode\"키가 \"blank-only"
+"\"이면 무시됩니다. \"mode\"키가 \"single\"이면 테마 이름이, \"random\"이면 테"
+"마 목록이 지정됩니다."
+
+#: ../data/mate-screensaver.schemas.in.h:28
+msgid "Time before locking"
+msgstr "잠그기 전 시간"
+
+#: ../data/mate-screensaver.schemas.in.h:29
+msgid "Time before logout option"
+msgstr "로그아웃 옵션 전 시간"
+
+#: ../data/mate-screensaver.schemas.in.h:30
+msgid "Time before power-management baseline"
+msgstr "전원 관리에 들어갈 때까지 시간"
+
+#: ../data/mate-screensaver.schemas.in.h:31
+msgid "Time before session is considered idle"
+msgstr "세션이 입력 없는 상태라고 판단하기 전 시간"
+
+#: ../data/mate-screensaver.schemas.in.h:32
+msgid "Time before theme change"
+msgstr "테마 바뀌기 전 시간"
+
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<b>Leave a message for %R:</b>"
+msgstr "<b>%R에게 남길 메시지:</b>"
+
+#: ../data/lock-dialog-default.ui.h:4
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%h의 %U</span>"
+
+#: ../data/lock-dialog-default.ui.h:6
+#, no-c-format
+msgid "<span size=\"x-large\">%R</span>"
+msgstr "<span size=\"x-large\">%R</span>"
+
+#: ../data/lock-dialog-default.ui.h:7
+msgid "_Cancel"
+msgstr "취소(_C)"
+
+#: ../data/lock-dialog-default.ui.h:8
+msgid "_Leave Message"
+msgstr "메시지 남기기(_L)"
+
+#: ../data/lock-dialog-default.ui.h:9
+msgid "_Log Out"
+msgstr "로그아웃(_L)"
+
+#: ../data/lock-dialog-default.ui.h:10
+msgid "_Switch User"
+msgstr "사용자 바꾸기(_S)"
+
+#: ../data/lock-dialog-default.ui.h:11 ../src/gs-lock-plug.c:1382
+msgid "_Unlock"
+msgstr "잠금 풀기(_U)"
+
+#. Translators: This is the name of a desktop background image that shows outer space images.
+#. You might want to translate it into the equivalent words of your language
+#: ../data/images/cosmos/cosmos.xml.in.in.h:3
+#: ../savers/cosmos-slideshow.desktop.in.in.h:1
+msgid "Cosmos"
+msgstr "우주"
+
+#: ../savers/cosmos-slideshow.desktop.in.in.h:2
+msgid "Display a slideshow of pictures of the cosmos"
+msgstr "우주 그림의 슬라이드를 보여줍니다"
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:1
+msgid "Bubbles the MATE foot logo around the screen"
+msgstr "화면에 그놈 발바닥 로고가 떠다닙니다"
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:2
+msgid "Floating Feet"
+msgstr "떠다니는 발바닥"
+
+#: ../savers/personal-slideshow.desktop.in.in.h:1
+msgid "Display a slideshow from your Pictures folder"
+msgstr "그림 폴더에 있는 그림의 슬라이드를 보여줍니다"
+
+#: ../savers/personal-slideshow.desktop.in.in.h:2
+msgid "Pictures folder"
+msgstr "그림 폴더"
+
+#: ../savers/popsquares.desktop.in.in.h:1
+msgid "A pop-art-ish grid of pulsing colors."
+msgstr "고동치는 색깔의 팝아트 형식 격자 모양."
+
+#: ../savers/popsquares.desktop.in.in.h:2
+msgid "Pop art squares"
+msgstr "팝 아트 사각형"
+
+#: ../savers/floaters.c:84
+msgid "Show paths that images follow"
+msgstr "다음 그림의 경로를 보입니다"
+
+#: ../savers/floaters.c:87
+msgid "Occasionally rotate images as they move"
+msgstr "그림이 움직이면서 때때로 회전하도록 합니다"
+
+#: ../savers/floaters.c:90
+msgid "Print out frame rate and other statistics"
+msgstr "프레임 개수와 다른 상태 출력"
+
+#: ../savers/floaters.c:93
+msgid "The maximum number of images to keep on screen"
+msgstr "화면에 나타날 그림의 최대 개수"
+
+#: ../savers/floaters.c:93
+msgid "MAX_IMAGES"
+msgstr "MAX_IMAGES"
+
+#: ../savers/floaters.c:96
+msgid "The initial size and position of window"
+msgstr "창의 초기 크기와 위치"
+
+#: ../savers/floaters.c:96
+msgid "WIDTHxHEIGHT+X+Y"
+msgstr "WIDTHxHEIGHT+X+Y"
+
+#: ../savers/floaters.c:99
+msgid "The source image to use"
+msgstr "사용할 원본 그림"
+
+#. translators: the word "image" here
+#. * represents a command line argument
+#.
+#: ../savers/floaters.c:1194
+msgid "image - floats images around the screen"
+msgstr "그림 - 화면에 그림을 떠다니게 합니다"
+
+#: ../savers/floaters.c:1200
+#, c-format
+msgid "%s. See --help for usage information.\n"
+msgstr "%s. 사용법을 보려면 --help를 쓰십시오.\n"
+
+#: ../savers/floaters.c:1209
+#, c-format
+msgid "You must specify one image.  See --help for usage information.\n"
+msgstr "그림 하나를 지정해야 합니다. 사용법을 보려면 --help를 쓰십시오.\n"
+
+#: ../savers/slideshow.c:53
+msgid "Location to get images from"
+msgstr "그림을 가져오는 경로"
+
+#: ../savers/slideshow.c:53
+msgid "PATH"
+msgstr "경로"
+
+#: ../savers/slideshow.c:55
+msgid "Color to use for images background"
+msgstr "이미지 배경에 쓸 색상"
+
+#: ../savers/slideshow.c:55
+msgid "\"#rrggbb\""
+msgstr "\"#rrggbb\""
+
+#: ../savers/slideshow.c:57
+msgid "Do not randomize pictures from location"
+msgstr "순서대로 그림 보이기"
+
+#: ../savers/slideshow.c:59
+msgid "Do not try to stretch images on screen"
+msgstr "화면에 그림을 늘리지 않도록 하기"
+
+#: ../src/copy-theme-dialog.c:212
+msgid "Copying files"
+msgstr "파일 복사 중"
+
+#: ../src/copy-theme-dialog.c:230
+msgid "From:"
+msgstr "원본:"
+
+#: ../src/copy-theme-dialog.c:234
+msgid "To:"
+msgstr "대상:"
+
+#: ../src/copy-theme-dialog.c:254
+msgid "Copying themes"
+msgstr "테마 복사 중"
+
+#: ../src/copy-theme-dialog.c:298
+msgid "Invalid screensaver theme"
+msgstr "잘못된 화면 보호기 테마"
+
+#: ../src/copy-theme-dialog.c:301
+#, c-format
+msgid "%s does not appear to be a valid screensaver theme."
+msgstr "%s 파일은 올바른 화면 보호기 테마가 아닌 것 같습니다."
+
+#: ../src/copy-theme-dialog.c:481
+#, c-format
+msgid "Copying file: %u of %u"
+msgstr "파일 복사 중: %2$u개 중 %1$u개"
+
+#: ../src/mate-screensaver-command.c:62
+msgid "Causes the screensaver to exit gracefully"
+msgstr "화면 보호기를 정상적으로 끝냅니다"
+
+#: ../src/mate-screensaver-command.c:64
+msgid "Query the state of the screensaver"
+msgstr "화면 보호기의 상태를 알아봅니다"
+
+#: ../src/mate-screensaver-command.c:66
+msgid "Query the length of time the screensaver has been active"
+msgstr "화면 보호기가 얼마나 오랜 시간동안 동작하고 있었는지 알아봅니다"
+
+#: ../src/mate-screensaver-command.c:68
+msgid "Tells the running screensaver process to lock the screen immediately"
+msgstr "실행 중인 화면 보호기 프로세스에게 바로 화면을 잠그도록 합니다"
+
+#: ../src/mate-screensaver-command.c:70
+msgid "If the screensaver is active then switch to another graphics demo"
+msgstr "화면 보호기가 실행중이면, 다른 화면이 시작하도록 합니다"
+
+#: ../src/mate-screensaver-command.c:72
+msgid "Turn the screensaver on (blank the screen)"
+msgstr "화면 보호기를 켭니다 (빈 화면)"
+
+#: ../src/mate-screensaver-command.c:74
+msgid "If the screensaver is active then deactivate it (un-blank the screen)"
+msgstr "화면 보호기가 실행중이면, 화면보호기를 끕니다"
+
+#: ../src/mate-screensaver-command.c:76
+msgid "Poke the running screensaver to simulate user activity"
+msgstr "사용자가 움직이는 것처럼 해서 화면 보호기를 멈춥니다"
+
+#: ../src/mate-screensaver-command.c:78
+msgid ""
+"Inhibit the screensaver from activating.  Command blocks while inhibit is "
+"active."
+msgstr ""
+"화면 보호기 동작을 막습니다.  해당 명령이 동작하는 동안 활성화되지 않습니다."
+
+#: ../src/mate-screensaver-command.c:80
+msgid "The calling application that is inhibiting the screensaver"
+msgstr "화면 보호기 동작을 막는 프로그램 지정"
+
+#: ../src/mate-screensaver-command.c:82
+msgid "The reason for inhibiting the screensaver"
+msgstr "화면 보호기를 막는 이유"
+
+#: ../src/mate-screensaver-command.c:84 ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver.c:56
+msgid "Version of this application"
+msgstr "이 프로그램의 버전"
+
+#: ../src/mate-screensaver-command.c:311
+#, c-format
+msgid "The screensaver is %s\n"
+msgstr "화면 보호기가 %s\n"
+
+#: ../src/mate-screensaver-command.c:311
+msgid "active"
+msgstr "활성화 되었습니다"
+
+#: ../src/mate-screensaver-command.c:311
+msgid "inactive"
+msgstr "비활성화 되었습니다"
+
+#: ../src/mate-screensaver-command.c:325
+#, c-format
+msgid "The screensaver is not inhibited\n"
+msgstr "화면 보호기를 막지 않았습니다\n"
+
+#: ../src/mate-screensaver-command.c:331
+#, c-format
+msgid "The screensaver is being inhibited by:\n"
+msgstr "화면 보호기가 다음에 의해 막혀 있습니다:\n"
+
+#: ../src/mate-screensaver-command.c:362
+#, c-format
+msgid "The screensaver has been active for %d seconds.\n"
+msgstr "화면 보호기가 %d초 동안 동작하고 있었습니다.\n"
+
+#: ../src/mate-screensaver-command.c:366
+#, c-format
+msgid "The screensaver is not currently active.\n"
+msgstr "화면 보호기를 사용하지 않고 있습니다.\n"
+
+#: ../src/mate-screensaver-dialog.c:56
+msgid "Show debugging output"
+msgstr "디버깅 출력 보기"
+
+#: ../src/mate-screensaver-dialog.c:60
+msgid "Show the logout button"
+msgstr "로그아웃 단추 보이기"
+
+#: ../src/mate-screensaver-dialog.c:62
+msgid "Command to invoke from the logout button"
+msgstr "로그아웃 단추를 누를 때 실행할 명령"
+
+#: ../src/mate-screensaver-dialog.c:64
+msgid "Show the switch user button"
+msgstr "사용자 전환 단추 보이기"
+
+#: ../src/mate-screensaver-dialog.c:66
+msgid "Message to show in the dialog"
+msgstr "대화 상자에 보여줄 메시지"
+
+#: ../src/mate-screensaver-dialog.c:66 ../src/mate-screensaver-dialog.c:68
+msgid "MESSAGE"
+msgstr "<메시지>"
+
+#: ../src/mate-screensaver-dialog.c:68
+msgid "Not used"
+msgstr "사용하지 않음"
+
+#. login: is whacked always translate to Username:
+#: ../src/mate-screensaver-dialog.c:178 ../src/mate-screensaver-dialog.c:179
+#: ../src/mate-screensaver-dialog.c:180 ../src/gs-auth-pam.c:698
+msgid "Username:"
+msgstr "사용자 이름:"
+
+#: ../src/mate-screensaver-dialog.c:181 ../src/mate-screensaver-dialog.c:182
+#: ../src/gs-auth-pam.c:166
+msgid "Password:"
+msgstr "암호:"
+
+#: ../src/mate-screensaver-dialog.c:183
+msgid "You are required to change your password immediately (password aged)"
+msgstr "즉시 암호를 바꿔야 합니다 (암호가 오래됨)"
+
+#: ../src/mate-screensaver-dialog.c:184
+msgid "You are required to change your password immediately (root enforced)"
+msgstr "즉시 암호를 바꿔야 합니다 (루트가 강제로 지정)"
+
+#: ../src/mate-screensaver-dialog.c:185
+msgid "Your account has expired; please contact your system administrator"
+msgstr "암호가 만료되었습니다; 시스템 관리자에게 연락하십시오"
+
+#: ../src/mate-screensaver-dialog.c:186
+msgid "No password supplied"
+msgstr "암호를 입력하지 않았습니다"
+
+#: ../src/mate-screensaver-dialog.c:187
+msgid "Password unchanged"
+msgstr "암호를 바꾸지 않았습니다"
+
+#: ../src/mate-screensaver-dialog.c:188
+msgid "Can not get username"
+msgstr "사용자 이름을 얻을 수 없습니다"
+
+#: ../src/mate-screensaver-dialog.c:189
+msgid "Retype new UNIX password:"
+msgstr "새 유닉스 암호를 다시 입력하십시오:"
+
+#: ../src/mate-screensaver-dialog.c:190
+msgid "Enter new UNIX password:"
+msgstr "새 유닉스 암호를 입력하십시오:"
+
+#: ../src/mate-screensaver-dialog.c:191
+msgid "(current) UNIX password:"
+msgstr "(현재) 유닉스 암호:"
+
+#: ../src/mate-screensaver-dialog.c:192
+msgid "Error while changing NIS password."
+msgstr "NIS 암호를 바꾸는 데 오류가 발생했습니다."
+
+#: ../src/mate-screensaver-dialog.c:193
+msgid "You must choose a longer password"
+msgstr "더 긴 암호를 사용해야 합니다"
+
+#: ../src/mate-screensaver-dialog.c:194
+msgid "Password has been already used. Choose another."
+msgstr "암호를 이미 사용했습니다. 다른 암호를 사용하십시오."
+
+#: ../src/mate-screensaver-dialog.c:195
+msgid "You must wait longer to change your password"
+msgstr "암호를 바꾸려면 좀 더 기다려야 합니다"
+
+#: ../src/mate-screensaver-dialog.c:196
+msgid "Sorry, passwords do not match"
+msgstr "암호가 일치하지 않습니다"
+
+#: ../src/mate-screensaver-dialog.c:262
+msgid "Checking..."
+msgstr "확인하는 중..."
+
+#: ../src/mate-screensaver-dialog.c:304 ../src/gs-auth-pam.c:457
+msgid "Authentication failed."
+msgstr "인증이 실패했습니다."
+
+#: ../src/mate-screensaver-preferences.c:524
+msgid "Blank screen"
+msgstr "빈 화면"
+
+#: ../src/mate-screensaver-preferences.c:530
+msgid "Random"
+msgstr "아무거나"
+
+#: ../src/mate-screensaver-preferences.c:980
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d시간"
+
+#: ../src/mate-screensaver-preferences.c:983
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d분"
+
+#: ../src/mate-screensaver-preferences.c:986
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d초"
+
+#. hour:minutes:seconds
+#: ../src/mate-screensaver-preferences.c:992
+#, c-format
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
+#. hour:minutes
+#. minutes:seconds
+#: ../src/mate-screensaver-preferences.c:995
+#: ../src/mate-screensaver-preferences.c:1003
+#, c-format
+msgid "%s %s"
+msgstr "%s %s"
+
+#. hour
+#. minutes
+#. seconds
+#: ../src/mate-screensaver-preferences.c:998
+#: ../src/mate-screensaver-preferences.c:1006
+#: ../src/mate-screensaver-preferences.c:1010
+#, c-format
+msgid "%s"
+msgstr "%s"
+
+#: ../src/mate-screensaver-preferences.c:1025
+#, c-format
+msgid "Never"
+msgstr "쓰지 않기"
+
+#: ../src/mate-screensaver-preferences.c:1467
+msgid "Could not load the main interface"
+msgstr "메인 인터페이스를 읽을 수 없습니다"
+
+#: ../src/mate-screensaver-preferences.c:1469
+msgid "Please make sure that the screensaver is properly installed"
+msgstr "화면 보호기를 올바로 설치하십시오"
+
+#: ../src/mate-screensaver.c:57
+msgid "Don't become a daemon"
+msgstr "데몬이 되지 않았습니다"
+
+#: ../src/mate-screensaver.c:58
+msgid "Enable debugging code"
+msgstr "디버깅 코드 사용"
+
+#: ../src/mate-screensaver.desktop.in.in.h:1
+msgid "Launch screen saver and locker program"
+msgstr "화면 보호기 및 잠그기 프로그램을 실행합니다"
+
+#: ../src/gs-auth-pam.c:397
+#, c-format
+msgid "Unable to establish service %s: %s\n"
+msgstr "%s 서비스를 연결하지 못했습니다: %s\n"
+
+#: ../src/gs-auth-pam.c:423
+#, c-format
+msgid "Can't set PAM_TTY=%s"
+msgstr "PAM_TTY=%s 설정을 하지 못했습니다"
+
+#: ../src/gs-auth-pam.c:455
+msgid "Incorrect password."
+msgstr "암호가 올바르지 않습니다."
+
+#: ../src/gs-auth-pam.c:471
+msgid "Not permitted to gain access at this time."
+msgstr "현재는 권한을 얻을 수 없습니다."
+
+#: ../src/gs-auth-pam.c:477
+msgid "No longer permitted to access the system."
+msgstr "더 이상 시스템에 접근할 수 없습니다."
+
+#: ../src/gs-listener-dbus.c:1851
+msgid "failed to register with the message bus"
+msgstr "메시지 버스에 등록 실패"
+
+#: ../src/gs-listener-dbus.c:1861
+msgid "not connected to the message bus"
+msgstr "메시지 버스에 연결 안됨"
+
+#: ../src/gs-listener-dbus.c:1870
+msgid "screensaver already running in this session"
+msgstr "이 세션에 화면 보호기가 이미 실행중입니다"
+
+#: ../src/gs-lock-plug.c:270
+msgid "Time has expired."
+msgstr "시간이 지났습니다."
+
+#: ../src/gs-lock-plug.c:298
+msgid "You have the Caps Lock key on."
+msgstr "Caps Lock키가 눌려져있습니다."
+
+#: ../src/gs-lock-plug.c:1362
+msgid "S_witch User..."
+msgstr "사용자 바꾸기(_W)..."
+
+#: ../src/gs-lock-plug.c:1371
+msgid "Log _Out"
+msgstr "로그아웃(_O)"
+
+#. To translators: This expands to USERNAME on HOSTNAME
+#: ../src/gs-lock-plug.c:1547
+msgid "%U on %h"
+msgstr "%h의 %U"
+
+#: ../src/gs-lock-plug.c:1561
+msgid "_Password:"
+msgstr "암호(_P):"
+
+#~ msgid "Reason for being away"
+#~ msgstr "컴퓨터에서 떨어져 있는 이유"
+
+#~ msgid "The reason for being away from the computer."
+#~ msgstr "컴퓨터에서 떨어져 있는 이유."
+
+#~ msgid "Copying '%s'"
+#~ msgstr "'%s' 복사 중"
+
+#~ msgid "From URI"
+#~ msgstr "원본 URI"
+
+#~ msgid "URI currently transferring from"
+#~ msgstr "현재 전송되고 있는 URI"
+
+#~ msgid "To URI"
+#~ msgstr "대상 URI"
+
+#~ msgid "URI currently transferring to"
+#~ msgstr "현재 전송받는 URI"
+
+#~ msgid "Fraction completed"
+#~ msgstr "일부가 완료되었습니다"
+
+#~ msgid "Fraction of transfer currently completed"
+#~ msgstr "전송의 일부가 현재 끝났습니다"
+
+#~ msgid "Current URI index"
+#~ msgstr "현재 URI 색인"
+
+#~ msgid "Current URI index - starts from 1"
+#~ msgstr "현재 URI 색인 - 1부터 시작"
+
+#~ msgid "Total URIs"
+#~ msgstr "모든 URI"
+
+#~ msgid "Total number of URIs"
+#~ msgstr "URI의 총 개수"
+
+#~ msgid "Connecting..."
+#~ msgstr "연결중..."
+
+#~ msgid "_Switch user..."
+#~ msgstr "사용자 바꾸기(_S)..."
+
+#~ msgid "N"
+#~ msgstr "N"
+
+#~ msgid "Time before activation"
+#~ msgstr "활성하기 전 시간"
+
+#~ msgid "S_witch to user:"
+#~ msgstr "사용자 바꾸기(_W):"
+
+#~ msgid "Manager"
+#~ msgstr "관리자"
+
+#~ msgid "The manager which owns this object."
+#~ msgstr "이 개체를 소유하는 관리자."
+
+#~ msgid "Name"
+#~ msgstr "이름"
+
+#~ msgid "The name of the X11 display this object refers to."
+#~ msgstr "이 개체를 참조하는 X11 화면의 이름."
+
+#~ msgid "User"
+#~ msgstr "사용자"
+
+#~ msgid "The user currently logged in on this virtual terminal."
+#~ msgstr "현재 가상터미널에 로그인 된 사용자."
+
+#~ msgid "Console"
+#~ msgstr "콘솔"
+
+#~ msgid ""
+#~ "The number of the virtual console this display can be found on, or %-1."
+#~ msgstr "지금 보여지는 가상 콘솔의 번호, 또는 %-1."
+
+#~ msgid "Nested"
+#~ msgstr "포함됨"
+
+#~ msgid "Whether or not this display is a windowed (Xnest) display."
+#~ msgstr "이 화면이 포함된 화면인지 여부."
+
+#~ msgid "The display manager could not be contacted for unknown reasons."
+#~ msgstr "화면 관리자와 알 수 없는 이유로 연결되지 않습니다."
+
+#~ msgid "The display manager is not running or too old."
+#~ msgstr "화면 관리자가 실행되지 않거나 너무 이전 것 입니다."
+
+#~ msgid "The configured limit of flexible servers has been reached."
+#~ msgstr "설정된 탄력적 서버의 개수 제한에 다다랐습니다."
+
+#~ msgid "There was an unknown error starting X."
+#~ msgstr "X를 시작하는데 알 수 없는 오류가 생겼습니다."
+
+#~ msgid "The X server failed to finish starting."
+#~ msgstr "X서버가 시작하는데 실패 했습니다."
+
+#~ msgid "There are too many X sessions running."
+#~ msgstr "너무 많은 X세션이 실행중입니다."
+
+#~ msgid "The nested X server (Xnest) cannot connect to your current X server."
+#~ msgstr "중첩 X 서버(Xnest)가 현재 X서버에 연결할 수 없습니다."
+
+#~ msgid "The X server in the MDM configuration could not be found."
+#~ msgstr "MDM설정에서 X 서버를 찾을 수 없습니다."
+
+#~ msgid ""
+#~ "Trying to set an unknown logout action, or trying to set a logout action "
+#~ "which is not available."
+#~ msgstr ""
+#~ "알 수 없는 로그아웃 동작을 설정하려 시도했거나, 사용할 수 없는 로그아웃 동"
+#~ "작을 설정하려 시도했습니다."
+
+#~ msgid "Virtual terminals not supported."
+#~ msgstr "가상 터미널이 지원되지 않습니다."
+
+#~ msgid "Invalid virtual terminal number."
+#~ msgstr "잘못된 가상 터미널 번호입니다."
+
+#~ msgid "Trying to update an unsupported configuration key."
+#~ msgstr "지원하지 않는 설정 키를 고치려합니다."
+
+#~ msgid "~/.Xauthority file badly configured or missing."
+#~ msgstr "~/.Xauthority 파일이 없거나 잘못 설정되어 있습니다."
+
+#~ msgid "Too many messages were sent to the display manager, and it hung up."
+#~ msgstr "화면 관리자에 너무 많은 메세지가 보내졌고, 얼어버렸습니다."
+
+#~ msgid "The display manager sent an unknown error message."
+#~ msgstr "화면 관리자가 알 수 없는 오류 메세지를 보냈습니다."
+
+#~ msgid "The user this menu item represents."
+#~ msgstr "이 메뉴 항목에 나타나는 사용자."
+
+#~ msgid "Icon Size"
+#~ msgstr "아이콘 크기"
+
+#~ msgid "The size of the icon to use."
+#~ msgstr "쓰이는 아이콘의 크기."
+
+#~ msgid "Indicator Size"
+#~ msgstr "알림 표시 크기"
+
+#~ msgid "Size of check indicator"
+#~ msgstr "알림 표시의 크기"
+
+#~ msgid "Indicator Spacing"
+#~ msgstr "알림 표시 여백"
+
+#~ msgid "Space between the username and the indicator"
+#~ msgstr "사용자 이름과 알림 표시 사이의 여백"
+
+#~ msgid "The user manager object this user is controlled by."
+#~ msgstr "현재 사용자가 제어되는 사용자 관리자 개체."
+
+#~ msgid "Show Details"
+#~ msgstr "자세히 보기"
+
+#~ msgid "MDM (The MATE Display Manager) is not running."
+#~ msgstr "MDM(그놈 화면 관리자)이 실행되지 않았습니다."
+
+#~ msgid ""
+#~ "You might in fact be using a different display manager, such as KDM (KDE "
+#~ "Display Manager) or xdm."
+#~ msgstr ""
+#~ "KDM(KDE 화면 관리자)나 xdm같은 다른 화면관리자가 실행되고 있는 것 같습니"
+#~ "다."
+
+#~ msgid ""
+#~ "If you still wish to use this feature, either start MDM yourself or ask "
+#~ "your system administrator to start MDM."
+#~ msgstr ""
+#~ "이 기능을 쓰고 싶다면 MDM믈 실행하거나 시스템 관리자에게 MDM을 시작해달라"
+#~ "고 요청하십시오."
+
+#~ msgid "Cannot communicate with MDM (The MATE Display Manager)"
+#~ msgstr "MDM(그놈 화면 관리자)와 통신할 수 없습니다"
+
+#~ msgid "Perhaps you have an old version of MDM running."
+#~ msgstr "옛날 버젼의 MDM이 실행되고 있는 것 같습니다."
+
+#~ msgid ""
+#~ "Cannot communicate with mdm, perhaps you have an old version running."
+#~ msgstr ""
+#~ "MDM과 통신할 수 없습니다, 옛날 버젼의 MDM이 실행되고 있는 것 같습니다."
+
+#~ msgid "The allowed limit of flexible X servers reached."
+#~ msgstr "탄력적 X 서버의 최대 허용치에 다다랐습니다."
+
+#~ msgid "There were errors trying to start the X server."
+#~ msgstr "X서버를 시작하는데 오류가 생겼습니다."
+
+#~ msgid "The X server failed.  Perhaps it is not configured well."
+#~ msgstr "X서버가 실패했습니다. 설정이 잘못된 것 같습니다."
+
+#~ msgid "Too many X sessions running."
+#~ msgstr "너무 많은 X 세션이 실행중입니다."
+
+#~ msgid ""
+#~ "The nested X server (Xnest) cannot connect to your current X server.  You "
+#~ "may be missing an X authorization file."
+#~ msgstr ""
+#~ "중첩 X서버 (Xnest)가 현재 X서버와 연결할 수 없습니다. X인증 파일이 없는 "
+#~ "것 같습니다."
+
+#~ msgid ""
+#~ "The nested X server (Xnest) is not available, or mdm is badly "
+#~ "configured.\n"
+#~ "Please install the Xnest package in order to use the nested login."
+#~ msgstr ""
+#~ "중첩 X서버 (Xnest)를 쓸 수 없거나 MDM이 잘못 설정된 것 같습니다.\n"
+#~ "중첩 로그인을 쓰려면 Xnest 꾸러미를 설치하십시오."
+
+#~ msgid ""
+#~ "The X server is not available, it is likely that mdm is badly configured."
+#~ msgstr "X서버를 쓸 수 없습니다. MDM이 잘못 설정된 것 같습니다."
+
+#~ msgid "Trying to change to an invalid virtual terminal number."
+#~ msgstr "잘못된 가상 터미널 번호로 바꾸려고합니다."
+
+#~ msgid ""
+#~ "You do not seem to have authentication needed be for this operation.  "
+#~ "Perhaps your .Xauthority file is not set up correctly."
+#~ msgstr ""
+#~ "이 작업을 하기 위해 필요한 인증한 내용이 없습니다.  아마도 .Xauthority 파"
+#~ "일이 올바르게 설정되지 않았을 것입니다."
+
+#~ msgid "Too many messages were sent to mdm and it hung upon us."
+#~ msgstr "너무 많은 메세지를 MDM에 보내서 죽었습니다."
+
+#~ msgid "Unknown error occurred."
+#~ msgstr "알 수 없는 오류가 발생했습니다."
+
+#~ msgid "_Screensaver"
+#~ msgstr "화면 보호기(_S)"
+
+#~ msgid "Allow monitor power management"
+#~ msgstr "모니터 전원 관리 허용"
+
+#~ msgid "Set this to TRUE to allow the screensaver to power down the monitor."
+#~ msgstr ""
+#~ "화면보호기가 모니터 전원을 끄도록 하려면 이 값을 TRUE로 설정하십시오."
+
+#~ msgid ""
+#~ "The number of minutes after the screensaver activation until the monitor "
+#~ "goes into standby power mode."
+#~ msgstr ""
+#~ "화면 보호기가 켜진 후 모니터가 대기 모드로 바뀌는데 걸리는 시간(분)."
+
+#~ msgid ""
+#~ "The number of minutes after the screensaver activation until the monitor "
+#~ "goes into suspend power mode."
+#~ msgstr ""
+#~ "화면 보호기가 켜진 후 모니터가 잠자기 모드로 바뀌는데 걸리는 시간(분)."
+
+#~ msgid ""
+#~ "The number of minutes after the screensaver activation until the monitor "
+#~ "powers off."
+#~ msgstr "화면 보호기가 켜진 후 모니터의 전원을 끄는데 걸리는 시간(분)."
+
+#~ msgid "Time before power off"
+#~ msgstr "전원 끄기 전 시간"
+
+#~ msgid "Time before standby"
+#~ msgstr "대기 전 시간"
+
+#~ msgid "Time before suspend"
+#~ msgstr "잠자기 전 시간"
+
+#~ msgid "Disable running graphical themes while blanked"
+#~ msgstr "화면보호기가 실행 될 때 그래픽 테마가 실행되지 않게 합니다"
+
+#~ msgid "Enable running graphical themes while blanked (if applicable)"
+#~ msgstr "화면보호기가 실행 될 때 (적당하면) 그래픽 테마가 실행되게 합니다"
+
+#~ msgid "0 seconds"
+#~ msgstr "0초"
+
+#~ msgid "That password was incorrect."
+#~ msgstr "열쇠글이 틀립니다."

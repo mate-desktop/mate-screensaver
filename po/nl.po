@@ -1,0 +1,1458 @@
+# Dutch translation of mate-screensaver
+#
+# This file is distributed under the same license as the mate-screensaver package.
+#
+# Tino Meinen <a.t.meinen@chello.nl>, 2005–2006
+# Wouter Bolsterlee <wbolster@gnome.org>, 2007–2010
+#
+# idle time         - inactiviteit
+# inhibit           - verhindering/verhinderen (of een vorm daarvan)
+# lock              - vergrendeling/vergrendelen (of een vorm daarvan)
+# screensaver       - schermbeveiliging / screensaver (afhankelijk van context)
+# screensaver theme - screensaver
+# theme             - screensaver
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Totem\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-13 00:01+0200\n"
+"PO-Revision-Date: 2010-04-13 00:02+0200\n"
+"Last-Translator: Wouter Bolsterlee <wbolster@gnome.org>\n"
+"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:1
+#: ../src/mate-screensaver.desktop.in.in.h:2
+msgid "Screensaver"
+msgstr "Schermbeveiliging"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:2
+msgid "Set your screensaver preferences"
+msgstr "Voorkeuren voor de schermbeveiliging instellen"
+
+#: ../data/mate-screensaver-preferences.ui.h:1
+msgid "<b>Screensaver preview</b>"
+msgstr "<b>Voorbeeld schermbeveiliging</b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:2
+msgid "<b>Warning: the screen will not be locked for the root user.</b>"
+msgstr ""
+"<b>Waarschuwing: het scherm zal niet vergrendeld worden voor de root-user.</"
+"b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:3
+msgid "Power _Management"
+msgstr "Energiebeheer"
+
+#: ../data/mate-screensaver-preferences.ui.h:4
+msgid "Regard the computer as _idle after:"
+msgstr "Computer als i_nactief beschouwen na:"
+
+#: ../data/mate-screensaver-preferences.ui.h:5
+msgid "Screensaver Preferences"
+msgstr "Voorkeuren schermbeveiliging"
+
+#: ../data/mate-screensaver-preferences.ui.h:6
+msgid "Screensaver Preview"
+msgstr "Voorbeeld schermbeveiliging"
+
+#: ../data/mate-screensaver-preferences.ui.h:7
+msgid "_Activate screensaver when computer is idle"
+msgstr "Schermbeveiliging inschakelen wanneer de computer inactief is"
+
+#: ../data/mate-screensaver-preferences.ui.h:8
+msgid "_Lock screen when screensaver is active"
+msgstr "_Scherm vergrendelen wanneer schermbeveiliging is geactiveerd"
+
+#: ../data/mate-screensaver-preferences.ui.h:9
+msgid "_Preview"
+msgstr "_Voorbeeld"
+
+#: ../data/mate-screensaver-preferences.ui.h:10
+msgid "_Screensaver theme:"
+msgstr "_Schermbeveiligingsthema:"
+
+#: ../data/mate-screensaver.directory.in.h:1
+#: ../data/mate-screensaver.schemas.in.h:11
+msgid "Screensaver themes"
+msgstr "Screensavers"
+
+# dit is niet de schermbeveiliging maar de screensavers zelf
+# dus niet vertalen
+#: ../data/mate-screensaver.directory.in.h:2
+msgid "Screensavers"
+msgstr "Screensavers"
+
+# aanzetten/instellen
+# (het is zo cryptisch dat het weer leuk wordt)
+#: ../data/mate-screensaver.schemas.in.h:1
+msgid "Activate when idle"
+msgstr "Activeren bij inactiviteit"
+
+#: ../data/mate-screensaver.schemas.in.h:2
+msgid "Allow embedding a keyboard into the window"
+msgstr "Toestaan een toetsenbord in het scherm te plaatsen"
+
+#: ../data/mate-screensaver.schemas.in.h:3
+msgid "Allow logout"
+msgstr "Afmelden toestaan"
+
+#: ../data/mate-screensaver.schemas.in.h:4
+msgid "Allow the session status message to be displayed"
+msgstr "Weergave van sessiestatusbericht toestaan"
+
+#: ../data/mate-screensaver.schemas.in.h:5
+msgid ""
+"Allow the session status message to be displayed when the screen is locked."
+msgstr ""
+"Weergave van het sessiestatusbericht toestaan als het scherm vergrendeld is."
+
+# gebruikers wisselen toestaan
+#: ../data/mate-screensaver.schemas.in.h:6
+msgid "Allow user switching"
+msgstr "Van gebruiker wisselen toestaan"
+
+#: ../data/mate-screensaver.schemas.in.h:7
+msgid "Embedded keyboard command"
+msgstr "Opdrachtregel voor het ingebouwde toetsenbord"
+
+#: ../data/mate-screensaver.schemas.in.h:8
+msgid "Lock on activation"
+msgstr "Vergrendelen bij activering"
+
+#: ../data/mate-screensaver.schemas.in.h:9
+msgid "Logout command"
+msgstr "Afmeldopdracht"
+
+# thema niet meevertalen
+#: ../data/mate-screensaver.schemas.in.h:10
+msgid "Screensaver theme selection mode"
+msgstr "Screensaver selectiemodus"
+
+#: ../data/mate-screensaver.schemas.in.h:12
+msgid "Set this to TRUE to activate the screensaver when the session is idle."
+msgstr ""
+"Zet dit op TRUE (waar) om de schermbeveiliging te activeren wanneer de "
+"sessie inactief is."
+
+#: ../data/mate-screensaver.schemas.in.h:13
+msgid ""
+"Set this to TRUE to allow embedding a keyboard into the window when trying "
+"to unlock. The \"keyboard_command\" key must be set with the appropriate "
+"command."
+msgstr ""
+"Schakel dit in (TRUE) om het toe te staan een toetsenbord in het venster te "
+"plaatsen bij ontgrendeling. De ‘keyboard_command’-sleutel moet ingesteld "
+"worden met de juiste opdrachtregel."
+
+#: ../data/mate-screensaver.schemas.in.h:14
+msgid "Set this to TRUE to lock the screen when the screensaver goes active."
+msgstr ""
+"Zet dit op TRUE (waar) om het scherm te vergrendelen wanneer de "
+"schermbeveiliging wordt geactiveerd."
+
+#: ../data/mate-screensaver.schemas.in.h:15
+msgid ""
+"Set this to TRUE to offer an option in the unlock dialog to switch to a "
+"different user account."
+msgstr ""
+"Zet dit op TRUE (waar) om in het ontgrendelings-dialoogvenster een optie te "
+"tonen om van gebruiker te wisselen."
+
+# na een bepaalde tijd zou dubbelzinnig zijn
+#: ../data/mate-screensaver.schemas.in.h:16
+msgid ""
+"Set this to TRUE to offer an option in unlock dialog to logging out after a "
+"delay. The Delay is specified in the \"logout_delay\" key."
+msgstr ""
+"Zet dit op TRUE (waar) om een optie te tonen in het ontgrendelings-"
+"dialoogvenster om na een bepaalde periode af te melden. De lengte van de "
+"periode kan worden ingesteld via de sleutel: \"logout_delay\"."
+
+#: ../data/mate-screensaver.schemas.in.h:17
+msgid ""
+"The command that will be run, if the \"embedded_keyboard_enabled\" key is "
+"set to TRUE, to embed a keyboard widget into the window. This command should "
+"implement an XEMBED plug interface and output a window XID on the standard "
+"output."
+msgstr ""
+"De opdrachtregel die uitgevoerd wordt als ‘embedded_keyboard_enabled’ is "
+"ingeschakeld om een toetsenbord in het venster te plaatsen. Dit programma "
+"moet een XEMBED-plug interface implementeren en een ‘window XID’ op "
+"‘standard output’ geven."
+
+#: ../data/mate-screensaver.schemas.in.h:18
+msgid ""
+"The command to invoke when the logout button is clicked. This command should "
+"simply log the user out without any interaction. This key has effect only if "
+"the \"logout_enable\" key is set to TRUE."
+msgstr ""
+"De opdracht die uitgevoerd wordt wanneer de afmeldknop wordt aangeklikt. "
+"Deze opdracht moet de gebruiker kunnen afmelden zonder verdere interactie. "
+"Deze sleutel heeft alleen effect wanneer de sleutel \"logout_enable\" "
+"ingesteld is op TRUE (waar)."
+
+#: ../data/mate-screensaver.schemas.in.h:19
+msgid ""
+"The number of minutes after screensaver activation before locking the screen."
+msgstr ""
+"Het aantal minuten tussen activeren van de schermbeveiliging en het "
+"vergrendelen van het beeldscherm."
+
+#: ../data/mate-screensaver.schemas.in.h:20
+msgid ""
+"The number of minutes after the screensaver activation before a logout "
+"option will appear in unlock dialog. This key has effect only if the "
+"\"logout_enable\" key is set to TRUE."
+msgstr ""
+"Het aantal minuten tussen activeren van de schermbeveiliging en het tonen "
+"van een afmeldoptie in het ontgrendelings-dialoogvenster. Deze sleutel heeft "
+"alleen effect wanneer de sleutel \"logout_enable\" ingesteld is op TRUE "
+"(waar)."
+
+#: ../data/mate-screensaver.schemas.in.h:21
+msgid ""
+"The number of minutes of inactivity before the session is considered idle."
+msgstr ""
+"Het aantal minuten inactiviteit voordat de sessie als inactief wordt "
+"beschouwd."
+
+# tussen wisselen van screensaver/voordat gewisseld wordt/nadat gewisseld wordt
+#: ../data/mate-screensaver.schemas.in.h:22
+msgid "The number of minutes to run before changing the screensaver theme."
+msgstr "Het aantal minuten voordat gewisseld wordt van screensaver."
+
+#: ../data/mate-screensaver.schemas.in.h:23
+msgid ""
+"The number of seconds of inactivity before signalling to power-management. "
+"This key is set and maintained by the session power-management agent."
+msgstr ""
+"Dit is het aantal seconden inactiviteit voordat het energiebeheer op de "
+"hoogte wordt gebracht. De sessie-agent voor energiebeheer houdt deze sleutel "
+"bij."
+
+#: ../data/mate-screensaver.schemas.in.h:24
+msgid ""
+"The selection mode used by screensaver. May be \"blank-only\" to enable the "
+"screensaver without using any theme on activation, \"single\" to enable "
+"screensaver using only one theme on activation (specified in \"themes\" "
+"key), and \"random\" to enable the screensaver using a random theme on "
+"activation."
+msgstr ""
+"De screensaver-modus. Als de schermbeveiliging wordt gactiveerd, wordt bij "
+"\"blank-only\" alleen een zwart scherm getoond. Bij \"single\" wordt slechts "
+"één screensaver gebruikt (aangegeven via de sleutel \"themes\"). Bij \"random"
+"\" wordt een willekeurige screensaver uit een lijst gebruikt."
+
+#: ../data/mate-screensaver.schemas.in.h:25
+msgid "Theme for lock dialog"
+msgstr "Thema voor het vergrendelingsvenster"
+
+#: ../data/mate-screensaver.schemas.in.h:26
+msgid "Theme to use for the lock dialog."
+msgstr "Het te gebruiken thema voor het vergrendelingsvenster"
+
+#: ../data/mate-screensaver.schemas.in.h:27
+msgid ""
+"This key specifies the list of themes to be used by the screensaver. It's "
+"ignored when \"mode\" key is \"blank-only\", should provide the theme name "
+"when \"mode\" is \"single\", and should provide a list of themes when \"mode"
+"\" is \"random\"."
+msgstr ""
+"Deze sleutel geeft de lijst met screensavers die door de schermbeveiliging "
+"kunnen worden gebruikt. Het wordt genegeerd wanneer de sleutel: \"mode\" op "
+"\"blank only\" staat. Het moet de naam van de screensaver geven wanneer "
+"\"mode\" \"single\" is, en moet een lijst met screensavers geven wanneer "
+"\"mode\" \"random\" is. "
+
+#: ../data/mate-screensaver.schemas.in.h:28
+msgid "Time before locking"
+msgstr "Tijd voor vergrendeling"
+
+#: ../data/mate-screensaver.schemas.in.h:29
+msgid "Time before logout option"
+msgstr "Tijd voor afmeldoptie"
+
+# Wat is dit? (Wouter Bolsterlee)
+#: ../data/mate-screensaver.schemas.in.h:30
+msgid "Time before power-management baseline"
+msgstr "Tijd voor energiebeheer-baseline"
+
+#: ../data/mate-screensaver.schemas.in.h:31
+msgid "Time before session is considered idle"
+msgstr "De tijd voordat de sessie als inactief wordt beschouwd."
+
+#: ../data/mate-screensaver.schemas.in.h:32
+msgid "Time before theme change"
+msgstr "Tijd voor screensaver-wisseling"
+
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<b>Leave a message for %R:</b>"
+msgstr "<b>Bericht voor %R achterlaten:</b>"
+
+#: ../data/lock-dialog-default.ui.h:4
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U op %h</span>"
+
+#: ../data/lock-dialog-default.ui.h:6
+#, no-c-format
+msgid "<span size=\"x-large\">%R</span>"
+msgstr "<span size=\"x-large\">%R</span>"
+
+#: ../data/lock-dialog-default.ui.h:7
+msgid "_Cancel"
+msgstr "_Annuleren"
+
+#: ../data/lock-dialog-default.ui.h:8
+msgid "_Leave Message"
+msgstr "_Bericht achterlaten"
+
+#: ../data/lock-dialog-default.ui.h:9
+msgid "_Log Out"
+msgstr "_Afmelden"
+
+#: ../data/lock-dialog-default.ui.h:10
+msgid "_Switch User"
+msgstr "_Gebruiker wisselen"
+
+#: ../data/lock-dialog-default.ui.h:11 ../src/gs-lock-plug.c:1372
+msgid "_Unlock"
+msgstr "_Deblokkeren"
+
+#. Translators: This is the name of a desktop background image that shows outer space images.
+#. You might want to translate it into the equivalent words of your language
+#: ../data/images/cosmos/cosmos.xml.in.in.h:3
+#: ../savers/cosmos-slideshow.desktop.in.in.h:1
+msgid "Cosmos"
+msgstr "Cosmos"
+
+#: ../savers/cosmos-slideshow.desktop.in.in.h:2
+msgid "Display a slideshow of pictures of the cosmos"
+msgstr "Dit toont een diashow met foto's van de ruimte."
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:1
+msgid "Bubbles the MATE foot logo around the screen"
+msgstr "Bubbelt het MATE voet-logo over het scherm"
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:2
+msgid "Floating Feet"
+msgstr "Drijvende voet"
+
+#: ../savers/personal-slideshow.desktop.in.in.h:1
+msgid "Display a slideshow from your Pictures folder"
+msgstr "Dit toont een diashow met afbeeldingen uit uw afbeeldingenmap."
+
+#: ../savers/personal-slideshow.desktop.in.in.h:2
+msgid "Pictures folder"
+msgstr "Afbeeldingenmap"
+
+#: ../savers/popsquares.desktop.in.in.h:1
+msgid "A pop-art-ish grid of pulsing colors."
+msgstr "Dit toont pop-art-achtige blokken in pulserende kleuren."
+
+#: ../savers/popsquares.desktop.in.in.h:2
+msgid "Pop art squares"
+msgstr "Pop-art blokken"
+
+#: ../savers/popsquares.c:49 ../savers/floaters.c:1204
+#, c-format
+msgid "%s. See --help for usage information.\n"
+msgstr "%s. Geef --help voor gebruiksinformatie.\n"
+
+#: ../savers/floaters.c:88
+msgid "Show paths that images follow"
+msgstr "Paden van afbeeldingen tonen"
+
+#: ../savers/floaters.c:91
+msgid "Occasionally rotate images as they move"
+msgstr "Afbeeldingen af en toe roteren tijdens het bewegen"
+
+#: ../savers/floaters.c:94
+msgid "Print out frame rate and other statistics"
+msgstr "Frame-rate en andere getallen tonen"
+
+#: ../savers/floaters.c:97
+msgid "The maximum number of images to keep on screen"
+msgstr "Maximum aantal afbeeldingen op het scherm"
+
+#: ../savers/floaters.c:97
+msgid "MAX_IMAGES"
+msgstr "MAX_IMAGES"
+
+#: ../savers/floaters.c:100
+msgid "The initial size and position of window"
+msgstr "Beginafmeting en -positie van het venster"
+
+#: ../savers/floaters.c:100
+msgid "WIDTHxHEIGHT+X+Y"
+msgstr "BREEDTExHOOGTE+X+Y"
+
+#: ../savers/floaters.c:103
+msgid "The source image to use"
+msgstr "Te gebruiken bronafbeelding"
+
+# image niet vertalen dus!
+#. translators: the word "image" here
+#. * represents a command line argument
+#.
+#: ../savers/floaters.c:1198
+msgid "image - floats images around the screen"
+msgstr "image - beweegt afbeeldingen over het scherm"
+
+#: ../savers/floaters.c:1213
+#, c-format
+msgid "You must specify one image.  See --help for usage information.\n"
+msgstr "U moet een afbeelding opgeven.  Geef --help voor gebruiksinformatie.\n"
+
+#: ../savers/slideshow.c:53
+msgid "Location to get images from"
+msgstr "Locatie waar de afbeeldingen vandaan worden gehaald"
+
+# LOCATIE
+#: ../savers/slideshow.c:53
+msgid "PATH"
+msgstr "PAD"
+
+#: ../savers/slideshow.c:55
+msgid "Color to use for images background"
+msgstr "Achtergrondkleur voor afbeeldingen"
+
+#: ../savers/slideshow.c:55
+msgid "\"#rrggbb\""
+msgstr "\"#rrggbb\""
+
+#: ../savers/slideshow.c:57
+msgid "Do not randomize pictures from location"
+msgstr "Afbeeldingen niet in willekeurige volgorde tonen"
+
+#: ../savers/slideshow.c:59
+msgid "Do not try to stretch images on screen"
+msgstr "Afbeeldingen niet uitvergroten op scherm"
+
+#: ../src/copy-theme-dialog.c:212
+msgid "Copying files"
+msgstr "Bestanden kopiëren"
+
+#: ../src/copy-theme-dialog.c:230
+msgid "From:"
+msgstr "Van:"
+
+#: ../src/copy-theme-dialog.c:234
+msgid "To:"
+msgstr "Naar:"
+
+#: ../src/copy-theme-dialog.c:254
+msgid "Copying themes"
+msgstr "Thema's kopiëren"
+
+#: ../src/copy-theme-dialog.c:298
+msgid "Invalid screensaver theme"
+msgstr "Ongeldige screensaver"
+
+# geen geldige schermbeveiliging/screensaver
+#: ../src/copy-theme-dialog.c:301
+#, c-format
+msgid "%s does not appear to be a valid screensaver theme."
+msgstr "‘%s’ lijkt niet op een geldig schermbeveiligingsthema."
+
+#: ../src/copy-theme-dialog.c:481
+#, c-format
+msgid "Copying file: %u of %u"
+msgstr "Bestand kopiëren: %u van %u"
+
+#: ../src/mate-screensaver-command.c:62
+msgid "Causes the screensaver to exit gracefully"
+msgstr "Zorgt dat de schermbeveiliging netjes afsluit"
+
+#: ../src/mate-screensaver-command.c:64
+msgid "Query the state of the screensaver"
+msgstr "De toestand van de schermbeveiliging opvragen"
+
+#: ../src/mate-screensaver-command.c:66
+msgid "Query the length of time the screensaver has been active"
+msgstr "Opvragen hoe lang de schermbeveiliging actief is geweest"
+
+#: ../src/mate-screensaver-command.c:68
+msgid "Tells the running screensaver process to lock the screen immediately"
+msgstr ""
+"Geeft de actieve schermbeveiliging opdracht om het scherm onmiddellijk te "
+"blokkeren"
+
+#: ../src/mate-screensaver-command.c:70
+msgid "If the screensaver is active then switch to another graphics demo"
+msgstr ""
+"Indien de schermbeveiliging actief is, wisselen naar een andere grafische "
+"demo"
+
+#: ../src/mate-screensaver-command.c:72
+msgid "Turn the screensaver on (blank the screen)"
+msgstr "De schermbeveiliging activeren (het scherm zwart maken)"
+
+#: ../src/mate-screensaver-command.c:74
+msgid "If the screensaver is active then deactivate it (un-blank the screen)"
+msgstr ""
+"Indien de schermbeveiliging actief is, deze deactiveren (het scherm "
+"zichtbaar maken)"
+
+#: ../src/mate-screensaver-command.c:76
+msgid "Poke the running screensaver to simulate user activity"
+msgstr "De actieve schermbeveiling laten denken dat er gebruikersactiviteit is"
+
+#: ../src/mate-screensaver-command.c:78
+msgid ""
+"Inhibit the screensaver from activating.  Command blocks while inhibit is "
+"active."
+msgstr ""
+"Verhinderen dat de schermbeveiliging ingeschakeld wordt. Deze opdracht "
+"blokkeert zo lang de verhindering actief is."
+
+#: ../src/mate-screensaver-command.c:80
+msgid "The calling application that is inhibiting the screensaver"
+msgstr ""
+"De aanroepende toepassing die de schermbeveiliging verhindert te starten"
+
+#: ../src/mate-screensaver-command.c:82
+msgid "The reason for inhibiting the screensaver"
+msgstr "De reden voor de verhindering van de schermbeveiling"
+
+#: ../src/mate-screensaver-command.c:84 ../src/mate-screensaver-dialog.c:59
+#: ../src/mate-screensaver.c:56
+msgid "Version of this application"
+msgstr "Versie van deze toepassing"
+
+#: ../src/mate-screensaver-command.c:311
+#, c-format
+msgid "The screensaver is %s\n"
+msgstr "De schermbeveiliging is %s\n"
+
+#: ../src/mate-screensaver-command.c:311
+msgid "active"
+msgstr "actief"
+
+#: ../src/mate-screensaver-command.c:311
+msgid "inactive"
+msgstr "inactief"
+
+#: ../src/mate-screensaver-command.c:325
+#, c-format
+msgid "The screensaver is not inhibited\n"
+msgstr "De schermbeveiliging wordt niet verhinderd\n"
+
+#: ../src/mate-screensaver-command.c:331
+#, c-format
+msgid "The screensaver is being inhibited by:\n"
+msgstr "De schermbeveiliging wordt verhinderd door:\n"
+
+#: ../src/mate-screensaver-command.c:362
+#, c-format
+msgid "The screensaver has been active for %d seconds.\n"
+msgstr "De schermbeveiliging is geactiveerd geweest gedurende %d seconden\n"
+
+#: ../src/mate-screensaver-command.c:366
+#, c-format
+msgid "The screensaver is not currently active.\n"
+msgstr "De schermbeveiliging is momenteel niet actief.\n"
+
+#: ../src/mate-screensaver-dialog.c:57
+msgid "Show debugging output"
+msgstr "Debug uitvoer tonen"
+
+#: ../src/mate-screensaver-dialog.c:61
+msgid "Show the logout button"
+msgstr "Een afmeldknop tonen"
+
+#: ../src/mate-screensaver-dialog.c:63
+msgid "Command to invoke from the logout button"
+msgstr "Opdracht die wordt uitgevoerd met de afmeldknop"
+
+#: ../src/mate-screensaver-dialog.c:65
+msgid "Show the switch user button"
+msgstr "Een knop tonen met 'wissel gebruiker'"
+
+#: ../src/mate-screensaver-dialog.c:67
+msgid "Message to show in the dialog"
+msgstr "Te tonen bericht in het dialoogvenster"
+
+#: ../src/mate-screensaver-dialog.c:67 ../src/mate-screensaver-dialog.c:69
+msgid "MESSAGE"
+msgstr "BERICHT"
+
+#: ../src/mate-screensaver-dialog.c:69
+msgid "Not used"
+msgstr "Niet gebruikt"
+
+#. login: is whacked always translate to Username:
+#: ../src/mate-screensaver-dialog.c:179 ../src/mate-screensaver-dialog.c:180
+#: ../src/mate-screensaver-dialog.c:181 ../src/gs-auth-pam.c:698
+msgid "Username:"
+msgstr "Gebruikersnaam:"
+
+#: ../src/mate-screensaver-dialog.c:182 ../src/mate-screensaver-dialog.c:183
+#: ../src/gs-auth-pam.c:166
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+#: ../src/mate-screensaver-dialog.c:184
+msgid "You are required to change your password immediately (password aged)"
+msgstr "U dient uw wachtwoord direct te veranderen (wachtwoord verlopen)"
+
+#: ../src/mate-screensaver-dialog.c:185
+msgid "You are required to change your password immediately (root enforced)"
+msgstr ""
+"U dient uw wachtwoord direct te veranderen (op last van de systeembeheerder)"
+
+#: ../src/mate-screensaver-dialog.c:186
+msgid "Your account has expired; please contact your system administrator"
+msgstr "Uw account is verlopen; neem contact op met de systeembeheerder"
+
+#: ../src/mate-screensaver-dialog.c:187
+msgid "No password supplied"
+msgstr "Geen wachtwoord opgegeven"
+
+#: ../src/mate-screensaver-dialog.c:188
+msgid "Password unchanged"
+msgstr "Wachtwoord ongewijzigd"
+
+#: ../src/mate-screensaver-dialog.c:189
+msgid "Can not get username"
+msgstr "Kon gebruikersnaam niet opvragen"
+
+# vrij vertaald (Wouter Bolsterlee)
+#: ../src/mate-screensaver-dialog.c:190
+msgid "Retype new UNIX password:"
+msgstr "Nieuw wachtwoord (opnieuw):"
+
+# vrij vertaald (Wouter Bolsterlee)
+#: ../src/mate-screensaver-dialog.c:191
+msgid "Enter new UNIX password:"
+msgstr "Nieuw wachtwoord:"
+
+# vrij vertaald (Wouter Bolsterlee)
+#: ../src/mate-screensaver-dialog.c:192
+msgid "(current) UNIX password:"
+msgstr "Huidig wachtwoord:"
+
+#: ../src/mate-screensaver-dialog.c:193
+msgid "Error while changing NIS password."
+msgstr "Fout bij veranderen NIS-wachtwoord."
+
+#: ../src/mate-screensaver-dialog.c:194
+msgid "You must choose a longer password"
+msgstr "U dient een langer wachtwoord te gebruiken"
+
+#: ../src/mate-screensaver-dialog.c:195
+msgid "Password has been already used. Choose another."
+msgstr "Dit wachtwoord is al eens gebruikt. Kies een nieuw wachtwoord."
+
+#: ../src/mate-screensaver-dialog.c:196
+msgid "You must wait longer to change your password"
+msgstr "U dient langer te wachten om uw wachtwoord te veranderen"
+
+#: ../src/mate-screensaver-dialog.c:197
+msgid "Sorry, passwords do not match"
+msgstr "Helaas, de wachtwoorden komen niet overeen"
+
+#: ../src/mate-screensaver-dialog.c:263
+msgid "Checking..."
+msgstr "Controle…"
+
+# vrij vertaald (Wouter Bolsterlee)
+#: ../src/mate-screensaver-dialog.c:305 ../src/gs-auth-pam.c:457
+msgid "Authentication failed."
+msgstr "Controle mislukt."
+
+#: ../src/mate-screensaver-preferences.c:524
+msgid "Blank screen"
+msgstr "Zwart scherm"
+
+#: ../src/mate-screensaver-preferences.c:530
+msgid "Random"
+msgstr "Willekeurig"
+
+#  1 uur, 2 uur
+#: ../src/mate-screensaver-preferences.c:980
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d uur"
+msgstr[1] "%d uur"
+
+#: ../src/mate-screensaver-preferences.c:983
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minuut"
+msgstr[1] "%d minuten"
+
+#: ../src/mate-screensaver-preferences.c:986
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d seconde"
+msgstr[1] "%d seconden"
+
+#. hour:minutes:seconds
+#: ../src/mate-screensaver-preferences.c:992
+#, c-format
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
+#. hour:minutes
+#. minutes:seconds
+#: ../src/mate-screensaver-preferences.c:995
+#: ../src/mate-screensaver-preferences.c:1003
+#, c-format
+msgid "%s %s"
+msgstr "%s %s"
+
+#. hour
+#. minutes
+#. seconds
+#: ../src/mate-screensaver-preferences.c:998
+#: ../src/mate-screensaver-preferences.c:1006
+#: ../src/mate-screensaver-preferences.c:1010
+#, c-format
+msgid "%s"
+msgstr "%s"
+
+#: ../src/mate-screensaver-preferences.c:1025
+#, c-format
+msgid "Never"
+msgstr "Nooit"
+
+#: ../src/mate-screensaver-preferences.c:1467
+msgid "Could not load the main interface"
+msgstr "Kon de hoofd-interface niet laden"
+
+#: ../src/mate-screensaver-preferences.c:1469
+msgid "Please make sure that the screensaver is properly installed"
+msgstr "Controleer of de schermbeveiliging correct is geïnstalleerd"
+
+# vrij vertaald
+#: ../src/mate-screensaver.c:57
+msgid "Don't become a daemon"
+msgstr "Niet als daemon uitvoeren"
+
+#: ../src/mate-screensaver.c:58
+msgid "Enable debugging code"
+msgstr "Debugging code gebruiken"
+
+#: ../src/mate-screensaver.desktop.in.in.h:1
+msgid "Launch screen saver and locker program"
+msgstr "Schermbeveiling en -vergrendeling opstarten"
+
+#: ../src/gs-auth-pam.c:397
+#, c-format
+msgid "Unable to establish service %s: %s\n"
+msgstr "Instellen van service ‘%s’ mislukt: %s\n"
+
+#: ../src/gs-auth-pam.c:423
+#, c-format
+msgid "Can't set PAM_TTY=%s"
+msgstr "Instellen ‘PAM_TTY=%s’ mislukt"
+
+#: ../src/gs-auth-pam.c:455
+msgid "Incorrect password."
+msgstr "Ongeldig wachtwoord."
+
+#: ../src/gs-auth-pam.c:471
+msgid "Not permitted to gain access at this time."
+msgstr "U heeft geen toegang op dit moment."
+
+#: ../src/gs-auth-pam.c:477
+msgid "No longer permitted to access the system."
+msgstr "U heeft niet langer toegang tot deze computer."
+
+#: ../src/gs-listener-dbus.c:1912
+msgid "failed to register with the message bus"
+msgstr "kon niet aanmelden bij de berichtenbus"
+
+#: ../src/gs-listener-dbus.c:1922
+msgid "not connected to the message bus"
+msgstr "kon verbonden met de berichtenbus"
+
+#: ../src/gs-listener-dbus.c:1931
+msgid "screensaver already running in this session"
+msgstr "schermbeveiliging al actief in deze sessie"
+
+#: ../src/gs-lock-plug.c:270
+msgid "Time has expired."
+msgstr "Tijd is verlopen."
+
+#: ../src/gs-lock-plug.c:298
+msgid "You have the Caps Lock key on."
+msgstr "De Caps Lock staat aan."
+
+#: ../src/gs-lock-plug.c:1352
+msgid "S_witch User..."
+msgstr "Gebruiker _wisselen…"
+
+#: ../src/gs-lock-plug.c:1361
+msgid "Log _Out"
+msgstr "_Afmelden"
+
+#. To translators: This expands to USERNAME on HOSTNAME
+#: ../src/gs-lock-plug.c:1537
+msgid "%U on %h"
+msgstr "%U op %h"
+
+#: ../src/gs-lock-plug.c:1551
+msgid "_Password:"
+msgstr "_Wachtwoord:"
+
+#~ msgid "Reason for being away"
+#~ msgstr "Reden voor afwezigheid"
+
+#~ msgid "The reason for being away from the computer."
+#~ msgstr "Reden voor de afwezigheid van de computer."
+
+#~ msgid "Copying '%s'"
+#~ msgstr "kopiëren '%s'"
+
+#~ msgid "From URI"
+#~ msgstr "Via URI"
+
+# binnengehaald/overgedragen
+#~ msgid "URI currently transferring from"
+#~ msgstr "URI waarvan wordt overgedragen"
+
+#~ msgid "To URI"
+#~ msgstr "Naar URI"
+
+# verstuurd/overgedragen
+#~ msgid "URI currently transferring to"
+#~ msgstr "URI waarnaar wordt overgedragen"
+
+#~ msgid "Fraction completed"
+#~ msgstr "Voltooide deel"
+
+#~ msgid "Fraction of transfer currently completed"
+#~ msgstr "Voltooide deel van de overdracht"
+
+#~ msgid "Current URI index"
+#~ msgstr "Huidige URI-index"
+
+#~ msgid "Current URI index - starts from 1"
+#~ msgstr "Huidige URI-index - begint bij 1"
+
+#~ msgid "Total URIs"
+#~ msgstr "Totaal URI's"
+
+#~ msgid "Total number of URIs"
+#~ msgstr "Totaal aantal URI's"
+
+#~ msgid "Connecting..."
+#~ msgstr "Verbinden..."
+
+# vrij vertaald (Wouter Bolsterlee)
+#~ msgid "Authentication"
+#~ msgstr "Authenticatie"
+
+#~ msgid "S_witch to user:"
+#~ msgstr "Wisselen naar _gebruiker:"
+
+# infinitief hier mooier
+#~ msgid "_Switch user..."
+#~ msgstr "_Gebruiker wisselen…"
+
+# N/X
+#~ msgid "N"
+#~ msgstr "N"
+
+#~ msgid "Manager"
+#~ msgstr "Beheerder"
+
+#~ msgid "The manager which owns this object."
+#~ msgstr "De beheerder van dit object."
+
+#~ msgid "Name"
+#~ msgstr "Naam"
+
+#~ msgid "The name of the X11 display this object refers to."
+#~ msgstr "De naam van het X11-display waarnaar dit object verwijst."
+
+#~ msgid "User"
+#~ msgstr "Gebruiker"
+
+#~ msgid "The user currently logged in on this virtual terminal."
+#~ msgstr "De gebruiker die momenteel op deze virtuele terminal is aangemeld."
+
+#~ msgid "Console"
+#~ msgstr "Console"
+
+#~ msgid ""
+#~ "The number of the virtual console this display can be found on, or %-1."
+#~ msgstr ""
+#~ "Het nummer van de virtuele console waaronder dit display kan worden "
+#~ "gevonden, of %-1."
+
+#~ msgid "Whether or not this display is a windowed (Xnest) display."
+#~ msgstr "Of deze display een display in een venster is (Xnest)."
+
+#~ msgid "The display manager could not be contacted for unknown reasons."
+#~ msgstr ""
+#~ "Om onbekende redenen kon er geen contact worden gemaakt met de display-"
+#~ "beheerder."
+
+#~ msgid "The display manager is not running or too old."
+#~ msgstr "De display-manager is niet actief of te oud."
+
+#~ msgid "The configured limit of flexible servers has been reached."
+#~ msgstr "De ingestelde limiet van het aantal flexibele servers is bereikt."
+
+#~ msgid "There was an unknown error starting X."
+#~ msgstr "Er was een onbekende fout bij het starten van X."
+
+#~ msgid "The X server failed to finish starting."
+#~ msgstr "De X-server kon niet volledig worden gestart."
+
+#~ msgid "There are too many X sessions running."
+#~ msgstr "Er zijn te veel actieve X-sessies."
+
+#~ msgid "The nested X server (Xnest) cannot connect to your current X server."
+#~ msgstr ""
+#~ "De ingebedde X-server (Xnest) kon geen verbinding maken met uw huidige X-"
+#~ "server."
+
+# kon niet worden/werd
+#~ msgid "The X server in the MDM configuration could not be found."
+#~ msgstr "De X-server in de MDM-configuratie werd niet gevonden."
+
+#~ msgid ""
+#~ "Trying to set an unknown logout action, or trying to set a logout action "
+#~ "which is not available."
+#~ msgstr ""
+#~ "Trachten een onbekende afmeldactie, of trachten een afmeldactie die niet "
+#~ "beschikbaar is, in te stellen."
+
+# zijn/worden niet ondersteunden
+#~ msgid "Virtual terminals not supported."
+#~ msgstr "Virtuele terminals niet ondersteund."
+
+#~ msgid "Invalid virtual terminal number."
+#~ msgstr "Ongeldig getal voor virtuele terminal."
+
+#~ msgid "Trying to update an unsupported configuration key."
+#~ msgstr "Trachten een niet-ondersteunde configuratiesleutel bij te werken."
+
+#~ msgid "~/.Xauthority file badly configured or missing."
+#~ msgstr "Bestand ~/.Xauthority foutief geconfigureerd of ontbrekend."
+
+#~ msgid "Too many messages were sent to the display manager, and it hung up."
+#~ msgstr ""
+#~ "Er werden te veel berichten naar de display-manager verstuurd welke "
+#~ "vervolgs heeft opgehanden."
+
+# gestuurd/verstuurd
+#~ msgid "The display manager sent an unknown error message."
+#~ msgstr "De display-manager heeft een onbekende foutmelding gestuurd."
+
+#~ msgid "The user this menu item represents."
+#~ msgstr "De gebruiker waar dit menu-onderdeel voor is."
+
+#~ msgid "Icon Size"
+#~ msgstr "Pictogramgrootte"
+
+#~ msgid "The size of the icon to use."
+#~ msgstr "De afmeting van het gebruikte pictogram."
+
+# Rare term, maar volgens mij is het een plaatje (Wouter Bolsterlee)
+#~ msgid "Indicator Size"
+#~ msgstr "Afbeeldingsgrootte"
+
+#~ msgid "Size of check indicator"
+#~ msgstr "Grootte van de afbeelding"
+
+#~ msgid "Indicator Spacing"
+#~ msgstr "Ruimte rondom afbeelding"
+
+#~ msgid "Space between the username and the indicator"
+#~ msgstr "De ruimte tussen de gebruikersnaam en de afbeelding"
+
+#~ msgid "The user manager object this user is controlled by."
+#~ msgstr ""
+#~ "Het gebruiksbeheerderobject door welke deze gebruiker wordt beheerd."
+
+#~ msgid "Show Details"
+#~ msgstr "Details tonen"
+
+#~ msgid "MDM (The MATE Display Manager) is not running."
+#~ msgstr "MDM (de display-manager van MATE) is niet actief."
+
+#~ msgid ""
+#~ "You might in fact be using a different display manager, such as KDM (KDE "
+#~ "Display Manager) or xdm."
+#~ msgstr ""
+#~ "Mogelijkerwijs gebruikt u een andere display-manager zoals KDM (de "
+#~ "display-manager van KDE) of xdm."
+
+#~ msgid ""
+#~ "If you still wish to use this feature, either start MDM yourself or ask "
+#~ "your system administrator to start MDM."
+#~ msgstr ""
+#~ "Indien u toch deze applet wilt gebruiken, moet u zelf MDM opstarten of uw "
+#~ "systeembeheerder vragen deze op te starten."
+
+#~ msgid "Cannot communicate with MDM (The MATE Display Manager)"
+#~ msgstr "Kan niet communiceren met MDM (de display-manager van MATE)"
+
+#~ msgid "Perhaps you have an old version of MDM running."
+#~ msgstr "Misschien is er momenteel een oude versie van MDM actief."
+
+#~ msgid ""
+#~ "Cannot communicate with mdm, perhaps you have an old version running."
+#~ msgstr ""
+#~ "Kan niet communiceren met mdm, misschien is er een oude versie actief."
+
+#~ msgid "The allowed limit of flexible X servers reached."
+#~ msgstr "Het maximum toegestane aantal flexibele X-servers is bereikt."
+
+#~ msgid "There were errors trying to start the X server."
+#~ msgstr "Er waren fouten bij het opstarten van de X-server."
+
+#~ msgid "The X server failed.  Perhaps it is not configured well."
+#~ msgstr "De X-server is mislukt.  Mogelijk is deze niet goed geconfigureerd."
+
+#~ msgid "Too many X sessions running."
+#~ msgstr "Te veel X-sessies actief."
+
+#~ msgid ""
+#~ "The nested X server (Xnest) cannot connect to your current X server.  You "
+#~ "may be missing an X authorization file."
+#~ msgstr ""
+#~ "De ingebedde X-server (Xnest) kan geen verbinding maken met uw huidige X-"
+#~ "server.  Mogelijk bezit u geen X-authorisatie-bestand."
+
+#~ msgid ""
+#~ "The nested X server (Xnest) is not available, or mdm is badly "
+#~ "configured.\n"
+#~ "Please install the Xnest package in order to use the nested login."
+#~ msgstr ""
+#~ "De ingebedde X-server (Xnest) is niet beschikbaar, of mdm is foutief "
+#~ "geconfigureerd.\n"
+#~ "Installeer het pakket Xnest om ingebed aan te kunnen melden."
+
+#~ msgid ""
+#~ "The X server is not available, it is likely that mdm is badly configured."
+#~ msgstr ""
+#~ "De X-server is niet beschikbaar, waarschijnlijk is mdm foutief "
+#~ "geconfigureerd."
+
+#~ msgid "Trying to change to an invalid virtual terminal number."
+#~ msgstr ""
+#~ "Trachten te schakelen naar een ongeldig nummer voor een virtuele terminal."
+
+#~ msgid ""
+#~ "You do not seem to have authentication needed be for this operation.  "
+#~ "Perhaps your .Xauthority file is not set up correctly."
+#~ msgstr ""
+#~ "Er is schijnbaar geen aanmeldcontrole nodig voor deze bewerking.  "
+#~ "Mogelijkerwijs is uw .Xauthority-bestand foutief ingesteld."
+
+#~ msgid "Too many messages were sent to mdm and it hung upon us."
+#~ msgstr ""
+#~ "Er zijn te veel berichten gestuurd naar mdm welke vervolgens heeft "
+#~ "opgehangen."
+
+#~ msgid "Unknown error occurred."
+#~ msgstr "Er is een onbekende fout opgetreden."
+
+#~ msgid "Time before activation"
+#~ msgstr "Tijd voor activering"
+
+#~ msgid "_Screensaver"
+#~ msgstr "_Schermbeveiliging"
+
+#~ msgid "Disable running graphical themes while blanked"
+#~ msgstr "Geen grafische screensavers gebruiken wanneer het scherm zwart is"
+
+#~ msgid "Enable running graphical themes while blanked (if applicable)"
+#~ msgstr ""
+#~ "Grafische screensavers gebruiken wanneer het scherm zwart is (indien "
+#~ "toepasbaar)"
+
+#~ msgid "0 seconds"
+#~ msgstr "0 seconden"
+
+#~ msgid "That password was incorrect."
+#~ msgstr "Dat wachtwoord was onjuist."
+
+#~ msgid "Allow monitor power management"
+#~ msgstr "Beeldscherm-energiebeheer toestaan"
+
+#~ msgid "Set this to TRUE to allow the screensaver to power down the monitor."
+#~ msgstr ""
+#~ "Zet dit op TRUE (waar) om de schermbeveiliging het beeldscherm te kunnen "
+#~ "laten uitzetten."
+
+#~ msgid ""
+#~ "The number of minutes after the screensaver activation until the monitor "
+#~ "goes into standby power mode."
+#~ msgstr ""
+#~ "Het aantal minuten tussen activeren van de schermbeveiliging en het op "
+#~ "standby zetten van het beeldscherm."
+
+#~ msgid ""
+#~ "The number of minutes after the screensaver activation until the monitor "
+#~ "goes into suspend power mode."
+#~ msgstr ""
+#~ "Het aantal minuten tussen activeren van de schermbeveiliging en het in de "
+#~ "slaapstand zetten van het beeldscherm."
+
+#~ msgid ""
+#~ "The number of minutes after the screensaver activation until the monitor "
+#~ "powers off."
+#~ msgstr ""
+#~ "Het aantal minuten tussen activeren van de schermbeveiliging en het "
+#~ "uitzetten van het beeldscherm."
+
+#~ msgid "Time before power off"
+#~ msgstr "Tijd voor uitzetten"
+
+#~ msgid "Time before standby"
+#~ msgstr "Tijd voor standby"
+
+#~ msgid "Time before suspend"
+#~ msgstr "Tijd voor slaapstand"
+
+#~ msgid "    "
+#~ msgstr "    "
+
+#~ msgid "_Activate after:"
+#~ msgstr "_Activeren na:"
+
+#~ msgid ""
+#~ "The number of minutes of idle time before activating the screensaver."
+#~ msgstr ""
+#~ "Het aantal minuten inactiviteit voordat van de schermbeveiliging wordt "
+#~ "ingeschakeld."
+
+# geen schermbeveiliging/uitgezet
+#~ msgid "Disabled"
+#~ msgstr "Uitgezet"
+
+#~ msgid "Log in as a new user"
+#~ msgstr "Aanmelden als nieuwe gebruiker"
+
+#~ msgid "Welcome to %s"
+#~ msgstr "Welkom op %s"
+
+# het beeld/scherm zwart wordt/de monitor op zwart gaat<
+#
+#~ msgid "How many minutes until the monitor goes black"
+#~ msgstr "Na hoeveel minuten het scherm zwart wordt"
+
+#~ msgid "How many minutes until the monitor goes black."
+#~ msgstr "Na hoeveel minuten het scherm zwart wordt."
+
+# energie-zuinig/bespaar/spaarstand
+# het beeldscherm in de energiespaarstand gaat/komt
+#~ msgid "How many minutes until the monitor power-saves"
+#~ msgstr "Na hoeveel minuten de monitor op power-save gaat"
+
+#~ msgid "How many minutes until the monitor power-saves."
+#~ msgstr "Na hoeveel minuten de monitor op power-save gaat."
+
+#~ msgid "How many minutes until the monitor powers down"
+#~ msgstr "Na hoeveel minuten de monitor uitgezet wordt"
+
+#~ msgid "How many minutes until the monitor powers down."
+#~ msgstr "Na hoeveel minuten de monitor uitgezet wordt."
+
+#~ msgid ""
+#~ "The number of minutes after blanking the screen before a logout option "
+#~ "will appear"
+#~ msgstr ""
+#~ "Het aantal minuten nadat het scherm zwart is geworden dat een afmeldoptie "
+#~ "verschijnt"
+
+#~ msgid "The number of minutes after blanking the screen before locking"
+#~ msgstr ""
+#~ "Het aantal minuten nadat het scherm zwart is geworden dat het scherm "
+#~ "wordt geblokkeerd"
+
+#~ msgid "The number of minutes after blanking the screen before locking."
+#~ msgstr ""
+#~ "Het aantal minuten nadat het scherm zwart is geworden dat het scherm "
+#~ "wordt geblokkeerd."
+
+#~ msgid ""
+#~ "This key specifies the selection mode used by the screensaver. Possible "
+#~ "values are \"disabled\", \"blank-only\", \"single\", and \"random\"."
+#~ msgstr ""
+#~ "Deze sleutel geeft de selectiemodus van de schermbeveiliging. Mogelijk "
+#~ "waarden zijn \"disabled\", \"blank-only\", \"single\", en \"random\"."
+
+#~ msgid "Whether to lock as well as blank"
+#~ msgstr "Of zowel geblokkeerd als zwartgemaakt wordt"
+
+#~ msgid "Whether to lock as well as blank."
+#~ msgstr "Of zowel geblokkeerd als zwartgemaakt wordt."
+
+#~ msgid "Whether to offer the option of logging out after logout_delay"
+#~ msgstr "Of een afmeldoptie geboden wordt na logout_delay"
+
+#~ msgid "Whether to offer the option of logging out after logout_delay."
+#~ msgstr "Of een afmeldoptie geboden wordt na logout_delay."
+
+#~ msgid "Whether to power down the monitor"
+#~ msgstr "Of het beeldscherm wordt uitgezet"
+
+#~ msgid "About %ld second left"
+#~ msgid_plural "About %ld seconds left"
+#~ msgstr[0] "Ongeveer %ld seconde over"
+#~ msgstr[1] "Ongeveer %ld seconden over<"
+
+#~ msgid "Enter a password to unlock the screen"
+#~ msgstr "Geef het wachtwoord om het scherm te deblokkeren"
+
+#~ msgid "Name:"
+#~ msgstr "Naam:"
+
+#~ msgid "Switch to another user?"
+#~ msgstr "Wisselen naar andere gebruiker?"
+
+#~ msgid "A menu to quickly switch between users"
+#~ msgstr "Een menu om snel te wisselen tussen gebruikers"
+
+#~ msgid "User Switcher Applet Factory"
+#~ msgstr "Gebruikers wisselen applet-fabriek"
+
+#~ msgid "_About"
+#~ msgstr "I_nfo"
+
+#~ msgid "_Change Photo..."
+#~ msgstr "_Foto wijzigen..."
+
+#~ msgid "_Edit Users and Groups..."
+#~ msgstr "Gebruikers en groepen be_werken..."
+
+#~ msgid "_Help"
+#~ msgstr "_Hulp"
+
+#~ msgid "_Login Screen Setup..."
+#~ msgstr "Aanmeldscherm setup..."
+
+#~ msgid "_Preferences"
+#~ msgstr "_Voorkeuren"
+
+#~ msgid "Display Style"
+#~ msgstr "Weergavestijl"
+
+#~ msgid "Lock Screen After Switch"
+#~ msgstr "Scherm beveiligen na wisseling"
+
+# item/onderdeel
+#~ msgid "Show \"Login Screen\" Menuitem"
+#~ msgstr "Menu-onderdeel \"Aanmeldscherm\" tonen"
+
+#~ msgid "Show \"Login Window\" Menuitem"
+#~ msgstr "Menu-onderdeel \"Aanmeldvenster\" tonen"
+
+# actieve/aangemeldde/?
+#~ msgid "Show Active Users Only"
+#~ msgstr "Alleen actieve gebruikers tonen"
+
+#~ msgid ""
+#~ "Specifies how to display the applet in the panel. Use \"username\" to "
+#~ "display the current user's name, \"icon\" to show the people icon, or "
+#~ "\"text\" to use the word `Users.'"
+#~ msgstr ""
+#~ "Geeft aan hoe het applet in het paneel wordt weergegeven. Gebruik "
+#~ "\"username\" om de huidige gebruikersnaam te tonen, \"icon\" om het "
+#~ "pictogram te tonen, of \"text\" om woord 'Gebruikers' te tonen."
+
+#~ msgid "Use Xnest"
+#~ msgstr "Xnest gebruiken"
+
+#~ msgid ""
+#~ "When to show the \"Login Window\" item. Possible values include: \"always"
+#~ "\" to always show the item, \"never\" to never show the item, and \"auto"
+#~ "\" (the default) to show the item when the applet is in Xnest mode."
+#~ msgstr ""
+#~ "Wanneer het \"Aanmeldvenster\" wordt getoond. Mogelijke waardes zijn: "
+#~ "\"always\" om het altijd te tonen, \"never\" om het nooit te tonen, en "
+#~ "\"auto\" (de standaard) om het item te tonen wanneer het applet in Xnest-"
+#~ "modus is."
+
+#~ msgid ""
+#~ "When to show the \"Login Window\" item. Possible values include: \"always"
+#~ "\" to always show the item, \"never\" to never show the item, and \"auto"
+#~ "\" (the default) to show the item when the applet is in console (not "
+#~ "Xnest) mode."
+#~ msgstr ""
+#~ "Wanneer het \"Aanmeldvenster\" wordt getoond. Mogelijke waardes zijn: "
+#~ "\"always\" om het altijd te tonen, \"never\" om het nooit te tonen, en "
+#~ "\"auto\" (de standaard) om het item te tonen wanneer het applet in "
+#~ "console-modus (niet Xnest-modus) is."
+
+#~ msgid ""
+#~ "Whether or not to create new Xnest windows instead of spawning new "
+#~ "consoles when switching users."
+#~ msgstr ""
+#~ "Of nieuwe Xnest-vensters worden aangemaakt in plaats van het ceeeren van "
+#~ "nieuwe consoles bij het wisselen van gebruiker."
+
+#~ msgid ""
+#~ "Whether or not to lock the screen after switching to a different console."
+#~ msgstr ""
+#~ "Of het scherm wordt beveiligd bij het wisselen naar een andere console."
+
+# aangemeld/ingelogd
+#~ msgid ""
+#~ "Whether to show only users who are currently logged in, or all users."
+#~ msgstr ""
+#~ "Of alleen gebruikers worden getoond die momenteel zijn aangemeld, of alle "
+#~ "gebruikers."
+
+#~ msgid "<span weight=\"bold\" size=\"larger\">Multiple Logins Found</span>"
+#~ msgstr ""
+#~ "<span weight=\"bold\" size=\"larger\">Meerder aanmeldingen gevonden</span>"
+
+#~ msgid "Appearance"
+#~ msgstr "Uiterlijk"
+
+#~ msgid "Continue"
+#~ msgstr "Doorgaan"
+
+#~ msgid "Create new logins in _nested windows"
+#~ msgstr "_Nieuwe aanmeldingen aanmaken in ingebedde vensters"
+
+#~ msgid "Details"
+#~ msgstr "Details"
+
+#~ msgid "Multiple Logins Found - User Switcher"
+#~ msgstr "Meerdere aanmeldingen gevonden - Gebruikers wisselen"
+
+#~ msgid "Options"
+#~ msgstr "Opties"
+
+#~ msgid "Some preferences have been locked by the system adminstrator."
+#~ msgstr "Bepaalde voorkeuren zijn vergrendeld door de systeembeheerder."
+
+#~ msgid ""
+#~ "The user you want to switch to is logged in multiple times on this "
+#~ "computer. Which login do you want to switch to?"
+#~ msgstr ""
+#~ "De gebruikers waarnaar u wilt wisselen is meerdere malen op deze computer "
+#~ "aangemeld. Naar welke aanmelding wilt u wisselen?"
+
+#~ msgid "Use the `people' icon for the menu title"
+#~ msgstr "Gebruik het pictogram voor de menutitel"
+
+#~ msgid "Use the current user's name for the menu title"
+#~ msgstr "Gebruik de huidige gebruikersnaam voor de menutitel"
+
+#~ msgid "Use the word `Users' as the menu title"
+#~ msgstr "Gebruik het woord 'Gebruikers' als menutitel"
+
+#~ msgid "User Switcher Error"
+#~ msgstr "Gebruikers wisselen fout"
+
+#~ msgid "Users"
+#~ msgstr "Gebruikers"
+
+#~ msgid ""
+#~ "When a new login must be created to switch users, create it in a window "
+#~ "instead of on a new screen"
+#~ msgstr ""
+#~ "Wanneer een nieuwe aanmelding moet worden aangemaakt om te wisselen van "
+#~ "gebruiker, maak deze dan in een venster in plaats van in een nieuw scherm"
+
+#~ msgid ""
+#~ "When changing to a different display, activate the screensaver for this "
+#~ "display."
+#~ msgstr ""
+#~ "De schermbeveiliging aanzetten bij het wisselen naar een ander display."
+
+#~ msgid "_Lock the screen after switching users"
+#~ msgstr "Het scherm _beveiligen bij het wisselen van gebruikers"
+
+#~ msgid "Login Screen"
+#~ msgstr "Aanmeldscherm"
+
+#~ msgid "Login Window"
+#~ msgstr "Aanmeldvenster"
+
+#~ msgid "A menu to quickly switch between users."
+#~ msgstr "Een menu om snel te wisselen tussen gebruikers."
+
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Tino Meinen\n"
+#~ "zie ook: nl.gnome.org"
+
+#~ msgid "Multiple Logins Found - Fast User-Switch"
+#~ msgstr "Meerdere aanmeldingen gevonden - Snel gebruikers wisselen"
+
+#~ msgid "Multiple Logins Found"
+#~ msgstr "Meerdere aanmeldingen gevonden"
+
+#~ msgid "%s in a nested window on console %d"
+#~ msgstr "%s in een ingebed venster op console %d"
+
+#~ msgid "%s on console %d"
+#~ msgstr "%s op console %d"
+
+#~ msgid "Display Manager Unavailable"
+#~ msgstr "Display-beheer niet beschikbaar"
+
+#~ msgid ""
+#~ "In order for the User Selector to function properly, the MATE Display "
+#~ "Manager must be running, but it is not."
+#~ msgstr ""
+#~ "Om de gebruikers-kiezer correct te kunnen laten werken, moet de MATE "
+#~ "Display Manager in werking zijn, maar dat is niet het geval."
+
+#~ msgid "Multiple Consoles Not Supported"
+#~ msgstr "Meerdere consoles niet ondersteund"
+
+#~ msgid "Too Many Sessions"
+#~ msgstr "Te veel sessies"
+
+#~ msgid ""
+#~ "There are currently too many sessions running to create a new one. "
+#~ "Someone must log out, or the system configuration must be changed to "
+#~ "allow for more."
+#~ msgstr ""
+#~ "Er zijn momenteel te veel sessies actief om een nieuwe te kunnen "
+#~ "aanmaken. Iemand moet zich afmelden, of de systeemconfiguratie moet "
+#~ "worden gewijzigd om meer sessies toe te laten."
+
+#~ msgid "Graphical System Error"
+#~ msgstr "Grafische systeemfout"
+
+#~ msgid ""
+#~ "The X Windows graphical system did not properly start, which prevents new "
+#~ "graphical logins. It is likely that X or MDM is not properly configured."
+#~ msgstr ""
+#~ "Het X Windows grafische systeem kon niet goed opstarten waardoor nieuwe "
+#~ "grafische aanmeldingen mislukken. Mogelijkerwijs is X of MDM niet correct "
+#~ "geconfigureerd."
+
+#~ msgid "Permissions Error"
+#~ msgstr "Toegangsrechten-fout"
+
+#~ msgid ""
+#~ "Your user does not have permissions to create additional logins.  Check "
+#~ "your <i>~/.Xauthority</i> setup."
+#~ msgstr ""
+#~ "Uw gebruiker heeft geen rechten om extra aanmeldingen te kunnen "
+#~ "aanmaken.  Controleer de instellingen in uw bestand <i>~/.Xauthority</i>."
+
+#~ msgid "Missing Required File"
+#~ msgstr "Vereist bestand ontbreekt"
+
+#~ msgid ""
+#~ "The User Selector's interfaces file, `%s', could not be opened. It is "
+#~ "likely that this application was not properly installed or configured."
+#~ msgstr ""
+#~ "Het interface-bestand %s voor de gebruikers-kiezer, kon niet worden "
+#~ "geopend. Waarschijnlijk is deze toepassing niet correct geïnstalleerd of "
+#~ "geconfigureerd."

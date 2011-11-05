@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.mate.ScreenSaver
+Exec=@EXPANDED_BINDIR@/mate-screensaver --no-daemon

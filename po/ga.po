@@ -1,0 +1,721 @@
+# Irish translations for mate-screensaver package.
+# Copyright (C) 2007-2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the mate-screensaver package.
+# Seán de Búrca <leftmostcat@gmail.com>, 2007, 2008, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mate-screensaver.master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-15 05:01-0600\n"
+"PO-Revision-Date: 2009-08-15 05:16-0600\n"
+"Last-Translator: Seán de Búrca <leftmostcat@gmail.com>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : (n%10==1 || n%10==2) ? 1 : (n%"
+"10>=3 && n%10<= 6) ? 2 : ((n%10>=7 && n%10<=9) || n==10) ? 3 : 4;\n"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:1
+#: ../src/mate-screensaver.desktop.in.in.h:1
+msgid "Screensaver"
+msgstr "Spárálaí Scáileáin"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:2
+msgid "Set your screensaver preferences"
+msgstr "Socraigh do chuid sainroghanna spárálaí scáileáin"
+
+#: ../data/mate-screensaver-preferences.ui.h:1
+msgid "<b>Screensaver preview</b>"
+msgstr "<b>Réamhamharc spárálaí scáileáin</b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:2
+msgid "<b>Warning: the screen will not be locked for the root user.</b>"
+msgstr "<b>Rabhadh: ní bheidh an scáileán faoi ghlas don fhréamhúsáideoir.</b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:3
+msgid "Power _Management"
+msgstr "_Bainistíocht Cumhachta"
+
+#: ../data/mate-screensaver-preferences.ui.h:4
+msgid "Regard the computer as _idle after:"
+msgstr "_Meas an ríomhaire ina staid dhíomhaoin i ndiaidh:"
+
+#: ../data/mate-screensaver-preferences.ui.h:5
+msgid "Screensaver Preferences"
+msgstr "Sainroghanna Spárálaí Scáileáin"
+
+#: ../data/mate-screensaver-preferences.ui.h:6
+msgid "Screensaver Preview"
+msgstr "Réamhamharc Spárálaí Scáileáin"
+
+#: ../data/mate-screensaver-preferences.ui.h:7
+msgid "_Activate screensaver when computer is idle"
+msgstr "_Gníomhachtaigh an spárálaí scáileáin agus an ríomhaire díomhaoin"
+
+#: ../data/mate-screensaver-preferences.ui.h:8
+msgid "_Lock screen when screensaver is active"
+msgstr "_Cuir an scáileán faoi ghlas agus an spárálaí scáileáin gníomhach"
+
+#: ../data/mate-screensaver-preferences.ui.h:9
+msgid "_Preview"
+msgstr "_Réamhamharc"
+
+#: ../data/mate-screensaver-preferences.ui.h:10
+msgid "_Screensaver theme:"
+msgstr "_Téama spárálaí scáileáin:"
+
+#: ../data/mate-screensaver.directory.in.h:1
+#: ../data/mate-screensaver.schemas.in.h:11
+msgid "Screensaver themes"
+msgstr "Téamaí spárálaí scáileáin"
+
+#: ../data/mate-screensaver.directory.in.h:2
+msgid "Screensavers"
+msgstr "Spárálaithe Scáileáin"
+
+#: ../data/mate-screensaver.schemas.in.h:1
+msgid "Activate when idle"
+msgstr "Gníomhachtaigh agus díomhaoin"
+
+#: ../data/mate-screensaver.schemas.in.h:2
+msgid "Allow embedding a keyboard into the window"
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:3
+msgid "Allow logout"
+msgstr "Ceadaigh logáil amach"
+
+#: ../data/mate-screensaver.schemas.in.h:4
+msgid "Allow the session status message to be displayed"
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:5
+msgid ""
+"Allow the session status message to be displayed when the screen is locked."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:6
+msgid "Allow user switching"
+msgstr "Ceadaigh athrú úsáideoirí"
+
+#: ../data/mate-screensaver.schemas.in.h:7
+msgid "Embedded keyboard command"
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:8
+msgid "Lock on activation"
+msgstr "Cuir faoi ghlas ag gníomhachtú"
+
+#: ../data/mate-screensaver.schemas.in.h:9
+msgid "Logout command"
+msgstr "Ordú logála amach"
+
+#: ../data/mate-screensaver.schemas.in.h:10
+msgid "Screensaver theme selection mode"
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:12
+msgid "Set this to TRUE to activate the screensaver when the session is idle."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:13
+msgid ""
+"Set this to TRUE to allow embedding a keyboard into the window when trying "
+"to unlock. The \"keyboard_command\" key must be set with the appropriate "
+"command."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:14
+msgid "Set this to TRUE to lock the screen when the screensaver goes active."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:15
+msgid ""
+"Set this to TRUE to offer an option in the unlock dialog to switch to a "
+"different user account."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:16
+msgid ""
+"Set this to TRUE to offer an option in unlock dialog to logging out after a "
+"delay. The Delay is specified in the \"logout_delay\" key."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:17
+msgid ""
+"The command that will be run, if the \"embedded_keyboard_enabled\" key is "
+"set to TRUE, to embed a keyboard widget into the window. This command should "
+"implement an XEMBED plug interface and output a window XID on the standard "
+"output."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:18
+msgid ""
+"The command to invoke when the logout button is clicked. This command should "
+"simply log the user out without any interaction. This key has effect only if "
+"the \"logout_enable\" key is set to TRUE."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:19
+msgid ""
+"The number of minutes after screensaver activation before locking the screen."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:20
+msgid ""
+"The number of minutes after the screensaver activation before a logout "
+"option will appear in unlock dialog. This key has effect only if the "
+"\"logout_enable\" key is set to TRUE."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:21
+msgid ""
+"The number of minutes of inactivity before the session is considered idle."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:22
+msgid "The number of minutes to run before changing the screensaver theme."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:23
+msgid ""
+"The number of seconds of inactivity before signalling to power-management. "
+"This key is set and maintained by the session power-management agent."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:24
+msgid ""
+"The selection mode used by screensaver. May be \"blank-only\" to enable the "
+"screensaver without using any theme on activation, \"single\" to enable "
+"screensaver using only one theme on activation (specified in \"themes\" "
+"key), and \"random\" to enable the screensaver using a random theme on "
+"activation."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:25
+msgid "Theme for lock dialog"
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:26
+msgid "Theme to use for the lock dialog."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:27
+msgid ""
+"This key specifies the list of themes to be used by the screensaver. It's "
+"ignored when \"mode\" key is \"blank-only\", should provide the theme name "
+"when \"mode\" is \"single\", and should provide a list of themes when \"mode"
+"\" is \"random\"."
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:28
+msgid "Time before locking"
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:29
+msgid "Time before logout option"
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:30
+msgid "Time before power-management baseline"
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:31
+msgid "Time before session is considered idle"
+msgstr ""
+
+#: ../data/mate-screensaver.schemas.in.h:32
+msgid "Time before theme change"
+msgstr ""
+
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<b>Leave a message for %R:</b>"
+msgstr "<b>Fág teachtaireacht do %R:</b>"
+
+#: ../data/lock-dialog-default.ui.h:4
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U ar %h</span>"
+
+#: ../data/lock-dialog-default.ui.h:6
+#, no-c-format
+msgid "<span size=\"x-large\">%R</span>"
+msgstr "<span size=\"x-large\">%R</span>"
+
+#: ../data/lock-dialog-default.ui.h:7
+msgid "_Cancel"
+msgstr "_Cealaigh"
+
+#: ../data/lock-dialog-default.ui.h:8
+msgid "_Leave Message"
+msgstr "_Fág Teachtaireacht"
+
+#: ../data/lock-dialog-default.ui.h:9
+msgid "_Log Out"
+msgstr "_Logáil Amach"
+
+#: ../data/lock-dialog-default.ui.h:10
+msgid "_Switch User"
+msgstr "_Athraigh Úsáideoir"
+
+#: ../data/lock-dialog-default.ui.h:11 ../src/gs-lock-plug.c:1367
+msgid "_Unlock"
+msgstr "_Díghlasáil"
+
+#: ../savers/cosmos-slideshow.desktop.in.in.h:1
+msgid "Cosmos"
+msgstr "Cosmas"
+
+#: ../savers/cosmos-slideshow.desktop.in.in.h:2
+msgid "Display a slideshow of pictures of the cosmos"
+msgstr ""
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:1
+msgid "Bubbles the MATE foot logo around the screen"
+msgstr ""
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:2
+msgid "Floating Feet"
+msgstr "Cosa ar Snámh"
+
+#: ../savers/personal-slideshow.desktop.in.in.h:1
+msgid "Display a slideshow from your Pictures folder"
+msgstr ""
+
+#: ../savers/personal-slideshow.desktop.in.in.h:2
+msgid "Pictures folder"
+msgstr "Fillteán pictiúr"
+
+#: ../savers/popsquares.desktop.in.in.h:1
+msgid "A pop-art-ish grid of pulsing colors."
+msgstr ""
+
+#: ../savers/popsquares.desktop.in.in.h:2
+msgid "Pop art squares"
+msgstr "Cearnóga pop-ealaíne"
+
+#: ../savers/floaters.c:84
+msgid "Show paths that images follow"
+msgstr ""
+
+#: ../savers/floaters.c:87
+msgid "Occasionally rotate images as they move"
+msgstr ""
+
+#: ../savers/floaters.c:90
+msgid "Print out frame rate and other statistics"
+msgstr ""
+
+#: ../savers/floaters.c:93
+msgid "The maximum number of images to keep on screen"
+msgstr ""
+
+#: ../savers/floaters.c:93
+msgid "MAX_IMAGES"
+msgstr "ÍOMHÁNNA_UASTA"
+
+#: ../savers/floaters.c:96
+msgid "The initial size and position of window"
+msgstr "Méid agus ionad tosaithe na fuinneoige"
+
+#: ../savers/floaters.c:96
+msgid "WIDTHxHEIGHT+X+Y"
+msgstr "LEITHEADxAIRDE+X+Y"
+
+#: ../savers/floaters.c:99
+msgid "The source image to use"
+msgstr "Íomhá fhoinseach le húsáid"
+
+#. translators: the word "image" here
+#. * represents a command line argument
+#.
+#: ../savers/floaters.c:1194
+msgid "image - floats images around the screen"
+msgstr ""
+
+#: ../savers/floaters.c:1200
+#, c-format
+msgid "%s. See --help for usage information.\n"
+msgstr "%s. Féach --help le haghaidh eolas úsáide.\n"
+
+#: ../savers/floaters.c:1209
+#, c-format
+msgid "You must specify one image.  See --help for usage information.\n"
+msgstr ""
+
+#: ../savers/slideshow.c:53
+msgid "Location to get images from"
+msgstr "Suíomh óna fhaightear íomhánna"
+
+#: ../savers/slideshow.c:53
+msgid "PATH"
+msgstr "CONAIR"
+
+#: ../savers/slideshow.c:55
+msgid "Color to use for images background"
+msgstr ""
+
+#: ../savers/slideshow.c:55
+msgid "\"#rrggbb\""
+msgstr "\"#rrggbb\""
+
+#: ../savers/slideshow.c:57
+msgid "Do not randomize pictures from location"
+msgstr ""
+
+#: ../savers/slideshow.c:59
+msgid "Do not try to stretch images on screen"
+msgstr ""
+
+#: ../src/copy-theme-dialog.c:212
+msgid "Copying files"
+msgstr "Comhaid á gcóipeáil"
+
+#: ../src/copy-theme-dialog.c:230
+msgid "From:"
+msgstr "Ó:"
+
+#: ../src/copy-theme-dialog.c:234
+msgid "To:"
+msgstr "Chuig:"
+
+#: ../src/copy-theme-dialog.c:254
+msgid "Copying themes"
+msgstr "Téamaí á gcóipeáil"
+
+#: ../src/copy-theme-dialog.c:298
+msgid "Invalid screensaver theme"
+msgstr "Téama spárálaí scáileáin neamhbhailí"
+
+#: ../src/copy-theme-dialog.c:301
+#, c-format
+msgid "%s does not appear to be a valid screensaver theme."
+msgstr "Is cosúil nach téama spárálaí scáileáin bailí é %s."
+
+#: ../src/copy-theme-dialog.c:481
+#, c-format
+msgid "Copying file: %u of %u"
+msgstr "Comhad á chóipeáil: %u as %u"
+
+#: ../src/mate-screensaver-command.c:62
+msgid "Causes the screensaver to exit gracefully"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:64
+msgid "Query the state of the screensaver"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:66
+msgid "Query the length of time the screensaver has been active"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:68
+msgid "Tells the running screensaver process to lock the screen immediately"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:70
+msgid "If the screensaver is active then switch to another graphics demo"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:72
+msgid "Turn the screensaver on (blank the screen)"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:74
+msgid "If the screensaver is active then deactivate it (un-blank the screen)"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:76
+msgid "Poke the running screensaver to simulate user activity"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:78
+msgid ""
+"Inhibit the screensaver from activating.  Command blocks while inhibit is "
+"active."
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:80
+msgid "The calling application that is inhibiting the screensaver"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:82
+msgid "The reason for inhibiting the screensaver"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:84 ../src/mate-screensaver-dialog.c:57
+#: ../src/mate-screensaver.c:56
+msgid "Version of this application"
+msgstr "Leagan an fheidhmchláir seo"
+
+#: ../src/mate-screensaver-command.c:307
+#, c-format
+msgid "The screensaver is %s\n"
+msgstr "Tá an spárálaí scáileáin %s\n"
+
+#: ../src/mate-screensaver-command.c:307
+msgid "active"
+msgstr "gníomhach"
+
+#: ../src/mate-screensaver-command.c:307
+msgid "inactive"
+msgstr "neamhghníomhach"
+
+#: ../src/mate-screensaver-command.c:321
+#, c-format
+msgid "The screensaver is not inhibited\n"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:327
+#, c-format
+msgid "The screensaver is being inhibited by:\n"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:358
+#, c-format
+msgid "The screensaver has been active for %d seconds.\n"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:55
+msgid "Show debugging output"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:59
+msgid "Show the logout button"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:61
+msgid "Command to invoke from the logout button"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:63
+msgid "Show the switch user button"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:65
+msgid "Message to show in the dialog"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:65
+msgid "MESSAGE"
+msgstr "TEACHTAIREACHT"
+
+#. login: is whacked always translate to Username:
+#: ../src/mate-screensaver-dialog.c:175 ../src/mate-screensaver-dialog.c:176
+#: ../src/mate-screensaver-dialog.c:177 ../src/gs-auth-pam.c:698
+msgid "Username:"
+msgstr "Ainm úsáideora:"
+
+#: ../src/mate-screensaver-dialog.c:178 ../src/mate-screensaver-dialog.c:179
+#: ../src/gs-auth-pam.c:166
+msgid "Password:"
+msgstr "Focal faire:"
+
+#: ../src/mate-screensaver-dialog.c:180
+msgid "You are required to change your password immediately (password aged)"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:181
+msgid "You are required to change your password immediately (root enforced)"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:182
+msgid "Your account has expired; please contact your system administrator"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:183
+msgid "No password supplied"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:184
+msgid "Password unchanged"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:185
+msgid "Can not get username"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:186
+msgid "Retype new UNIX password:"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:187
+msgid "Enter new UNIX password:"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:188
+msgid "(current) UNIX password:"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:189
+msgid "Error while changing NIS password."
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:190
+msgid "You must choose a longer password"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:191
+msgid "Password has been already used. Choose another."
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:192
+msgid "You must wait longer to change your password"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:193
+msgid "Sorry, passwords do not match"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:259
+msgid "Checking..."
+msgstr "Á sheiceáil..."
+
+#: ../src/mate-screensaver-dialog.c:301 ../src/gs-auth-pam.c:457
+msgid "Authentication failed."
+msgstr "Theip ar fhíordheimhniú."
+
+#: ../src/mate-screensaver-preferences.c:524
+msgid "Blank screen"
+msgstr "Scáileán bán"
+
+#: ../src/mate-screensaver-preferences.c:530
+msgid "Random"
+msgstr "Fánach"
+
+#: ../src/mate-screensaver-preferences.c:980
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "uair amháin"
+msgstr[1] "%d uair"
+msgstr[2] "%d uair"
+msgstr[3] "%d n-uair"
+msgstr[4] "%d uair"
+
+#: ../src/mate-screensaver-preferences.c:983
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "nóiméad amháin"
+msgstr[1] "%d nóiméad"
+msgstr[2] "%d nóiméad"
+msgstr[3] "%d nóiméad"
+msgstr[4] "%d nóiméad"
+
+#: ../src/mate-screensaver-preferences.c:986
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "soicind amháin"
+msgstr[1] "%d shoicind"
+msgstr[2] "%d shoicind"
+msgstr[3] "%d soicind"
+msgstr[4] "%d soicind"
+
+#. hour:minutes:seconds
+#: ../src/mate-screensaver-preferences.c:992
+#, c-format
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
+#. hour:minutes
+#. minutes:seconds
+#: ../src/mate-screensaver-preferences.c:995
+#: ../src/mate-screensaver-preferences.c:1003
+#, c-format
+msgid "%s %s"
+msgstr "%s %s"
+
+#. hour
+#. minutes
+#. seconds
+#: ../src/mate-screensaver-preferences.c:998
+#: ../src/mate-screensaver-preferences.c:1006
+#: ../src/mate-screensaver-preferences.c:1010
+#, c-format
+msgid "%s"
+msgstr "%s"
+
+#: ../src/mate-screensaver-preferences.c:1025
+#, c-format
+msgid "Never"
+msgstr "Riamh"
+
+#: ../src/mate-screensaver-preferences.c:1467
+msgid "Could not load the main interface"
+msgstr ""
+
+#: ../src/mate-screensaver-preferences.c:1469
+msgid "Please make sure that the screensaver is properly installed"
+msgstr ""
+
+#: ../src/mate-screensaver.c:57
+msgid "Don't become a daemon"
+msgstr "Ná téigh i ndeamhan"
+
+#: ../src/mate-screensaver.c:58
+msgid "Enable debugging code"
+msgstr "Cumasaigh cód dífhabhtaithe"
+
+#: ../src/gs-auth-pam.c:397
+#, c-format
+msgid "Unable to establish service %s: %s\n"
+msgstr ""
+
+#: ../src/gs-auth-pam.c:423
+#, c-format
+msgid "Can't set PAM_TTY=%s"
+msgstr "Ní féidir PAM_TTY=%s a shocrú"
+
+#: ../src/gs-auth-pam.c:455
+msgid "Incorrect password."
+msgstr "Focal faire mícheart."
+
+#: ../src/gs-auth-pam.c:471
+msgid "Not permitted to gain access at this time."
+msgstr ""
+
+#: ../src/gs-auth-pam.c:477
+msgid "No longer permitted to access the system."
+msgstr ""
+
+#: ../src/gs-listener-dbus.c:1851
+msgid "failed to register with the message bus"
+msgstr ""
+
+#: ../src/gs-listener-dbus.c:1861
+msgid "not connected to the message bus"
+msgstr ""
+
+#: ../src/gs-listener-dbus.c:1870
+msgid "screensaver already running in this session"
+msgstr ""
+
+#: ../src/gs-lock-plug.c:270
+msgid "Time has expired."
+msgstr "Chuaigh am in éag."
+
+#: ../src/gs-lock-plug.c:298
+msgid "You have the Caps Lock key on."
+msgstr "Tá an eochair Caps Lock brúite."
+
+#: ../src/gs-lock-plug.c:1347
+msgid "S_witch User..."
+msgstr "_Athraigh Úsáideoir..."
+
+#: ../src/gs-lock-plug.c:1356
+msgid "Log _Out"
+msgstr "Logáil _Amach:"
+
+#. To translators: This expands to USERNAME on HOSTNAME
+#: ../src/gs-lock-plug.c:1532
+msgid "%U on %h"
+msgstr "%U ar %h"
+
+#: ../src/gs-lock-plug.c:1546
+msgid "_Password:"
+msgstr "_Focal faire:"

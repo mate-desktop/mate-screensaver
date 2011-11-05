@@ -1,0 +1,691 @@
+# Vietnamese translation for MATE Screensaver.
+# Copyright © 2009 MATE i18n Project for Vietnamese.
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mate-screensaver MATE TRUNK\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-screensaver&component=general\n"
+"POT-Creation-Date: 2009-01-20 05:58+0000\n"
+"PO-Revision-Date: 2009-02-06 23:33+0930\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: LocFactoryEditor 1.8\n"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:1
+msgid "Screensaver"
+msgstr "Bộ bảo vệ màn hình"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:2
+msgid "Set your screensaver preferences"
+msgstr "Lập các tùy thích cho trình bảo vệ màn hình"
+
+#: ../data/mate-screensaver-preferences.glade.h:1
+msgid "<b>Screensaver preview</b>"
+msgstr "<b>Xem thử ảnh bảo vệ màn hình</b>"
+
+#: ../data/mate-screensaver-preferences.glade.h:2
+msgid "<b>Warning: the screen will not be locked for the root user.</b>"
+msgstr "<b>Cảnh báo : màn hình sẽ không bị khoá cho người dùng chủ (root).</b>"
+
+#: ../data/mate-screensaver-preferences.glade.h:3
+msgid "Power _Management"
+msgstr "_Quản lý điện năng"
+
+#: ../data/mate-screensaver-preferences.glade.h:4
+msgid "Regard the computer as _idle after:"
+msgstr "Co_i như máy tính nghỉ sau :"
+
+#: ../data/mate-screensaver-preferences.glade.h:5
+msgid "Screensaver Preferences"
+msgstr "Tùy thích Bộ bảo vệ màn hình"
+
+#: ../data/mate-screensaver-preferences.glade.h:6
+msgid "Screensaver Preview"
+msgstr "Xem thử ảnh bảo vệ màn hình"
+
+#: ../data/mate-screensaver-preferences.glade.h:7
+msgid "_Activate screensaver when computer is idle"
+msgstr "_Hoạt hoá bộ bảo vệ màn hình khi máy tính mới nghỉ"
+
+#: ../data/mate-screensaver-preferences.glade.h:8
+msgid "_Lock screen when screensaver is active"
+msgstr "_Khoá màn hình khi bộ bảo vệ màn hình hoạt động"
+
+#: ../data/mate-screensaver-preferences.glade.h:9
+msgid "_Preview"
+msgstr "_Xem thử"
+
+#: ../data/mate-screensaver-preferences.glade.h:10
+msgid "_Screensaver theme:"
+msgstr "_Sắc thái của ảnh bảo vệ màn hình:"
+
+#: ../data/mate-screensaver.directory.in.h:1
+#: ../data/mate-screensaver.schemas.in.h:11
+msgid "Screensaver themes"
+msgstr "Sắc thái của ảnh bảo vệ màn hình"
+
+#: ../data/mate-screensaver.directory.in.h:2
+msgid "Screensavers"
+msgstr "Ảnh bảo vệ màn hình"
+
+#: ../data/mate-screensaver.schemas.in.h:1
+msgid "Activate when idle"
+msgstr "Kích hoạt khi nghỉ"
+
+#: ../data/mate-screensaver.schemas.in.h:2
+msgid "Allow embedding a keyboard into the window"
+msgstr "Cho phép nhúng bàn phím trong cửa sổ"
+
+#: ../data/mate-screensaver.schemas.in.h:3
+msgid "Allow logout"
+msgstr "Cho phép đăng xuất"
+
+#: ../data/mate-screensaver.schemas.in.h:4
+msgid "Allow the session status message to be displayed"
+msgstr "Cho phép hiển thị thông điệp về trạng thái phiên chạy"
+
+#: ../data/mate-screensaver.schemas.in.h:5
+msgid "Allow the session status message to be displayed when the screen is locked."
+msgstr "Cho phép hiển thị thông điệp về trạng thái phiên chạy khi màn hình bị khoá."
+
+#: ../data/mate-screensaver.schemas.in.h:6
+msgid "Allow user switching"
+msgstr "Cho phép chuyển đổi người dùng"
+
+#: ../data/mate-screensaver.schemas.in.h:7
+msgid "Embedded keyboard command"
+msgstr "Lệnh bàn phím nhúng"
+
+#: ../data/mate-screensaver.schemas.in.h:8
+msgid "Lock on activation"
+msgstr "Khoá khi mới hoạt động"
+
+#: ../data/mate-screensaver.schemas.in.h:9
+msgid "Logout command"
+msgstr "Lệnh đăng xuất"
+
+#: ../data/mate-screensaver.schemas.in.h:10
+msgid "Screensaver theme selection mode"
+msgstr "Chế độ lựa chọn sắc thái bảo vệ màn hình"
+
+#: ../data/mate-screensaver.schemas.in.h:12
+msgid "Set this to TRUE to activate the screensaver when the session is idle."
+msgstr "Đặt giá trị này là TRUE (đúng) để hoạt hoá bộ bảo vệ màn hình khi phiên chạy nghỉ."
+
+#: ../data/mate-screensaver.schemas.in.h:13
+msgid "Set this to TRUE to allow embedding a keyboard into the window when trying to unlock. The \"keyboard_command\" key must be set with the appropriate command."
+msgstr "Đặt là ĐÚNG (true) để cho phép nhúng bàn phím trong cửa sổ khi thử mở khoá. Khoá « keyboard_command » phải được đặt bằng lệnh thích hợp."
+
+#: ../data/mate-screensaver.schemas.in.h:14
+msgid "Set this to TRUE to lock the screen when the screensaver goes active."
+msgstr "Đặt giá trị này là TRUE (đúng) để khoá màn hình khi bộ bảo vệ màn hình mới hoạt động."
+
+#: ../data/mate-screensaver.schemas.in.h:15
+msgid "Set this to TRUE to offer an option in the unlock dialog to switch to a different user account."
+msgstr "Đặt giá trị này là TRUE (đúng) để cung cấp trong hộp thoại bỏ khoá tùy chọn chuyển đổi sang tài khoản người dùng khác."
+
+#: ../data/mate-screensaver.schemas.in.h:16
+msgid "Set this to TRUE to offer an option in unlock dialog to logging out after a delay. The Delay is specified in the \"logout_delay\" key."
+msgstr "Đặt giá trị này là TRUE (đúng) để cung cấp trong hộp thoại bỏ khoá tùy chọn đăng xuất sau khi trễ. Sự trễ được ghi rõ trong khoá « logout_delay » (sự trễ đăng xuất)."
+
+#: ../data/mate-screensaver.schemas.in.h:17
+msgid "The command that will be run, if the \"embedded_keyboard_enabled\" key is set to TRUE, to embed a keyboard widget into the window. This command should implement an XEMBED plug interface and output a window XID on the standard output."
+msgstr "Lệnh sẽ được chạy, nếu khoá « embedded_keyboard_enabled » được đặt là ĐÚNG (true), để nhúng ô điều khiển bàn phím trong cửa sổ. Lệnh này nên thực hiện một giao diện nút XEMBED và xuất một XID cửa sổ ra thiết bị xuất chuẩn."
+
+#: ../data/mate-screensaver.schemas.in.h:18
+msgid "The command to invoke when the logout button is clicked. This command should simply log the user out without any interaction. This key has effect only if the \"logout_enable\" key is set to TRUE."
+msgstr "Lệnh cần chạy khi cái nút đăng xuất được bấm. Lệnh này nên đơn giản đăng xuất người dùng, không tương tác gì. Khoá này có tác động chỉ nếu khoá « logout_enable » được đặt là ĐÚNG (true)."
+
+#: ../data/mate-screensaver.schemas.in.h:19
+msgid "The number of minutes after screensaver activation before locking the screen."
+msgstr "Số phút sau khi bộ bảo vệ màn hình mới hoạt động, trước khi khoá màn hình."
+
+#: ../data/mate-screensaver.schemas.in.h:20
+msgid "The number of minutes after the screensaver activation before a logout option will appear in unlock dialog. This key has effect only if the \"logout_enable\" key is set to TRUE."
+msgstr "Số phút sau khi bộ bảo vệ màn hình mới hoạt động, trước khi tùy chọn đăng xuất được hiển thị trong hộp thoại bỏ khoá. Khoá này có tác động chỉ nếu khoá « logout_enable » (bật đăng xuất) được đặt là TRUE (đúng)."
+
+#: ../data/mate-screensaver.schemas.in.h:21
+msgid "The number of minutes of inactivity before the session is considered idle."
+msgstr "Số phút không dùng trước khi phiên chạy được xem là nghỉ."
+
+#: ../data/mate-screensaver.schemas.in.h:22
+msgid "The number of minutes to run before changing the screensaver theme."
+msgstr "Bao nhiêu phút cần chạy trước khi thay đổi sắc thái ảnh bảo vệ màn hình."
+
+#: ../data/mate-screensaver.schemas.in.h:23
+msgid "The number of seconds of inactivity before signalling to power-management. This key is set and maintained by the session power-management agent."
+msgstr "Số giây nghỉ trước khi gửi tín hiệu cho chức năng quản lý điện năng. Khoá này được đặt và bảo tồn bởi tác nhân quản lý điện năng của phiên chạy đó."
+
+#: ../data/mate-screensaver.schemas.in.h:24
+msgid "The selection mode used by screensaver. May be \"blank-only\" to enable the screensaver without using any theme on activation, \"single\" to enable screensaver using only one theme on activation (specified in \"themes\" key), and \"random\" to enable the screensaver using a random theme on activation."
+msgstr ""
+"Chế độ lựa chọn được dùng bởi bộ bảo vệ màn hình. Chế độ có thể:\n"
+" • blank-only (chỉ trắng) để bật chạy bộ bảo vệ màn hình mà không dùng sắc thái nào khi mới hoạt động\n"
+" • single (đơn) để bật chạy bộ bảo vệ màn hình mà dùng chỉ một sắc thái khi mới hoạt động thôi (được ghi rõ trong khoá « themes » (sắc thái)\n"
+" • random (ngẫu nhiên) để bật chạy bộ bảo vệ màn hình mà dùng sắc thái ngẫu nhiên khi mới hoạt động."
+
+#: ../data/mate-screensaver.schemas.in.h:25
+msgid "Theme for lock dialog"
+msgstr "Sắc thái cho hộp thoại khoá"
+
+#: ../data/mate-screensaver.schemas.in.h:26
+msgid "Theme to use for the lock dialog."
+msgstr "Sắc thái cần dùng cho hộp thoại khoá."
+
+#: ../data/mate-screensaver.schemas.in.h:27
+msgid "This key specifies the list of themes to be used by the screensaver. It's ignored when \"mode\" key is \"blank-only\", should provide the theme name when \"mode\" is \"single\", and should provide a list of themes when \"mode\" is \"random\"."
+msgstr ""
+"Khoá này ghi rõ danh sách các sắc thái cho bộ bảo vệ màn hình dùng. Nó\n"
+" • bị bỏ qua khi khoá « mode » (chế độ) chỉ trắng (« blank only »)\n"
+" • nên cung cấp tên sắc thái khi « mode » (chế độ) là đơn (« single »)\n"
+" • nên cung cấp danh sách các sắc thái khi « mode » (chế độ) là ngẫu nhiên (« random »)."
+
+#: ../data/mate-screensaver.schemas.in.h:28
+msgid "Time before locking"
+msgstr "Thời gian trước khi khoá"
+
+#: ../data/mate-screensaver.schemas.in.h:29
+msgid "Time before logout option"
+msgstr "Thời gian trước khi nhận tùy chọn đăng xuất"
+
+#: ../data/mate-screensaver.schemas.in.h:30
+msgid "Time before power-management baseline"
+msgstr "Thời gian trước đường cơ bản quản lý điện năng"
+
+#: ../data/mate-screensaver.schemas.in.h:31
+msgid "Time before session is considered idle"
+msgstr "Thời gian trước khi phiên chạy được xem là nghỉ"
+
+#: ../data/mate-screensaver.schemas.in.h:32
+msgid "Time before theme change"
+msgstr "Thời gian trước khi thay đổi sắc thái"
+
+#: ../data/lock-dialog-default.glade.h:2
+#, no-c-format
+msgid "<b>Leave a message for %R:</b>"
+msgstr "<b>Lời nhắn cho %R:</b>"
+
+#: ../data/lock-dialog-default.glade.h:4
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U trên %h</span>"
+
+#: ../data/lock-dialog-default.glade.h:6
+#, no-c-format
+msgid "<span size=\"x-large\">%R</span>"
+msgstr "<span size=\"x-large\">%R</span>"
+
+#: ../data/lock-dialog-default.glade.h:7
+msgid "_Cancel"
+msgstr "Th_ôi"
+
+#: ../data/lock-dialog-default.glade.h:8
+msgid "_Leave Message"
+msgstr "Để lại _lời nhắn"
+
+#: ../data/lock-dialog-default.glade.h:9
+msgid "_Log Out"
+msgstr "Đăng _xuất"
+
+#: ../data/lock-dialog-default.glade.h:10
+msgid "_Switch User"
+msgstr "_Chuyển đổi người dùng"
+
+#: ../data/lock-dialog-default.glade.h:11
+#: ../src/gs-lock-plug.c:1366
+msgid "_Unlock"
+msgstr "_Bỏ khoá"
+
+#: ../savers/cosmos-slideshow.desktop.in.in.h:1
+msgid "Cosmos"
+msgstr "Vũ trụ"
+
+#: ../savers/cosmos-slideshow.desktop.in.in.h:2
+msgid "Display a slideshow of pictures of the cosmos"
+msgstr "Hiển thị trình diễn các ảnh của vũ trụ"
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:1
+msgid "Bubbles the MATE foot logo around the screen"
+msgstr "Thổi bong bóng biểu tượng chân MATE chung quanh màn hình"
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:2
+msgid "Floating Feet"
+msgstr "Chân nổi"
+
+#: ../savers/personal-slideshow.desktop.in.in.h:1
+msgid "Display a slideshow from your Pictures folder"
+msgstr "Hiển thị trình diễn các ảnh từ thư mục Ảnh (Pictures) của bạn"
+
+# 48x48/emblems/emblem-pictures.icon.in.h:1
+#: ../savers/personal-slideshow.desktop.in.in.h:2
+msgid "Pictures folder"
+msgstr "Thư mục Ảnh"
+
+#: ../savers/popsquares.desktop.in.in.h:1
+msgid "A pop-art-ish grid of pulsing colors."
+msgstr "Vẽ lưới các màu đập kiểu dáng nghệ thuật phổ biến."
+
+#: ../savers/popsquares.desktop.in.in.h:2
+msgid "Pop art squares"
+msgstr "Vuông nghệ thuật phổ biến"
+
+#: ../savers/floaters.c:84
+msgid "Show paths that images follow"
+msgstr "Hiển thị các đường dẫn mà ảnh theo"
+
+#: ../savers/floaters.c:87
+msgid "Occasionally rotate images as they move"
+msgstr "Thỉnh thoảng quay ảnh trong khi di chuyển"
+
+#: ../savers/floaters.c:90
+msgid "Print out frame rate and other statistics"
+msgstr "In ra tỷ lệ khung và thống kê khác"
+
+#: ../savers/floaters.c:93
+msgid "The maximum number of images to keep on screen"
+msgstr "Số ảnh tối đa cần giữ trên màn hình"
+
+#: ../savers/floaters.c:93
+msgid "MAX_IMAGES"
+msgstr "MAX_IMAGES"
+
+#: ../savers/floaters.c:96
+msgid "The initial size and position of window"
+msgstr "Kích cỡ và vị trí đầu tiên của cửa sổ"
+
+#: ../savers/floaters.c:96
+msgid "WIDTHxHEIGHT+X+Y"
+msgstr "RỘNGxCAO+X+Y"
+
+#: ../savers/floaters.c:99
+msgid "The source image to use"
+msgstr "Ảnh nguồn cần dùng"
+
+#. translators: the word "image" here
+#. * represents a command line argument
+#.
+#: ../savers/floaters.c:1194
+msgid "image - floats images around the screen"
+msgstr "image - làm nổi ảnh ở chung quanh màn hình"
+
+#: ../savers/floaters.c:1200
+#, c-format
+msgid "%s. See --help for usage information.\n"
+msgstr "%s: Hãy chạy lệnh « --help » (trợ giúp) để xem thông tin về cách sử dụng.\n"
+
+#: ../savers/floaters.c:1209
+#, c-format
+msgid "You must specify one image.  See --help for usage information.\n"
+msgstr "Bạn phải ghi rõ một ảnh. Hãy chạy lệnh « --help » (trợ giúp) để xem thông tin về cách sử dụng.\n"
+
+#: ../savers/slideshow.c:53
+msgid "Location to get images from"
+msgstr "Địa điểm nơi cần lấy ảnh"
+
+#: ../savers/slideshow.c:53
+msgid "PATH"
+msgstr "ĐƯỜNG DẪN"
+
+#: ../savers/slideshow.c:55
+msgid "Color to use for images background"
+msgstr "Màu cần dùng để đặt nền của ảnh"
+
+#: ../savers/slideshow.c:55
+msgid "\"#rrggbb\""
+msgstr "\"#rrggbb\""
+
+#: ../savers/slideshow.c:57
+msgid "Do not randomize pictures from location"
+msgstr "Đừng ngẫu nhiên hoá các ảnh từ địa điểm"
+
+#: ../savers/slideshow.c:59
+msgid "Do not try to stretch images on screen"
+msgstr "Đừng thử kéo giãn ảnh trên màn hình"
+
+#: ../src/copy-theme-dialog.c:212
+msgid "Copying files"
+msgstr "Đang sao chép tập tin"
+
+#: ../src/copy-theme-dialog.c:230
+msgid "From:"
+msgstr "Từ:"
+
+#: ../src/copy-theme-dialog.c:234
+msgid "To:"
+msgstr "Đến:"
+
+#: ../src/copy-theme-dialog.c:254
+msgid "Copying themes"
+msgstr "Đang sao chép các sắc thái"
+
+#: ../src/copy-theme-dialog.c:298
+msgid "Invalid screensaver theme"
+msgstr "Sắc thái bảo vệ màn hình không hợp lệ"
+
+#: ../src/copy-theme-dialog.c:301
+#, c-format
+msgid "%s does not appear to be a valid screensaver theme."
+msgstr "Có vẻ là %s không phải là một sắc thái bảo vệ màn hình hợp lệ."
+
+#: ../src/copy-theme-dialog.c:481
+#, c-format
+msgid "Copying file: %u of %u"
+msgstr "Đang sao chép tập tin: %u trên %u"
+
+#: ../src/mate-screensaver-command.c:62
+msgid "Causes the screensaver to exit gracefully"
+msgstr "Làm cho bộ bảo vệ màn hình thoát cho đúng"
+
+#: ../src/mate-screensaver-command.c:64
+msgid "Query the state of the screensaver"
+msgstr "Truy vấn tính trạng của bộ bảo vệ màn hình"
+
+#: ../src/mate-screensaver-command.c:66
+msgid "Query the length of time the screensaver has been active"
+msgstr "Truy vấn khoảng thời gian hoạt động của bộ bảo vệ màn hình"
+
+#: ../src/mate-screensaver-command.c:68
+msgid "Tells the running screensaver process to lock the screen immediately"
+msgstr "Báo tiến trình bảo vệ màn hình đang chạy phải khoá ngay màn hình"
+
+#: ../src/mate-screensaver-command.c:70
+msgid "If the screensaver is active then switch to another graphics demo"
+msgstr "Nếu bộ bảo vệ màn hình có hoạt động thì chuyển đổi sang một chứng minh đồ họa khác"
+
+#: ../src/mate-screensaver-command.c:72
+msgid "Turn the screensaver on (blank the screen)"
+msgstr "Khởi chạy bộ bảo vệ màn hình (làm trắng màn hình)"
+
+#: ../src/mate-screensaver-command.c:74
+msgid "If the screensaver is active then deactivate it (un-blank the screen)"
+msgstr "Nếu bộ bảo vệ màn hình có hoạt động thì tắt nó (bỏ trắng màn hình)"
+
+#: ../src/mate-screensaver-command.c:76
+msgid "Poke the running screensaver to simulate user activity"
+msgstr "Thức bộ bảo vệ màn hình đang chạy, để mô phỏng hoạt động của người dùng"
+
+#: ../src/mate-screensaver-command.c:78
+msgid "Inhibit the screensaver from activating.  Command blocks while inhibit is active."
+msgstr "Ngăn chặn bộ bảo vệ màn hình kích hoạt. Lệnh chặn trong khi khả năng ngăn chặn còn hoạt động."
+
+#: ../src/mate-screensaver-command.c:80
+msgid "The calling application that is inhibiting the screensaver"
+msgstr "Ứng dụng gọi mà ngăn chặn bộ bảo vệ màn hình"
+
+#: ../src/mate-screensaver-command.c:82
+msgid "The reason for inhibiting the screensaver"
+msgstr "Lý do ngăn chặn bộ bảo vệ màn hình"
+
+#: ../src/mate-screensaver-command.c:84
+#: ../src/mate-screensaver-dialog.c:57
+#: ../src/mate-screensaver.c:56
+msgid "Version of this application"
+msgstr "Phiên bản ứng dụng này"
+
+#: ../src/mate-screensaver-command.c:307
+#, c-format
+msgid "The screensaver is %s\n"
+msgstr "Bộ bảo vệ màn hình là %s\n"
+
+#: ../src/mate-screensaver-command.c:307
+msgid "active"
+msgstr "hoạt động"
+
+#: ../src/mate-screensaver-command.c:307
+msgid "inactive"
+msgstr "không hoạt động"
+
+#: ../src/mate-screensaver-command.c:321
+#, c-format
+msgid "The screensaver is not inhibited\n"
+msgstr "Bộ bảo vệ màn hình không phải bị thu hồi\n"
+
+#: ../src/mate-screensaver-command.c:327
+#, c-format
+msgid "The screensaver is being inhibited by:\n"
+msgstr "Bộ bảo vệ màn hình đang bị thu hồi bởi:\n"
+
+#: ../src/mate-screensaver-command.c:358
+#, c-format
+msgid "The screensaver has been active for %d seconds.\n"
+msgstr "Bộ bảo vệ màn hình đã hoạt động trong vòng %d giây.\n"
+
+#: ../src/mate-screensaver-dialog.c:55
+msgid "Show debugging output"
+msgstr "Hiện dữ liệu xuất gỡ lỗi"
+
+#: ../src/mate-screensaver-dialog.c:59
+msgid "Show the logout button"
+msgstr "Hiện cái nút đăng xuất"
+
+#: ../src/mate-screensaver-dialog.c:61
+msgid "Command to invoke from the logout button"
+msgstr "Lệnh cần chạy từ cái nút đăng xuất"
+
+#: ../src/mate-screensaver-dialog.c:63
+msgid "Show the switch user button"
+msgstr "Hiện cái nút chuyển đổi người dùng"
+
+#: ../src/mate-screensaver-dialog.c:65
+msgid "Message to show in the dialog"
+msgstr "Thông điệp cần hiển thị trong hộp thoại"
+
+#: ../src/mate-screensaver-dialog.c:65
+msgid "MESSAGE"
+msgstr "THÔNG ĐIỆP"
+
+#. login: is whacked always translate to Username:
+#: ../src/mate-screensaver-dialog.c:175
+#: ../src/mate-screensaver-dialog.c:176
+#: ../src/mate-screensaver-dialog.c:177
+#: ../src/gs-auth-pam.c:698
+msgid "Username:"
+msgstr "Tên người dùng:"
+
+#: ../src/mate-screensaver-dialog.c:178
+#: ../src/mate-screensaver-dialog.c:179
+#: ../src/gs-auth-pam.c:166
+msgid "Password:"
+msgstr "Mật khẩu :"
+
+#: ../src/mate-screensaver-dialog.c:180
+msgid "You are required to change your password immediately (password aged)"
+msgstr "Bạn phải thay đổi ngay mật khẩu (mật khẩu quá cũ)"
+
+#: ../src/mate-screensaver-dialog.c:181
+msgid "You are required to change your password immediately (root enforced)"
+msgstr "Bạn phải thay đổi ngay mật khẩu (người chủ ép buộc)"
+
+#: ../src/mate-screensaver-dialog.c:182
+msgid "Your account has expired; please contact your system administrator"
+msgstr "Tài khoản của bạn đã hết hạn dùng: hãy liên lạc với nhà quản trị hệ thống"
+
+#: ../src/mate-screensaver-dialog.c:183
+msgid "No password supplied"
+msgstr "Chưa cung cấp mật khẩu"
+
+#: ../src/mate-screensaver-dialog.c:184
+msgid "Password unchanged"
+msgstr "Chưa thay đổi mật khẩu"
+
+#: ../src/mate-screensaver-dialog.c:185
+msgid "Can not get username"
+msgstr "Không thể lấy tên người dùng"
+
+#: ../src/mate-screensaver-dialog.c:186
+msgid "Retype new UNIX password:"
+msgstr "Gõ lại mật khẩu UNIX mới:"
+
+#: ../src/mate-screensaver-dialog.c:187
+msgid "Enter new UNIX password:"
+msgstr "Nhập mật khẩu UNIX mới:"
+
+#: ../src/mate-screensaver-dialog.c:188
+msgid "(current) UNIX password:"
+msgstr "Mật khẩu UNIX (hiện có):"
+
+#: ../src/mate-screensaver-dialog.c:189
+msgid "Error while changing NIS password."
+msgstr "Gặp lỗi khi thay đổi mật khẩu NIS."
+
+#: ../src/mate-screensaver-dialog.c:190
+msgid "You must choose a longer password"
+msgstr "Bạn phải chọn mật khẩu dài hơn"
+
+#: ../src/mate-screensaver-dialog.c:191
+msgid "Password has been already used. Choose another."
+msgstr "Mật khẩu đã được dùng. Hãy chọn mật khẩu khác."
+
+#: ../src/mate-screensaver-dialog.c:192
+msgid "You must wait longer to change your password"
+msgstr "Bạn phải đợi thêm nữa, để thay đổi mật khẩu"
+
+#: ../src/mate-screensaver-dialog.c:193
+msgid "Sorry, passwords do not match"
+msgstr "Tiếc là hai mật khẩu không trùng"
+
+#: ../src/mate-screensaver-dialog.c:259
+msgid "Checking..."
+msgstr "Đang kiểm tra..."
+
+#: ../src/mate-screensaver-dialog.c:301
+#: ../src/gs-auth-pam.c:457
+msgid "Authentication failed."
+msgstr "Lỗi xác thực."
+
+#: ../src/mate-screensaver-preferences.c:524
+msgid "Blank screen"
+msgstr "Màn hình trắng"
+
+#: ../src/mate-screensaver-preferences.c:530
+msgid "Random"
+msgstr "Ngẫu nhiên"
+
+#: ../src/mate-screensaver-preferences.c:980
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d giờ"
+
+#: ../src/mate-screensaver-preferences.c:983
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d phút"
+
+#: ../src/mate-screensaver-preferences.c:986
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d giây"
+
+# Variable: don't translate / Biến: đừng dịch
+#. hour:minutes:seconds
+#: ../src/mate-screensaver-preferences.c:992
+#, c-format
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
+#. hour:minutes
+#. minutes:seconds
+#: ../src/mate-screensaver-preferences.c:995
+#: ../src/mate-screensaver-preferences.c:1003
+#, c-format
+msgid "%s %s"
+msgstr "%s %s"
+
+#. hour
+#. minutes
+#. seconds
+#: ../src/mate-screensaver-preferences.c:998
+#: ../src/mate-screensaver-preferences.c:1006
+#: ../src/mate-screensaver-preferences.c:1010
+#, c-format
+msgid "%s"
+msgstr "%s"
+
+#: ../src/mate-screensaver-preferences.c:1025
+#, c-format
+msgid "Never"
+msgstr "Không bao giờ"
+
+#: ../src/mate-screensaver-preferences.c:1453
+msgid "Could not load the main interface"
+msgstr "Không thể tải giao diện chính"
+
+#: ../src/mate-screensaver-preferences.c:1455
+msgid "Please make sure that the screensaver is properly installed"
+msgstr "Hãy chắc là bộ bảo vệ màn hình được cài đặt đúng"
+
+#: ../src/mate-screensaver.c:57
+msgid "Don't become a daemon"
+msgstr "Đừng chạy trong nền"
+
+#: ../src/mate-screensaver.c:58
+msgid "Enable debugging code"
+msgstr "Bật chạy mã gỡ lỗi"
+
+#: ../src/gs-auth-pam.c:397
+#, c-format
+msgid "Unable to establish service %s: %s\n"
+msgstr "Không thể thiết lập dịch vụ %s: %s\n"
+
+#: ../src/gs-auth-pam.c:423
+#, c-format
+msgid "Can't set PAM_TTY=%s"
+msgstr "Không thể đặt « PAM_TTY=%s »"
+
+#: ../src/gs-auth-pam.c:455
+msgid "Incorrect password."
+msgstr "Mật khẩu không đúng."
+
+#: ../src/gs-auth-pam.c:471
+msgid "Not permitted to gain access at this time."
+msgstr "Không cho phép truy cập vào lúc này."
+
+#: ../src/gs-auth-pam.c:477
+msgid "No longer permitted to access the system."
+msgstr "Không còn có quyền truy cập lại hệ thống."
+
+#: ../src/gs-listener-dbus.c:1847
+msgid "failed to register with the message bus"
+msgstr "việc đăng ký với mạch nối thông điệp bị lỗi"
+
+#: ../src/gs-listener-dbus.c:1857
+msgid "not connected to the message bus"
+msgstr "chưa kết nối đến mạch nối thông điệp"
+
+#: ../src/gs-listener-dbus.c:1866
+msgid "screensaver already running in this session"
+msgstr "bộ bảo vệ màn hình đang chạy trong phiên làm việc này"
+
+#: ../src/gs-lock-plug.c:271
+msgid "Time has expired."
+msgstr "Quá giờ."
+
+#: ../src/gs-lock-plug.c:299
+msgid "You have the Caps Lock key on."
+msgstr "Bạn đã bật phím Khoá Chữ Hoa (CapsLock)."
+
+#: ../src/gs-lock-plug.c:1346
+msgid "S_witch User..."
+msgstr "_Chuyển đổi người dùng..."
+
+#: ../src/gs-lock-plug.c:1355
+msgid "Log _Out"
+msgstr "Đăng _xuất"
+
+#. To translators: This expands to USERNAME on HOSTNAME
+#: ../src/gs-lock-plug.c:1531
+msgid "%U on %h"
+msgstr "%U trên %h"
+
+#: ../src/gs-lock-plug.c:1545
+msgid "_Password:"
+msgstr "_Mật khẩu :"
+

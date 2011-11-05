@@ -1,0 +1,756 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mate-screensaver\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-screensaver&component=general\n"
+"POT-Creation-Date: 2009-08-21 03:05+0000\n"
+"PO-Revision-Date: 2009-09-15 22:59+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew <he@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:1
+#: ../src/mate-screensaver.desktop.in.in.h:2
+msgid "Screensaver"
+msgstr "שומר מסך"
+
+#: ../data/mate-screensaver-preferences.desktop.in.h:2
+msgid "Set your screensaver preferences"
+msgstr "קבע את העדפות שומר המסך"
+
+#: ../data/mate-screensaver-preferences.ui.h:1
+msgid "<b>Screensaver preview</b>"
+msgstr "<b>תצוגה מקדימה של שומר המסך</b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:2
+msgid "<b>Warning: the screen will not be locked for the root user.</b>"
+msgstr "<b>אזהרה: המסך לא יינעל עבור מנהל המערכת./b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:3
+msgid "Power _Management"
+msgstr "_ניהול צריכת חשמל"
+
+#: ../data/mate-screensaver-preferences.ui.h:4
+msgid "Regard the computer as _idle after:"
+msgstr "התיחס למחשב כלא _פעיל לאחר:"
+
+#: ../data/mate-screensaver-preferences.ui.h:5
+msgid "Screensaver Preferences"
+msgstr "העדפות שומר המסך"
+
+#: ../data/mate-screensaver-preferences.ui.h:6
+msgid "Screensaver Preview"
+msgstr "תצוגה מקדימה של שומר המסך"
+
+#: ../data/mate-screensaver-preferences.ui.h:7
+msgid "_Activate screensaver when computer is idle"
+msgstr "הפעל _שומר מסך כאשר המחשב לא פעיל"
+
+#: ../data/mate-screensaver-preferences.ui.h:8
+msgid "_Lock screen when screensaver is active"
+msgstr "_נעל מסך כששומר המסך פועל"
+
+#: ../data/mate-screensaver-preferences.ui.h:9
+msgid "_Preview"
+msgstr "_תצוגה מקדימה"
+
+#: ../data/mate-screensaver-preferences.ui.h:10
+msgid "_Screensaver theme:"
+msgstr "ערכת נושא _לשומר המסך:"
+
+#: ../data/mate-screensaver.directory.in.h:1
+#: ../data/mate-screensaver.schemas.in.h:11
+msgid "Screensaver themes"
+msgstr "ערכות נושא לשומר המסך"
+
+#: ../data/mate-screensaver.directory.in.h:2
+msgid "Screensavers"
+msgstr "שומרי מסך"
+
+#: ../data/mate-screensaver.schemas.in.h:1
+msgid "Activate when idle"
+msgstr "Activate when idle"
+
+#: ../data/mate-screensaver.schemas.in.h:2
+msgid "Allow embedding a keyboard into the window"
+msgstr "Allow embedding a keyboard into the window"
+
+#: ../data/mate-screensaver.schemas.in.h:3
+msgid "Allow logout"
+msgstr "Allow logout"
+
+#: ../data/mate-screensaver.schemas.in.h:4
+msgid "Allow the session status message to be displayed"
+msgstr "Allow the session status message to be displayed"
+
+#: ../data/mate-screensaver.schemas.in.h:5
+msgid "Allow the session status message to be displayed when the screen is locked."
+msgstr "Allow the session status message to be displayed when the screen is locked."
+
+#: ../data/mate-screensaver.schemas.in.h:6
+msgid "Allow user switching"
+msgstr "Allow user switching"
+
+#: ../data/mate-screensaver.schemas.in.h:7
+msgid "Embedded keyboard command"
+msgstr "Embedded keyboard command"
+
+#: ../data/mate-screensaver.schemas.in.h:8
+msgid "Lock on activation"
+msgstr "Lock on activation"
+
+#: ../data/mate-screensaver.schemas.in.h:9
+msgid "Logout command"
+msgstr "Logout command"
+
+#: ../data/mate-screensaver.schemas.in.h:10
+msgid "Screensaver theme selection mode"
+msgstr "Screensaver theme selection mode"
+
+#: ../data/mate-screensaver.schemas.in.h:12
+msgid "Set this to TRUE to activate the screensaver when the session is idle."
+msgstr "Set this to TRUE to activate the screensaver when the session is idle."
+
+#: ../data/mate-screensaver.schemas.in.h:13
+msgid "Set this to TRUE to allow embedding a keyboard into the window when trying to unlock. The \"keyboard_command\" key must be set with the appropriate command."
+msgstr "Set this to TRUE to allow embedding a keyboard into the window when trying to unlock. The \"keyboard_command\" key must be set with the appropriate command."
+
+#: ../data/mate-screensaver.schemas.in.h:14
+msgid "Set this to TRUE to lock the screen when the screensaver goes active."
+msgstr "Set this to TRUE to lock the screen when the screensaver goes active."
+
+#: ../data/mate-screensaver.schemas.in.h:15
+msgid "Set this to TRUE to offer an option in the unlock dialog to switch to a different user account."
+msgstr "Set this to TRUE to offer an option in the unlock dialog to switch to a different user account."
+
+#: ../data/mate-screensaver.schemas.in.h:16
+msgid "Set this to TRUE to offer an option in unlock dialog to logging out after a delay. The Delay is specified in the \"logout_delay\" key."
+msgstr "Set this to TRUE to offer an option in unlock dialog to logging out after a delay. The Delay is specified in the \"logout_delay\" key."
+
+#: ../data/mate-screensaver.schemas.in.h:17
+msgid "The command that will be run, if the \"embedded_keyboard_enabled\" key is set to TRUE, to embed a keyboard widget into the window. This command should implement an XEMBED plug interface and output a window XID on the standard output."
+msgstr "The command that will be run, if the \"embedded_keyboard_enabled\" key is set to TRUE, to embed a keyboard widget into the window. This command should implement an XEMBED plug interface and output a window XID on the standard output."
+
+#: ../data/mate-screensaver.schemas.in.h:18
+msgid "The command to invoke when the logout button is clicked. This command should simply log the user out without any interaction. This key has effect only if the \"logout_enable\" key is set to TRUE."
+msgstr "The command to invoke when the logout button is clicked. This command should simply log the user out without any interaction. This key has effect only if the \"logout_enable\" key is set to TRUE."
+
+#: ../data/mate-screensaver.schemas.in.h:19
+msgid "The number of minutes after screensaver activation before locking the screen."
+msgstr "The number of minutes after screensaver activation before locking the screen."
+
+#: ../data/mate-screensaver.schemas.in.h:20
+msgid "The number of minutes after the screensaver activation before a logout option will appear in unlock dialog. This key has effect only if the \"logout_enable\" key is set to TRUE."
+msgstr "The number of minutes after the screensaver activation before a logout option will appear in unlock dialog. This key has effect only if the \"logout_enable\" key is set to TRUE."
+
+#: ../data/mate-screensaver.schemas.in.h:21
+msgid "The number of minutes of inactivity before the session is considered idle."
+msgstr "The number of minutes of inactivity before the session is considered idle."
+
+#: ../data/mate-screensaver.schemas.in.h:22
+msgid "The number of minutes to run before changing the screensaver theme."
+msgstr "The number of minutes to run before changing the screensaver theme."
+
+#: ../data/mate-screensaver.schemas.in.h:23
+msgid "The number of seconds of inactivity before signalling to power-management. This key is set and maintained by the session power-management agent."
+msgstr "The number of seconds of inactivity before signalling to power-management. This key is set and maintained by the session power-management agent."
+
+#: ../data/mate-screensaver.schemas.in.h:24
+msgid "The selection mode used by screensaver. May be \"blank-only\" to enable the screensaver without using any theme on activation, \"single\" to enable screensaver using only one theme on activation (specified in \"themes\" key), and \"random\" to enable the screensaver using a random theme on activation."
+msgstr "The selection mode used by screensaver. May be \"blank-only\" to enable the screensaver without using any theme on activation, \"single\" to enable screensaver using only one theme on activation (specified in \"themes\" key), and \"random\" to enable the screensaver using a random theme on activation."
+
+#: ../data/mate-screensaver.schemas.in.h:25
+msgid "Theme for lock dialog"
+msgstr "Theme for lock dialog"
+
+#: ../data/mate-screensaver.schemas.in.h:26
+msgid "Theme to use for the lock dialog."
+msgstr "Theme to use for the lock dialog."
+
+#: ../data/mate-screensaver.schemas.in.h:27
+msgid "This key specifies the list of themes to be used by the screensaver. It's ignored when \"mode\" key is \"blank-only\", should provide the theme name when \"mode\" is \"single\", and should provide a list of themes when \"mode\" is \"random\"."
+msgstr "This key specifies the list of themes to be used by the screensaver. It's ignored when \"mode\" key is \"blank-only\", should provide the theme name when \"mode\" is \"single\", and should provide a list of themes when \"mode\" is \"random\"."
+
+#: ../data/mate-screensaver.schemas.in.h:28
+msgid "Time before locking"
+msgstr "Time before locking"
+
+#: ../data/mate-screensaver.schemas.in.h:29
+msgid "Time before logout option"
+msgstr "Time before logout option"
+
+#: ../data/mate-screensaver.schemas.in.h:30
+msgid "Time before power-management baseline"
+msgstr "Time before power-management baseline"
+
+#: ../data/mate-screensaver.schemas.in.h:31
+msgid "Time before session is considered idle"
+msgstr "Time before session is considered idle"
+
+#: ../data/mate-screensaver.schemas.in.h:32
+msgid "Time before theme change"
+msgstr "Time before theme change"
+
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<b>Leave a message for %R:</b>"
+msgstr "<b>השאר הודעה עבור %R:</b>"
+
+#: ../data/lock-dialog-default.ui.h:4
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U ב־%h</span>"
+
+#: ../data/lock-dialog-default.ui.h:6
+#, no-c-format
+msgid "<span size=\"x-large\">%R</span>"
+msgstr "<span size=\"x-large\">%R</span>"
+
+#: ../data/lock-dialog-default.ui.h:7
+msgid "_Cancel"
+msgstr "_בטל"
+
+#: ../data/lock-dialog-default.ui.h:8
+msgid "_Leave Message"
+msgstr "_השאר הודעה"
+
+#: ../data/lock-dialog-default.ui.h:9
+msgid "_Log Out"
+msgstr "_התנתק"
+
+#: ../data/lock-dialog-default.ui.h:10
+msgid "_Switch User"
+msgstr "_החלף משתמש"
+
+#: ../data/lock-dialog-default.ui.h:11
+#: ../src/gs-lock-plug.c:1382
+msgid "_Unlock"
+msgstr "_התחבר"
+
+#. Translators: This is the name of a desktop background image that shows outer space images.
+#. You might want to translate it into the equivalent words of your language
+#: ../data/images/cosmos/cosmos.xml.in.in.h:3
+#: ../savers/cosmos-slideshow.desktop.in.in.h:1
+msgid "Cosmos"
+msgstr "קוסמוס"
+
+#: ../savers/cosmos-slideshow.desktop.in.in.h:2
+msgid "Display a slideshow of pictures of the cosmos"
+msgstr "הצגת שקופיות של תמונות מהקוסמוס"
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:1
+msgid "Bubbles the MATE foot logo around the screen"
+msgstr "מבעבע את רגל הסמל של MATE ברחבי המסך"
+
+#: ../savers/footlogo-floaters.desktop.in.in.h:2
+msgid "Floating Feet"
+msgstr "רגליים צפות"
+
+#: ../savers/personal-slideshow.desktop.in.in.h:1
+msgid "Display a slideshow from your Pictures folder"
+msgstr "הצגת שקופיות של תמונות מתיקיית התמונות שלך"
+
+#: ../savers/personal-slideshow.desktop.in.in.h:2
+msgid "Pictures folder"
+msgstr "תיקיית התמונות"
+
+#: ../savers/popsquares.desktop.in.in.h:1
+msgid "A pop-art-ish grid of pulsing colors."
+msgstr "רשת פופ־ארטית של פעימות צבע"
+
+#: ../savers/popsquares.desktop.in.in.h:2
+msgid "Pop art squares"
+msgstr "ריבועי פופ־ארט"
+
+#: ../savers/floaters.c:84
+msgid "Show paths that images follow"
+msgstr "Show paths that images follow"
+
+#: ../savers/floaters.c:87
+msgid "Occasionally rotate images as they move"
+msgstr "Occasionally rotate images as they move"
+
+#: ../savers/floaters.c:90
+msgid "Print out frame rate and other statistics"
+msgstr "Print out frame rate and other statistics"
+
+#: ../savers/floaters.c:93
+msgid "The maximum number of images to keep on screen"
+msgstr "The maximum number of images to keep on screen"
+
+#: ../savers/floaters.c:93
+msgid "MAX_IMAGES"
+msgstr "MAX_IMAGES"
+
+#: ../savers/floaters.c:96
+msgid "The initial size and position of window"
+msgstr "The initial size and position of window"
+
+#: ../savers/floaters.c:96
+msgid "WIDTHxHEIGHT+X+Y"
+msgstr "WIDTHxHEIGHT+X+Y"
+
+#: ../savers/floaters.c:99
+msgid "The source image to use"
+msgstr "The source image to use"
+
+#. translators: the word "image" here
+#. * represents a command line argument
+#.
+#: ../savers/floaters.c:1194
+msgid "image - floats images around the screen"
+msgstr "image - floats images around the screen"
+
+#: ../savers/floaters.c:1200
+#, c-format
+msgid "%s. See --help for usage information.\n"
+msgstr "%s. See --help for usage information.\n"
+
+#: ../savers/floaters.c:1209
+#, c-format
+msgid "You must specify one image.  See --help for usage information.\n"
+msgstr "You must specify one image.  See --help for usage information.\n"
+
+#: ../savers/slideshow.c:53
+msgid "Location to get images from"
+msgstr "Location to get images from"
+
+#: ../savers/slideshow.c:53
+msgid "PATH"
+msgstr "PATH"
+
+#: ../savers/slideshow.c:55
+msgid "Color to use for images background"
+msgstr "הצבע שישמש רקע לתמונות"
+
+#: ../savers/slideshow.c:55
+msgid "\"#rrggbb\""
+msgstr "\"#rrggbb\""
+
+#: ../savers/slideshow.c:57
+msgid "Do not randomize pictures from location"
+msgstr "אל תציג באקראי תמונות מהמיקום"
+
+#: ../savers/slideshow.c:59
+msgid "Do not try to stretch images on screen"
+msgstr "אל תנסה למתוח תמוונת על המסך"
+
+#: ../src/copy-theme-dialog.c:212
+msgid "Copying files"
+msgstr "מעתיק קבצים"
+
+#: ../src/copy-theme-dialog.c:230
+msgid "From:"
+msgstr "מ:"
+
+#: ../src/copy-theme-dialog.c:234
+msgid "To:"
+msgstr "אל:"
+
+#: ../src/copy-theme-dialog.c:254
+msgid "Copying themes"
+msgstr "מעתיק ערכות נושא"
+
+#: ../src/copy-theme-dialog.c:298
+msgid "Invalid screensaver theme"
+msgstr "ערכת נושא לא תקינה"
+
+#: ../src/copy-theme-dialog.c:301
+#, c-format
+msgid "%s does not appear to be a valid screensaver theme."
+msgstr "‏%s אינו ערכת נושא תקינה."
+
+#: ../src/copy-theme-dialog.c:481
+#, c-format
+msgid "Copying file: %u of %u"
+msgstr "מעתיק קובץ: %u מתוך %u"
+
+#: ../src/mate-screensaver-command.c:62
+msgid "Causes the screensaver to exit gracefully"
+msgstr "Causes the screensaver to exit gracefully"
+
+#: ../src/mate-screensaver-command.c:64
+msgid "Query the state of the screensaver"
+msgstr "Query the state of the screensaver"
+
+#: ../src/mate-screensaver-command.c:66
+msgid "Query the length of time the screensaver has been active"
+msgstr "Query the length of time the screensaver has been active"
+
+#: ../src/mate-screensaver-command.c:68
+msgid "Tells the running screensaver process to lock the screen immediately"
+msgstr "Tells the running screensaver process to lock the screen immediately"
+
+#: ../src/mate-screensaver-command.c:70
+msgid "If the screensaver is active then switch to another graphics demo"
+msgstr "If the screensaver is active then switch to another graphics demo"
+
+#: ../src/mate-screensaver-command.c:72
+msgid "Turn the screensaver on (blank the screen)"
+msgstr "Turn the screensaver on (blank the screen)"
+
+#: ../src/mate-screensaver-command.c:74
+msgid "If the screensaver is active then deactivate it (un-blank the screen)"
+msgstr "If the screensaver is active then deactivate it (un-blank the screen)"
+
+#: ../src/mate-screensaver-command.c:76
+msgid "Poke the running screensaver to simulate user activity"
+msgstr "Poke the running screensaver to simulate user activity"
+
+#: ../src/mate-screensaver-command.c:78
+msgid "Inhibit the screensaver from activating.  Command blocks while inhibit is active."
+msgstr "Inhibit the screensaver from activating.  Command blocks while inhibit is active."
+
+#: ../src/mate-screensaver-command.c:80
+msgid "The calling application that is inhibiting the screensaver"
+msgstr "The calling application that is inhibiting the screensaver"
+
+#: ../src/mate-screensaver-command.c:82
+msgid "The reason for inhibiting the screensaver"
+msgstr "The reason for inhibiting the screensaver"
+
+#: ../src/mate-screensaver-command.c:84
+#: ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver.c:56
+msgid "Version of this application"
+msgstr "Version of this application"
+
+#: ../src/mate-screensaver-command.c:307
+#, c-format
+msgid "The screensaver is %s\n"
+msgstr "שומר המסך הוא %s\n"
+
+#: ../src/mate-screensaver-command.c:307
+msgid "active"
+msgstr "פעיל"
+
+#: ../src/mate-screensaver-command.c:307
+msgid "inactive"
+msgstr "לא פעיל"
+
+#: ../src/mate-screensaver-command.c:321
+#, c-format
+msgid "The screensaver is not inhibited\n"
+msgstr "שומר המסך אינו מנוע מלפעול\n"
+
+#: ../src/mate-screensaver-command.c:327
+#, c-format
+msgid "The screensaver is being inhibited by:\n"
+msgstr "שומר המסך מנוע מלפעול על ידי:\n"
+
+#: ../src/mate-screensaver-command.c:358
+#, c-format
+msgid "The screensaver has been active for %d seconds.\n"
+msgstr "שומר המסך היה פעיל במשך %d שניות.\n"
+
+#: ../src/mate-screensaver-command.c:362
+#, c-format
+#| msgid "The screensaver is not inhibited\n"
+msgid "The screensaver is not currently active.\n"
+msgstr "שומר המסך אינו פעיל כעת.\n"
+
+#: ../src/mate-screensaver-dialog.c:56
+msgid "Show debugging output"
+msgstr "Show debugging output"
+
+#: ../src/mate-screensaver-dialog.c:60
+msgid "Show the logout button"
+msgstr "Show the logout button"
+
+#: ../src/mate-screensaver-dialog.c:62
+msgid "Command to invoke from the logout button"
+msgstr "Command to invoke from the logout button"
+
+#: ../src/mate-screensaver-dialog.c:64
+msgid "Show the switch user button"
+msgstr "Show the switch user button"
+
+#: ../src/mate-screensaver-dialog.c:66
+msgid "Message to show in the dialog"
+msgstr "Message to show in the dialog"
+
+#: ../src/mate-screensaver-dialog.c:66
+#: ../src/mate-screensaver-dialog.c:68
+msgid "MESSAGE"
+msgstr "MESSAGE"
+
+#: ../src/mate-screensaver-dialog.c:68
+msgid "Not used"
+msgstr "לא בשימוש"
+
+#. login: is whacked always translate to Username:
+#: ../src/mate-screensaver-dialog.c:178
+#: ../src/mate-screensaver-dialog.c:179
+#: ../src/mate-screensaver-dialog.c:180
+#: ../src/gs-auth-pam.c:698
+msgid "Username:"
+msgstr "שם משתמש:"
+
+#: ../src/mate-screensaver-dialog.c:181
+#: ../src/mate-screensaver-dialog.c:182
+#: ../src/gs-auth-pam.c:166
+msgid "Password:"
+msgstr "סיסמה:"
+
+#: ../src/mate-screensaver-dialog.c:183
+msgid "You are required to change your password immediately (password aged)"
+msgstr "הינך מחוייב לשנות את סיסמתך מיידית (הסיסמה התיישנה)"
+
+#: ../src/mate-screensaver-dialog.c:184
+msgid "You are required to change your password immediately (root enforced)"
+msgstr "הינך מחוייב לשנות את סיסמתך מיידית (דרישת מנהל המערכת)"
+
+#: ../src/mate-screensaver-dialog.c:185
+msgid "Your account has expired; please contact your system administrator"
+msgstr "פג תוקף חשבונך; אנא צור קשר עם מנהל המערכת שלך"
+
+#: ../src/mate-screensaver-dialog.c:186
+msgid "No password supplied"
+msgstr "לא סופקה סיסמה"
+
+#: ../src/mate-screensaver-dialog.c:187
+msgid "Password unchanged"
+msgstr "סיסמה לא השתנתה"
+
+#: ../src/mate-screensaver-dialog.c:188
+msgid "Can not get username"
+msgstr "נכשל בהשגת שם משתמש"
+
+#: ../src/mate-screensaver-dialog.c:189
+msgid "Retype new UNIX password:"
+msgstr "הקלד מחדש סיסמת UNIX חדשה:"
+
+#: ../src/mate-screensaver-dialog.c:190
+msgid "Enter new UNIX password:"
+msgstr "הכנס סיסמת UNIX חדשה:"
+
+#: ../src/mate-screensaver-dialog.c:191
+msgid "(current) UNIX password:"
+msgstr "סיסמת UNIX (נוכחית):"
+
+#: ../src/mate-screensaver-dialog.c:192
+msgid "Error while changing NIS password."
+msgstr "שגיאה בזמן שינוי סיסמת NIS."
+
+#: ../src/mate-screensaver-dialog.c:193
+msgid "You must choose a longer password"
+msgstr "אתה חייב לבחור סיסמה ארוכה יותר"
+
+#: ../src/mate-screensaver-dialog.c:194
+msgid "Password has been already used. Choose another."
+msgstr "הסיסמה הייתה כבר בשימוש. בחר אחרת."
+
+#: ../src/mate-screensaver-dialog.c:195
+msgid "You must wait longer to change your password"
+msgstr "אתה חייב לחכות יותר כדי לשנות את הסיסמה"
+
+#: ../src/mate-screensaver-dialog.c:196
+msgid "Sorry, passwords do not match"
+msgstr "סליחה, הסיסמאות אינן מתאימות"
+
+#: ../src/mate-screensaver-dialog.c:262
+msgid "Checking..."
+msgstr "בודק..."
+
+#: ../src/mate-screensaver-dialog.c:304
+#: ../src/gs-auth-pam.c:457
+msgid "Authentication failed."
+msgstr "האימות נכשל."
+
+#: ../src/mate-screensaver-preferences.c:524
+msgid "Blank screen"
+msgstr "מסך ריק"
+
+#: ../src/mate-screensaver-preferences.c:530
+msgid "Random"
+msgstr "אקראי"
+
+#: ../src/mate-screensaver-preferences.c:980
+#, c-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "שעה %d"
+msgstr[1] "%d שעות"
+
+#: ../src/mate-screensaver-preferences.c:983
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "דקה %d"
+msgstr[1] "%d דקות"
+
+#: ../src/mate-screensaver-preferences.c:986
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "שנייה %d"
+msgstr[1] "%d שניות"
+
+#. hour:minutes:seconds
+#: ../src/mate-screensaver-preferences.c:992
+#, c-format
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
+#. hour:minutes
+#. minutes:seconds
+#: ../src/mate-screensaver-preferences.c:995
+#: ../src/mate-screensaver-preferences.c:1003
+#, c-format
+msgid "%s %s"
+msgstr "%s %s"
+
+#. hour
+#. minutes
+#. seconds
+#: ../src/mate-screensaver-preferences.c:998
+#: ../src/mate-screensaver-preferences.c:1006
+#: ../src/mate-screensaver-preferences.c:1010
+#, c-format
+msgid "%s"
+msgstr "%s"
+
+#: ../src/mate-screensaver-preferences.c:1025
+#, c-format
+msgid "Never"
+msgstr "אף פעם"
+
+#: ../src/mate-screensaver-preferences.c:1467
+msgid "Could not load the main interface"
+msgstr "לא ניתן להעלות את המנשק הראשי"
+
+#: ../src/mate-screensaver-preferences.c:1469
+msgid "Please make sure that the screensaver is properly installed"
+msgstr "אנא וודא ששומר המסך מותקן כיאות."
+
+#: ../src/mate-screensaver.c:57
+msgid "Don't become a daemon"
+msgstr "Don't become a daemon"
+
+#: ../src/mate-screensaver.c:58
+msgid "Enable debugging code"
+msgstr "Enable debugging code"
+
+#: ../src/mate-screensaver.desktop.in.in.h:1
+msgid "Launch screen saver and locker program"
+msgstr "טעינת שומר המסך ותוכנית הנעילה"
+
+#: ../src/gs-auth-pam.c:397
+#, c-format
+msgid "Unable to establish service %s: %s\n"
+msgstr "Unable to establish service %s: %s\n"
+
+#: ../src/gs-auth-pam.c:423
+#, c-format
+msgid "Can't set PAM_TTY=%s"
+msgstr "Can't set PAM_TTY=%s"
+
+#: ../src/gs-auth-pam.c:455
+msgid "Incorrect password."
+msgstr "סיסמה שגויה."
+
+#: ../src/gs-auth-pam.c:471
+msgid "Not permitted to gain access at this time."
+msgstr "לא מורשה לקבל גישה בזמן זה."
+
+#: ../src/gs-auth-pam.c:477
+msgid "No longer permitted to access the system."
+msgstr "כבר לא מורשה לגשת למערכת"
+
+#: ../src/gs-listener-dbus.c:1851
+msgid "failed to register with the message bus"
+msgstr "נכשל ברישום עם ה־message bus"
+
+#: ../src/gs-listener-dbus.c:1861
+msgid "not connected to the message bus"
+msgstr "לא מוחבר ל־message bus"
+
+#: ../src/gs-listener-dbus.c:1870
+msgid "screensaver already running in this session"
+msgstr "שומר המסך כבר רץ עבור התחברות זאת"
+
+#: ../src/gs-lock-plug.c:270
+msgid "Time has expired."
+msgstr "עבר הזמן."
+
+#: ../src/gs-lock-plug.c:298
+msgid "You have the Caps Lock key on."
+msgstr "מקש ה־Caps Lock לחוץ."
+
+#: ../src/gs-lock-plug.c:1362
+msgid "S_witch User..."
+msgstr "הח_לף משתמש..."
+
+#: ../src/gs-lock-plug.c:1371
+msgid "Log _Out"
+msgstr "_התנתק"
+
+#. To translators: This expands to USERNAME on HOSTNAME
+#: ../src/gs-lock-plug.c:1547
+msgid "%U on %h"
+msgstr "‏%U ב־%h"
+
+#: ../src/gs-lock-plug.c:1561
+msgid "_Password:"
+msgstr "_סיסמה:"
+
+#~ msgid "Reason for being away"
+#~ msgstr "Reason for being away"
+#~ msgid "The reason for being away from the computer."
+#~ msgstr "The reason for being away from the computer."
+#~ msgid "Copying '%s'"
+#~ msgstr "מעתיק '%s'"
+#~ msgid "From URI"
+#~ msgstr "מכתובת"
+#~ msgid "URI currently transferring from"
+#~ msgstr "הכתובת ממנה מעבירים"
+#~ msgid "To URI"
+#~ msgstr "אל כתובת"
+#~ msgid "URI currently transferring to"
+#~ msgstr "הכתובת אליה מעבירים"
+#~ msgid "Fraction completed"
+#~ msgstr "חלק שהסתיים"
+#~ msgid "Fraction of transfer currently completed"
+#~ msgstr "החלק מההעברה שהסתיים כבר"
+#~ msgid "Current URI index"
+#~ msgstr "אינדקס כתובת נוכחי"
+#~ msgid "Current URI index - starts from 1"
+#~ msgstr "אינדקס כתובת נוכחי - מתחיל מ 1"
+#~ msgid "Total URIs"
+#~ msgstr "סך כל הכתובות"
+#~ msgid "Total number of URIs"
+#~ msgstr "המספר של כל הכתובות"
+#~ msgid "Connecting..."
+#~ msgstr "מתחבר..."
+#~ msgid "_Switch user..."
+#~ msgstr "_החלף משתמש..."
+#~ msgid "N"
+#~ msgstr "N"
+#~ msgid "S_witch to user:"
+#~ msgstr "ה_חלף למשתמש:"
+#~ msgid "Name"
+#~ msgstr "שם"
+#~ msgid "User"
+#~ msgstr "משתמש"
+#~ msgid "Show Details"
+#~ msgstr "הצג פרטים"
+
+#, fuzzy
+#~ msgid "Unknown error occurred."
+#~ msgstr "ארעה שגיאה לא ידועה."
+#~ msgid "_Screensaver"
+#~ msgstr "_שומר מסך"
+#~ msgid "Disable running graphical themes while blanked"
+#~ msgstr "Disable running graphical themes while blanked"
+#~ msgid "Enable running graphical themes while blanked (if applicable)"
+#~ msgstr "Enable running graphical themes while blanked (if applicable)"
+#~ msgid "That password was incorrect."
+#~ msgstr "הסיסמה שגויה."
+
