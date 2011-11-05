@@ -19,13 +19,17 @@ Installation
 
 See the file 'INSTALL'
 
+./autogen.sh --prefix=/usr --sysconfdir=/etc
+make
+sudo make install
+
 
 How to report bugs
 ==================
 
 Bugs should be reported to the MATE bug tracking
 system:
-    http://bugzilla.gnome.org/simple-bug-guide.cgi?product=mate-screensaver
+    https://github.com/perberos/mate-screensaver/issues
 
 You will need to create an account if you don't have one already.
 
