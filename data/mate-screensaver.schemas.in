@@ -21,7 +21,7 @@
       <applyto>/apps/mate-screensaver/lock_enabled</applyto>
       <owner>mate-screensaver</owner>
       <type>bool</type>
-      <default>TRUE</default>
+      <default>FALSE</default>
       <locale name="C">
         <short>Lock on activation</short>
         <long>
