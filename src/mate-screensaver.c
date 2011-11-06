@@ -37,62 +37,61 @@
 #include "gs-monitor.h"
 #include "gs-debug.h"
 
-void
-mate_screensaver_quit (void)
+void mate_screensaver_quit(void)
 {
-	gtk_main_quit ();
+	gtk_main_quit();
 }
 
-int
-main (int    argc,
-      char **argv)
+int main(int argc, char **argv)
 {
-	GSMonitor          *monitor;
-	GError             *error = NULL;
-	static gboolean     show_version = FALSE;
-	static gboolean     no_daemon    = FALSE;
-	static gboolean     debug        = FALSE;
-	static GOptionEntry entries []   =
-	{
-		{ "version", 0, 0, G_OPTION_ARG_NONE, &show_version, N_("Version of this application"), NULL },
-		{ "no-daemon", 0, 0, G_OPTION_ARG_NONE, &no_daemon, N_("Don't become a daemon"), NULL },
-		{ "debug", 0, 0, G_OPTION_ARG_NONE, &debug, N_("Enable debugging code"), NULL },
-		{ NULL }
+	GSMonitor* monitor;
+	GError* error = NULL;
+
+	static gboolean show_version = FALSE;
+	static gboolean no_daemon = FALSE;
+	static gboolean debug = FALSE;
+
+	static GOptionEntry entries[] = {
+		{"version", 0, 0, G_OPTION_ARG_NONE, &show_version, N_("Version of this application"), NULL},
+		{"no-daemon", 0, 0, G_OPTION_ARG_NONE, &no_daemon, N_("Don't become a daemon"), NULL},
+		{"debug", 0, 0, G_OPTION_ARG_NONE, &debug, N_("Enable debugging code"), NULL},
+		{NULL}
 	};
 
-#ifdef ENABLE_NLS
-	bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
-# ifdef HAVE_BIND_TEXTDOMAIN_CODESET
-	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-# endif
-	textdomain (GETTEXT_PACKAGE);
-#endif
+	#ifdef ENABLE_NLS
+		bindtextdomain(GETTEXT_PACKAGE, MATELOCALEDIR);
+		#ifdef HAVE_BIND_TEXTDOMAIN_CODESET
+			bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
+		#endif
+		textdomain(GETTEXT_PACKAGE);
+	#endif
 
-	if (! gtk_init_with_args (&argc, &argv, NULL, entries, NULL, &error))
+	if (!gtk_init_with_args(&argc, &argv, NULL, entries, NULL, &error))
 	{
 		if (error)
 		{
-			g_warning ("%s", error->message);
-			g_error_free (error);
+			g_warning("%s", error->message);
+			g_error_free(error);
 		}
 		else
 		{
-			g_warning ("Unable to initialize GTK+");
+			g_warning("Unable to initialize GTK+");
 		}
-		exit (1);
+
+		exit(1);
 	}
 
 	if (show_version)
 	{
-		g_print ("%s %s\n", argv [0], VERSION);
-		exit (1);
+		g_print("%s %s\n", argv[0], VERSION);
+		exit(1);
 	}
 
 	/* debug to a file if in deamon mode */
-	gs_debug_init (debug, ! no_daemon);
-	gs_debug ("initializing mate-screensaver %s", VERSION);
+	gs_debug_init(debug, !no_daemon);
+	gs_debug("initializing mate-screensaver %s", VERSION);
 
-	monitor = gs_monitor_new ();
+	monitor = gs_monitor_new();
 
 	if (monitor == NULL)
 	{
@@ -100,33 +99,35 @@ main (int    argc,
 	}
 
 	error = NULL;
-	if (! gs_monitor_start (monitor, &error))
+
+	if (!gs_monitor_start(monitor, &error))
 	{
 		if (error)
 		{
-			g_warning ("%s", error->message);
-			g_error_free (error);
+			g_warning("%s", error->message);
+			g_error_free(error);
 		}
 		else
 		{
-			g_warning ("Unable to start screensaver");
+			g_warning("Unable to start screensaver");
 		}
-		exit (1);
+
+		exit(1);
 	}
 
 	/* Don't close stdout and stderr for now */
-	if (! no_daemon && daemon (0, 1))
+	if (!no_daemon && daemon(0, 1))
 	{
-		g_error ("Could not daemonize: %s", g_strerror (errno));
+		g_error("Could not daemonize: %s", g_strerror (errno));
 	}
 
-	gtk_main ();
+	gtk_main();
 
-	g_object_unref (monitor);
+	g_object_unref(monitor);
 
-	gs_debug ("mate-screensaver finished");
+	gs_debug("mate-screensaver finished");
 
-	gs_debug_shutdown ();
+	gs_debug_shutdown();
 
 	return 0;
 }
