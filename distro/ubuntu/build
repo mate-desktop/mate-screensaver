@@ -10,13 +10,10 @@ makedepends=('pkgconfig' 'intltool' 'mate-doc-utils')
 # editar esta funcion!
 build() {
 	cd $pkgsrc
-	# obtener el archivo de github
-	wget -c https://github.com/perberos/${pkgname}/tarball/${pkgver}
-	
 	# descomprimir
 	tar xvzf ${pkgver}
 	# entramos a la carpeta
-	cd *-${pkgname}-*
+	cd ${pkgname}
 
 	./autogen.sh \
 		--prefix=/usr --sysconfdir=/etc \
