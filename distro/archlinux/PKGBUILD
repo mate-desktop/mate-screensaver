@@ -1,5 +1,5 @@
 pkgname=mate-screensaver
-pkgver=2011.11.04
+pkgver=2011.11.06
 pkgrel=1
 pkgdesc='Screensaver for MATE'
 arch=('i686' 'x86_64')
@@ -7,14 +7,15 @@ license=('GPL')
 depends=('gtk2' 'dbus' 'mate-conf' 'mate-desktop' 'mate-menus')
 makedepends=('pkgconfig' 'intltool' 'mate-doc-utils')
 options=('!libtool' '!emptydirs')
-source=(http://ftp.gnome.org/pub/gnome/sources/${pkgname}/2.10/${pkgname}.tar.gz
+source=(https://github.com/perberos/${pkgname}/tarball/${pkgver}
 		mate-screensaver.pam)
 install=mate-screensaver.install
-sha256sums=('5b0dabd93635c9cb15bb150cb2f2093232764a97227fe9b4f927db640d35775f'
-			'2744d1fc39da46fc681b7cf1c9230d2035b2bb8d9f510213fbe439c114eb76a2')
+sha256sums=('b0ce68bd1185428fde8399e7077ba502f2400f8d1fb548dd463cdfd341fa582c'
+            '2744d1fc39da46fc681b7cf1c9230d2035b2bb8d9f510213fbe439c114eb76a2')
 
 build() {
-	cd ${pkgname}
+	# this is a hack for tarballs on github
+	cd *-${pkgname}-*
 
 	./autogen.sh \
 		--prefix=/usr --sysconfdir=/etc \
@@ -29,7 +30,8 @@ build() {
 }
 
 package() {
-	cd ${pkgname}
+	# this is a hack for tarballs on github
+	cd *-${pkgname}-*
 
 	make MATECONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 DESTDIR=${pkgdir} install || return 1
 	
