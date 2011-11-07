@@ -5,7 +5,7 @@ pkgname=mate-screensaver
 pkgver=2011.11.06
 pkgrel=1
 pkgdesc='Screensaver for MATE'
-depends=('gtk2' 'dbus' 'mate-conf' 'mate-desktop' 'mate-menus')
+depends=('gtk2' 'dbus' 'mate-conf' 'mate-desktop')
 makedepends=('pkgconfig' 'intltool' 'mate-doc-utils')
 # editar esta funcion!
 build() {
