@@ -2,8 +2,8 @@ dnl -*- mode: m4 -*-
 
 AC_PREREQ(2.60)
 AC_INIT([mate-screensaver],
-        [2.30.2],
-        [http://bugzilla.gnome.org/enter_bug.cgi?product=mate-screensaver])
+        [2011.12.01],
+        [https://github.com/mate-desktop/mate-screensaver])
 
 AC_CONFIG_SRCDIR(src/mate-screensaver.c)
 

@@ -1,5 +1,5 @@
 pkgname=mate-screensaver
-pkgver=2011.11.06
+pkgver=2011.12.01
 pkgrel=1
 pkgdesc='Screensaver for MATE'
 arch=('i686' 'x86_64')
