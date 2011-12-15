@@ -1,3 +1,2 @@
-#%PAM-1.0
-auth        required     pam_unix_auth.so
-auth        optional     pam_gnome_keyring.so
+@include common-auth
+auth optional pam_gnome_keyring.so
