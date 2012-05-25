@@ -52,8 +52,12 @@
 #include "gs-debug.h"
 
 #define KEY_LOCK_DIALOG_THEME "/apps/mate-screensaver/lock_dialog_theme"
+
 #define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
 #define MDM_FLEXISERVER_ARGS    "--startnew Standard"
+
+#define GDM_FLEXISERVER_COMMAND "gdmflexiserver"
+#define GDM_FLEXISERVER_ARGS    "--startnew Standard"
 
 /* same as SMS ;) */
 #define NOTE_BUFFER_MAX_CHARS 160
@@ -175,21 +179,56 @@ do_user_switch (GSLockPlug *plug)
 	gboolean res;
 	char    *command;
 
-	command = g_strdup_printf ("%s %s",
-	                           MDM_FLEXISERVER_COMMAND,
-	                           MDM_FLEXISERVER_ARGS);
+	gboolean found;
+	found = is_program_in_path (MDM_FLEXISERVER_COMMAND);
 
-	error = NULL;
-	res = gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
-	                                        command,
-	                                        &error);
-
-	g_free (command);
-
-	if (! res)
+	if (found)
 	{
-		gs_debug ("Unable to start MDM greeter: %s", error->message);
-		g_error_free (error);
+
+		command = g_strdup_printf ("%s %s",
+								   MDM_FLEXISERVER_COMMAND,
+								   MDM_FLEXISERVER_ARGS);
+
+		error = NULL;
+		res = gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
+												command,
+												&error);
+
+		g_free (command);
+
+		if (! res)
+		{
+			gs_debug ("Unable to start MDM greeter: %s", error->message);
+			g_error_free (error);
+		}
+	}
+	else {
+		
+		/* MDM not found, so we try to use gdmflexiserver from GDM */
+		
+		found = is_program_in_path (GDM_FLEXISERVER_COMMAND);
+		
+		if (found)
+		{
+                
+			char    *gdm_command;
+
+			gdm_command = g_strdup_printf ("%s %s",
+										   GDM_FLEXISERVER_COMMAND,
+										   GDM_FLEXISERVER_ARGS);
+			
+			error = NULL;
+			res = gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
+											gdm_command,
+											&error);
+
+			g_free (gdm_command);
+			
+			if (! res) {
+				gs_debug ("Unable to start MDM greeter: %s", error->message);
+				g_error_free (error);
+			}
+		}
 	}
 }
 
@@ -976,8 +1015,18 @@ gs_lock_plug_set_switch_enabled (GSLockPlug *plug,
 		}
 		else
 		{
-			gs_debug ("Waring: MDM flexiserver command not found: %s", MDM_FLEXISERVER_COMMAND);
-			gtk_widget_hide (plug->priv->auth_switch_button);
+			gs_debug ("Warning: MDM flexiserver command not found: %s", MDM_FLEXISERVER_COMMAND);
+			
+			/* MDM not found, so we try to use gdmflexiserver from GDM */
+			found = is_program_in_path (GDM_FLEXISERVER_COMMAND);
+			if (found)
+			{
+				gtk_widget_show (plug->priv->auth_switch_button);
+			}
+			else {
+				gs_debug ("Warning: GDM flexiserver command not found: %s", GDM_FLEXISERVER_COMMAND);
+				gtk_widget_hide (plug->priv->auth_switch_button);
+			}
 		}
 	}
 	else
