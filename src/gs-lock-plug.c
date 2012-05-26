@@ -172,6 +172,21 @@ gs_lock_plug_style_set (GtkWidget *widget,
 	gtk_box_set_spacing (GTK_BOX (plug->priv->auth_action_area), 5);
 }
 
+static gboolean
+is_program_in_path (const char *program)
+{
+	char *tmp = g_find_program_in_path (program);
+	if (tmp != NULL)
+	{
+		g_free (tmp);
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
 static void
 do_user_switch (GSLockPlug *plug)
 {
@@ -914,21 +929,6 @@ gs_lock_plug_set_logout_command (GSLockPlug *plug,
 	else
 	{
 		plug->priv->logout_command = NULL;
-	}
-}
-
-static gboolean
-is_program_in_path (const char *program)
-{
-	char *tmp = g_find_program_in_path (program);
-	if (tmp != NULL)
-	{
-		g_free (tmp);
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
 	}
 }
 
