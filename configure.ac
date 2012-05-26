@@ -1085,28 +1085,27 @@ echo "
                     mate-screensaver $VERSION
                     ========================
 
-	prefix:                   ${prefix}
-	exec_prefix:              ${exec_prefix}
+        prefix:                   ${prefix}
+        exec_prefix:              ${exec_prefix}
         libdir:                   ${EXPANDED_LIBDIR}
         bindir:                   ${EXPANDED_BINDIR}
         sysconfdir:               ${EXPANDED_SYSCONFDIR}
         localstatedir:            ${EXPANDED_LOCALSTATEDIR}
         datadir:                  ${EXPANDED_DATADIR}
         PAM prefix:               ${PAM_PREFIX}
-	source code location:	  ${srcdir}
-	compiler:		  ${CC}
-	cflags:		          ${CFLAGS}
+        source code location:     ${srcdir}
+        compiler:                 ${CC}
+        cflags:                   ${CFLAGS}
         Base libs:                ${MATE_SCREENSAVER_LIBS}
         Extension libs:           ${SAVER_LIBS}
         Maintainer mode:          ${USE_MAINTAINER_MODE}
         Docs enabled:             ${enable_docbook_docs}
 
-	GL:                       ${have_libgl}
+        GL:                       ${have_libgl}
 
         Screen locking enabled:   ${enable_locking}
-        User switching enabled:   ${enable_user_switching}
         Show keyboard indicator:  ${with_kbd_layout_indicator}
-        Have libmatenotify support:   ${have_libmatenotify}
+        libmatenotify support:    ${have_libmatenotify}
         PAM support:              ${have_pam}
         Have shadow passwords:    ${have_shadow}
         Have adjunct shadow:      ${have_shadow_adjunct}
