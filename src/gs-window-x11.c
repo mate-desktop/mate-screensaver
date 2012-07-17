@@ -2740,13 +2740,20 @@ create_info_bar (GSWindow *window)
 	gtk_box_pack_end (GTK_BOX (window->priv->vbox), window->priv->info_bar, FALSE, FALSE, 0);
 }
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+static void
+on_drawing_area_realized (GtkWidget *drawing_area)
+{
+	GdkRGBA black = { 0.0, 0.0, 0.0, 1.0 };
+
+	gdk_window_set_background_rgba (gtk_widget_get_window (drawing_area),
+	                                &black);
+}
+#endif
+
 static void
 gs_window_init (GSWindow *window)
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
-	GdkRGBA black = { 0.0, 0.0, 0.0, 1.0 };
-
-#endif
 	window->priv = GS_WINDOW_GET_PRIVATE (window);
 
 	window->priv->geometry.x      = -1;
@@ -2789,9 +2796,10 @@ gs_window_init (GSWindow *window)
 #endif
 	gtk_box_pack_start (GTK_BOX (window->priv->vbox), window->priv->drawing_area, TRUE, TRUE, 0);
 #if GTK_CHECK_VERSION (3, 0, 0)
-        gtk_widget_realize (window->priv->drawing_area);
-        gdk_window_set_background_rgba (gtk_widget_get_window (window->priv->drawing_area), &black);
-
+	g_signal_connect (window->priv->drawing_area,
+	                  "realize",
+	                  G_CALLBACK (on_drawing_area_realized),
+	                  NULL);
 #endif
 	create_info_bar (window);
 
