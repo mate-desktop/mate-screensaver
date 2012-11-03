@@ -76,7 +76,7 @@
       <description>Set this to TRUE to offer an option in the unlock dialog to switch to a different user account.</description>
     </key>
     <key name="lock-dialog-theme" type="s">
-      <default>default</default>
+      <default>'default'</default>
       <summary>Theme for lock dialog</summary>
       <description>Theme to use for the lock dialog</description>
     </key>
