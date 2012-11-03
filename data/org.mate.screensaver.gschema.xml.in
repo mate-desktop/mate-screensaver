@@ -75,6 +75,11 @@
       <summary>Allow user switching</summary>
       <description>Set this to TRUE to offer an option in the unlock dialog to switch to a different user account.</description>
     </key>
+    <key name="lock-dialog-theme" type="s">
+      <default>default</default>
+      <summary>Theme for lock dialog</summary>
+      <description>Theme to use for the lock dialog</description>
+    </key>
     <key name="status-message-enabled" type="b">
       <default>true</default>
       <summary>Allow the session status message to be displayed</summary>

@@ -51,9 +51,9 @@
 
 #include "gs-debug.h"
 
-#define GSETTINGS_SCHEMA "org.mate.ScreenSaver"
+#define GSETTINGS_SCHEMA "org.mate.screensaver"
 
-#define KEY_LOCK_DIALOG_THEME "/apps/mate-screensaver/lock_dialog_theme"
+#define KEY_LOCK_DIALOG_THEME "lock-dialog-theme"
 
 #define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
 #define MDM_FLEXISERVER_ARGS    "--startnew Standard"
