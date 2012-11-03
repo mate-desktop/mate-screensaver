@@ -34,7 +34,7 @@ static void gs_prefs_class_init (GSPrefsClass *klass);
 static void gs_prefs_init       (GSPrefs      *prefs);
 static void gs_prefs_finalize   (GObject      *object);
 
-#define LOCKDOWN_SETTINGS_SCHEMA "org.mate.desktop.lockdown"
+#define LOCKDOWN_SETTINGS_SCHEMA "org.mate.lockdown"
 #define KEY_LOCK_DISABLE "disable-lock-screen"
 #define KEY_USER_SWITCH_DISABLE "disable-user-switching"
 

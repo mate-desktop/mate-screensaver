@@ -44,7 +44,7 @@
 
 #define GTK_BUILDER_FILE "mate-screensaver-preferences.ui"
 
-#define LOCKDOWN_SETTINGS_SCHEMA "org.mate.desktop.lockdown"
+#define LOCKDOWN_SETTINGS_SCHEMA "org.mate.lockdown"
 #define KEY_LOCK_DISABLE "disable-lock-screen"
 
 #define GSETTINGS_SCHEMA "org.mate.screensaver"
