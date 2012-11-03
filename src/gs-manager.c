@@ -1060,7 +1060,7 @@ get_system_settings (void)
          * Hence, reset to system default values.
          */
         /* TODO: Ideally we would like to bind some other key, screensaver-specific. */
-        settings = g_settings_new ("org.mate.desktop.background");
+        settings = g_settings_new ("org.mate.background");
 
 	g_settings_delay (settings);
 
