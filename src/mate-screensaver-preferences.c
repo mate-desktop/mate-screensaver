@@ -33,7 +33,6 @@
 #include <glib/gi18n.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
-#include <mateconf/mateconf-client.h>
 
 #include <gio/gio.h>
 
@@ -45,18 +44,17 @@
 
 #define GTK_BUILDER_FILE "mate-screensaver-preferences.ui"
 
-#define MATE_LOCKDOWN_DIR  "/desktop/mate/lockdown"
-#define KEY_LOCK_DISABLE    MATE_LOCKDOWN_DIR "/disable_lock_screen"
+#define LOCKDOWN_SETTINGS_SCHEMA "org.mate.desktop.lockdown"
+#define KEY_LOCK_DISABLE "disable-lock-screen"
 
-#define KEY_DIR             "/apps/mate-screensaver"
-#define MATE_SESSION_DIR   "/desktop/mate/session"
-#define KEY_LOCK            KEY_DIR "/lock_enabled"
-#define KEY_IDLE_ACTIVATION_ENABLED         KEY_DIR "/idle_activation_enabled"
-#define KEY_MODE            KEY_DIR "/mode"
-#define KEY_ACTIVATE_DELAY  MATE_SESSION_DIR "/idle_delay"
-#define KEY_LOCK_DELAY      KEY_DIR "/lock_delay"
-#define KEY_CYCLE_DELAY     KEY_DIR "/cycle_delay"
-#define KEY_THEMES          KEY_DIR "/themes"
+#define GSETTINGS_SCHEMA "org.mate.screensaver"
+#define KEY_LOCK "lock-enabled"
+#define KEY_IDLE_ACTIVATION_ENABLED "idle-activation-enabled"
+#define KEY_MODE "mode"
+#define KEY_ACTIVATE_DELAY "idle-delay"
+#define KEY_LOCK_DELAY "lock-delay"
+#define KEY_CYCLE_DELAY "cycle-delay"
+#define KEY_THEMES "themes"
 
 #define GPM_COMMAND "mate-power-preferences"
 
@@ -65,14 +63,6 @@ enum
     NAME_COLUMN = 0,
     ID_COLUMN,
     N_COLUMNS
-};
-
-static MateConfEnumStringPair mode_enum_map [] =
-{
-	{ GS_MODE_BLANK_ONLY,       "blank-only" },
-	{ GS_MODE_RANDOM,           "random"     },
-	{ GS_MODE_SINGLE,           "single"     },
-	{ 0, NULL }
 };
 
 /* Drag and drop info */
@@ -95,26 +85,25 @@ static GSJob          *job = NULL;
 static gint32
 config_get_activate_delay (gboolean *is_writable)
 {
-	MateConfClient *client;
+	GSettings *settings;
 	gint32       delay;
 
-	client = mateconf_client_get_default ();
+	settings = g_settings_new (GSETTINGS_SCHEMA);
 
 	if (is_writable)
 	{
-		*is_writable = mateconf_client_key_is_writable (client,
-		               KEY_ACTIVATE_DELAY,
-		               NULL);
+		*is_writable = g_settings_is_writable (settings,
+		               KEY_ACTIVATE_DELAY);
 	}
 
-	delay = mateconf_client_get_int (client, KEY_ACTIVATE_DELAY, NULL);
+	delay = g_settings_get_int (settings, KEY_ACTIVATE_DELAY);
 
 	if (delay < 1)
 	{
 		delay = 1;
 	}
 
-	g_object_unref (client);
+	g_object_unref (settings);
 
 	return delay;
 }
@@ -122,43 +111,32 @@ config_get_activate_delay (gboolean *is_writable)
 static void
 config_set_activate_delay (gint32 timeout)
 {
-	MateConfClient *client;
+	GSettings *settings;
 
-	client = mateconf_client_get_default ();
+	settings = g_settings_new (GSETTINGS_SCHEMA);
 
-	mateconf_client_set_int (client, KEY_ACTIVATE_DELAY, timeout, NULL);
+	g_settings_set_int (settings, KEY_ACTIVATE_DELAY, timeout);
 
-	g_object_unref (client);
+	g_object_unref (settings);
 }
 
 static int
 config_get_mode (gboolean *is_writable)
 {
-	MateConfClient *client;
+	GSettings *settings;
 	int          mode;
-	char        *string;
 
-	client = mateconf_client_get_default ();
+	settings = g_settings_new (GSETTINGS_SCHEMA);
 
 	if (is_writable)
 	{
-		*is_writable = mateconf_client_key_is_writable (client,
-		               KEY_MODE,
-		               NULL);
+		*is_writable = g_settings_is_writable (settings,
+		               KEY_MODE);
 	}
 
-	string = mateconf_client_get_string (client, KEY_MODE, NULL);
-	if (string)
-	{
-		mateconf_string_to_enum (mode_enum_map, string, &mode);
-		g_free (string);
-	}
-	else
-	{
-		mode = GS_MODE_BLANK_ONLY;
-	}
+	mode = g_settings_get_enum (settings, KEY_MODE);
 
-	g_object_unref (client);
+	g_object_unref (settings);
 
 	return mode;
 }
@@ -166,37 +144,33 @@ config_get_mode (gboolean *is_writable)
 static void
 config_set_mode (int mode)
 {
-	MateConfClient *client;
-	const char  *mode_string;
+	GSettings *settings;
 
-	client = mateconf_client_get_default ();
+	settings = g_settings_new (GSETTINGS_SCHEMA);
 
-	mode_string = mateconf_enum_to_string (mode_enum_map, mode);
-	mateconf_client_set_string (client, KEY_MODE, mode_string, NULL);
+	g_settings_set_enum (settings, KEY_MODE, mode);
 
-	g_object_unref (client);
+	g_object_unref (settings);
 }
 
 static char *
 config_get_theme (gboolean *is_writable)
 {
-	MateConfClient *client;
+	GSettings *settings;
 	char        *name;
 	int          mode;
 
-	client = mateconf_client_get_default ();
+	settings = g_settings_new (GSETTINGS_SCHEMA);
 
 	if (is_writable)
 	{
 		gboolean can_write_theme;
 		gboolean can_write_mode;
 
-		can_write_theme = mateconf_client_key_is_writable (client,
-		                  KEY_THEMES,
-		                  NULL);
-		can_write_mode = mateconf_client_key_is_writable (client,
-		                 KEY_MODE,
-		                 NULL);
+		can_write_theme = g_settings_is_writable (settings,
+		                                          KEY_THEMES);
+		can_write_mode = g_settings_is_writable (settings,
+		                                         KEY_MODE);
 		*is_writable = can_write_theme && can_write_mode;
 	}
 
@@ -213,14 +187,11 @@ config_get_theme (gboolean *is_writable)
 	}
 	else
 	{
-		GSList *list;
-		list = mateconf_client_get_list (client,
-		                                 KEY_THEMES,
-		                                 MATECONF_VALUE_STRING,
-		                                 NULL);
-		if (list != NULL)
-		{
-			name = g_strdup (list->data);
+		 gchar **strv;
+                 strv = g_settings_get_strv (settings,
+                                             KEY_THEMES);
+                 if (strv != NULL) {
+                          name = g_strdup (strv[0]);
 		}
 		else
 		{
@@ -229,28 +200,29 @@ config_get_theme (gboolean *is_writable)
 			name = g_strdup ("__blank-only");
 		}
 
-		g_slist_foreach (list, (GFunc)g_free, NULL);
-		g_slist_free (list);
+		g_strfreev (strv);
 	}
 
-	g_object_unref (client);
+	g_object_unref (settings);
 
 	return name;
 }
 
-static GSList *
+static gchar **
 get_all_theme_ids (GSThemeManager *theme_manager)
 {
-	GSList *ids = NULL;
+	gchar **ids = NULL;
 	GSList *entries;
 	GSList *l;
+        guint idx = 0;
 
 	entries = gs_theme_manager_get_info_list (theme_manager);
+        ids = g_new0 (gchar *, g_slist_length (entries) + 1);
 	for (l = entries; l; l = l->next)
 	{
 		GSThemeInfo *info = l->data;
 
-		ids = g_slist_prepend (ids, g_strdup (gs_theme_info_get_id (info)));
+		ids[idx++] = g_strdup (gs_theme_info_get_id (info));
 		gs_theme_info_unref (info);
 	}
 	g_slist_free (entries);
@@ -261,11 +233,11 @@ get_all_theme_ids (GSThemeManager *theme_manager)
 static void
 config_set_theme (const char *theme_id)
 {
-	MateConfClient *client;
-	GSList      *list = NULL;
+	GSettings *settings;
+	gchar **strv = NULL;
 	int          mode;
 
-	client = mateconf_client_get_default ();
+	settings = g_settings_new (GSETTINGS_SCHEMA);
 
 	if (theme_id && strcmp (theme_id, "__blank-only") == 0)
 	{
@@ -276,46 +248,42 @@ config_set_theme (const char *theme_id)
 		mode = GS_MODE_RANDOM;
 
 		/* set the themes key to contain all available screensavers */
-		list = get_all_theme_ids (theme_manager);
+		strv = get_all_theme_ids (theme_manager);
 	}
 	else
 	{
 		mode = GS_MODE_SINGLE;
-		list = g_slist_append (list, g_strdup (theme_id));
+		strv = g_strsplit (theme_id, "%%%", 1);
 	}
 
 	config_set_mode (mode);
 
-	mateconf_client_set_list (client,
-	                          KEY_THEMES,
-	                          MATECONF_VALUE_STRING,
-	                          list,
-	                          NULL);
+	g_settings_set_strv (settings,
+	                     KEY_THEMES,
+	                     (const gchar * const*) strv);
 
-	g_slist_foreach (list, (GFunc) g_free, NULL);
-	g_slist_free (list);
+	g_strfreev (strv);
 
-	g_object_unref (client);
+	g_object_unref (settings);
 }
 
 static gboolean
 config_get_enabled (gboolean *is_writable)
 {
 	int          enabled;
-	MateConfClient *client;
+	GSettings *settings;
 
-	client = mateconf_client_get_default ();
+	settings = g_settings_new (GSETTINGS_SCHEMA);
 
 	if (is_writable)
 	{
-		*is_writable = mateconf_client_key_is_writable (client,
-		               KEY_LOCK,
-		               NULL);
+		*is_writable = g_settings_is_writable (settings,
+		               KEY_LOCK);
 	}
 
-	enabled = mateconf_client_get_bool (client, KEY_IDLE_ACTIVATION_ENABLED, NULL);
+	enabled = g_settings_get_boolean (settings, KEY_IDLE_ACTIVATION_ENABLED);
 
-	g_object_unref (client);
+	g_object_unref (settings);
 
 	return enabled;
 }
@@ -323,33 +291,32 @@ config_get_enabled (gboolean *is_writable)
 static void
 config_set_enabled (gboolean enabled)
 {
-	MateConfClient *client;
+	GSettings *settings;
 
-	client = mateconf_client_get_default ();
+	settings = g_settings_new (GSETTINGS_SCHEMA);
 
-	mateconf_client_set_bool (client, KEY_IDLE_ACTIVATION_ENABLED, enabled, NULL);
+	g_settings_set_boolean (settings, KEY_IDLE_ACTIVATION_ENABLED, enabled);
 
-	g_object_unref (client);
+	g_object_unref (settings);
 }
 
 static gboolean
 config_get_lock (gboolean *is_writable)
 {
-	MateConfClient *client;
+	GSettings *settings;
 	gboolean     lock;
 
-	client = mateconf_client_get_default ();
+	settings = g_settings_new (GSETTINGS_SCHEMA);
 
 	if (is_writable)
 	{
-		*is_writable = mateconf_client_key_is_writable (client,
-		               KEY_LOCK,
-		               NULL);
+		*is_writable = g_settings_is_writable (settings,
+		               KEY_LOCK);
 	}
 
-	lock = mateconf_client_get_bool (client, KEY_LOCK, NULL);
+	lock = g_settings_get_boolean (settings, KEY_LOCK);
 
-	g_object_unref (client);
+	g_object_unref (settings);
 
 	return lock;
 }
@@ -357,27 +324,27 @@ config_get_lock (gboolean *is_writable)
 static gboolean
 config_get_lock_disabled ()
 {
-	MateConfClient *client;
+	GSettings *settings;
 	gboolean     lock;
 
-	client = mateconf_client_get_default ();
+	settings = g_settings_new (LOCKDOWN_SETTINGS_SCHEMA);
 
-	lock = mateconf_client_get_bool (client, KEY_LOCK_DISABLE, NULL);
+	lock = g_settings_get_boolean (settings, KEY_LOCK_DISABLE);
 
-	g_object_unref (client);
+	g_object_unref (settings);
 	return lock;
 }
 
 static void
 config_set_lock (gboolean lock)
 {
-	MateConfClient *client;
+	GSettings *settings;
 
-	client = mateconf_client_get_default ();
+	settings = g_settings_new (GSETTINGS_SCHEMA);
 
-	mateconf_client_set_bool (client, KEY_LOCK, lock, NULL);
+	g_settings_set_boolean (settings, KEY_LOCK, lock);
 
-	g_object_unref (client);
+	g_object_unref (settings);
 }
 
 static void
@@ -438,20 +405,16 @@ preview_set_theme (GtkWidget  *widget,
 	}
 	else if (theme && strcmp (theme, "__random") == 0)
 	{
-		GSList *themes;
+		gchar **themes;
 
 		themes = get_all_theme_ids (theme_manager);
 		if (themes != NULL)
 		{
-			GSList *l;
 			gint32  i;
 
-			i = g_random_int_range (0, g_slist_length (themes));
-			l = g_slist_nth (themes, i);
-
-			job_set_theme (job, (const char *) l->data);
-			g_slist_foreach (themes, (GFunc) g_free, NULL);
-			g_slist_free (themes);
+			i = g_random_int_range (0, g_strv_length (themes));
+                        job_set_theme (job, themes[i]);
+                        g_strfreev (themes);
 
 			gs_job_start (job);
 		}
@@ -1134,13 +1097,6 @@ enabled_checkbox_toggled (GtkToggleButton *button, gpointer user_data)
 }
 
 static void
-invalid_type_warning (const char *type)
-{
-	g_warning ("Error retrieving configuration key '%s': Invalid type",
-	           type);
-}
-
-static void
 ui_disable_lock (gboolean disable)
 {
 	GtkWidget *widget;
@@ -1206,96 +1162,45 @@ ui_set_delay (int delay)
 }
 
 static void
-key_changed_cb (MateConfClient *client,
-                guint        cnxn_id,
-                MateConfEntry  *entry,
-                gpointer     data)
+key_changed_cb (GSettings *settings, const gchar *key, gpointer data)
 {
-	const char *key;
-	MateConfValue *value;
-
-	key = mateconf_entry_get_key (entry);
-
-	if (! g_str_has_prefix (key, KEY_DIR) && ! g_str_has_prefix (key, MATE_LOCKDOWN_DIR))
-	{
-		return;
-	}
-
-	value = mateconf_entry_get_value (entry);
-
 	if (strcmp (key, KEY_IDLE_ACTIVATION_ENABLED) == 0)
 	{
-		if (value->type == MATECONF_VALUE_BOOL)
-		{
 			gboolean enabled;
 
-			enabled = mateconf_value_get_bool (value);
+			enabled = g_settings_get_boolean (settings, key);
 
 			ui_set_enabled (enabled);
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
 	}
 	else if (strcmp (key, KEY_LOCK) == 0)
 	{
-		if (value->type == MATECONF_VALUE_BOOL)
-		{
-			gboolean enabled;
+		        gboolean enabled;
 
-			enabled = mateconf_value_get_bool (value);
+			enabled = g_settings_get_boolean (settings, key);
 
 			ui_set_lock (enabled);
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
 	}
 	else if (strcmp (key, KEY_LOCK_DISABLE) == 0)
 	{
-		if (value->type == MATECONF_VALUE_BOOL)
-		{
-			gboolean disabled;
+		        gboolean disabled;
 
-			disabled = mateconf_value_get_bool (value);
+			disabled = g_settings_get_boolean (settings, key);
 
 			ui_disable_lock (disabled);
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
 	}
 	else if (strcmp (key, KEY_THEMES) == 0)
 	{
-		if (value->type == MATECONF_VALUE_LIST)
-		{
-			GtkWidget *treeview;
+		        GtkWidget *treeview;
 
 			treeview = GTK_WIDGET (gtk_builder_get_object (builder, "savers_treeview"));
 			setup_treeview_selection (treeview);
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
 	}
 	else if (strcmp (key, KEY_ACTIVATE_DELAY) == 0)
 	{
-
-		if (value->type == MATECONF_VALUE_INT)
-		{
 			int delay;
 
-			delay = mateconf_value_get_int (value);
-			ui_set_delay (delay);
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+			delay = g_settings_get_int (settings, key);
+                        ui_set_delay (delay);
 
 	}
 	else
@@ -1578,12 +1483,12 @@ init_capplet (void)
 	GtkWidget *fullscreen_preview_area;
 	GtkWidget *fullscreen_preview_close;
 	char      *gtk_builder_file;
-	char      *string;
 	gdouble    activate_delay;
 	gboolean   enabled;
 	gboolean   is_writable;
-	MateConfClient *client;
+	GSettings *settings;
 	GError    *error=NULL;
+        gint       mode;
 
 	gtk_builder_file = g_build_filename (GTKBUILDERDIR, GTK_BUILDER_FILE, NULL);
 	builder = gtk_builder_new();
@@ -1687,42 +1592,21 @@ init_capplet (void)
 	gtk_widget_show_all (dialog);
 
 	/* Update list of themes if using random screensaver */
-	client = mateconf_client_get_default ();
-	string = mateconf_client_get_string (client, KEY_MODE, NULL);
-	if (string != NULL)
-	{
-		int mode;
-		GSList *list;
+         settings = g_settings_new (GSETTINGS_SCHEMA);
+         mode = g_settings_get_enum (settings, KEY_MODE);
+        if (mode == GS_MODE_RANDOM) {
+                gchar **list;
+                list = get_all_theme_ids (theme_manager);
+                g_settings_set_strv (settings, KEY_THEMES, (const gchar * const*) list);
+                g_strfreev (list);
+        }
 
-		mateconf_string_to_enum (mode_enum_map, string, &mode);
-		g_free (string);
+        g_signal_connect (settings,
+                          "changed",
+                          G_CALLBACK (key_changed_cb),
+                          NULL);
 
-		if (mode == GS_MODE_RANDOM)
-		{
-			list = get_all_theme_ids (theme_manager);
-			mateconf_client_set_list (client, KEY_THEMES, MATECONF_VALUE_STRING, list, NULL);
-
-			g_slist_foreach (list, (GFunc) g_free, NULL);
-			g_slist_free (list);
-		}
-	}
-
-	mateconf_client_add_dir (client, KEY_DIR,
-	                         MATECONF_CLIENT_PRELOAD_ONELEVEL,
-	                         NULL);
-	mateconf_client_notify_add (client,
-	                            KEY_DIR,
-	                            key_changed_cb,
-	                            NULL, NULL, NULL);
-	mateconf_client_add_dir (client, MATE_LOCKDOWN_DIR,
-	                         MATECONF_CLIENT_PRELOAD_ONELEVEL,
-	                         NULL);
-	mateconf_client_notify_add (client,
-	                            MATE_LOCKDOWN_DIR,
-	                            key_changed_cb,
-	                            NULL, NULL, NULL);
-
-	g_object_unref (client);
+	g_object_unref (settings);
 
 	preview_clear (preview);
 	gs_job_set_widget (job, preview);
