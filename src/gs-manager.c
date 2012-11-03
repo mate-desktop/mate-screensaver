@@ -26,8 +26,7 @@
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 
-#include <mateconf/mateconf-engine.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #include <libmateui/mate-bg.h>
@@ -54,9 +53,8 @@ struct GSManagerPrivate
 	GHashTable  *jobs;
 
 	GSThemeManager *theme_manager;
-	MateConfClient    *client;
+	GSettings *settings;
 	MateBG        *bg;
-	guint           bg_notify_id;
 
 	/* Policy */
 	glong        lock_timeout;
@@ -1034,64 +1032,46 @@ on_bg_changed (MateBG   *bg,
 	gs_debug ("background changed");
 }
 
-static void
-mateconf_changed_callback (MateConfClient *client,
-                           guint        cnxn_id,
-                           MateConfEntry  *entry,
-                           GSManager   *manager)
+static gboolean
+background_settings_change_event_cb (GSettings *settings,
+                                     gpointer     keys,
+                                     gint         n_keys,
+                                     GSManager    *manager)
 {
-	mate_bg_load_from_preferences (manager->priv->bg,
-	                               manager->priv->client);
+#if 0
+         /* FIXME: since we bind user settings instead of system ones,
+          * watching for changes is no longer valid.
+          */
+	  mate_bg_load_from_preferences (manager->priv->bg,
+                                         manager->priv->settings);
+#endif
+
+          return FALSE;
 }
 
-static void
-watch_bg_preferences (GSManager *manager)
+static GSettings *
+get_system_settings (void)
 {
-	g_assert (manager->priv->bg_notify_id == 0);
+        GSettings *settings;
+        gchar **keys;
+        gchar **k;
 
-	mateconf_client_add_dir (manager->priv->client,
-	                         MATE_BG_KEY_DIR,
-	                         MATECONF_CLIENT_PRELOAD_NONE,
-	                         NULL);
-	manager->priv->bg_notify_id = mateconf_client_notify_add (manager->priv->client,
-	                              MATE_BG_KEY_DIR,
-	                              (MateConfClientNotifyFunc)mateconf_changed_callback,
-	                              manager,
-	                              NULL,
-	                              NULL);
-}
+        /* FIXME: we need to bind system settings instead of user but
+         * that's currently impossible, not implemented yet.
+         * Hence, reset to system default values.
+         */
+        /* TODO: Ideally we would like to bind some other key, screensaver-specific. */
+        settings = g_settings_new ("org.mate.desktop.background");
 
-static MateConfClient *
-get_mateconf_client (void)
-{
-	MateConfClient        *client;
-	GSList             *addresses;
-	GError             *error;
-	MateConfEngine        *engine;
+	g_settings_delay (settings);
 
-	client = NULL;
-	addresses = NULL;
-
-	addresses = g_slist_prepend (addresses, "xml:merged:" SYSCONFDIR "/mateconf/mateconf.xml.mandatory");
-	addresses = g_slist_prepend (addresses, "xml:merged:" SYSCONFDIR "/mateconf/mateconf.xml.system");
-	addresses = g_slist_prepend (addresses, "xml:merged:" SYSCONFDIR "/mateconf/mateconf.xml.defaults");
-	addresses = g_slist_reverse (addresses);
-
-	error = NULL;
-	engine = mateconf_engine_get_for_addresses (addresses, &error);
-	if (engine == NULL)
-	{
-		gs_debug ("Unable to get mateconf engine for addresses: %s", error->message);
-		g_error_free (error);
+	keys = g_settings_list_keys (settings);
+        for (k = keys; *k; k++) {
+                g_settings_reset (settings, *k);
 	}
-	else
-	{
-		client = mateconf_client_get_for_engine (engine);
-	}
+	g_strfreev (keys);
 
-	g_slist_free (addresses);
-
-	return client;
+	return settings;
 }
 
 static void
@@ -1103,19 +1083,20 @@ gs_manager_init (GSManager *manager)
 	manager->priv->grab = gs_grab_new ();
 	manager->priv->theme_manager = gs_theme_manager_new ();
 
-	manager->priv->client = get_mateconf_client ();
-	if (manager->priv->client != NULL)
-	{
-		manager->priv->bg = mate_bg_new ();
+	manager->priv->settings = get_system_settings ();
+        manager->priv->bg = mate_bg_new ();
 
-		g_signal_connect (manager->priv->bg,
-		                  "changed",
-		                  G_CALLBACK (on_bg_changed),
-		                  manager);
-		watch_bg_preferences (manager);
+	g_signal_connect (manager->priv->bg,
+                          "changed",
+                          G_CALLBACK (on_bg_changed),
+                          manager);
+        g_signal_connect (manager->priv->settings,
+                          "change-event",
+                          G_CALLBACK (background_settings_change_event_cb),
+                          manager);
 
-		mate_bg_load_from_preferences (manager->priv->bg, manager->priv->client);
-	}
+	mate_bg_load_from_preferences (manager->priv->bg,
+                                       manager->priv->settings);
 }
 
 static void
@@ -1726,22 +1707,13 @@ gs_manager_finalize (GObject *object)
 
 	g_return_if_fail (manager->priv != NULL);
 
-	if (manager->priv->bg_notify_id != 0)
-	{
-		mateconf_client_remove_dir (manager->priv->client,
-		                            MATE_BG_KEY_DIR,
-		                            NULL);
-		mateconf_client_notify_remove (manager->priv->client,
-		                               manager->priv->bg_notify_id);
-		manager->priv->bg_notify_id = 0;
-	}
 	if (manager->priv->bg != NULL)
 	{
 		g_object_unref (manager->priv->bg);
 	}
-	if (manager->priv->client != NULL)
-	{
-		g_object_unref (manager->priv->client);
+        if (manager->priv->settings != NULL) {
+                g_settings_revert (manager->priv->settings);
+                g_object_unref (manager->priv->settings);
 	}
 
 	free_themes (manager);

@@ -9,12 +9,6 @@ man_MANS = 				\
 	mate-screensaver-preferences.1	\
 	$(NULL)
 
-@INTLTOOL_SCHEMAS_RULE@
-
-schemasdir   = @MATECONF_SCHEMA_FILE_DIR@
-schemas_in_files = mate-screensaver.schemas.in
-schemas_DATA = $(schemas_in_files:.schemas.in=.schemas)
-
 @INTLTOOL_DESKTOP_RULE@
 
 desktopdir = $(datadir)/applications
@@ -46,8 +40,17 @@ pkgconfig_DATA = mate-screensaver.pc
 dbussessionservicedir = $(DBUS_SESSION_SERVICE_DIR)
 dbussessionservice_DATA = org.mate.ScreenSaver.service
 
+@GSETTINGS_RULES@
+@INTLTOOL_XML_NOMERGE_RULE@
+
+gsettings_SCHEMAS = org.mate.screensaver.gschema.xml
+
+migrationdir = $(datadir)/MateConf/gsettings
+dist_migration_DATA = org.mate.screensaver.gschema.migrate
+
+
 EXTRA_DIST = 				\
-	$(schemas_in_files)		\
+	$(gsettings_SCHEMAS:.xml=.xml.in.in)		\
 	$(desktop_in_files)		\
 	$(directory_in_files)		\
 	$(gtkbuilder_DATA)		\
@@ -60,26 +63,15 @@ EXTRA_DIST = 				\
 	$(NULL)
 
 DISTCLEANFILES = 			\
-	$(schemas_DATA)			\
+    $(gsettings_SCHEMAS)
 	$(desktop_DATA)			\
 	$(directory_DATA)		\
 	$(NULL)
 
 MAINTAINERCLEANFILES =			\
 	*~				\
-	Makefile.in
-
-if MATECONF_SCHEMAS_INSTALL
-# don't do this if we are building in eg. rpm
-install-data-local: $(schemas_DATA)
-	if test -z "$(DESTDIR)" ; then \
-		for p in $(schemas_DATA) ; do \
-			MATECONF_CONFIG_SOURCE=$(MATECONF_SCHEMA_CONFIG_SOURCE) $(MATECONFTOOL) --makefile-install-rule $(top_builddir)/data/$$p ; \
-		done \
-	fi
-else
-install-data-local:
-endif
+	Makefile.in     \
+    $(gsettings_SCHEMAS:.xml=.valid)
 
 install-data-hook:
 	@system=`uname`; \

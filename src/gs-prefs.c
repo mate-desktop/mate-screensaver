@@ -26,7 +26,7 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #include "gs-prefs.h"
 
@@ -34,33 +34,33 @@ static void gs_prefs_class_init (GSPrefsClass *klass);
 static void gs_prefs_init       (GSPrefs      *prefs);
 static void gs_prefs_finalize   (GObject      *object);
 
-#define MATE_LOCKDOWN_DIR "/desktop/mate/lockdown"
-#define KEY_LOCK_DISABLE          MATE_LOCKDOWN_DIR "/disable_lock_screen"
-#define KEY_USER_SWITCH_DISABLE   MATE_LOCKDOWN_DIR "/disable_user_switching"
+#define LOCKDOWN_SETTINGS_SCHEMA "org.mate.desktop.lockdown"
+#define KEY_LOCK_DISABLE "disable-lock-screen"
+#define KEY_USER_SWITCH_DISABLE "disable-user-switching"
 
-#define KEY_DIR            "/apps/mate-screensaver"
-#define MATE_SESSION_DIR  "/desktop/mate/session"
-#define KEY_IDLE_ACTIVATION_ENABLED         KEY_DIR "/idle_activation_enabled"
-#define KEY_LOCK_ENABLED   KEY_DIR "/lock_enabled"
-#define KEY_MODE           KEY_DIR "/mode"
-#define KEY_ACTIVATE_DELAY MATE_SESSION_DIR "/idle_delay"
-#define KEY_POWER_DELAY    KEY_DIR "/power_management_delay"
-#define KEY_LOCK_DELAY     KEY_DIR "/lock_delay"
-#define KEY_CYCLE_DELAY    KEY_DIR "/cycle_delay"
-#define KEY_THEMES         KEY_DIR "/themes"
-#define KEY_USER_SWITCH_ENABLED KEY_DIR "/user_switch_enabled"
-#define KEY_LOGOUT_ENABLED KEY_DIR "/logout_enabled"
-#define KEY_LOGOUT_DELAY   KEY_DIR "/logout_delay"
-#define KEY_LOGOUT_COMMAND KEY_DIR "/logout_command"
-#define KEY_KEYBOARD_ENABLED KEY_DIR "/embedded_keyboard_enabled"
-#define KEY_KEYBOARD_COMMAND KEY_DIR "/embedded_keyboard_command"
-#define KEY_STATUS_MESSAGE_ENABLED   KEY_DIR "/status_message_enabled"
+#define GSETTINGS_SCHEMA "org.mate.screensaver"
+#define KEY_IDLE_ACTIVATION_ENABLED "idle-activation-enabled"
+#define KEY_LOCK_ENABLED "lock-enabled"
+#define KEY_MODE "mode"
+#define KEY_ACTIVATE_DELAY "idle-delay"
+#define KEY_POWER_DELAY "power-management-delay"
+#define KEY_LOCK_DELAY "lock-delay"
+#define KEY_CYCLE_DELAY "cycle-delay"
+#define KEY_THEMES "themes"
+#define KEY_USER_SWITCH_ENABLED "user-switch-enabled"
+#define KEY_LOGOUT_ENABLED "logout-enabled"
+#define KEY_LOGOUT_DELAY "logout-delay"
+#define KEY_LOGOUT_COMMAND "logout-command"
+#define KEY_KEYBOARD_ENABLED "embedded-keyboard-enabled"
+#define KEY_KEYBOARD_COMMAND "embedded-keyboard-command"
+#define KEY_STATUS_MESSAGE_ENABLED "status-message-enabled"
 
 #define GS_PREFS_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_PREFS, GSPrefsPrivate))
 
 struct GSPrefsPrivate
 {
-	MateConfClient *mateconf_client;
+	GSettings *settings;
+        GSettings *lockdown;
 };
 
 enum
@@ -72,14 +72,6 @@ enum
 enum
 {
     PROP_0
-};
-
-static MateConfEnumStringPair mode_enum_map [] =
-{
-	{ GS_MODE_BLANK_ONLY,       "blank-only" },
-	{ GS_MODE_RANDOM,           "random"     },
-	{ GS_MODE_SINGLE,           "single"     },
-	{ 0, NULL }
 };
 
 static guint         signals [LAST_SIGNAL] = { 0, };
@@ -202,20 +194,16 @@ _gs_prefs_set_cycle_timeout (GSPrefs *prefs,
 
 static void
 _gs_prefs_set_mode (GSPrefs    *prefs,
-                    const char *value)
+                    gint         mode)
 {
-	int mode;
-
-	if (value && mateconf_string_to_enum (mode_enum_map, value, &mode))
-		prefs->mode = mode;
-	else
-		prefs->mode = GS_MODE_BLANK_ONLY;
+	prefs->mode = mode;
 }
 
 static void
 _gs_prefs_set_themes (GSPrefs *prefs,
-                      GSList  *list)
+                      gchar **values)
 {
+        guint i;
 	if (prefs->themes)
 	{
 		g_slist_foreach (prefs->themes, (GFunc)g_free, NULL);
@@ -223,7 +211,9 @@ _gs_prefs_set_themes (GSPrefs *prefs,
 	}
 
 	/* take ownership of the list */
-	prefs->themes = list;
+	prefs->themes = NULL;
+        for (i=0; values[i] != NULL; i++)
+                prefs->themes = g_slist_append (prefs->themes, g_strdup (values[i]));
 }
 
 static void
@@ -328,572 +318,214 @@ _gs_prefs_set_user_switch_enabled (GSPrefs *prefs,
 }
 
 static void
-key_error_and_free (const char *key,
-                    GError     *error)
-{
-	g_warning ("Error retrieving configuration key '%s': %s", key, error->message);
-	g_error_free (error);
-	error = NULL;
-}
-
-static void
-gs_prefs_load_from_mateconf (GSPrefs *prefs)
+gs_prefs_load_from_settings (GSPrefs *prefs)
 {
 	glong    value;
 	gboolean bvalue;
 	char    *string;
-	GSList  *list;
-	GError  *error;
+	gchar    **strv;
+	gint       mode;
 
-	error = NULL;
-	bvalue = mateconf_client_get_bool (prefs->priv->mateconf_client, KEY_IDLE_ACTIVATION_ENABLED, &error);
-	if (! error)
-	{
-		_gs_prefs_set_idle_activation_enabled (prefs, bvalue);
-	}
-	else
-	{
-		key_error_and_free (KEY_IDLE_ACTIVATION_ENABLED, error);
-	}
+	bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_IDLE_ACTIVATION_ENABLED);
+        _gs_prefs_set_idle_activation_enabled (prefs, bvalue);
 
-	error = NULL;
-	bvalue = mateconf_client_get_bool (prefs->priv->mateconf_client, KEY_LOCK_ENABLED, &error);
-	if (! error)
-	{
-		_gs_prefs_set_lock_enabled (prefs, bvalue);
-	}
-	else
-	{
-		key_error_and_free (KEY_LOCK_ENABLED, error);
-	}
+	bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_LOCK_ENABLED);
+        _gs_prefs_set_lock_enabled (prefs, bvalue);
 
-	error = NULL;
-	bvalue = mateconf_client_get_bool (prefs->priv->mateconf_client, KEY_LOCK_DISABLE, &error);
-	if (! error)
-	{
-		_gs_prefs_set_lock_disabled (prefs, bvalue);
-	}
-	else
-	{
-		key_error_and_free (KEY_LOCK_DISABLE, error);
-	}
+	bvalue = g_settings_get_boolean (prefs->priv->lockdown, KEY_LOCK_DISABLE);
+        _gs_prefs_set_lock_disabled (prefs, bvalue);
 
-	error = NULL;
-	bvalue = mateconf_client_get_bool (prefs->priv->mateconf_client, KEY_USER_SWITCH_DISABLE, &error);
-	if (! error)
-	{
-		_gs_prefs_set_user_switch_disabled (prefs, bvalue);
-	}
-	else
-	{
-		key_error_and_free (KEY_USER_SWITCH_DISABLE, error);
-	}
+	 bvalue = g_settings_get_boolean (prefs->priv->lockdown, KEY_USER_SWITCH_DISABLE);
+         _gs_prefs_set_user_switch_disabled (prefs, bvalue);
 
-	error = NULL;
-	value = mateconf_client_get_int (prefs->priv->mateconf_client, KEY_ACTIVATE_DELAY, &error);
-	if (! error)
-	{
-		_gs_prefs_set_timeout (prefs, value);
-	}
-	else
-	{
-		key_error_and_free (KEY_ACTIVATE_DELAY, error);
-	}
+	value = g_settings_get_int (prefs->priv->settings, KEY_ACTIVATE_DELAY);
+        _gs_prefs_set_timeout (prefs, value);
 
-	error = NULL;
-	value = mateconf_client_get_int (prefs->priv->mateconf_client, KEY_POWER_DELAY, &error);
-	if (! error)
-	{
-		_gs_prefs_set_power_timeout (prefs, value);
-	}
-	else
-	{
-		key_error_and_free (KEY_POWER_DELAY, error);
-	}
+	value = g_settings_get_int (prefs->priv->settings, KEY_POWER_DELAY);
+        _gs_prefs_set_power_timeout (prefs, value);
 
-	error = NULL;
-	value = mateconf_client_get_int (prefs->priv->mateconf_client, KEY_LOCK_DELAY, &error);
-	if (! error)
-	{
-		_gs_prefs_set_lock_timeout (prefs, value);
-	}
-	else
-	{
-		key_error_and_free (KEY_LOCK_DELAY, error);
-	}
+	value = g_settings_get_int (prefs->priv->settings, KEY_LOCK_DELAY);
+        _gs_prefs_set_lock_timeout (prefs, value);
 
-	error = NULL;
-	value = mateconf_client_get_int (prefs->priv->mateconf_client, KEY_CYCLE_DELAY, &error);
-	if (! error)
-	{
-		_gs_prefs_set_cycle_timeout (prefs, value);
-	}
-	else
-	{
-		key_error_and_free (KEY_CYCLE_DELAY, error);
-	}
+	value = g_settings_get_int (prefs->priv->settings, KEY_CYCLE_DELAY);
+        _gs_prefs_set_cycle_timeout (prefs, value);
 
-	error = NULL;
-	string = mateconf_client_get_string (prefs->priv->mateconf_client, KEY_MODE, &error);
-	if (! error)
-	{
-		_gs_prefs_set_mode (prefs, string);
-	}
-	else
-	{
-		key_error_and_free (KEY_MODE, error);
-	}
-	g_free (string);
+	mode = g_settings_get_enum (prefs->priv->settings, KEY_MODE);
+        _gs_prefs_set_mode (prefs, mode);
 
-	error = NULL;
-	list = mateconf_client_get_list (prefs->priv->mateconf_client,
-	                                 KEY_THEMES,
-	                                 MATECONF_VALUE_STRING,
-	                                 &error);
-	if (! error)
-	{
-		_gs_prefs_set_themes (prefs, list);
-	}
-	else
-	{
-		key_error_and_free (KEY_THEMES, error);
-	}
+	strv = g_settings_get_strv (prefs->priv->settings, KEY_THEMES);
+        _gs_prefs_set_themes (prefs, strv);
+        g_strfreev (strv);
 
 	/* Embedded keyboard options */
 
-	error = NULL;
-	bvalue = mateconf_client_get_bool (prefs->priv->mateconf_client, KEY_KEYBOARD_ENABLED, &error);
-	if (! error)
-	{
-		_gs_prefs_set_keyboard_enabled (prefs, bvalue);
-	}
-	else
-	{
-		key_error_and_free (KEY_KEYBOARD_ENABLED, error);
-	}
+	bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_KEYBOARD_ENABLED);
+        _gs_prefs_set_keyboard_enabled (prefs, bvalue);
 
-	error = NULL;
-	string = mateconf_client_get_string (prefs->priv->mateconf_client, KEY_KEYBOARD_COMMAND, &error);
-	if (! error)
-	{
-		_gs_prefs_set_keyboard_command (prefs, string);
-	}
-	else
-	{
-		key_error_and_free (KEY_KEYBOARD_COMMAND, error);
-	}
+	string = g_settings_get_string (prefs->priv->settings, KEY_KEYBOARD_COMMAND);
+        _gs_prefs_set_keyboard_command (prefs, string);
 	g_free (string);
 
-	error = NULL;
-	bvalue = mateconf_client_get_bool (prefs->priv->mateconf_client, KEY_STATUS_MESSAGE_ENABLED, &error);
-	if (! error)
-	{
-		_gs_prefs_set_status_message_enabled (prefs, bvalue);
-	}
-	else
-	{
-		key_error_and_free (KEY_STATUS_MESSAGE_ENABLED, error);
-	}
+	bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_STATUS_MESSAGE_ENABLED);
+        _gs_prefs_set_status_message_enabled (prefs, bvalue);
 
 	/* Logout options */
 
-	error = NULL;
-	bvalue = mateconf_client_get_bool (prefs->priv->mateconf_client, KEY_LOGOUT_ENABLED, &error);
-	if (! error)
-	{
-		_gs_prefs_set_logout_enabled (prefs, bvalue);
-	}
-	else
-	{
-		key_error_and_free (KEY_LOGOUT_ENABLED, error);
-	}
+	bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_LOGOUT_ENABLED);
+        _gs_prefs_set_logout_enabled (prefs, bvalue);
 
-	error = NULL;
-	string = mateconf_client_get_string (prefs->priv->mateconf_client, KEY_LOGOUT_COMMAND, &error);
-	if (! error)
-	{
-		_gs_prefs_set_logout_command (prefs, string);
-	}
-	else
-	{
-		key_error_and_free (KEY_LOGOUT_COMMAND, error);
-	}
+	string = g_settings_get_string (prefs->priv->settings, KEY_LOGOUT_COMMAND);
+        _gs_prefs_set_logout_command (prefs, string);
 	g_free (string);
 
-	error = NULL;
-	value = mateconf_client_get_int (prefs->priv->mateconf_client, KEY_LOGOUT_DELAY, &error);
-	if (! error)
-	{
-		_gs_prefs_set_logout_timeout (prefs, value);
-	}
-	else
-	{
-		key_error_and_free (KEY_LOGOUT_DELAY, error);
-	}
+	value = g_settings_get_int (prefs->priv->settings, KEY_LOGOUT_DELAY);
+        _gs_prefs_set_logout_timeout (prefs, value);
 
 	/* User switching options */
 
-	error = NULL;
-	bvalue = mateconf_client_get_bool (prefs->priv->mateconf_client, KEY_USER_SWITCH_ENABLED, &error);
-	if (! error)
-	{
-		_gs_prefs_set_user_switch_enabled (prefs, bvalue);
-	}
-	else
-	{
-		key_error_and_free (KEY_USER_SWITCH_ENABLED, error);
-	}
+	bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_USER_SWITCH_ENABLED);
+        _gs_prefs_set_user_switch_enabled (prefs, bvalue);
 }
 
 static void
-invalid_type_warning (const char *type)
+key_changed_cb (GSettings *settings,
+               const gchar *key,
+               GSPrefs *prefs)
 {
-	g_warning ("Error retrieving configuration key '%s': Invalid type",
-	           type);
-}
-
-static void
-key_changed_cb (MateConfClient *client,
-                guint        cnxn_id,
-                MateConfEntry  *entry,
-                GSPrefs     *prefs)
-{
-	gboolean    changed = FALSE;
-	const char *key;
-	MateConfValue *value;
-
-	key = mateconf_entry_get_key (entry);
-
-	if (! g_str_has_prefix (key, KEY_DIR) && ! g_str_has_prefix (key, MATE_LOCKDOWN_DIR))
-		return;
-
-	value = mateconf_entry_get_value (entry);
-
 	if (strcmp (key, KEY_MODE) == 0)
 	{
+		gint mode;
 
-		if (value->type == MATECONF_VALUE_STRING)
-		{
-			const char *str;
-
-			str = mateconf_value_get_string (value);
-			_gs_prefs_set_mode (prefs, str);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		mode = g_settings_get_enum (settings, key);
+                _gs_prefs_set_mode (prefs, mode);
 
 	}
 	else if (strcmp (key, KEY_THEMES) == 0)
 	{
-		GSList *list = NULL;
+		gchar **strv = NULL;
 
-		if (value == NULL
-		        || value->type != MATECONF_VALUE_LIST)
-		{
-			return;
-		}
-
-		list = mateconf_value_get_list (value);
-
-		if (list
-		        && mateconf_value_get_list_type (value) == MATECONF_VALUE_STRING)
-		{
-			GSList *l;
-			GSList *new_list;
-
-			changed = TRUE;
-
-			new_list = NULL;
-			for (l = list; l; l = l->next)
-			{
-				char *s;
-
-				s = mateconf_value_to_string (l->data);
-
-				new_list = g_slist_prepend (new_list, g_strdup (s));
-
-				g_free (s);
-			}
-
-			new_list = g_slist_reverse (new_list);
-
-			_gs_prefs_set_themes (prefs, new_list);
-
-		}
+		strv = g_settings_get_strv (settings, key);
+                _gs_prefs_set_themes (prefs, strv);
+                 g_strfreev (strv);
 
 	}
 	else if (strcmp (key, KEY_ACTIVATE_DELAY) == 0)
 	{
+		int delay;
 
-		if (value->type == MATECONF_VALUE_INT)
-		{
-			int delay;
-
-			delay = mateconf_value_get_int (value);
-			_gs_prefs_set_timeout (prefs, delay);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		delay = g_settings_get_int (settings, key);
+                _gs_prefs_set_timeout (prefs, delay);
 
 	}
 	else if (strcmp (key, KEY_POWER_DELAY) == 0)
 	{
+		int delay;
 
-		if (value->type == MATECONF_VALUE_INT)
-		{
-			int delay;
-
-			delay = mateconf_value_get_int (value);
-			_gs_prefs_set_power_timeout (prefs, delay);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		delay = g_settings_get_int (settings, key);
+                _gs_prefs_set_power_timeout (prefs, delay);
 
 	}
 	else if (strcmp (key, KEY_LOCK_DELAY) == 0)
 	{
+		int delay;
 
-		if (value->type == MATECONF_VALUE_INT)
-		{
-			int delay;
-
-			delay = mateconf_value_get_int (value);
-			_gs_prefs_set_lock_timeout (prefs, delay);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
-
+		delay = g_settings_get_int (settings, key);
+                _gs_prefs_set_lock_timeout (prefs, delay);
 	}
 	else if (strcmp (key, KEY_IDLE_ACTIVATION_ENABLED) == 0)
 	{
+		gboolean enabled;
 
-		if (value->type == MATECONF_VALUE_BOOL)
-		{
-			gboolean enabled;
-
-			enabled = mateconf_value_get_bool (value);
-			_gs_prefs_set_idle_activation_enabled (prefs, enabled);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		enabled = g_settings_get_boolean (settings, key);
+                _gs_prefs_set_idle_activation_enabled (prefs, enabled);
 
 	}
 	else if (strcmp (key, KEY_LOCK_ENABLED) == 0)
 	{
+                 gboolean enabled;
 
-		if (value->type == MATECONF_VALUE_BOOL)
-		{
-			gboolean enabled;
-
-			enabled = mateconf_value_get_bool (value);
-			_gs_prefs_set_lock_enabled (prefs, enabled);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		enabled = g_settings_get_boolean (settings, key);
+                _gs_prefs_set_lock_enabled (prefs, enabled);
 
 	}
 	else if (strcmp (key, KEY_LOCK_DISABLE) == 0)
 	{
+		gboolean disabled;
 
-		if (value->type == MATECONF_VALUE_BOOL)
-		{
-			gboolean disabled;
-
-			disabled = mateconf_value_get_bool (value);
-			_gs_prefs_set_lock_disabled (prefs, disabled);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		disabled = g_settings_get_boolean (settings, key);
+                _gs_prefs_set_lock_disabled (prefs, disabled);
 
 	}
 	else if (strcmp (key, KEY_USER_SWITCH_DISABLE) == 0)
 	{
+		gboolean disabled;
 
-		if (value->type == MATECONF_VALUE_BOOL)
-		{
-			gboolean disabled;
-
-			disabled = mateconf_value_get_bool (value);
-			_gs_prefs_set_user_switch_disabled (prefs, disabled);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		disabled = g_settings_get_boolean (settings, key);
+                _gs_prefs_set_user_switch_disabled (prefs, disabled);
 
 	}
 	else if (strcmp (key, KEY_CYCLE_DELAY) == 0)
 	{
+		int delay;
 
-		if (value->type == MATECONF_VALUE_INT)
-		{
-			int delay;
-
-			delay = mateconf_value_get_int (value);
-			_gs_prefs_set_cycle_timeout (prefs, delay);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		delay = g_settings_get_int (settings, key);
+                _gs_prefs_set_cycle_timeout (prefs, delay);
 
 	}
 	else if (strcmp (key, KEY_KEYBOARD_ENABLED) == 0)
 	{
+		gboolean enabled;
 
-		if (value->type == MATECONF_VALUE_BOOL)
-		{
-			gboolean enabled;
-
-			enabled = mateconf_value_get_bool (value);
-			_gs_prefs_set_keyboard_enabled (prefs, enabled);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		enabled = g_settings_get_boolean (settings, key);
+                _gs_prefs_set_keyboard_enabled (prefs, enabled);
 
 	}
 	else if (strcmp (key, KEY_KEYBOARD_COMMAND) == 0)
 	{
+		const char *command;
 
-		if (value->type == MATECONF_VALUE_STRING)
-		{
-			const char *command;
-
-			command = mateconf_value_get_string (value);
-			_gs_prefs_set_keyboard_command (prefs, command);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		command = g_settings_get_string (settings, key);
+                _gs_prefs_set_keyboard_command (prefs, command);
 
 	}
 	else if (strcmp (key, KEY_STATUS_MESSAGE_ENABLED) == 0)
 	{
+		gboolean enabled;
 
-		if (value->type == MATECONF_VALUE_BOOL)
-		{
-			gboolean enabled;
-
-			enabled = mateconf_value_get_bool (value);
-			_gs_prefs_set_status_message_enabled (prefs, enabled);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		enabled = g_settings_get_boolean (settings, key);
+                _gs_prefs_set_status_message_enabled (prefs, enabled);
 
 	}
 	else if (strcmp (key, KEY_LOGOUT_ENABLED) == 0)
 	{
+		gboolean enabled;
 
-		if (value->type == MATECONF_VALUE_BOOL)
-		{
-			gboolean enabled;
-
-			enabled = mateconf_value_get_bool (value);
-			_gs_prefs_set_logout_enabled (prefs, enabled);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		enabled = g_settings_get_boolean (settings, key);
+                _gs_prefs_set_logout_enabled (prefs, enabled);
 
 	}
 	else if (strcmp (key, KEY_LOGOUT_DELAY) == 0)
 	{
+		int delay;
 
-		if (value->type == MATECONF_VALUE_INT)
-		{
-			int delay;
-
-			delay = mateconf_value_get_int (value);
-			_gs_prefs_set_logout_timeout (prefs, delay);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		delay = g_settings_get_int (settings, key);
+                _gs_prefs_set_logout_timeout (prefs, delay);
 
 	}
 	else if (strcmp (key, KEY_LOGOUT_COMMAND) == 0)
 	{
+		const char *command;
 
-		if (value->type == MATECONF_VALUE_STRING)
-		{
-			const char *command;
-
-			command = mateconf_value_get_string (value);
-			_gs_prefs_set_logout_command (prefs, command);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		command = g_settings_get_string (settings, key);
+                _gs_prefs_set_logout_command (prefs, command);
 
 	}
 	else if (strcmp (key, KEY_USER_SWITCH_ENABLED) == 0)
 	{
+		gboolean enabled;
 
-		if (value->type == MATECONF_VALUE_BOOL)
-		{
-			gboolean enabled;
-
-			enabled = mateconf_value_get_bool (value);
-			_gs_prefs_set_user_switch_enabled (prefs, enabled);
-
-			changed = TRUE;
-		}
-		else
-		{
-			invalid_type_warning (key);
-		}
+		enabled = g_settings_get_boolean (settings, key);
+                _gs_prefs_set_user_switch_enabled (prefs, enabled);
 
 	}
 	else
@@ -901,10 +533,7 @@ key_changed_cb (MateConfClient *client,
 		g_warning ("Config key not handled: %s", key);
 	}
 
-	if (changed && prefs)
-	{
-		g_signal_emit (prefs, signals [CHANGED], 0);
-	}
+	g_signal_emit (prefs, signals [CHANGED], 0);
 }
 
 static void
@@ -912,8 +541,16 @@ gs_prefs_init (GSPrefs *prefs)
 {
 	prefs->priv = GS_PREFS_GET_PRIVATE (prefs);
 
-	prefs->priv->mateconf_client      = mateconf_client_get_default ();
-
+	prefs->priv->settings     = g_settings_new (GSETTINGS_SCHEMA);
+        g_signal_connect (prefs->priv->settings,
+                          "changed",
+                          G_CALLBACK (key_changed_cb),
+                          prefs);
+        prefs->priv->lockdown = g_settings_new (LOCKDOWN_SETTINGS_SCHEMA);
+        g_signal_connect (prefs->priv->lockdown,
+                          "changed",
+                          G_CALLBACK (key_changed_cb),
+                          prefs);
 	prefs->idle_activation_enabled = TRUE;
 	prefs->lock_enabled            = TRUE;
 	prefs->lock_disabled           = FALSE;
@@ -928,30 +565,7 @@ gs_prefs_init (GSPrefs *prefs)
 
 	prefs->mode                    = GS_MODE_SINGLE;
 
-	/* MateConf setup */
-	mateconf_client_add_dir (prefs->priv->mateconf_client,
-	                         KEY_DIR,
-	                         MATECONF_CLIENT_PRELOAD_NONE, NULL);
-	mateconf_client_add_dir (prefs->priv->mateconf_client,
-	                         MATE_LOCKDOWN_DIR,
-	                         MATECONF_CLIENT_PRELOAD_NONE, NULL);
-	mateconf_client_add_dir (prefs->priv->mateconf_client,
-	                         MATE_SESSION_DIR,
-	                         MATECONF_CLIENT_PRELOAD_NONE, NULL);
-
-
-	mateconf_client_notify_add (prefs->priv->mateconf_client,
-	                            KEY_DIR,
-	                            (MateConfClientNotifyFunc)key_changed_cb,
-	                            prefs,
-	                            NULL, NULL);
-	mateconf_client_notify_add (prefs->priv->mateconf_client,
-	                            MATE_LOCKDOWN_DIR,
-	                            (MateConfClientNotifyFunc)key_changed_cb,
-	                            prefs,
-	                            NULL, NULL);
-
-	gs_prefs_load_from_mateconf (prefs);
+	gs_prefs_load_from_settings (prefs);
 }
 
 static void
@@ -966,11 +580,16 @@ gs_prefs_finalize (GObject *object)
 
 	g_return_if_fail (prefs->priv != NULL);
 
-	if (prefs->priv->mateconf_client)
+	if (prefs->priv->settings)
 	{
-		g_object_unref (prefs->priv->mateconf_client);
-		prefs->priv->mateconf_client = NULL;
+		g_object_unref (prefs->priv->settings);
+		prefs->priv->settings = NULL;
 	}
+
+        if (prefs->priv->lockdown) {
+                g_object_unref (prefs->priv->lockdown);
+                prefs->priv->lockdown = NULL;
+        }
 
 	if (prefs->themes)
 	{
