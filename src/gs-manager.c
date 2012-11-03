@@ -53,7 +53,6 @@ struct GSManagerPrivate
 	GHashTable  *jobs;
 
 	GSThemeManager *theme_manager;
-	GSettings *settings;
 	MateBG        *bg;
 
 	/* Policy */
@@ -1032,47 +1031,6 @@ on_bg_changed (MateBG   *bg,
 	gs_debug ("background changed");
 }
 
-static gboolean
-background_settings_change_event_cb (GSettings *settings,
-                                     gpointer     keys,
-                                     gint         n_keys,
-                                     GSManager    *manager)
-{
-#if 0
-         /* FIXME: since we bind user settings instead of system ones,
-          * watching for changes is no longer valid.
-          */
-	  mate_bg_load_from_preferences (manager->priv->bg);
-#endif
-
-          return FALSE;
-}
-
-static GSettings *
-get_system_settings (void)
-{
-        GSettings *settings;
-        gchar **keys;
-        gchar **k;
-
-        /* FIXME: we need to bind system settings instead of user but
-         * that's currently impossible, not implemented yet.
-         * Hence, reset to system default values.
-         */
-        /* TODO: Ideally we would like to bind some other key, screensaver-specific. */
-        settings = g_settings_new ("org.mate.background");
-
-	g_settings_delay (settings);
-
-	keys = g_settings_list_keys (settings);
-        for (k = keys; *k; k++) {
-                g_settings_reset (settings, *k);
-	}
-	g_strfreev (keys);
-
-	return settings;
-}
-
 static void
 gs_manager_init (GSManager *manager)
 {
@@ -1082,19 +1040,14 @@ gs_manager_init (GSManager *manager)
 	manager->priv->grab = gs_grab_new ();
 	manager->priv->theme_manager = gs_theme_manager_new ();
 
-	manager->priv->settings = get_system_settings ();
-        manager->priv->bg = mate_bg_new ();
+	manager->priv->bg = mate_bg_new ();
 
 	g_signal_connect (manager->priv->bg,
-                          "changed",
-                          G_CALLBACK (on_bg_changed),
-                          manager);
-        g_signal_connect (manager->priv->settings,
-                          "change-event",
-                          G_CALLBACK (background_settings_change_event_cb),
-                          manager);
+					  "changed",
+					  G_CALLBACK (on_bg_changed),
+					  manager);
 
-	mate_bg_load_from_preferences (manager->priv->bg);
+	mate_bg_load_from_system_preferences (manager->priv->bg);
 }
 
 static void
@@ -1708,10 +1661,6 @@ gs_manager_finalize (GObject *object)
 	if (manager->priv->bg != NULL)
 	{
 		g_object_unref (manager->priv->bg);
-	}
-        if (manager->priv->settings != NULL) {
-                g_settings_revert (manager->priv->settings);
-                g_object_unref (manager->priv->settings);
 	}
 
 	free_themes (manager);
