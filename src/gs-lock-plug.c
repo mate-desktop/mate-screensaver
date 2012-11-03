@@ -37,7 +37,7 @@
 #include <gdk/gdkx.h>
 #include <X11/XKBlib.h>
 #include <gtk/gtk.h>
-#include <mateconf/mateconf-client.h>
+#include <gio/gio.h>
 
 #ifdef WITH_KBD_LAYOUT_INDICATOR
 #include <libmatekbd/matekbd-indicator.h>
@@ -50,6 +50,8 @@
 #include "gs-lock-plug.h"
 
 #include "gs-debug.h"
+
+#define GSETTINGS_SCHEMA "org.mate.ScreenSaver"
 
 #define KEY_LOCK_DIALOG_THEME "/apps/mate-screensaver/lock_dialog_theme"
 
@@ -1757,11 +1759,11 @@ static char *
 get_dialog_theme_name (GSLockPlug *plug)
 {
 	char        *name;
-	MateConfClient *client;
+	GSettings *settings;
 
-	client = mateconf_client_get_default ();
-	name = mateconf_client_get_string (client, KEY_LOCK_DIALOG_THEME, NULL);
-	g_object_unref (client);
+	settings = g_settings_new (GSETTINGS_SCHEMA);
+	name = g_settings_get_string (settings, KEY_LOCK_DIALOG_THEME);
+	g_object_unref (settings);
 
 	return name;
 }
