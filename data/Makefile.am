@@ -63,7 +63,7 @@ EXTRA_DIST = 				\
 	$(NULL)
 
 DISTCLEANFILES = 			\
-    $(gsettings_SCHEMAS)
+	$(gsettings_SCHEMAS)	\
 	$(desktop_DATA)			\
 	$(directory_DATA)		\
 	$(NULL)
