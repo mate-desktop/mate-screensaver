@@ -1042,8 +1042,7 @@ background_settings_change_event_cb (GSettings *settings,
          /* FIXME: since we bind user settings instead of system ones,
           * watching for changes is no longer valid.
           */
-	  mate_bg_load_from_preferences (manager->priv->bg,
-                                         manager->priv->settings);
+	  mate_bg_load_from_preferences (manager->priv->bg);
 #endif
 
           return FALSE;
@@ -1095,8 +1094,7 @@ gs_manager_init (GSManager *manager)
                           G_CALLBACK (background_settings_change_event_cb),
                           manager);
 
-	mate_bg_load_from_preferences (manager->priv->bg,
-                                       manager->priv->settings);
+	mate_bg_load_from_preferences (manager->priv->bg);
 }
 
 static void
