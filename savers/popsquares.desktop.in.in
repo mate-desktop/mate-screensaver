@@ -6,5 +6,5 @@ TryExec=@SAVERDIR@/popsquares
 StartupNotify=false
 Terminal=false
 Type=Application
-Categories=MATE;Screensaver;
+Categories=Screensaver;
 OnlyShowIn=MATE;
