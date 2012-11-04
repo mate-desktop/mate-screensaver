@@ -6,5 +6,5 @@ TryExec=@SAVERDIR@/slideshow
 StartupNotify=false
 Terminal=false
 Type=Application
-Categories=Screensaver;
+Categories=System;Screensaver;
 OnlyShowIn=MATE;
