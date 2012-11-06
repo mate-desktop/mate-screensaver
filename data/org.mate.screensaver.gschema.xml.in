@@ -4,7 +4,7 @@
     <value nick="random" value="1"/>
     <value nick="single" value="2"/>
   </enum>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.screensaver" path="/org/mate-screensaver/">
+  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.mate.screensaver" path="/org/mate/screensaver/">
     <key name="idle-activation-enabled" type="b">
       <default>true</default>
       <summary>Activate when idle</summary>
@@ -87,4 +87,3 @@
     </key>
   </schema>
 </schemalist>
-
