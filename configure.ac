@@ -485,7 +485,7 @@ fi
 #
 if test "$ac_macosx" = yes; then
   if test "$enable_locking" = yes; then
-    AC_MSG_RESULT(locking disabled: it doesn't work on MacOS X)
+    AC_MSG_RESULT(locking disabled: it doesnt work on MacOS X)
     enable_locking=no
     AC_DEFINE(NO_LOCKING, 1, [Define if screen locking support is disabled])
   fi
@@ -893,6 +893,42 @@ fi
 AC_SUBST(AUTH_SCHEME)
 
 dnl ---------------------------------------------------------------------------
+dnl ConsoleKit
+dnl ---------------------------------------------------------------------------
+
+AC_ARG_WITH(console-kit,
+            AS_HELP_STRING([--with-console-kit],
+            [Add ConsoleKit support]),,
+            with_console_kit=auto)
+
+use_console_kit=no
+if test "x$with_console_kit" != "xno" ; then
+    use_console_kit=yes
+    AC_DEFINE(WITH_CONSOLE_KIT, 1, [ConsoleKit support])
+fi
+AM_CONDITIONAL(WITH_CONSOLE_KIT, test x$use_console_kit = xyes)
+AC_SUBST(WITH_CONSOLE_KIT)
+
+dnl ---------------------------------------------------------------------------
+dnl systemd
+dnl ---------------------------------------------------------------------------
+
+AC_ARG_WITH(systemd,
+            AS_HELP_STRING([--with-systemd],
+            [Add systemd support]),,
+            with_systemd=auto)
+
+use_systemd=no
+if test "x$with_systemd" != "xno" ; then
+    use_systemd=yes
+    AC_DEFINE(WITH_SYSTEMD, 1, [systemd support])
+
+    PKG_CHECK_MODULES(SYSTEMD, libsystemd-login libsystemd-daemon)
+fi
+AM_CONDITIONAL(WITH_SYSTEMD, test x$use_systemd = xyes)
+AC_SUBST(WITH_SYSTEMD)
+
+dnl ---------------------------------------------------------------------------
 dnl libmatekbd
 dnl ---------------------------------------------------------------------------
 
@@ -1107,6 +1143,8 @@ echo "
 
         Screen locking enabled:   ${enable_locking}
         Show keyboard indicator:  ${with_kbd_layout_indicator}
+        systemd support:          ${use_systemd}
+        ConsoleKit support:       ${use_console_kit}
         libmatenotify support:    ${have_libmatenotify}
         PAM support:              ${have_pam}
         Have shadow passwords:    ${have_shadow}

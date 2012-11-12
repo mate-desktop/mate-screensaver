@@ -31,6 +31,7 @@ INCLUDES =							\
 	$(DBUS_CFLAGS)						\
 	$(LIBMATEKBDUI_CFLAGS)					\
 	$(LIBMATENOTIFY_CFLAGS)					\
+	$(SYSTEMD_CFLAGS)					\
 	$(NULL)
 
 bin_PROGRAMS = \
@@ -213,6 +214,7 @@ mate_screensaver_gl_helper_SOURCES =	\
 mate_screensaver_LDADD =		\
 	$(MATE_SCREENSAVER_LIBS)	\
 	$(SAVER_LIBS)			\
+	$(SYSTEMD_LIBS)			\
 	$(NULL)
 
 mate_screensaver_LDFLAGS = -export-dynamic
