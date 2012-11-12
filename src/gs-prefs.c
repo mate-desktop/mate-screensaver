@@ -320,9 +320,9 @@ _gs_prefs_set_user_switch_enabled (GSPrefs *prefs,
 static void
 gs_prefs_load_from_settings (GSPrefs *prefs)
 {
-	glong    value;
-	gboolean bvalue;
-	char    *string;
+	glong      value;
+	gboolean   bvalue;
+	char      *string;
 	gchar    **strv;
 	gint       mode;
 
@@ -541,7 +541,7 @@ gs_prefs_init (GSPrefs *prefs)
 {
 	prefs->priv = GS_PREFS_GET_PRIVATE (prefs);
 
-	prefs->priv->settings     = g_settings_new (GSETTINGS_SCHEMA);
+	prefs->priv->settings = g_settings_new (GSETTINGS_SCHEMA);
 	g_signal_connect (prefs->priv->settings,
 			  "changed",
 			  G_CALLBACK (key_changed_cb),
