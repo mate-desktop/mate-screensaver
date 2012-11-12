@@ -36,7 +36,7 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Name of default gettext
 AM_GLIB_GNU_GETTEXT
 
 dnl
-dnl Enable gsettigns schema macros
+dnl Enable gsettings schema macros
 dnl
 
 GLIB_GSETTINGS
