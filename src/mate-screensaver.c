@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 	GError* error = NULL;
 
 	static gboolean show_version = FALSE;
-	static gboolean no_daemon = FALSE;
+	static gboolean no_daemon = TRUE;
 	static gboolean debug = FALSE;
 
 	static GOptionEntry entries[] = {
@@ -88,7 +88,7 @@ int main(int argc, char **argv)
 	}
 
 	/* debug to a file if in deamon mode */
-	gs_debug_init(debug, !no_daemon);
+	gs_debug_init(debug, FALSE);
 	gs_debug("initializing mate-screensaver %s", VERSION);
 
 	monitor = gs_monitor_new();
@@ -113,12 +113,6 @@ int main(int argc, char **argv)
 		}
 
 		exit(1);
-	}
-
-	/* Don't close stdout and stderr for now */
-	if (!no_daemon && daemon(0, 1))
-	{
-		g_error("Could not daemonize: %s", g_strerror (errno));
 	}
 
 	gtk_main();
