@@ -2204,7 +2204,7 @@ gboolean
 gs_listener_acquire (GSListener *listener,
                      GError    **error)
 {
-	gboolean  acquired;
+	int       acquired;
 	DBusError buserror;
 	gboolean  is_connected;
 
@@ -2254,7 +2254,8 @@ gs_listener_acquire (GSListener *listener,
 
 	acquired = dbus_bus_request_name (listener->priv->connection,
 	                                  GS_LISTENER_SERVICE,
-	                                  0, &buserror) != -1;
+	                                  DBUS_NAME_FLAG_DO_NOT_QUEUE,
+	                                  &buserror);
 	if (dbus_error_is_set (&buserror))
 	{
 		g_set_error (error,
@@ -2263,6 +2264,14 @@ gs_listener_acquire (GSListener *listener,
 		             "%s",
 		             buserror.message);
 	}
+	if (acquired == DBUS_REQUEST_NAME_REPLY_EXISTS) {
+	        g_set_error (error,
+	                     GS_LISTENER_ERROR,
+	                     GS_LISTENER_ERROR_ACQUISITION_FAILURE,
+	                     "%s",
+	                     _("screensaver already running in this session"));
+	        return FALSE;
+        }
 
 	dbus_error_free (&buserror);
 
@@ -2331,7 +2340,7 @@ gs_listener_acquire (GSListener *listener,
 	}
 
 finish:
-	return acquired;
+	return (acquired != -1);
 }
 
 static char *
