@@ -2204,7 +2204,7 @@ gboolean
 gs_listener_acquire (GSListener *listener,
                      GError    **error)
 {
-        int       acquired;
+	int       acquired;
 	DBusError buserror;
 	gboolean  is_connected;
 
@@ -2340,7 +2340,7 @@ gs_listener_acquire (GSListener *listener,
 	}
 
 finish:
-        return (acquired != -1);
+	return (acquired != -1);
 }
 
 static char *
