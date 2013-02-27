@@ -30,7 +30,7 @@ INCLUDES =							\
 	$(DEBUG_CFLAGS)						\
 	$(DBUS_CFLAGS)						\
 	$(LIBMATEKBDUI_CFLAGS)					\
-	$(LIBMATENOTIFY_CFLAGS)					\
+	$(LIBNOTIFY_CFLAGS)					\
 	$(SYSTEMD_CFLAGS)					\
 	$(NULL)
 
@@ -155,7 +155,7 @@ mate_screensaver_dialog_LDADD =	\
 	$(SAVER_LIBS)			\
 	$(AUTH_LIBS)			\
 	$(LIBMATEKBDUI_LIBS)		\
-	$(LIBMATENOTIFY_LIBS)		\
+	$(LIBNOTIFY_LIBS)		\
 	$(NULL)
 
 BUILT_SOURCES = 		\

@@ -43,8 +43,8 @@
 #include <libmatekbd/matekbd-indicator.h>
 #endif
 
-#ifdef WITH_LIBMATENOTIFY
-#include <libmatenotify/notify.h>
+#ifdef WITH_LIBNOTIFY
+#include <libnotify/notify.h>
 #endif
 
 #include "gs-lock-plug.h"
@@ -1183,7 +1183,7 @@ static void
 submit_note (GtkButton  *button,
              GSLockPlug *plug)
 {
-#ifdef WITH_LIBMATENOTIFY
+#ifdef WITH_LIBNOTIFY
 	char               *text;
 	char                summary[128];
 	char               *escaped_text;
@@ -1204,8 +1204,7 @@ submit_note (GtkButton  *button,
 	tmp = localtime (&t);
 	strftime (summary, 128, "%X", tmp);
 
-	notify_init ("mate-screensaver-dialog");
-	note = notify_notification_new (summary, escaped_text, NULL, NULL);
+	note = notify_notification_new (summary, escaped_text, NULL);
 	notify_notification_set_timeout (note, NOTIFY_EXPIRES_NEVER);
 	notify_notification_show (note, NULL);
 	g_object_unref (note);
@@ -1214,7 +1213,7 @@ submit_note (GtkButton  *button,
 	g_free (escaped_text);
 
 	gs_lock_plug_response (plug, GS_LOCK_PLUG_RESPONSE_CANCEL);
-#endif /* WITH_LIBMATENOTIFY */
+#endif /* WITH_LIBNOTIFY */
 }
 
 static void
@@ -1882,10 +1881,7 @@ on_note_text_buffer_changed (GtkTextBuffer *buffer,
 	int len;
 
 	len = gtk_text_buffer_get_char_count (buffer);
-	if (len > NOTE_BUFFER_MAX_CHARS)
-	{
-		gtk_widget_set_sensitive (plug->priv->note_text_view, FALSE);
-	}
+	gtk_widget_set_sensitive (plug->priv->note_ok_button, len <= NOTE_BUFFER_MAX_CHARS);
 }
 
 static void
@@ -1897,7 +1893,8 @@ gs_lock_plug_init (GSLockPlug *plug)
 
 	clear_clipboards (plug);
 
-#ifdef WITH_LIBMATENOTIFY
+#ifdef WITH_LIBNOTIFY
+	notify_init ("mate-screensaver-dialog");
 	plug->priv->leave_note_enabled = TRUE;
 #else
 	plug->priv->leave_note_enabled = FALSE;
@@ -2084,6 +2081,9 @@ gs_lock_plug_finalize (GObject *object)
 
 	remove_response_idle (plug);
 	remove_cancel_timeout (plug);
+#ifdef WITH_LIBNOTIFY
+	notify_uninit ();
+#endif
 
 	G_OBJECT_CLASS (gs_lock_plug_parent_class)->finalize (object);
 }

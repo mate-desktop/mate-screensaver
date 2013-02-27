@@ -945,18 +945,18 @@ if test "x$have_libmatekbdui" = "xyes"; then
 fi
 
 dnl ---------------------------------------------------------------------------
-dnl libmatenotify
+dnl libnotify
 dnl ---------------------------------------------------------------------------
 
-have_libmatenotify=no
-AC_ARG_WITH(libmatenotify,[  --without-libmatenotify         disable libmatenotify support])
-if test x$with_libmatenotify != xno; then
-	PKG_CHECK_MODULES(LIBMATENOTIFY, libmatenotify, have_libmatenotify=yes, have_libmatenotify=no)
+have_libnotify=no
+AC_ARG_WITH(libnotify,[  --without-libnotify         disable libnotify support])
+if test x$with_libnotify != xno; then
+	PKG_CHECK_MODULES(LIBNOTIFY, libnotify > 0.7.0, have_libnotify=yes, have_libnotify=no)
 fi
-if test "x$have_libmatenotify" = "xyes"; then
-  AC_SUBST(LIBMATENOTIFY_CFLAGS)
-  AC_SUBST(LIBMATENOTIFY_LIBS)
-  AC_DEFINE(WITH_LIBMATENOTIFY, 1, [Define for libmatenotify support])
+if test "x$have_libnotify" = "xyes"; then
+  AC_SUBST(LIBNOTIFY_CFLAGS)
+  AC_SUBST(LIBNOTIFY_LIBS)
+  AC_DEFINE(WITH_LIBNOTIFY, 1, [Define for libnotify support])
 fi
 
 dnl ---------------------------------------------------------------------------
@@ -1145,7 +1145,7 @@ echo "
         Show keyboard indicator:  ${with_kbd_layout_indicator}
         systemd support:          ${use_systemd}
         ConsoleKit support:       ${use_console_kit}
-        libmatenotify support:    ${have_libmatenotify}
+        libnotify support:        ${have_libnotify}
         PAM support:              ${have_pam}
         Have shadow passwords:    ${have_shadow}
         Have adjunct shadow:      ${have_shadow_adjunct}
