@@ -1,5 +1,6 @@
 [Desktop Entry]
 _Name=Pictures folder
+_GenericName=Screensavers
 _Comment=Display a slideshow from your Pictures folder
 Exec=@SAVERDIR@/slideshow
 TryExec=@SAVERDIR@/slideshow

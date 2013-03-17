@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 _Name=Screensaver
+_GenericName=Screensavers
 _Comment=Launch screen saver and locker program
 Icon=preferences-desktop-screensaver
 Exec=mate-screensaver
