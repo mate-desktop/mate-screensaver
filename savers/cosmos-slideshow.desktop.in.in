@@ -1,5 +1,6 @@
 [Desktop Entry]
 _Name=Cosmos
+_GenericName=Screensavers
 _Comment=Display a slideshow of pictures of the cosmos
 Exec=@SAVERDIR@/slideshow --location=@SLIDESHOW_COSMOS_DIR@
 TryExec=@SAVERDIR@/slideshow
