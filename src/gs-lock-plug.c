@@ -196,12 +196,9 @@ do_user_switch (GSLockPlug *plug)
 	gboolean res;
 	char    *command;
 
-	gboolean found;
-	found = is_program_in_path (MDM_FLEXISERVER_COMMAND);
-
-	if (found)
+	if (is_program_in_path (MDM_FLEXISERVER_COMMAND))
 	{
-
+		/* MDM */
 		command = g_strdup_printf ("%s %s",
 								   MDM_FLEXISERVER_COMMAND,
 								   MDM_FLEXISERVER_ARGS);
@@ -219,34 +216,56 @@ do_user_switch (GSLockPlug *plug)
 			g_error_free (error);
 		}
 	}
-	else {
-		
-		/* MDM not found, so we try to use gdmflexiserver from GDM */
-		
-		found = is_program_in_path (GDM_FLEXISERVER_COMMAND);
-		
-		if (found)
-		{
-                
-			char    *gdm_command;
+	else if (is_program_in_path (GDM_FLEXISERVER_COMMAND))
+	{
+		/* GDM */
+		command = g_strdup_printf ("%s %s",
+								   GDM_FLEXISERVER_COMMAND,
+								   GDM_FLEXISERVER_ARGS);
 
-			gdm_command = g_strdup_printf ("%s %s",
-										   GDM_FLEXISERVER_COMMAND,
-										   GDM_FLEXISERVER_ARGS);
-			
-			error = NULL;
-			res = gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
-											gdm_command,
-											&error);
+		error = NULL;
+		res = gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
+												command,
+												&error);
 
-			g_free (gdm_command);
-			
-			if (! res) {
-				gs_debug ("Unable to start MDM greeter: %s", error->message);
-				g_error_free (error);
-			}
+		g_free (command);
+		
+		if (! res) {
+			gs_debug ("Unable to start GDM greeter: %s", error->message);
+			g_error_free (error);
 		}
 	}
+	else if (g_getenv ("XDG_SEAT_PATH") != NULL)
+	{
+		/* LightDM */
+		GDBusProxyFlags flags = G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START;
+		GDBusProxy *proxy = NULL;
+
+		error = NULL;
+		proxy = g_dbus_proxy_new_for_bus_sync(G_BUS_TYPE_SYSTEM,
+											  flags,
+											  NULL,
+											  "org.freedesktop.DisplayManager",
+											  g_getenv ("XDG_SEAT_PATH"),
+											  "org.freedesktop.DisplayManager.Seat",
+											  NULL,
+											  &error);
+		if (proxy != NULL) {
+			g_dbus_proxy_call_sync (proxy,
+									"SwitchToGreeter",
+									g_variant_new ("()"),
+									G_DBUS_CALL_FLAGS_NONE,
+									-1,
+									NULL,
+									NULL);
+			g_object_unref (proxy);
+		}
+		else {
+			gs_debug ("Unable to start LightDM greeter: %s", error->message);
+			g_error_free (error);
+		}
+	}
+
 }
 
 static void
@@ -1009,26 +1028,25 @@ gs_lock_plug_set_switch_enabled (GSLockPlug *plug,
 
 	if (switch_enabled)
 	{
-		gboolean found;
-		found = is_program_in_path (MDM_FLEXISERVER_COMMAND);
-		if (found)
+		if (is_program_in_path (MDM_FLEXISERVER_COMMAND))
 		{
+			/* MDM  */
+			gtk_widget_show (plug->priv->auth_switch_button);
+		}
+		else if (is_program_in_path (GDM_FLEXISERVER_COMMAND))
+		{
+			/* GDM */
+			gtk_widget_show (plug->priv->auth_switch_button);
+		}
+		else if (g_getenv ("XDG_SEAT_PATH") != NULL)
+		{
+			/* LightDM */
 			gtk_widget_show (plug->priv->auth_switch_button);
 		}
 		else
 		{
-			gs_debug ("Warning: MDM flexiserver command not found: %s", MDM_FLEXISERVER_COMMAND);
-			
-			/* MDM not found, so we try to use gdmflexiserver from GDM */
-			found = is_program_in_path (GDM_FLEXISERVER_COMMAND);
-			if (found)
-			{
-				gtk_widget_show (plug->priv->auth_switch_button);
-			}
-			else {
-				gs_debug ("Warning: GDM flexiserver command not found: %s", GDM_FLEXISERVER_COMMAND);
-				gtk_widget_hide (plug->priv->auth_switch_button);
-			}
+			gs_debug ("Warning: Unknown DM for switch button");
+			gtk_widget_hide (plug->priv->auth_switch_button);
 		}
 	}
 	else
