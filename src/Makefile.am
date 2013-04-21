@@ -6,24 +6,24 @@ NULL =
 saverdir = $(libexecdir)/mate-screensaver
 themesdir = $(pkgdatadir)/themes
 
-INCLUDES =							\
+AM_CPPFLAGS =							\
 	-I.							\
 	-I$(srcdir)						\
-	-DMATEMENU_I_KNOW_THIS_IS_UNSTABLE				\
+	-DMATEMENU_I_KNOW_THIS_IS_UNSTABLE			\
 	$(MATE_SCREENSAVER_CFLAGS)				\
 	$(MATE_SCREENSAVER_DIALOG_CFLAGS)			\
 	$(MATE_SCREENSAVER_CAPPLET_CFLAGS)			\
 	$(DISABLE_DEPRECATED_CFLAGS)				\
-	-DPREFIX=\""$(prefix)"\" 				\
+	-DPREFIX=\""$(prefix)"\"				\
 	-DBINDIR=\""$(bindir)"\"				\
-	-DLIBDIR=\""$(libdir)"\" 				\
+	-DLIBDIR=\""$(libdir)"\"				\
 	-DLIBEXECDIR=\""$(libexecdir)"\"			\
 	-DDATADIR=\""$(datadir)"\"				\
-	-DSYSCONFDIR=\""$(sysconfdir)"\" 			\
-	-DMATELOCALEDIR=\""$(datadir)/locale"\"		\
+	-DSYSCONFDIR=\""$(sysconfdir)"\"			\
+	-DMATELOCALEDIR=\""$(datadir)/locale"\"			\
 	-DSAVERDIR=\""$(saverdir)"\"				\
 	-DTHEMESDIR=\""$(themesdir)"\"				\
-	-DGTKBUILDERDIR=\"$(pkgdatadir)\"				\
+	-DGTKBUILDERDIR=\"$(pkgdatadir)\"			\
 	-DPAM_SERVICE_NAME=\""mate-screensaver"\"		\
 	$(WARN_CFLAGS)						\
 	$(AUTH_CFLAGS)						\
