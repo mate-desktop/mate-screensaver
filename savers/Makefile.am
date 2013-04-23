@@ -3,13 +3,13 @@ AUTOMAKE_OPTIONS = 1.7
 
 NULL =
 
-INCLUDES =							\
+AM_CPPFLAGS =							\
 	-I.							\
 	-I$(srcdir)						\
 	$(MATE_SCREENSAVER_SAVER_CFLAGS)			\
 	$(DISABLE_DEPRECATED_CFLAGS)				\
 	-DLIBEXECDIR=\""$(libexecdir)"\"			\
-	-DMATELOCALEDIR=\""$(datadir)/locale"\"		\
+	-DMATELOCALEDIR=\""$(datadir)/locale"\"			\
 	-DDATADIR=\""$(datadir)"\"				\
 	$(WARN_CFLAGS)						\
 	$(NULL)
