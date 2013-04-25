@@ -62,6 +62,7 @@ noinst_LIBRARIES =			\
 	libgs-theme-engine.a
 
 libgs_theme_engine_a_CPPFLAGS =					\
+	$(MATE_SCREENSAVER_SAVER_CFLAGS)			\
 	-DDATADIR=\""$(datadir)"\"				\
 	$(NULL)
 

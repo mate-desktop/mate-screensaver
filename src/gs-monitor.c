@@ -25,9 +25,11 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <X11/extensions/scrnsaver.h>
 
 #include <glib.h>
 #include <glib-object.h>
+#include <gdk/gdkx.h>
 
 #include "mate-screensaver.h"
 
@@ -189,7 +191,11 @@ static void gs_monitor_lock_screen(GSMonitor* monitor)
 
 static void gs_monitor_simulate_user_activity(GSMonitor* monitor)
 {
-	/* FIXME: reset the xsync timer? */
+	Display *display = gdk_x11_display_get_xdisplay (gdk_display_get_default ());
+	XScreenSaverSuspend (display, TRUE);
+	XSync (display, FALSE);
+	XScreenSaverSuspend (display, FALSE);
+	XSync (display, FALSE);
 
 	/* request that the manager unlock -
 	   will pop up a dialog if necessary */
