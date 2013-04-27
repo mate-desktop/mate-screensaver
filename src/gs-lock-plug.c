@@ -35,7 +35,6 @@
 #include <glib/gi18n.h>
 #include <gdk/gdkkeysyms.h>
 #include <gdk/gdkx.h>
-#include <X11/XKBlib.h>
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 
@@ -396,16 +395,17 @@ capslock_update (GSLockPlug *plug,
 static gboolean
 is_capslock_on (void)
 {
-	XkbStateRec states;
-	Display    *dsp;
+	GdkKeymap *keymap;
+	gboolean res;
 
-	dsp = GDK_DISPLAY ();
-	if (XkbGetState (dsp, XkbUseCoreKbd, &states) != Success)
-	{
-		return FALSE;
+	res = FALSE;
+
+	keymap = gdk_keymap_get_default ();
+	if (keymap != NULL) {
+		res = gdk_keymap_get_caps_lock_state (keymap);
 	}
 
-	return (states.locked_mods & LockMask) != 0;
+	return res;
 }
 
 static void
@@ -500,6 +500,13 @@ run_destroy_handler (GSLockPlug *plug,
 	ri->destroyed = TRUE;
 }
 
+static void
+run_keymap_handler (GdkKeymap *keymap,
+                    GSLockPlug *plug)
+{
+	capslock_update (plug, is_capslock_on ());
+}
+
 /* adapted from GTK+ gtkdialog.c */
 int
 gs_lock_plug_run (GSLockPlug *plug)
@@ -510,6 +517,8 @@ gs_lock_plug_run (GSLockPlug *plug)
 	gulong unmap_handler;
 	gulong destroy_handler;
 	gulong delete_handler;
+	gulong keymap_handler;
+	GdkKeymap *keymap;
 
 	g_return_val_if_fail (GS_IS_LOCK_PLUG (plug), -1);
 
@@ -525,6 +534,14 @@ gs_lock_plug_run (GSLockPlug *plug)
 	{
 		gtk_widget_show (GTK_WIDGET (plug));
 	}
+
+	keymap = gdk_keymap_get_for_display (gtk_widget_get_display (GTK_WIDGET (plug)));
+
+	keymap_handler =
+	    g_signal_connect (keymap,
+	                      "state-changed",
+	                      G_CALLBACK (run_keymap_handler),
+	                      plug);
 
 	response_handler =
 	    g_signal_connect (plug,
@@ -571,6 +588,7 @@ gs_lock_plug_run (GSLockPlug *plug)
 		g_signal_handler_disconnect (plug, unmap_handler);
 		g_signal_handler_disconnect (plug, delete_handler);
 		g_signal_handler_disconnect (plug, destroy_handler);
+		g_signal_handler_disconnect (plug, keymap_handler);
 	}
 
 	g_object_unref (plug);
@@ -1390,16 +1408,7 @@ entry_key_press (GtkWidget   *widget,
                  GdkEventKey *event,
                  GSLockPlug  *plug)
 {
-	gboolean capslock_on;
-
 	restart_cancel_timeout (plug);
-
-	capslock_on = is_capslock_on ();
-
-	if (capslock_on != plug->priv->caps_lock_on)
-	{
-		capslock_update (plug, capslock_on);
-	}
 
 	/* if the input widget is visible and ready for input
 	 * then just carry on as usual
