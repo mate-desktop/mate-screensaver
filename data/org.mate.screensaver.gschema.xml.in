@@ -25,11 +25,6 @@
       <summary>Screensaver themes</summary>
       <description>This key specifies the list of themes to be used by the screensaver. It's ignored when "mode" key is "blank-only", should provide the theme name when "mode" is "single", and should provide a list of themes when "mode" is "random".</description>
     </key>
-    <key name="idle-delay" type="i">
-      <default>10</default>
-      <summary>Time before session is considered idle</summary>
-      <description>The number of minutes of inactivity before the session is considered idle.</description>
-    </key>
     <key name="power-management-delay" type="i">
       <default>30</default>
       <summary>Time before power management baseline</summary>

@@ -3,7 +3,6 @@ idle-activation-enabled = /apps/mate-screensaver/idle_activation_enabled
 lock-enabled = /apps/mate-screensaver/lock_enabled
 mode = /apps/mate-screensaver/mode
 themes = /apps/mate-screensaver/themes
-idle-delay = /apps/mate-screensaver/idle_delay
 power-management-delay = /apps/mate-screensaver/power_management_delay
 cycle-delay = /apps/mate-screensaver/cycle_delay
 lock-delay = /apps/mate-screensaver/lock_delay

@@ -38,11 +38,13 @@ static void gs_prefs_finalize   (GObject      *object);
 #define KEY_LOCK_DISABLE "disable-lock-screen"
 #define KEY_USER_SWITCH_DISABLE "disable-user-switching"
 
+#define SESSION_SETTINGS_SCHEMA "org.mate.session"
+#define KEY_IDLE_DELAY "idle-delay"
+
 #define GSETTINGS_SCHEMA "org.mate.screensaver"
 #define KEY_IDLE_ACTIVATION_ENABLED "idle-activation-enabled"
 #define KEY_LOCK_ENABLED "lock-enabled"
 #define KEY_MODE "mode"
-#define KEY_ACTIVATE_DELAY "idle-delay"
 #define KEY_POWER_DELAY "power-management-delay"
 #define KEY_LOCK_DELAY "lock-delay"
 #define KEY_CYCLE_DELAY "cycle-delay"
@@ -61,6 +63,7 @@ struct GSPrefsPrivate
 {
 	GSettings *settings;
 	GSettings *lockdown_settings;
+	GSettings *session_settings;
 };
 
 enum
@@ -338,7 +341,7 @@ gs_prefs_load_from_settings (GSPrefs *prefs)
 	bvalue = g_settings_get_boolean (prefs->priv->lockdown_settings, KEY_USER_SWITCH_DISABLE);
 	_gs_prefs_set_user_switch_disabled (prefs, bvalue);
 
-	value = g_settings_get_int (prefs->priv->settings, KEY_ACTIVATE_DELAY);
+	value = g_settings_get_int (prefs->priv->session_settings, KEY_IDLE_DELAY);
 	_gs_prefs_set_timeout (prefs, value);
 
 	value = g_settings_get_int (prefs->priv->settings, KEY_POWER_DELAY);
@@ -409,7 +412,7 @@ key_changed_cb (GSettings *settings,
 		g_strfreev (strv);
 
 	}
-	else if (strcmp (key, KEY_ACTIVATE_DELAY) == 0)
+	else if (strcmp (key, KEY_IDLE_DELAY) == 0)
 	{
 		int delay;
 
@@ -551,6 +554,12 @@ gs_prefs_init (GSPrefs *prefs)
 			  "changed",
 			  G_CALLBACK (key_changed_cb),
 			  prefs);
+	prefs->priv->session_settings = g_settings_new (SESSION_SETTINGS_SCHEMA);
+	g_signal_connect (prefs->priv->session_settings,
+			  "changed::" KEY_IDLE_DELAY,
+			  G_CALLBACK (key_changed_cb),
+			  prefs);
+
 	prefs->idle_activation_enabled = TRUE;
 	prefs->lock_enabled            = TRUE;
 	prefs->lock_disabled           = FALSE;
@@ -589,6 +598,11 @@ gs_prefs_finalize (GObject *object)
 	if (prefs->priv->lockdown_settings) {
 		g_object_unref (prefs->priv->lockdown_settings);
 		prefs->priv->lockdown_settings = NULL;
+	}
+
+	if (prefs->priv->session_settings) {
+		g_object_unref (prefs->priv->session_settings);
+		prefs->priv->session_settings = NULL;
 	}
 
 	if (prefs->themes)

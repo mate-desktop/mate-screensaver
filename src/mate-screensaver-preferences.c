@@ -47,11 +47,13 @@
 #define LOCKDOWN_SETTINGS_SCHEMA "org.mate.lockdown"
 #define KEY_LOCK_DISABLE "disable-lock-screen"
 
+#define SESSION_SETTINGS_SCHEMA "org.mate.session"
+#define KEY_IDLE_DELAY "idle-delay"
+
 #define GSETTINGS_SCHEMA "org.mate.screensaver"
 #define KEY_LOCK "lock-enabled"
 #define KEY_IDLE_ACTIVATION_ENABLED "idle-activation-enabled"
 #define KEY_MODE "mode"
-#define KEY_ACTIVATE_DELAY "idle-delay"
 #define KEY_LOCK_DELAY "lock-delay"
 #define KEY_CYCLE_DELAY "cycle-delay"
 #define KEY_THEMES "themes"
@@ -78,32 +80,30 @@ static GtkTargetEntry drop_types [] =
 	{ "_NETSCAPE_URL", 0, TARGET_NS_URL }
 };
 
-static GtkBuilder       *builder = NULL;
+static GtkBuilder     *builder = NULL;
 static GSThemeManager *theme_manager = NULL;
 static GSJob          *job = NULL;
+static GSettings      *screensaver_settings = NULL;
+static GSettings      *session_settings = NULL;
+static GSettings      *lockdown_settings = NULL;
 
 static gint32
 config_get_activate_delay (gboolean *is_writable)
 {
-	GSettings *settings;
-	gint32       delay;
-
-	settings = g_settings_new (GSETTINGS_SCHEMA);
+	gint32 delay;
 
 	if (is_writable)
 	{
-		*is_writable = g_settings_is_writable (settings,
-		               KEY_ACTIVATE_DELAY);
+		*is_writable = g_settings_is_writable (session_settings,
+		               KEY_IDLE_DELAY);
 	}
 
-	delay = g_settings_get_int (settings, KEY_ACTIVATE_DELAY);
+	delay = g_settings_get_int (session_settings, KEY_IDLE_DELAY);
 
 	if (delay < 1)
 	{
 		delay = 1;
 	}
-
-	g_object_unref (settings);
 
 	return delay;
 }
@@ -111,32 +111,21 @@ config_get_activate_delay (gboolean *is_writable)
 static void
 config_set_activate_delay (gint32 timeout)
 {
-	GSettings *settings;
-
-	settings = g_settings_new (GSETTINGS_SCHEMA);
-
-	g_settings_set_int (settings, KEY_ACTIVATE_DELAY, timeout);
-
-	g_object_unref (settings);
+	g_settings_set_int (session_settings, KEY_IDLE_DELAY, timeout);
 }
 
 static int
 config_get_mode (gboolean *is_writable)
 {
-	GSettings *settings;
-	int          mode;
-
-	settings = g_settings_new (GSETTINGS_SCHEMA);
+	int mode;
 
 	if (is_writable)
 	{
-		*is_writable = g_settings_is_writable (settings,
+		*is_writable = g_settings_is_writable (screensaver_settings,
 		               KEY_MODE);
 	}
 
-	mode = g_settings_get_enum (settings, KEY_MODE);
-
-	g_object_unref (settings);
+	mode = g_settings_get_enum (screensaver_settings, KEY_MODE);
 
 	return mode;
 }
@@ -144,32 +133,23 @@ config_get_mode (gboolean *is_writable)
 static void
 config_set_mode (int mode)
 {
-	GSettings *settings;
-
-	settings = g_settings_new (GSETTINGS_SCHEMA);
-
-	g_settings_set_enum (settings, KEY_MODE, mode);
-
-	g_object_unref (settings);
+	g_settings_set_enum (screensaver_settings, KEY_MODE, mode);
 }
 
 static char *
 config_get_theme (gboolean *is_writable)
 {
-	GSettings *settings;
-	char        *name;
-	int          mode;
-
-	settings = g_settings_new (GSETTINGS_SCHEMA);
+	char *name;
+	int   mode;
 
 	if (is_writable)
 	{
 		gboolean can_write_theme;
 		gboolean can_write_mode;
 
-		can_write_theme = g_settings_is_writable (settings,
+		can_write_theme = g_settings_is_writable (screensaver_settings,
 		                                          KEY_THEMES);
-		can_write_mode = g_settings_is_writable (settings,
+		can_write_mode = g_settings_is_writable (screensaver_settings,
 		                                         KEY_MODE);
 		*is_writable = can_write_theme && can_write_mode;
 	}
@@ -187,11 +167,11 @@ config_get_theme (gboolean *is_writable)
 	}
 	else
 	{
-		 gchar **strv;
-                 strv = g_settings_get_strv (settings,
-                                             KEY_THEMES);
-                 if (strv != NULL) {
-                          name = g_strdup (strv[0]);
+		gchar **strv;
+		strv = g_settings_get_strv (screensaver_settings,
+	                                KEY_THEMES);
+		if (strv != NULL) {
+			name = g_strdup (strv[0]);
 		}
 		else
 		{
@@ -202,8 +182,6 @@ config_get_theme (gboolean *is_writable)
 
 		g_strfreev (strv);
 	}
-
-	g_object_unref (settings);
 
 	return name;
 }
@@ -233,11 +211,8 @@ get_all_theme_ids (GSThemeManager *theme_manager)
 static void
 config_set_theme (const char *theme_id)
 {
-	GSettings *settings;
 	gchar **strv = NULL;
-	int          mode;
-
-	settings = g_settings_new (GSETTINGS_SCHEMA);
+	int     mode;
 
 	if (theme_id && strcmp (theme_id, "__blank-only") == 0)
 	{
@@ -258,32 +233,26 @@ config_set_theme (const char *theme_id)
 
 	config_set_mode (mode);
 
-	g_settings_set_strv (settings,
+	g_settings_set_strv (screensaver_settings,
 	                     KEY_THEMES,
 	                     (const gchar * const*) strv);
 
 	g_strfreev (strv);
 
-	g_object_unref (settings);
 }
 
 static gboolean
 config_get_enabled (gboolean *is_writable)
 {
-	int          enabled;
-	GSettings *settings;
-
-	settings = g_settings_new (GSETTINGS_SCHEMA);
+	int enabled;
 
 	if (is_writable)
 	{
-		*is_writable = g_settings_is_writable (settings,
+		*is_writable = g_settings_is_writable (screensaver_settings,
 		               KEY_LOCK);
 	}
 
-	enabled = g_settings_get_boolean (settings, KEY_IDLE_ACTIVATION_ENABLED);
-
-	g_object_unref (settings);
+	enabled = g_settings_get_boolean (screensaver_settings, KEY_IDLE_ACTIVATION_ENABLED);
 
 	return enabled;
 }
@@ -291,32 +260,21 @@ config_get_enabled (gboolean *is_writable)
 static void
 config_set_enabled (gboolean enabled)
 {
-	GSettings *settings;
-
-	settings = g_settings_new (GSETTINGS_SCHEMA);
-
-	g_settings_set_boolean (settings, KEY_IDLE_ACTIVATION_ENABLED, enabled);
-
-	g_object_unref (settings);
+	g_settings_set_boolean (screensaver_settings, KEY_IDLE_ACTIVATION_ENABLED, enabled);
 }
 
 static gboolean
 config_get_lock (gboolean *is_writable)
 {
-	GSettings *settings;
-	gboolean     lock;
-
-	settings = g_settings_new (GSETTINGS_SCHEMA);
+	gboolean lock;
 
 	if (is_writable)
 	{
-		*is_writable = g_settings_is_writable (settings,
+		*is_writable = g_settings_is_writable (screensaver_settings,
 		               KEY_LOCK);
 	}
 
-	lock = g_settings_get_boolean (settings, KEY_LOCK);
-
-	g_object_unref (settings);
+	lock = g_settings_get_boolean (screensaver_settings, KEY_LOCK);
 
 	return lock;
 }
@@ -324,27 +282,13 @@ config_get_lock (gboolean *is_writable)
 static gboolean
 config_get_lock_disabled ()
 {
-	GSettings *settings;
-	gboolean     lock;
-
-	settings = g_settings_new (LOCKDOWN_SETTINGS_SCHEMA);
-
-	lock = g_settings_get_boolean (settings, KEY_LOCK_DISABLE);
-
-	g_object_unref (settings);
-	return lock;
+	return g_settings_get_boolean (lockdown_settings, KEY_LOCK_DISABLE);
 }
 
 static void
 config_set_lock (gboolean lock)
 {
-	GSettings *settings;
-
-	settings = g_settings_new (GSETTINGS_SCHEMA);
-
-	g_settings_set_boolean (settings, KEY_LOCK, lock);
-
-	g_object_unref (settings);
+	g_settings_set_boolean (screensaver_settings, KEY_LOCK, lock);
 }
 
 static void
@@ -1195,7 +1139,7 @@ key_changed_cb (GSettings *settings, const gchar *key, gpointer data)
 			treeview = GTK_WIDGET (gtk_builder_get_object (builder, "savers_treeview"));
 			setup_treeview_selection (treeview);
 	}
-	else if (strcmp (key, KEY_ACTIVATE_DELAY) == 0)
+	else if (strcmp (key, KEY_IDLE_DELAY) == 0)
 	{
 			int delay;
 
@@ -1486,9 +1430,8 @@ init_capplet (void)
 	gdouble    activate_delay;
 	gboolean   enabled;
 	gboolean   is_writable;
-	GSettings *settings;
 	GError    *error=NULL;
-        gint       mode;
+	gint       mode;
 
 	gtk_builder_file = g_build_filename (GTKBUILDERDIR, GTK_BUILDER_FILE, NULL);
 	builder = gtk_builder_new();
@@ -1547,6 +1490,24 @@ init_capplet (void)
 		gtk_widget_hide (gpm_button);
 	}
 
+	screensaver_settings = g_settings_new (GSETTINGS_SCHEMA);
+	g_signal_connect (screensaver_settings,
+	                  "changed",
+	                  G_CALLBACK (key_changed_cb),
+	                  NULL);
+
+	session_settings = g_settings_new (SESSION_SETTINGS_SCHEMA);
+	g_signal_connect (session_settings,
+	                  "changed::" KEY_IDLE_DELAY,
+	                  G_CALLBACK (key_changed_cb),
+	                  NULL);
+
+	lockdown_settings = g_settings_new (LOCKDOWN_SETTINGS_SCHEMA);
+	g_signal_connect (lockdown_settings,
+	                  "changed::" KEY_LOCK_DISABLE,
+	                  G_CALLBACK (key_changed_cb),
+	                  NULL);
+
 	activate_delay = config_get_activate_delay (&is_writable);
 	ui_set_delay (activate_delay);
 	if (! is_writable)
@@ -1592,21 +1553,13 @@ init_capplet (void)
 	gtk_widget_show_all (dialog);
 
 	/* Update list of themes if using random screensaver */
-         settings = g_settings_new (GSETTINGS_SCHEMA);
-         mode = g_settings_get_enum (settings, KEY_MODE);
-        if (mode == GS_MODE_RANDOM) {
-                gchar **list;
-                list = get_all_theme_ids (theme_manager);
-                g_settings_set_strv (settings, KEY_THEMES, (const gchar * const*) list);
-                g_strfreev (list);
-        }
-
-        g_signal_connect (settings,
-                          "changed",
-                          G_CALLBACK (key_changed_cb),
-                          NULL);
-
-	g_object_unref (settings);
+	mode = g_settings_get_enum (screensaver_settings, KEY_MODE);
+	if (mode == GS_MODE_RANDOM) {
+		gchar **list;
+		list = get_all_theme_ids (theme_manager);
+		g_settings_set_strv (screensaver_settings, KEY_THEMES, (const gchar * const*) list);
+		g_strfreev (list);
+	}
 
 	preview_clear (preview);
 	gs_job_set_widget (job, preview);
@@ -1636,6 +1589,14 @@ init_capplet (void)
 	g_idle_add ((GSourceFunc)setup_treeview_idle, NULL);
 }
 
+static void
+finalize_capplet (void)
+{
+	g_object_unref (screensaver_settings);
+	g_object_unref (session_settings);
+	g_object_unref (lockdown_settings);
+}
+
 int
 main (int    argc,
       char **argv)
@@ -1657,6 +1618,8 @@ main (int    argc,
 	init_capplet ();
 
 	gtk_main ();
+
+	finalize_capplet ();
 
 	g_object_unref (theme_manager);
 	g_object_unref (job);
