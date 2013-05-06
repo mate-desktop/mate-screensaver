@@ -62,6 +62,7 @@ AC_TYPE_UID_T
 AC_CHECK_FUNCS([setresuid setenv unsetenv clearenv])
 PKG_CHECK_MODULES(MATE_SCREENSAVER,
         x11 >= $X11_REQUIRED_VERSION
+        xscrnsaver
         gtk+-2.0 >= $GTK_REQUIRED_VERSION
         dbus-glib-1 >= $DBUS_REQUIRED_VERSION
         gio-2.0 >= $GLIB_REQUIRED_VERSION
