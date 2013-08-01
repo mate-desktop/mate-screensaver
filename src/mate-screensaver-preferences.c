@@ -402,7 +402,7 @@ help_display (void)
 		}
 	}
 
-	command = g_strconcat ("mate-open ghelp://",
+	command = g_strconcat ("mate-open help://",
 	                       uri,
 	                       "?prefs-screensaver",
 	                       NULL);
