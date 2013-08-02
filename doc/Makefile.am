@@ -7,7 +7,7 @@ SPEC_XML_FILES =			\
 
 if DOCBOOK_DOCS_ENABLED
 
-htmldocdir = $(DOCDIR)/spec
+htmldocdir = $(DOCDIR)
 htmldoc_DATA = mate-screensaver.html
 
 mate-screensaver.html : dbus-interface.xml
