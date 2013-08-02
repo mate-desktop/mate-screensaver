@@ -4,6 +4,8 @@ AUTOMAKE_OPTIONS = 1.7
 
 NULL =
 
+DISTCHECK_CONFIGURE_FLAGS = --without-systemd
+
 SUBDIRS =			\
 	src			\
 	savers			\
@@ -20,8 +22,6 @@ EXTRA_DIST =			\
 	README			\
 	ChangeLog		\
 	NEWS			\
-	TODO			\
-	HACKING			\
 	intltool-extract.in     \
 	intltool-merge.in       \
 	intltool-update.in	\

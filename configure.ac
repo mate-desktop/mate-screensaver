@@ -7,7 +7,7 @@ AC_INIT([mate-screensaver],
 
 AC_CONFIG_SRCDIR(src/mate-screensaver.c)
 
-AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-bzip2])
+AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-xz])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
 AC_CONFIG_HEADERS(config.h)

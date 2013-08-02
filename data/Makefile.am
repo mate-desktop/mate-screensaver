@@ -50,7 +50,7 @@ dist_migration_DATA = org.mate.screensaver.gschema.migrate
 
 
 EXTRA_DIST = 				\
-	$(gsettings_SCHEMAS:.xml=.xml.in.in)		\
+	$(gsettings_SCHEMAS).in		\
 	$(desktop_in_files)		\
 	$(directory_in_files)		\
 	$(gtkbuilder_DATA)		\
