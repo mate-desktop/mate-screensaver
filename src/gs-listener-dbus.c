@@ -25,6 +25,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <string.h>
+#include <unistd.h>
 
 #include <glib/gi18n.h>
 
@@ -33,7 +34,6 @@
 #include <dbus/dbus-glib-lowlevel.h>
 
 #ifdef WITH_SYSTEMD
-#include <systemd/sd-daemon.h>
 #include <systemd/sd-login.h>
 #endif
 
@@ -1677,14 +1677,14 @@ listener_dbus_handle_system_message (DBusConnection *connection,
 
 		if (dbus_message_is_signal (message, SYSTEMD_LOGIND_SESSION_INTERFACE, "Unlock")) {
 			if (_listener_message_path_is_our_session (listener, message)) {
-				gs_debug ("Console kit requested session unlock");
+				gs_debug ("systemd requested session unlock");
 				gs_listener_set_active (listener, FALSE);
 			}
 
 			return DBUS_HANDLER_RESULT_HANDLED;
 		} else if (dbus_message_is_signal (message, SYSTEMD_LOGIND_SESSION_INTERFACE, "Lock")) {
 			if (_listener_message_path_is_our_session (listener, message)) {
-				gs_debug ("ConsoleKit requested session lock");
+				gs_debug ("systemd requested session lock");
 				g_signal_emit (listener, signals [LOCK], 0);
 			}
 
@@ -2311,7 +2311,7 @@ gs_listener_acquire (GSListener *listener,
 					    ",member='PropertiesChanged'",
 					    NULL);
 
-			goto finish;
+			return (acquired != -1);
 		}
 #endif
 
@@ -2339,7 +2339,6 @@ gs_listener_acquire (GSListener *listener,
 #endif
 	}
 
-finish:
 	return (acquired != -1);
 }
 
@@ -2427,7 +2426,8 @@ gs_listener_init (GSListener *listener)
 	listener->priv = GS_LISTENER_GET_PRIVATE (listener);
 
 #ifdef WITH_SYSTEMD
-	listener->priv->have_systemd = sd_booted () > 0;
+	/* check if logind is running */
+        listener->priv->have_systemd = (access("/run/systemd/seats/", F_OK) >= 0);
 #endif
 
 	gs_listener_dbus_init (listener);
