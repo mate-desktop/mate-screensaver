@@ -1,7 +1,7 @@
 # This file will be processed with automake-1.7 to create Makefile.in
 
 AUTOMAKE_OPTIONS = 1.7
-ACLOCAL_AMFLAGS = -I m4 
+ACLOCAL_AMFLAGS = -I m4
 
 NULL =
 
