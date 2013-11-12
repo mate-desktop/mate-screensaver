@@ -29,7 +29,7 @@
 #include <gio/gio.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
-#include <libmateui/mate-bg.h>
+#include <libmate-desktop/mate-bg.h>
 
 #include "gs-prefs.h"        /* for GSSaverMode */
 
@@ -894,6 +894,7 @@ gs_manager_get_property (GObject            *object,
 		break;
 	case PROP_ACTIVE:
 		g_value_set_boolean (value, self->priv->active);
+		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 		break;
@@ -1245,7 +1246,11 @@ static void
 apply_background_to_window (GSManager *manager,
                             GSWindow  *window)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+	cairo_surface_t *surface;
+#else
 	GdkPixmap       *pixmap;
+#endif
 	GdkScreen       *screen;
 	int              width;
 	int              height;
@@ -1253,13 +1258,26 @@ apply_background_to_window (GSManager *manager,
 	if (manager->priv->bg == NULL)
 	{
 		gs_debug ("No background available");
+#if GTK_CHECK_VERSION (3, 0, 0)
+		gs_window_set_background_surface (window, NULL);
+#else
 		gs_window_set_background_pixmap (window, NULL);
+#endif
 	}
 
 	screen = gs_window_get_screen (window);
 	width = gdk_screen_get_width (screen);
 	height = gdk_screen_get_height (screen);
-	gs_debug ("Creating pixmap background w:%d h:%d", width, height);
+	gs_debug ("Creating background w:%d h:%d", width, height);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	surface = mate_bg_create_surface (manager->priv->bg,
+	                                  gs_window_get_gdk_window (window),
+	                                  width,
+	                                  height,
+	                                  FALSE);
+	gs_window_set_background_surface (window, surface);
+	cairo_surface_destroy (surface);
+#else
 	pixmap = mate_bg_create_pixmap (manager->priv->bg,
 	                                gs_window_get_gdk_window (window),
 	                                width,
@@ -1267,6 +1285,7 @@ apply_background_to_window (GSManager *manager,
 	                                FALSE);
 	gs_window_set_background_pixmap (window, pixmap);
 	g_object_unref (pixmap);
+#endif
 }
 
 static void

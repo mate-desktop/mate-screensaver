@@ -43,7 +43,7 @@
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
 
-#include "libmateui/mate-rr.h"
+#include "libmate-desktop/mate-rr.h"
 
 /* XFree86 4.x+ Gamma fading */
 
@@ -217,7 +217,11 @@ xf86_whack_gamma (int              screen,
 			g2.blue = XF86_MIN_GAMMA;
 		}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+		status = XF86VidModeSetGamma (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), screen, &g2);
+#else
 		status = XF86VidModeSetGamma (GDK_DISPLAY (), screen, &g2);
+#endif
 	}
 	else
 	{
@@ -237,7 +241,11 @@ xf86_whack_gamma (int              screen,
 			b[i] = gamma_info->b[i] * ratio;
 		}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+		status = XF86VidModeSetGammaRamp (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), screen, gamma_info->size, r, g, b);
+#else
 		status = XF86VidModeSetGammaRamp (GDK_DISPLAY (), screen, gamma_info->size, r, g, b);
+#endif
 
 		g_free (r);
 		g_free (g);
@@ -313,7 +321,11 @@ gamma_fade_setup (GSFade *fade, int screen_idx)
 	{
 		/* have ramps */
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+		res = XF86VidModeGetGammaRampSize (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), screen_idx, &screen_priv->info->size);
+#else
 		res = XF86VidModeGetGammaRampSize (GDK_DISPLAY (), screen_idx, &screen_priv->info->size);
+#endif
 		if (!res || screen_priv->info->size <= 0)
 		{
 			screen_priv->fade_type = FADE_TYPE_GAMMA_NUMBER;
@@ -330,7 +342,11 @@ gamma_fade_setup (GSFade *fade, int screen_idx)
 			goto test_number;
 		}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+		res = XF86VidModeGetGammaRamp (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
+#else
 		res = XF86VidModeGetGammaRamp (GDK_DISPLAY (),
+#endif
 		                               screen_idx,
 		                               screen_priv->info->size,
 		                               screen_priv->info->r,
@@ -350,7 +366,11 @@ test_number:
 	{
 		/* only have gamma parameter, not ramps. */
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+		res = XF86VidModeGetGamma (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), screen_idx, &screen_priv->vmg);
+#else
 		res = XF86VidModeGetGamma (GDK_DISPLAY (), screen_idx, &screen_priv->vmg);
+#endif
 		if (! res)
 		{
 			screen_priv->fade_type = FADE_TYPE_NONE;
@@ -432,11 +452,19 @@ check_gamma_extension (GSFade *fade, int screen_idx)
 	screen_priv = &fade->priv->screen_priv[screen_idx];
 
 #ifdef HAVE_XF86VMODE_GAMMA
+#if GTK_CHECK_VERSION (3, 0, 0)
+	res = XF86VidModeQueryExtension (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &event, &error);
+#else
 	res = XF86VidModeQueryExtension (GDK_DISPLAY (), &event, &error);
+#endif
 	if (! res)
 		goto fade_none;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	res = safe_XF86VidModeQueryVersion (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &major, &minor);
+#else
 	res = safe_XF86VidModeQueryVersion (GDK_DISPLAY (), &major, &minor);
+#endif
 	if (! res)
 		goto fade_none;
 

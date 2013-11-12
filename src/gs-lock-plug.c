@@ -38,6 +38,17 @@
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#include <gdk/gdkkeysyms-compat.h>
+#include <gtk/gtkx.h>
+#define MATE_DESKTOP_USE_UNSTABLE_API
+#include <libmate-desktop/mate-desktop-utils.h>
+#define gdk_spawn_command_line_on_screen mate_gdk_spawn_command_line_on_screen
+#define GTK_WIDGET_VISIBLE gtk_widget_get_visible
+#define GTK_WIDGET_IS_SENSITIVE gtk_widget_is_sensitive
+#define GTK_WIDGET_HAS_FOCUS gtk_widget_has_focus
+#endif
+
 #ifdef WITH_KBD_LAYOUT_INDICATOR
 #include <libmatekbd/matekbd-indicator.h>
 #endif
@@ -524,7 +535,11 @@ gs_lock_plug_run (GSLockPlug *plug)
 
 	g_object_ref (plug);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	was_modal = gtk_window_get_modal (GTK_WINDOW (plug));
+#else
 	was_modal = GTK_WINDOW (plug)->modal;
+#endif
 	if (!was_modal)
 	{
 		gtk_window_set_modal (GTK_WINDOW (plug), TRUE);
@@ -658,6 +673,182 @@ rounded_rectangle (cairo_t *cr,
 	cairo_close_path (cr);
 }
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+/* copied from gnome-screensaver 3.x */
+
+/**
+ * go_cairo_convert_data_to_pixbuf:
+ * @src: a pointer to pixel data in cairo format
+ * @dst: a pointer to pixel data in pixbuf format
+ * @width: image width
+ * @height: image height
+ * @rowstride: data rowstride
+ *
+ * Converts the pixel data stored in @src in CAIRO_FORMAT_ARGB32 cairo format
+ * to GDK_COLORSPACE_RGB pixbuf format and move them
+ * to @dst. If @src == @dst, pixel are converted in place.
+ **/
+
+static void
+go_cairo_convert_data_to_pixbuf (unsigned char *dst,
+                                 unsigned char const *src,
+                                 int width,
+                                 int height,
+                                 int rowstride)
+{
+	int i,j;
+	unsigned int t;
+	unsigned char a, b, c;
+
+	g_return_if_fail (dst != NULL);
+
+#define MULT(d,c,a,t) G_STMT_START { t = (a)? c * 255 / a: 0; d = t;} G_STMT_END
+
+	if (src == dst || src == NULL) {
+		for (i = 0; i < height; i++) {
+			for (j = 0; j < width; j++) {
+#if G_BYTE_ORDER == G_LITTLE_ENDIAN
+				MULT(a, dst[2], dst[3], t);
+				MULT(b, dst[1], dst[3], t);
+				MULT(c, dst[0], dst[3], t);
+				dst[0] = a;
+				dst[1] = b;
+				dst[2] = c;
+#else
+				MULT(a, dst[1], dst[0], t);
+				MULT(b, dst[2], dst[0], t);
+				MULT(c, dst[3], dst[0], t);
+				dst[3] = dst[0];
+				dst[0] = a;
+				dst[1] = b;
+				dst[2] = c;
+#endif
+					dst += 4;
+			}
+			dst += rowstride - width * 4;
+		}
+	} else {
+		for (i = 0; i < height; i++) {
+			for (j = 0; j < width; j++) {
+#if G_BYTE_ORDER == G_LITTLE_ENDIAN
+				MULT(dst[0], src[2], src[3], t);
+				MULT(dst[1], src[1], src[3], t);
+				MULT(dst[2], src[0], src[3], t);
+				dst[3] = src[3];
+#else
+				MULT(dst[0], src[1], src[0], t);
+				MULT(dst[1], src[2], src[0], t);
+				MULT(dst[2], src[3], src[0], t);
+				dst[3] = src[0];
+#endif
+				src += 4;
+				dst += 4;
+			}
+			src += rowstride - width * 4;
+			dst += rowstride - width * 4;
+		}
+	}
+#undef MULT
+}
+
+static void
+cairo_to_pixbuf (guint8    *src_data,
+                 GdkPixbuf *dst_pixbuf)
+{
+	unsigned char *src;
+	unsigned char *dst;
+	guint          w;
+	guint          h;
+	guint          rowstride;
+
+	w = gdk_pixbuf_get_width (dst_pixbuf);
+	h = gdk_pixbuf_get_height (dst_pixbuf);
+	rowstride = gdk_pixbuf_get_rowstride (dst_pixbuf);
+
+	dst = gdk_pixbuf_get_pixels (dst_pixbuf);
+	src = src_data;
+
+	go_cairo_convert_data_to_pixbuf (dst, src, w, h, rowstride);
+}
+
+static GdkPixbuf *
+frame_pixbuf (GdkPixbuf *source)
+{
+	GdkPixbuf       *dest;
+	cairo_t         *cr;
+	cairo_surface_t *surface;
+	guint            w;
+	guint            h;
+	guint            rowstride;
+	int              frame_width;
+	double           radius;
+	guint8          *data;
+
+	frame_width = 5;
+
+	w = gdk_pixbuf_get_width (source) + frame_width * 2;
+	h = gdk_pixbuf_get_height (source) + frame_width * 2;
+	radius = w / 10;
+
+	dest = gdk_pixbuf_new (GDK_COLORSPACE_RGB,
+						   TRUE,
+						   8,
+						   w,
+						   h);
+	rowstride = gdk_pixbuf_get_rowstride (dest);
+
+
+	data = g_new0 (guint8, h * rowstride);
+
+	surface = cairo_image_surface_create_for_data (data,
+												   CAIRO_FORMAT_ARGB32,
+												   w,
+												   h,
+												   rowstride);
+	cr = cairo_create (surface);
+	cairo_surface_destroy (surface);
+
+	/* set up image */
+	cairo_rectangle (cr, 0, 0, w, h);
+	cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, 0.0);
+	cairo_fill (cr);
+
+	rounded_rectangle (cr,
+					   1.0,
+					   frame_width + 0.5,
+					   frame_width + 0.5,
+					   radius,
+					   w - frame_width * 2 - 1,
+					   h - frame_width * 2 - 1);
+	cairo_set_source_rgba (cr, 0.5, 0.5, 0.5, 0.3);
+	cairo_fill_preserve (cr);
+
+	surface = surface_from_pixbuf (source);
+	cairo_set_source_surface (cr, surface, frame_width, frame_width);
+	cairo_fill (cr);
+	cairo_surface_destroy (surface);
+
+	cairo_to_pixbuf (data, dest);
+
+	cairo_destroy (cr);
+	g_free (data);
+
+	return dest;
+}
+
+/* end copied from gdm-user.c */
+
+static void
+image_set_from_pixbuf (GtkImage  *image,
+                       GdkPixbuf *source)
+{
+	GdkPixbuf *pixbuf;
+
+	pixbuf = frame_pixbuf (source);
+	gtk_image_set_from_pixbuf (image, pixbuf);
+	g_object_unref (pixbuf);
+}
+#else
 static void
 image_set_from_pixbuf (GtkImage  *image,
                        GdkPixbuf *source)
@@ -733,7 +924,7 @@ image_set_from_pixbuf (GtkImage  *image,
 	cairo_destroy (cr_mask);
 	cairo_destroy (cr);
 }
-
+#endif
 
 static gboolean
 check_user_file (const gchar *filename,
@@ -891,6 +1082,7 @@ forward_key_events (GSLockPlug *plug)
 	}
 }
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 static void
 gs_lock_plug_size_request (GtkWidget      *widget,
                            GtkRequisition *requisition)
@@ -923,6 +1115,7 @@ gs_lock_plug_size_request (GtkWidget      *widget,
 		requisition->height = mod_height;
 	}
 }
+#endif
 
 static void
 gs_lock_plug_set_logout_enabled (GSLockPlug *plug,
@@ -1112,7 +1305,11 @@ gs_lock_plug_close (GSLockPlug *plug)
 	GdkEvent  *event;
 
 	event = gdk_event_new (GDK_DELETE);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	event->any.window = g_object_ref (gtk_widget_get_window(widget));
+#else
 	event->any.window = g_object_ref (widget->window);
+#endif
 	event->any.send_event = TRUE;
 
 	gtk_main_do_event (event);
@@ -1133,7 +1330,9 @@ gs_lock_plug_class_init (GSLockPlugClass *klass)
 	widget_class->style_set    = gs_lock_plug_style_set;
 	widget_class->show         = gs_lock_plug_show;
 	widget_class->hide         = gs_lock_plug_hide;
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	widget_class->size_request = gs_lock_plug_size_request;
+#endif
 
 	klass->close = gs_lock_plug_close;
 
@@ -1319,7 +1518,12 @@ gs_lock_plug_set_busy (GSLockPlug *plug)
 	top_level = gtk_widget_get_toplevel (GTK_WIDGET (plug));
 
 	cursor = gdk_cursor_new (GDK_WATCH);
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gdk_window_set_cursor (gtk_widget_get_window (top_level), cursor);
+#else
 	gdk_window_set_cursor (top_level->window, cursor);
+#endif
 	gdk_cursor_unref (cursor);
 }
 
@@ -1332,7 +1536,11 @@ gs_lock_plug_set_ready (GSLockPlug *plug)
 	top_level = gtk_widget_get_toplevel (GTK_WIDGET (plug));
 
 	cursor = gdk_cursor_new (GDK_LEFT_PTR);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gdk_window_set_cursor (gtk_widget_get_window (top_level), cursor);
+#else
 	gdk_window_set_cursor (top_level->window, cursor);
+#endif
 	gdk_cursor_unref (cursor);
 }
 
@@ -1442,7 +1650,11 @@ gs_lock_plug_add_button (GSLockPlug  *plug,
 
 	button = gtk_button_new_from_stock (button_text);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_can_default (button, TRUE);
+#else
 	GTK_WIDGET_SET_FLAGS (button, GTK_CAN_DEFAULT);
+#endif
 
 	gtk_widget_show (button);
 
@@ -1962,7 +2174,11 @@ gs_lock_plug_init (GSLockPlug *plug)
 	{
 		XklEngine *engine;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+		engine = xkl_engine_get_instance (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()));
+#else
 		engine = xkl_engine_get_instance (GDK_DISPLAY ());
+#endif
 		if (xkl_engine_get_num_groups (engine) > 1)
 		{
 			GtkWidget *layout_indicator;

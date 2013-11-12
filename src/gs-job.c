@@ -80,7 +80,11 @@ widget_get_id_string (GtkWidget *widget)
 	g_return_val_if_fail (widget != NULL, NULL);
 
 	id = g_strdup_printf ("0x%X",
+#if GTK_CHECK_VERSION (3, 0, 0)
+	                      (guint32)GDK_WINDOW_XID (gtk_widget_get_window (widget)));
+#else
 	                      (guint32)GDK_WINDOW_XID (widget->window));
+#endif
 	return id;
 }
 
@@ -339,6 +343,19 @@ spawn_on_widget (GtkWidget  *widget,
 	env = get_env_vars (widget);
 
 	error = NULL;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	result = g_spawn_async_with_pipes (NULL,
+	         argv,
+	         (char **)env->pdata,
+	         G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD,
+	         NULL,
+	         NULL,
+	         &child_pid,
+	         NULL,
+	         NULL,
+	         &standard_error,
+	         &error);
+#else
 	result = gdk_spawn_on_screen_with_pipes (gtk_widget_get_screen (widget),
 	         NULL,
 	         argv,
@@ -351,6 +368,7 @@ spawn_on_widget (GtkWidget  *widget,
 	         NULL,
 	         &standard_error,
 	         &error);
+#endif
 	for (i = 0; i < env->len; i++)
 	{
 		g_free (g_ptr_array_index (env, i));

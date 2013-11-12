@@ -58,6 +58,7 @@ struct GSGrabPrivate
 	GtkWidget *invisible;
 };
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 static GdkCursor *
 get_cursor (void)
 {
@@ -82,6 +83,7 @@ get_cursor (void)
 
 	return cursor;
 }
+#endif
 
 static const char *
 grab_string (int status)
@@ -126,7 +128,11 @@ xorg_lock_smasher_set_active (GSGrab  *grab,
 {
 	int status, event, error;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	if (!XF86MiscQueryExtension (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &event, &error))
+#else
 	if (!XF86MiscQueryExtension (GDK_DISPLAY (), &event, &error))
+#endif
 	{
 		gs_debug ("No XFree86-Misc extension present");
 		return;
@@ -143,7 +149,11 @@ xorg_lock_smasher_set_active (GSGrab  *grab,
 
 	gdk_error_trap_push ();
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	status = XF86MiscSetGrabKeysState (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), active);
+#else
 	status = XF86MiscSetGrabKeysState (GDK_DISPLAY (), active);
+#endif
 
 	gdk_display_sync (gdk_display_get_default ());
 	gdk_error_trap_pop ();
@@ -216,7 +226,11 @@ gs_grab_get_mouse (GSGrab    *grab,
 	g_return_val_if_fail (window != NULL, FALSE);
 	g_return_val_if_fail (screen != NULL, FALSE);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	cursor = gdk_cursor_new (GDK_BLANK_CURSOR);
+#else
 	cursor = get_cursor ();
+#endif
 
 	gs_debug ("Grabbing mouse widget=%X", (guint32) GDK_WINDOW_XID (window));
 	status = gdk_pointer_grab (window, TRUE, 0, NULL,
@@ -438,9 +452,13 @@ gs_grab_nuke_focus (void)
 
 	gdk_error_trap_push ();
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	XGetInputFocus (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &focus, &rev);
+	XSetInputFocus (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), None, RevertToNone, CurrentTime);
+#else
 	XGetInputFocus (GDK_DISPLAY (), &focus, &rev);
-
 	XSetInputFocus (GDK_DISPLAY (), None, RevertToNone, CurrentTime);
+#endif
 
 	gdk_display_sync (gdk_display_get_default ());
 	gdk_error_trap_pop ();
@@ -584,7 +602,11 @@ gs_grab_grab_offscreen (GSGrab *grab,
 	gs_debug ("Grabbing an offscreen window");
 
 	screen = gtk_invisible_get_screen (GTK_INVISIBLE (grab->priv->invisible));
+#if GTK_CHECK_VERSION (3, 0, 0)
+	res = gs_grab_grab_window (grab, gtk_widget_get_window (GTK_WIDGET (grab->priv->invisible)), screen, hide_cursor);
+#else
 	res = gs_grab_grab_window (grab, grab->priv->invisible->window, screen, hide_cursor);
+#endif
 
 	return res;
 }
