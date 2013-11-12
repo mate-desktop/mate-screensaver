@@ -31,6 +31,10 @@
 #include "gs-theme-engine.h"
 #include "gs-theme-engine-marshal.h"
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define GTK_WIDGET_VISIBLE gtk_widget_get_visible
+#endif
+
 static void     gs_theme_engine_class_init (GSThemeEngineClass *klass);
 static void     gs_theme_engine_init       (GSThemeEngine      *engine);
 static void     gs_theme_engine_finalize   (GObject            *object);
@@ -115,7 +119,9 @@ static void
 gs_theme_engine_clear (GtkWidget *widget)
 {
 	GdkColor     color = { 0, 0x0000, 0x0000, 0x0000 };
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	GdkColormap *colormap;
+#endif
 	GtkStateType state;
 
 	g_return_if_fail (GS_IS_THEME_ENGINE (widget));
@@ -126,16 +132,24 @@ gs_theme_engine_clear (GtkWidget *widget)
 	}
 
 	state = (GtkStateType) 0;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	while (state < (GtkStateType) G_N_ELEMENTS (gtk_widget_get_style (widget)->bg))
+#else
 	while (state < (GtkStateType) G_N_ELEMENTS (widget->style->bg))
+#endif
 	{
 		gtk_widget_modify_bg (widget, state, &color);
 		state++;
 	}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gdk_window_set_background (gtk_widget_get_window (widget), &color);
+#else
 	colormap = gdk_drawable_get_colormap (widget->window);
 	gdk_colormap_alloc_color (colormap, &color, FALSE, TRUE);
 	gdk_window_set_background (widget->window, &color);
 	gdk_window_clear (widget->window);
+#endif
 	gdk_flush ();
 }
 
@@ -209,12 +223,20 @@ gs_theme_engine_get_window_size (GSThemeEngine *engine,
 		return;
 	}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gdk_window_get_geometry (gtk_widget_get_window (GTK_WIDGET (engine)),
+	                         NULL,
+	                         NULL,
+	                         width,
+	                         height);
+#else
 	gdk_window_get_geometry (GTK_WIDGET (engine)->window,
 	                         NULL,
 	                         NULL,
 	                         width,
 	                         height,
 	                         NULL);
+#endif
 }
 
 GdkWindow *
@@ -222,5 +244,9 @@ gs_theme_engine_get_window (GSThemeEngine *engine)
 {
 	g_return_val_if_fail (GS_IS_THEME_ENGINE (engine), NULL);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	return gtk_widget_get_window (GTK_WIDGET (engine));
+#else
 	return GTK_WIDGET (engine)->window;
+#endif
 }

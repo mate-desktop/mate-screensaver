@@ -139,7 +139,11 @@ gs_theme_window_real_realize (GtkWidget *widget)
 		        ((*end == ' ') || (*end == '\0')) &&
 		        ((remote_xwindow < G_MAXULONG) || (errno != ERANGE)))
 		{
+#if GTK_CHECK_VERSION (3, 0, 0)
+			window = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (), remote_xwindow);
+#else
 			window = gdk_window_foreign_new (remote_xwindow);
+#endif
 
 			if (window != NULL)
 			{
@@ -174,17 +178,33 @@ gs_theme_window_real_realize (GtkWidget *widget)
 		return;
 	}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_style_set_background (gtk_widget_get_style (widget),
+#else
 	gtk_style_set_background (widget->style,
+#endif
 	                          window,
 	                          GTK_STATE_NORMAL);
 	gdk_window_set_decorations (window, (GdkWMDecoration) 0);
 	gdk_window_set_events (window, gdk_window_get_events (window) | event_mask);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_window (widget, window);
+#else
 	widget->window = window;
+#endif
 	gdk_window_set_user_data (window, widget);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_realized (widget, TRUE);
+#else
 	GTK_WIDGET_SET_FLAGS (widget, GTK_REALIZED);
+#endif
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gdk_window_get_geometry (window, &x, &y, &width, &height);
+#else
 	gdk_window_get_geometry (window, &x, &y, &width, &height, NULL);
+#endif
 
 	if (width < MIN_SIZE || height < MIN_SIZE)
 	{
