@@ -437,6 +437,7 @@ clear_widget (GtkWidget *widget)
 #if GTK_CHECK_VERSION (3, 0, 0)
 	GdkRGBA      rgba = { 0.0, 0.0, 0.0, 1.0 };
 #else
+	GdkColormap *colormap;
 	GdkColor     color = { 0, 0x0000, 0x0000, 0x0000 };
 	GtkStateType state;
 	GtkStyle    *style;
