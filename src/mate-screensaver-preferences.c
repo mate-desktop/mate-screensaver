@@ -36,6 +36,13 @@
 
 #include <gio/gio.h>
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define MATE_DESKTOP_USE_UNSTABLE_API
+#include <libmate-desktop/mate-desktop-utils.h>
+#define gdk_spawn_command_line_on_screen mate_gdk_spawn_command_line_on_screen
+#include "gs-debug.h"
+#endif
+
 #include "copy-theme-dialog.h"
 
 #include "gs-theme-manager.h"
@@ -297,7 +304,11 @@ preview_clear (GtkWidget *widget)
 	GdkColor color = { 0, 0, 0 };
 
 	gtk_widget_modify_bg (widget, GTK_STATE_NORMAL, &color);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_queue_draw (widget);
+#else
 	gdk_window_clear (widget->window);
+#endif
 }
 
 static void
@@ -942,7 +953,11 @@ drag_data_received_cb (GtkWidget        *widget,
 	if (!(info == TARGET_URI_LIST || info == TARGET_NS_URL))
 		return;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	files = uri_list_parse ((char *) gtk_selection_data_get_data (selection_data));
+#else
 	files = uri_list_parse ((char *) selection_data->data);
+#endif
 	if (files != NULL)
 	{
 		GtkWidget *prefs_dialog;
@@ -1328,7 +1343,11 @@ get_best_visual (void)
 			VisualID      visual_id;
 
 			visual_id = (VisualID) v;
+#if GTK_CHECK_VERSION (3, 0, 0)
+			visual = gdk_x11_screen_lookup_visual (gdk_screen_get_default (), visual_id);
+#else
 			visual = gdkx_visual_get (visual_id);
+#endif
 
 			g_debug ("Found best visual for GL: 0x%x",
 			         (unsigned int) visual_id);
@@ -1342,6 +1361,157 @@ out:
 	return visual;
 }
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+/* copied from gs-window-x11.c */
+extern char **environ;
+
+static gchar **
+spawn_make_environment_for_screen (GdkScreen  *screen,
+                                   gchar     **envp)
+{
+	gchar **retval = NULL;
+	gchar  *display_name;
+	gint    display_index = -1;
+	gint    i, env_len;
+
+	g_return_val_if_fail (GDK_IS_SCREEN (screen), NULL);
+
+	if (envp == NULL)
+		envp = environ;
+
+	for (env_len = 0; envp[env_len]; env_len++)
+		if (strncmp (envp[env_len], "DISPLAY", strlen ("DISPLAY")) == 0)
+			display_index = env_len;
+
+	retval = g_new (char *, env_len + 1);
+	retval[env_len] = NULL;
+
+	display_name = gdk_screen_make_display_name (screen);
+
+	for (i = 0; i < env_len; i++)
+		if (i == display_index)
+			retval[i] = g_strconcat ("DISPLAY=", display_name, NULL);
+		else
+			retval[i] = g_strdup (envp[i]);
+
+	g_assert (i == env_len);
+
+	g_free (display_name);
+
+	return retval;
+}
+
+static gboolean
+spawn_command_line_on_screen_sync (GdkScreen    *screen,
+                                   const gchar  *command_line,
+                                   char        **standard_output,
+                                   char        **standard_error,
+                                   int          *exit_status,
+                                   GError      **error)
+{
+	char     **argv = NULL;
+	char     **envp = NULL;
+	gboolean   retval;
+
+	g_return_val_if_fail (command_line != NULL, FALSE);
+
+	if (! g_shell_parse_argv (command_line, NULL, &argv, error))
+	{
+		return FALSE;
+	}
+
+	envp = spawn_make_environment_for_screen (screen, NULL);
+
+	retval = g_spawn_sync (NULL,
+	                       argv,
+	                       envp,
+	                       G_SPAWN_SEARCH_PATH,
+	                       NULL,
+	                       NULL,
+	                       standard_output,
+	                       standard_error,
+	                       exit_status,
+	                       error);
+
+	g_strfreev (argv);
+	g_strfreev (envp);
+
+	return retval;
+}
+
+
+static GdkVisual *
+get_best_visual_for_screen (GdkScreen *screen)
+{
+	char         *command;
+	char         *std_output;
+	int           exit_status;
+	GError       *error;
+	unsigned long v;
+	char          c;
+	GdkVisual    *visual;
+	gboolean      res;
+
+	visual = NULL;
+
+	command = g_build_filename (LIBEXECDIR, "mate-screensaver-gl-helper", NULL);
+
+	error = NULL;
+	std_output = NULL;
+	res = spawn_command_line_on_screen_sync (screen,
+	        command,
+	        &std_output,
+	        NULL,
+	        &exit_status,
+	        &error);
+	if (! res)
+	{
+		gs_debug ("Could not run command '%s': %s", command, error->message);
+		g_error_free (error);
+		goto out;
+	}
+
+	if (1 == sscanf (std_output, "0x%lx %c", &v, &c))
+	{
+		if (v != 0)
+		{
+			VisualID      visual_id;
+
+			visual_id = (VisualID) v;
+#if GTK_CHECK_VERSION (3, 0, 0)
+			visual = gdk_x11_screen_lookup_visual (screen, visual_id);
+#else
+			visual = gdkx_visual_get (visual_id);
+#endif
+
+			gs_debug ("Found best GL visual for screen %d: 0x%x",
+			          gdk_screen_get_number (screen),
+			          (unsigned int) visual_id);
+		}
+	}
+out:
+	g_free (std_output);
+	g_free (command);
+
+	return visual;
+}
+
+
+static void
+widget_set_best_visual (GtkWidget *widget)
+{
+	GdkVisual *visual;
+
+	g_return_if_fail (widget != NULL);
+
+	visual = get_best_visual_for_screen (gtk_widget_get_screen (widget));
+	if (visual != NULL)
+	{
+		gtk_widget_set_visual (widget, visual);
+		g_object_unref (visual);
+	}
+}
+#else
 static GdkColormap *
 get_best_colormap_for_screen (GdkScreen *screen)
 {
@@ -1375,6 +1545,7 @@ widget_set_best_colormap (GtkWidget *widget)
 		g_object_unref (colormap);
 	}
 }
+#endif
 
 static gboolean
 setup_treeview_idle (gpointer data)
@@ -1482,7 +1653,11 @@ init_capplet (void)
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), treeview);
 
 	gtk_widget_set_no_show_all (root_warning_label, TRUE);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	widget_set_best_visual (preview);
+#else
 	widget_set_best_colormap (preview);
+#endif
 
 	if (! is_program_in_path (GPM_COMMAND))
 	{
