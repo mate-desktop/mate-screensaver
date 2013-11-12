@@ -34,6 +34,9 @@
 #include <glib/gi18n.h>
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
+#if GTK_CHECK_VERSION (3, 0, 0)
+#include <gtk/gtkx.h>
+#endif
 
 #include "gs-lock-plug.h"
 
@@ -70,7 +73,11 @@ static char* get_id_string(GtkWidget* widget)
 	g_return_val_if_fail(widget != NULL, NULL);
 	g_return_val_if_fail(GTK_IS_WIDGET(widget), NULL);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	id = g_strdup_printf("%" G_GUINT32_FORMAT, (guint32) GDK_WINDOW_XID(gtk_widget_get_window(widget)));
+#else
 	id = g_strdup_printf("%" G_GUINT32_FORMAT, (guint32) GDK_WINDOW_XID(widget->window));
+#endif
 	return id;
 }
 
@@ -553,12 +560,16 @@ int main(int argc, char** argv)
 		textdomain(GETTEXT_PACKAGE);
 	#endif
 
+#if !GLIB_CHECK_VERSION (2, 32, 0)
 	if (!g_thread_supported())
 	{
 		g_thread_init(NULL);
 	}
+#endif
 
+#if !GLIB_CHECK_VERSION (2, 36, 0)
 	g_type_init();
+#endif
 
 	gs_profile_start(NULL);
 
