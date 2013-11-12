@@ -808,7 +808,7 @@ out:
 	g_free (std_output);
 	g_free (command);
 
-	return visual;
+	return g_object_ref (visual);
 }
 
 #if GTK_CHECK_VERSION (3, 0, 0)
