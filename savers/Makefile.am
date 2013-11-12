@@ -17,6 +17,7 @@ AM_CPPFLAGS =							\
 DESKTOP_IN_IN_FILES = 			 \
 	cosmos-slideshow.desktop.in.in 	 \
 	footlogo-floaters.desktop.in.in	 \
+	gnomelogo-floaters.desktop.in.in	 \
 	personal-slideshow.desktop.in.in \
 	popsquares.desktop.in.in	 \
 	$(NULL)
@@ -24,6 +25,8 @@ DESKTOP_IN_IN_FILES = 			 \
 cosmos-slideshow.desktop.in: cosmos-slideshow.desktop.in.in Makefile
 	$(edit) $< >$@
 footlogo-floaters.desktop.in: footlogo-floaters.desktop.in.in Makefile
+	$(edit) $< >$@
+gnomelogo-floaters.desktop.in: gnomelogo-floaters.desktop.in.in Makefile
 	$(edit) $< >$@
 personal-slideshow.desktop.in: personal-slideshow.desktop.in.in Makefile
 	$(edit) $< >$@
@@ -35,12 +38,14 @@ popsquares.desktop.in: popsquares.desktop.in.in Makefile
 edit = sed \
 	-e 's|@SLIDESHOW_COSMOS_DIR[@]|$(SLIDESHOW_COSMOS_DIR)|g' \
 	-e 's|@FLOATERS_FOOT_LOGO_IMAGE[@]|$(FLOATERS_FOOT_LOGO_IMAGE)|g' \
+	-e 's|@FLOATERS_FOOT_GNOME_LOGO_IMAGE[@]|$(FLOATERS_FOOT_GNOME_LOGO_IMAGE)|g' \
 	-e 's|@SAVERDIR[@]|$(privlibexecdir)|g'
 
 themesdir = $(datadir)/applications/screensavers
 themes_in_files = 			\
 	cosmos-slideshow.desktop.in	\
 	footlogo-floaters.desktop.in    \
+	gnomelogo-floaters.desktop.in    \
 	personal-slideshow.desktop.in	\
 	popsquares.desktop.in		\
 	$(NULL)
@@ -125,6 +130,7 @@ CLEANFILES = 				\
 	$(BUILT_SOURCES)		\
 	cosmos-slideshow.desktop.in	\
 	footlogo-floaters.desktop.in	\
+	gnomelogo-floaters.desktop.in	\
 	popsquares.desktop.in		\
 	personal-slideshow.desktop.in	\
 	$(NULL)
@@ -138,6 +144,7 @@ MAINTAINERCLEANFILES =			\
 	Makefile.in			\
 	cosmos-slideshow.desktop	\
 	footlogo-floaters.desktop	\
+	gnomelogo-floaters.desktop	\
 	personal-slideshow.desktop	\
 	popsquares.desktop		\
 	$(NULL)

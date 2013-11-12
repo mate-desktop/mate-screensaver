@@ -9,6 +9,7 @@ data/lock-dialog-default.ui
 data/org.mate.screensaver.gschema.xml.in
 savers/cosmos-slideshow.desktop.in.in
 savers/footlogo-floaters.desktop.in.in
+savers/gnomelogo-floaters.desktop.in.in
 savers/personal-slideshow.desktop.in.in
 savers/popsquares.desktop.in.in
 savers/popsquares.c
