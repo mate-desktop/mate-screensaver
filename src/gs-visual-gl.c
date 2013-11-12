@@ -94,7 +94,7 @@ gs_visual_gl_get_best_for_screen (GdkScreen *screen)
 			vid = XVisualIDFromVisual (vi->visual);
 
 #if GTK_CHECK_VERSION (3, 0, 0)
-			visual = gdk_x11_screen_lookup_visual (gdk_screen_get_default (), vid);
+			visual = gdk_x11_screen_lookup_visual (screen, vid);
 #else
 			visual = gdkx_visual_get (vid);
 #endif
@@ -108,8 +108,12 @@ gs_visual_gl_get_best_for_screen (GdkScreen *screen)
 		}
 	}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gdk_error_trap_pop_ignored ();
+#else
 	gdk_display_sync (display);
 	gdk_error_trap_pop ();
+#endif
 
 #else
 	visual = NULL;
