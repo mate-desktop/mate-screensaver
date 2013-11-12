@@ -101,7 +101,11 @@ main (int    argc,
 		exit (1);
 	}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	if (! XQueryExtension (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), XF86_VIDMODE_NAME, &op, &event, &err))
+#else
 	if (! XQueryExtension (GDK_DISPLAY (), XF86_VIDMODE_NAME, &op, &event, &err))
+#endif
 	{
 		g_message ("no " XF86_VIDMODE_NAME " extension");
 	}
@@ -111,7 +115,11 @@ main (int    argc,
 		int major;
 		int minor;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+		if (! XF86VidModeQueryVersion (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &major, &minor))
+#else
 		if (! XF86VidModeQueryVersion (GDK_DISPLAY (), &major, &minor))
+#endif
 		{
 			g_message ("unable to get " XF86_VIDMODE_NAME " version");
 		}
