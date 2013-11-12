@@ -547,7 +547,7 @@ dnl ---------------------------------------------------------------------------
 dnl - Check for GL
 dnl ---------------------------------------------------------------------------
 
-AC_ARG_WITH(gl, [  --with-libgl	  build with GL support])
+AC_ARG_WITH(libgl, [  --with-libgl	  build with GL support])
 have_libgl=no
 GL_LIBS=""
 
