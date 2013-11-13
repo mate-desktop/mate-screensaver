@@ -1,25 +1,28 @@
-# translation of mate-screensaver.HEAD.ar.po to Arabic
-# Djihed Afifi <djihed@gmail.com>, 2006.
-# Khaled Hosny <khaledhosny@eglug.org>, 2006, 2008, 2009.
-# Anas Husseini <linux.anas@gmail.com>, 2007.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# linostar <linux.anas@gmail.com>, 2007
+# Djihed Afifi <djihed@gmail.com>, 2006
+# Khaled Hosny <khaledhosny@eglug.org>, 2006,2008-2009
+# moceap <moceap@hotmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver.HEAD.ar\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-21 06:39+0300\n"
-"PO-Revision-Date: 2009-08-21 06:54+0300\n"
-"Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
-"Language: ar\n"
+"POT-Creation-Date: 2013-10-01 14:02+0200\n"
+"PO-Revision-Date: 2013-10-05 15:40+0000\n"
+"Last-Translator: mauron\n"
+"Language-Team: Arabic (http://www.transifex.com/projects/p/MATE/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Virtaal 0.4.0\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: ../data/mate-screensaver-preferences.desktop.in.h:1
-#: ../src/mate-screensaver.desktop.in.in.h:2
+#: ../src/mate-screensaver.desktop.in.in.h:1
 msgid "Screensaver"
 msgstr "حافظة الشاشة"
 
@@ -28,368 +31,194 @@ msgid "Set your screensaver preferences"
 msgstr "اضبط خصائص حافظة الشاشة"
 
 #: ../data/mate-screensaver-preferences.ui.h:1
-msgid "<b>Screensaver preview</b>"
-msgstr "<b>معاينة حافظة الشاشة</b>"
-
-#: ../data/mate-screensaver-preferences.ui.h:2
-msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>تنبيه: لا تُوصد الشاشة للجذر.</b>"
-
-#: ../data/mate-screensaver-preferences.ui.h:3
-msgid "Power _Management"
-msgstr "إ_دارة الطاقة"
-
-#: ../data/mate-screensaver-preferences.ui.h:4
-msgid "Regard the computer as _idle after:"
-msgstr "اعتبر الحاسوب _ساكنا بعد:"
-
-#: ../data/mate-screensaver-preferences.ui.h:5
 msgid "Screensaver Preferences"
 msgstr "تفضيلات حافظة الشاشة"
 
-#: ../data/mate-screensaver-preferences.ui.h:6
-msgid "Screensaver Preview"
-msgstr "معاينة حافظة الشاشة"
+#: ../data/mate-screensaver-preferences.ui.h:2
+msgid "Power _Management"
+msgstr "إ_دارة الطاقة"
 
-#: ../data/mate-screensaver-preferences.ui.h:7
-msgid "_Activate screensaver when computer is idle"
-msgstr "نشّط _حافظة الشاشة عند السكون"
-
-#: ../data/mate-screensaver-preferences.ui.h:8
-msgid "_Lock screen when screensaver is active"
-msgstr "أو_صد الشاشة عند تفعيل حافظة الشاشة"
-
-#: ../data/mate-screensaver-preferences.ui.h:9
+#: ../data/mate-screensaver-preferences.ui.h:3
 msgid "_Preview"
 msgstr "_معاينة"
 
-#: ../data/mate-screensaver-preferences.ui.h:10
+#: ../data/mate-screensaver-preferences.ui.h:4
 msgid "_Screensaver theme:"
-msgstr "سِمة حافظ ال_شاشة:"
+msgstr "سِمة حافظة ال_شاشة:"
+
+#: ../data/mate-screensaver-preferences.ui.h:5
+msgid "Regard the computer as _idle after:"
+msgstr "اعتبر الحاسوب _ساكنًا بعد:"
+
+#: ../data/mate-screensaver-preferences.ui.h:6
+msgid "_Activate screensaver when computer is idle"
+msgstr "نشّط _حافظة الشاشة عند السكون"
+
+#: ../data/mate-screensaver-preferences.ui.h:7
+msgid "_Lock screen when screensaver is active"
+msgstr "أو_صد الشاشة عند تفعيل حافظة الشاشة"
+
+#: ../data/mate-screensaver-preferences.ui.h:8
+msgid "<b>Warning: the screen will not be locked for the root user.</b>"
+msgstr "<b>تنبيه: لا تُوصد الشاشة للجذر.</b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:9
+msgid "Screensaver Preview"
+msgstr "معاينة حافظة الشاشة"
+
+#: ../data/mate-screensaver-preferences.ui.h:10
+msgid "<b>Screensaver preview</b>"
+msgstr "<b>معاينة حافظة الشاشة</b>"
 
 #: ../data/mate-screensaver.directory.in.h:1
-#: ../data/mate-screensaver.schemas.in.h:11
-msgid "Screensaver themes"
-msgstr "سِمات حافظة الشاشة"
-
-#: ../data/mate-screensaver.directory.in.h:2
 msgid "Screensavers"
 msgstr "حافظات الشاشة"
 
-#: ../data/mate-screensaver.schemas.in.h:1
-msgid "Activate when idle"
-msgstr "نشّط عند السكون"
+#: ../data/mate-screensaver.directory.in.h:2
+msgid "Screensaver themes"
+msgstr "سِمات حافظة الشاشة"
 
-#: ../data/mate-screensaver.schemas.in.h:2
-msgid "Allow embedding a keyboard into the window"
-msgstr "اسمح بغرس لوحة مفاتيح في النافذة"
-
-#: ../data/mate-screensaver.schemas.in.h:3
-msgid "Allow logout"
-msgstr "اسمح بالخروج"
-
-#: ../data/mate-screensaver.schemas.in.h:4
-msgid "Allow the session status message to be displayed"
-msgstr "اسمح بعرض رسالة حالة الجلسة"
-
-#: ../data/mate-screensaver.schemas.in.h:5
-msgid ""
-"Allow the session status message to be displayed when the screen is locked."
-msgstr "اسمح بعرض رسالة حالة الجلسة عندما تكون الشاشة موصدة."
-
-#: ../data/mate-screensaver.schemas.in.h:6
-msgid "Allow user switching"
-msgstr "اسمح بتبديل المستخدم"
-
-#: ../data/mate-screensaver.schemas.in.h:7
-msgid "Embedded keyboard command"
-msgstr "أمر لوحة المفاتيح المدرجة"
-
-#: ../data/mate-screensaver.schemas.in.h:8
-msgid "Lock on activation"
-msgstr "أوصِد عند التفعيل"
-
-#: ../data/mate-screensaver.schemas.in.h:9
-msgid "Logout command"
-msgstr "أمر الخروج"
-
-#: ../data/mate-screensaver.schemas.in.h:10
-msgid "Screensaver theme selection mode"
-msgstr "نمط اختيار سِمة حافظة الشاشة"
-
-#: ../data/mate-screensaver.schemas.in.h:12
-msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr "حدد TRUE لتفعيل حافظة الشاشة عند خمول الجلسة."
-
-#: ../data/mate-screensaver.schemas.in.h:13
-msgid ""
-"Set this to TRUE to allow embedding a keyboard into the window when trying "
-"to unlock. The \"keyboard_command\" key must be set with the appropriate "
-"command."
-msgstr ""
-"اختر TRUE للسماح بإدراج لوحة مفاتيح في النافذة عند محاولة إلغاء القفل. "
-"\"keyboard_command\" يجب أن تكون أمرا صحيحا."
-
-#: ../data/mate-screensaver.schemas.in.h:14
-msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr "حدد TRUE لقفل الشاشة عند تفعيل حافظة الشاشة."
-
-#: ../data/mate-screensaver.schemas.in.h:15
-msgid ""
-"Set this to TRUE to offer an option in the unlock dialog to switch to a "
-"different user account."
-msgstr "حدد TRUE لإعطاء إمكانية تغيير المستخدم."
-
-#: ../data/mate-screensaver.schemas.in.h:16
-msgid ""
-"Set this to TRUE to offer an option in unlock dialog to logging out after a "
-"delay. The Delay is specified in the \"logout_delay\" key."
-msgstr ""
-"حدد TRUE لإعطاء إمكانية تسجيل الخروج بعد الفترة المحددة في مفتاح "
-"\"logout_delay\"."
-
-#: ../data/mate-screensaver.schemas.in.h:17
-msgid ""
-"The command that will be run, if the \"embedded_keyboard_enabled\" key is "
-"set to TRUE, to embed a keyboard widget into the window. This command should "
-"implement an XEMBED plug interface and output a window XID on the standard "
-"output."
-msgstr ""
-"الأمر الذي سيتم تشغيله، إذا كان مفتاح \"embedded_keyboard_enabled\" TRUE، "
-"لإدراج لوحة مفاتيح في النافذة. هذا الأمر يجب أن يدرج شاشة إدراج XEMBED ، و "
-"يعطي رمز  XID عند في المخرج."
-
-#: ../data/mate-screensaver.schemas.in.h:18
-msgid ""
-"The command to invoke when the logout button is clicked. This command should "
-"simply log the user out without any interaction. This key has effect only if "
-"the \"logout_enable\" key is set to TRUE."
-msgstr ""
-"الأمر المنفَذ عند الضغط على زر تسجيل الخروج. هذا الزر يعمل فقط عندما يكون "
-"الزر  \"logout_enable\" محددا إلى TRUE."
-
-#: ../data/mate-screensaver.schemas.in.h:19
-msgid ""
-"The number of minutes after screensaver activation before locking the screen."
-msgstr "عدد الدقائق بعد تفعيل حافظة الشاشة قبل قفل الشاشة."
-
-#: ../data/mate-screensaver.schemas.in.h:20
-msgid ""
-"The number of minutes after the screensaver activation before a logout "
-"option will appear in unlock dialog. This key has effect only if the "
-"\"logout_enable\" key is set to TRUE."
-msgstr ""
-"عدد الدقائق بعد تفعيل حافظة الشاشة قبل إظهار زر تسجيل الخروج.  هذا الزر يعمل "
-"فقط عندما يكون الزر  \"logout_enable\" محددا إلى TRUE."
-
-#: ../data/mate-screensaver.schemas.in.h:21
-msgid ""
-"The number of minutes of inactivity before the session is considered idle."
-msgstr "عدد الدقائق من السكون قبل اعتبار الجلسة ساكنة."
-
-#: ../data/mate-screensaver.schemas.in.h:22
-msgid "The number of minutes to run before changing the screensaver theme."
-msgstr "عدد الدقائق قبل تغيير سِمة حافظة الشاشة."
-
-#: ../data/mate-screensaver.schemas.in.h:23
-msgid ""
-"The number of seconds of inactivity before signalling to power-management. "
-"This key is set and maintained by the session power-management agent."
-msgstr ""
-"عدد الثواني من الخمول قبل إرسال إشارة إلى إدارة الطاقة. يُضبط ويدار هذا "
-"المفتاح بواسطة عميل إدارة الطاقة."
-
-#: ../data/mate-screensaver.schemas.in.h:24
-msgid ""
-"The selection mode used by screensaver. May be \"blank-only\" to enable the "
-"screensaver without using any theme on activation, \"single\" to enable "
-"screensaver using only one theme on activation (specified in \"themes\" "
-"key), and \"random\" to enable the screensaver using a random theme on "
-"activation."
-msgstr ""
-"نمط الإختيار لحافظة الشاشة. قد يكون \"blank-only\" لعدم استعمال أي سِمة عند "
-"التفعيل،  \"single\" لاستعمال سِمة واحدة (تحدد في مفتاح \"themes\")، و "
-"\"random\" لاستعمال نمط عشوائي عند التفعيل."
-
-#: ../data/mate-screensaver.schemas.in.h:25
-msgid "Theme for lock dialog"
-msgstr "سِمة حوار الإيصاد"
-
-#: ../data/mate-screensaver.schemas.in.h:26
-msgid "Theme to use for the lock dialog."
-msgstr "السِّمة المستعملة لحوار الإيصاد."
-
-#: ../data/mate-screensaver.schemas.in.h:27
-msgid ""
-"This key specifies the list of themes to be used by the screensaver. It's "
-"ignored when \"mode\" key is \"blank-only\", should provide the theme name when "
-"\"mode\" is \"single\", and should provide a list of themes when \"mode\" is "
-"\"random\"."
-msgstr ""
-"يحدد هذا الزر قائمة السِمة المستعملة من حافظة الشاشة. يتم تجاهله إذا كان زر "
-"\"mode\" هو  \"blank-only\"، يجب توفير اسم السِمة عندما يكون  \"mode\" هو "
-"\"single\"، يجب أيضا توفير قائمة السِمة عندما يكون \"mode\" هو \"random\"."
-
-#: ../data/mate-screensaver.schemas.in.h:28
-msgid "Time before locking"
-msgstr "مدة الانتظار قبل الإيصاد"
-
-#: ../data/mate-screensaver.schemas.in.h:29
-msgid "Time before logout option"
-msgstr "مدة الانتظار قبل الخروج"
-
-#: ../data/mate-screensaver.schemas.in.h:30
-msgid "Time before power-management baseline"
-msgstr "مدة الانتظار قبل خط إدارة الطاقة الأساسي"
-
-#: ../data/mate-screensaver.schemas.in.h:31
-msgid "Time before session is considered idle"
-msgstr "مدة الانتظار قبل اعتبار الجلسة خاملة"
-
-#: ../data/mate-screensaver.schemas.in.h:32
-msgid "Time before theme change"
-msgstr "مدة الانتظار قبل تغيير السِّمة"
-
-#: ../data/lock-dialog-default.ui.h:2
-#, no-c-format
-msgid "<b>Leave a message for %R:</b>"
-msgstr "<b>اترك رسالة ل‍ %R:</b>"
-
-#: ../data/lock-dialog-default.ui.h:4
-#, no-c-format
-msgid "<span size=\"small\">%U on %h</span>"
-msgstr "<span size=\"small\">‏%U على %h</span>"
-
-#: ../data/lock-dialog-default.ui.h:6
-#, no-c-format
-msgid "<span size=\"x-large\">%R</span>"
-msgstr "<span size=\"x-large\">‏%R</span>"
-
-#: ../data/lock-dialog-default.ui.h:7
-msgid "_Cancel"
-msgstr "أل_غ"
-
-#: ../data/lock-dialog-default.ui.h:8
-msgid "_Leave Message"
-msgstr "ا_ترك رسالة"
-
-#: ../data/lock-dialog-default.ui.h:9
-msgid "_Log Out"
-msgstr "ا_خرج"
-
-#: ../data/lock-dialog-default.ui.h:10
-msgid "_Switch User"
-msgstr "_بدّل المستخدم"
-
-#: ../data/lock-dialog-default.ui.h:11 ../src/gs-lock-plug.c:1382
-msgid "_Unlock"
-msgstr "ا_فتح القفل"
-
-#. Translators: This is the name of a desktop background image that shows outer space images.
+#. Translators: This is the name of a desktop background image that shows
+#. outer space images.
 #. You might want to translate it into the equivalent words of your language
 #: ../data/images/cosmos/cosmos.xml.in.in.h:3
 #: ../savers/cosmos-slideshow.desktop.in.in.h:1
 msgid "Cosmos"
 msgstr "الكَوْن"
 
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<span size=\"x-large\">%R</span>"
+msgstr "<span size=\"x-large\">‏%R</span>"
+
+#: ../data/lock-dialog-default.ui.h:4
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">‏%U على %h</span>"
+
+#: ../data/lock-dialog-default.ui.h:5
+msgid "_Leave Message"
+msgstr "ا_ترك رسالة"
+
+#: ../data/lock-dialog-default.ui.h:6
+msgid "_Switch User"
+msgstr "_بدّل المستخدم"
+
+#: ../data/lock-dialog-default.ui.h:7
+msgid "_Log Out"
+msgstr "ا_خرج"
+
+#: ../data/lock-dialog-default.ui.h:8
+msgid "_Cancel"
+msgstr "أل_غ"
+
+#: ../data/lock-dialog-default.ui.h:9 ../src/gs-lock-plug.c:1524
+msgid "_Unlock"
+msgstr "ا_فتح القفل"
+
+#: ../data/lock-dialog-default.ui.h:11
+#, no-c-format
+msgid "<b>Leave a message for %R:</b>"
+msgstr "<b>اترك رسالة ل‍ %R:</b>"
+
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "أظهر عرض شرائح من صور الكَوْن"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
-msgid "Bubbles the MATE foot logo around the screen"
-msgstr "تفقيع شعار قدم جنوم حول الشاشة"
+msgid "Floating MATE"
+msgstr "متّة طافية"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
-msgid "Floating Feet"
-msgstr "أقدام طافية"
+msgid "Bubbles the MATE logo around the screen"
+msgstr "فقاعات شعار متّة حول الشّاشة"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
-msgid "Display a slideshow from your Pictures folder"
-msgstr "أظهر عرض شرائح من مجلد الصور الخاص بك"
-
-#: ../savers/personal-slideshow.desktop.in.in.h:2
 msgid "Pictures folder"
 msgstr "مجلّد الصور"
 
-#: ../savers/popsquares.desktop.in.in.h:1
-msgid "A pop-art-ish grid of pulsing colors."
-msgstr "شَبَكَة شبه فنية للألوان النابضة."
+#: ../savers/personal-slideshow.desktop.in.in.h:2
+msgid "Display a slideshow from your Pictures folder"
+msgstr "أظهر عرض شرائح من مجلد الصور الخاص بك"
 
-#: ../savers/popsquares.desktop.in.in.h:2
+#: ../savers/popsquares.desktop.in.in.h:1
 msgid "Pop art squares"
 msgstr "المربعات الفنية"
 
-#: ../savers/floaters.c:84
+#: ../savers/popsquares.desktop.in.in.h:2
+msgid "A pop-art-ish grid of pulsing colors."
+msgstr "شَبَكَة شبه فنية للألوان النابضة."
+
+#: ../savers/popsquares.c:50 ../savers/floaters.c:1217
+#, c-format
+msgid "%s. See --help for usage information.\n"
+msgstr "%s. انظر ‪--help‬ للمزيد من المعلومات.\n"
+
+#: ../savers/floaters.c:90
 msgid "Show paths that images follow"
 msgstr "أظهر مسارات تنقل الصور"
 
-#: ../savers/floaters.c:87
+#: ../savers/floaters.c:95
 msgid "Occasionally rotate images as they move"
 msgstr "دوّر الصور أحيانًا عند تحركها"
 
-#: ../savers/floaters.c:90
+#: ../savers/floaters.c:100
 msgid "Print out frame rate and other statistics"
 msgstr "اطبع معدّل الإطارات وإحصائيات أخرى"
 
-#: ../savers/floaters.c:93
+#: ../savers/floaters.c:105
 msgid "The maximum number of images to keep on screen"
 msgstr "العدد الأقصى للصور الظاهرة على الشاشة"
 
-#: ../savers/floaters.c:93
+#: ../savers/floaters.c:105
 msgid "MAX_IMAGES"
 msgstr "عدد الصور الأقصى"
 
-#: ../savers/floaters.c:96
+#: ../savers/floaters.c:110
 msgid "The initial size and position of window"
 msgstr "الحجم والمكان الأولان للنافذة  "
 
-#: ../savers/floaters.c:96
+#: ../savers/floaters.c:110
 msgid "WIDTHxHEIGHT+X+Y"
-msgstr "العرض×الطول+س+ص"
+msgstr "العرض×الطول+س+ع"
 
-#: ../savers/floaters.c:99
+#: ../savers/floaters.c:115
 msgid "The source image to use"
 msgstr "مصدر الصورة المستعملة"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#.
-#: ../savers/floaters.c:1194
+#. 
+#: ../savers/floaters.c:1211
 msgid "image - floats images around the screen"
 msgstr "صورة - طَفْو الصورة حول الشاشة"
 
-#: ../savers/floaters.c:1200
-#, c-format
-msgid "%s. See --help for usage information.\n"
-msgstr "%s. انظر ‪--help‬ للمزيد من المعلومات.\n"
-
-#: ../savers/floaters.c:1209
+#: ../savers/floaters.c:1226
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "يجب اختيار صورة. انظر ‪--help‬ للمزيد من المعلومات.\n"
 
-#: ../savers/slideshow.c:53
+#: ../savers/slideshow.c:55
 msgid "Location to get images from"
 msgstr "المكان الذي تُفتَح منه الصور"
 
-#: ../savers/slideshow.c:53
+#: ../savers/slideshow.c:55
 msgid "PATH"
 msgstr "المسار"
 
-#: ../savers/slideshow.c:55
+#: ../savers/slideshow.c:59
 msgid "Color to use for images background"
 msgstr "اللون المستخدم لخلفيات الصور"
 
-#: ../savers/slideshow.c:55
+#: ../savers/slideshow.c:59
 msgid "\"#rrggbb\""
 msgstr "\"#rrggbb\""
 
-#: ../savers/slideshow.c:57
+#: ../savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
 msgstr "لا تختر الصور عشوائيًا من المكان"
 
-#: ../savers/slideshow.c:59
+#: ../savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"
 msgstr "لا تقم بمطّ الصور على الشاشة"
 
@@ -423,202 +252,202 @@ msgstr "يبدو أن الملف %s لا يمثل سِمة حافظة شاشة �
 msgid "Copying file: %u of %u"
 msgstr "ينسخ الملف: '%u من %u"
 
-#: ../src/mate-screensaver-command.c:62
+#: ../src/mate-screensaver-command.c:64
 msgid "Causes the screensaver to exit gracefully"
 msgstr "يسبب خروج حافظة الشاشة بسلام"
 
-#: ../src/mate-screensaver-command.c:64
+#: ../src/mate-screensaver-command.c:68
 msgid "Query the state of the screensaver"
 msgstr "أظهر حالة حافظة الشاشة"
 
-#: ../src/mate-screensaver-command.c:66
+#: ../src/mate-screensaver-command.c:72
 msgid "Query the length of time the screensaver has been active"
 msgstr "استعلم عن مدّة الزمن التي كانت فيها حافظة الشاشة نشطة"
 
-#: ../src/mate-screensaver-command.c:68
+#: ../src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr "تخبر عملية حافظة الشاشة التي تعمل بقفل الشاشة مباشرة "
 
-#: ../src/mate-screensaver-command.c:70
+#: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr "انتقل إلى عرض رسومي آخر  إذا كانت حافظة الشاشة  نشِطة"
 
-#: ../src/mate-screensaver-command.c:72
+#: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
 msgstr "شغّل حافظة الشاشة (أفرغ الشاشة)"
 
-#: ../src/mate-screensaver-command.c:74
+#: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr "أوقف حافظة الشاشة إذا كانت نشِطة (الغي إفراغ الشاشة)"
 
-#: ../src/mate-screensaver-command.c:76
+#: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr "وكز حافظة الشاشة المشتغل لمحاكاة نشاط من المستخدم"
 
-#: ../src/mate-screensaver-command.c:78
+#: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "امنع حافظة الشاشة من التفعيل. الأمر يتوقف عندما يكون المنع نشطا."
+msgstr "امنع حافظة الشاشة من التفعيل. الأمر يتوقف عندما يكون المنع نشطًا."
 
-#: ../src/mate-screensaver-command.c:80
+#: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
 msgstr "التطبيق المنادي الذي يمنع حافظة الشاشة"
 
-#: ../src/mate-screensaver-command.c:82
+#: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
 msgstr "السبب وراء توقف حافظة الشاشة"
 
-#: ../src/mate-screensaver-command.c:84 ../src/mate-screensaver-dialog.c:58
-#: ../src/mate-screensaver.c:56
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:57
+#: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "نسخة هذا التّطبيق"
 
-#: ../src/mate-screensaver-command.c:311
+#: ../src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr "حافظة الشاشة هي %s\n"
 
-#: ../src/mate-screensaver-command.c:311
+#: ../src/mate-screensaver-command.c:357
 msgid "active"
 msgstr "نشط"
 
-#: ../src/mate-screensaver-command.c:311
+#: ../src/mate-screensaver-command.c:357
 msgid "inactive"
 msgstr "غير نشط"
 
-#: ../src/mate-screensaver-command.c:325
+#: ../src/mate-screensaver-command.c:373
 #, c-format
 msgid "The screensaver is not inhibited\n"
 msgstr "حافظة الشاشة غير مُثبطة\n"
 
-#: ../src/mate-screensaver-command.c:331
+#: ../src/mate-screensaver-command.c:381
 #, c-format
 msgid "The screensaver is being inhibited by:\n"
 msgstr "حافظة الشاشة أثبطها:\n"
 
-#: ../src/mate-screensaver-command.c:362
+#: ../src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
 msgstr "حافظة الشاشة نشِطة منذ %Id ثواني.\n"
 
-#: ../src/mate-screensaver-command.c:366
+#: ../src/mate-screensaver-command.c:422
 #, c-format
 msgid "The screensaver is not currently active.\n"
-msgstr "حافظة الشاشة غير غير نشطة حاليا\n"
+msgstr "حافظة الشاشة غير غير نشطة حاليًا\n"
 
 #: ../src/mate-screensaver-dialog.c:56
 msgid "Show debugging output"
-msgstr "أظهر خرْجَ التنقيح"
+msgstr "أظهر مُخرجات التنقيح"
 
-#: ../src/mate-screensaver-dialog.c:60
+#: ../src/mate-screensaver-dialog.c:58
 msgid "Show the logout button"
 msgstr "أظهر زر الخروج"
 
-#: ../src/mate-screensaver-dialog.c:62
+#: ../src/mate-screensaver-dialog.c:59
 msgid "Command to invoke from the logout button"
 msgstr "الأمر عند الضغط على زر الخروج"
 
-#: ../src/mate-screensaver-dialog.c:64
+#: ../src/mate-screensaver-dialog.c:60
 msgid "Show the switch user button"
 msgstr "أظهر زر تبديل المستخدم"
 
-#: ../src/mate-screensaver-dialog.c:66
+#: ../src/mate-screensaver-dialog.c:61
 msgid "Message to show in the dialog"
 msgstr "الرسالة التي ستظهر في نافذة الحوار"
 
-#: ../src/mate-screensaver-dialog.c:66 ../src/mate-screensaver-dialog.c:68
+#: ../src/mate-screensaver-dialog.c:61 ../src/mate-screensaver-dialog.c:62
 msgid "MESSAGE"
 msgstr "الرسالة"
 
-#: ../src/mate-screensaver-dialog.c:68
+#: ../src/mate-screensaver-dialog.c:62
 msgid "Not used"
 msgstr "غير مُستخدَمة"
 
 #. login: is whacked always translate to Username:
-#: ../src/mate-screensaver-dialog.c:178 ../src/mate-screensaver-dialog.c:179
-#: ../src/mate-screensaver-dialog.c:180 ../src/gs-auth-pam.c:698
+#: ../src/mate-screensaver-dialog.c:164 ../src/mate-screensaver-dialog.c:165
+#: ../src/mate-screensaver-dialog.c:166 ../src/gs-auth-pam.c:756
 msgid "Username:"
 msgstr "اسم المستخدم:"
 
-#: ../src/mate-screensaver-dialog.c:181 ../src/mate-screensaver-dialog.c:182
-#: ../src/gs-auth-pam.c:166
+#: ../src/mate-screensaver-dialog.c:167 ../src/mate-screensaver-dialog.c:168
+#: ../src/gs-auth-pam.c:171
 msgid "Password:"
-msgstr "كلمة السر:"
+msgstr "كلمة المرور:"
 
-#: ../src/mate-screensaver-dialog.c:183
+#: ../src/mate-screensaver-dialog.c:169
 msgid "You are required to change your password immediately (password aged)"
-msgstr "يجب أن تغير كلمة سرك حالا (كلمة السر قديمة)"
+msgstr "يجب أن تغير كلمة مرورك حالًا (كلمة المرور قديمة)"
 
-#: ../src/mate-screensaver-dialog.c:184
+#: ../src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (root enforced)"
-msgstr "يجب أن تغير كلمة سرك حالا (فرض الجذر ذلك)"
+msgstr "يجب أن تغير كلمة مرورك حالًا (فرض الجذر ذلك)"
 
-#: ../src/mate-screensaver-dialog.c:185
+#: ../src/mate-screensaver-dialog.c:171
 msgid "Your account has expired; please contact your system administrator"
 msgstr "انقضى حسابك، الرجاء الاتصال بمدير النظام"
 
-#: ../src/mate-screensaver-dialog.c:186
+#: ../src/mate-screensaver-dialog.c:172
 msgid "No password supplied"
-msgstr "لم تمدّ كلمة سر جديدة"
+msgstr "لم تزود كلمة مرور جديدة"
 
-#: ../src/mate-screensaver-dialog.c:187
+#: ../src/mate-screensaver-dialog.c:173
 msgid "Password unchanged"
-msgstr "لم تغير كلمة السر"
+msgstr "لم تغير كلمة المرور"
 
-#: ../src/mate-screensaver-dialog.c:188
+#: ../src/mate-screensaver-dialog.c:174
 msgid "Can not get username"
 msgstr "لا يمكن تلقي اسم المستخدم"
 
-#: ../src/mate-screensaver-dialog.c:189
+#: ../src/mate-screensaver-dialog.c:175
 msgid "Retype new UNIX password:"
-msgstr "أعد كتابة كلمة سر يونكس الجديدة:"
+msgstr "أعد كتابة كلمة مرور يونكس الجديدة:"
 
-#: ../src/mate-screensaver-dialog.c:190
+#: ../src/mate-screensaver-dialog.c:176
 msgid "Enter new UNIX password:"
-msgstr "أدخل كلمة سر يونكس جديدة:"
+msgstr "أدخل كلمة مرور يونكس جديدة:"
 
-#: ../src/mate-screensaver-dialog.c:191
+#: ../src/mate-screensaver-dialog.c:177
 msgid "(current) UNIX password:"
-msgstr "كلمة سر يونكس (الحالية):"
+msgstr "كلمة مرور يونكس (الحالية):"
 
-#: ../src/mate-screensaver-dialog.c:192
+#: ../src/mate-screensaver-dialog.c:178
 msgid "Error while changing NIS password."
-msgstr "خطأ أثناء تغيير كلمة سر NIS."
+msgstr "خطأ أثناء تغيير كلمة مرور NIS."
 
-#: ../src/mate-screensaver-dialog.c:193
+#: ../src/mate-screensaver-dialog.c:179
 msgid "You must choose a longer password"
-msgstr "يجب أن تختار كلمة سر أطول"
+msgstr "يجب أن تختار كلمة مرور أطول"
 
-#: ../src/mate-screensaver-dialog.c:194
+#: ../src/mate-screensaver-dialog.c:180
 msgid "Password has been already used. Choose another."
-msgstr "كلمة السر مستخدمة. الرجاء اختيار كلمة مغايرة."
+msgstr "كلمة المرور مستخدمة. الرجاء اختيار كلمة مغايرة."
 
-#: ../src/mate-screensaver-dialog.c:195
+#: ../src/mate-screensaver-dialog.c:181
 msgid "You must wait longer to change your password"
-msgstr "يجب أن تنتظر مدة أطول لتتمكن من تغيير كلمة سرك"
+msgstr "يجب أن تنتظر مدة أطول لتتمكن من تغيير كلمة مرورك"
 
-#: ../src/mate-screensaver-dialog.c:196
+#: ../src/mate-screensaver-dialog.c:182
 msgid "Sorry, passwords do not match"
-msgstr "عفوا، كلمتا السر لا تتطابقان"
+msgstr "عفوًا، كلمتا المرور لا تتطابقان"
 
-#: ../src/mate-screensaver-dialog.c:262
+#: ../src/mate-screensaver-dialog.c:253
 msgid "Checking..."
 msgstr "يفحص..."
 
-#: ../src/mate-screensaver-dialog.c:304 ../src/gs-auth-pam.c:457
+#: ../src/mate-screensaver-dialog.c:299 ../src/gs-auth-pam.c:495
 msgid "Authentication failed."
 msgstr "فشل الاستيثاق."
 
-#: ../src/mate-screensaver-preferences.c:524
+#: ../src/mate-screensaver-preferences.c:476
 msgid "Blank screen"
 msgstr "شاشة فارغة"
 
-#: ../src/mate-screensaver-preferences.c:530
+#: ../src/mate-screensaver-preferences.c:482
 msgid "Random"
 msgstr "عشوائية"
 
-#: ../src/mate-screensaver-preferences.c:980
+#: ../src/mate-screensaver-preferences.c:968
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
@@ -629,7 +458,7 @@ msgstr[3] "%Id ساعات"
 msgstr[4] "%Id ساعة"
 msgstr[5] "%Id ساعة"
 
-#: ../src/mate-screensaver-preferences.c:983
+#: ../src/mate-screensaver-preferences.c:971
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
@@ -640,7 +469,7 @@ msgstr[3] "%Id دقائق"
 msgstr[4] "%Id دقيقة"
 msgstr[5] "%Id دقيقة"
 
-#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:974
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -652,15 +481,15 @@ msgstr[4] "%Id ثانية"
 msgstr[5] "%Id ثانية"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:992
+#: ../src/mate-screensaver-preferences.c:982
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:995
-#: ../src/mate-screensaver-preferences.c:1003
+#: ../src/mate-screensaver-preferences.c:987
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
@@ -668,99 +497,93 @@ msgstr "%s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:998
-#: ../src/mate-screensaver-preferences.c:1006
-#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:992
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1011
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1025
+#: ../src/mate-screensaver-preferences.c:1026
 #, c-format
 msgid "Never"
 msgstr "أبدًا"
 
-#: ../src/mate-screensaver-preferences.c:1467
+#: ../src/mate-screensaver-preferences.c:1451
 msgid "Could not load the main interface"
 msgstr "تعذّر تحميل الواجهة الرئيسيّة"
 
-#: ../src/mate-screensaver-preferences.c:1469
+#: ../src/mate-screensaver-preferences.c:1453
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "الرجاء التثبت من أن حافظة الشاشة مثبتة بنجاح"
 
-#: ../src/mate-screensaver.c:57
+#: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
-msgstr "لا تصبح عفريتا"
+msgstr "لا تصبح مُحثًا"
 
-#: ../src/mate-screensaver.c:58
+#: ../src/mate-screensaver.c:57
 msgid "Enable debugging code"
 msgstr "فعّل التنقيح"
 
-#: ../src/mate-screensaver.desktop.in.in.h:1
+#: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screen saver and locker program"
 msgstr "شغّل برنامج حافظة الشاشة"
 
-#: ../src/gs-auth-pam.c:397
+#: ../src/gs-auth-pam.c:425
 #, c-format
 msgid "Unable to establish service %s: %s\n"
 msgstr "تعذّر تنصيب الخدمة %s: %s\n"
 
-#: ../src/gs-auth-pam.c:423
+#: ../src/gs-auth-pam.c:455
 #, c-format
 msgid "Can't set PAM_TTY=%s"
 msgstr "تعذّر ضبط PAM_TTY=%s"
 
-#: ../src/gs-auth-pam.c:455
+#: ../src/gs-auth-pam.c:491
 msgid "Incorrect password."
-msgstr "كلمة السر غير صحيحة."
+msgstr "كلمة المرور غير صحيحة."
 
-#: ../src/gs-auth-pam.c:471
+#: ../src/gs-auth-pam.c:511
 msgid "Not permitted to gain access at this time."
 msgstr "منع المستخدم من النفاذ الآن."
 
-#: ../src/gs-auth-pam.c:477
+#: ../src/gs-auth-pam.c:519
 msgid "No longer permitted to access the system."
 msgstr "لم يعد يسمح بالنفاذ إلى النظام."
 
-#: ../src/gs-listener-dbus.c:1851
+#: ../src/gs-listener-dbus.c:2219
 msgid "failed to register with the message bus"
 msgstr "فشل الاتصال بمخرج الرسائل"
 
-#: ../src/gs-listener-dbus.c:1861
+#: ../src/gs-listener-dbus.c:2230
 msgid "not connected to the message bus"
 msgstr "غير متصل بمخرج الرسائل"
 
-#: ../src/gs-listener-dbus.c:1870
+#: ../src/gs-listener-dbus.c:2240 ../src/gs-listener-dbus.c:2272
 msgid "screensaver already running in this session"
 msgstr "حافظة الشاشة مشتغلة مسبقا في هذه الجلسة"
 
-#: ../src/gs-lock-plug.c:270
+#: ../src/gs-lock-plug.c:355
 msgid "Time has expired."
 msgstr "انتهت المدة."
 
-#: ../src/gs-lock-plug.c:298
+#: ../src/gs-lock-plug.c:386
 msgid "You have the Caps Lock key on."
 msgstr "مفتاح الحروف الكبيرة مفعل"
 
-#: ../src/gs-lock-plug.c:1362
+#: ../src/gs-lock-plug.c:1504
 msgid "S_witch User..."
 msgstr "_بدّل المستخدم..."
 
-#: ../src/gs-lock-plug.c:1371
+#: ../src/gs-lock-plug.c:1513
 msgid "Log _Out"
 msgstr "ا_خرج"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1547
+#: ../src/gs-lock-plug.c:1705
 msgid "%U on %h"
 msgstr "‏%U على %h"
 
-#: ../src/gs-lock-plug.c:1561
+#: ../src/gs-lock-plug.c:1719
 msgid "_Password:"
-msgstr "_كلمة السر:"
-
-#~ msgid "Reason for being away"
-#~ msgstr "سبب الذهاب بعيدًا"
-
-#~ msgid "The reason for being away from the computer."
-#~ msgstr "السبب وراء الذهاب بعيدًا عن الحاسوب."
+msgstr "_كلمة المرور:"

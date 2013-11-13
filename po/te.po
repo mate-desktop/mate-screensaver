@@ -1,27 +1,26 @@
-# translation of mate-screensaver.master.te.po to Telugu
-# Telugu translation of mate-screensaver.
-# Copyright (C) 2007 Swecha Telugu Localisation Team <localisation@swecha.org>
-# This file is distributed under the same license as the mate-screensaver package.
-#
-# Srinivas Chary <srinu.kolpur@gmail.com>, 2007.
-# Krishna Babu K <kkrothap@redhat.com>, 2008, 2009.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Krishnababu Krothapalli <kkrothap@redhat.com>, 2008, 2009
+# Srinivas Chary <srinu.kolpur@gmail.com>, 2007
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver.master.te\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-screensaver&component=general\n"
-"POT-Creation-Date: 2009-08-21 03:05+0000\n"
-"PO-Revision-Date: 2009-09-17 17:15+0530\n"
-"Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
-"Language-Team: Telugu <en@li.org>\n"
+"Project-Id-Version: MATE Desktop Environment\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-01 14:02+0200\n"
+"PO-Revision-Date: 2013-10-01 12:07+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"Language-Team: Telugu (http://www.transifex.com/projects/p/MATE/language/te/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
-"\n"
-"X-Generator: KBabel 1.11.4\n"
+"Language: te\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../data/mate-screensaver-preferences.desktop.in.h:1
-#: ../src/mate-screensaver.desktop.in.in.h:2
+#: ../src/mate-screensaver.desktop.in.in.h:1
 msgid "Screensaver"
 msgstr "తెరకాపరి"
 
@@ -30,365 +29,194 @@ msgid "Set your screensaver preferences"
 msgstr "మీ  తెరకాపరి యొక్క అభీష్టాలు అమర్చుకొను"
 
 #: ../data/mate-screensaver-preferences.ui.h:1
-msgid "<b>Screensaver preview</b>"
-msgstr "<b>తెరకాపరి యొక్క ఉపదర్శనము</b>"
-
-#: ../data/mate-screensaver-preferences.ui.h:2
-msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>హెచ్చరిక : మూల వినియోగదారునికి తెర తాళము వేయబడదు </b>"
-
-#: ../data/mate-screensaver-preferences.ui.h:3
-msgid "Power _Management"
-msgstr "విద్యుత్ నిర్వహణ(_M)"
-
-#: ../data/mate-screensaver-preferences.ui.h:4
-msgid "Regard the computer as _idle after:"
-msgstr "జడముగా ఉన్న తర్వాత కంప్యూటర్ గురించి(_i):"
-
-#: ../data/mate-screensaver-preferences.ui.h:5
 msgid "Screensaver Preferences"
 msgstr "తెరకాపరి యొక్క అభీష్టాలు "
 
-#: ../data/mate-screensaver-preferences.ui.h:6
-msgid "Screensaver Preview"
-msgstr "తెరకాపరి యొక్క ఉపదర్శనం"
+#: ../data/mate-screensaver-preferences.ui.h:2
+msgid "Power _Management"
+msgstr "విద్యుత్ నిర్వహణ(_M)"
 
-#: ../data/mate-screensaver-preferences.ui.h:7
-msgid "_Activate screensaver when computer is idle"
-msgstr "కంప్యూటర్ తీరికగా ఉన్నప్పుడు తెరకాపరిని ప్రేరేపించు(_A)"
-
-#: ../data/mate-screensaver-preferences.ui.h:8
-msgid "_Lock screen when screensaver is active"
-msgstr "తెరకాపరి చురుకుగా ఉన్నప్పుడు తెరకు తాళం వేయు(_L)"
-
-#: ../data/mate-screensaver-preferences.ui.h:9
+#: ../data/mate-screensaver-preferences.ui.h:3
 msgid "_Preview"
 msgstr "ఉపదర్శనం(_P)"
 
-#: ../data/mate-screensaver-preferences.ui.h:10
+#: ../data/mate-screensaver-preferences.ui.h:4
 msgid "_Screensaver theme:"
 msgstr "తెరకాపరి వైవిద్యాంశం(_S):"
 
-#: ../data/mate-screensaver.directory.in.h:1
-#: ../data/mate-screensaver.schemas.in.h:11
-msgid "Screensaver themes"
-msgstr "తెరకాపరి వైవిద్యాంశాలు"
+#: ../data/mate-screensaver-preferences.ui.h:5
+msgid "Regard the computer as _idle after:"
+msgstr "జడముగా ఉన్న తర్వాత కంప్యూటర్ గురించి(_i):"
 
-#: ../data/mate-screensaver.directory.in.h:2
+#: ../data/mate-screensaver-preferences.ui.h:6
+msgid "_Activate screensaver when computer is idle"
+msgstr "కంప్యూటర్ తీరికగా ఉన్నప్పుడు తెరకాపరిని ప్రేరేపించు(_A)"
+
+#: ../data/mate-screensaver-preferences.ui.h:7
+msgid "_Lock screen when screensaver is active"
+msgstr "తెరకాపరి చురుకుగా ఉన్నప్పుడు తెరకు తాళం వేయు(_L)"
+
+#: ../data/mate-screensaver-preferences.ui.h:8
+msgid "<b>Warning: the screen will not be locked for the root user.</b>"
+msgstr "<b>హెచ్చరిక : మూల వినియోగదారునికి తెర తాళము వేయబడదు </b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:9
+msgid "Screensaver Preview"
+msgstr "తెరకాపరి యొక్క ఉపదర్శనం"
+
+#: ../data/mate-screensaver-preferences.ui.h:10
+msgid "<b>Screensaver preview</b>"
+msgstr "<b>తెరకాపరి యొక్క ఉపదర్శనము</b>"
+
+#: ../data/mate-screensaver.directory.in.h:1
 msgid "Screensavers"
 msgstr "తెరకాపరులు"
 
-#: ../data/mate-screensaver.schemas.in.h:1
-msgid "Activate when idle"
-msgstr "తీరికగా ఉన్నప్పుడు క్రియాశీలీకరించు"
+#: ../data/mate-screensaver.directory.in.h:2
+msgid "Screensaver themes"
+msgstr "తెరకాపరి వైవిద్యాంశాలు"
 
-#: ../data/mate-screensaver.schemas.in.h:2
-msgid "Allow embedding a keyboard into the window"
-msgstr "మీటపలకాన్ని గవాక్షంలోకి అమర్చటానికి అనుమతించు"
-
-#: ../data/mate-screensaver.schemas.in.h:3
-msgid "Allow logout"
-msgstr "నిష్క్రమణను అనుమతించు"
-
-#: ../data/mate-screensaver.schemas.in.h:4
-msgid "Allow the session status message to be displayed"
-msgstr "విభాగపు స్థితి సందేశము ప్రదర్శితమగుటకు అనుమతించుము"
-
-#: ../data/mate-screensaver.schemas.in.h:5
-msgid "Allow the session status message to be displayed when the screen is locked."
-msgstr "తెర తాళంవేయబడి వున్నప్పుడు విభాగపు స్థితి సందేశము ప్రదర్శితమగుటకు అనుమతించుము."
-
-#: ../data/mate-screensaver.schemas.in.h:6
-msgid "Allow user switching"
-msgstr "వినియోగదారి మార్పును అనుమతించు"
-
-#: ../data/mate-screensaver.schemas.in.h:7
-msgid "Embedded keyboard command"
-msgstr "అమర్చబడిన మీటపలక ఆదేశం"
-
-#: ../data/mate-screensaver.schemas.in.h:8
-msgid "Lock on activation"
-msgstr "చురుకుగా ఉన్నప్పుడు తాళం వేయు"
-
-#: ../data/mate-screensaver.schemas.in.h:9
-msgid "Logout command"
-msgstr "నిష్ర్కమణద్వార ఆదేశం"
-
-#: ../data/mate-screensaver.schemas.in.h:10
-msgid "Screensaver theme selection mode"
-msgstr "తెరకాపరి వైవిద్యాంషము యొక్క ఎంపిక విధానము"
-
-#: ../data/mate-screensaver.schemas.in.h:12
-msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr "సమకూర్పు తీరికగా ఉన్నప్పుడు తెరకాపరిని ప్రేరేపించటానికి దీనిని నిజానికి అమర్చు "
-
-#: ../data/mate-screensaver.schemas.in.h:13
-msgid ""
-"Set this to TRUE to allow embedding a keyboard into the window when trying "
-"to unlock. The \"keyboard_command\" key must be set with the appropriate "
-"command."
-msgstr ""
-"అన్‌లాక్‌కు ప్రయత్నిస్తున్నప్పుడు కీబోర్డ్‍‌ను విండోలోకి బందనంచేయుట అనుమతించుటకు దీనిని సత్యంకు "
-"అమర్చుము. \"keyboard_command\" కీ తప్పక అనుగుణమైన ఆదేశంతో అమర్చబడాలి."
-
-#: ../data/mate-screensaver.schemas.in.h:14
-msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr "తెరకాపరి చురుకుగా ఉన్నప్పుడు తెరకు తాళం వేయటానికి దీనిని నిజానికి అమర్చు"
-
-#: ../data/mate-screensaver.schemas.in.h:15
-msgid ""
-"Set this to TRUE to offer an option in the unlock dialog to switch to a "
-"different user account."
-msgstr "వేరొక వినియోగదారి ఖాతాకు మారుటకు అన్‌లాక్ డైలాగ్‌నందు ఐచ్చికాన్ని పొందుపరచుటకు దీనిని సత్యంకు అమర్చండి."
-
-#: ../data/mate-screensaver.schemas.in.h:16
-msgid ""
-"Set this to TRUE to offer an option in unlock dialog to logging out after a "
-"delay. The Delay is specified in the \"logout_delay\" key."
-msgstr ""
-"నిడివి తర్వాత లాగ్‌అవుట్ అగుటకు అన్‌లాక్ డైలాగ్‌నందు ఐచ్చికాన్ని పొందుపరుచుటకు దీనిని సత్యంకు అమర్చుము. "
-"నిడివి \"logout_delay\" కీ నందు తెలుపబడుతుంది."
-
-#: ../data/mate-screensaver.schemas.in.h:17
-msgid ""
-"The command that will be run, if the \"embedded_keyboard_enabled\" key is "
-"set to TRUE, to embed a keyboard widget into the window. This command should "
-"implement an XEMBED plug interface and output a window XID on the standard "
-"output."
-msgstr ""
-"కీబోర్డ్‍ విడ్జట్‌ను విండోలో బందనంచేయుటకు,\"embedded_keyboard_enabled\" కీ సత్యంకు అమర్చితే, ఆ "
-"ఆదేశం నడుపబడుతుంది. ఈ ఆదేశం XEMBED ప్లగ్ అంతర్‌ఫలకంను రూపొందించాలి మరియు ప్రామాణిక అవుట్‌పుట్ "
-"పైన విండో XID ను ప్రసాదించాలి."
-
-#: ../data/mate-screensaver.schemas.in.h:18
-msgid ""
-"The command to invoke when the logout button is clicked. This command should "
-"simply log the user out without any interaction. This key has effect only if "
-"the \"logout_enable\" key is set to TRUE."
-msgstr ""
-"లాగ్అవుట్ బటన్ నొక్కినప్పుడు జరుపవలిసిన ఆదేశం. ఈ ఆదేశం వినియోగదారిని ఏ సంబదములేకుండా నిష్క్రమింపచేయాలి. "
-"\"logout_enable\" కీ సత్యంకు అమర్చితే మాత్రమే ఈ ప్రభావితం అవుతుంది."
-
-#: ../data/mate-screensaver.schemas.in.h:19
-msgid "The number of minutes after screensaver activation before locking the screen."
-msgstr "తెరకాపరి చేతనం చేసినతర్వాత ఎన్ని నిముషాలకు తెర లాక్‌కావాలి."
-
-#: ../data/mate-screensaver.schemas.in.h:20
-msgid ""
-"The number of minutes after the screensaver activation before a logout "
-"option will appear in unlock dialog. This key has effect only if the "
-"\"logout_enable\" key is set to TRUE."
-msgstr ""
-"తెరకాపరి చేతనం తర్వాత అన్‌లాక్ డైలాగ్‌నందు లాగ్అవుట్ ఐచ్చికం ఎన్ని నిముషాలకు కనిపించాలి. \"logout_enable"
-"\" కీ సత్యంకు అమర్చితే మాత్రమే ఈ కీ ప్రభావితం అవుతుంది."
-
-#: ../data/mate-screensaver.schemas.in.h:21
-msgid "The number of minutes of inactivity before the session is considered idle."
-msgstr "ఎన్ని నిముషాల అచేతనం తరువాత సమకూర్పు తీరికగా ఉందని భావించాలి."
-
-#: ../data/mate-screensaver.schemas.in.h:22
-msgid "The number of minutes to run before changing the screensaver theme."
-msgstr "తెరకాపరి వైవిద్యాంషాన్ని మార్చే ముందు "
-
-#: ../data/mate-screensaver.schemas.in.h:23
-msgid ""
-"The number of seconds of inactivity before signalling to power-management. "
-"This key is set and maintained by the session power-management agent."
-msgstr ""
-"ఎన్ని సెకనుల అచేతనం తర్వాత పవర్-నిర్వాహకికి సంజ్ఞ ఇవ్వాలి. ఈ కీ సమకూర్పు పవర్-నిర్వాహక ప్రతినిధి ద్వారా "
-"అమర్చబడుతుంది మరియు నిర్వహించబడుతుంది."
-
-#: ../data/mate-screensaver.schemas.in.h:24
-msgid ""
-"The selection mode used by screensaver. May be \"blank-only\" to enable the "
-"screensaver without using any theme on activation, \"single\" to enable "
-"screensaver using only one theme on activation (specified in \"themes\" "
-"key), and \"random\" to enable the screensaver using a random theme on "
-"activation."
-msgstr ""
-"తెరకాపరి చేత ఉపయోగించబడిన ఎంపిక రీతి. \"blank-only\" ఏ థీమ్‌ను ఉపయోగించకుండా తెరకాపరిని చేతనం "
-"చేయుటకు, \"single\" ఒక థీమ్‌ను మాత్రమే ఉపయోగించుటకు తెరకాపరిని చేతనంచేయుటకు (\"themes\" "
-"కీనందు తెలుపబడిన), మరియు \"random\" విభిన్న థీమ్స్‍‌ను ఉపయోగించుటకు తెరకాపరిని చేతనం చేయుటకు."
-
-#: ../data/mate-screensaver.schemas.in.h:25
-msgid "Theme for lock dialog"
-msgstr "తాళం వివరణకు వైవిద్యాంషాం"
-
-#: ../data/mate-screensaver.schemas.in.h:26
-msgid "Theme to use for the lock dialog."
-msgstr "వివరణ తాళానికి వాడడానికి వైవిద్యాంశం"
-
-#: ../data/mate-screensaver.schemas.in.h:27
-msgid ""
-"This key specifies the list of themes to be used by the screensaver. It's "
-"ignored when \"mode\" key is \"blank-only\", should provide the theme name "
-"when \"mode\" is \"single\", and should provide a list of themes when \"mode"
-"\" is \"random\"."
-msgstr ""
-"ఈ మీట వైవిద్యాంశాల పట్టిని తెలియజేస్తుంది.\"mode\" మీట  \"blank-only\" ఉంటే అది తెలియనట్లుంటుంది,"
-"ఒక వేళ \"mode\" మీట \"single\" ఉంటే వైవిద్యాంశ పేరును తప్పకుండా అమర్చాలి మరియు \"mode\" మీట "
-"\"random\" ఉంటే వైవిద్యాంశాల పట్టిని తెలియజేయాలి."
-
-#: ../data/mate-screensaver.schemas.in.h:28
-msgid "Time before locking"
-msgstr "తాళం వేయకముందు సమయం"
-
-#: ../data/mate-screensaver.schemas.in.h:29
-msgid "Time before logout option"
-msgstr "నిష్క్రమణద్వార ఇచ్ఛాపూర్వకం ముందు సమయం"
-
-#: ../data/mate-screensaver.schemas.in.h:30
-msgid "Time before power-management baseline"
-msgstr "విద్యుత్ నిర్వహణ మూలం ముందు సమయం"
-
-#: ../data/mate-screensaver.schemas.in.h:31
-msgid "Time before session is considered idle"
-msgstr "సమకూర్పు తీరికగా భావించక ముందు సమయం"
-
-#: ../data/mate-screensaver.schemas.in.h:32
-msgid "Time before theme change"
-msgstr "వైవిద్యాంశ మార్పు ముందు సమయం"
-
-#: ../data/lock-dialog-default.ui.h:2
-#, no-c-format
-msgid "<b>Leave a message for %R:</b>"
-msgstr "<b>%R కొరకు  సందేశాన్ని వదులు</b>"
-
-#: ../data/lock-dialog-default.ui.h:4
-#, no-c-format
-msgid "<span size=\"small\">%U on %h</span>"
-msgstr "<span size=\"small\">%U on %h</span>"
-
-#: ../data/lock-dialog-default.ui.h:6
-#, no-c-format
-msgid "<span size=\"x-large\">%R</span>"
-msgstr "<span size=\"x-large\">%R</span>"
-
-#: ../data/lock-dialog-default.ui.h:7
-msgid "_Cancel"
-msgstr "రద్దు(_C)"
-
-#: ../data/lock-dialog-default.ui.h:8
-msgid "_Leave Message"
-msgstr "సందేశాన్ని వదులు(_L)"
-
-#: ../data/lock-dialog-default.ui.h:9
-msgid "_Log Out"
-msgstr "నిష్క్రమణ ద్వారం(_L)"
-
-#: ../data/lock-dialog-default.ui.h:10
-msgid "_Switch User"
-msgstr "వినియోగదారున్ని మార్చు(_S)"
-
-#: ../data/lock-dialog-default.ui.h:11 ../src/gs-lock-plug.c:1382
-msgid "_Unlock"
-msgstr "తెరచివేయు(_U)"
-
-#. Translators: This is the name of a desktop background image that shows outer space images.
+#. Translators: This is the name of a desktop background image that shows
+#. outer space images.
 #. You might want to translate it into the equivalent words of your language
 #: ../data/images/cosmos/cosmos.xml.in.in.h:3
 #: ../savers/cosmos-slideshow.desktop.in.in.h:1
 msgid "Cosmos"
 msgstr "కాస్మోస్"
 
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<span size=\"x-large\">%R</span>"
+msgstr "<span size=\"x-large\">%R</span>"
+
+#: ../data/lock-dialog-default.ui.h:4
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U on %h</span>"
+
+#: ../data/lock-dialog-default.ui.h:5
+msgid "_Leave Message"
+msgstr "సందేశాన్ని వదులు(_L)"
+
+#: ../data/lock-dialog-default.ui.h:6
+msgid "_Switch User"
+msgstr "వినియోగదారున్ని మార్చు(_S)"
+
+#: ../data/lock-dialog-default.ui.h:7
+msgid "_Log Out"
+msgstr "నిష్క్రమణ ద్వారం(_L)"
+
+#: ../data/lock-dialog-default.ui.h:8
+msgid "_Cancel"
+msgstr "రద్దు(_C)"
+
+#: ../data/lock-dialog-default.ui.h:9 ../src/gs-lock-plug.c:1524
+msgid "_Unlock"
+msgstr "తెరచివేయు(_U)"
+
+#: ../data/lock-dialog-default.ui.h:11
+#, no-c-format
+msgid "<b>Leave a message for %R:</b>"
+msgstr "<b>%R కొరకు  సందేశాన్ని వదులు</b>"
+
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "కాస్‌మోస్ యొక్క చిత్రముల స్లైడ్‌షో ను ప్రదర్శించుము"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
-msgid "Bubbles the MATE foot logo around the screen"
-msgstr "MATE పాదము చిహ్నమును తెర చుట్టూ తిప్పుము"
+msgid "Floating MATE"
+msgstr ""
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
-msgid "Floating Feet"
-msgstr "తేలాడుతున్న కాళ్లు"
+msgid "Bubbles the MATE logo around the screen"
+msgstr ""
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
-msgid "Display a slideshow from your Pictures folder"
-msgstr "మీ చిత్రముల సంచయంనుండి స్లైడ్‌షోను ప్రదర్శించుము"
-
-#: ../savers/personal-slideshow.desktop.in.in.h:2
 msgid "Pictures folder"
 msgstr "చిత్రాల సంచయం"
 
-#: ../savers/popsquares.desktop.in.in.h:1
-msgid "A pop-art-ish grid of pulsing colors."
-msgstr "ప్రచురిత వర్ణముల యొక్క pop-art-ish గ్రిడ్."
+#: ../savers/personal-slideshow.desktop.in.in.h:2
+msgid "Display a slideshow from your Pictures folder"
+msgstr "మీ చిత్రముల సంచయంనుండి స్లైడ్‌షోను ప్రదర్శించుము"
 
-#: ../savers/popsquares.desktop.in.in.h:2
+#: ../savers/popsquares.desktop.in.in.h:1
 msgid "Pop art squares"
 msgstr "పాప్ ఆర్ట్ స్కేర్స్"
 
-#: ../savers/floaters.c:84
+#: ../savers/popsquares.desktop.in.in.h:2
+msgid "A pop-art-ish grid of pulsing colors."
+msgstr "ప్రచురిత వర్ణముల యొక్క pop-art-ish గ్రిడ్."
+
+#: ../savers/popsquares.c:50 ../savers/floaters.c:1217
+#, c-format
+msgid "%s. See --help for usage information.\n"
+msgstr "%s.వాడుక సమాచారం కొరకు --help చూడు.\n"
+
+#: ../savers/floaters.c:90
 msgid "Show paths that images follow"
 msgstr "ప్రతిరూపాలు తిరుగుతున్న త్రోవను చూపు"
 
-#: ../savers/floaters.c:87
+#: ../savers/floaters.c:95
 msgid "Occasionally rotate images as they move"
 msgstr "అప్పుడప్పుడు ప్రతిరూపాలు తిరుగుతున్నప్పుడు చక్రంవలె తిరుగు"
 
-#: ../savers/floaters.c:90
+#: ../savers/floaters.c:100
 msgid "Print out frame rate and other statistics"
 msgstr "చట్రం యొక్క విలువ మరియు ఇతర సంఖ్యలను ముద్రించు"
 
-#: ../savers/floaters.c:93
+#: ../savers/floaters.c:105
 msgid "The maximum number of images to keep on screen"
 msgstr "తెర పై పెట్టడానికి అత్యధిక ప్రతిరూపాలు"
 
-#: ../savers/floaters.c:93
+#: ../savers/floaters.c:105
 msgid "MAX_IMAGES"
 msgstr "MAX_IMAGES"
 
-#: ../savers/floaters.c:96
+#: ../savers/floaters.c:110
 msgid "The initial size and position of window"
 msgstr "గవాక్షం యొక్క ప్రాథమిక పరిమాణం మరియు స్థానం "
 
-#: ../savers/floaters.c:96
+#: ../savers/floaters.c:110
 msgid "WIDTHxHEIGHT+X+Y"
 msgstr "వెడెల్పుXపొడవు+X+Y"
 
-#: ../savers/floaters.c:99
+#: ../savers/floaters.c:115
 msgid "The source image to use"
 msgstr "వాడటానికి వనరుప్రతిరూపం"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#.
-#: ../savers/floaters.c:1194
+#. 
+#: ../savers/floaters.c:1211
 msgid "image - floats images around the screen"
 msgstr "ప్రతిరూపం  - తెర చుట్టు ప్రతిరూపాలు తేలాడుతాయి "
 
-#: ../savers/floaters.c:1200
-#, c-format
-msgid "%s. See --help for usage information.\n"
-msgstr "%s.వాడుక సమాచారం కొరకు --help చూడు.\n"
-
-#: ../savers/floaters.c:1209
+#: ../savers/floaters.c:1226
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "మీరు తప్పకుండా ఒక ప్రతిరూపాన్ని నిర్దేశించాలి. వాడుక సమాచారం కొరకు --help చూడండి.\n"
 
-#: ../savers/slideshow.c:53
+#: ../savers/slideshow.c:55
 msgid "Location to get images from"
 msgstr "ప్రతిరూపాలను తీసుకోవటానికి స్థానము"
 
-#: ../savers/slideshow.c:53
+#: ../savers/slideshow.c:55
 msgid "PATH"
 msgstr "త్రోవ"
 
-#: ../savers/slideshow.c:55
+#: ../savers/slideshow.c:59
 msgid "Color to use for images background"
 msgstr "ప్రతిరూపాల బ్యాక్‌గ్రౌండ్ కొరకు ఉపయోగించుటకు వర్ణము"
 
-#: ../savers/slideshow.c:55
+#: ../savers/slideshow.c:59
 msgid "\"#rrggbb\""
 msgstr "\"#rrggbb\""
 
-#: ../savers/slideshow.c:57
+#: ../savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
 msgstr "స్థానమునుండి చిత్రములను విభిన్నము చేయవద్దు"
 
-#: ../savers/slideshow.c:59
+#: ../savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"
 msgstr "తెరపై ప్రతిరూపములను సాగదీయుటకు ప్రయత్నించవద్దు"
 
@@ -422,88 +250,87 @@ msgstr "%s విలువైన తెరకాపరి థీమ్‌లా�
 msgid "Copying file: %u of %u"
 msgstr "దస్త్రాన్ని నకలు చేస్తోంది :%u లో %u"
 
-#: ../src/mate-screensaver-command.c:62
+#: ../src/mate-screensaver-command.c:64
 msgid "Causes the screensaver to exit gracefully"
 msgstr "తెరకాపరిని అందంగా వెళ్లిపోయేట్టు చేస్తుంది"
 
-#: ../src/mate-screensaver-command.c:64
+#: ../src/mate-screensaver-command.c:68
 msgid "Query the state of the screensaver"
 msgstr "తెరకాపరి యొక్క స్థితిని ప్రశ్నించు"
 
-#: ../src/mate-screensaver-command.c:66
+#: ../src/mate-screensaver-command.c:72
 msgid "Query the length of time the screensaver has been active"
 msgstr "తెరకాపరి ఎంత సమయం వరకు  చురుకుగా ఉందో ప్రశ్నించు"
 
-#: ../src/mate-screensaver-command.c:68
+#: ../src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr "నడిచే తెరకాపరి కార్యాన్ని వెంటనే తెరకు తాళం వేయమని చెబుతుంది"
 
-#: ../src/mate-screensaver-command.c:70
+#: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr "ఒక వేళ తెరకాపరి చురుకుగా ఉంటే వేరే గ్రాఫిక్స్    డెమోకి మరలు "
 
-#: ../src/mate-screensaver-command.c:72
+#: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
 msgstr "తెరకాపరిని చురుకుగా చేయు "
 
-#: ../src/mate-screensaver-command.c:74
+#: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr "తెరకాపరి చురుకుగా ఉంటే దానిని "
 
-#: ../src/mate-screensaver-command.c:76
+#: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr "నడుస్తున్న తెరకాపరిని వినియోగదారి క్రియాశీలతను అనుకరించుటకు పెట్టుము"
 
-#: ../src/mate-screensaver-command.c:78
+#: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
 msgstr "తెరకాపరిని చురుకుగా ఉండకుండా నిషేధించు.ఆటంకము చురుకుగా ఉన్నప్పుడు ఆదేశం నిషేధిస్తుంది."
 
-#: ../src/mate-screensaver-command.c:80
+#: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
 msgstr "తెరకాపరిని ఆపడానికి పిలుస్తున్న కార్యక్షేత్రం"
 
-#: ../src/mate-screensaver-command.c:82
+#: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
 msgstr "తెరకాపరి ఆటంకానికి కారణం"
 
-#: ../src/mate-screensaver-command.c:84 ../src/mate-screensaver-dialog.c:58
-#: ../src/mate-screensaver.c:56
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:57
+#: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "ఈ కార్యక్షేత్ర వివరణం"
 
-#: ../src/mate-screensaver-command.c:307
+#: ../src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr "తెరకాపరి %s\n"
 
-#: ../src/mate-screensaver-command.c:307
+#: ../src/mate-screensaver-command.c:357
 msgid "active"
 msgstr "చురుకుగా ఉంది"
 
-#: ../src/mate-screensaver-command.c:307
+#: ../src/mate-screensaver-command.c:357
 msgid "inactive"
 msgstr "చురుకుగాలేదు"
 
-#: ../src/mate-screensaver-command.c:321
+#: ../src/mate-screensaver-command.c:373
 #, c-format
 msgid "The screensaver is not inhibited\n"
 msgstr "తెరకాపరి ఆక్షేపితమైనది కాదు\n"
 
-#: ../src/mate-screensaver-command.c:327
+#: ../src/mate-screensaver-command.c:381
 #, c-format
 msgid "The screensaver is being inhibited by:\n"
 msgstr "తెరకాపరి దీనిచేత అక్షేపించబడుచున్నది:\n"
 
-#: ../src/mate-screensaver-command.c:358
+#: ../src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
 msgstr "తెరకాపరి %d క్షణాలు చురుకుగా ఉంది.\n"
 
-#: ../src/mate-screensaver-command.c:362
+#: ../src/mate-screensaver-command.c:422
 #, c-format
-#| msgid "The screensaver is not inhibited\n"
 msgid "The screensaver is not currently active.\n"
 msgstr "తెరకాపరి ప్రస్తుతం క్రియాశీలముగా లేదు.\n"
 
@@ -511,128 +338,128 @@ msgstr "తెరకాపరి ప్రస్తుతం క్రియా�
 msgid "Show debugging output"
 msgstr "లోపనిర్మూలన దిగుబడిని చూపించు"
 
-#: ../src/mate-screensaver-dialog.c:60
+#: ../src/mate-screensaver-dialog.c:58
 msgid "Show the logout button"
 msgstr "నిష్ర్కమణద్వార బొత్తాన్ని చూపించు"
 
-#: ../src/mate-screensaver-dialog.c:62
+#: ../src/mate-screensaver-dialog.c:59
 msgid "Command to invoke from the logout button"
 msgstr "నిష్ర్కమణద్వార బొత్తం నుంచి పిలుచుటకు ఆదేశం"
 
-#: ../src/mate-screensaver-dialog.c:64
+#: ../src/mate-screensaver-dialog.c:60
 msgid "Show the switch user button"
 msgstr "వినియోగదారున్ని మార్చే బొత్తాన్ని చూపించు"
 
-#: ../src/mate-screensaver-dialog.c:66
+#: ../src/mate-screensaver-dialog.c:61
 msgid "Message to show in the dialog"
 msgstr "వివరణలో చూపటానికి సందేశం"
 
-#: ../src/mate-screensaver-dialog.c:66 ../src/mate-screensaver-dialog.c:68
+#: ../src/mate-screensaver-dialog.c:61 ../src/mate-screensaver-dialog.c:62
 msgid "MESSAGE"
 msgstr "సందేశం"
 
-#: ../src/mate-screensaver-dialog.c:68
+#: ../src/mate-screensaver-dialog.c:62
 msgid "Not used"
 msgstr "ఉపయోగించబడలేదు"
 
 #. login: is whacked always translate to Username:
-#: ../src/mate-screensaver-dialog.c:178 ../src/mate-screensaver-dialog.c:179
-#: ../src/mate-screensaver-dialog.c:180 ../src/gs-auth-pam.c:698
+#: ../src/mate-screensaver-dialog.c:164 ../src/mate-screensaver-dialog.c:165
+#: ../src/mate-screensaver-dialog.c:166 ../src/gs-auth-pam.c:756
 msgid "Username:"
 msgstr "వినియోగదారుని పేరు:"
 
-#: ../src/mate-screensaver-dialog.c:181 ../src/mate-screensaver-dialog.c:182
-#: ../src/gs-auth-pam.c:166
+#: ../src/mate-screensaver-dialog.c:167 ../src/mate-screensaver-dialog.c:168
+#: ../src/gs-auth-pam.c:171
 msgid "Password:"
 msgstr "రహస్యపదం:"
 
-#: ../src/mate-screensaver-dialog.c:183
+#: ../src/mate-screensaver-dialog.c:169
 msgid "You are required to change your password immediately (password aged)"
 msgstr "మీరు వెంటనే రహస్యపదాన్ని మార్చమని కోరడమైనది (రహస్యపదం పాతదైనది)"
 
-#: ../src/mate-screensaver-dialog.c:184
+#: ../src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (root enforced)"
 msgstr "మీ రహస్యపదాన్ని మార్చుకోమని కోరడమైనది (మూలం బలవంతంగా )"
 
-#: ../src/mate-screensaver-dialog.c:185
+#: ../src/mate-screensaver-dialog.c:171
 msgid "Your account has expired; please contact your system administrator"
 msgstr "మీ అకౌంట్ ముగిసినది; దయచేసి మీ వ్యవస్థ నిర్వాహకుడిని సంప్రదించండి"
 
-#: ../src/mate-screensaver-dialog.c:186
+#: ../src/mate-screensaver-dialog.c:172
 msgid "No password supplied"
 msgstr "రహస్యపదం ఇవబడలేదు"
 
-#: ../src/mate-screensaver-dialog.c:187
+#: ../src/mate-screensaver-dialog.c:173
 msgid "Password unchanged"
 msgstr "రహస్యపదం మార్చబడలేదు"
 
-#: ../src/mate-screensaver-dialog.c:188
+#: ../src/mate-screensaver-dialog.c:174
 msgid "Can not get username"
 msgstr "వినియోగదారుని పేరు దొరకలేదు"
 
-#: ../src/mate-screensaver-dialog.c:189
+#: ../src/mate-screensaver-dialog.c:175
 msgid "Retype new UNIX password:"
 msgstr "మరల కొత్త యూనిక్స్  రహస్యపదాన్ని వ్రాయండి:"
 
-#: ../src/mate-screensaver-dialog.c:190
+#: ../src/mate-screensaver-dialog.c:176
 msgid "Enter new UNIX password:"
 msgstr "కొత్త యూనిక్స్  రహస్యపదాన్ని వ్రాయండి:"
 
-#: ../src/mate-screensaver-dialog.c:191
+#: ../src/mate-screensaver-dialog.c:177
 msgid "(current) UNIX password:"
 msgstr "(ప్రస్తుత) యూనిక్స్  రహస్యపదం:"
 
-#: ../src/mate-screensaver-dialog.c:192
+#: ../src/mate-screensaver-dialog.c:178
 msgid "Error while changing NIS password."
 msgstr "NIS రహస్యపదాన్ని మార్చేటప్పుడు తప్పు జరిగినది."
 
-#: ../src/mate-screensaver-dialog.c:193
+#: ../src/mate-screensaver-dialog.c:179
 msgid "You must choose a longer password"
 msgstr "మీరు పెద్ద రహస్యపదాన్ని ఎంచుకోవాలి"
 
-#: ../src/mate-screensaver-dialog.c:194
+#: ../src/mate-screensaver-dialog.c:180
 msgid "Password has been already used. Choose another."
 msgstr "రహస్యపదం మునుపే వాడుకలో ఉంది. వేరేదాన్ని ఎంచుకోండి."
 
-#: ../src/mate-screensaver-dialog.c:195
+#: ../src/mate-screensaver-dialog.c:181
 msgid "You must wait longer to change your password"
 msgstr "మీ రహస్యపదాన్ని మార్చుకోవటానికి చాలా సమయం ఆగాల్సివుంటుంది"
 
-#: ../src/mate-screensaver-dialog.c:196
+#: ../src/mate-screensaver-dialog.c:182
 msgid "Sorry, passwords do not match"
 msgstr "క్షమించాలి , రహస్యపదాలు జతకూడట్లేదు"
 
-#: ../src/mate-screensaver-dialog.c:262
+#: ../src/mate-screensaver-dialog.c:253
 msgid "Checking..."
 msgstr "తనిఖీ చేస్తోంది..."
 
-#: ../src/mate-screensaver-dialog.c:304 ../src/gs-auth-pam.c:457
+#: ../src/mate-screensaver-dialog.c:299 ../src/gs-auth-pam.c:495
 msgid "Authentication failed."
 msgstr "ప్రామాణీకరణ తప్పినది"
 
-#: ../src/mate-screensaver-preferences.c:524
+#: ../src/mate-screensaver-preferences.c:476
 msgid "Blank screen"
 msgstr "వట్టి తెర"
 
-#: ../src/mate-screensaver-preferences.c:530
+#: ../src/mate-screensaver-preferences.c:482
 msgid "Random"
 msgstr "విభిన్న"
 
-#: ../src/mate-screensaver-preferences.c:980
+#: ../src/mate-screensaver-preferences.c:968
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d గంట"
 msgstr[1] "%d గంటలు"
 
-#: ../src/mate-screensaver-preferences.c:983
+#: ../src/mate-screensaver-preferences.c:971
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d నిమిషము"
 msgstr[1] "%d నిమిషాలు"
 
-#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:974
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -640,15 +467,15 @@ msgstr[0] "%d క్షణం"
 msgstr[1] "%d క్షణాలు"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:992
+#: ../src/mate-screensaver-preferences.c:982
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:995
-#: ../src/mate-screensaver-preferences.c:1003
+#: ../src/mate-screensaver-preferences.c:987
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
@@ -656,94 +483,93 @@ msgstr "%s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:998
-#: ../src/mate-screensaver-preferences.c:1006
-#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:992
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1011
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1025
+#: ../src/mate-screensaver-preferences.c:1026
 #, c-format
 msgid "Never"
 msgstr "ఎప్పుడును లేదు"
 
-#: ../src/mate-screensaver-preferences.c:1467
+#: ../src/mate-screensaver-preferences.c:1451
 msgid "Could not load the main interface"
 msgstr "ప్రధాన సంవిధాన్ని భారం చేయలేకపోయింది"
 
-#: ../src/mate-screensaver-preferences.c:1469
+#: ../src/mate-screensaver-preferences.c:1453
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "దయచేసి తెరకాపరి సరిగ్గా నెలకొల్పండిందో లేదో చూసుకోండి"
 
-#: ../src/mate-screensaver.c:57
+#: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
 msgstr "సూత్రదారి అవ్వకు"
 
-#: ../src/mate-screensaver.c:58
+#: ../src/mate-screensaver.c:57
 msgid "Enable debugging code"
 msgstr "లోపనిర్మూలన సంకేతాన్ని ఉపయోగించు"
 
-#: ../src/mate-screensaver.desktop.in.in.h:1
+#: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screen saver and locker program"
 msgstr "తెరకాపరినిను మరియు లాకర్ ప్రోగ్రామ్‌ను ఆరంభించుము"
 
-#: ../src/gs-auth-pam.c:397
+#: ../src/gs-auth-pam.c:425
 #, c-format
 msgid "Unable to establish service %s: %s\n"
 msgstr "%s సేవను స్తాపించుట కుదురలేదు: %s\n"
 
-#: ../src/gs-auth-pam.c:423
+#: ../src/gs-auth-pam.c:455
 #, c-format
 msgid "Can't set PAM_TTY=%s"
 msgstr "PAM_TTY=%s స్తాపించుట సాధ్యం కాలేదు"
 
-#: ../src/gs-auth-pam.c:455
+#: ../src/gs-auth-pam.c:491
 msgid "Incorrect password."
 msgstr "తప్పు రహస్యపదం."
 
-#: ../src/gs-auth-pam.c:471
+#: ../src/gs-auth-pam.c:511
 msgid "Not permitted to gain access at this time."
 msgstr "ఈ సమయంలో సాంగత్యాన్ని పొందుట అనుమతించబడదు"
 
-#: ../src/gs-auth-pam.c:477
+#: ../src/gs-auth-pam.c:519
 msgid "No longer permitted to access the system."
 msgstr "ఇక ఏ మాత్రము వ్యవస్థను ప్రవేశించింటానికి అనుమతి  లేదు."
 
-#: ../src/gs-listener-dbus.c:1851
+#: ../src/gs-listener-dbus.c:2219
 msgid "failed to register with the message bus"
 msgstr "సందేశ వాహకముతో నమోదు చేయలేకపోయింది"
 
-#: ../src/gs-listener-dbus.c:1861
+#: ../src/gs-listener-dbus.c:2230
 msgid "not connected to the message bus"
 msgstr "సందేశ వాహకానికి బంధింపబడలేదు"
 
-#: ../src/gs-listener-dbus.c:1870
+#: ../src/gs-listener-dbus.c:2240 ../src/gs-listener-dbus.c:2272
 msgid "screensaver already running in this session"
 msgstr "ఈ సమకూర్పులో తెరకాపరి మునుపే నడుస్తున్నది "
 
-#: ../src/gs-lock-plug.c:270
+#: ../src/gs-lock-plug.c:355
 msgid "Time has expired."
 msgstr "సమయం ముగిసినది"
 
-#: ../src/gs-lock-plug.c:298
+#: ../src/gs-lock-plug.c:386
 msgid "You have the Caps Lock key on."
 msgstr "కాప్స్ లాక్ ఆన్లో ఉంది"
 
-#: ../src/gs-lock-plug.c:1362
+#: ../src/gs-lock-plug.c:1504
 msgid "S_witch User..."
 msgstr "వినియోగదారున్ని మార్చు(_w)..."
 
-#: ../src/gs-lock-plug.c:1371
+#: ../src/gs-lock-plug.c:1513
 msgid "Log _Out"
 msgstr "నిష్క్రమణద్వారం(_O)"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1547
+#: ../src/gs-lock-plug.c:1705
 msgid "%U on %h"
 msgstr "%U మీద %h"
 
-#: ../src/gs-lock-plug.c:1561
+#: ../src/gs-lock-plug.c:1719
 msgid "_Password:"
 msgstr "రహస్యపదం(_P):"
-

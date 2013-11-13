@@ -1,24 +1,25 @@
-# translation of mate-screensaver.master.kn.po to Kannada
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
-# Shankar Prasad <svenkate@redhat.com>, 2008, 2009.
+# 
+# Translators:
+# shankar <svenkate@redhat.com>, 2008, 2009
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver.master.kn\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=mate-screensaver&component=general\n"
-"POT-Creation-Date: 2009-08-21 03:05+0000\n"
-"PO-Revision-Date: 2009-09-18 23:11+0530\n"
-"Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
-"Language-Team: Kannada <en@li.org>\n"
+"Project-Id-Version: MATE Desktop Environment\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-01 14:02+0200\n"
+"PO-Revision-Date: 2013-10-01 12:07+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"Language-Team: Kannada (http://www.transifex.com/projects/p/MATE/language/kn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.11.4\n"
+"Language: kn\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/mate-screensaver-preferences.desktop.in.h:1
-#: ../src/mate-screensaver.desktop.in.in.h:2
+#: ../src/mate-screensaver.desktop.in.in.h:1
 msgid "Screensaver"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್"
 
@@ -27,376 +28,194 @@ msgid "Set your screensaver preferences"
 msgstr "ನಿಮ್ಮ ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಆದ್ಯತೆಗಳನ್ನು ಅಣಿಗೊಳಿಸಿ"
 
 #: ../data/mate-screensaver-preferences.ui.h:1
-msgid "<b>Screensaver preview</b>"
-msgstr "<b>ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಮುನ್ನೋಟ</b>"
-
-#: ../data/mate-screensaver-preferences.ui.h:2
-msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>ಎಚ್ಚರಿಕೆ: ಮೂಲದ ಬಳಕೆದಾರರಿಗೆ ತೆರೆಯು ಲಾಕ್ ಮಾಡಲ್ಪಡುವುದಿಲ್ಲ.</b>"
-
-#: ../data/mate-screensaver-preferences.ui.h:3
-msgid "Power _Management"
-msgstr "ವಿದ್ಯುಚ್ಛಕ್ತಿ ನಿರ್ವಹಣೆ(_M)"
-
-#: ../data/mate-screensaver-preferences.ui.h:4
-msgid "Regard the computer as _idle after:"
-msgstr "ಈ ಸಮಯದ ನಂತರ ಗಣಕಕ್ಕೆ ಕೆಲಸವಿಲ್ಲ ಎಂದು ಪರಿಗಣಿಸು(_i):"
-
-#: ../data/mate-screensaver-preferences.ui.h:5
 msgid "Screensaver Preferences"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಆದ್ಯತೆಗಳು"
 
-#: ../data/mate-screensaver-preferences.ui.h:6
-msgid "Screensaver Preview"
-msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಮುನ್ನೋಟ"
+#: ../data/mate-screensaver-preferences.ui.h:2
+msgid "Power _Management"
+msgstr "ವಿದ್ಯುಚ್ಛಕ್ತಿ ನಿರ್ವಹಣೆ(_M)"
 
-#: ../data/mate-screensaver-preferences.ui.h:7
-msgid "_Activate screensaver when computer is idle"
-msgstr "ಗಣಕಕ್ಕೆ ಕೆಲಸವಿಲ್ಲದೆ ಇದ್ದಾಗ ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸು(_A)"
-
-#: ../data/mate-screensaver-preferences.ui.h:8
-msgid "_Lock screen when screensaver is active"
-msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಸಕ್ರಿಯವಾಗಿದ್ದಾಗ ತೆರೆಯನ್ನು ಲಾಕ್ ಮಾಡು(_L)"
-
-#: ../data/mate-screensaver-preferences.ui.h:9
+#: ../data/mate-screensaver-preferences.ui.h:3
 msgid "_Preview"
 msgstr "ಮುನ್ನೋಟ(_P)"
 
-#: ../data/mate-screensaver-preferences.ui.h:10
+#: ../data/mate-screensaver-preferences.ui.h:4
 msgid "_Screensaver theme:"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಥೀಮ್(_S):"
 
-#: ../data/mate-screensaver.directory.in.h:1
-#: ../data/mate-screensaver.schemas.in.h:11
-msgid "Screensaver themes"
-msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಥೀಮ್‌ಗಳು"
+#: ../data/mate-screensaver-preferences.ui.h:5
+msgid "Regard the computer as _idle after:"
+msgstr "ಈ ಸಮಯದ ನಂತರ ಗಣಕಕ್ಕೆ ಕೆಲಸವಿಲ್ಲ ಎಂದು ಪರಿಗಣಿಸು(_i):"
 
-#: ../data/mate-screensaver.directory.in.h:2
+#: ../data/mate-screensaver-preferences.ui.h:6
+msgid "_Activate screensaver when computer is idle"
+msgstr "ಗಣಕಕ್ಕೆ ಕೆಲಸವಿಲ್ಲದೆ ಇದ್ದಾಗ ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸು(_A)"
+
+#: ../data/mate-screensaver-preferences.ui.h:7
+msgid "_Lock screen when screensaver is active"
+msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಸಕ್ರಿಯವಾಗಿದ್ದಾಗ ತೆರೆಯನ್ನು ಲಾಕ್ ಮಾಡು(_L)"
+
+#: ../data/mate-screensaver-preferences.ui.h:8
+msgid "<b>Warning: the screen will not be locked for the root user.</b>"
+msgstr "<b>ಎಚ್ಚರಿಕೆ: ಮೂಲದ ಬಳಕೆದಾರರಿಗೆ ತೆರೆಯು ಲಾಕ್ ಮಾಡಲ್ಪಡುವುದಿಲ್ಲ.</b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:9
+msgid "Screensaver Preview"
+msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಮುನ್ನೋಟ"
+
+#: ../data/mate-screensaver-preferences.ui.h:10
+msgid "<b>Screensaver preview</b>"
+msgstr "<b>ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಮುನ್ನೋಟ</b>"
+
+#: ../data/mate-screensaver.directory.in.h:1
 msgid "Screensavers"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರುಗಳು"
 
-#: ../data/mate-screensaver.schemas.in.h:1
-msgid "Activate when idle"
-msgstr "ಕೆಲಸವಿಲ್ಲದಾಗ ಸಕ್ರಿಯಗೊಳಿಸು"
+#: ../data/mate-screensaver.directory.in.h:2
+msgid "Screensaver themes"
+msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಥೀಮ್‌ಗಳು"
 
-#: ../data/mate-screensaver.schemas.in.h:2
-msgid "Allow embedding a keyboard into the window"
-msgstr "ವಿಂಡೋಗೆ ಒಂದು ಕೀಲಿ ಮಣೆಯನ್ನು ಅಡಕಗೊಳಿಸುವುದನ್ನು ಅನುಮತಿಸು"
-
-#: ../data/mate-screensaver.schemas.in.h:3
-msgid "Allow logout"
-msgstr "ನಿರ್ಗಮಿಸುವುದನ್ನು ಅನುಮತಿಸು"
-
-#: ../data/mate-screensaver.schemas.in.h:4
-msgid "Allow the session status message to be displayed"
-msgstr "ಅಧಿವೇಶನದ ಸ್ಥಿತಿ ಸಂದೇಶವನ್ನು ತೋರಿಸಲು ಅನುಮತಿಸು"
-
-#: ../data/mate-screensaver.schemas.in.h:5
-msgid "Allow the session status message to be displayed when the screen is locked."
-msgstr "ತೆರೆಯನ್ನು ಲಾಕ್‌ ಮಾಡಿದಾಗ ಅಧಿವೇಶನದ ಸ್ಥಿತಿ ಸಂದೇಶವನ್ನು ತೋರಿಸಲು ಅನುಮತಿಸು."
-
-#: ../data/mate-screensaver.schemas.in.h:6
-msgid "Allow user switching"
-msgstr "ಬಳಕೆದಾರರನ್ನು ಬದಲಾಯಿಸುವುದನ್ನು ಅನುಮತಿಸು"
-
-#: ../data/mate-screensaver.schemas.in.h:7
-msgid "Embedded keyboard command"
-msgstr "ಅಡಕಗೊಳಿಸಲಾದ ಕೀಲಿ ಮಣೆ ಆಜ್ಞೆ"
-
-#: ../data/mate-screensaver.schemas.in.h:8
-msgid "Lock on activation"
-msgstr "ಸಕ್ರಿಯಗೊಂಡಾಗ ಲಾಕ್ ಮಾಡು"
-
-#: ../data/mate-screensaver.schemas.in.h:9
-msgid "Logout command"
-msgstr "ನಿರ್ಗಮಿಸುವ ಆಜ್ಞೆ"
-
-#: ../data/mate-screensaver.schemas.in.h:10
-msgid "Screensaver theme selection mode"
-msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಥೀಮ್ ಆಯ್ಕೆಯ ಕ್ರಮ"
-
-#: ../data/mate-screensaver.schemas.in.h:12
-msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr ""
-"ಅಧಿವೇಶನದಲ್ಲಿ ಯಾವುದೆ ಕೆಲಸವಿಲ್ಲದೆ ಇದ್ದಾಗ ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಲು ಇದನ್ನು TRUE "
-"ಗೆ (ನಿಜ) ಹೊಂದಿಸಿ."
-
-#: ../data/mate-screensaver.schemas.in.h:13
-msgid ""
-"Set this to TRUE to allow embedding a keyboard into the window when trying "
-"to unlock. The \"keyboard_command\" key must be set with the appropriate "
-"command."
-msgstr ""
-"ಅನ್‌ಲಾಕ್ ಮಾಡಲು ಪ್ರಯತ್ನಿಸಿದಾಗ ಒಂದು ಕೀಲಿ ಮಣೆಯನ್ನು ವಿಂಡೋದಲ್ಲಿ ಅಡಕಗೊಳಿಸಲು ಇದನ್ನು TRUE ಗೆ "
-"ಹೊಂದಿಸಿ. \"keyboard_command\" ಕೀಲಿಯು ಸೂಕ್ತವಾದ ಆಜ್ಞೆಯೊಂದಿಗೆ ಒದಗಿಸಿರಬೇಕು."
-
-#: ../data/mate-screensaver.schemas.in.h:14
-msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಸಕ್ರಿಯಗೊಂಡಾಗ ತೆರೆಯನ್ನು ಲಾಕ್ ಮಾಡಲು ಇದನ್ನು TRUE ಗೆ (ನಿಜ) ಹೊಂದಿಸಿ."
-
-#: ../data/mate-screensaver.schemas.in.h:15
-msgid ""
-"Set this to TRUE to offer an option in the unlock dialog to switch to a "
-"different user account."
-msgstr ""
-"ಬೇರೊಂದು ಬಳಕೆದಾರ ಖಾತೆಗೆ ಬದಲಾಯಿಸುವ ಒಂದು ಆಯ್ಕೆಯನ್ನು ಅನ್‌ಲಾಕ್‌ ಸಂವಾದದಲ್ಲಿ ಒದಗಿಸಲು ಇದನ್ನು "
-"TRUE ಹೊಂದಿಸಿ."
-
-#: ../data/mate-screensaver.schemas.in.h:16
-msgid ""
-"Set this to TRUE to offer an option in unlock dialog to logging out after a "
-"delay. The Delay is specified in the \"logout_delay\" key."
-msgstr ""
-"ಒಂದು ಕಾಲ ವಿಳಂಬದ ನಂತರ ನಿರ್ಗಮಿಸುವ ಆಯ್ಕೆಯನ್ನು ಅನ್‌ಲಾಕ್‌ ಸಂವಾದದಲ್ಲಿ ನೀಡಲು ಇದನ್ನು TRUE ಗೆ "
-"ಹೊಂದಿಸು. ಕಾಲವಿಳಂಬವು \"logout_delay\" ಕೀಲಿಯಿಂದ ಸೂಚಿತಗೊಂಡಿರುತ್ತದೆ."
-
-#: ../data/mate-screensaver.schemas.in.h:17
-msgid ""
-"The command that will be run, if the \"embedded_keyboard_enabled\" key is "
-"set to TRUE, to embed a keyboard widget into the window. This command should "
-"implement an XEMBED plug interface and output a window XID on the standard "
-"output."
-msgstr ""
-"\"embedded_keyboard_enabled\" ಕೀಲಿಯು TRUE ಗೆ ಹೊಂದಿಸಲ್ಪಟ್ಟಿದ್ದಲ್ಲಿ, ಒಂದು ಕೀಲಿ "
-"ವಿಜೆಟ್‌ ಅನ್ನು ವಿಂಡೋಗೆ ಅಡಕಗೊಳಿಸಲು ಚಲಾಯಿಸಬೇಕಿರುವ ಆಜ್ಞೆ. ಈ ಕೀಲಿಯು ಸ್ಟ್ಯಾಂಡರ್ಡ್ "
-"ಔಟ್‌ಪುಟ್‌ನಲ್ಲಿ ಒಂದು XEMBED ಪ್ಲಗ್ ಸಂಪರ್ಕಸಾಧನ ಹಾಗು ವಿಂಡೋ XIDಯ ಔಟ್‌ಪುಟ್ ಅನ್ನು ಅನ್ವಯಿಸುತ್ತದೆ."
-
-#: ../data/mate-screensaver.schemas.in.h:18
-msgid ""
-"The command to invoke when the logout button is clicked. This command should "
-"simply log the user out without any interaction. This key has effect only if "
-"the \"logout_enable\" key is set to TRUE."
-msgstr ""
-"ನಿರ್ಗಮಿಸುವ ಗುಂಡಿಯನ್ನು ಒತ್ತಿದಾಗ ಕೋರಬೇಕಿರುವ ಆಜ್ಞೆ. ಈ ಆಜ್ಞೆಯು ಏನನ್ನೂ ಪ್ರಶ್ನಿಸದೆ, "
-"ಬಳಕೆದಾರರನ್ನು ಹೊರಗೆ ನಿರ್ಗಮಿಸುವಂತೆ ಮಾಡುಬೇಕು. \"logout_enable\" ಕೀಲಿಯು TRUE ಗೆ "
-"ಹೊಂದಿಸಿದಲ್ಲಿ ಮಾತ್ರ ಈ ಕೀಲಿಯು ಪರಿಣಾಮಕಾರಿಯಾಗುತ್ತದೆ."
-
-#: ../data/mate-screensaver.schemas.in.h:19
-msgid "The number of minutes after screensaver activation before locking the screen."
-msgstr "ತೆರೆಯನ್ನು ಲಾಕ್ ಮಾಡುವ ಮೊದಲು, ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ಸಕ್ರಿಯವಾಗಿರಿಸಬೇಕಿರುವ ನಿಮಿಷಗಳ ಸಂಖ್ಯೆ."
-
-#: ../data/mate-screensaver.schemas.in.h:20
-msgid ""
-"The number of minutes after the screensaver activation before a logout "
-"option will appear in unlock dialog. This key has effect only if the "
-"\"logout_enable\" key is set to TRUE."
-msgstr ""
-"ಅನ್‌ಲಾಕ್ ಸಂವಾದದಲ್ಲಿ ನಿರ್ಗಮಿಸುವ ಆಯ್ಕೆಯು ಕಾಣಿಸಿಕೊಳ್ಳುವ ಮೊದಲು, ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು "
-"ಸಕ್ರಿಯವಾಗಿರಿಸಬೇಕಿರುವ ನಿಮಿಷಗಳ ಸಂಖ್ಯೆ. \"logout_enable\" ಕೀಲಿಯು TRUE ಗೆ "
-"ಹೊಂದಿಸಿದಲ್ಲಿ ಮಾತ್ರ ಈ ಕೀಲಿಯು ಪರಿಣಾಮಕಾರಿಯಾಗುತ್ತದೆ."
-
-#: ../data/mate-screensaver.schemas.in.h:21
-msgid "The number of minutes of inactivity before the session is considered idle."
-msgstr ""
-"ಅಧಿವೇಶನದಲ್ಲಿ ಕೆಲಸವಿಲ್ಲ ಎಂದು ಪರಿಗಣಿಸಬೇಕಿರುವ ಮೊದಲು ಅದು ನಿಷ್ಕ್ರಿಯವಾಗಿರಬೇಕಿರುವ "
-"ನಿಮಿಷಗಳ ಸಂಖ್ಯೆ."
-
-#: ../data/mate-screensaver.schemas.in.h:22
-msgid "The number of minutes to run before changing the screensaver theme."
-msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಥೀಮ್ ಅನ್ನು ಬದಲಾಯಿಸುವ ಮೊದಲು ಅದನ್ನು ಚಲಾಯಿಸಬೇಕಿರುವ ನಿಮಿಷಗಳ ಸಂಖ್ಯೆ."
-
-#: ../data/mate-screensaver.schemas.in.h:23
-msgid ""
-"The number of seconds of inactivity before signalling to power-management. "
-"This key is set and maintained by the session power-management agent."
-msgstr ""
-"ವಿದ್ಯುಚ್ಛಕ್ತಿ ನಿರ್ವಹಣೆಗೆ ಸೂಚಿಸುವ ಮೊದಲು ನಿಷ್ಕ್ರಿಯತೆಯ ಸಮಯ, ಸೆಕೆಂಡುಗಳಲ್ಲಿ. ಈ ಕೀಲಿಯನ್ನು "
-"ಅಣಿಗೊಳಿಸುವುದು ಹಾಗು ನೋಡಿಕೊಳ್ಳುವುದು ಅಧಿವೇಶನದ ವಿದ್ಯುಚ್ಛಕ್ತಿ ನಿರ್ವಹಣಾ ಮಧ್ಯವರ್ತಿಯ "
-"ಕೆಲಸವಾಗಿರುತ್ತದೆ."
-
-#: ../data/mate-screensaver.schemas.in.h:24
-msgid ""
-"The selection mode used by screensaver. May be \"blank-only\" to enable the "
-"screensaver without using any theme on activation, \"single\" to enable "
-"screensaver using only one theme on activation (specified in \"themes\" "
-"key), and \"random\" to enable the screensaver using a random theme on "
-"activation."
-msgstr ""
-"ಸ್ಕ್ರೀನ್‌ಸೇವರಿನಿಂದ ಬಳಸಬೇಕಿರುವ ಆಯ್ಕೆಯ ವಿಧಾನ. ಸಕ್ರಿಯಗೊಳಿಸಿದಾಗ ಯಾವುದೆ ಥೀಮ್ ಅನ್ನು ಬಳಸದೆ "
-"ಇರಲು \"ಕೇವಲ ಖಾಲಿ\" ಅನ್ನು, ಸಕ್ರಿಯಗೊಳಿಸಿದಾಗ ಕೇವಲ ಒಂದು ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ಬಳಸಲು \"ಒಂದು"
-"\" (\"ಥೀಮ್‌ಗಳು\" ಕೀಲಿಯಿಂದ ಸೂಚಿಸಲಾದ), ಹಾಗು ಸಕ್ರಿಯಗೊಳಿಸಿದಾಗ ಮನಸ್ಸಿಗೆ ಬಂದಂತೆ "
-"ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ಬಳಸಲು \"ಮನಸ್ಸಿಗೆ ಬಂದಂತೆ\" ಅನ್ನು ಶಕ್ತಗೊಳಿಸಬಹುದಾಗಿದೆ."
-
-#: ../data/mate-screensaver.schemas.in.h:25
-msgid "Theme for lock dialog"
-msgstr "ಲಾಕ್ ಸಂವಾದಕ್ಕಾಗಿನ ಥೀಮ್"
-
-#: ../data/mate-screensaver.schemas.in.h:26
-msgid "Theme to use for the lock dialog."
-msgstr "ಲಾಕ್ ಸಂವಾದಕ್ಕಾಗಿ ಬಳಸಬೇಕಿರುವ ಥೀಮ್."
-
-#: ../data/mate-screensaver.schemas.in.h:27
-msgid ""
-"This key specifies the list of themes to be used by the screensaver. It's "
-"ignored when \"mode\" key is \"blank-only\", should provide the theme name "
-"when \"mode\" is \"single\", and should provide a list of themes when \"mode"
-"\" is \"random\"."
-msgstr ""
-"ಸ್ಕ್ರೀನ್‌ಸೇವರಿನಿಂದ ಬಳಸಲ್ಪಡಬೇಕಿರುವ ಥೀಮ್‌ಗಳ ಪಟ್ಟಿಯನ್ನು ಈ ಕೀಲಿಯು ಸೂಚಿಸುತ್ತದೆ. ಇದು \"ಕ್ರಮ\" "
-"ಕೀಲಿಯು \"ಕೇವಲ ಖಾಲಿ\" ಇದ್ದಲ್ಲಿ ಆಲಕ್ಷಿಸಲ್ಪಡುತ್ತದೆ, \"ಕ್ರಮ\" ವು \"ಒಂದು\" ಆಗಿದ್ದಲ್ಲಿ ಥೀಮ್ "
-"ಹೆಸರನ್ನು ನೀಡುತ್ತದೆ, ಹಾಗು \"ಕ್ರಮ\" ವು \"ಮನಸ್ಸಿಗೆ ಬಂದಂತೆ\" ಆಗಿದ್ದಲ್ಲಿ ಥೀಮ್‌ಗಳ ಒಂದು "
-"ಪಟ್ಟಿಯನ್ನು ನೀಡುತ್ತದೆ."
-
-#: ../data/mate-screensaver.schemas.in.h:28
-msgid "Time before locking"
-msgstr "ಲಾಕ್‌ ಮಾಡುವ ಮುಂಚಿನ ಸಮಯ"
-
-#: ../data/mate-screensaver.schemas.in.h:29
-msgid "Time before logout option"
-msgstr "ನಿರ್ಗಮಿಸುವ ಆಯ್ಕೆಯ ಮುಂಚಿನ ಸಮಯ"
-
-#: ../data/mate-screensaver.schemas.in.h:30
-msgid "Time before power-management baseline"
-msgstr "ವಿದ್ಯುಚ್ಛಕ್ತಿ-ನಿರ್ವಹಣಾ ಕೆಳಗೆರೆಯ ಮುಂಚಿನ ಸಮಯ"
-
-#: ../data/mate-screensaver.schemas.in.h:31
-msgid "Time before session is considered idle"
-msgstr "ಅಧಿವೇಶನಕ್ಕೆ ಕೆಲಸವಿಲ್ಲ ಎಂದು ಪರಿಗಣಿಸಬೇಕಿರುವ ಮುಂಚಿನ ಸಮಯ"
-
-#: ../data/mate-screensaver.schemas.in.h:32
-msgid "Time before theme change"
-msgstr "ಥೀಮ್ ಬದಲಾಯಿಸಲ್ಪಡಬೇಕಿರುವ ಮುಂಚಿನ ಸಮಯ"
-
-#: ../data/lock-dialog-default.ui.h:2
-#, no-c-format
-msgid "<b>Leave a message for %R:</b>"
-msgstr "<b>%R ಗಾಗಿ ಒಂದು ಸಂದೇಶವನ್ನು ಬಿಡಿ:</b>"
-
-#: ../data/lock-dialog-default.ui.h:4
-#, no-c-format
-msgid "<span size=\"small\">%U on %h</span>"
-msgstr "<span size=\"small\">%U, %h ನಲ್ಲಿ</span>"
-
-#: ../data/lock-dialog-default.ui.h:6
-#, no-c-format
-msgid "<span size=\"x-large\">%R</span>"
-msgstr "<span size=\"x-large\">%R</span>"
-
-#: ../data/lock-dialog-default.ui.h:7
-msgid "_Cancel"
-msgstr "ರದ್ದು ಮಾಡಲಾಗಿದೆ(_C)"
-
-#: ../data/lock-dialog-default.ui.h:8
-msgid "_Leave Message"
-msgstr "ಸಂದೇಶವನ್ನು ಬಿಡು(_L)"
-
-#: ../data/lock-dialog-default.ui.h:9
-msgid "_Log Out"
-msgstr "ನಿರ್ಗಮಿಸು(_L)"
-
-#: ../data/lock-dialog-default.ui.h:10
-msgid "_Switch User"
-msgstr "ಬಳಕೆದಾರನನ್ನು ಬದಲಾಯಿಸು(_S)"
-
-#: ../data/lock-dialog-default.ui.h:11 ../src/gs-lock-plug.c:1382
-msgid "_Unlock"
-msgstr "ಅನ್‌ಲಾಕ್ ಮಾಡು(_U)"
-
-#. Translators: This is the name of a desktop background image that shows outer space images.
+#. Translators: This is the name of a desktop background image that shows
+#. outer space images.
 #. You might want to translate it into the equivalent words of your language
 #: ../data/images/cosmos/cosmos.xml.in.in.h:3
 #: ../savers/cosmos-slideshow.desktop.in.in.h:1
 msgid "Cosmos"
 msgstr "ಕಾಸ್ಮೋಸ್"
 
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<span size=\"x-large\">%R</span>"
+msgstr "<span size=\"x-large\">%R</span>"
+
+#: ../data/lock-dialog-default.ui.h:4
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U, %h ನಲ್ಲಿ</span>"
+
+#: ../data/lock-dialog-default.ui.h:5
+msgid "_Leave Message"
+msgstr "ಸಂದೇಶವನ್ನು ಬಿಡು(_L)"
+
+#: ../data/lock-dialog-default.ui.h:6
+msgid "_Switch User"
+msgstr "ಬಳಕೆದಾರನನ್ನು ಬದಲಾಯಿಸು(_S)"
+
+#: ../data/lock-dialog-default.ui.h:7
+msgid "_Log Out"
+msgstr "ನಿರ್ಗಮಿಸು(_L)"
+
+#: ../data/lock-dialog-default.ui.h:8
+msgid "_Cancel"
+msgstr "ರದ್ದು ಮಾಡಲಾಗಿದೆ(_C)"
+
+#: ../data/lock-dialog-default.ui.h:9 ../src/gs-lock-plug.c:1524
+msgid "_Unlock"
+msgstr "ಅನ್‌ಲಾಕ್ ಮಾಡು(_U)"
+
+#: ../data/lock-dialog-default.ui.h:11
+#, no-c-format
+msgid "<b>Leave a message for %R:</b>"
+msgstr "<b>%R ಗಾಗಿ ಒಂದು ಸಂದೇಶವನ್ನು ಬಿಡಿ:</b>"
+
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "ಅಂತರಿಕ್ಷದ ಚಿತ್ರಗಳ ಒಂದು ಚಿತ್ರಪ್ರದರ್ಶನವನ್ನು(ಸ್ಲೈಡ್‌ಶೋ) ತೋರಿಸುತ್ತದೆ"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
-msgid "Bubbles the MATE foot logo around the screen"
-msgstr "MATE ಪಾದದ ಚಿಹ್ನೆಯನ್ನು ತೆರೆಯ ತುಂಬೆಲ್ಲಾ ಬಬಲ್ ಮಾಡುತ್ತದೆ"
+msgid "Floating MATE"
+msgstr ""
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
-msgid "Floating Feet"
-msgstr "ತೇಲುವ ಪಾದ"
+msgid "Bubbles the MATE logo around the screen"
+msgstr ""
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
-msgid "Display a slideshow from your Pictures folder"
-msgstr "ನಿಮ್ಮ ಚಿತ್ರದ ಕೋಶದಿಂದ ಒಂದು ಚಿತ್ರಪ್ರದರ್ಶನವನ್ನು(ಸ್ಲೈಡ್‌ಶೋ) ತೋರಿಸು"
-
-#: ../savers/personal-slideshow.desktop.in.in.h:2
 msgid "Pictures folder"
 msgstr "ಚಿತ್ರಗಳ ಕೋಶ"
 
-#: ../savers/popsquares.desktop.in.in.h:1
-msgid "A pop-art-ish grid of pulsing colors."
-msgstr "ಮಿನುಗುವ ಬಣ್ಣಗಳ ಕಲಾತ್ಮಕ ಚೌಕಗಳನ್ನು ಹೊಂದಿರುವ ಪುಟಿಕೆ ಚೌಕುಳಿಗಳು."
+#: ../savers/personal-slideshow.desktop.in.in.h:2
+msgid "Display a slideshow from your Pictures folder"
+msgstr "ನಿಮ್ಮ ಚಿತ್ರದ ಕೋಶದಿಂದ ಒಂದು ಚಿತ್ರಪ್ರದರ್ಶನವನ್ನು(ಸ್ಲೈಡ್‌ಶೋ) ತೋರಿಸು"
 
-#: ../savers/popsquares.desktop.in.in.h:2
+#: ../savers/popsquares.desktop.in.in.h:1
 msgid "Pop art squares"
 msgstr "ಕಲಾ ಚೌಕಗಳನ್ನು ಪುಟಿಸು"
 
-#: ../savers/floaters.c:84
+#: ../savers/popsquares.desktop.in.in.h:2
+msgid "A pop-art-ish grid of pulsing colors."
+msgstr "ಮಿನುಗುವ ಬಣ್ಣಗಳ ಕಲಾತ್ಮಕ ಚೌಕಗಳನ್ನು ಹೊಂದಿರುವ ಪುಟಿಕೆ ಚೌಕುಳಿಗಳು."
+
+#: ../savers/popsquares.c:50 ../savers/floaters.c:1217
+#, c-format
+msgid "%s. See --help for usage information.\n"
+msgstr "%s. ಬಳಕೆಯ ಮಾಹಿತಿಗಾಗಿ --help ಅನ್ನು ನೋಡಿ.\n"
+
+#: ../savers/floaters.c:90
 msgid "Show paths that images follow"
 msgstr "ಚಿತ್ರಗಳು ಅನುಸರಿಸುವ ಮಾರ್ಗವನ್ನು ತೋರಿಸು"
 
-#: ../savers/floaters.c:87
+#: ../savers/floaters.c:95
 msgid "Occasionally rotate images as they move"
 msgstr "ಚಿತ್ರಗಳನ್ನು ಜರುಗಿಸುತ್ತಿರುವಾಗ ಆಗಾಗ ಅವುಗಳನ್ನು ತಿರುಗಿಸು"
 
-#: ../savers/floaters.c:90
+#: ../savers/floaters.c:100
 msgid "Print out frame rate and other statistics"
 msgstr "ಫ್ರೇಮ್ ದರ ಹಾಗು ಇನ್ನಿತರೆ ಅಂಕಿಅಂಶಗಳನ್ನು ಮುದ್ರಿಸು"
 
-#: ../savers/floaters.c:93
+#: ../savers/floaters.c:105
 msgid "The maximum number of images to keep on screen"
 msgstr "ತೆರೆಯ ಮೇಲೆ ಇರಿಸಬೇಕಿರುವ ಚಿತ್ರಗಳ ಗರಿಷ್ಟ ಸಂಖ್ಯೆ"
 
-#: ../savers/floaters.c:93
+#: ../savers/floaters.c:105
 msgid "MAX_IMAGES"
 msgstr "MAX_IMAGES"
 
-#: ../savers/floaters.c:96
+#: ../savers/floaters.c:110
 msgid "The initial size and position of window"
 msgstr "ವಿಂಡೋದ ಆರಂಭಿಕ ಗಾತ್ರ ಹಾಗು ಸ್ಥಾನ"
 
-#: ../savers/floaters.c:96
+#: ../savers/floaters.c:110
 msgid "WIDTHxHEIGHT+X+Y"
 msgstr "WIDTHxHEIGHT+X+Y"
 
-#: ../savers/floaters.c:99
+#: ../savers/floaters.c:115
 msgid "The source image to use"
 msgstr "ಬಳಸಬೇಕಿರುವ ಮೂಲ ಚಿತ್ರ"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#.
-#: ../savers/floaters.c:1194
+#. 
+#: ../savers/floaters.c:1211
 msgid "image - floats images around the screen"
 msgstr "image - ತೆರೆಯ ಸುತ್ತ ಚಿತ್ರಗಳನ್ನು ತೇಲಿಸುತ್ತದೆ"
 
-#: ../savers/floaters.c:1200
-#, c-format
-msgid "%s. See --help for usage information.\n"
-msgstr "%s. ಬಳಕೆಯ ಮಾಹಿತಿಗಾಗಿ --help ಅನ್ನು ನೋಡಿ.\n"
-
-#: ../savers/floaters.c:1209
+#: ../savers/floaters.c:1226
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "ನೀವು ಒಂದು ಚಿತ್ರವನ್ನು ಸೂಚಿಸಲೇ ಬೇಕಾಗುತ್ತದೆ.  ಬಳಕೆಯ ಮಾಹಿತಿಗಾಗಿ --help ಅನ್ನು ನೋಡಿ.\n"
 
-#: ../savers/slideshow.c:53
+#: ../savers/slideshow.c:55
 msgid "Location to get images from"
 msgstr "ಚಿತ್ರಗಳನ್ನು ಪಡೆದುಕೊಳ್ಳಬೇಕಿರುವ ಸ್ಥಳ"
 
-#: ../savers/slideshow.c:53
+#: ../savers/slideshow.c:55
 msgid "PATH"
 msgstr "PATH"
 
-#: ../savers/slideshow.c:55
+#: ../savers/slideshow.c:59
 msgid "Color to use for images background"
 msgstr "ಚಿತ್ರಗಳ ಹಿನ್ನಲೆಗೆ ಬಳಸಬೇಕಿರುವ ಬಣ್ಣಗಳು"
 
-#: ../savers/slideshow.c:55
+#: ../savers/slideshow.c:59
 msgid "\"#rrggbb\""
 msgstr "\"#rrggbb\""
 
-#: ../savers/slideshow.c:57
+#: ../savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
 msgstr "ಸ್ಥಳದಿಂದ ಚಿತ್ರಗಳನ್ನು ಮನಬಂದಂತೆ ಇರಿಸ ಬೇಡ "
 
-#: ../savers/slideshow.c:59
+#: ../savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"
 msgstr "ತೆರೆಯಲ್ಲಿನ ಚಿತ್ರಗಳನ್ನು ಎಳೆಯಲು ಪ್ರಯತ್ನಿಸಬೇಡ"
 
@@ -430,90 +249,87 @@ msgstr "%s ವು ಒಂದು ಮಾನ್ಯವಾದ ಸ್ಕ್ರೀನ್
 msgid "Copying file: %u of %u"
 msgstr "ಕಡತವನ್ನು ಕಾಪಿ ಮಾಡಲಾಗುತ್ತಿದೆ: %u, (%u ಯಲ್ಲಿ)"
 
-#: ../src/mate-screensaver-command.c:62
+#: ../src/mate-screensaver-command.c:64
 msgid "Causes the screensaver to exit gracefully"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ಆಕರ್ಷಕವಾಗಿ ನಿರ್ಗಮಿಸುವಂತೆ ಮಾಡುತ್ತದೆ"
 
-#: ../src/mate-screensaver-command.c:64
+#: ../src/mate-screensaver-command.c:68
 msgid "Query the state of the screensaver"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರಿನ ಸ್ಥಿತಿಗಾಗಿ ಮನವಿ ಸಲ್ಲಿಸಿ"
 
-#: ../src/mate-screensaver-command.c:66
+#: ../src/mate-screensaver-command.c:72
 msgid "Query the length of time the screensaver has been active"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಸಕ್ರಿಯವಾಗಿರಬೇಕಿರುವ ಸಮಯಕ್ಕಾಗಿ ಮನವಿಸಲ್ಲಿಸಿ"
 
-#: ../src/mate-screensaver-command.c:68
+#: ../src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr "ಚಾಲನೆಯಲ್ಲಿರುವ ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಪ್ರಕ್ರಿಯೆಗೆ ತಕ್ಷಣವೆ ತೆರೆಯನ್ನು ಲಾಕ್ ಮಾಡುವಂತೆ ತಿಳಿಸುತ್ತದೆ"
 
-#: ../src/mate-screensaver-command.c:70
+#: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಸಕ್ರಿಯವಾಗಿದ್ದರೆ ಬೇರೊಂದು ಗ್ರಾಫಿಕ್ಸ್‍ ಡೆಮೋಗೆ ಬದಲಾಯಿಸು"
 
-#: ../src/mate-screensaver-command.c:72
+#: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ಆನ್ ಮಾಡು (ತೆರೆಯನ್ನು ಖಾಲಿಯಾಗಿ ಇರಿಸು)"
 
-#: ../src/mate-screensaver-command.c:74
+#: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಸಕ್ರಿಯವಾಗಿದ್ದರೆ ಅದನ್ನು ನಿಷ್ಕ್ರಿಯಗೊಳಿಸು (ತೆರೆಯನ್ನು ಖಾಲಿಯಾಗಿ ಇರಿಸಬೇಡ)"
 
-#: ../src/mate-screensaver-command.c:76
+#: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr "ಚಲಾಯಿತಗೊಳ್ಳುತ್ತಿರುವ ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ಬಳಕೆದಾರರ ಕಾರ್ಯದಲ್ಲಿ ಹೊಂದಿಕೊಂಡಿರುವಂತೆ ಮಾಡು"
 
-#: ../src/mate-screensaver-command.c:78
+#: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr ""
-"ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳ್ಳದಂತೆ ತಡೆಹಿಡಿ.  ತಡೆಯೊಡ್ಡುವಿಕೆಯು ಸಕ್ರಿಯಗೊಂಡಿದ್ದಾಗ ಆಜ್ಞೆಯು "
-"ನಿರ್ಬಂಧಿಸುತ್ತದೆ."
+msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ಸಕ್ರಿಯಗೊಳ್ಳದಂತೆ ತಡೆಹಿಡಿ.  ತಡೆಯೊಡ್ಡುವಿಕೆಯು ಸಕ್ರಿಯಗೊಂಡಿದ್ದಾಗ ಆಜ್ಞೆಯು ನಿರ್ಬಂಧಿಸುತ್ತದೆ."
 
-#: ../src/mate-screensaver-command.c:80
+#: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ತಡೆಯತ್ತಿರುವ ಕರೆ ಮಾಡುವ ಅನ್ವಯ"
 
-#: ../src/mate-screensaver-command.c:82
+#: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ತಡೆಯಲು ಕಾರಣ"
 
-#: ../src/mate-screensaver-command.c:84 ../src/mate-screensaver-dialog.c:58
-#: ../src/mate-screensaver.c:56
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:57
+#: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "ಈ ಅನ್ವಯದ ಆವೃತ್ತಿ"
 
-#: ../src/mate-screensaver-command.c:307
+#: ../src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ %s ಆಗಿದೆ\n"
 
-#: ../src/mate-screensaver-command.c:307
+#: ../src/mate-screensaver-command.c:357
 msgid "active"
 msgstr "ಸಕ್ರಿಯ"
 
-#: ../src/mate-screensaver-command.c:307
+#: ../src/mate-screensaver-command.c:357
 msgid "inactive"
 msgstr "ನಿಷ್ಕ್ರಿಯ"
 
-#: ../src/mate-screensaver-command.c:321
+#: ../src/mate-screensaver-command.c:373
 #, c-format
 msgid "The screensaver is not inhibited\n"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ತಡೆಯಲಾಗುತ್ತಿಲ್ಲ\n"
 
-#: ../src/mate-screensaver-command.c:327
+#: ../src/mate-screensaver-command.c:381
 #, c-format
 msgid "The screensaver is being inhibited by:\n"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಅನ್ನು ಇದು ತಡೆಯುತ್ತಿದೆ:\n"
 
-#: ../src/mate-screensaver-command.c:358
+#: ../src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ %d ಸೆಕೆಂಡುಗಳ ಕಾಲ ಸಕ್ರಿಯವಾಗಿತ್ತು.\n"
 
-#: ../src/mate-screensaver-command.c:362
+#: ../src/mate-screensaver-command.c:422
 #, c-format
-#| msgid "The screensaver is not inhibited\n"
 msgid "The screensaver is not currently active.\n"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಪ್ರಸಕ್ತ ಸಕ್ರಿಯವಾಗಿಲ್ಲ.\n"
 
@@ -521,144 +337,141 @@ msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಪ್ರಸಕ್ತ ಸಕ�
 msgid "Show debugging output"
 msgstr "ದೋಷನಿವಾರಣಾ ಔಟ್‌ಪುಟ್ ಅನ್ನು ತೋರಿಸು"
 
-#: ../src/mate-screensaver-dialog.c:60
+#: ../src/mate-screensaver-dialog.c:58
 msgid "Show the logout button"
 msgstr "ನಿರ್ಗಮಿಸುವ ಗುಂಡಿಯನ್ನು ತೋರಿಸು"
 
-#: ../src/mate-screensaver-dialog.c:62
+#: ../src/mate-screensaver-dialog.c:59
 msgid "Command to invoke from the logout button"
 msgstr "ನಿರ್ಗಮಿಸುವ ಗುಂಡಿಯಿಂದ ಕೋರಿಕೆ ಸಲ್ಲಿಸಬೇಕಿರುವ ಆಜ್ಞೆ"
 
-#: ../src/mate-screensaver-dialog.c:64
+#: ../src/mate-screensaver-dialog.c:60
 msgid "Show the switch user button"
 msgstr "ಬಳಕೆದಾರರನ್ನು ಬದಲಾಯಿಸುವ ಗುಂಡಿಯನ್ನು ತೋರಿಸು"
 
-#: ../src/mate-screensaver-dialog.c:66
+#: ../src/mate-screensaver-dialog.c:61
 msgid "Message to show in the dialog"
 msgstr "ಸಂವಾದದಲ್ಲಿ ತೋರಿಸಬೇಕಿರುವ ಸಂದೇಶ"
 
-#: ../src/mate-screensaver-dialog.c:66 ../src/mate-screensaver-dialog.c:68
+#: ../src/mate-screensaver-dialog.c:61 ../src/mate-screensaver-dialog.c:62
 msgid "MESSAGE"
 msgstr "MESSAGE"
 
-#: ../src/mate-screensaver-dialog.c:68
+#: ../src/mate-screensaver-dialog.c:62
 msgid "Not used"
 msgstr "ಬಳಸದೆ ಇರುವ"
 
 #. login: is whacked always translate to Username:
-#: ../src/mate-screensaver-dialog.c:178 ../src/mate-screensaver-dialog.c:179
-#: ../src/mate-screensaver-dialog.c:180 ../src/gs-auth-pam.c:698
+#: ../src/mate-screensaver-dialog.c:164 ../src/mate-screensaver-dialog.c:165
+#: ../src/mate-screensaver-dialog.c:166 ../src/gs-auth-pam.c:756
 msgid "Username:"
 msgstr "ಬಳಕೆದಾರ ಹೆಸರು:"
 
-#: ../src/mate-screensaver-dialog.c:181 ../src/mate-screensaver-dialog.c:182
-#: ../src/gs-auth-pam.c:166
+#: ../src/mate-screensaver-dialog.c:167 ../src/mate-screensaver-dialog.c:168
+#: ../src/gs-auth-pam.c:171
 msgid "Password:"
 msgstr "ಗುಪ್ತಪದ:"
 
-#: ../src/mate-screensaver-dialog.c:183
+#: ../src/mate-screensaver-dialog.c:169
 msgid "You are required to change your password immediately (password aged)"
 msgstr "ನೀವು ಈ ಕೂಡಲೆ ನಿಮ್ಮ ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸುವ ಅಗತ್ಯವಿದೆ (ಗುಪ್ತಪದ ಹಳತಾಗಿದೆ)"
 
-#: ../src/mate-screensaver-dialog.c:184
+#: ../src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (root enforced)"
 msgstr "ನೀವು ಈ ಕೂಡಲೆ ನಿಮ್ಮ ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸುವ ಅಗತ್ಯವಿದೆ (ಮೂಲದಿಂದ ಒತ್ತಾಯಿತಗೊಂಡ)"
 
-#: ../src/mate-screensaver-dialog.c:185
+#: ../src/mate-screensaver-dialog.c:171
 msgid "Your account has expired; please contact your system administrator"
 msgstr "ನಿಮ್ಮ ಖಾತೆಯು ವಾಯಿದೆಯು ಮುಗಿದಿದೆ; ದಯವಿಟ್ಟು ನಿಮ್ಮ ಗಣಕ ವ್ಯವಸ್ಥಾಪಕರನ್ನು ಸಂಪರ್ಕಿಸಿ"
 
-#: ../src/mate-screensaver-dialog.c:186
+#: ../src/mate-screensaver-dialog.c:172
 msgid "No password supplied"
 msgstr "ಯಾವುದೆ ಗುಪ್ತಪದವನ್ನು ಒದಗಿಸಲಾಗಿಲ್ಲ"
 
-#: ../src/mate-screensaver-dialog.c:187
+#: ../src/mate-screensaver-dialog.c:173
 msgid "Password unchanged"
 msgstr "ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸಲಾಗಿಲ್ಲ"
 
-#: ../src/mate-screensaver-dialog.c:188
+#: ../src/mate-screensaver-dialog.c:174
 msgid "Can not get username"
 msgstr "ಬಳಕೆದಾರ ಹೆಸರನ್ನು ಪಡೆಯಲಾಗಿಲ್ಲ"
 
-#: ../src/mate-screensaver-dialog.c:189
+#: ../src/mate-screensaver-dialog.c:175
 msgid "Retype new UNIX password:"
 msgstr "ಹೊಸ UNIX ಗುಪ್ತಪದವನ್ನು ಇನ್ನೊಮ್ಮೆ ನಮೂದಿಸಿ:"
 
-#: ../src/mate-screensaver-dialog.c:190
+#: ../src/mate-screensaver-dialog.c:176
 msgid "Enter new UNIX password:"
 msgstr "ಹೊಸ UNIX ಗುಪ್ತಪದವನ್ನು ನಮೂದಿಸಿ:"
 
-#: ../src/mate-screensaver-dialog.c:191
+#: ../src/mate-screensaver-dialog.c:177
 msgid "(current) UNIX password:"
 msgstr "(ಪ್ರಸಕ್ತ) UNIX ಗುಪ್ತಪದ:"
 
-#: ../src/mate-screensaver-dialog.c:192
+#: ../src/mate-screensaver-dialog.c:178
 msgid "Error while changing NIS password."
 msgstr "NIS ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸುವಾಗ ದೋಷ ಉಂಟಾಗಿದೆ."
 
-#: ../src/mate-screensaver-dialog.c:193
+#: ../src/mate-screensaver-dialog.c:179
 msgid "You must choose a longer password"
 msgstr "ನೀವು ದೊಡ್ಡದಾದ ಗುಪ್ತಪದವನ್ನು ಬಳಸಬೇಕು"
 
-#: ../src/mate-screensaver-dialog.c:194
+#: ../src/mate-screensaver-dialog.c:180
 msgid "Password has been already used. Choose another."
 msgstr "ಗುಪ್ತಪದವು ಈಗಾಗಲೆ ಬಳಸಲಾಗಿದೆ. ಬೇರೊಂದನ್ನು ಆರಿಸಿ."
 
-#: ../src/mate-screensaver-dialog.c:195
+#: ../src/mate-screensaver-dialog.c:181
 msgid "You must wait longer to change your password"
 msgstr "ಗುಪ್ತಪದವನ್ನು ಬದಲಾಯಿಸಲು ನೀವು ಇನ್ನಷ್ಟು ಹೊತ್ತು ಕಾಯಬೇಕು"
 
-#: ../src/mate-screensaver-dialog.c:196
+#: ../src/mate-screensaver-dialog.c:182
 msgid "Sorry, passwords do not match"
 msgstr "ಕ್ಷಮಿಸಿ, ಗುಪ್ತಪದಗಳು ತಾಳೆಯಾಗುವುದಿಲ್ಲ"
 
-#: ../src/mate-screensaver-dialog.c:262
+#: ../src/mate-screensaver-dialog.c:253
 msgid "Checking..."
 msgstr "ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ..."
 
-#: ../src/mate-screensaver-dialog.c:304 ../src/gs-auth-pam.c:457
+#: ../src/mate-screensaver-dialog.c:299 ../src/gs-auth-pam.c:495
 msgid "Authentication failed."
 msgstr "ದೃಢಿಕರಣವು ವಿಫಲಗೊಂಡಿದೆ."
 
-#: ../src/mate-screensaver-preferences.c:524
+#: ../src/mate-screensaver-preferences.c:476
 msgid "Blank screen"
 msgstr "ಖಾಲಿ ತೆರೆ"
 
-#: ../src/mate-screensaver-preferences.c:530
+#: ../src/mate-screensaver-preferences.c:482
 msgid "Random"
 msgstr "ಮನಸ್ಸಿಗೆ ಬಂದಂತೆ"
 
-#: ../src/mate-screensaver-preferences.c:980
+#: ../src/mate-screensaver-preferences.c:968
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d ಗಂಟೆ"
-msgstr[1] "%d ಗಂಟೆಗಳು"
+msgstr[0] ""
 
-#: ../src/mate-screensaver-preferences.c:983
+#: ../src/mate-screensaver-preferences.c:971
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d ನಿಮಿಷ"
-msgstr[1] "%d ನಿಮಿಷಗಳು"
+msgstr[0] ""
 
-#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:974
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d ಸೆಕೆಂಡು"
-msgstr[1] "%d ಸೆಕೆಂಡುಗಳು"
+msgstr[0] ""
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:992
+#: ../src/mate-screensaver-preferences.c:982
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:995
-#: ../src/mate-screensaver-preferences.c:1003
+#: ../src/mate-screensaver-preferences.c:987
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
@@ -666,94 +479,93 @@ msgstr "%s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:998
-#: ../src/mate-screensaver-preferences.c:1006
-#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:992
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1011
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1025
+#: ../src/mate-screensaver-preferences.c:1026
 #, c-format
 msgid "Never"
 msgstr "ಎಂದೂ ಬೇಡ"
 
-#: ../src/mate-screensaver-preferences.c:1467
+#: ../src/mate-screensaver-preferences.c:1451
 msgid "Could not load the main interface"
 msgstr "ಮುಖ್ಯ ಸಂಪರ್ಕ ಸಾಧನವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ"
 
-#: ../src/mate-screensaver-preferences.c:1469
+#: ../src/mate-screensaver-preferences.c:1453
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಸರಿಯಾಗಿ ಅನುಸ್ಥಾಪಿತಗೊಂಡಿದೆ ಎಂದು ದಯವಿಟ್ಟು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ"
 
-#: ../src/mate-screensaver.c:57
+#: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
 msgstr "ಒಂದು ಡೆಮನ್ ಆಗಬೇಡ"
 
-#: ../src/mate-screensaver.c:58
+#: ../src/mate-screensaver.c:57
 msgid "Enable debugging code"
 msgstr "ದೋಷನಿವಾರಣಾ ಸಂಜ್ಞೆಯನ್ನು ಶಕ್ತಗೊಳಿಸು"
 
-#: ../src/mate-screensaver.desktop.in.in.h:1
+#: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screen saver and locker program"
 msgstr "ಸ್ಕ್ರೀನ್‌ ಸೇವರ್ ಹಾಗು ಲಾಕ್ ಮಾಡುವ ಪ್ರೊಗ್ರಾಮ್ ಅನ್ನು ಆರಂಭಿಸಿ"
 
-#: ../src/gs-auth-pam.c:397
+#: ../src/gs-auth-pam.c:425
 #, c-format
 msgid "Unable to establish service %s: %s\n"
 msgstr "%s ಸೇವೆಯನ್ನು ನೆಲೆಗೊಳಿಸಲು ಶಕ್ತಗೊಳಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ: %s\n"
 
-#: ../src/gs-auth-pam.c:423
+#: ../src/gs-auth-pam.c:455
 #, c-format
 msgid "Can't set PAM_TTY=%s"
 msgstr "PAM_TTY ಅನ್ನು ಹೊಂದಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ=%s"
 
-#: ../src/gs-auth-pam.c:455
+#: ../src/gs-auth-pam.c:491
 msgid "Incorrect password."
 msgstr "ಸರಿಯಲ್ಲದ ಗುಪ್ತಪದ."
 
-#: ../src/gs-auth-pam.c:471
+#: ../src/gs-auth-pam.c:511
 msgid "Not permitted to gain access at this time."
 msgstr "ಈ ಸಮಯದಲ್ಲಿ ನಿಲುಕನ್ನು ಪಡೆದುಕೊಳ್ಳಲು ಅನುಮತಿ ಇಲ್ಲ."
 
-#: ../src/gs-auth-pam.c:477
+#: ../src/gs-auth-pam.c:519
 msgid "No longer permitted to access the system."
 msgstr "ಗಣಕವನ್ನು ನಿಲುಕಿಸಿಕೊಳ್ಳಲು ಇನ್ನು ಮುಂದೆ ಅನುಮತಿ ಇಲ್ಲ."
 
-#: ../src/gs-listener-dbus.c:1851
+#: ../src/gs-listener-dbus.c:2219
 msgid "failed to register with the message bus"
 msgstr "ಸಂದೇಶ ಬಸ್‌ನೊಂದಿಗೆ ನೋಂದಾಯಿಸಲು ವಿಫಲಗೊಂಡಿದೆ"
 
-#: ../src/gs-listener-dbus.c:1861
+#: ../src/gs-listener-dbus.c:2230
 msgid "not connected to the message bus"
 msgstr "ಸಂದೇಶ ಬಸ್‌ಗೆ ಸಂಪರ್ಕಿತಗೊಂಡಿಲ್ಲ"
 
-#: ../src/gs-listener-dbus.c:1870
+#: ../src/gs-listener-dbus.c:2240 ../src/gs-listener-dbus.c:2272
 msgid "screensaver already running in this session"
 msgstr "ಸ್ಕ್ರೀನ್‌ಸೇವರ್ ಈಗಾಗಲೆ ಈ ಅಧಿವೇಶನದಲ್ಲಿ ಚಾಲನೆಯಲ್ಲಿದೆ"
 
-#: ../src/gs-lock-plug.c:270
+#: ../src/gs-lock-plug.c:355
 msgid "Time has expired."
 msgstr "ಕಾಲಾವಧಿ ಮುಗಿದಿದೆ."
 
-#: ../src/gs-lock-plug.c:298
+#: ../src/gs-lock-plug.c:386
 msgid "You have the Caps Lock key on."
 msgstr "ನಿಮ್ಮ Caps Lock ಕೀಲಿಯು ಆನ್ ಆಗಿದೆ."
 
-#: ../src/gs-lock-plug.c:1362
+#: ../src/gs-lock-plug.c:1504
 msgid "S_witch User..."
 msgstr "ಬಳಕೆದಾರರನ್ನು ಬದಲಾಯಿಸು(_w)..."
 
-#: ../src/gs-lock-plug.c:1371
+#: ../src/gs-lock-plug.c:1513
 msgid "Log _Out"
 msgstr "ಹೊರ ನಡೆ(_O)"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1547
+#: ../src/gs-lock-plug.c:1705
 msgid "%U on %h"
 msgstr "%U, %h ದಲ್ಲಿ"
 
-#: ../src/gs-lock-plug.c:1561
+#: ../src/gs-lock-plug.c:1719
 msgid "_Password:"
 msgstr "ಗುಪ್ತಪದ(_P):"
-

@@ -1,22 +1,26 @@
-# Persain translation of mate-screensaver
-# Copyright (C) 2006 Sharif FarsiWeb, Inc.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Elnaz Sarbar <elnaz@farsiweb.info>, 2006.
-# Meelad Zakaria <meelad@farsiweb.info>, 2006.
+# 
+# Translators:
+# Elnaz Sarbar <elnaz@farsiweb.info>, 2006
+# Meelad Zakaria <meelad@farsiweb.info>, 2006
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver HEAD\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-09-04 03:56+0200\n"
-"PO-Revision-Date: 2006-09-04 17:02+0330\n"
-"Last-Translator: Meelad Zakaria <meelad@farsiweb.info>\n"
-"Language-Team: Persian\n"
+"POT-Creation-Date: 2013-10-01 14:02+0200\n"
+"PO-Revision-Date: 2013-10-01 12:07+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"Language-Team: Persian (http://www.transifex.com/projects/p/MATE/language/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fa\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/mate-screensaver-preferences.desktop.in.h:1
+#: ../src/mate-screensaver.desktop.in.in.h:1
 msgid "Screensaver"
 msgstr "محافظ صفحهٔ نمایش"
 
@@ -24,705 +28,321 @@ msgstr "محافظ صفحهٔ نمایش"
 msgid "Set your screensaver preferences"
 msgstr "ترجیحات محافظ صفحهٔ نمایش خود را تنظیم کنید"
 
-#: ../data/mate-screensaver-preferences.glade.h:1
-msgid "<b>Screensaver preview</b>"
-msgstr "<b>پیش‌نمایش محافظ صفحهٔ نمایش</b>"
-
-#: ../data/mate-screensaver-preferences.glade.h:2
-msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>اخطار: صفحهٔ نمایش کاربر root قفل نخواهد شد.</b>"
-
-#: ../data/mate-screensaver-preferences.glade.h:3
-msgid "Regard the computer as _idle after:"
-msgstr "کامپیوتر پس از این مدت _بی‌کار فرض شود:"
-
-#: ../data/mate-screensaver-preferences.glade.h:4
+#: ../data/mate-screensaver-preferences.ui.h:1
 msgid "Screensaver Preferences"
 msgstr "ترجیحات محافظ صفحهٔ نمایش"
 
-#: ../data/mate-screensaver-preferences.glade.h:5
-msgid "Screensaver Preview"
-msgstr "پیش‌نمایش محافظ صفحهٔ نمایش"
+#: ../data/mate-screensaver-preferences.ui.h:2
+msgid "Power _Management"
+msgstr ""
 
-#: ../data/mate-screensaver-preferences.glade.h:6
-msgid "_Activate screensaver when computer is idle"
-msgstr "_فعال کردن محافظ صفحهٔ نمایش وقتی کامپیوتر بی‌کار است"
-
-#: ../data/mate-screensaver-preferences.glade.h:7
-msgid "_Lock screen when screensaver is active"
-msgstr "_قفل کردن صفحهٔ‌ نمایش وقتی محافظ صفحهٔ نمایش فعال می‌شود"
-
-#: ../data/mate-screensaver-preferences.glade.h:8
+#: ../data/mate-screensaver-preferences.ui.h:3
 msgid "_Preview"
 msgstr "_پیش‌نمایش"
 
-#: ../data/mate-screensaver-preferences.glade.h:9
+#: ../data/mate-screensaver-preferences.ui.h:4
 msgid "_Screensaver theme:"
 msgstr "_تم محافظ صفحهٔ نمایش:"
 
-#: ../data/mate-screensaver.directory.in.h:1
-#: ../data/mate-screensaver.schemas.in.h:9
-msgid "Screensaver themes"
-msgstr "تم‌های محافظ صفحهٔ نمایش"
+#: ../data/mate-screensaver-preferences.ui.h:5
+msgid "Regard the computer as _idle after:"
+msgstr "کامپیوتر پس از این مدت _بی‌کار فرض شود:"
 
-#: ../data/mate-screensaver.directory.in.h:2
+#: ../data/mate-screensaver-preferences.ui.h:6
+msgid "_Activate screensaver when computer is idle"
+msgstr "_فعال کردن محافظ صفحهٔ نمایش وقتی کامپیوتر بی‌کار است"
+
+#: ../data/mate-screensaver-preferences.ui.h:7
+msgid "_Lock screen when screensaver is active"
+msgstr "_قفل کردن صفحهٔ‌ نمایش وقتی محافظ صفحهٔ نمایش فعال می‌شود"
+
+#: ../data/mate-screensaver-preferences.ui.h:8
+msgid "<b>Warning: the screen will not be locked for the root user.</b>"
+msgstr "<b>اخطار: صفحهٔ نمایش کاربر root قفل نخواهد شد.</b>"
+
+#: ../data/mate-screensaver-preferences.ui.h:9
+msgid "Screensaver Preview"
+msgstr "پیش‌نمایش محافظ صفحهٔ نمایش"
+
+#: ../data/mate-screensaver-preferences.ui.h:10
+msgid "<b>Screensaver preview</b>"
+msgstr "<b>پیش‌نمایش محافظ صفحهٔ نمایش</b>"
+
+#: ../data/mate-screensaver.directory.in.h:1
 msgid "Screensavers"
 msgstr "محافظ‌های صفحهٔ نمایش"
 
-#: ../data/mate-screensaver.schemas.in.h:1
-msgid "Activate when idle"
-msgstr "فعال شدن زمان بی‌کاری"
+#: ../data/mate-screensaver.directory.in.h:2
+msgid "Screensaver themes"
+msgstr "تم‌های محافظ صفحهٔ نمایش"
 
-#: ../data/mate-screensaver.schemas.in.h:2
-msgid "Allow embedding a keyboard into the window"
-msgstr "تعیبهٔ صفحه‌کلید در پنجره مجاز باشد"
+#. Translators: This is the name of a desktop background image that shows
+#. outer space images.
+#. You might want to translate it into the equivalent words of your language
+#: ../data/images/cosmos/cosmos.xml.in.in.h:3
+#: ../savers/cosmos-slideshow.desktop.in.in.h:1
+msgid "Cosmos"
+msgstr "کیهان"
 
-#: ../data/mate-screensaver.schemas.in.h:3
-msgid "Allow logout"
-msgstr "خروج از سیستم مجاز باشد"
-
-#: ../data/mate-screensaver.schemas.in.h:4
-msgid "Allow user switching"
-msgstr "تعویض کاربر مجاز باشد"
-
-#: ../data/mate-screensaver.schemas.in.h:5
-msgid "Embedded keyboard command"
-msgstr "فرمان صفحه‌کلید توکار"
-
-#: ../data/mate-screensaver.schemas.in.h:6
-msgid "Lock on activation"
-msgstr "قفل کردن هنگام فعال‌سازی"
-
-#: ../data/mate-screensaver.schemas.in.h:7
-msgid "Logout command"
-msgstr "فرمان خروج از سیستم"
-
-#: ../data/mate-screensaver.schemas.in.h:8
-msgid "Screensaver theme selection mode"
-msgstr "حالت انتخاب تم محافظ صفحهٔ نمایش"
-
-#: ../data/mate-screensaver.schemas.in.h:10
-msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr "برای فعال شدن محافظ صفحهٔ نمایش هنگام بی‌کار بودن نشست، این کلید را روی درست تنظیم کنید."
-
-#: ../data/mate-screensaver.schemas.in.h:11
-msgid ""
-"Set this to TRUE to allow embedding a keyboard into the window when trying "
-"to unlock. The \"keyboard_command\" key must be set with the appropriate "
-"command."
-msgstr ""
-"برای مجاز بودن تعبیهٔ صفحه‌کلید در پنجره هنگام تلاش برای باز کردن قفل، این کلید را روی درست تنظیم"
-"کنید. کلید «keyboard_command» باید با فرمان مناسبی تنظیم شده باشد."
-
-#: ../data/mate-screensaver.schemas.in.h:12
-msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr "برای قفل شدن صفحهٔ نمایش هنگام فعال شدن محافظ صفحهٔ نمایش، این کلید را روی درست تنظیم کنید."
-
-#: ../data/mate-screensaver.schemas.in.h:13
-msgid ""
-"Set this to TRUE to offer an option in the unlock dialog to switch to a "
-"different user account."
-msgstr ""
-"برای نمایش گزینه‌ای برای تعویض به حساب یک کاربر دیگر در محاورهٔ باز کردن قفل، این کلید را روی درست تنظیم کنید."
-
-#: ../data/mate-screensaver.schemas.in.h:14
-msgid ""
-"Set this to TRUE to offer an option in unlock dialog to logging out after a "
-"delay. The Delay is specified in the \"logout_delay\" key."
-msgstr ""
-"برای نمایش گزینه‌ای برای خروج با تأخیر از سیستم در محاورهٔ باز کردن قفل این را روی درست تنظیم کنید."
-"تأخیر در کلید «logout_delay» تعیین می‌شود."
-
-#: ../data/mate-screensaver.schemas.in.h:15
-msgid ""
-"The command that will be run, if the \"embedded_keyboard_enabled\" key is "
-"set to TRUE, to embed a keyboard widget into the window. This command should "
-"implement an XEMBED plug interface and output a window XID on the standard "
-"output."
-msgstr ""
-"فرمانی که در صورت تنظیم کلید «embedded_keyboard_enabled» روی درست، برای تعبیهٔ "
-"ویجت صفحه‌کلید در پنجره، اجرا خواهد شد. این فرمان باید یک واسط اتصال XEMBED را پیاده‌سازی"
-"کند و خروجی‌اش یک XID پنجره روی خروجی استاندارد باشد."
-
-#: ../data/mate-screensaver.schemas.in.h:16
-msgid ""
-"The command to invoke when the logout button is clicked. This command should "
-"simply log the user out without any interaction. This key has effect only if "
-"the \"logout_enable\" key is set to TRUE."
-msgstr ""
-"فرمانی که هنگام کلیک روی دکمهٔ خروج از سیستم فراخوانی می‌شود. این فرمان باید به سادگی کاربر را "
-"بدون هیچ تعاملی از سیستم خارج کند. این کلید زمانی تأثیرگذار است که کلید «ogout_enable»"
-" روی درست تنظیم شده باشد."
-
-#: ../data/mate-screensaver.schemas.in.h:17
-msgid ""
-"The number of minutes after screensaver activation before locking the screen."
-msgstr "تعداد دقایقی که محافظ صفحهٔ نمایش فعال است و پس از آن که صفحهٔ نمایش قفل می‌شود."
-
-#: ../data/mate-screensaver.schemas.in.h:18
-msgid ""
-"The number of minutes after the screensaver activation before a logout "
-"option will appear in unlock dialog. This key has effect only if the "
-"\"logout_enable\" key is set to TRUE."
-msgstr ""
-"تعداد دقایقی که محافظ صفحهٔ نمایش فعال است و پس از آن گزینه‌ای برای خروج از سیستم در"
-"محاورهٔ باز کردن قفل ظاهر می‌شود. این کلید زمانی تأثیرگذار خواهد بود که کلید «logout_enable» "
-"روی درست تنظیم شده باشد."
-
-#: ../data/mate-screensaver.schemas.in.h:19
-msgid ""
-"The number of minutes of inactivity before the session is considered idle."
-msgstr "تعداد دقایق بی‌کاری که نشست پس از آن بی‌کار فرض می‌شود."
-
-#: ../data/mate-screensaver.schemas.in.h:20
-msgid "The number of minutes to run before changing the screensaver theme."
-msgstr "تعداد دقایق بین تغییر تم محافظ صفحهٔ نمایش."
-
-#: ../data/mate-screensaver.schemas.in.h:21
-msgid ""
-"The selection mode used by screensaver. May be \"blank-only\" to enable the "
-"screensaver without using any theme on activation, \"single\" to enable "
-"screensaver using only one theme on activation (specified in \"themes\" "
-"key), and \"random\" to enable the screensaver using a random theme on "
-"activation."
-msgstr ""
-"حالت انتخابی که محافظ صفحهٔ نمایش استفاده می‌کند. مقادیر ممکن «blank-only» که در این صورت محافظ صفحهٔ "
-"نمایش بدون استفاده از هیچ تمی هنگام فعال‌سازی به کار می‌افتد، «single» که در این صورت محافظ صفحهٔ نمایش "
-"هنگام فعال‌سازی تنها  برای استفاده از یک تم (که در کلید «themes» مشخص شده است) به کار می‌افتد، و «random» که در این صورت "
-"محافظ صفحهٔ نمایش هنگام فعال‌سازی از یک تم تصادفی استفاده می‌کند."
-
-
-#: ../data/mate-screensaver.schemas.in.h:22
-msgid "Theme for lock dialog"
-msgstr "تم محاورهٔ قفل"
-
-#: ../data/mate-screensaver.schemas.in.h:23
-msgid "Theme to use for the lock dialog."
-msgstr "تمی که برای محاورهٔ قفل استفاده می‌شود."
-
-#: ../data/mate-screensaver.schemas.in.h:24
-msgid ""
-"This key specifies the list of themes to be used by the screensaver. It's "
-"ignored when \"mode\" key is \"blank-only\", should provide the theme name "
-"when \"mode\" is \"single\", and should provide a list of themes when \"mode"
-"\" is \"random\"."
-msgstr ""
-"این کلید فهرست تم‌هایی را که محافظ صفحهٔ نمایش استفاده می‌کند مشخص می‌کند. هر وقت که کلید «mode» "
-"روی «blank-only» تنظیم شده باشد نادیده گرفته می‌شود،‌ زمانی که کلید «mode» روی «single» تنظیم"
-" شده باشد نام تم مورد استفاده را ارائه می‌دهد، و زمانی که «mode» روی «random» تنظیم شده است فهرستی از تم‌ها ارائه می‌کند."
-
-#: ../data/mate-screensaver.schemas.in.h:25
-msgid "Time before activation"
-msgstr "زمان تا فعال‌سازی"
-
-#: ../data/mate-screensaver.schemas.in.h:26
-msgid "Time before locking"
-msgstr "زمان تا قفل کردن"
-
-#: ../data/mate-screensaver.schemas.in.h:27
-msgid "Time before logout option"
-msgstr "زمان تا نمایش گزینهٔ خروج از سیستم"
-
-#: ../data/mate-screensaver.schemas.in.h:28
-msgid "Time before theme change"
-msgstr "فاصلهٔ زمانی تغییر تم"
-
-#: ../data/lock-dialog-default.glade.h:2
-#, no-c-format
-msgid "<span size=\"small\">%U on %h</span>"
-msgstr "<span size=\"small\">%U روی %h</span>"
-
-#: ../data/lock-dialog-default.glade.h:4
+#: ../data/lock-dialog-default.ui.h:2
 #, no-c-format
 msgid "<span size=\"x-large\">%R</span>"
 msgstr "<span size=\"x-large\">%R</span>"
 
-#: ../data/lock-dialog-default.glade.h:5 ../src/mate-screensaver-dialog.c:172
-#: ../src/mate-screensaver-dialog.c:173
-msgid "Password:"
-msgstr "گذرواژه:"
+#: ../data/lock-dialog-default.ui.h:4
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U روی %h</span>"
 
-#: ../data/lock-dialog-default.glade.h:6 ../src/gs-lock-plug.c:1707
-msgid "S_witch to user:"
-msgstr "ت_عویض به کاربر:"
+#: ../data/lock-dialog-default.ui.h:5
+msgid "_Leave Message"
+msgstr ""
 
-#: ../data/lock-dialog-default.glade.h:7
-msgid "_Cancel"
-msgstr "ان_صراف"
+#: ../data/lock-dialog-default.ui.h:6
+msgid "_Switch User"
+msgstr ""
 
-#: ../data/lock-dialog-default.glade.h:8
+#: ../data/lock-dialog-default.ui.h:7
 msgid "_Log Out"
 msgstr "_خروج از سیستم"
 
-#: ../data/lock-dialog-default.glade.h:9
-msgid "_Switch User..."
-msgstr "_ت_عویض کاربر..."
+#: ../data/lock-dialog-default.ui.h:8
+msgid "_Cancel"
+msgstr "ان_صراف"
 
-#: ../data/lock-dialog-default.glade.h:10
-msgid "_Switch user..."
-msgstr "ت_عویض کاربر..."
-
-#: ../data/lock-dialog-default.glade.h:11 ../src/gs-lock-plug.c:1436
+#: ../data/lock-dialog-default.ui.h:9 ../src/gs-lock-plug.c:1524
 msgid "_Unlock"
 msgstr "_باز کردن قفل"
 
-#: ../savers/footlogo-floaters.desktop.in.in.h:1
-msgid "Bubbles the MATE foot logo around the screen"
-msgstr "حباب‌پراکنی از لوگوی پای گنوم در اطراف صفحهٔ نمایش"
-
-#: ../savers/footlogo-floaters.desktop.in.in.h:2
-msgid "Floating Feet"
-msgstr "پاهای شناور"
-
-#: ../savers/cosmos-slideshow.desktop.in.in.h:1
-msgid "Cosmos"
-msgstr "کیهان"
+#: ../data/lock-dialog-default.ui.h:11
+#, no-c-format
+msgid "<b>Leave a message for %R:</b>"
+msgstr ""
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "اسلایدهایی از تصاویر کیهان نمایش داده شود"
 
-#: ../savers/personal-slideshow.desktop.in.h:1
-msgid "Display a slideshow from your Pictures folder"
-msgstr "اسلایدهایی از پوشهٔ تصاویر شما نمایش داده شود"
+#: ../savers/footlogo-floaters.desktop.in.in.h:1
+msgid "Floating MATE"
+msgstr ""
 
-#: ../savers/personal-slideshow.desktop.in.h:2
+#: ../savers/footlogo-floaters.desktop.in.in.h:2
+msgid "Bubbles the MATE logo around the screen"
+msgstr ""
+
+#: ../savers/personal-slideshow.desktop.in.in.h:1
 msgid "Pictures folder"
 msgstr "پوشهٔ تصاویر"
 
-#: ../savers/popsquares.desktop.in.h:1
-msgid "A pop-art-ish grid of pulsing colors."
-msgstr "چهارخانه‌ای با رنگ‌های تپنده به سبک هنر پاپ."
+#: ../savers/personal-slideshow.desktop.in.in.h:2
+msgid "Display a slideshow from your Pictures folder"
+msgstr "اسلایدهایی از پوشهٔ تصاویر شما نمایش داده شود"
 
-#: ../savers/popsquares.desktop.in.h:2
+#: ../savers/popsquares.desktop.in.in.h:1
 msgid "Pop art squares"
 msgstr "مربع‌های پاپ"
 
-#: ../savers/floaters.c:1166
-msgid "show paths that images follow"
-msgstr "نمایش مسیرهایی که تصاویر طی می‌کنند"
+#: ../savers/popsquares.desktop.in.in.h:2
+msgid "A pop-art-ish grid of pulsing colors."
+msgstr "چهارخانه‌ای با رنگ‌های تپنده به سبک هنر پاپ."
 
-#: ../savers/floaters.c:1173
-msgid "occasionally rotate images as they move"
-msgstr "چرخاندن گه‌گاه تصاویر در حال حرکت"
-
-#: ../savers/floaters.c:1180
-msgid "print out frame rate and other statistics"
-msgstr "چاپ سرعت چارچوب و آمار دیگر"
-
-#: ../savers/floaters.c:1188
-msgid "the maximum number of images to keep on screen"
-msgstr "حداکثر تعداد تصاویری که روی صفحه می‌مانند"
-
-#. translators: this should be translated to be symbolic of a generic
-#. * number.  e.g, "the screen saver should keep N images on the screen"
-#.
-#: ../savers/floaters.c:1192
-msgid "N"
-msgstr "n"
-
-#: ../savers/floaters.c:1199
-msgid "the source image to use"
-msgstr "منبع تصویر مورد استفاده"
-
-#: ../savers/floaters.c:1206
-msgid "the initial size and position of window"
-msgstr "اندازه و موقعیت اولیهٔ پنجره"
-
-#. translators: this is an X geometry spec.  WIDTH, HEIGHT, X, and Y
-#. * can be translated, but the 'x' area indicator and '+' offset indicators
-#. * need to be untranslated and can't be rearranged.
-#.
-#: ../savers/floaters.c:1211
-msgid "WIDTHxHEIGHT+X+Y"
-msgstr "عرضxارتفاع+x+y"
-
-#. translators: the word "image" here
-#. * represents a command line argument
-#.
-#: ../savers/floaters.c:1229
-msgid "image - floats images around the screen"
-msgstr "image - تصاویر را اطراف صفحهٔ نمایش شناور می‌کند"
-
-#: ../savers/floaters.c:1239
+#: ../savers/popsquares.c:50 ../savers/floaters.c:1217
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s.  برای اطلاعات در مورد طرز استفاده --help را ببینید.\n"
 
-#: ../savers/floaters.c:1248
+#: ../savers/floaters.c:90
+msgid "Show paths that images follow"
+msgstr ""
+
+#: ../savers/floaters.c:95
+msgid "Occasionally rotate images as they move"
+msgstr ""
+
+#: ../savers/floaters.c:100
+msgid "Print out frame rate and other statistics"
+msgstr ""
+
+#: ../savers/floaters.c:105
+msgid "The maximum number of images to keep on screen"
+msgstr ""
+
+#: ../savers/floaters.c:105
+msgid "MAX_IMAGES"
+msgstr ""
+
+#: ../savers/floaters.c:110
+msgid "The initial size and position of window"
+msgstr ""
+
+#: ../savers/floaters.c:110
+msgid "WIDTHxHEIGHT+X+Y"
+msgstr "عرضxارتفاع+x+y"
+
+#: ../savers/floaters.c:115
+msgid "The source image to use"
+msgstr ""
+
+#. translators: the word "image" here
+#. * represents a command line argument
+#. 
+#: ../savers/floaters.c:1211
+msgid "image - floats images around the screen"
+msgstr "image - تصاویر را اطراف صفحهٔ نمایش شناور می‌کند"
+
+#: ../savers/floaters.c:1226
+#, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "باید یک تصویر مشخص کنید.  برای اطلاعات  در مورد استفاده --help را ببینید.\n"
 
-#: ../savers/slideshow.c:47
+#: ../savers/slideshow.c:55
 msgid "Location to get images from"
 msgstr "محل گرفتن تصاویر"
 
-#: ../savers/slideshow.c:47
+#: ../savers/slideshow.c:55
 msgid "PATH"
 msgstr "مسیر"
 
-#: ../src/cut-n-paste/fusa-display.c:119 ../src/cut-n-paste/fusa-user.c:150
-msgid "Manager"
-msgstr "مدیر"
-
-#: ../src/cut-n-paste/fusa-display.c:120
-msgid "The manager which owns this object."
-msgstr "مدیری که مالک این شیء است."
-
-#: ../src/cut-n-paste/fusa-display.c:127
-msgid "Name"
-msgstr "نام"
-
-#: ../src/cut-n-paste/fusa-display.c:128
-msgid "The name of the X11 display this object refers to."
-msgstr "نام صفحهٔ نمایش X11 که این شیء متعلق به آن است."
-
-#: ../src/cut-n-paste/fusa-display.c:134
-#: ../src/cut-n-paste/fusa-user-menu-item.c:163
-msgid "User"
-msgstr "کاربر"
-
-#: ../src/cut-n-paste/fusa-display.c:135
-msgid "The user currently logged in on this virtual terminal."
-msgstr "کاربری که در حال حاضر وارد این پایانهٔ مجازی شده است."
-
-#: ../src/cut-n-paste/fusa-display.c:141
-msgid "Console"
-msgstr "پیشانه"
-
-#: ../src/cut-n-paste/fusa-display.c:142
-msgid "The number of the virtual console this display can be found on, or %-1."
-msgstr "شمارهٔ پیشانهٔ مجازی‌ای که این نمایش روی آن پیدا می‌شود، یا %-1."
-
-#: ../src/cut-n-paste/fusa-display.c:148
-msgid "Nested"
-msgstr "تو در تو"
-
-#: ../src/cut-n-paste/fusa-display.c:149
-msgid "Whether or not this display is a windowed (Xnest) display."
-msgstr "این که این صفحهٔ نمایش پنجره‌دار (Xnest) است یا نه."
-
-#: ../src/cut-n-paste/fusa-manager.c:1453
-msgid "The display manager could not be contacted for unknown reasons."
-msgstr "تماس با مدیر نمایش به دلایل نامعلومی ممکن نیست."
-
-#: ../src/cut-n-paste/fusa-manager.c:1460
-msgid "The display manager is not running or too old."
-msgstr "مدیر نمایش در حال اجرا نیست یا خیلی قدیمی است."
-
-#: ../src/cut-n-paste/fusa-manager.c:1463
-msgid "The configured limit of flexible servers has been reached."
-msgstr "تعداد کارگزارهای انعطاف‌پذیر به حد نصاب پیکربندی شده رسید."
-
-#: ../src/cut-n-paste/fusa-manager.c:1466
-msgid "There was an unknown error starting X."
-msgstr "هنگام راه‌اندازی X خطای نامعلومی رخ داد."
-
-#: ../src/cut-n-paste/fusa-manager.c:1469
-msgid "The X server failed to finish starting."
-msgstr "پایان راه‌اندازی کارگزار X شکست خورد."
-
-#: ../src/cut-n-paste/fusa-manager.c:1472
-msgid "There are too many X sessions running."
-msgstr "تعداد نشست‌های در حال اجرای X خیلی زیاد است."
-
-#: ../src/cut-n-paste/fusa-manager.c:1475
-msgid "The nested X server (Xnest) cannot connect to your current X server."
-msgstr "کارگزار X تو در تو (Xnest) نمی‌تواند با کارگزار X فعلی شما ارتباط برقرار کند."
-
-#: ../src/cut-n-paste/fusa-manager.c:1478
-msgid "The X server in the MDM configuration could not be found."
-msgstr "کارگزار X پیکربندی MDM پیدا نشد."
-
-#: ../src/cut-n-paste/fusa-manager.c:1481 ../src/cut-n-paste/mdmcomm.c:492
-msgid ""
-"Trying to set an unknown logout action, or trying to set a logout action "
-"which is not available."
+#: ../savers/slideshow.c:59
+msgid "Color to use for images background"
 msgstr ""
- "کنش خروج از سیستمی که در حال تلاش برای تنظمیش هستید نامعلوم است یا موجود نیست."
 
-#: ../src/cut-n-paste/fusa-manager.c:1484 ../src/cut-n-paste/mdmcomm.c:495
-msgid "Virtual terminals not supported."
-msgstr "پایانه‌های مجازی پشتیبانی نمی‌شوند."
-
-#: ../src/cut-n-paste/fusa-manager.c:1487
-msgid "Invalid virtual terminal number."
-msgstr "تعداد پایانه‌های مجازی نامعتبر است."
-
-#: ../src/cut-n-paste/fusa-manager.c:1490 ../src/cut-n-paste/mdmcomm.c:499
-msgid "Trying to update an unsupported configuration key."
-msgstr "در حال تلاش برای به‌هنگام‌سازی یک کلید پیکربندی پشتیبانی نشده."
-
-#: ../src/cut-n-paste/fusa-manager.c:1493
-msgid "~/.Xauthority file badly configured or missing."
-msgstr "پروندهٔ ‎~/.Xauthority بد پیکربندی شده است یا وجود ندارد."
-
-#: ../src/cut-n-paste/fusa-manager.c:1496
-msgid "Too many messages were sent to the display manager, and it hung up."
-msgstr "تعداد پیغام‌های فرستاده شده برای مدیر نمایش خیلی زیاد بود و دیگر جواب ما را نمی‌دهد."
-
-#: ../src/cut-n-paste/fusa-manager.c:1500
-msgid "The display manager sent an unknown error message."
-msgstr "مدیر نمایش پیغام خطای نامعلومی فرستاده است."
-
-#: ../src/cut-n-paste/fusa-user-menu-item.c:164
-msgid "The user this menu item represents."
-msgstr "کاربری که این مورد منو نمایندهٔ اوست."
-
-#: ../src/cut-n-paste/fusa-user-menu-item.c:171
-msgid "Icon Size"
-msgstr "اندازهٔ شمایل"
-
-#: ../src/cut-n-paste/fusa-user-menu-item.c:172
-msgid "The size of the icon to use."
-msgstr "اندازهٔ شمایل مورد استفاده."
-
-#: ../src/cut-n-paste/fusa-user-menu-item.c:178
-msgid "Indicator Size"
-msgstr "اندازهٔ شاخص"
-
-#: ../src/cut-n-paste/fusa-user-menu-item.c:179
-msgid "Size of check indicator"
-msgstr "اندازهٔ شاخص نشان"
-
-#: ../src/cut-n-paste/fusa-user-menu-item.c:184
-msgid "Indicator Spacing"
-msgstr "فضای شاخص"
-
-#: ../src/cut-n-paste/fusa-user-menu-item.c:185
-msgid "Space between the username and the indicator"
-msgstr "فضای بین نام کاربری و شاخص"
-
-#: ../src/cut-n-paste/fusa-user.c:151
-msgid "The user manager object this user is controlled by."
-msgstr "شیٔ مدیر کاربری که این کاربر توسط آن کنترل می‌شود."
-
-#: ../src/cut-n-paste/fusa-utils.c:80
-msgid "Show Details"
-msgstr "نمایش جزئیات"
-
-#. markup
-#: ../src/cut-n-paste/mdmcomm.c:413
-msgid "MDM (The MATE Display Manager) is not running."
-msgstr "مدیر نمایش گنوم (MDM) در حال اجرا نیست."
-
-#: ../src/cut-n-paste/mdmcomm.c:416
-msgid ""
-"You might in fact be using a different display manager, such as KDM (KDE "
-"Display Manager) or xdm."
-msgstr "ممکن است در حال استفاده از مدیر نمایش دیگری مثلاً مدیر نمایش KDE (KDM) یا xdm باشید."
-
-#: ../src/cut-n-paste/mdmcomm.c:419
-msgid ""
-"If you still wish to use this feature, either start MDM yourself or ask your "
-"system administrator to start MDM."
+#: ../savers/slideshow.c:59
+msgid "\"#rrggbb\""
 msgstr ""
-"اگر هنوز می‌خواهید از این امکان استفاده کنید خودتان MDM را راه‌اندازی کنید یا از مدیر سیستمتان بخواهید MDM را راه‌اندازی کند."
 
-#. markup
-#: ../src/cut-n-paste/mdmcomm.c:441
-msgid "Cannot communicate with MDM (The MATE Display Manager)"
-msgstr "ارتباط با مدیر نمایش گنوم(MDM) ممکن نیست"
-
-#: ../src/cut-n-paste/mdmcomm.c:444
-msgid "Perhaps you have an old version of MDM running."
-msgstr "ممکن است یک نسخهٔ قدیمی MDM در حال اجرا باشد."
-
-#: ../src/cut-n-paste/mdmcomm.c:463 ../src/cut-n-paste/mdmcomm.c:466
-msgid "Cannot communicate with mdm, perhaps you have an old version running."
-msgstr "ارتباط با mdm ممکن نیست، احتمالاً نسخهٔ اجرا شده قدیمی است."
-
-#: ../src/cut-n-paste/mdmcomm.c:469
-msgid "The allowed limit of flexible X servers reached."
-msgstr "تعداد کارگزارهای انعطاف‌پذیر X ‌به حد نصاب مجاز رسید."
-
-#: ../src/cut-n-paste/mdmcomm.c:471
-msgid "There were errors trying to start the X server."
-msgstr "هنگام تلاش برای راه‌اندازی کارگزار X خطاهایی رخ داد." 
-
-#: ../src/cut-n-paste/mdmcomm.c:473
-msgid "The X server failed.  Perhaps it is not configured well."
-msgstr "کارگزار X شکست خورد. احتمالاً خوب پیکربندی نشده است."
-
-#: ../src/cut-n-paste/mdmcomm.c:476
-msgid "Too many X sessions running."
-msgstr "نشست‌های X در حال اجرا خیلی زیاد است."
-
-#: ../src/cut-n-paste/mdmcomm.c:478
-msgid ""
-"The nested X server (Xnest) cannot connect to your current X server.  You "
-"may be missing an X authorization file."
+#: ../savers/slideshow.c:63
+msgid "Do not randomize pictures from location"
 msgstr ""
-"کارگزار X تو در تو (Xnest) نمی‌تواند با کارگزار X فعلی شما ارتباط برقرار کند. شاید یک پروندهٔ تأیید هویت X روی سیستمتان وجود ندارد."
 
-#: ../src/cut-n-paste/mdmcomm.c:483
-msgid ""
-"The nested X server (Xnest) is not available, or mdm is badly configured.\n"
-"Please install the Xnest package in order to use the nested login."
+#: ../savers/slideshow.c:67
+msgid "Do not try to stretch images on screen"
 msgstr ""
-"کارگزار X تو در تو (Xnest) موجود نیست، یا مدیر نمایش گنوم بد پیکربندی شده است.\n"
-"لطفاً بستهٔ Xnest را نصب کنید تا بتوانید از ورود تو در تو به سیستم استفاده کنید."
 
-#: ../src/cut-n-paste/mdmcomm.c:488
-msgid ""
-"The X server is not available, it is likely that mdm is badly configured."
-msgstr "کارگزار X موجود نیست، ممکن است mdm بد پیکربندی شده باشد."
+#: ../src/copy-theme-dialog.c:212
+msgid "Copying files"
+msgstr "در حال نسخه‌برداری از پرونده‌ها"
 
-#: ../src/cut-n-paste/mdmcomm.c:497
-msgid "Trying to change to an invalid virtual terminal number."
-msgstr "تعداد پایانه‌های مجازی‌ای که می‌خواهید تنظیم کنید نامعتبر است."
+#: ../src/copy-theme-dialog.c:230
+msgid "From:"
+msgstr "از:"
 
-#: ../src/cut-n-paste/mdmcomm.c:501
-msgid ""
-"You do not seem to have authentication needed be for this operation.  "
-"Perhaps your .Xauthority file is not set up correctly."
+#: ../src/copy-theme-dialog.c:234
+msgid "To:"
+msgstr "به:"
+
+#: ../src/copy-theme-dialog.c:254
+msgid "Copying themes"
 msgstr ""
-"به نظر می‌رسد شما تأیید هویت لازم برای این عملیات را ندارید. ممکن است پروندهٔ ‎.Xauthority "
-"درست برپاسازی نشده باشد."
 
-#: ../src/cut-n-paste/mdmcomm.c:505
-msgid "Too many messages were sent to mdm and it hung upon us."
-msgstr "پیغام‌های زیادی برای mdm فرستاده شد و دیگر جواب نمی‌دهد."
+#: ../src/copy-theme-dialog.c:298
+msgid "Invalid screensaver theme"
+msgstr "تم محافظ صفحهٔ نمایش نامعتبر"
 
-#: ../src/cut-n-paste/mdmcomm.c:508
-msgid "Unknown error occurred."
-msgstr "خطای نامعلومی رخ داد."
+#: ../src/copy-theme-dialog.c:301
+#, c-format
+msgid "%s does not appear to be a valid screensaver theme."
+msgstr ""
 
-#: ../src/file-transfer-dialog.c:94
+#: ../src/copy-theme-dialog.c:481
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "در حال نسخه‌برداری پروندهٔ: %Iu از %Iu"
 
-#: ../src/file-transfer-dialog.c:122
-#, c-format
-msgid "Copying '%s'"
-msgstr "در حال نسخه‌برداری از «%s»"
-
-#: ../src/file-transfer-dialog.c:193
-msgid "From URI"
-msgstr "از نشانی اینترنتی"
-
-#: ../src/file-transfer-dialog.c:194
-msgid "URI currently transferring from"
-msgstr "نشانی در حال حاضر از اینجا می‌آید"
-
-#: ../src/file-transfer-dialog.c:201
-msgid "To URI"
-msgstr "به نشانی اینترنتی"
-
-#: ../src/file-transfer-dialog.c:202
-msgid "URI currently transferring to"
-msgstr "نشانی در حال حاضر به اینجا می‌رود"
-
-#: ../src/file-transfer-dialog.c:209
-msgid "Fraction completed"
-msgstr ""
-
-#: ../src/file-transfer-dialog.c:210
-msgid "Fraction of transfer currently completed"
-msgstr ""
-
-#: ../src/file-transfer-dialog.c:217
-msgid "Current URI index"
-msgstr "نمایهٔ نشانی اینترنتی فعلی"
-
-#: ../src/file-transfer-dialog.c:218
-msgid "Current URI index - starts from 1"
-msgstr "نمایهٔ نشانی اینترنتی فعلی ـ از ۱ شروع می‌شود"
-
-#: ../src/file-transfer-dialog.c:225
-msgid "Total URIs"
-msgstr "مجموع نشانی‌های اینترنتی"
-
-#: ../src/file-transfer-dialog.c:226
-msgid "Total number of URIs"
-msgstr "تعداد کل نشانی‌های اینترنتی"
-
-#: ../src/file-transfer-dialog.c:327 ../src/file-transfer-dialog.c:369
-msgid "Copying files"
-msgstr "در حال نسخه‌برداری از پرونده‌ها"
-
-#: ../src/file-transfer-dialog.c:345
-msgid "From:"
-msgstr "از:"
-
-#: ../src/file-transfer-dialog.c:349
-msgid "To:"
-msgstr "به:"
-
-#: ../src/file-transfer-dialog.c:448
-msgid "Connecting..."
-msgstr "در حال اتصال..."
-
-#: ../src/mate-screensaver-command.c:61
+#: ../src/mate-screensaver-command.c:64
 msgid "Causes the screensaver to exit gracefully"
 msgstr "باعث می‌شود محافظ صفحهٔ نمایش به آرامی خارج شود"
 
-#: ../src/mate-screensaver-command.c:63
+#: ../src/mate-screensaver-command.c:68
 msgid "Query the state of the screensaver"
 msgstr "پرس‌وجو از وضعیت محافظ صفحهٔ نمایش"
 
-#: ../src/mate-screensaver-command.c:65
+#: ../src/mate-screensaver-command.c:72
+msgid "Query the length of time the screensaver has been active"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr "به فراروند در حال اجرای محافظ صفحهٔ نمایش خبر می‌دهد که صفحهٔ نمایش را بلافاصله قفل کند"
 
-#: ../src/mate-screensaver-command.c:67
+#: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr "اگر محافظ صفحهٔ نمایش فعال است گرافیک در حال نمایش تعویض شود"
 
-#: ../src/mate-screensaver-command.c:69
+#: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
 msgstr "محافظ صفحهٔ نمایش روشن شود (صفحهٔ نمایش خالی شود)"
 
-#: ../src/mate-screensaver-command.c:71
+#: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr "اگر محافظ صفحهٔ نمایش فعال است، غیر فعال شود. (صفحهٔ نمایش از خالی بودن درآید)"
 
-#: ../src/mate-screensaver-command.c:73
+#: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr ""
 
-#: ../src/mate-screensaver-command.c:75
+#: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
 msgstr "از فعال شدن محافظ صفحهٔ نمایش ممانعت شود. هنگام ممانعت، فرمان مسدود می‌شود."
 
-#: ../src/mate-screensaver-command.c:77
+#: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
 msgstr "برنامه‌ای که از فعالیت محافظ صفحهٔ نمایش ممانعت می‌کند"
 
-#: ../src/mate-screensaver-command.c:79
+#: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
 msgstr "دلیل ممانعت از اجرای محافظ صفحهٔ نمایش"
 
-#: ../src/mate-screensaver-command.c:81 ../src/mate-screensaver-dialog.c:54
-#: ../src/mate-screensaver.c:56
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:57
+#: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "نسخهٔ این برنامه"
 
-#: ../src/mate-screensaver-command.c:246
+#: ../src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr "محافظ صفحهٔ نمایش %s است\n"
 
-#: ../src/mate-screensaver-command.c:246
+#: ../src/mate-screensaver-command.c:357
 msgid "active"
 msgstr "فعال"
 
-#: ../src/mate-screensaver-command.c:246
+#: ../src/mate-screensaver-command.c:357
 msgid "inactive"
 msgstr "غیرفعال"
 
-#: ../src/mate-screensaver-dialog.c:52
+#: ../src/mate-screensaver-command.c:373
+#, c-format
+msgid "The screensaver is not inhibited\n"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:381
+#, c-format
+msgid "The screensaver is being inhibited by:\n"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:416
+#, c-format
+msgid "The screensaver has been active for %d seconds.\n"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:422
+#, c-format
+msgid "The screensaver is not currently active.\n"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:56
 msgid "Show debugging output"
 msgstr "نمایش خروجی اشکال‌زدایی"
 
-#: ../src/mate-screensaver-dialog.c:56
+#: ../src/mate-screensaver-dialog.c:58
 msgid "Show the logout button"
 msgstr "نمایش دکمهٔ خروج از سیستم"
 
-#: ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver-dialog.c:59
 msgid "Command to invoke from the logout button"
 msgstr "فرمانی که از دکمهٔ خروج از سیستم فراخوانی می‌شود"
 
@@ -730,120 +350,129 @@ msgstr "فرمانی که از دکمهٔ خروج از سیستم فراخوا�
 msgid "Show the switch user button"
 msgstr "نمایش دکمهٔ تعویض کاربر"
 
+#: ../src/mate-screensaver-dialog.c:61
+msgid "Message to show in the dialog"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:61 ../src/mate-screensaver-dialog.c:62
+msgid "MESSAGE"
+msgstr ""
+
+#: ../src/mate-screensaver-dialog.c:62
+msgid "Not used"
+msgstr ""
+
 #. login: is whacked always translate to Username:
-#: ../src/mate-screensaver-dialog.c:169 ../src/mate-screensaver-dialog.c:170
-#: ../src/mate-screensaver-dialog.c:171 ../src/gs-auth-pam.c:380
+#: ../src/mate-screensaver-dialog.c:164 ../src/mate-screensaver-dialog.c:165
+#: ../src/mate-screensaver-dialog.c:166 ../src/gs-auth-pam.c:756
 msgid "Username:"
 msgstr "نام کاربری:"
 
-#: ../src/mate-screensaver-dialog.c:174
+#: ../src/mate-screensaver-dialog.c:167 ../src/mate-screensaver-dialog.c:168
+#: ../src/gs-auth-pam.c:171
+msgid "Password:"
+msgstr "گذرواژه:"
+
+#: ../src/mate-screensaver-dialog.c:169
 msgid "You are required to change your password immediately (password aged)"
 msgstr "لازم است گذرواژه‌تان را بلافاصله تغییر دهید (گذرواژه قدیمی است)"
 
-#: ../src/mate-screensaver-dialog.c:175
+#: ../src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (root enforced)"
 msgstr "لازم است گذرواژه‌تان را بلافاصله تغییر دهید (اجبار مدیر)"
 
-#: ../src/mate-screensaver-dialog.c:176
+#: ../src/mate-screensaver-dialog.c:171
 msgid "Your account has expired; please contact your system administrator"
 msgstr "حساب شما منقضی شده است، لطفاً با مدیر سیستم تماس بگیرید"
 
-#: ../src/mate-screensaver-dialog.c:177
+#: ../src/mate-screensaver-dialog.c:172
 msgid "No password supplied"
 msgstr "گذرواژه‌ای داده نشد"
 
-#: ../src/mate-screensaver-dialog.c:178
+#: ../src/mate-screensaver-dialog.c:173
 msgid "Password unchanged"
 msgstr "گذرواژه تغییر نکرد"
 
-#: ../src/mate-screensaver-dialog.c:179
+#: ../src/mate-screensaver-dialog.c:174
 msgid "Can not get username"
 msgstr "گرفتن نام کاربر ممکن نیست"
 
-#: ../src/mate-screensaver-dialog.c:180
+#: ../src/mate-screensaver-dialog.c:175
 msgid "Retype new UNIX password:"
 msgstr "گذرواژهٔ یونیکسی جدید را دوباره وارد کنید:"
 
-#: ../src/mate-screensaver-dialog.c:181
+#: ../src/mate-screensaver-dialog.c:176
 msgid "Enter new UNIX password:"
 msgstr "گذرواژهٔ یونیکس جدید را وارد کنید:"
 
-#: ../src/mate-screensaver-dialog.c:182
+#: ../src/mate-screensaver-dialog.c:177
 msgid "(current) UNIX password:"
 msgstr "گذرواژهٔ یونیکس (فعلی):"
 
-#: ../src/mate-screensaver-dialog.c:183
+#: ../src/mate-screensaver-dialog.c:178
 msgid "Error while changing NIS password."
 msgstr "خطا هنگام تغییر گذرواژهٔ NIS"
 
-#: ../src/mate-screensaver-dialog.c:184
+#: ../src/mate-screensaver-dialog.c:179
 msgid "You must choose a longer password"
 msgstr "باید گذرواژهٔ بلندتری انتخاب کنید"
 
-#: ../src/mate-screensaver-dialog.c:185
+#: ../src/mate-screensaver-dialog.c:180
 msgid "Password has been already used. Choose another."
 msgstr "گذرواژه قبلاً استفاده شده است. از گذرواژهٔ دیگری استفاده کنید."
 
-#: ../src/mate-screensaver-dialog.c:186
+#: ../src/mate-screensaver-dialog.c:181
 msgid "You must wait longer to change your password"
 msgstr "برای تغییر گذرواژه‌تان باید بیشتر صبر کنید"
 
-#: ../src/mate-screensaver-dialog.c:187
+#: ../src/mate-screensaver-dialog.c:182
 msgid "Sorry, passwords do not match"
 msgstr "ببخشید، گذرواژه‌ها مطابقت ندارند"
 
-#: ../src/mate-screensaver-dialog.c:250
+#: ../src/mate-screensaver-dialog.c:253
 msgid "Checking..."
 msgstr "در حال بررسی..."
 
-#: ../src/mate-screensaver-dialog.c:289 ../src/gs-auth-pam.c:320
+#: ../src/mate-screensaver-dialog.c:299 ../src/gs-auth-pam.c:495
 msgid "Authentication failed."
 msgstr "تأیید هویت شکست خورد."
 
-#: ../src/mate-screensaver-preferences.c:447
+#: ../src/mate-screensaver-preferences.c:476
 msgid "Blank screen"
 msgstr "صفحهٔ نمایش خالی"
 
-#: ../src/mate-screensaver-preferences.c:453
+#: ../src/mate-screensaver-preferences.c:482
 msgid "Random"
 msgstr "تصادفی"
 
-#: ../src/mate-screensaver-preferences.c:813
-msgid "Invalid screensaver theme"
-msgstr "تم محافظ صفحهٔ نمایش نامعتبر"
-
-#: ../src/mate-screensaver-preferences.c:816
-msgid "This file does not appear to be a valid screensaver theme."
-msgstr "این پرونده تم محافظ صفحهٔ نمایش معتبری به نظر نمی‌رسد."
-
-#: ../src/mate-screensaver-preferences.c:943
+#: ../src/mate-screensaver-preferences.c:968
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%Id ساعت"
 
-#: ../src/mate-screensaver-preferences.c:946
+#: ../src/mate-screensaver-preferences.c:971
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%Id دقیقه"
 
-#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:974
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] "%Id ثانیه"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:955
+#: ../src/mate-screensaver-preferences.c:982
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:958
-#: ../src/mate-screensaver-preferences.c:966
+#: ../src/mate-screensaver-preferences.c:987
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
@@ -851,88 +480,93 @@ msgstr "%s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:961
-#: ../src/mate-screensaver-preferences.c:969
-#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:992
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1011
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:988
+#: ../src/mate-screensaver-preferences.c:1026
+#, c-format
 msgid "Never"
 msgstr "هرگز"
 
-#: ../src/mate-screensaver-preferences.c:1373
+#: ../src/mate-screensaver-preferences.c:1451
 msgid "Could not load the main interface"
 msgstr "نمی‌توان واسط اصلی را بار  کرد"
 
-#: ../src/mate-screensaver-preferences.c:1375
+#: ../src/mate-screensaver-preferences.c:1453
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "لطفاً بررسی کنید که محافظ صفحهٔ نمایش درست نصب شده باشد"
 
-#: ../src/mate-screensaver.c:57
+#: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
 msgstr "شبح نشود"
 
-#: ../src/mate-screensaver.c:58
+#: ../src/mate-screensaver.c:57
 msgid "Enable debugging code"
 msgstr "اشکال‌زدایی کُد به کار انداخته شود"
 
-#: ../src/gs-auth-pam.c:262
+#: ../src/mate-screensaver.desktop.in.in.h:2
+msgid "Launch screen saver and locker program"
+msgstr ""
+
+#: ../src/gs-auth-pam.c:425
 #, c-format
 msgid "Unable to establish service %s: %s\n"
 msgstr "بر پا کردن سرویس %s ممکن نیست: %s\n"
 
-#: ../src/gs-auth-pam.c:288
+#: ../src/gs-auth-pam.c:455
 #, c-format
 msgid "Can't set PAM_TTY=%s"
 msgstr "نمی‌توان PAM_TTY=%s را تنظیم کرد"
 
-#: ../src/gs-auth-pam.c:318
+#: ../src/gs-auth-pam.c:491
 msgid "Incorrect password."
 msgstr "گذرواژه نادرست است"
 
-#: ../src/gs-auth-pam.c:334
+#: ../src/gs-auth-pam.c:511
 msgid "Not permitted to gain access at this time."
 msgstr "اجازهٔ دسترسی این بار داده نشده است."
 
-#: ../src/gs-auth-pam.c:340
+#: ../src/gs-auth-pam.c:519
 msgid "No longer permitted to access the system."
 msgstr "دیگر اجازهٔ دسترسی به سیستم را ندارد."
 
-#: ../src/gs-listener-dbus.c:1631
+#: ../src/gs-listener-dbus.c:2219
 msgid "failed to register with the message bus"
 msgstr "ثبت نام در گذرگاه پیغام شکست خورد"
 
-#: ../src/gs-listener-dbus.c:1641
+#: ../src/gs-listener-dbus.c:2230
 msgid "not connected to the message bus"
 msgstr "به گذرگاه پیغام متصل نیست"
 
-#: ../src/gs-listener-dbus.c:1650
+#: ../src/gs-listener-dbus.c:2240 ../src/gs-listener-dbus.c:2272
 msgid "screensaver already running in this session"
 msgstr "محافظ صفحهٔ نمایش از قبل در این نشست در حال اجرا است"
 
-#: ../src/gs-lock-plug.c:336
+#: ../src/gs-lock-plug.c:355
 msgid "Time has expired."
 msgstr "زمان منقضی شد."
 
-#: ../src/gs-lock-plug.c:366
+#: ../src/gs-lock-plug.c:386
 msgid "You have the Caps Lock key on."
 msgstr "کلید قفل تبدیل روشن است."
 
-#: ../src/gs-lock-plug.c:1418 ../src/gs-lock-plug.c:1455
+#: ../src/gs-lock-plug.c:1504
 msgid "S_witch User..."
 msgstr "ت_عویض کاربر..."
 
-#: ../src/gs-lock-plug.c:1426
+#: ../src/gs-lock-plug.c:1513
 msgid "Log _Out"
 msgstr "_خروج از سیستم"
 
-#: ../src/gs-lock-plug.c:1617
+#. To translators: This expands to USERNAME on HOSTNAME
+#: ../src/gs-lock-plug.c:1705
 msgid "%U on %h"
 msgstr "%U روی %h"
 
-#: ../src/gs-lock-plug.c:1631
+#: ../src/gs-lock-plug.c:1719
 msgid "_Password:"
 msgstr "_گذرواژه:"
-
