@@ -1285,6 +1285,7 @@ main (int   argc,
 	style = drawing_area->style;
 	state = (GtkStateType) 0;
 	while (state < (GtkStateType) G_N_ELEMENTS (style->bg))
+	{
 		gtk_widget_modify_bg (drawing_area, state, &style->mid[state]);
 		state++;
 	}
