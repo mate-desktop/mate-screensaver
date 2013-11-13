@@ -6,6 +6,7 @@ AC_INIT([mate-screensaver],
         [http://www.mate-desktop.org/])
 
 AC_CONFIG_SRCDIR(src/mate-screensaver.c)
+AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-xz])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
@@ -224,7 +225,7 @@ dnl ---------------------------------------------------------------------------
 
 # Like AC_CHECK_HEADER, but it uses the already-computed -I directories.
 #
-AC_DEFUN(AC_CHECK_X_HEADER, [
+AC_DEFUN([AC_CHECK_X_HEADER], [
   ac_save_CPPFLAGS="$CPPFLAGS"
   if test \! -z "$includedir" ; then 
     CPPFLAGS="$CPPFLAGS -I$includedir"
@@ -235,7 +236,7 @@ AC_DEFUN(AC_CHECK_X_HEADER, [
 
 # Like AC_TRY_COMPILE, but it uses the already-computed -I directories.
 #
-AC_DEFUN(AC_TRY_X_COMPILE, [
+AC_DEFUN([AC_TRY_X_COMPILE], [
   ac_save_CPPFLAGS="$CPPFLAGS"
   if test \! -z "$includedir" ; then 
     CPPFLAGS="$CPPFLAGS -I$includedir"
@@ -248,7 +249,7 @@ AC_DEFUN(AC_TRY_X_COMPILE, [
 # Like AC_CHECK_LIB, but it uses the already-computed -I and -L directories.
 # Use this sparingly; it probably doesn't work very well on X programs.
 #
-AC_DEFUN(AC_CHECK_X_LIB, [
+AC_DEFUN([AC_CHECK_X_LIB], [
   ac_save_CPPFLAGS="$CPPFLAGS"
   ac_save_LDFLAGS="$LDFLAGS"
 #  ac_save_LIBS="$LIBS"
@@ -287,7 +288,7 @@ AC_DEFUN(AC_CHECK_X_LIB, [
 # /DIR/include and /DIR/lib exist, and adds them to $X_CFLAGS and $X_LIBS
 # as appropriate.
 #
-AC_DEFUN(HANDLE_X_PATH_ARG, [
+AC_DEFUN([HANDLE_X_PATH_ARG], [
    case "$[$1]" in
     yes) ;;
     no)  ;;
@@ -547,7 +548,7 @@ dnl ---------------------------------------------------------------------------
 dnl - Check for GL
 dnl ---------------------------------------------------------------------------
 
-AC_ARG_WITH(gl, [  --with-libgl	  build with GL support])
+AC_ARG_WITH(libgl, [  --with-libgl	  build with GL support])
 have_libgl=no
 GL_LIBS=""
 
