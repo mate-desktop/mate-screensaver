@@ -93,6 +93,8 @@ struct GSLockPlugPrivate
 
 	GtkWidget   *notebook;
 	GtkWidget   *auth_face_image;
+	GtkWidget   *auth_time_label;
+	GtkWidget   *auth_date_label;
 	GtkWidget   *auth_realname_label;
 	GtkWidget   *auth_username_label;
 	GtkWidget   *auth_prompt_label;
@@ -124,6 +126,7 @@ struct GSLockPlugPrivate
 
 	guint        timeout;
 
+	guint        datetime_timeout_id;
 	guint        cancel_timeout_id;
 	guint        auth_check_idle_id;
 	guint        response_idle_id;
@@ -288,6 +291,35 @@ set_status_text (GSLockPlug *plug,
 	}
 }
 
+static void
+date_time_update (GSLockPlug *plug)
+{
+	GDateTime *datetime;
+	gchar *time;
+	gchar *date;
+	gchar *str;
+
+	datetime = g_date_time_new_now_local ();
+	/* Translators: Time format, see https://developer.gnome.org/glib/stable/glib-GDateTime.html#g-date-time-format */
+	time = g_date_time_format (datetime, _("%l:%M %p"));
+	/* Translators: Date format, see https://developer.gnome.org/glib/stable/glib-GDateTime.html#g-date-time-format */
+	date = g_date_time_format (datetime, _("%A, %B %e"));
+
+	str = g_strdup_printf ("<span size=\"xx-large\" weight=\"ultrabold\">%s</span>", time);
+	gtk_label_set_text (GTK_LABEL (plug->priv->auth_time_label), str);
+	gtk_label_set_use_markup (GTK_LABEL (plug->priv->auth_time_label), TRUE);
+	g_free (str);
+
+	str = g_strdup_printf ("<span size=\"large\">%s</span>", date);
+	gtk_label_set_markup (GTK_LABEL (plug->priv->auth_date_label), str);
+	gtk_label_set_use_markup (GTK_LABEL (plug->priv->auth_date_label), TRUE);
+	g_free (str);
+
+	g_free (time);
+	g_free (date);
+	g_date_time_unref (datetime);
+}
+
 void
 gs_lock_plug_set_sensitive (GSLockPlug *plug,
                             gboolean    sensitive)
@@ -296,6 +328,16 @@ gs_lock_plug_set_sensitive (GSLockPlug *plug,
 
 	gtk_widget_set_sensitive (plug->priv->auth_prompt_entry, sensitive);
 	gtk_widget_set_sensitive (plug->priv->auth_action_area, sensitive);
+}
+
+static void
+remove_datetime_timeout (GSLockPlug *plug)
+{
+	if (plug->priv->datetime_timeout_id > 0)
+	{
+		g_source_remove (plug->priv->datetime_timeout_id);
+		plug->priv->datetime_timeout_id = 0;
+	}
 }
 
 static void
@@ -1898,6 +1940,23 @@ create_page_one (GSLockPlug *plug)
 	vbox = gtk_vbox_new (FALSE, 12);
 	gtk_container_add (GTK_CONTAINER (align), vbox);
 
+	vbox2 = gtk_vbox_new (FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (vbox), vbox2, FALSE, FALSE, 0);
+
+	str = g_strdup ("<span size=\"xx-large\" weight=\"ultrabold\">%s</span>");
+	plug->priv->auth_time_label = gtk_label_new (str);
+	g_free (str);
+	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_time_label), 0.5, 0.5);
+	gtk_label_set_use_markup (GTK_LABEL (plug->priv->auth_time_label), TRUE);
+	gtk_box_pack_start (GTK_BOX (vbox2), plug->priv->auth_time_label, FALSE, FALSE, 0);
+
+	str = g_strdup ("<span size=\"large\">%s</span>");
+	plug->priv->auth_date_label = gtk_label_new (str);
+	g_free (str);
+	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_date_label), 0.5, 0.5);
+	gtk_label_set_use_markup (GTK_LABEL (plug->priv->auth_date_label), TRUE);
+	gtk_box_pack_start (GTK_BOX (vbox2), plug->priv->auth_date_label, FALSE, FALSE, 0);
+
 	plug->priv->auth_face_image = gtk_image_new ();
 	gtk_box_pack_start (GTK_BOX (vbox), plug->priv->auth_face_image, TRUE, TRUE, 0);
 	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_face_image), 0.5, 1.0);
@@ -2063,6 +2122,8 @@ load_theme (GSLockPlug *plug)
 
 	plug->priv->auth_face_image = GTK_WIDGET (gtk_builder_get_object(builder, "auth-face-image"));
 	plug->priv->auth_action_area = GTK_WIDGET (gtk_builder_get_object(builder, "auth-action-area"));
+	plug->priv->auth_time_label = GTK_WIDGET (gtk_builder_get_object(builder, "auth-time-label"));
+	plug->priv->auth_date_label = GTK_WIDGET (gtk_builder_get_object(builder, "auth-date-label"));
 	plug->priv->auth_realname_label = GTK_WIDGET (gtk_builder_get_object(builder, "auth-realname-label"));
 	plug->priv->auth_username_label = GTK_WIDGET (gtk_builder_get_object(builder, "auth-username-label"));
 	plug->priv->auth_prompt_label = GTK_WIDGET (gtk_builder_get_object(builder, "auth-prompt-label"));
@@ -2096,6 +2157,7 @@ load_theme (GSLockPlug *plug)
 		gtk_widget_set_no_show_all (plug->priv->auth_note_button, TRUE);
 	}
 
+	date_time_update (plug);
 	gtk_widget_show_all (lock_dialog);
 
 	plug->priv->status_message_label = GTK_WIDGET (gtk_builder_get_object(builder, "status-message-label"));
@@ -2158,8 +2220,10 @@ gs_lock_plug_init (GSLockPlug *plug)
 
 		create_page_one (plug);
 
+		date_time_update (plug);
 		gtk_widget_show_all (plug->priv->vbox);
 	}
+	plug->priv->datetime_timeout_id = g_timeout_add_seconds (1, (GSourceFunc) date_time_update, plug);
 
 	if (plug->priv->note_text_view != NULL)
 	{
@@ -2324,6 +2388,7 @@ gs_lock_plug_finalize (GObject *object)
 
 	remove_response_idle (plug);
 	remove_cancel_timeout (plug);
+	remove_datetime_timeout (plug);
 #ifdef WITH_LIBNOTIFY
 	notify_uninit ();
 #endif
