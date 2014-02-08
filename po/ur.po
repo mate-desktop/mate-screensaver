@@ -6,10 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
-"Report-Msgid-Bugs-To: https://github.com/mate-desktop/\n"
-"POT-Creation-Date: 2012-07-12 15:03+0200\n"
-"PO-Revision-Date: 2013-06-03 11:32+0000\n"
-"Last-Translator: mauron\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-28 10:23+0100\n"
+"PO-Revision-Date: 2014-01-28 09:24+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
 "Language-Team: Urdu (http://www.transifex.com/projects/p/MATE/language/ur/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,200 +71,8 @@ msgid "Screensavers"
 msgstr "سکرین سیور"
 
 #: ../data/mate-screensaver.directory.in.h:2
-#: ../data/mate-screensaver.schemas.in.h:7
 msgid "Screensaver themes"
 msgstr "سکرین سیور کی تھیم"
-
-#: ../data/mate-screensaver.schemas.in.h:1
-msgid "Activate when idle"
-msgstr "جب ساکن ہو فعال کریں"
-
-#: ../data/mate-screensaver.schemas.in.h:2
-msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:3
-msgid "Lock on activation"
-msgstr "فعالیت پر مقفل کریں"
-
-#: ../data/mate-screensaver.schemas.in.h:4
-msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:5
-msgid "Screensaver theme selection mode"
-msgstr "سکرین سیور تھیم انتخاب اسلوب"
-
-#: ../data/mate-screensaver.schemas.in.h:6
-msgid ""
-"The selection mode used by screensaver. May be \"blank-only\" to enable the "
-"screensaver without using any theme on activation, \"single\" to enable "
-"screensaver using only one theme on activation (specified in \"themes\" "
-"key), and \"random\" to enable the screensaver using a random theme on "
-"activation."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:8
-msgid ""
-"This key specifies the list of themes to be used by the screensaver. It's "
-"ignored when \"mode\" key is \"blank-only\", should provide the theme name "
-"when \"mode\" is \"single\", and should provide a list of themes when "
-"\"mode\" is \"random\"."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:9
-msgid "Time before session is considered idle"
-msgstr "نشست کو ساکن تصور کرنے سے پہلے وقت"
-
-#: ../data/mate-screensaver.schemas.in.h:10
-msgid ""
-"The number of minutes of inactivity before the session is considered idle."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:11
-msgid "Time before power-management baseline"
-msgstr "توانائی ادارت بیس لائن سے پہلے وقت"
-
-#: ../data/mate-screensaver.schemas.in.h:12
-msgid ""
-"The number of seconds of inactivity before signalling to power-management. "
-"This key is set and maintained by the session power-management agent."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:13
-msgid "Time before theme change"
-msgstr "تھیم کی تبدیلی سے پہلے وقت"
-
-#: ../data/mate-screensaver.schemas.in.h:14
-msgid "The number of minutes to run before changing the screensaver theme."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:15
-msgid "Time before locking"
-msgstr "مقفل کرنے سے پہلے وقت"
-
-#: ../data/mate-screensaver.schemas.in.h:16
-msgid ""
-"The number of minutes after screensaver activation before locking the "
-"screen."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:17
-msgid "Allow embedding a keyboard into the window"
-msgstr "دریچے میں کیبورڈ امبیڈ کرنے کی اجازت دیں"
-
-#: ../data/mate-screensaver.schemas.in.h:18
-msgid ""
-"Set this to TRUE to allow embedding a keyboard into the window when trying "
-"to unlock. The \"keyboard_command\" key must be set with the appropriate "
-"command."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:19
-msgid "Embedded keyboard command"
-msgstr "کیبورڈ کی کمانڈ کو امبیڈ کریں"
-
-#: ../data/mate-screensaver.schemas.in.h:20
-msgid ""
-"The command that will be run, if the \"embedded_keyboard_enabled\" key is "
-"set to TRUE, to embed a keyboard widget into the window. This command should"
-" implement an XEMBED plug interface and output a window XID on the standard "
-"output."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:21
-msgid "Allow logout"
-msgstr "لاگ آؤٹ کی اجازت دیں"
-
-#: ../data/mate-screensaver.schemas.in.h:22
-msgid ""
-"Set this to TRUE to offer an option in unlock dialog to logging out after a "
-"delay. The Delay is specified in the \"logout_delay\" key."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:23
-msgid "Time before logout option"
-msgstr "لاگ آؤٹ کے اختیار سے پہلے وقت"
-
-#: ../data/mate-screensaver.schemas.in.h:24
-msgid ""
-"The number of minutes after the screensaver activation before a logout "
-"option will appear in unlock dialog. This key has effect only if the "
-"\"logout_enable\" key is set to TRUE."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:25
-msgid "Logout command"
-msgstr "لاگ آؤٹ کی کمانڈ"
-
-#: ../data/mate-screensaver.schemas.in.h:26
-msgid ""
-"The command to invoke when the logout button is clicked. This command should"
-" simply log the user out without any interaction. This key has effect only "
-"if the \"logout_enable\" key is set to TRUE."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:27
-msgid "Allow user switching"
-msgstr "صارف کی تبدیلی اجازت دیں"
-
-#: ../data/mate-screensaver.schemas.in.h:28
-msgid ""
-"Set this to TRUE to offer an option in the unlock dialog to switch to a "
-"different user account."
-msgstr ""
-
-#: ../data/mate-screensaver.schemas.in.h:29
-msgid "Theme for lock dialog"
-msgstr "مقفل مکالمے کے لیے تھیم"
-
-#: ../data/mate-screensaver.schemas.in.h:30
-msgid "Theme to use for the lock dialog."
-msgstr "مقفل مکالمے کے استعمال کے لیے تھیم"
-
-#: ../data/mate-screensaver.schemas.in.h:31
-msgid "Allow the session status message to be displayed"
-msgstr "نشست حالت کا پیغام دکھانے کی اجازت دیں"
-
-#: ../data/mate-screensaver.schemas.in.h:32
-msgid ""
-"Allow the session status message to be displayed when the screen is locked."
-msgstr "نشست حالت کے پیغام کی اجازت دیں جب سکرین مقفل ہو."
-
-#: ../data/lock-dialog-default.ui.h:2
-#, no-c-format
-msgid "<span size=\"x-large\">%R</span>"
-msgstr "<span size=\"x-large\">%R</span>"
-
-#: ../data/lock-dialog-default.ui.h:4
-#, no-c-format
-msgid "<span size=\"small\">%U on %h</span>"
-msgstr "<span size=\"small\">%U بر %h</span>"
-
-#: ../data/lock-dialog-default.ui.h:5
-msgid "_Leave Message"
-msgstr "_پیغام چھوڑیں"
-
-#: ../data/lock-dialog-default.ui.h:6
-msgid "_Switch User"
-msgstr "_صارف بدلیں"
-
-#: ../data/lock-dialog-default.ui.h:7
-msgid "_Log Out"
-msgstr "_لاگ آؤٹ"
-
-#: ../data/lock-dialog-default.ui.h:8
-msgid "_Cancel"
-msgstr "_ملتوی"
-
-#: ../data/lock-dialog-default.ui.h:9 ../src/gs-lock-plug.c:1496
-msgid "_Unlock"
-msgstr "_غیر مقفل کریں"
-
-#: ../data/lock-dialog-default.ui.h:11
-#, no-c-format
-msgid "<b>Leave a message for %R:</b>"
-msgstr "<b>%R کے لیے پیغام چھوڑیں:</b>"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -279,11 +87,19 @@ msgid "Display a slideshow of pictures of the cosmos"
 msgstr "کائنات کی تصاویر کا سلائیڈ شو دکھائیں"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
-msgid "Floating Feet"
-msgstr "اُڑتے قدم"
+msgid "Floating MATE"
+msgstr ""
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
-msgid "Bubbles the MATE foot logo around the screen"
+msgid "Bubbles the MATE logo around the screen"
+msgstr ""
+
+#: ../savers/gnomelogo-floaters.desktop.in.in.h:1
+msgid "Floating GNOME"
+msgstr ""
+
+#: ../savers/gnomelogo-floaters.desktop.in.in.h:2
+msgid "Bubbles the GNOME logo around the screen"
 msgstr ""
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
@@ -302,51 +118,50 @@ msgstr "پوپ آرٹ مربع"
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr ""
 
-#: ../savers/popsquares.c:50 ../savers/floaters.c:1217
+#: ../savers/popsquares.c:51 ../savers/floaters.c:1252
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. دیکھیں --help استعمال کی معلومات کے لیے.\n"
 
-#: ../savers/floaters.c:90
+#: ../savers/floaters.c:94
 msgid "Show paths that images follow"
 msgstr ""
 
-#: ../savers/floaters.c:95
+#: ../savers/floaters.c:99
 msgid "Occasionally rotate images as they move"
 msgstr ""
 
-#: ../savers/floaters.c:100
+#: ../savers/floaters.c:104
 msgid "Print out frame rate and other statistics"
 msgstr ""
 
-#: ../savers/floaters.c:105
+#: ../savers/floaters.c:109
 msgid "The maximum number of images to keep on screen"
 msgstr "سکرین پر رکھنے کے لیے زیادہ سے زیادہ تصاویر"
 
-#: ../savers/floaters.c:105
+#: ../savers/floaters.c:109
 msgid "MAX_IMAGES"
 msgstr "MAX_IMAGES"
 
-#: ../savers/floaters.c:110
+#: ../savers/floaters.c:114
 msgid "The initial size and position of window"
 msgstr "دریچے کا ابتدائی حجم اور مقام"
 
-#: ../savers/floaters.c:110
+#: ../savers/floaters.c:114
 msgid "WIDTHxHEIGHT+X+Y"
 msgstr "WIDTHxHEIGHT+X+Y"
 
-#: ../savers/floaters.c:115
+#: ../savers/floaters.c:119
 msgid "The source image to use"
 msgstr "استعمال کے لیے مصدر تصویر"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#. 
-#: ../savers/floaters.c:1211
+#: ../savers/floaters.c:1246
 msgid "image - floats images around the screen"
 msgstr "تصویر - سکرین میں تیرتی تصاویر"
 
-#: ../savers/floaters.c:1226
+#: ../savers/floaters.c:1261
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "ایک تصویر متعین کرنا لازمی ہے. مزید معلومات کے لیے --help دیکھیں.\n"
@@ -375,32 +190,32 @@ msgstr "مقام سے تصاویر کو اتفاقی نہ کریں"
 msgid "Do not try to stretch images on screen"
 msgstr "تصاویر کو سکرین پر کھینچ کر پھیلانے کی کوشش مت کریں"
 
-#: ../src/copy-theme-dialog.c:212
+#: ../src/copy-theme-dialog.c:219
 msgid "Copying files"
 msgstr "فائلیں کاپی کر رہا ہے"
 
-#: ../src/copy-theme-dialog.c:230
+#: ../src/copy-theme-dialog.c:237
 msgid "From:"
 msgstr "از طرف:"
 
-#: ../src/copy-theme-dialog.c:234
+#: ../src/copy-theme-dialog.c:241
 msgid "To:"
 msgstr "تا:"
 
-#: ../src/copy-theme-dialog.c:254
+#: ../src/copy-theme-dialog.c:261
 msgid "Copying themes"
 msgstr "تھیمیں کاپی کر رہا ہے"
 
-#: ../src/copy-theme-dialog.c:298
+#: ../src/copy-theme-dialog.c:307
 msgid "Invalid screensaver theme"
 msgstr "ناموزوں سکرین سیور تھیم"
 
-#: ../src/copy-theme-dialog.c:301
+#: ../src/copy-theme-dialog.c:310
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "%s موزوں سکرین سیور تھیم معلوم نہیں ہوتی."
 
-#: ../src/copy-theme-dialog.c:481
+#: ../src/copy-theme-dialog.c:490
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "فائل کاپی کی جارہی ہے: %u برائے %u"
@@ -451,7 +266,7 @@ msgstr ""
 msgid "The reason for inhibiting the screensaver"
 msgstr ""
 
-#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:57
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:60
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "اس اطلاقیے کا نسخہ"
@@ -489,132 +304,132 @@ msgstr "سکرین سیور %d سیکنڈوں سے فعال ہے.\n"
 msgid "The screensaver is not currently active.\n"
 msgstr "سکرین سیور اس وقت فعال نہیں ہے.\n"
 
-#: ../src/mate-screensaver-dialog.c:56
+#: ../src/mate-screensaver-dialog.c:59
 msgid "Show debugging output"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver-dialog.c:61
 msgid "Show the logout button"
 msgstr "لاگ آؤٹ کا بٹن دکھائیں"
 
-#: ../src/mate-screensaver-dialog.c:59
+#: ../src/mate-screensaver-dialog.c:62
 msgid "Command to invoke from the logout button"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:60
+#: ../src/mate-screensaver-dialog.c:63
 msgid "Show the switch user button"
 msgstr "صارف کو بدلنے کا بٹن دکھائیں"
 
-#: ../src/mate-screensaver-dialog.c:61
+#: ../src/mate-screensaver-dialog.c:64
 msgid "Message to show in the dialog"
 msgstr "مکالمے میں دکھانے کا پیغام"
 
-#: ../src/mate-screensaver-dialog.c:61 ../src/mate-screensaver-dialog.c:62
+#: ../src/mate-screensaver-dialog.c:64 ../src/mate-screensaver-dialog.c:65
 msgid "MESSAGE"
 msgstr "پیغام"
 
-#: ../src/mate-screensaver-dialog.c:62
+#: ../src/mate-screensaver-dialog.c:65
 msgid "Not used"
 msgstr "غیر استعمال شدہ"
 
 #. login: is whacked always translate to Username:
-#: ../src/mate-screensaver-dialog.c:164 ../src/mate-screensaver-dialog.c:165
-#: ../src/mate-screensaver-dialog.c:166 ../src/gs-auth-pam.c:756
+#: ../src/mate-screensaver-dialog.c:171 ../src/mate-screensaver-dialog.c:172
+#: ../src/mate-screensaver-dialog.c:173 ../src/gs-auth-pam.c:756
 msgid "Username:"
 msgstr "اسمِ صارف:"
 
-#: ../src/mate-screensaver-dialog.c:167 ../src/mate-screensaver-dialog.c:168
+#: ../src/mate-screensaver-dialog.c:174 ../src/mate-screensaver-dialog.c:175
 #: ../src/gs-auth-pam.c:171
 msgid "Password:"
 msgstr "پاس ورڈ:"
 
-#: ../src/mate-screensaver-dialog.c:169
+#: ../src/mate-screensaver-dialog.c:176
 msgid "You are required to change your password immediately (password aged)"
 msgstr "آپ کو اپنا پاس ورڈ فوری طور پر بدلنے کی ضرورت ہے (پاس ورڈ پرانا ہوگیا ہے)"
 
-#: ../src/mate-screensaver-dialog.c:170
+#: ../src/mate-screensaver-dialog.c:177
 msgid "You are required to change your password immediately (root enforced)"
 msgstr "آپ کو اپنا پاس ورڈ فوری طور پر بدلنے کی ضرورت ہے (روٹ کی طرف سے نافذ کردہ)"
 
-#: ../src/mate-screensaver-dialog.c:171
+#: ../src/mate-screensaver-dialog.c:178
 msgid "Your account has expired; please contact your system administrator"
 msgstr "آپ کا کھاتہ ایکسپائر ہوگیا ہے; اپنے نظام کے مدیر سے رابطہ کریں"
 
-#: ../src/mate-screensaver-dialog.c:172
+#: ../src/mate-screensaver-dialog.c:179
 msgid "No password supplied"
 msgstr "کوئی پاس ورڈ فراہم نہیں کیا گیا"
 
-#: ../src/mate-screensaver-dialog.c:173
+#: ../src/mate-screensaver-dialog.c:180
 msgid "Password unchanged"
 msgstr "پاس ورڈ غیر تبدیل شُدہ"
 
-#: ../src/mate-screensaver-dialog.c:174
+#: ../src/mate-screensaver-dialog.c:181
 msgid "Can not get username"
 msgstr "اسم صارف حاصل نہیں کیا جاسکتا"
 
-#: ../src/mate-screensaver-dialog.c:175
+#: ../src/mate-screensaver-dialog.c:182
 msgid "Retype new UNIX password:"
 msgstr "نیا یونکس پاس ورڈ دوبارہ لکھیں:"
 
-#: ../src/mate-screensaver-dialog.c:176
+#: ../src/mate-screensaver-dialog.c:183
 msgid "Enter new UNIX password:"
 msgstr "نیا یونکس پاس ورڈ درج کریں:"
 
-#: ../src/mate-screensaver-dialog.c:177
+#: ../src/mate-screensaver-dialog.c:184
 msgid "(current) UNIX password:"
 msgstr "(حالیہ) یونکس پاس ورڈ:"
 
-#: ../src/mate-screensaver-dialog.c:178
+#: ../src/mate-screensaver-dialog.c:185
 msgid "Error while changing NIS password."
 msgstr "نس NIS پاس ورڈ بدلتے ہوئے غلطی."
 
-#: ../src/mate-screensaver-dialog.c:179
+#: ../src/mate-screensaver-dialog.c:186
 msgid "You must choose a longer password"
 msgstr "پاس ورڈ کا طویل ہونا لازمی ہے"
 
-#: ../src/mate-screensaver-dialog.c:180
+#: ../src/mate-screensaver-dialog.c:187
 msgid "Password has been already used. Choose another."
 msgstr "پاس ورڈ پہلے ہی استعمال میں ہے. دوسرا منتخب کریں."
 
-#: ../src/mate-screensaver-dialog.c:181
+#: ../src/mate-screensaver-dialog.c:188
 msgid "You must wait longer to change your password"
 msgstr "اپنا پاس ورڈ بدلنے کے لیے آپ کو طویل انتظار کرنا ہوگا"
 
-#: ../src/mate-screensaver-dialog.c:182
+#: ../src/mate-screensaver-dialog.c:189
 msgid "Sorry, passwords do not match"
 msgstr "معذرت، پاس ورڈ مطابقت نہیں رکھتے"
 
-#: ../src/mate-screensaver-dialog.c:253
+#: ../src/mate-screensaver-dialog.c:260
 msgid "Checking..."
 msgstr "پڑتال کی جارہی ہے..."
 
-#: ../src/mate-screensaver-dialog.c:299 ../src/gs-auth-pam.c:495
+#: ../src/mate-screensaver-dialog.c:306 ../src/gs-auth-pam.c:495
 msgid "Authentication failed."
 msgstr "توثیق ناکام ہوئی."
 
-#: ../src/mate-screensaver-preferences.c:569
+#: ../src/mate-screensaver-preferences.c:487
 msgid "Blank screen"
 msgstr "خالی سکرین"
 
-#: ../src/mate-screensaver-preferences.c:575
+#: ../src/mate-screensaver-preferences.c:493
 msgid "Random"
 msgstr "اتفاقی"
 
-#: ../src/mate-screensaver-preferences.c:1061
+#: ../src/mate-screensaver-preferences.c:983
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d گھنٹہ"
 msgstr[1] "%d گھنٹے"
 
-#: ../src/mate-screensaver-preferences.c:1064
+#: ../src/mate-screensaver-preferences.c:986
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d منٹ"
 msgstr[1] "%d منٹ"
 
-#: ../src/mate-screensaver-preferences.c:1067
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -622,15 +437,15 @@ msgstr[0] "%d سیکنڈ"
 msgstr[1] "%d سیکنڈ"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1075
+#: ../src/mate-screensaver-preferences.c:997
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1080
-#: ../src/mate-screensaver-preferences.c:1093
+#: ../src/mate-screensaver-preferences.c:1002
+#: ../src/mate-screensaver-preferences.c:1015
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
@@ -638,23 +453,23 @@ msgstr "%s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1085
-#: ../src/mate-screensaver-preferences.c:1098
-#: ../src/mate-screensaver-preferences.c:1104
+#: ../src/mate-screensaver-preferences.c:1007
+#: ../src/mate-screensaver-preferences.c:1020
+#: ../src/mate-screensaver-preferences.c:1026
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1119
+#: ../src/mate-screensaver-preferences.c:1041
 #, c-format
 msgid "Never"
 msgstr "کبھی نہیں"
 
-#: ../src/mate-screensaver-preferences.c:1603
+#: ../src/mate-screensaver-preferences.c:1622
 msgid "Could not load the main interface"
 msgstr "تھیم کا مواجہ نہیں لادا جاسکتا"
 
-#: ../src/mate-screensaver-preferences.c:1605
+#: ../src/mate-screensaver-preferences.c:1624
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "ازراہِ کرم تصدیق کر لیں کہ تھیم درست طور پر نصب ہے"
 
@@ -692,39 +507,55 @@ msgstr "اس وقت رسائی کی اجازت نہیں ہے."
 msgid "No longer permitted to access the system."
 msgstr ""
 
-#: ../src/gs-listener-dbus.c:2072
+#: ../src/gs-listener-dbus.c:2219
 msgid "failed to register with the message bus"
 msgstr "پیغام بس bus سے رجسٹر ہونے میں ناکام"
 
-#: ../src/gs-listener-dbus.c:2083
+#: ../src/gs-listener-dbus.c:2230
 msgid "not connected to the message bus"
 msgstr "پیغام بس bus سے متصل نہیں ہے"
 
-#: ../src/gs-listener-dbus.c:2093
+#: ../src/gs-listener-dbus.c:2240 ../src/gs-listener-dbus.c:2272
 msgid "screensaver already running in this session"
 msgstr "اس نشست میں سکرین سیور پہلے ہی چل رہا ہے"
 
-#: ../src/gs-lock-plug.c:335
+#. Translators: Time format, see https://developer.gnome.org/glib/stable/glib-
+#. GDateTime.html#g-date-time-format
+#: ../src/gs-lock-plug.c:304
+msgid "%l:%M %p"
+msgstr ""
+
+#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
+#. GDateTime.html#g-date-time-format
+#: ../src/gs-lock-plug.c:306
+msgid "%A, %B %e"
+msgstr ""
+
+#: ../src/gs-lock-plug.c:408
 msgid "Time has expired."
 msgstr "وقت ختم ہوا."
 
-#: ../src/gs-lock-plug.c:366
+#: ../src/gs-lock-plug.c:439
 msgid "You have the Caps Lock key on."
 msgstr "آپ کا کیپس لاک Caps Lock بٹن فعال ہے."
 
-#: ../src/gs-lock-plug.c:1476
+#: ../src/gs-lock-plug.c:1758
 msgid "S_witch User..."
 msgstr "صارف _بدلیں..."
 
-#: ../src/gs-lock-plug.c:1485
+#: ../src/gs-lock-plug.c:1767
 msgid "Log _Out"
 msgstr "لاگ _آؤٹ"
 
+#: ../src/gs-lock-plug.c:1778
+msgid "_Unlock"
+msgstr "_غیر مقفل کریں"
+
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1677
+#: ../src/gs-lock-plug.c:1976
 msgid "%U on %h"
 msgstr "%U بر %h"
 
-#: ../src/gs-lock-plug.c:1691
+#: ../src/gs-lock-plug.c:1990
 msgid "_Password:"
 msgstr "_پاس ورڈ:"

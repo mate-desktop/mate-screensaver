@@ -11,9 +11,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-01 14:02+0200\n"
-"PO-Revision-Date: 2013-10-05 15:40+0000\n"
-"Last-Translator: mauron\n"
+"POT-Creation-Date: 2014-01-28 10:23+0100\n"
+"PO-Revision-Date: 2014-01-28 09:24+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
 "Language-Team: Arabic (http://www.transifex.com/projects/p/MATE/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,41 +86,6 @@ msgstr "سِمات حافظة الشاشة"
 msgid "Cosmos"
 msgstr "الكَوْن"
 
-#: ../data/lock-dialog-default.ui.h:2
-#, no-c-format
-msgid "<span size=\"x-large\">%R</span>"
-msgstr "<span size=\"x-large\">‏%R</span>"
-
-#: ../data/lock-dialog-default.ui.h:4
-#, no-c-format
-msgid "<span size=\"small\">%U on %h</span>"
-msgstr "<span size=\"small\">‏%U على %h</span>"
-
-#: ../data/lock-dialog-default.ui.h:5
-msgid "_Leave Message"
-msgstr "ا_ترك رسالة"
-
-#: ../data/lock-dialog-default.ui.h:6
-msgid "_Switch User"
-msgstr "_بدّل المستخدم"
-
-#: ../data/lock-dialog-default.ui.h:7
-msgid "_Log Out"
-msgstr "ا_خرج"
-
-#: ../data/lock-dialog-default.ui.h:8
-msgid "_Cancel"
-msgstr "أل_غ"
-
-#: ../data/lock-dialog-default.ui.h:9 ../src/gs-lock-plug.c:1524
-msgid "_Unlock"
-msgstr "ا_فتح القفل"
-
-#: ../data/lock-dialog-default.ui.h:11
-#, no-c-format
-msgid "<b>Leave a message for %R:</b>"
-msgstr "<b>اترك رسالة ل‍ %R:</b>"
-
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "أظهر عرض شرائح من صور الكَوْن"
@@ -132,6 +97,14 @@ msgstr "متّة طافية"
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
 msgstr "فقاعات شعار متّة حول الشّاشة"
+
+#: ../savers/gnomelogo-floaters.desktop.in.in.h:1
+msgid "Floating GNOME"
+msgstr "أقدام جنّوم طافية"
+
+#: ../savers/gnomelogo-floaters.desktop.in.in.h:2
+msgid "Bubbles the GNOME logo around the screen"
+msgstr "فقاعات شعار جنّوم حول الشّاشة"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
 msgid "Pictures folder"
@@ -149,51 +122,50 @@ msgstr "المربعات الفنية"
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr "شَبَكَة شبه فنية للألوان النابضة."
 
-#: ../savers/popsquares.c:50 ../savers/floaters.c:1217
+#: ../savers/popsquares.c:51 ../savers/floaters.c:1252
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. انظر ‪--help‬ للمزيد من المعلومات.\n"
 
-#: ../savers/floaters.c:90
+#: ../savers/floaters.c:94
 msgid "Show paths that images follow"
 msgstr "أظهر مسارات تنقل الصور"
 
-#: ../savers/floaters.c:95
+#: ../savers/floaters.c:99
 msgid "Occasionally rotate images as they move"
 msgstr "دوّر الصور أحيانًا عند تحركها"
 
-#: ../savers/floaters.c:100
+#: ../savers/floaters.c:104
 msgid "Print out frame rate and other statistics"
 msgstr "اطبع معدّل الإطارات وإحصائيات أخرى"
 
-#: ../savers/floaters.c:105
+#: ../savers/floaters.c:109
 msgid "The maximum number of images to keep on screen"
 msgstr "العدد الأقصى للصور الظاهرة على الشاشة"
 
-#: ../savers/floaters.c:105
+#: ../savers/floaters.c:109
 msgid "MAX_IMAGES"
 msgstr "عدد الصور الأقصى"
 
-#: ../savers/floaters.c:110
+#: ../savers/floaters.c:114
 msgid "The initial size and position of window"
 msgstr "الحجم والمكان الأولان للنافذة  "
 
-#: ../savers/floaters.c:110
+#: ../savers/floaters.c:114
 msgid "WIDTHxHEIGHT+X+Y"
 msgstr "العرض×الطول+س+ع"
 
-#: ../savers/floaters.c:115
+#: ../savers/floaters.c:119
 msgid "The source image to use"
 msgstr "مصدر الصورة المستعملة"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#. 
-#: ../savers/floaters.c:1211
+#: ../savers/floaters.c:1246
 msgid "image - floats images around the screen"
 msgstr "صورة - طَفْو الصورة حول الشاشة"
 
-#: ../savers/floaters.c:1226
+#: ../savers/floaters.c:1261
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "يجب اختيار صورة. انظر ‪--help‬ للمزيد من المعلومات.\n"
@@ -222,32 +194,32 @@ msgstr "لا تختر الصور عشوائيًا من المكان"
 msgid "Do not try to stretch images on screen"
 msgstr "لا تقم بمطّ الصور على الشاشة"
 
-#: ../src/copy-theme-dialog.c:212
+#: ../src/copy-theme-dialog.c:219
 msgid "Copying files"
 msgstr "ينسخ الملفات"
 
-#: ../src/copy-theme-dialog.c:230
+#: ../src/copy-theme-dialog.c:237
 msgid "From:"
 msgstr "من:"
 
-#: ../src/copy-theme-dialog.c:234
+#: ../src/copy-theme-dialog.c:241
 msgid "To:"
 msgstr "إلى:"
 
-#: ../src/copy-theme-dialog.c:254
+#: ../src/copy-theme-dialog.c:261
 msgid "Copying themes"
 msgstr "ينسخ السِمات"
 
-#: ../src/copy-theme-dialog.c:298
+#: ../src/copy-theme-dialog.c:307
 msgid "Invalid screensaver theme"
 msgstr "سِمة حافظة شاشة غير سليمة"
 
-#: ../src/copy-theme-dialog.c:301
+#: ../src/copy-theme-dialog.c:310
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "يبدو أن الملف %s لا يمثل سِمة حافظة شاشة سليمة."
 
-#: ../src/copy-theme-dialog.c:481
+#: ../src/copy-theme-dialog.c:490
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "ينسخ الملف: '%u من %u"
@@ -298,7 +270,7 @@ msgstr "التطبيق المنادي الذي يمنع حافظة الشاشة"
 msgid "The reason for inhibiting the screensaver"
 msgstr "السبب وراء توقف حافظة الشاشة"
 
-#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:57
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:60
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "نسخة هذا التّطبيق"
@@ -336,118 +308,118 @@ msgstr "حافظة الشاشة نشِطة منذ %Id ثواني.\n"
 msgid "The screensaver is not currently active.\n"
 msgstr "حافظة الشاشة غير غير نشطة حاليًا\n"
 
-#: ../src/mate-screensaver-dialog.c:56
+#: ../src/mate-screensaver-dialog.c:59
 msgid "Show debugging output"
 msgstr "أظهر مُخرجات التنقيح"
 
-#: ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver-dialog.c:61
 msgid "Show the logout button"
 msgstr "أظهر زر الخروج"
 
-#: ../src/mate-screensaver-dialog.c:59
+#: ../src/mate-screensaver-dialog.c:62
 msgid "Command to invoke from the logout button"
 msgstr "الأمر عند الضغط على زر الخروج"
 
-#: ../src/mate-screensaver-dialog.c:60
+#: ../src/mate-screensaver-dialog.c:63
 msgid "Show the switch user button"
 msgstr "أظهر زر تبديل المستخدم"
 
-#: ../src/mate-screensaver-dialog.c:61
+#: ../src/mate-screensaver-dialog.c:64
 msgid "Message to show in the dialog"
 msgstr "الرسالة التي ستظهر في نافذة الحوار"
 
-#: ../src/mate-screensaver-dialog.c:61 ../src/mate-screensaver-dialog.c:62
+#: ../src/mate-screensaver-dialog.c:64 ../src/mate-screensaver-dialog.c:65
 msgid "MESSAGE"
 msgstr "الرسالة"
 
-#: ../src/mate-screensaver-dialog.c:62
+#: ../src/mate-screensaver-dialog.c:65
 msgid "Not used"
 msgstr "غير مُستخدَمة"
 
 #. login: is whacked always translate to Username:
-#: ../src/mate-screensaver-dialog.c:164 ../src/mate-screensaver-dialog.c:165
-#: ../src/mate-screensaver-dialog.c:166 ../src/gs-auth-pam.c:756
+#: ../src/mate-screensaver-dialog.c:171 ../src/mate-screensaver-dialog.c:172
+#: ../src/mate-screensaver-dialog.c:173 ../src/gs-auth-pam.c:756
 msgid "Username:"
 msgstr "اسم المستخدم:"
 
-#: ../src/mate-screensaver-dialog.c:167 ../src/mate-screensaver-dialog.c:168
+#: ../src/mate-screensaver-dialog.c:174 ../src/mate-screensaver-dialog.c:175
 #: ../src/gs-auth-pam.c:171
 msgid "Password:"
 msgstr "كلمة المرور:"
 
-#: ../src/mate-screensaver-dialog.c:169
+#: ../src/mate-screensaver-dialog.c:176
 msgid "You are required to change your password immediately (password aged)"
 msgstr "يجب أن تغير كلمة مرورك حالًا (كلمة المرور قديمة)"
 
-#: ../src/mate-screensaver-dialog.c:170
+#: ../src/mate-screensaver-dialog.c:177
 msgid "You are required to change your password immediately (root enforced)"
 msgstr "يجب أن تغير كلمة مرورك حالًا (فرض الجذر ذلك)"
 
-#: ../src/mate-screensaver-dialog.c:171
+#: ../src/mate-screensaver-dialog.c:178
 msgid "Your account has expired; please contact your system administrator"
 msgstr "انقضى حسابك، الرجاء الاتصال بمدير النظام"
 
-#: ../src/mate-screensaver-dialog.c:172
+#: ../src/mate-screensaver-dialog.c:179
 msgid "No password supplied"
 msgstr "لم تزود كلمة مرور جديدة"
 
-#: ../src/mate-screensaver-dialog.c:173
+#: ../src/mate-screensaver-dialog.c:180
 msgid "Password unchanged"
 msgstr "لم تغير كلمة المرور"
 
-#: ../src/mate-screensaver-dialog.c:174
+#: ../src/mate-screensaver-dialog.c:181
 msgid "Can not get username"
 msgstr "لا يمكن تلقي اسم المستخدم"
 
-#: ../src/mate-screensaver-dialog.c:175
+#: ../src/mate-screensaver-dialog.c:182
 msgid "Retype new UNIX password:"
 msgstr "أعد كتابة كلمة مرور يونكس الجديدة:"
 
-#: ../src/mate-screensaver-dialog.c:176
+#: ../src/mate-screensaver-dialog.c:183
 msgid "Enter new UNIX password:"
 msgstr "أدخل كلمة مرور يونكس جديدة:"
 
-#: ../src/mate-screensaver-dialog.c:177
+#: ../src/mate-screensaver-dialog.c:184
 msgid "(current) UNIX password:"
 msgstr "كلمة مرور يونكس (الحالية):"
 
-#: ../src/mate-screensaver-dialog.c:178
+#: ../src/mate-screensaver-dialog.c:185
 msgid "Error while changing NIS password."
 msgstr "خطأ أثناء تغيير كلمة مرور NIS."
 
-#: ../src/mate-screensaver-dialog.c:179
+#: ../src/mate-screensaver-dialog.c:186
 msgid "You must choose a longer password"
 msgstr "يجب أن تختار كلمة مرور أطول"
 
-#: ../src/mate-screensaver-dialog.c:180
+#: ../src/mate-screensaver-dialog.c:187
 msgid "Password has been already used. Choose another."
 msgstr "كلمة المرور مستخدمة. الرجاء اختيار كلمة مغايرة."
 
-#: ../src/mate-screensaver-dialog.c:181
+#: ../src/mate-screensaver-dialog.c:188
 msgid "You must wait longer to change your password"
 msgstr "يجب أن تنتظر مدة أطول لتتمكن من تغيير كلمة مرورك"
 
-#: ../src/mate-screensaver-dialog.c:182
+#: ../src/mate-screensaver-dialog.c:189
 msgid "Sorry, passwords do not match"
 msgstr "عفوًا، كلمتا المرور لا تتطابقان"
 
-#: ../src/mate-screensaver-dialog.c:253
+#: ../src/mate-screensaver-dialog.c:260
 msgid "Checking..."
 msgstr "يفحص..."
 
-#: ../src/mate-screensaver-dialog.c:299 ../src/gs-auth-pam.c:495
+#: ../src/mate-screensaver-dialog.c:306 ../src/gs-auth-pam.c:495
 msgid "Authentication failed."
 msgstr "فشل الاستيثاق."
 
-#: ../src/mate-screensaver-preferences.c:476
+#: ../src/mate-screensaver-preferences.c:487
 msgid "Blank screen"
 msgstr "شاشة فارغة"
 
-#: ../src/mate-screensaver-preferences.c:482
+#: ../src/mate-screensaver-preferences.c:493
 msgid "Random"
 msgstr "عشوائية"
 
-#: ../src/mate-screensaver-preferences.c:968
+#: ../src/mate-screensaver-preferences.c:983
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
@@ -458,7 +430,7 @@ msgstr[3] "%Id ساعات"
 msgstr[4] "%Id ساعة"
 msgstr[5] "%Id ساعة"
 
-#: ../src/mate-screensaver-preferences.c:971
+#: ../src/mate-screensaver-preferences.c:986
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
@@ -469,7 +441,7 @@ msgstr[3] "%Id دقائق"
 msgstr[4] "%Id دقيقة"
 msgstr[5] "%Id دقيقة"
 
-#: ../src/mate-screensaver-preferences.c:974
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -481,15 +453,15 @@ msgstr[4] "%Id ثانية"
 msgstr[5] "%Id ثانية"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:982
+#: ../src/mate-screensaver-preferences.c:997
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:987
-#: ../src/mate-screensaver-preferences.c:1000
+#: ../src/mate-screensaver-preferences.c:1002
+#: ../src/mate-screensaver-preferences.c:1015
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
@@ -497,23 +469,23 @@ msgstr "%s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:992
-#: ../src/mate-screensaver-preferences.c:1005
-#: ../src/mate-screensaver-preferences.c:1011
+#: ../src/mate-screensaver-preferences.c:1007
+#: ../src/mate-screensaver-preferences.c:1020
+#: ../src/mate-screensaver-preferences.c:1026
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1026
+#: ../src/mate-screensaver-preferences.c:1041
 #, c-format
 msgid "Never"
 msgstr "أبدًا"
 
-#: ../src/mate-screensaver-preferences.c:1451
+#: ../src/mate-screensaver-preferences.c:1622
 msgid "Could not load the main interface"
 msgstr "تعذّر تحميل الواجهة الرئيسيّة"
 
-#: ../src/mate-screensaver-preferences.c:1453
+#: ../src/mate-screensaver-preferences.c:1624
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "الرجاء التثبت من أن حافظة الشاشة مثبتة بنجاح"
 
@@ -563,27 +535,43 @@ msgstr "غير متصل بمخرج الرسائل"
 msgid "screensaver already running in this session"
 msgstr "حافظة الشاشة مشتغلة مسبقا في هذه الجلسة"
 
-#: ../src/gs-lock-plug.c:355
+#. Translators: Time format, see https://developer.gnome.org/glib/stable/glib-
+#. GDateTime.html#g-date-time-format
+#: ../src/gs-lock-plug.c:304
+msgid "%l:%M %p"
+msgstr ""
+
+#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
+#. GDateTime.html#g-date-time-format
+#: ../src/gs-lock-plug.c:306
+msgid "%A, %B %e"
+msgstr ""
+
+#: ../src/gs-lock-plug.c:408
 msgid "Time has expired."
 msgstr "انتهت المدة."
 
-#: ../src/gs-lock-plug.c:386
+#: ../src/gs-lock-plug.c:439
 msgid "You have the Caps Lock key on."
 msgstr "مفتاح الحروف الكبيرة مفعل"
 
-#: ../src/gs-lock-plug.c:1504
+#: ../src/gs-lock-plug.c:1758
 msgid "S_witch User..."
 msgstr "_بدّل المستخدم..."
 
-#: ../src/gs-lock-plug.c:1513
+#: ../src/gs-lock-plug.c:1767
 msgid "Log _Out"
 msgstr "ا_خرج"
 
+#: ../src/gs-lock-plug.c:1778
+msgid "_Unlock"
+msgstr "ا_فتح القفل"
+
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1705
+#: ../src/gs-lock-plug.c:1976
 msgid "%U on %h"
 msgstr "‏%U على %h"
 
-#: ../src/gs-lock-plug.c:1719
+#: ../src/gs-lock-plug.c:1990
 msgid "_Password:"
 msgstr "_كلمة المرور:"

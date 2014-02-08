@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-01 14:02+0200\n"
-"PO-Revision-Date: 2013-10-17 14:25+0000\n"
-"Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
+"POT-Creation-Date: 2014-01-28 10:23+0100\n"
+"PO-Revision-Date: 2014-01-28 09:24+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/projects/p/MATE/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -85,41 +85,6 @@ msgstr "屏幕保护程序主题"
 msgid "Cosmos"
 msgstr "宇宙"
 
-#: ../data/lock-dialog-default.ui.h:2
-#, no-c-format
-msgid "<span size=\"x-large\">%R</span>"
-msgstr "<span size=\"x-large\">%R</span>"
-
-#: ../data/lock-dialog-default.ui.h:4
-#, no-c-format
-msgid "<span size=\"small\">%U on %h</span>"
-msgstr "<span size=\"small\">%h 上的 %U</span>"
-
-#: ../data/lock-dialog-default.ui.h:5
-msgid "_Leave Message"
-msgstr "留言(_L)"
-
-#: ../data/lock-dialog-default.ui.h:6
-msgid "_Switch User"
-msgstr "切换用户(_S)"
-
-#: ../data/lock-dialog-default.ui.h:7
-msgid "_Log Out"
-msgstr "注销(_L)"
-
-#: ../data/lock-dialog-default.ui.h:8
-msgid "_Cancel"
-msgstr "取消(_C)"
-
-#: ../data/lock-dialog-default.ui.h:9 ../src/gs-lock-plug.c:1524
-msgid "_Unlock"
-msgstr "解锁(_U)"
-
-#: ../data/lock-dialog-default.ui.h:11
-#, no-c-format
-msgid "<b>Leave a message for %R:</b>"
-msgstr "<b>为 %R 留言：</b>"
-
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "显示一组宇宙图片的幻灯片"
@@ -131,6 +96,14 @@ msgstr "浮动的 MATE"
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
 msgstr "在屏幕上如泡泡一样浮动 MATE 徽标"
+
+#: ../savers/gnomelogo-floaters.desktop.in.in.h:1
+msgid "Floating GNOME"
+msgstr "浮动的 GNOME"
+
+#: ../savers/gnomelogo-floaters.desktop.in.in.h:2
+msgid "Bubbles the GNOME logo around the screen"
+msgstr "在屏幕上如泡泡一样浮动 GNOME 徽标"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
 msgid "Pictures folder"
@@ -148,51 +121,50 @@ msgstr "流行艺术方块"
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr "一个由跳动的颜色组成的流行艺术栅格"
 
-#: ../savers/popsquares.c:50 ../savers/floaters.c:1217
+#: ../savers/popsquares.c:51 ../savers/floaters.c:1252
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s。参见 --help 以获得用法信息。\n"
 
-#: ../savers/floaters.c:90
+#: ../savers/floaters.c:94
 msgid "Show paths that images follow"
 msgstr "显示图片跟随的路径"
 
-#: ../savers/floaters.c:95
+#: ../savers/floaters.c:99
 msgid "Occasionally rotate images as they move"
 msgstr "图片移动过程中不时旋转"
 
-#: ../savers/floaters.c:100
+#: ../savers/floaters.c:104
 msgid "Print out frame rate and other statistics"
 msgstr "打印帧率和其它统计数据"
 
-#: ../savers/floaters.c:105
+#: ../savers/floaters.c:109
 msgid "The maximum number of images to keep on screen"
 msgstr "屏幕上保留的图片的最大数目"
 
-#: ../savers/floaters.c:105
+#: ../savers/floaters.c:109
 msgid "MAX_IMAGES"
 msgstr "MAX_IMAGES"
 
-#: ../savers/floaters.c:110
+#: ../savers/floaters.c:114
 msgid "The initial size and position of window"
 msgstr "窗口的初始大小和位置"
 
-#: ../savers/floaters.c:110
+#: ../savers/floaters.c:114
 msgid "WIDTHxHEIGHT+X+Y"
 msgstr "宽度x高度+X+Y"
 
-#: ../savers/floaters.c:115
+#: ../savers/floaters.c:119
 msgid "The source image to use"
 msgstr "待使用的源图片"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#. 
-#: ../savers/floaters.c:1211
+#: ../savers/floaters.c:1246
 msgid "image - floats images around the screen"
 msgstr "image - 在屏幕上浮动图片"
 
-#: ../savers/floaters.c:1226
+#: ../savers/floaters.c:1261
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "您必须指定一幅图片。参见 --help 以获得用法信息。\n"
@@ -221,32 +193,32 @@ msgstr "不随机放置图片"
 msgid "Do not try to stretch images on screen"
 msgstr "不在屏幕上伸展图片"
 
-#: ../src/copy-theme-dialog.c:212
+#: ../src/copy-theme-dialog.c:219
 msgid "Copying files"
 msgstr "正在复制文件"
 
-#: ../src/copy-theme-dialog.c:230
+#: ../src/copy-theme-dialog.c:237
 msgid "From:"
 msgstr "从："
 
-#: ../src/copy-theme-dialog.c:234
+#: ../src/copy-theme-dialog.c:241
 msgid "To:"
 msgstr "到："
 
-#: ../src/copy-theme-dialog.c:254
+#: ../src/copy-theme-dialog.c:261
 msgid "Copying themes"
 msgstr "正在复制主题"
 
-#: ../src/copy-theme-dialog.c:298
+#: ../src/copy-theme-dialog.c:307
 msgid "Invalid screensaver theme"
 msgstr "无效的屏幕保护程序主题"
 
-#: ../src/copy-theme-dialog.c:301
+#: ../src/copy-theme-dialog.c:310
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "%s 似乎不是有效的屏幕保护程序主题。"
 
-#: ../src/copy-theme-dialog.c:481
+#: ../src/copy-theme-dialog.c:490
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "正复制文件：第%u个，共%u个"
@@ -297,7 +269,7 @@ msgstr "正在禁用屏幕保护程序的应用程序"
 msgid "The reason for inhibiting the screensaver"
 msgstr "禁用屏幕保护程序的原因"
 
-#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:57
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:60
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "此应用程序的版本"
@@ -335,145 +307,145 @@ msgstr "屏幕保护程序已运行 %d 秒。\n"
 msgid "The screensaver is not currently active.\n"
 msgstr "屏幕保护当前没有激活。\n"
 
-#: ../src/mate-screensaver-dialog.c:56
+#: ../src/mate-screensaver-dialog.c:59
 msgid "Show debugging output"
 msgstr "显示调试输出"
 
-#: ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver-dialog.c:61
 msgid "Show the logout button"
 msgstr "显示注销按钮"
 
-#: ../src/mate-screensaver-dialog.c:59
+#: ../src/mate-screensaver-dialog.c:62
 msgid "Command to invoke from the logout button"
 msgstr "注销按钮所调用的命令"
 
-#: ../src/mate-screensaver-dialog.c:60
+#: ../src/mate-screensaver-dialog.c:63
 msgid "Show the switch user button"
 msgstr "显示切换用户按钮"
 
-#: ../src/mate-screensaver-dialog.c:61
+#: ../src/mate-screensaver-dialog.c:64
 msgid "Message to show in the dialog"
 msgstr "在对话框中显示的消息"
 
-#: ../src/mate-screensaver-dialog.c:61 ../src/mate-screensaver-dialog.c:62
+#: ../src/mate-screensaver-dialog.c:64 ../src/mate-screensaver-dialog.c:65
 msgid "MESSAGE"
 msgstr "MESSAGE"
 
-#: ../src/mate-screensaver-dialog.c:62
+#: ../src/mate-screensaver-dialog.c:65
 msgid "Not used"
 msgstr "没有使用"
 
 #. login: is whacked always translate to Username:
-#: ../src/mate-screensaver-dialog.c:164 ../src/mate-screensaver-dialog.c:165
-#: ../src/mate-screensaver-dialog.c:166 ../src/gs-auth-pam.c:756
+#: ../src/mate-screensaver-dialog.c:171 ../src/mate-screensaver-dialog.c:172
+#: ../src/mate-screensaver-dialog.c:173 ../src/gs-auth-pam.c:756
 msgid "Username:"
 msgstr "用户名："
 
-#: ../src/mate-screensaver-dialog.c:167 ../src/mate-screensaver-dialog.c:168
+#: ../src/mate-screensaver-dialog.c:174 ../src/mate-screensaver-dialog.c:175
 #: ../src/gs-auth-pam.c:171
 msgid "Password:"
 msgstr "密码："
 
-#: ../src/mate-screensaver-dialog.c:169
+#: ../src/mate-screensaver-dialog.c:176
 msgid "You are required to change your password immediately (password aged)"
 msgstr "您必须立即更改您的密码(密码到期)"
 
-#: ../src/mate-screensaver-dialog.c:170
+#: ../src/mate-screensaver-dialog.c:177
 msgid "You are required to change your password immediately (root enforced)"
 msgstr "您必须立即更改您的密码(root 强制)"
 
-#: ../src/mate-screensaver-dialog.c:171
+#: ../src/mate-screensaver-dialog.c:178
 msgid "Your account has expired; please contact your system administrator"
 msgstr "您的帐户已过期；请联系您的系统管理员"
 
-#: ../src/mate-screensaver-dialog.c:172
+#: ../src/mate-screensaver-dialog.c:179
 msgid "No password supplied"
 msgstr "没有提供密码"
 
-#: ../src/mate-screensaver-dialog.c:173
+#: ../src/mate-screensaver-dialog.c:180
 msgid "Password unchanged"
 msgstr "密码未改变"
 
-#: ../src/mate-screensaver-dialog.c:174
+#: ../src/mate-screensaver-dialog.c:181
 msgid "Can not get username"
 msgstr "无法获取用户名"
 
-#: ../src/mate-screensaver-dialog.c:175
+#: ../src/mate-screensaver-dialog.c:182
 msgid "Retype new UNIX password:"
 msgstr "重新输入新 UNIX 密码："
 
-#: ../src/mate-screensaver-dialog.c:176
+#: ../src/mate-screensaver-dialog.c:183
 msgid "Enter new UNIX password:"
 msgstr "输入新 UNIX 密码："
 
-#: ../src/mate-screensaver-dialog.c:177
+#: ../src/mate-screensaver-dialog.c:184
 msgid "(current) UNIX password:"
 msgstr "当前 UNIX 密码："
 
-#: ../src/mate-screensaver-dialog.c:178
+#: ../src/mate-screensaver-dialog.c:185
 msgid "Error while changing NIS password."
 msgstr "更改 NIS 密码出错。"
 
-#: ../src/mate-screensaver-dialog.c:179
+#: ../src/mate-screensaver-dialog.c:186
 msgid "You must choose a longer password"
 msgstr "你必须选择一个更长些的密码"
 
-#: ../src/mate-screensaver-dialog.c:180
+#: ../src/mate-screensaver-dialog.c:187
 msgid "Password has been already used. Choose another."
 msgstr "密码已经被使用。请重新选择。"
 
-#: ../src/mate-screensaver-dialog.c:181
+#: ../src/mate-screensaver-dialog.c:188
 msgid "You must wait longer to change your password"
 msgstr "您必须等待更久以修改您的密码"
 
-#: ../src/mate-screensaver-dialog.c:182
+#: ../src/mate-screensaver-dialog.c:189
 msgid "Sorry, passwords do not match"
 msgstr "对不起，密码不匹配"
 
-#: ../src/mate-screensaver-dialog.c:253
+#: ../src/mate-screensaver-dialog.c:260
 msgid "Checking..."
 msgstr "正在检查..."
 
-#: ../src/mate-screensaver-dialog.c:299 ../src/gs-auth-pam.c:495
+#: ../src/mate-screensaver-dialog.c:306 ../src/gs-auth-pam.c:495
 msgid "Authentication failed."
 msgstr "验证失败。"
 
-#: ../src/mate-screensaver-preferences.c:476
+#: ../src/mate-screensaver-preferences.c:487
 msgid "Blank screen"
 msgstr "黑屏幕"
 
-#: ../src/mate-screensaver-preferences.c:482
+#: ../src/mate-screensaver-preferences.c:493
 msgid "Random"
 msgstr "随机"
 
-#: ../src/mate-screensaver-preferences.c:968
+#: ../src/mate-screensaver-preferences.c:983
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d 小时"
 
-#: ../src/mate-screensaver-preferences.c:971
+#: ../src/mate-screensaver-preferences.c:986
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d 分钟"
 
-#: ../src/mate-screensaver-preferences.c:974
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] "%d 秒"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:982
+#: ../src/mate-screensaver-preferences.c:997
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:987
-#: ../src/mate-screensaver-preferences.c:1000
+#: ../src/mate-screensaver-preferences.c:1002
+#: ../src/mate-screensaver-preferences.c:1015
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
@@ -481,23 +453,23 @@ msgstr "%s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:992
-#: ../src/mate-screensaver-preferences.c:1005
-#: ../src/mate-screensaver-preferences.c:1011
+#: ../src/mate-screensaver-preferences.c:1007
+#: ../src/mate-screensaver-preferences.c:1020
+#: ../src/mate-screensaver-preferences.c:1026
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1026
+#: ../src/mate-screensaver-preferences.c:1041
 #, c-format
 msgid "Never"
 msgstr "从不"
 
-#: ../src/mate-screensaver-preferences.c:1451
+#: ../src/mate-screensaver-preferences.c:1622
 msgid "Could not load the main interface"
 msgstr "无法装入主界面"
 
-#: ../src/mate-screensaver-preferences.c:1453
+#: ../src/mate-screensaver-preferences.c:1624
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "请确定屏幕保护程序已经正确安装"
 
@@ -547,27 +519,43 @@ msgstr "未连接到消息总线"
 msgid "screensaver already running in this session"
 msgstr "本会话中屏幕保护程序已经运行"
 
-#: ../src/gs-lock-plug.c:355
+#. Translators: Time format, see https://developer.gnome.org/glib/stable/glib-
+#. GDateTime.html#g-date-time-format
+#: ../src/gs-lock-plug.c:304
+msgid "%l:%M %p"
+msgstr ""
+
+#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
+#. GDateTime.html#g-date-time-format
+#: ../src/gs-lock-plug.c:306
+msgid "%A, %B %e"
+msgstr ""
+
+#: ../src/gs-lock-plug.c:408
 msgid "Time has expired."
 msgstr "时间已到。"
 
-#: ../src/gs-lock-plug.c:386
+#: ../src/gs-lock-plug.c:439
 msgid "You have the Caps Lock key on."
 msgstr "您打开了 Caps Lock 键。"
 
-#: ../src/gs-lock-plug.c:1504
+#: ../src/gs-lock-plug.c:1758
 msgid "S_witch User..."
 msgstr "切换用户(_W)..."
 
-#: ../src/gs-lock-plug.c:1513
+#: ../src/gs-lock-plug.c:1767
 msgid "Log _Out"
 msgstr "注销(_O)"
 
+#: ../src/gs-lock-plug.c:1778
+msgid "_Unlock"
+msgstr "解锁(_U)"
+
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1705
+#: ../src/gs-lock-plug.c:1976
 msgid "%U on %h"
 msgstr "%h 上的 %U"
 
-#: ../src/gs-lock-plug.c:1719
+#: ../src/gs-lock-plug.c:1990
 msgid "_Password:"
 msgstr "密码(_P)："

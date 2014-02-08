@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-01 14:02+0200\n"
-"PO-Revision-Date: 2013-10-01 12:07+0000\n"
+"POT-Creation-Date: 2014-01-28 10:23+0100\n"
+"PO-Revision-Date: 2014-01-28 09:24+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
 "Language-Team: Romanian (http://www.transifex.com/projects/p/MATE/language/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -85,41 +85,6 @@ msgstr "Teme pentru economizor"
 msgid "Cosmos"
 msgstr "Cosmos"
 
-#: ../data/lock-dialog-default.ui.h:2
-#, no-c-format
-msgid "<span size=\"x-large\">%R</span>"
-msgstr "<span size=\"x-large\">%R</span>"
-
-#: ../data/lock-dialog-default.ui.h:4
-#, no-c-format
-msgid "<span size=\"small\">%U on %h</span>"
-msgstr "<span size=\"small\">%U pe %h</span>"
-
-#: ../data/lock-dialog-default.ui.h:5
-msgid "_Leave Message"
-msgstr "_Mesaj în așteptare"
-
-#: ../data/lock-dialog-default.ui.h:6
-msgid "_Switch User"
-msgstr "_Alt utilizator"
-
-#: ../data/lock-dialog-default.ui.h:7
-msgid "_Log Out"
-msgstr "_Ieșire din sesiune"
-
-#: ../data/lock-dialog-default.ui.h:8
-msgid "_Cancel"
-msgstr "A_nulare"
-
-#: ../data/lock-dialog-default.ui.h:9 ../src/gs-lock-plug.c:1524
-msgid "_Unlock"
-msgstr "_Deblocare"
-
-#: ../data/lock-dialog-default.ui.h:11
-#, no-c-format
-msgid "<b>Leave a message for %R:</b>"
-msgstr "<b>Lăsați un mesaj pentru %R:</b>"
-
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "Arată un set de imagini din Cosmos"
@@ -130,6 +95,14 @@ msgstr ""
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
+msgstr ""
+
+#: ../savers/gnomelogo-floaters.desktop.in.in.h:1
+msgid "Floating GNOME"
+msgstr ""
+
+#: ../savers/gnomelogo-floaters.desktop.in.in.h:2
+msgid "Bubbles the GNOME logo around the screen"
 msgstr ""
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
@@ -148,51 +121,50 @@ msgstr "Pătrate pop-art"
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr "O grilă de culori care pulsează într-un stil pop-art."
 
-#: ../savers/popsquares.c:50 ../savers/floaters.c:1217
+#: ../savers/popsquares.c:51 ../savers/floaters.c:1252
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. Consultați --help pentru informații despre utilizare.\n"
 
-#: ../savers/floaters.c:90
+#: ../savers/floaters.c:94
 msgid "Show paths that images follow"
 msgstr "Arată căile urmate de imagini"
 
-#: ../savers/floaters.c:95
+#: ../savers/floaters.c:99
 msgid "Occasionally rotate images as they move"
 msgstr "Rotește ocazional imaginile în timp ce se mișcă"
 
-#: ../savers/floaters.c:100
+#: ../savers/floaters.c:104
 msgid "Print out frame rate and other statistics"
 msgstr "Arată numărul de cadre pe secundă și alte statistici"
 
-#: ../savers/floaters.c:105
+#: ../savers/floaters.c:109
 msgid "The maximum number of images to keep on screen"
 msgstr "Numărul maxim de imagini de păstrat pe ecran"
 
-#: ../savers/floaters.c:105
+#: ../savers/floaters.c:109
 msgid "MAX_IMAGES"
 msgstr "MAX_IMAGES"
 
-#: ../savers/floaters.c:110
+#: ../savers/floaters.c:114
 msgid "The initial size and position of window"
 msgstr "Mărimea inițială și poziția ferestrei"
 
-#: ../savers/floaters.c:110
+#: ../savers/floaters.c:114
 msgid "WIDTHxHEIGHT+X+Y"
 msgstr "LĂȚIMExÎNĂLȚIME+X+Y"
 
-#: ../savers/floaters.c:115
+#: ../savers/floaters.c:119
 msgid "The source image to use"
 msgstr "Imaginea sursă de utilizat"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#. 
-#: ../savers/floaters.c:1211
+#: ../savers/floaters.c:1246
 msgid "image - floats images around the screen"
 msgstr "imagine - imagini plutind pe ecran"
 
-#: ../savers/floaters.c:1226
+#: ../savers/floaters.c:1261
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "E necesară specificarea unei imagini. Consultați --help pentru detalii.\n"
@@ -221,32 +193,32 @@ msgstr "Nu amesteca aleator imaginile"
 msgid "Do not try to stretch images on screen"
 msgstr "Nu încerca să întinzi imaginile pe ecran"
 
-#: ../src/copy-theme-dialog.c:212
+#: ../src/copy-theme-dialog.c:219
 msgid "Copying files"
 msgstr "Se copiază fișierele"
 
-#: ../src/copy-theme-dialog.c:230
+#: ../src/copy-theme-dialog.c:237
 msgid "From:"
 msgstr "De la:"
 
-#: ../src/copy-theme-dialog.c:234
+#: ../src/copy-theme-dialog.c:241
 msgid "To:"
 msgstr "Către:"
 
-#: ../src/copy-theme-dialog.c:254
+#: ../src/copy-theme-dialog.c:261
 msgid "Copying themes"
 msgstr "Se copiază temele"
 
-#: ../src/copy-theme-dialog.c:298
+#: ../src/copy-theme-dialog.c:307
 msgid "Invalid screensaver theme"
 msgstr "Temă invalidă pentru economizor"
 
-#: ../src/copy-theme-dialog.c:301
+#: ../src/copy-theme-dialog.c:310
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "%s nu pare a fi o temă validă de economizor."
 
-#: ../src/copy-theme-dialog.c:481
+#: ../src/copy-theme-dialog.c:490
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "Se copiază fișierul: %u din %u"
@@ -297,7 +269,7 @@ msgstr "Aplicația care va inhiba economizorul de ecran"
 msgid "The reason for inhibiting the screensaver"
 msgstr "Motivul pentru inhibarea economizorului"
 
-#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:57
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:60
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "Versiunea acestei aplicații"
@@ -335,118 +307,118 @@ msgstr "Economizorul de ecran a fost activ pentru %d secunde.\n"
 msgid "The screensaver is not currently active.\n"
 msgstr "Economizorul de ecran nu este activ în acest moment.\n"
 
-#: ../src/mate-screensaver-dialog.c:56
+#: ../src/mate-screensaver-dialog.c:59
 msgid "Show debugging output"
 msgstr "Arată informații de depanare"
 
-#: ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver-dialog.c:61
 msgid "Show the logout button"
 msgstr "Arată butonul de ieșire din sesiune"
 
-#: ../src/mate-screensaver-dialog.c:59
+#: ../src/mate-screensaver-dialog.c:62
 msgid "Command to invoke from the logout button"
 msgstr "Comandă de invocat pentru butonul de ieșire din sesiune"
 
-#: ../src/mate-screensaver-dialog.c:60
+#: ../src/mate-screensaver-dialog.c:63
 msgid "Show the switch user button"
 msgstr "Afișează butonul de schimbare a utilizatorului"
 
-#: ../src/mate-screensaver-dialog.c:61
+#: ../src/mate-screensaver-dialog.c:64
 msgid "Message to show in the dialog"
 msgstr "Mesajul de afișat în dialog"
 
-#: ../src/mate-screensaver-dialog.c:61 ../src/mate-screensaver-dialog.c:62
+#: ../src/mate-screensaver-dialog.c:64 ../src/mate-screensaver-dialog.c:65
 msgid "MESSAGE"
 msgstr "MESAJ"
 
-#: ../src/mate-screensaver-dialog.c:62
+#: ../src/mate-screensaver-dialog.c:65
 msgid "Not used"
 msgstr "Nefolosit"
 
 #. login: is whacked always translate to Username:
-#: ../src/mate-screensaver-dialog.c:164 ../src/mate-screensaver-dialog.c:165
-#: ../src/mate-screensaver-dialog.c:166 ../src/gs-auth-pam.c:756
+#: ../src/mate-screensaver-dialog.c:171 ../src/mate-screensaver-dialog.c:172
+#: ../src/mate-screensaver-dialog.c:173 ../src/gs-auth-pam.c:756
 msgid "Username:"
 msgstr "Utilizator:"
 
-#: ../src/mate-screensaver-dialog.c:167 ../src/mate-screensaver-dialog.c:168
+#: ../src/mate-screensaver-dialog.c:174 ../src/mate-screensaver-dialog.c:175
 #: ../src/gs-auth-pam.c:171
 msgid "Password:"
 msgstr "Parolă:"
 
-#: ../src/mate-screensaver-dialog.c:169
+#: ../src/mate-screensaver-dialog.c:176
 msgid "You are required to change your password immediately (password aged)"
 msgstr "Este necesar să vă schimbați parola imediat (parola este prea veche)"
 
-#: ../src/mate-screensaver-dialog.c:170
+#: ../src/mate-screensaver-dialog.c:177
 msgid "You are required to change your password immediately (root enforced)"
 msgstr "Este necesar să vă schimbați parola imediat (vă obligă administratorul)"
 
-#: ../src/mate-screensaver-dialog.c:171
+#: ../src/mate-screensaver-dialog.c:178
 msgid "Your account has expired; please contact your system administrator"
 msgstr "Contul dumneavoastră a expirat, contactați administratorul de sistem"
 
-#: ../src/mate-screensaver-dialog.c:172
+#: ../src/mate-screensaver-dialog.c:179
 msgid "No password supplied"
 msgstr "Nu ați introdus o parolă"
 
-#: ../src/mate-screensaver-dialog.c:173
+#: ../src/mate-screensaver-dialog.c:180
 msgid "Password unchanged"
 msgstr "Parolă neschimbată"
 
-#: ../src/mate-screensaver-dialog.c:174
+#: ../src/mate-screensaver-dialog.c:181
 msgid "Can not get username"
 msgstr "Nu se poate obține utilizatorul"
 
-#: ../src/mate-screensaver-dialog.c:175
+#: ../src/mate-screensaver-dialog.c:182
 msgid "Retype new UNIX password:"
 msgstr "Tastați încă o dată noua parolă UNIX:"
 
-#: ../src/mate-screensaver-dialog.c:176
+#: ../src/mate-screensaver-dialog.c:183
 msgid "Enter new UNIX password:"
 msgstr "Introduceți noua parolă UNIX:"
 
-#: ../src/mate-screensaver-dialog.c:177
+#: ../src/mate-screensaver-dialog.c:184
 msgid "(current) UNIX password:"
 msgstr "Parola (curentă) UNIX:"
 
-#: ../src/mate-screensaver-dialog.c:178
+#: ../src/mate-screensaver-dialog.c:185
 msgid "Error while changing NIS password."
 msgstr "Eroare la schimbarea parolei NIS."
 
-#: ../src/mate-screensaver-dialog.c:179
+#: ../src/mate-screensaver-dialog.c:186
 msgid "You must choose a longer password"
 msgstr "Trebuie să alegeți o parolă mai lungă"
 
-#: ../src/mate-screensaver-dialog.c:180
+#: ../src/mate-screensaver-dialog.c:187
 msgid "Password has been already used. Choose another."
 msgstr "Parola a fost deja folosită. Alegeți alta."
 
-#: ../src/mate-screensaver-dialog.c:181
+#: ../src/mate-screensaver-dialog.c:188
 msgid "You must wait longer to change your password"
 msgstr "Trebuie să așteptați mai mult pentru a vă schimba parola"
 
-#: ../src/mate-screensaver-dialog.c:182
+#: ../src/mate-screensaver-dialog.c:189
 msgid "Sorry, passwords do not match"
 msgstr "Ne pare rău, parolele nu se potrivesc"
 
-#: ../src/mate-screensaver-dialog.c:253
+#: ../src/mate-screensaver-dialog.c:260
 msgid "Checking..."
 msgstr "Se verifică..."
 
-#: ../src/mate-screensaver-dialog.c:299 ../src/gs-auth-pam.c:495
+#: ../src/mate-screensaver-dialog.c:306 ../src/gs-auth-pam.c:495
 msgid "Authentication failed."
 msgstr "Autentificarea a eșuat."
 
-#: ../src/mate-screensaver-preferences.c:476
+#: ../src/mate-screensaver-preferences.c:487
 msgid "Blank screen"
 msgstr "Ecran gol"
 
-#: ../src/mate-screensaver-preferences.c:482
+#: ../src/mate-screensaver-preferences.c:493
 msgid "Random"
 msgstr "Aleator"
 
-#: ../src/mate-screensaver-preferences.c:968
+#: ../src/mate-screensaver-preferences.c:983
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
@@ -454,7 +426,7 @@ msgstr[0] "%d oră"
 msgstr[1] "%d ore"
 msgstr[2] "%d de ore"
 
-#: ../src/mate-screensaver-preferences.c:971
+#: ../src/mate-screensaver-preferences.c:986
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
@@ -462,7 +434,7 @@ msgstr[0] "%d minut"
 msgstr[1] "%d minute"
 msgstr[2] "%d de minute"
 
-#: ../src/mate-screensaver-preferences.c:974
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -471,15 +443,15 @@ msgstr[1] "%d secunde"
 msgstr[2] "%d de secunde"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:982
+#: ../src/mate-screensaver-preferences.c:997
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:987
-#: ../src/mate-screensaver-preferences.c:1000
+#: ../src/mate-screensaver-preferences.c:1002
+#: ../src/mate-screensaver-preferences.c:1015
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
@@ -487,23 +459,23 @@ msgstr "%s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:992
-#: ../src/mate-screensaver-preferences.c:1005
-#: ../src/mate-screensaver-preferences.c:1011
+#: ../src/mate-screensaver-preferences.c:1007
+#: ../src/mate-screensaver-preferences.c:1020
+#: ../src/mate-screensaver-preferences.c:1026
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1026
+#: ../src/mate-screensaver-preferences.c:1041
 #, c-format
 msgid "Never"
 msgstr "Niciodată"
 
-#: ../src/mate-screensaver-preferences.c:1451
+#: ../src/mate-screensaver-preferences.c:1622
 msgid "Could not load the main interface"
 msgstr "Nu se poate încărca interfața principală"
 
-#: ../src/mate-screensaver-preferences.c:1453
+#: ../src/mate-screensaver-preferences.c:1624
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Vă rugăm să vă asigurați că economizorul este instalat corespunzător"
 
@@ -553,27 +525,43 @@ msgstr "deconectat de la magistrala de mesaje"
 msgid "screensaver already running in this session"
 msgstr "economizorul rulează deja în această sesiune"
 
-#: ../src/gs-lock-plug.c:355
+#. Translators: Time format, see https://developer.gnome.org/glib/stable/glib-
+#. GDateTime.html#g-date-time-format
+#: ../src/gs-lock-plug.c:304
+msgid "%l:%M %p"
+msgstr ""
+
+#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
+#. GDateTime.html#g-date-time-format
+#: ../src/gs-lock-plug.c:306
+msgid "%A, %B %e"
+msgstr ""
+
+#: ../src/gs-lock-plug.c:408
 msgid "Time has expired."
 msgstr "Timpul a expirat."
 
-#: ../src/gs-lock-plug.c:386
+#: ../src/gs-lock-plug.c:439
 msgid "You have the Caps Lock key on."
 msgstr "Caps Lock activat."
 
-#: ../src/gs-lock-plug.c:1504
+#: ../src/gs-lock-plug.c:1758
 msgid "S_witch User..."
 msgstr "S_chimbă utilizatorul..."
 
-#: ../src/gs-lock-plug.c:1513
+#: ../src/gs-lock-plug.c:1767
 msgid "Log _Out"
 msgstr "_Ieșire din sesiune"
 
+#: ../src/gs-lock-plug.c:1778
+msgid "_Unlock"
+msgstr "_Deblocare"
+
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1705
+#: ../src/gs-lock-plug.c:1976
 msgid "%U on %h"
 msgstr "%U pe %h"
 
-#: ../src/gs-lock-plug.c:1719
+#: ../src/gs-lock-plug.c:1990
 msgid "_Password:"
 msgstr "_Parolă:"

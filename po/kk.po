@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-13 14:10+0100\n"
-"PO-Revision-Date: 2013-11-13 13:10+0000\n"
+"POT-Creation-Date: 2014-01-28 10:23+0100\n"
+"PO-Revision-Date: 2014-01-28 09:24+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
 "Language-Team: Kazakh (http://www.transifex.com/projects/p/MATE/language/kk/)\n"
 "MIME-Version: 1.0\n"
@@ -516,31 +516,43 @@ msgstr ""
 msgid "screensaver already running in this session"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:366
+#. Translators: Time format, see https://developer.gnome.org/glib/stable/glib-
+#. GDateTime.html#g-date-time-format
+#: ../src/gs-lock-plug.c:304
+msgid "%l:%M %p"
+msgstr ""
+
+#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
+#. GDateTime.html#g-date-time-format
+#: ../src/gs-lock-plug.c:306
+msgid "%A, %B %e"
+msgstr ""
+
+#: ../src/gs-lock-plug.c:408
 msgid "Time has expired."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:397
+#: ../src/gs-lock-plug.c:439
 msgid "You have the Caps Lock key on."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1716
+#: ../src/gs-lock-plug.c:1758
 msgid "S_witch User..."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1725
+#: ../src/gs-lock-plug.c:1767
 msgid "Log _Out"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1736
+#: ../src/gs-lock-plug.c:1778
 msgid "_Unlock"
 msgstr "Бо_сату"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1917
+#: ../src/gs-lock-plug.c:1976
 msgid "%U on %h"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1931
+#: ../src/gs-lock-plug.c:1990
 msgid "_Password:"
 msgstr "_Пароль:"
