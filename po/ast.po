@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-28 10:23+0100\n"
-"PO-Revision-Date: 2014-01-28 09:24+0000\n"
+"POT-Creation-Date: 2014-02-08 13:22+0100\n"
+"PO-Revision-Date: 2014-02-08 12:24+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
 "Language-Team: Asturian (http://www.transifex.com/projects/p/MATE/language/ast/)\n"
 "MIME-Version: 1.0\n"
@@ -84,6 +84,51 @@ msgstr "Temes del Curiapantalles"
 #: ../savers/cosmos-slideshow.desktop.in.in.h:1
 msgid "Cosmos"
 msgstr "Cosmos"
+
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<span size=\"xx-large\" weight=\"ultrabold\">%s</span>"
+msgstr ""
+
+#: ../data/lock-dialog-default.ui.h:4
+#, no-c-format
+msgid "<span size=\"large\">%s</span>"
+msgstr ""
+
+#: ../data/lock-dialog-default.ui.h:6
+#, no-c-format
+msgid "<span size=\"x-large\">%R</span>"
+msgstr ""
+
+#: ../data/lock-dialog-default.ui.h:8
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr ""
+
+#: ../data/lock-dialog-default.ui.h:9
+msgid "_Leave Message"
+msgstr ""
+
+#: ../data/lock-dialog-default.ui.h:10
+msgid "_Switch User"
+msgstr ""
+
+#: ../data/lock-dialog-default.ui.h:11
+msgid "_Log Out"
+msgstr ""
+
+#: ../data/lock-dialog-default.ui.h:12
+msgid "_Cancel"
+msgstr ""
+
+#: ../data/lock-dialog-default.ui.h:13 ../src/gs-lock-plug.c:1778
+msgid "_Unlock"
+msgstr "Desbloq_uiar"
+
+#: ../data/lock-dialog-default.ui.h:15
+#, no-c-format
+msgid "<b>Leave a message for %R:</b>"
+msgstr ""
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -549,10 +594,6 @@ msgstr "_Trocar usuariu..."
 #: ../src/gs-lock-plug.c:1767
 msgid "Log _Out"
 msgstr "Dec_oneutar"
-
-#: ../src/gs-lock-plug.c:1778
-msgid "_Unlock"
-msgstr "Desbloq_uiar"
 
 #. To translators: This expands to USERNAME on HOSTNAME
 #: ../src/gs-lock-plug.c:1976

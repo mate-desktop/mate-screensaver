@@ -11,13 +11,13 @@
 # Ignacio Casal Quinteiro <nacho.resa@gmail.com>, 2005-2006
 # Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun.org>, 2009
 # mbouzada <mbouzada@gmail.com>, 2013-2014
-# mbouzada <mbouzada@gmail.com>, 2013
+# mbouzada <mbouzada@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-28 10:23+0100\n"
-"PO-Revision-Date: 2014-01-30 14:10+0000\n"
+"POT-Creation-Date: 2014-02-08 13:22+0100\n"
+"PO-Revision-Date: 2014-02-09 09:46+0000\n"
 "Last-Translator: mbouzada <mbouzada@gmail.com>\n"
 "Language-Team: Galician (http://www.transifex.com/projects/p/MATE/language/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -90,6 +90,51 @@ msgstr "Temas do protector de pantalla"
 #: ../savers/cosmos-slideshow.desktop.in.in.h:1
 msgid "Cosmos"
 msgstr "Cosmos"
+
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<span size=\"xx-large\" weight=\"ultrabold\">%s</span>"
+msgstr "<span size=\"xx-large\" weight=\"ultrabold\">%s</span>"
+
+#: ../data/lock-dialog-default.ui.h:4
+#, no-c-format
+msgid "<span size=\"large\">%s</span>"
+msgstr "<span size=\"large\">%s</span>"
+
+#: ../data/lock-dialog-default.ui.h:6
+#, no-c-format
+msgid "<span size=\"x-large\">%R</span>"
+msgstr "<span size=\"x-large\">%R</span>"
+
+#: ../data/lock-dialog-default.ui.h:8
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U en %h</span>"
+
+#: ../data/lock-dialog-default.ui.h:9
+msgid "_Leave Message"
+msgstr "_Deixar unha mensaxe"
+
+#: ../data/lock-dialog-default.ui.h:10
+msgid "_Switch User"
+msgstr "_Cambiar de usuario"
+
+#: ../data/lock-dialog-default.ui.h:11
+msgid "_Log Out"
+msgstr "_Saír da sesión"
+
+#: ../data/lock-dialog-default.ui.h:12
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#: ../data/lock-dialog-default.ui.h:13 ../src/gs-lock-plug.c:1778
+msgid "_Unlock"
+msgstr "_Desbloquear"
+
+#: ../data/lock-dialog-default.ui.h:15
+#, no-c-format
+msgid "<b>Leave a message for %R:</b>"
+msgstr "<b>Deixar unha mensaxe para %R:</b>"
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -555,10 +600,6 @@ msgstr "_Cambiar de usuario..."
 #: ../src/gs-lock-plug.c:1767
 msgid "Log _Out"
 msgstr "_Saír da sesión"
-
-#: ../src/gs-lock-plug.c:1778
-msgid "_Unlock"
-msgstr "_Desbloquear"
 
 #. To translators: This expands to USERNAME on HOSTNAME
 #: ../src/gs-lock-plug.c:1976
