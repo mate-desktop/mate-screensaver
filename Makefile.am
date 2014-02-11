@@ -16,6 +16,7 @@ SUBDIRS =			\
 	$(NULL)
 
 EXTRA_DIST =			\
+	autogen.sh		\
 	COPYING			\
 	COPYING.LIB		\
 	AUTHORS			\
