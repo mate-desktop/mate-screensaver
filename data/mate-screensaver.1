@@ -1,4 +1,4 @@
-.\" Copyright (C) 2007 Sven Arvidsson <sa@whiz.se>
+.\" mate-screensaver manual page
 .\"
 .\" This is free software; you may redistribute it and/or modify
 .\" it under the terms of the GNU General Public License as
@@ -13,29 +13,55 @@
 .\"You should have received a copy of the GNU General Public License along
 .\"with this program; if not, write to the Free Software Foundation, Inc.,
 .\"51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-.TH mate-screensaver 1 "2007\-09\-27" "MATE"
-.SH NAME
-mate-screensaver \- screen saver and locker
-.SH SYNOPSIS
-.B mate-screensaver
-.RI [ OPTIONS... ]
-.SH DESCRIPTION
-MATE Screensaver is the default screen saver and locker in a MATE
-desktop. It is designed with simplicity and security in mind.
-.SH OPTIONS
+.\"
+.TH MATE-SCREENSAVER 1 "13 February 2014" "MATE Desktop Environment"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.SH "NAME"
+mate-screensaver \- The MATE Desktop Screensaver and Locker
+.SH "SYNOPSIS"
+.B mate-screensaver [OPTIONS]
+.SH "DESCRIPTION"
+MATE Screensaver is the default screen saver and locker for the MATE Desktop. It is designed with simplicity and security in mind. \fBmate-screensaver\fP integrates well with the MATE desktop, and it supports User Switching and the ability to lock down configuration settings.
+.SH "OPTIONS"
 .TP
-.B \-\-no\-daemon
-Don't become a daemon
+\fB\-\-display=DISPLAY\fR
+X display to use.
 .TP
-.B \-\-debug
-Enable debugging code
+\fB\-\-no\-daemon\fR
+Don't start as a daemon
+.TP
+\fB \-\-debug\fR
+Enable debugging messages for \fBmate-screensaver\fP
+.TP
+\fB\-\-version\fR
+Output version information and exit.
+.TP
+\fB\-h, \-\-help\fR
+Print standard command line options.
+.TP
+\fB\-\-help\-all\fR
+Print all command line options.
 .P
 This program also accepts the standard GTK options.
-.SH AUTHORS
-.B mate-screensaver
-is written by William Jon McCann <mccann@jhu.edu>.
+.SH "BUGS"
+.SS Should you encounter any bugs, they may be reported at: 
+http://github.com/mate-desktop/mate-screensaver/issues
+.SH "AUTHORS"
+.SS mate-screensaver is maintained by:
+.nf
+Perberos <perberos@gmail.com>
+Steve Zesch <stevezesch2@gmail.com>
+Stefano Karapetsas <stefano@karapetsas.com>
+.fi
+.SS This Man Page has been updated for the MATE Desktop Environment by:
+Adam Erdman <hekel@archlinux.info> (2014)
+.SH "HISTORY"
+.SS gnome-screensaver was written by William Jon McCann <mccann@jhu.edu>
+.SS This manual page was originally written by Sven Arvidsson <sa@whiz.se> (2007)
+.SH "SEE ALSO"
+.SS Further information may also be available at: http://wiki.mate-desktop.org/docs
 .P
-This manual page was written by Sven Arvidsson <sa@whiz.se>.
-.SH SEE ALSO
-.BR "gtk-options" (7)
-
+.BR mate-screensaver-command (1),
+.BR mate-screensaver-preferences (1),
+.BR gtk-options (7)
