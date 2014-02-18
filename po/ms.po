@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-02-08 13:51+0000\n"
+"PO-Revision-Date: 2014-02-10 15:57+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>\n"
 "Language-Team: Malay (http://www.transifex.com/projects/p/MATE/language/ms/)\n"
 "MIME-Version: 1.0\n"
@@ -106,19 +106,19 @@ msgstr "<span size=\"small\">%U pada %h</span>"
 
 #: ../data/lock-dialog-default.ui.h:9
 msgid "_Leave Message"
-msgstr ""
+msgstr "Tingga_lkan mesej"
 
 #: ../data/lock-dialog-default.ui.h:10
 msgid "_Switch User"
-msgstr ""
+msgstr "_Tukar Pengguna"
 
 #: ../data/lock-dialog-default.ui.h:11
 msgid "_Log Out"
-msgstr ""
+msgstr "_Daftar Keluar"
 
 #: ../data/lock-dialog-default.ui.h:12
 msgid "_Cancel"
-msgstr ""
+msgstr "_Batal"
 
 #: ../data/lock-dialog-default.ui.h:13 ../src/gs-lock-plug.c:1778
 msgid "_Unlock"
@@ -127,7 +127,7 @@ msgstr "Buka k_unci"
 #: ../data/lock-dialog-default.ui.h:15
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
-msgstr ""
+msgstr "<b>Tinggalkan mesej untuk %R:</b>"
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
