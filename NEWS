@@ -1,4 +1,13 @@
 ===============
+Version 1.7.1
+===============
+
+Show date and time in lock dialog.
+Add theme to use GNOME foot logo as floaters screensaver
+Rename Floating Feet as Floating MATE
+Add GTK3 support
+
+===============
 Version  1.1.0
 ===============
 
