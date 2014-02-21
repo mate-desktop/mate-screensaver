@@ -384,41 +384,10 @@ preview_set_theme (GtkWidget  *widget,
 static void
 help_display (void)
 {
-	GError     *error = NULL;
-	char       *command;
-	const char *lang;
-	char       *uri = NULL;
-	GdkScreen  *gscreen;
-	int         i;
+	GError *error;
 
-	const char * const * langs = g_get_language_names ();
-
-	for (i = 0; langs[i] != NULL; i++)
-	{
-		lang = langs[i];
-		if (strchr (lang, '.'))
-		{
-			continue;
-		}
-
-		uri = g_build_filename (DATADIR,
-		                        "/mate/help/user-guide/",
-		                        lang,
-		                        "/user-guide.xml",
-		                        NULL);
-
-		if (g_file_test (uri, G_FILE_TEST_EXISTS))
-		{
-			break;
-		}
-	}
-
-	command = g_strconcat ("gvfs-open help://",
-	                       uri,
-	                       "?prefs-screensaver",
-	                       NULL);
-	gscreen = gdk_screen_get_default ();
-	gdk_spawn_command_line_on_screen (gscreen, command, &error);
+	error = NULL;
+	gtk_show_uri (NULL, "help:mate-user-guide/prefs-screensaver", GDK_CURRENT_TIME, &error);
 
 	if (error != NULL)
 	{
@@ -433,8 +402,6 @@ help_display (void)
 		g_error_free (error);
 	}
 
-	g_free (command);
-	g_free (uri);
 }
 
 static void
