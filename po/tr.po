@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-02-09 11:16+0000\n"
+"PO-Revision-Date: 2014-02-20 18:39+0000\n"
 "Last-Translator: mauron\n"
 "Language-Team: Turkish (http://www.transifex.com/projects/p/MATE/language/tr/)\n"
 "MIME-Version: 1.0\n"
@@ -450,7 +450,7 @@ msgstr "Üzgünüm, parolalar uyuşmuyor"
 
 #: ../src/mate-screensaver-dialog.c:260
 msgid "Checking..."
-msgstr "Kontrol ediyor..."
+msgstr "Kontrol ediliyor..."
 
 #: ../src/mate-screensaver-dialog.c:306 ../src/gs-auth-pam.c:495
 msgid "Authentication failed."
