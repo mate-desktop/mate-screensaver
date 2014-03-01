@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2006
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2006,2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-02-08 12:24+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-02-26 12:34+0000\n"
+"Last-Translator: meequz <meequz@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/projects/p/MATE/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,19 +21,19 @@ msgstr ""
 #: ../data/mate-screensaver-preferences.desktop.in.h:1
 #: ../src/mate-screensaver.desktop.in.in.h:1
 msgid "Screensaver"
-msgstr "Ахоўнік экрана"
+msgstr "Ахоўнік экрану"
 
 #: ../data/mate-screensaver-preferences.desktop.in.h:2
 msgid "Set your screensaver preferences"
-msgstr "Вызначэньне пераваг ахоўніка экрана"
+msgstr "Вызначэнне настáўленняў ахоўніка экрану"
 
 #: ../data/mate-screensaver-preferences.ui.h:1
 msgid "Screensaver Preferences"
-msgstr "Перавагі ахоўніка экрана"
+msgstr "Настáўленні ахоўніка экрану"
 
 #: ../data/mate-screensaver-preferences.ui.h:2
 msgid "Power _Management"
-msgstr "Кіраваньне с_ілкаваньнем"
+msgstr "Кіраванне с_ілкаваннем"
 
 #: ../data/mate-screensaver-preferences.ui.h:3
 msgid "_Preview"
@@ -45,19 +45,19 @@ msgstr "_Тэма ахоўніка:"
 
 #: ../data/mate-screensaver-preferences.ui.h:5
 msgid "Regard the computer as _idle after:"
-msgstr "Лічыць, што кампутар бязьдзейнічае, _пасьля:"
+msgstr "Лічыць, што кампутар бяздзейнічае, _пасля:"
 
 #: ../data/mate-screensaver-preferences.ui.h:6
 msgid "_Activate screensaver when computer is idle"
-msgstr "Зад_зейнічаць ахоўнік экрана, калі кампутар бяздзейнічае"
+msgstr "Зад_зейнічаць ахоўнік экрану, калі кампутар бяздзейнічае"
 
 #: ../data/mate-screensaver-preferences.ui.h:7
 msgid "_Lock screen when screensaver is active"
-msgstr "За_мкнуць экран, калі ахоўнік экрана задзейнічаны"
+msgstr "За_мкнуць экран, калі ахоўнік экрану задзейнічаны"
 
 #: ../data/mate-screensaver-preferences.ui.h:8
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>Увага: для карыстальніка root экран ня будзе заблякаваны.</b>"
+msgstr "<b>Увага: для карыстальніка root экран не будзе заблакаваны.</b>"
 
 #: ../data/mate-screensaver-preferences.ui.h:9
 msgid "Screensaver Preview"
@@ -69,11 +69,11 @@ msgstr "<b>Дэманстрацыя ахоўніка</b>"
 
 #: ../data/mate-screensaver.directory.in.h:1
 msgid "Screensavers"
-msgstr "Ахоўнікі экрана"
+msgstr "Ахоўнікі экрану"
 
 #: ../data/mate-screensaver.directory.in.h:2
 msgid "Screensaver themes"
-msgstr "Тэмы ахоўніка экрана"
+msgstr "Тэмы ахоўніка экрану"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -130,11 +130,11 @@ msgstr ""
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
-msgstr "Адлюстроўвае слайд-шоў зь відарысамі космасу"
+msgstr "Адлюстроўвае слайд-шоў з выявамі космасу"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
 msgid "Floating MATE"
-msgstr ""
+msgstr "MATE плавае"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
@@ -142,7 +142,7 @@ msgstr ""
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:1
 msgid "Floating GNOME"
-msgstr ""
+msgstr "GNOME плавае"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the GNOME logo around the screen"
@@ -150,11 +150,11 @@ msgstr ""
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
 msgid "Pictures folder"
-msgstr "Тэчка з відарысамі"
+msgstr "Каталог з выявамі"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow from your Pictures folder"
-msgstr "Адлюстроўвае слайд-шоў з вашых відарысаў"
+msgstr "Паказвае слайд-шоў з вашых выяў"
 
 #: ../savers/popsquares.desktop.in.in.h:1
 msgid "Pop art squares"
@@ -162,20 +162,20 @@ msgstr "Каляровыя квадраты"
 
 #: ../savers/popsquares.desktop.in.in.h:2
 msgid "A pop-art-ish grid of pulsing colors."
-msgstr "Папулярныя краты пулюсуючых колераў."
+msgstr "Папулярныя сеткі пульсуючых колераў."
 
 #: ../savers/popsquares.c:51 ../savers/floaters.c:1252
 #, c-format
 msgid "%s. See --help for usage information.\n"
-msgstr "%s. Глядзіце --help для зьвестак аб выкарыстаньні.\n"
+msgstr "%s. Глядзіце --help для звестак пра выкарыстанне.\n"
 
 #: ../savers/floaters.c:94
 msgid "Show paths that images follow"
-msgstr "Паказваць траэкторыі відарысаў"
+msgstr "Паказваць траекторыі выяў"
 
 #: ../savers/floaters.c:99
 msgid "Occasionally rotate images as they move"
-msgstr "Выпадкова варочваць відарысы ў час руху"
+msgstr "Выпадкова паварочваць выявы падчас руху"
 
 #: ../savers/floaters.c:104
 msgid "Print out frame rate and other statistics"
@@ -183,7 +183,7 @@ msgstr "Друкаваць частату кадраў і іншыя даныя"
 
 #: ../savers/floaters.c:109
 msgid "The maximum number of images to keep on screen"
-msgstr "Найбольшая колькасьць відарысаў на экране"
+msgstr "Найбольшая колькасць выяў на экране"
 
 #: ../savers/floaters.c:109
 msgid "MAX_IMAGES"
@@ -191,7 +191,7 @@ msgstr "MAX_IMAGES"
 
 #: ../savers/floaters.c:114
 msgid "The initial size and position of window"
-msgstr "Пачатковы памер і пазыцыя вакна"
+msgstr "Пачатковы памер і пазіцыя вакна"
 
 #: ../savers/floaters.c:114
 msgid "WIDTHxHEIGHT+X+Y"
@@ -199,22 +199,22 @@ msgstr "ШЫРЫНЯxВЫШЫНЯ+X+Y"
 
 #: ../savers/floaters.c:119
 msgid "The source image to use"
-msgstr "Зыходны відарыс"
+msgstr "Зыходная выява"
 
 #. translators: the word "image" here
 #. * represents a command line argument
 #: ../savers/floaters.c:1246
 msgid "image - floats images around the screen"
-msgstr "image - відарысы, якія лётаюц на экране"
+msgstr "image - выявы, якія лятаюць па экране"
 
 #: ../savers/floaters.c:1261
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "Вы мусіце задаць адзін відарыс. Глядзіце --help для зьвестак аб выкарыстаньні.\n"
+msgstr "Вы мусіце задаць адну выяву. Глядзіце --help для звестак пра выкарыстанне.\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
-msgstr "Шлях, дзе знаходзяцца відарысы"
+msgstr "Шлях, дзе знаходзяцца выявы"
 
 #: ../savers/slideshow.c:55
 msgid "PATH"
@@ -222,7 +222,7 @@ msgstr "ШЛЯХ"
 
 #: ../savers/slideshow.c:59
 msgid "Color to use for images background"
-msgstr "Колер для тла відарысаў"
+msgstr "Колер для фону выяў"
 
 #: ../savers/slideshow.c:59
 msgid "\"#rrggbb\""
@@ -230,15 +230,15 @@ msgstr "\"#ччззсс\""
 
 #: ../savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
-msgstr "Не перамешваць відарысы пэўнага места"
+msgstr "Не перамешваць выявы з пэўнага месца"
 
 #: ../savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"
-msgstr "Не спрабаваць расьцягнуць відарысы на ўвесь экран"
+msgstr "Не спрабаваць расцягнуць выявы на ўвесь экран"
 
 #: ../src/copy-theme-dialog.c:219
 msgid "Copying files"
-msgstr "Капіяваньне файлаў"
+msgstr "Капіяванне файлаў"
 
 #: ../src/copy-theme-dialog.c:237
 msgid "From:"
@@ -250,21 +250,21 @@ msgstr "Куды:"
 
 #: ../src/copy-theme-dialog.c:261
 msgid "Copying themes"
-msgstr "Капіяваньне тэмаў"
+msgstr "Капіяванне тэмаў"
 
 #: ../src/copy-theme-dialog.c:307
 msgid "Invalid screensaver theme"
-msgstr "Нерэчаісная тэма"
+msgstr "Хібная тэма"
 
 #: ../src/copy-theme-dialog.c:310
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
-msgstr "%s не зьяўляецца рэчаіснай тэмай ахоўніка экрана."
+msgstr "%s не з'яўляецца дзейснай тэмай ахоўніка экрану."
 
 #: ../src/copy-theme-dialog.c:490
 #, c-format
 msgid "Copying file: %u of %u"
-msgstr "Капяваньне файла: %u з %u"
+msgstr "Капіяванне файла: %u з %u"
 
 #: ../src/mate-screensaver-command.c:64
 msgid "Causes the screensaver to exit gracefully"
@@ -276,51 +276,51 @@ msgstr "Апытвае стан ахоўніка экрану"
 
 #: ../src/mate-screensaver-command.c:72
 msgid "Query the length of time the screensaver has been active"
-msgstr "Запыт часу актыўнай працы ахоўніка экрана"
+msgstr "Запыт часу актыўнай працы ахоўніка экрану"
 
 #: ../src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to lock the screen immediately"
-msgstr "Паведамі бягучаму працэсу ахоўніка экрана неадкладна замкнуць экран"
+msgstr "Паведамляе дзейнаму працэсу ахоўніка экрану неадкладна замкнуць экран"
 
 #: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
-msgstr "Калі ахоўнік экрана актыўны, пераключыцца на інушю графічную дэманстрацыю"
+msgstr "Калі ахоўнік экрану актыўны, пераключыцца на інушю графічную дэманстрацыю"
 
 #: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
-msgstr "Уключыць ахоўнік экрана (пусты экран)"
+msgstr "Уключыць ахоўнік экрану (пусты экран)"
 
 #: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr "Калі ахоўнік экрана актыўны, дэактывізаваць яго (скасаваць пусты экран)"
+msgstr "Калі ахоўнік экрану актыўны, дэактывізаваць яго (скасаваць пусты экран)"
 
 #: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "Піхнуць бягучы ахоўнік экрана, каб эмітаваць актыўнасьць карыстальніка"
+msgstr "Піхнуць дзейны ахоўнік экрану, каб эмітаваць актыўнасць карыстальніка"
 
 #: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Стрымаць ахоўнік экрана ад працы.  Загад заблякаваны, покуль актыўна стрымліваньне."
+msgstr "Стрымаць ахоўнік экрану ад працы.  Загад заблакаваны, пакуль актыўна стрымліванне."
 
 #: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
-msgstr "Названае дастасаваньне стрымлівае ахоўніка экрана"
+msgstr "Названая праграма стрымлівае ахоўнік экрану"
 
 #: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
-msgstr "Прычына стрымліваньня ахоўніка экрана"
+msgstr "Прычына стрымлівання ахоўніка экрану"
 
 #: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:60
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
-msgstr "Вэрсія гэтага дастасаваньня"
+msgstr "Версія гэтай праграмы"
 
 #: ../src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
-msgstr "Ахоўнік экрана %s\n"
+msgstr "Ахоўнік экрану %s\n"
 
 #: ../src/mate-screensaver-command.c:357
 msgid "active"
@@ -343,7 +343,7 @@ msgstr ""
 #: ../src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
-msgstr "Ахоўні экрана быў актыўны %d сэкундаў.\n"
+msgstr "Ахоўнік экрану быў актыўны %d секунд.\n"
 
 #: ../src/mate-screensaver-command.c:422
 #, c-format
@@ -360,15 +360,15 @@ msgstr "Паказваць кнопку выхаду"
 
 #: ../src/mate-screensaver-dialog.c:62
 msgid "Command to invoke from the logout button"
-msgstr "Загад, які выклікаецца ў час актывацыі кнопкі выхаду"
+msgstr "Загад, які выклікаецца падчас актывацыі кнопкі выхаду"
 
 #: ../src/mate-screensaver-dialog.c:63
 msgid "Show the switch user button"
-msgstr "Пакзаваць кнопку пераключэньня карыстальнікаў"
+msgstr "Пакзаваць кнопку пераключэння карыстальнікаў"
 
 #: ../src/mate-screensaver-dialog.c:64
 msgid "Message to show in the dialog"
-msgstr "Тэкст дыялёгу:"
+msgstr "Тэкст для паказу ў акенцы:"
 
 #: ../src/mate-screensaver-dialog.c:64 ../src/mate-screensaver-dialog.c:65
 msgid "MESSAGE"
@@ -391,15 +391,15 @@ msgstr "Пароль:"
 
 #: ../src/mate-screensaver-dialog.c:176
 msgid "You are required to change your password immediately (password aged)"
-msgstr "Вам мусіце неадкладна зьмяніць ваш пароль (скончыўся час яго існаваньня)"
+msgstr "Вы мусіце неадкладна змяніць ваш пароль (скончыўся час яго існавання)"
 
 #: ../src/mate-screensaver-dialog.c:177
 msgid "You are required to change your password immediately (root enforced)"
-msgstr "Вам мусіце неадкладна зьмяніць ваш пароль (прымушае root)"
+msgstr "Вы мусіце неадкладна змяніць ваш пароль (прымушае root)"
 
 #: ../src/mate-screensaver-dialog.c:178
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Скончыўся час існаваньня рахунка; калі ласка, зьвяжыцеся з сыстэмным адміністратарам"
+msgstr "Скончыўся час існавання конту; калі ласка, звяжыцеся з сістэмным адміністратарам"
 
 #: ../src/mate-screensaver-dialog.c:179
 msgid "No password supplied"
@@ -407,39 +407,39 @@ msgstr "Пароль не прадастаўлены"
 
 #: ../src/mate-screensaver-dialog.c:180
 msgid "Password unchanged"
-msgstr "Пароль ня зьменены"
+msgstr "Пароль не зменены"
 
 #: ../src/mate-screensaver-dialog.c:181
 msgid "Can not get username"
-msgstr "Немагчыма вызначыць уліковае імя"
+msgstr "Немагчыма вызначыць імя карыстальніка"
 
 #: ../src/mate-screensaver-dialog.c:182
 msgid "Retype new UNIX password:"
-msgstr "Паўтарыце новы UNIX проль:"
+msgstr "Паўтарыце новы UNIX-пароль:"
 
 #: ../src/mate-screensaver-dialog.c:183
 msgid "Enter new UNIX password:"
-msgstr "Увядзіце новы UNIX пароль:"
+msgstr "Увядзіце новы UNIX-пароль:"
 
 #: ../src/mate-screensaver-dialog.c:184
 msgid "(current) UNIX password:"
-msgstr "(бягучы) UNIX пароль:"
+msgstr "(дзейны) UNIX-пароль:"
 
 #: ../src/mate-screensaver-dialog.c:185
 msgid "Error while changing NIS password."
-msgstr "Памылка ў час зьмены паролю ў NIS."
+msgstr "Памылка падчас змены паролю ў NIS."
 
 #: ../src/mate-screensaver-dialog.c:186
 msgid "You must choose a longer password"
-msgstr "Вы мусіце выбраць даўжэйшы пароль"
+msgstr "Трэба задаць даўжэйшы пароль"
 
 #: ../src/mate-screensaver-dialog.c:187
 msgid "Password has been already used. Choose another."
-msgstr "Пароль ужо выкарыстоўваўся раней. Выбярыце іншы."
+msgstr "Пароль ужо выкарыстоўваўся раней. Абярыце іншы."
 
 #: ../src/mate-screensaver-dialog.c:188
 msgid "You must wait longer to change your password"
-msgstr "Вы мусіце чакаць крыху больш, калі зьмяняеце ваш пароль"
+msgstr "Вы мусіце чакаць крыху больш, калі змяняеце ваш пароль"
 
 #: ../src/mate-screensaver-dialog.c:189
 msgid "Sorry, passwords do not match"
@@ -519,11 +519,11 @@ msgstr "Ніколі"
 
 #: ../src/mate-screensaver-preferences.c:1622
 msgid "Could not load the main interface"
-msgstr "Не загружаць асноўнае спалучэньне"
+msgstr "Не загружаць асноўнае далучэнне"
 
 #: ../src/mate-screensaver-preferences.c:1624
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "Калі ласка, упэўніцеся, што ахоўнік экрана правільна ўсталяваны"
+msgstr "Калі ласка, упэўніцеся, што ахоўнік экрану карэктна ўсталяваны"
 
 #: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
@@ -549,27 +549,27 @@ msgstr "Немагчыма задаць PAM_TTY=%s"
 
 #: ../src/gs-auth-pam.c:491
 msgid "Incorrect password."
-msgstr "Няслушны пароль."
+msgstr "Нядзейсны пароль."
 
 #: ../src/gs-auth-pam.c:511
 msgid "Not permitted to gain access at this time."
-msgstr "Доступ да сыстэмы ў гэты час забаронены."
+msgstr "Доступ да сістэмы ў гэты час забаронены."
 
 #: ../src/gs-auth-pam.c:519
 msgid "No longer permitted to access the system."
-msgstr "Доступ да сыстэмы забаронены."
+msgstr "Доступ да сістэмы забаронены."
 
 #: ../src/gs-listener-dbus.c:2219
 msgid "failed to register with the message bus"
-msgstr "немагчыма зарэгістравацца на шыне паведамленьняў"
+msgstr "немагчыма зарэгістравацца на шыне паведамленняў"
 
 #: ../src/gs-listener-dbus.c:2230
 msgid "not connected to the message bus"
-msgstr "не далучаны да шыны паведамленьняў"
+msgstr "не далучаны да шыны паведамленняў"
 
 #: ../src/gs-listener-dbus.c:2240 ../src/gs-listener-dbus.c:2272
 msgid "screensaver already running in this session"
-msgstr "ахоўнік экрана ўжо працуе ў гэтым сэансе"
+msgstr "ахоўнік экрану ўжо працуе ў гэтым сеансе"
 
 #. Translators: Time format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
@@ -597,7 +597,7 @@ msgstr "Карыстальнік..."
 
 #: ../src/gs-lock-plug.c:1767
 msgid "Log _Out"
-msgstr "Завяршыць _сэанс"
+msgstr "Скончыць _сеанс"
 
 #. To translators: This expands to USERNAME on HOSTNAME
 #: ../src/gs-lock-plug.c:1976

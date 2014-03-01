@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# sir_hawell <arash.cordi@gmail.com>, 2014
 # Elnaz Sarbar <elnaz@farsiweb.info>, 2006
 # Meelad Zakaria <meelad@farsiweb.info>, 2006
 msgid ""
@@ -10,8 +11,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-02-08 12:24+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-03-01 07:44+0000\n"
+"Last-Translator: sir_hawell <arash.cordi@gmail.com>\n"
 "Language-Team: Persian (http://www.transifex.com/projects/p/MATE/language/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +35,7 @@ msgstr "ترجیحات محافظ صفحهٔ نمایش"
 
 #: ../data/mate-screensaver-preferences.ui.h:2
 msgid "Power _Management"
-msgstr ""
+msgstr "ـمدیریت انرژی"
 
 #: ../data/mate-screensaver-preferences.ui.h:3
 msgid "_Preview"
@@ -87,38 +88,38 @@ msgstr "کیهان"
 #: ../data/lock-dialog-default.ui.h:2
 #, no-c-format
 msgid "<span size=\"xx-large\" weight=\"ultrabold\">%s</span>"
-msgstr ""
+msgstr "<span size=\"xx-large\" weight=\"ultrabold\">%s</span>"
 
 #: ../data/lock-dialog-default.ui.h:4
 #, no-c-format
 msgid "<span size=\"large\">%s</span>"
-msgstr ""
+msgstr "<span size=\"large\">%s</span>"
 
 #: ../data/lock-dialog-default.ui.h:6
 #, no-c-format
 msgid "<span size=\"x-large\">%R</span>"
-msgstr ""
+msgstr "<span size=\"x-large\">%R</span>"
 
 #: ../data/lock-dialog-default.ui.h:8
 #, no-c-format
 msgid "<span size=\"small\">%U on %h</span>"
-msgstr ""
+msgstr "<span size=\"small\">%U on %h</span>"
 
 #: ../data/lock-dialog-default.ui.h:9
 msgid "_Leave Message"
-msgstr ""
+msgstr "_باقی گذاشتن پیام"
 
 #: ../data/lock-dialog-default.ui.h:10
 msgid "_Switch User"
-msgstr ""
+msgstr "ت_عویض کاربر..."
 
 #: ../data/lock-dialog-default.ui.h:11
 msgid "_Log Out"
-msgstr ""
+msgstr "_خروج از سیستم"
 
 #: ../data/lock-dialog-default.ui.h:12
 msgid "_Cancel"
-msgstr ""
+msgstr "ان_صراف"
 
 #: ../data/lock-dialog-default.ui.h:13 ../src/gs-lock-plug.c:1778
 msgid "_Unlock"
@@ -127,7 +128,7 @@ msgstr "_باز کردن قفل"
 #: ../data/lock-dialog-default.ui.h:15
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
-msgstr ""
+msgstr "<b>باقی گذاشتن پیام برای %R</b>"
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -135,19 +136,19 @@ msgstr "اسلایدهایی از تصاویر کیهان نمایش داده ش
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
 msgid "Floating MATE"
-msgstr ""
+msgstr "MATE معلق"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
-msgstr ""
+msgstr "حباب‌پراکنی از لوگوی MATE در اطراف صفحهٔ نمایش"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:1
 msgid "Floating GNOME"
-msgstr ""
+msgstr "GNOME معلق"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the GNOME logo around the screen"
-msgstr ""
+msgstr "حباب‌پراکنی از لوگوی گنوم در اطراف صفحهٔ نمایش"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
 msgid "Pictures folder"
@@ -172,27 +173,27 @@ msgstr "%s.  برای اطلاعات در مورد طرز استفاده --help 
 
 #: ../savers/floaters.c:94
 msgid "Show paths that images follow"
-msgstr ""
+msgstr "مسیرهایی را که تصاویر دنبال می کنند نشان بده"
 
 #: ../savers/floaters.c:99
 msgid "Occasionally rotate images as they move"
-msgstr ""
+msgstr "گاه به گاه تصاویر را در حین حرکت بچرخان"
 
 #: ../savers/floaters.c:104
 msgid "Print out frame rate and other statistics"
-msgstr ""
+msgstr "نرخ فریم و دیگر ارقام را نشان بده"
 
 #: ../savers/floaters.c:109
 msgid "The maximum number of images to keep on screen"
-msgstr ""
+msgstr "حداکثر تعداد تصاویر روی صفحه نمایش"
 
 #: ../savers/floaters.c:109
 msgid "MAX_IMAGES"
-msgstr ""
+msgstr "MAX_IMAGES"
 
 #: ../savers/floaters.c:114
 msgid "The initial size and position of window"
-msgstr ""
+msgstr "اندازه و موقعیت اولیه پنجره"
 
 #: ../savers/floaters.c:114
 msgid "WIDTHxHEIGHT+X+Y"
@@ -200,7 +201,7 @@ msgstr "عرضxارتفاع+x+y"
 
 #: ../savers/floaters.c:119
 msgid "The source image to use"
-msgstr ""
+msgstr "تصویر منبع برای استفاده"
 
 #. translators: the word "image" here
 #. * represents a command line argument
@@ -223,19 +224,19 @@ msgstr "مسیر"
 
 #: ../savers/slideshow.c:59
 msgid "Color to use for images background"
-msgstr ""
+msgstr "رنگ پس زمینه تصاویر"
 
 #: ../savers/slideshow.c:59
 msgid "\"#rrggbb\""
-msgstr ""
+msgstr "\"#rrggbb\""
 
 #: ../savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
-msgstr ""
+msgstr "تصاویری را که از location آمده درهم سازی نکن"
 
 #: ../savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"
-msgstr ""
+msgstr "تصاویر را کشیده نمایش نده"
 
 #: ../src/copy-theme-dialog.c:219
 msgid "Copying files"
@@ -251,7 +252,7 @@ msgstr "به:"
 
 #: ../src/copy-theme-dialog.c:261
 msgid "Copying themes"
-msgstr ""
+msgstr "تم های کپی"
 
 #: ../src/copy-theme-dialog.c:307
 msgid "Invalid screensaver theme"
@@ -260,7 +261,7 @@ msgstr "تم محافظ صفحهٔ نمایش نامعتبر"
 #: ../src/copy-theme-dialog.c:310
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
-msgstr ""
+msgstr "به نظر نمی رسد %s تم محافظ صفحه نمایش معتبری باشد"
 
 #: ../src/copy-theme-dialog.c:490
 #, c-format
@@ -277,7 +278,7 @@ msgstr "پرس‌وجو از وضعیت محافظ صفحهٔ نمایش"
 
 #: ../src/mate-screensaver-command.c:72
 msgid "Query the length of time the screensaver has been active"
-msgstr ""
+msgstr "پرس و جوی مدت زمانی که محافظ صفحه نمایش فعال بوده"
 
 #: ../src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to lock the screen immediately"
@@ -297,7 +298,7 @@ msgstr "اگر محافظ صفحهٔ نمایش فعال است، غیر فعا�
 
 #: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
-msgstr ""
+msgstr "انگولک کردن محافظ صفحه نمایش در حال اجرا برای شبیه سازی فعالیت کاربر"
 
 #: ../src/mate-screensaver-command.c:96
 msgid ""
@@ -334,22 +335,22 @@ msgstr "غیرفعال"
 #: ../src/mate-screensaver-command.c:373
 #, c-format
 msgid "The screensaver is not inhibited\n"
-msgstr ""
+msgstr "محافظ صفحه نمایش مهار نشده است\n"
 
 #: ../src/mate-screensaver-command.c:381
 #, c-format
 msgid "The screensaver is being inhibited by:\n"
-msgstr ""
+msgstr "محافظ صفحه نمایش مهار شده توسط:\n"
 
 #: ../src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
-msgstr ""
+msgstr "مدت %d ثانیه است که محافظ صفحه نمایش فعال است.\n"
 
 #: ../src/mate-screensaver-command.c:422
 #, c-format
 msgid "The screensaver is not currently active.\n"
-msgstr ""
+msgstr "محافظ صفحه نمایش در حال حاضر غیرفعال است.\n"
 
 #: ../src/mate-screensaver-dialog.c:59
 msgid "Show debugging output"
@@ -369,15 +370,15 @@ msgstr "نمایش دکمهٔ تعویض کاربر"
 
 #: ../src/mate-screensaver-dialog.c:64
 msgid "Message to show in the dialog"
-msgstr ""
+msgstr "پیامی که در پنجره محاوره نمایش داده می شود"
 
 #: ../src/mate-screensaver-dialog.c:64 ../src/mate-screensaver-dialog.c:65
 msgid "MESSAGE"
-msgstr ""
+msgstr "MESSAGE"
 
 #: ../src/mate-screensaver-dialog.c:65
 msgid "Not used"
-msgstr ""
+msgstr "بی استفاده"
 
 #. login: is whacked always translate to Username:
 #: ../src/mate-screensaver-dialog.c:171 ../src/mate-screensaver-dialog.c:172
@@ -527,7 +528,7 @@ msgstr "اشکال‌زدایی کُد به کار انداخته شود"
 
 #: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screen saver and locker program"
-msgstr ""
+msgstr "اجرای محافظ صفحه نمایش و برنامه قفل کننده"
 
 #: ../src/gs-auth-pam.c:425
 #, c-format
@@ -567,13 +568,13 @@ msgstr "محافظ صفحهٔ نمایش از قبل در این نشست در �
 #. GDateTime.html#g-date-time-format
 #: ../src/gs-lock-plug.c:304
 msgid "%l:%M %p"
-msgstr ""
+msgstr "%l:%M %p"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
 #: ../src/gs-lock-plug.c:306
 msgid "%A, %B %e"
-msgstr ""
+msgstr "%l:%M %p"
 
 #: ../src/gs-lock-plug.c:408
 msgid "Time has expired."
