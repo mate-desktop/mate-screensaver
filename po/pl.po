@@ -572,7 +572,7 @@ msgstr "wygaszacz ekranu jest już uruchomiony w tej sesji"
 #. GDateTime.html#g-date-time-format
 #: ../src/gs-lock-plug.c:304
 msgid "%l:%M %p"
-msgstr "%k:M"
+msgstr "%k:%M"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
