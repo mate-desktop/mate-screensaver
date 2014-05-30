@@ -300,10 +300,8 @@ date_time_update (GSLockPlug *plug)
 	gchar *str;
 
 	datetime = g_date_time_new_now_local ();
-	/* Translators: Time format, see https://developer.gnome.org/glib/stable/glib-GDateTime.html#g-date-time-format */
-	time = g_date_time_format (datetime, _("%l:%M %p"));
-	/* Translators: Date format, see https://developer.gnome.org/glib/stable/glib-GDateTime.html#g-date-time-format */
-	date = g_date_time_format (datetime, _("%A, %B %e"));
+	time = g_date_time_format (datetime, "%X");
+	date = g_date_time_format (datetime, "%A, %B %e");
 
 	str = g_strdup_printf ("<span size=\"xx-large\" weight=\"ultrabold\">%s</span>", time);
 	gtk_label_set_text (GTK_LABEL (plug->priv->auth_time_label), str);
