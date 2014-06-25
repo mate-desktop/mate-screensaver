@@ -300,8 +300,7 @@ date_time_update (GSLockPlug *plug)
 	gchar *str;
 
 	datetime = g_date_time_new_now_local ();
-	/* Translators: Time format, see https://developer.gnome.org/glib/stable/glib-GDateTime.html#g-date-time-format */
-	time = g_date_time_format (datetime, _("%l:%M %p"));
+	time = g_date_time_format (datetime, "%X");
 	/* Translators: Date format, see https://developer.gnome.org/glib/stable/glib-GDateTime.html#g-date-time-format */
 	date = g_date_time_format (datetime, _("%A, %B %e"));
 
