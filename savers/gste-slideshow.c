@@ -1062,8 +1062,6 @@ set_colormap (GtkWidget *widget)
 static void
 gste_slideshow_init (GSTESlideshow *show)
 {
-	GError *error;
-
 	show->priv = GSTE_SLIDESHOW_GET_PRIVATE (show);
 
 	show->priv->images_location = g_strdup (DEFAULT_IMAGES_LOCATION);
@@ -1071,15 +1069,7 @@ gste_slideshow_init (GSTESlideshow *show)
 	show->priv->op_q = g_async_queue_new ();
 	show->priv->results_q = g_async_queue_new ();
 
-	error = NULL;
-	show->priv->load_thread = g_thread_create ((GThreadFunc)load_threadfunc, show->priv->op_q, FALSE, &error);
-	if (show->priv->load_thread == NULL)
-	{
-		g_error ("Could not create a thread to load images: %s",
-		         error->message);
-		g_error_free (error);
-		exit (-1);
-	}
+	g_thread_new ("loadthread", (GThreadFunc)load_threadfunc, show->priv->op_q);
 
 #if GTK_CHECK_VERSION (3, 0, 0)
 	set_visual (GTK_WIDGET (show));
