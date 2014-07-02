@@ -237,11 +237,6 @@ main (int    argc,
 	textdomain (GETTEXT_PACKAGE);
 #endif
 
-	if (! g_thread_supported ())
-	{
-		g_thread_init (NULL);
-	}
-
 	gs_auth_set_verbose (verbose);
 	if (! privileged_initialization ())
 	{

@@ -75,7 +75,6 @@ main (int argc, char **argv)
 
 	error = NULL;
 
-	g_thread_init (NULL);
 	ret = gtk_init_with_args (&argc, &argv,
 	                          NULL,
 	                          entries,
