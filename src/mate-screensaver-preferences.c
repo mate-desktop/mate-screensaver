@@ -694,9 +694,7 @@ setup_treeview (GtkWidget *tree,
 
 	g_object_unref (store);
 
-#if GTK_CHECK_VERSION(2,10,0)
 	g_object_set (tree, "show-expanders", FALSE, NULL);
-#endif
 
 	renderer = gtk_cell_renderer_text_new ();
 	column = gtk_tree_view_column_new_with_attributes ("Name", renderer,

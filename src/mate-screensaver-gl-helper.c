@@ -48,8 +48,6 @@ main (int    argc,
 	textdomain (GETTEXT_PACKAGE);
 #endif
 
-	g_type_init ();
-
 	g_set_prgname (argv[0]);
 	if (! gtk_init_with_args (&argc, &argv, NULL, NULL, NULL, &error))
 	{

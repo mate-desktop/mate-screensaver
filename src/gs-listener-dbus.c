@@ -834,29 +834,6 @@ out:
 	return removed;
 }
 
-#if GLIB_CHECK_VERSION(2,12,0)
-#define _g_time_val_to_iso8601(t) g_time_val_to_iso8601(t)
-#else
-/* copied from GLib */
-static gchar *
-_g_time_val_to_iso8601 (GTimeVal *time_)
-{
-	gchar *retval;
-
-	g_return_val_if_fail (time_->tv_usec >= 0 && time_->tv_usec < G_USEC_PER_SEC, NULL);
-
-#define ISO_8601_LEN    21
-#define ISO_8601_FORMAT "%Y-%m-%dT%H:%M:%SZ"
-	retval = g_new0 (gchar, ISO_8601_LEN + 1);
-
-	strftime (retval, ISO_8601_LEN,
-	          ISO_8601_FORMAT,
-	          gmtime (&(time_->tv_sec)));
-
-	return retval;
-}
-#endif
-
 static void
 accumulate_ref_entry (gpointer            key,
                       GSListenerRefEntry *entry,
@@ -865,7 +842,7 @@ accumulate_ref_entry (gpointer            key,
 	char *description;
 	char *time;
 
-	time = _g_time_val_to_iso8601 (&entry->since);
+	time = g_time_val_to_iso8601 (&entry->since);
 
 	description = g_strdup_printf ("Application=\"%s\"; Since=\"%s\"; Reason=\"%s\";",
 	                               entry->application,
