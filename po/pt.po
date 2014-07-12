@@ -3,16 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Carlos <crolidge@gmail.com>, 2014
+# Carlos Moreira <crolidge@gmail.com>, 2014
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2006, 2007, 2008, 2009
-# kongshaolong <de2a9293@opayq.com>, 2013
+# Gonçalo Silva <de2a9293@opayq.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-03-22 15:23+0000\n"
-"Last-Translator: Carlos <crolidge@gmail.com>\n"
+"PO-Revision-Date: 2014-06-03 00:35+0000\n"
+"Last-Translator: Carlos Moreira <crolidge@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/MATE/language/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,15 +23,15 @@ msgstr ""
 #: ../data/mate-screensaver-preferences.desktop.in.h:1
 #: ../src/mate-screensaver.desktop.in.in.h:1
 msgid "Screensaver"
-msgstr "Protecção de Ecrã"
+msgstr "Proteção de Ecrã"
 
 #: ../data/mate-screensaver-preferences.desktop.in.h:2
 msgid "Set your screensaver preferences"
-msgstr "Defina as suas preferências de protecção de ecrã"
+msgstr "Defina as suas preferências de proteção de ecrã"
 
 #: ../data/mate-screensaver-preferences.ui.h:1
 msgid "Screensaver Preferences"
-msgstr "Preferências da Protecção de Ecrã"
+msgstr "Preferências da Proteção de Ecrã"
 
 #: ../data/mate-screensaver-preferences.ui.h:2
 msgid "Power _Management"
@@ -43,19 +43,19 @@ msgstr "_Antevisão"
 
 #: ../data/mate-screensaver-preferences.ui.h:4
 msgid "_Screensaver theme:"
-msgstr "Tema do _protector de ecrã:"
+msgstr "Tema do _protetor de ecrã:"
 
 #: ../data/mate-screensaver-preferences.ui.h:5
 msgid "Regard the computer as _idle after:"
-msgstr "Considerar o computador como _inactivo após:"
+msgstr "Considerar o computador como _inativo após:"
 
 #: ../data/mate-screensaver-preferences.ui.h:6
 msgid "_Activate screensaver when computer is idle"
-msgstr "_Activar o protector de ecrã quando o computador estiver inactivo"
+msgstr "_Ativar o protetor de ecrã quando o computador estiver inativo"
 
 #: ../data/mate-screensaver-preferences.ui.h:7
 msgid "_Lock screen when screensaver is active"
-msgstr "_Trancar o ecrã quando o protector de ecrã está activo"
+msgstr "_Trancar o ecrã quando o protetor de ecrã está ativo"
 
 #: ../data/mate-screensaver-preferences.ui.h:8
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
@@ -63,19 +63,19 @@ msgstr "<b>Aviso: o ecrã não ficará trancado para o utilizador root.</b>"
 
 #: ../data/mate-screensaver-preferences.ui.h:9
 msgid "Screensaver Preview"
-msgstr "Antevisão da Protecção de Ecrã"
+msgstr "Antevisão da Proteção de Ecrã"
 
 #: ../data/mate-screensaver-preferences.ui.h:10
 msgid "<b>Screensaver preview</b>"
-msgstr "<b>Antevisão do Protector de Ecrã</b>"
+msgstr "<b>Antevisão do Protetor de Ecrã</b>"
 
 #: ../data/mate-screensaver.directory.in.h:1
 msgid "Screensavers"
-msgstr "Protectores de Ecrã"
+msgstr "Protetores de Ecrã"
 
 #: ../data/mate-screensaver.directory.in.h:2
 msgid "Screensaver themes"
-msgstr "Temas do Protector de Ecrã"
+msgstr "Temas do Protetor de Ecrã"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -136,11 +136,11 @@ msgstr "Apresenta um conjunto de fotografias do cosmos"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
 msgid "Floating MATE"
-msgstr "MATE flutuante"
+msgstr "MATE Flutuante"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
-msgstr "Bolhas no logótipo do MATE por todo o ecrã"
+msgstr "Bolhas com o logótipo do MATE por todo o ecrã"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:1
 msgid "Floating GNOME"
@@ -148,7 +148,7 @@ msgstr "GNOME flutuante"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the GNOME logo around the screen"
-msgstr "Bolhas no logotipo do GNOME por todo o ecrã"
+msgstr "Bolhas com o logótipo do GNOME por todo o ecrã"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
 msgid "Pictures folder"
@@ -156,7 +156,7 @@ msgstr "Pasta de Imagens"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow from your Pictures folder"
-msgstr "Apresenta um conunto de fotografias da sua pasta de Imagens"
+msgstr "Mostrar uma apresentação a partir da sua pasta de Imagens"
 
 #: ../savers/popsquares.desktop.in.in.h:1
 msgid "Pop art squares"
@@ -207,12 +207,12 @@ msgstr "A imagem base a utilizar"
 #. * represents a command line argument
 #: ../savers/floaters.c:1246
 msgid "image - floats images around the screen"
-msgstr "imagem - flutuam imagens pelo ecrã"
+msgstr "image - flutuam imagens pelo ecrã"
 
 #: ../savers/floaters.c:1261
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "Tem de especificar uma imagem.  Consulte --help para informação de utilização.\n"
+msgstr "Deve especificar uma imagem. Consulte --help para informação de utilização.\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
@@ -256,12 +256,12 @@ msgstr "A copiar temas"
 
 #: ../src/copy-theme-dialog.c:307
 msgid "Invalid screensaver theme"
-msgstr "Tema de protecção de ecrã inválido"
+msgstr "Tema de proteção de ecrã inválido"
 
 #: ../src/copy-theme-dialog.c:310
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
-msgstr "%s não aparenta ser um tema de protecção de ecrã válido."
+msgstr "%s não aparenta ser um tema de proteção de ecrã válido."
 
 #: ../src/copy-theme-dialog.c:490
 #, c-format
@@ -270,49 +270,49 @@ msgstr "A copiar o ficheiro: %u de %u"
 
 #: ../src/mate-screensaver-command.c:64
 msgid "Causes the screensaver to exit gracefully"
-msgstr "Força o protector de ecrã a terminar graciosamente"
+msgstr "Força o protetor de ecrã a terminar graciosamente"
 
 #: ../src/mate-screensaver-command.c:68
 msgid "Query the state of the screensaver"
-msgstr "Consulta o estado o protector de ecrã"
+msgstr "Consulta o estado do protetor de ecrã"
 
 #: ../src/mate-screensaver-command.c:72
 msgid "Query the length of time the screensaver has been active"
-msgstr "Consultar à quanto tempo o protector de ecrã está activo"
+msgstr "Consultar há quanto tempo o protetor de ecrã está ativo"
 
 #: ../src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to lock the screen immediately"
-msgstr "Indica ao processo de protecção de ecrã em execução para trancar o ecrã imediatamente"
+msgstr "Indica ao processo de proteção de ecrã em execução para trancar o ecrã imediatamente"
 
 #: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
-msgstr "Se a protecção de ecrã estiver activa então alterna para outra demonstração gráfica"
+msgstr "Se a proteção de ecrã estiver ativa, então alterna para outra demonstração gráfica"
 
 #: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
-msgstr "Activar a protecção de ecrã (ecrã preto)"
+msgstr "Ligar o protetor de ecrã (ecrã preto)"
 
 #: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr "Se a protecção de ecrã estiver activa, desactivá-la (ecrã deixa de estar preto)"
+msgstr "Se a protecção de ecrã estiver ativa, desativá-la (ecrã deixa de estar preto)"
 
 #: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "Enviar mensagens ao protector de ecrã em execução para simular actividade de utilizador"
+msgstr "Estimular o protetor de ecrã em execução para simular a actividade de utilizador"
 
 #: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Impedir a protecção de ecrã de se iniciar.  Comando bloqueia enquando a inibição estiver activa."
+msgstr "Impedir a proteção de ecrã de se iniciar. Comando bloqueia enquanto a inibição estiver ativa."
 
 #: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
-msgstr "A aplicação chamadora que está a inibir a protecção de ecrã"
+msgstr "A aplicação chamadora que está a inibir a proteção de ecrã"
 
 #: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
-msgstr "O motivo para inibir o protector de ecrã."
+msgstr "O motivo para inibir o protetor de ecrã"
 
 #: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:60
 #: ../src/mate-screensaver.c:55
@@ -322,35 +322,35 @@ msgstr "Versão desta aplicação"
 #: ../src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
-msgstr "O protector de ecrã está %s\n"
+msgstr "O protetor de ecrã está %s\n"
 
 #: ../src/mate-screensaver-command.c:357
 msgid "active"
-msgstr "activo"
+msgstr "ativo"
 
 #: ../src/mate-screensaver-command.c:357
 msgid "inactive"
-msgstr "inactivo"
+msgstr "inativo"
 
 #: ../src/mate-screensaver-command.c:373
 #, c-format
 msgid "The screensaver is not inhibited\n"
-msgstr "O protector de ecrã não está inibido\n"
+msgstr "O protetor de ecrã não está inibido\n"
 
 #: ../src/mate-screensaver-command.c:381
 #, c-format
 msgid "The screensaver is being inhibited by:\n"
-msgstr "O protector de ecrã está a ser inibido por:\n"
+msgstr "O protetor de ecrã está a ser inibido por:\n"
 
 #: ../src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
-msgstr "O protector de ecrã está activo à %d segundos.\n"
+msgstr "O protetor de ecrã está ativo à %d segundos.\n"
 
 #: ../src/mate-screensaver-command.c:422
 #, c-format
 msgid "The screensaver is not currently active.\n"
-msgstr "O protector de ecrã actualmente não está activo.\n"
+msgstr "O protetor de ecrã não está de momento ativo.\n"
 
 #: ../src/mate-screensaver-dialog.c:59
 msgid "Show debugging output"
@@ -366,7 +366,7 @@ msgstr "Comando a invocar pelo botão de terminar sessão"
 
 #: ../src/mate-screensaver-dialog.c:63
 msgid "Show the switch user button"
-msgstr "Apresentar o botão de alternar utilizador"
+msgstr "Mostrar o botão de alternar utilizador"
 
 #: ../src/mate-screensaver-dialog.c:64
 msgid "Message to show in the dialog"
@@ -378,7 +378,7 @@ msgstr "MENSAGEM"
 
 #: ../src/mate-screensaver-dialog.c:65
 msgid "Not used"
-msgstr "Não está em utilização"
+msgstr "Não usado"
 
 #. login: is whacked always translate to Username:
 #: ../src/mate-screensaver-dialog.c:171 ../src/mate-screensaver-dialog.c:172
@@ -425,7 +425,7 @@ msgstr "Introduza a nova senha UNIX:"
 
 #: ../src/mate-screensaver-dialog.c:184
 msgid "(current) UNIX password:"
-msgstr "Senha UNIX (actual):"
+msgstr "Senha UNIX (atual):"
 
 #: ../src/mate-screensaver-dialog.c:185
 msgid "Error while changing NIS password."
@@ -437,7 +437,7 @@ msgstr "Tem de escolher uma senha maior"
 
 #: ../src/mate-screensaver-dialog.c:187
 msgid "Password has been already used. Choose another."
-msgstr "A senha já foi utilizada anteriormente. Seleccione outra."
+msgstr "A senha já foi utilizada anteriormente. Escolha outra."
 
 #: ../src/mate-screensaver-dialog.c:188
 msgid "You must wait longer to change your password"
@@ -515,23 +515,23 @@ msgstr "Nunca"
 
 #: ../src/mate-screensaver-preferences.c:1622
 msgid "Could not load the main interface"
-msgstr "Incapaz de ler o interface principal"
+msgstr "Incapaz de ler a interface principal"
 
 #: ../src/mate-screensaver-preferences.c:1624
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "Certifique-se de que o protector de ecrã está correctamente instalado"
+msgstr "Certifique-se de que o protetor de ecrã está devidamente instalado"
 
 #: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
-msgstr "Não executar como daemon"
+msgstr "Não tornar-se um servidor"
 
 #: ../src/mate-screensaver.c:57
 msgid "Enable debugging code"
-msgstr "Activar a depuração de código"
+msgstr "Ativar o código de depuração"
 
 #: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screen saver and locker program"
-msgstr "Iniciar o protector de ecrã e a aplicação de trancar"
+msgstr "Iniciar o protetor de ecrã e a aplicação de trancar"
 
 #: ../src/gs-auth-pam.c:425
 #, c-format
@@ -545,27 +545,27 @@ msgstr "Incapaz de definir PAM_TTY=%s"
 
 #: ../src/gs-auth-pam.c:491
 msgid "Incorrect password."
-msgstr "Senha incorrecta."
+msgstr "Senha incorreta."
 
 #: ../src/gs-auth-pam.c:511
 msgid "Not permitted to gain access at this time."
-msgstr "Não lhe é permitido obter acesso neste momento."
+msgstr "Não é permitido obter acesso neste momento."
 
 #: ../src/gs-auth-pam.c:519
 msgid "No longer permitted to access the system."
-msgstr "Já não lhe é mais permitido aceder ao sistema."
+msgstr "Já não é mais permitido aceder ao sistema."
 
 #: ../src/gs-listener-dbus.c:2219
 msgid "failed to register with the message bus"
-msgstr "falha ao se registar no bus de mensagens"
+msgstr "falha ao se registar no veículo de mensagens"
 
 #: ../src/gs-listener-dbus.c:2230
 msgid "not connected to the message bus"
-msgstr "não se encontra ligado ao bus de mensagens"
+msgstr "não ligado ao veículo de mensagens"
 
 #: ../src/gs-listener-dbus.c:2240 ../src/gs-listener-dbus.c:2272
 msgid "screensaver already running in this session"
-msgstr "protecção de ecrã já se encontra em execução nesta sessão"
+msgstr "proteção de ecrã já está em execução nesta sessão"
 
 #. Translators: Time format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
@@ -585,7 +585,7 @@ msgstr "Tempo expirou."
 
 #: ../src/gs-lock-plug.c:439
 msgid "You have the Caps Lock key on."
-msgstr "Tem a tecla Caps Lock activa."
+msgstr "Tem a tecla Caps Lock ligada."
 
 #: ../src/gs-lock-plug.c:1758
 msgid "S_witch User..."

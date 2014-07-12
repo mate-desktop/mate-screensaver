@@ -6,13 +6,13 @@
 # Ján Ďanovský <dagsoftware@yahoo.com>, 2013-2014
 # Marcel Telka <marcel@telka.sk>, 2005,2008,2010
 # Peter Tuharsky <tuharsky@misbb.sk>, 2007
-# tibbi <tibbbi2@gmail.com>, 2014
+# Tibor Kaputa <tibbbi2@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-02-20 23:45+0000\n"
+"PO-Revision-Date: 2014-05-14 18:12+0000\n"
 "Last-Translator: Ján Ďanovský <dagsoftware@yahoo.com>\n"
 "Language-Team: Slovak (http://www.transifex.com/projects/p/MATE/language/sk/)\n"
 "MIME-Version: 1.0\n"
@@ -28,11 +28,11 @@ msgstr "Šetrič obrazovky"
 
 #: ../data/mate-screensaver-preferences.desktop.in.h:2
 msgid "Set your screensaver preferences"
-msgstr "Nastaviť predvoľby vášho šetriča obrazovky"
+msgstr "Nastaviť váš šetrič obrazovky"
 
 #: ../data/mate-screensaver-preferences.ui.h:1
 msgid "Screensaver Preferences"
-msgstr "Predvoľby šetriča obrazovky"
+msgstr "Nastavenia šetriča obrazovky"
 
 #: ../data/mate-screensaver-preferences.ui.h:2
 msgid "Power _Management"
