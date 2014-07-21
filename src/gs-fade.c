@@ -916,7 +916,8 @@ gs_fade_reset (GSFade *fade)
 	gs_fade_set_alpha (fade, fade->priv->current_alpha);
 
 	for (i = 0; i < fade->priv->num_screens; i++)
-		fade->priv->screen_priv[i].fade_finish (fade, i);
+		if (fade->priv->screen_priv[i].fade_type != FADE_TYPE_NONE)
+			fade->priv->screen_priv[i].fade_finish (fade, i);
 }
 
 static void
