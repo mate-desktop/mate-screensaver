@@ -158,7 +158,7 @@ enum
     PROP_STATUS_MESSAGE
 };
 
-static guint lock_plug_signals [LAST_SIGNAL];
+static guint lock_plug_signals [LAST_SIGNAL] = { 0 };
 
 G_DEFINE_TYPE (GSLockPlug, gs_lock_plug, GTK_TYPE_PLUG)
 
