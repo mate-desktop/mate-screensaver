@@ -449,7 +449,10 @@ gs_manager_get_lock_active (GSManager *manager,
 
 	g_return_if_fail (GS_IS_MANAGER (manager));
 
-	*lock_active = manager->priv->lock_active;
+	if (lock_active != NULL)
+	{
+		*lock_active = manager->priv->lock_active;
+	}
 }
 
 void
@@ -483,7 +486,10 @@ gs_manager_get_lock_enabled (GSManager *manager,
 
 	g_return_if_fail (GS_IS_MANAGER (manager));
 
-	*lock_enabled = manager->priv->lock_enabled;
+	if (lock_enabled != NULL)
+	{
+		*lock_enabled = manager->priv->lock_enabled;
+	}
 }
 
 void
