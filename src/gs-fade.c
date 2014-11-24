@@ -629,8 +629,6 @@ check_randr_extension (GSFade *fade, int screen_idx)
 	screen_priv = &fade->priv->screen_priv[screen_idx];
 
 	screen_priv->rrscreen = mate_rr_screen_new (screen,
-	                        NULL,
-	                        NULL,
 	                        NULL);
 	if (!screen_priv->rrscreen)
 	{
@@ -988,7 +986,7 @@ gs_fade_finalize (GObject *object)
 		{
 			if (!fade->priv->screen_priv[i].rrscreen)
 				continue;
-			mate_rr_screen_destroy (fade->priv->screen_priv[i].rrscreen);
+			g_object_unref (fade->priv->screen_priv[i].rrscreen);
 		}
 
 		g_free (fade->priv->screen_priv);
