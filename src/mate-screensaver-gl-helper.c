@@ -48,6 +48,10 @@ main (int    argc,
 	textdomain (GETTEXT_PACKAGE);
 #endif
 
+#if !GLIB_CHECK_VERSION (2, 36, 0)
+	g_type_init ();
+#endif
+
 	g_set_prgname (argv[0]);
 	if (! gtk_init_with_args (&argc, &argv, NULL, NULL, NULL, &error))
 	{
