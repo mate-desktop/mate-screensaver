@@ -3,8 +3,9 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Adolfo Jayme Barrientos <fitoschido@ubuntu.com>, 2014
+# Adolfo Jayme Barrientos <fito@libreoffice.org>, 2014
 # Copyright (C) 2005 The MATE Foundation, 2005
+# Emiliano Fascetti, 2015
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2005, 2006
 # Jorge González <jorgegonz@svn.gnome.org>, 2007, 2008, 2009
 # Lluís Tusquellas <lutusq@gmail.com>, 2013
@@ -13,8 +14,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-02-16 17:46+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitoschido@ubuntu.com>\n"
+"PO-Revision-Date: 2015-01-05 00:39+0000\n"
+"Last-Translator: Emiliano Fascetti\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/MATE/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -306,7 +307,7 @@ msgstr "Similar el salvapantallas en ejecución para similar la actividad del us
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Inhibir la activación del salvapantallas. La orden se bloquea cuando se activa la inhibición."
+msgstr "Inhibir la activación del salvapantallas. El comando se bloquea cuando se activa la inhibición."
 
 #: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
@@ -364,7 +365,7 @@ msgstr "Mostrar el botón de cerrar sesión"
 
 #: ../src/mate-screensaver-dialog.c:62
 msgid "Command to invoke from the logout button"
-msgstr "Orden que invocar con el botón de cierre de sesión"
+msgstr "Comando para invocar desde el botón de cierre de sesión"
 
 #: ../src/mate-screensaver-dialog.c:63
 msgid "Show the switch user button"

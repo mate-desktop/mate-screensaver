@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Ivar Smolin <okul@linux.ee>, 2014
 # Priit Laes <amd@store20.com>, 2006
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-02-08 12:24+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>\n"
+"PO-Revision-Date: 2014-07-31 17:01+0000\n"
+"Last-Translator: Ivar Smolin <okul@linux.ee>\n"
 "Language-Team: Estonian (http://www.transifex.com/projects/p/MATE/language/et/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,15 +50,15 @@ msgstr "Seanss määratakse _jõudeolevaks pärast ajavahemikku:"
 
 #: ../data/mate-screensaver-preferences.ui.h:6
 msgid "_Activate screensaver when computer is idle"
-msgstr "Kui arvuti on jõude, siis aktiveeritakse e_kraanisäästja"
+msgstr "Arvuti jõudeolekul aktiveeritakse e_kraanisäästja"
 
 #: ../data/mate-screensaver-preferences.ui.h:7
 msgid "_Lock screen when screensaver is active"
-msgstr "Ekraanisäästja aktiveerimisel ekraan _lukustatakse"
+msgstr "Ekraanisäästja aktiveerimisel _lukustatakse ekraan"
 
 #: ../data/mate-screensaver-preferences.ui.h:8
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>Hoiatus: ekraanilukustus ei toimi root kasutaja jaoks.</b>"
+msgstr "<b>Hoiatus: ekraanilukustus ei toimi juurkasutaja (root) jaoks.</b>"
 
 #: ../data/mate-screensaver-preferences.ui.h:9
 msgid "Screensaver Preview"
@@ -86,38 +87,38 @@ msgstr "Kosmos"
 #: ../data/lock-dialog-default.ui.h:2
 #, no-c-format
 msgid "<span size=\"xx-large\" weight=\"ultrabold\">%s</span>"
-msgstr ""
+msgstr "<span size=\"xx-large\" weight=\"ultrabold\">%s</span>"
 
 #: ../data/lock-dialog-default.ui.h:4
 #, no-c-format
 msgid "<span size=\"large\">%s</span>"
-msgstr ""
+msgstr "<span size=\"large\">%s</span>"
 
 #: ../data/lock-dialog-default.ui.h:6
 #, no-c-format
 msgid "<span size=\"x-large\">%R</span>"
-msgstr ""
+msgstr "<span size=\"x-large\">%R</span>"
 
 #: ../data/lock-dialog-default.ui.h:8
 #, no-c-format
 msgid "<span size=\"small\">%U on %h</span>"
-msgstr ""
+msgstr "<span size=\"small\">%U hostil %h</span>"
 
 #: ../data/lock-dialog-default.ui.h:9
 msgid "_Leave Message"
-msgstr ""
+msgstr "_Jäta sõnum"
 
 #: ../data/lock-dialog-default.ui.h:10
 msgid "_Switch User"
-msgstr ""
+msgstr "_Vaheta kasutajat"
 
 #: ../data/lock-dialog-default.ui.h:11
 msgid "_Log Out"
-msgstr ""
+msgstr "Logi _välja"
 
 #: ../data/lock-dialog-default.ui.h:12
 msgid "_Cancel"
-msgstr ""
+msgstr "_Tühista"
 
 #: ../data/lock-dialog-default.ui.h:13 ../src/gs-lock-plug.c:1778
 msgid "_Unlock"
@@ -126,7 +127,7 @@ msgstr "_Võta lukust lahti"
 #: ../data/lock-dialog-default.ui.h:15
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
-msgstr ""
+msgstr "<b>Sõnumi jätmine kasutajale %R:</b>"
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -134,19 +135,19 @@ msgstr "Kosmosepiltide slaidiesituse kuvamine"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
 msgid "Floating MATE"
-msgstr ""
+msgstr "Hõljuv MATE"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
-msgstr ""
+msgstr "MATE logod ekraanil ringi hõljumas"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:1
 msgid "Floating GNOME"
-msgstr ""
+msgstr "Hõljuv GNOME"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the GNOME logo around the screen"
-msgstr ""
+msgstr "GNOME logod ekraanil ringi hõljumas"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
 msgid "Pictures folder"
@@ -158,11 +159,11 @@ msgstr "Slaidiesitluse kuvamine Sinu pildikataloogi põhjal"
 
 #: ../savers/popsquares.desktop.in.in.h:1
 msgid "Pop art squares"
-msgstr "Popkunstist inspireeritud ruudud"
+msgstr "Popkunstist inspireeritud ristkülikud"
 
 #: ../savers/popsquares.desktop.in.in.h:2
 msgid "A pop-art-ish grid of pulsing colors."
-msgstr "Popkunstilik pulseerivate värvidega ruudustik."
+msgstr "Popkunstilik pulseerivate värvidega ristkülikute maatriks."
 
 #: ../savers/popsquares.c:51 ../savers/floaters.c:1252
 #, c-format
@@ -360,7 +361,7 @@ msgstr "Väljalogimisnupu näitamine"
 
 #: ../src/mate-screensaver-dialog.c:62
 msgid "Command to invoke from the logout button"
-msgstr "Väljalogimise nupule klõpsamise korral käivitatav käsk"
+msgstr "Väljalogimise nupule klõpsamisel käivitatav käsk"
 
 #: ../src/mate-screensaver-dialog.c:63
 msgid "Show the switch user button"
@@ -395,7 +396,7 @@ msgstr "Sa pead oma parooli koheselt ära vahetama (parool on aegunud)"
 
 #: ../src/mate-screensaver-dialog.c:177
 msgid "You are required to change your password immediately (root enforced)"
-msgstr "Sa pead oma parooli koheselt ära vahetama (administraatori nõue)"
+msgstr "Sa pead oma parooli koheselt ära vahetama (juurkasutaja nõue)"
 
 #: ../src/mate-screensaver-dialog.c:178
 msgid "Your account has expired; please contact your system administrator"
@@ -513,7 +514,7 @@ msgstr "Mitte kunagi"
 
 #: ../src/mate-screensaver-preferences.c:1622
 msgid "Could not load the main interface"
-msgstr "Peamist liidest pole võimalik laadida"
+msgstr "Põhiliidest pole võimalik laadida"
 
 #: ../src/mate-screensaver-preferences.c:1624
 msgid "Please make sure that the screensaver is properly installed"
@@ -547,7 +548,7 @@ msgstr "Vigane parool."
 
 #: ../src/gs-auth-pam.c:511
 msgid "Not permitted to gain access at this time."
-msgstr "Puudvad õigused ligipääsuks praegusel kellaajal"
+msgstr "Puudvad õigused ligipääsuks praegusel kellaajal."
 
 #: ../src/gs-auth-pam.c:519
 msgid "No longer permitted to access the system."
@@ -569,13 +570,13 @@ msgstr "ekraanisäästja töötab juba selle seansi raames"
 #. GDateTime.html#g-date-time-format
 #: ../src/gs-lock-plug.c:304
 msgid "%l:%M %p"
-msgstr ""
+msgstr "%I:%M"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
 #: ../src/gs-lock-plug.c:306
 msgid "%A, %B %e"
-msgstr ""
+msgstr "%A, %e. %B"
 
 #: ../src/gs-lock-plug.c:408
 msgid "Time has expired."
@@ -583,7 +584,7 @@ msgstr "Ajapiirang ületati."
 
 #: ../src/gs-lock-plug.c:439
 msgid "You have the Caps Lock key on."
-msgstr "Sul on Caps Lock klahv sisse lülitatud"
+msgstr "Sul on Caps Lock klahv sisse lülitatud."
 
 #: ../src/gs-lock-plug.c:1758
 msgid "S_witch User..."

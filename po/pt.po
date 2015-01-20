@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-06-03 00:35+0000\n"
+"PO-Revision-Date: 2014-11-13 22:00+0000\n"
 "Last-Translator: Carlos Moreira <crolidge@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/projects/p/MATE/language/pt/)\n"
 "MIME-Version: 1.0\n"
@@ -232,7 +232,7 @@ msgstr "\"#rrggbb\""
 
 #: ../savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
-msgstr "Não aleatoriezar as imagens da localização"
+msgstr "Não sortear as imagens da localização"
 
 #: ../savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"

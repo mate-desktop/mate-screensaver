@@ -4,21 +4,21 @@
 # 
 # Translators:
 # Andre Klapper <ak-47@gmx.net>, 2007, 2008
-# Cooligan <ppt23@lkj.hopto.org>, 2013
+# Chris <ppt23@lkj.hopto.org>, 2013
 # Christian <Christian.Kirbach@googlemail.com>, 2009
 # Frank Arnold <frank@scirocco-5v-turbo.de>, 2005
 # Hendrik Brandt  <heb@mate-de.org>, 2006
 # Hendrik Richter <hendrikr@gnome.org>, 2005, 2006, 2007, 2008
 # Mario Blättermann <mariobl@gnome.org>, 2009
-# to_ba, 2013
-# to_ba, 2014
+# Tobias Bannert <tobannert@gmail.com>, 2013
+# Tobias Bannert <tobannert@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-02-09 00:29+0000\n"
-"Last-Translator: to_ba\n"
+"PO-Revision-Date: 2014-10-13 13:03+0000\n"
+"Last-Translator: Tobias Bannert <tobannert@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/MATE/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +53,7 @@ msgstr "Bildschirmschoner_thema:"
 
 #: ../data/mate-screensaver-preferences.ui.h:5
 msgid "Regard the computer as _idle after:"
-msgstr "Sitzung auf _untätig setzen nach:"
+msgstr "Sitzung auf _untätig stellen nach:"
 
 #: ../data/mate-screensaver-preferences.ui.h:6
 msgid "_Activate screensaver when computer is idle"
@@ -65,7 +65,7 @@ msgstr "Bildschirm _sperren, wenn der Bildschirmschoner aktiv ist"
 
 #: ../data/mate-screensaver-preferences.ui.h:8
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>Warnung: Der Bildschirm wird für den Systemadministrator nicht gesperrt.</b>"
+msgstr "<b>Achtung: Der Bildschirm wird für den Systemverwalter nicht gesperrt.</b>"
 
 #: ../data/mate-screensaver-preferences.ui.h:9
 msgid "Screensaver Preview"
@@ -175,7 +175,7 @@ msgstr "Ein Raster mit pulsierenden Farben im Pop-Art-Stil."
 #: ../savers/popsquares.c:51 ../savers/floaters.c:1252
 #, c-format
 msgid "%s. See --help for usage information.\n"
-msgstr "%s. Benutzen Sie --help für weitere Informationen.\n"
+msgstr "%s. --help für weitere Informationen benutzen.\n"
 
 #: ../savers/floaters.c:94
 msgid "Show paths that images follow"
@@ -191,7 +191,7 @@ msgstr "Bildfrequenz und andere Statistiken ausgeben"
 
 #: ../savers/floaters.c:109
 msgid "The maximum number of images to keep on screen"
-msgstr "Die maximale Anzahl gleichzeitig auf dem Bildschirm dargestellter Bilder"
+msgstr "Die größte Anzahl gleichzeitig auf dem Bildschirm dargestellter Bilder"
 
 #: ../savers/floaters.c:109
 msgid "MAX_IMAGES"
@@ -218,7 +218,7 @@ msgstr "image - Bilder bewegen sich über den Bildschirm"
 #: ../savers/floaters.c:1261
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "Sie müssen ein Bild angeben. Benutzen Sie --help für weitere Informationen.\n"
+msgstr "Sie müssen ein Bild angeben. Bitte --help für weitere Informationen verwenden.\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
@@ -234,7 +234,7 @@ msgstr "Hintergrundfarbe für Bilder"
 
 #: ../savers/slideshow.c:59
 msgid "\"#rrggbb\""
-msgstr "\"#rrggbb\""
+msgstr "»#rrggbb«"
 
 #: ../savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
@@ -292,7 +292,7 @@ msgstr "Den Bildschirm über den laufenden Bildschirmschonerprozess sofort sperr
 
 #: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
-msgstr "Wechseln zu einer anderen Grafik-Demo, falls der Bildschirmschoner aktiv ist"
+msgstr "Wenn der Bildschirmschoner aktiv ist, zu einer anderen Grafikdemo wechseln"
 
 #: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
@@ -300,7 +300,7 @@ msgstr "Den Bildschirmschoner aktivieren (Bildschirm abdunkeln)"
 
 #: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr "Deaktivieren des Bildschirmschoners, falls er aktiv ist (Bildschirmabdunkelung aufheben)"
+msgstr "Wenn Bildschirmschoners aktiv ist deaktivieren (Bildschirmabdunkelung aufheben)"
 
 #: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
@@ -360,7 +360,7 @@ msgstr "Der Bildschirmschoner ist derzeit nicht aktiv.\n"
 
 #: ../src/mate-screensaver-dialog.c:59
 msgid "Show debugging output"
-msgstr "Fehlerdiagnose-Ausgaben anzeigen"
+msgstr "Fehlerdiagnoseausgaben anzeigen"
 
 #: ../src/mate-screensaver-dialog.c:61
 msgid "Show the logout button"
@@ -525,7 +525,7 @@ msgstr "Die Hauptschnittstelle konnte nicht geladen werden"
 
 #: ../src/mate-screensaver-preferences.c:1624
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "Bitte stellen Sie sicher, dass der Bildschirmschoner korrekt installiert ist"
+msgstr "Bitte stellen Sie sicher, dass der Bildschirmschoner richtig installiert ist"
 
 #: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"

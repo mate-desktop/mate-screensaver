@@ -7,6 +7,7 @@
 # Henrique Grolli Bassotto <henrique.grolli@gmail.com>, 2006
 # Krix Apolinário <krixapolinario@gmail.com>, 2009
 # Leonardo Ferreira Fontenelle <leo.fontenelle@gmail.com>, 2006
+# Marcelo Ghelman <marcelo.ghelman@gmail.com>, 2014
 # Marcus Vinícius Marques, 2014
 # Marcus Vinícius Marques, 2014
 # Matheus  Martins <m.vmartins@hotmail.com>, 2013
@@ -19,8 +20,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-05-10 21:07+0000\n"
-"Last-Translator: Marcio Andre Padula <padula1000@gmail.com>\n"
+"PO-Revision-Date: 2014-07-16 21:52+0000\n"
+"Last-Translator: Marcelo Ghelman <marcelo.ghelman@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/MATE/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -409,7 +410,7 @@ msgstr "Você precisa alterar sua senha imediatamente (determinação do root)"
 
 #: ../src/mate-screensaver-dialog.c:178
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Sua conta expirou; por favor contate o administrador do sistema"
+msgstr "Sua conta expirou; contate o administrador do sistema"
 
 #: ../src/mate-screensaver-dialog.c:179
 msgid "No password supplied"
@@ -527,7 +528,7 @@ msgstr "Não foi possível carregar a interface principal"
 
 #: ../src/mate-screensaver-preferences.c:1624
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "Por favor, certifique-se que a proteção de tela está instalada corretamente"
+msgstr "Certifique-se que o protetor de tela esteja instalado corretamente"
 
 #: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
