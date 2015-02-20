@@ -229,25 +229,6 @@ do_user_switch (GSLockPlug *plug)
 			g_error_free (error);
 		}
 	}
-	else if (is_program_in_path (GDM_FLEXISERVER_COMMAND))
-	{
-		/* GDM */
-		command = g_strdup_printf ("%s %s",
-								   GDM_FLEXISERVER_COMMAND,
-								   GDM_FLEXISERVER_ARGS);
-
-		error = NULL;
-		res = gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
-												command,
-												&error);
-
-		g_free (command);
-		
-		if (! res) {
-			gs_debug ("Unable to start GDM greeter: %s", error->message);
-			g_error_free (error);
-		}
-	}
 	else if (g_getenv ("XDG_SEAT_PATH") != NULL)
 	{
 		/* LightDM */
@@ -278,7 +259,25 @@ do_user_switch (GSLockPlug *plug)
 			g_error_free (error);
 		}
 	}
+	else if (is_program_in_path (GDM_FLEXISERVER_COMMAND))
+	{
+		/* GDM */
+		command = g_strdup_printf ("%s %s",
+								   GDM_FLEXISERVER_COMMAND,
+								   GDM_FLEXISERVER_ARGS);
 
+		error = NULL;
+		res = gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
+												command,
+												&error);
+
+		g_free (command);
+
+		if (! res) {
+			gs_debug ("Unable to start GDM greeter: %s", error->message);
+			g_error_free (error);
+		}
+	}
 }
 
 static void
