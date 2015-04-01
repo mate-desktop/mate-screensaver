@@ -188,18 +188,20 @@ gs_lock_plug_style_set (GtkWidget *widget,
 }
 
 static gboolean
-is_program_in_path (const char *program)
+process_is_running (const char * name)
 {
-	char *tmp = g_find_program_in_path (program);
-	if (tmp != NULL)
-	{
-		g_free (tmp);
-		return TRUE;
-	}
-	else
-	{
-		return FALSE;
-	}
+        int num_processes;
+        gchar *command = g_strdup_printf ("pidof %s | wc -l", name);
+        FILE *fp = popen(command, "r");
+        fscanf(fp, "%d", &num_processes);
+        pclose(fp);
+        g_free (command);
+
+        if (num_processes > 0) {
+                return TRUE;
+        } else {
+                return FALSE;
+        }
 }
 
 static void
@@ -209,7 +211,7 @@ do_user_switch (GSLockPlug *plug)
 	gboolean res;
 	char    *command;
 
-	if (is_program_in_path (MDM_FLEXISERVER_COMMAND))
+	if (process_is_running ("mdm"))
 	{
 		/* MDM */
 		command = g_strdup_printf ("%s %s",
@@ -229,7 +231,7 @@ do_user_switch (GSLockPlug *plug)
 			g_error_free (error);
 		}
 	}
-	else if (is_program_in_path (GDM_FLEXISERVER_COMMAND))
+	else if (process_is_running ("gdm") || process_is_running("gdm3"))
 	{
 		/* GDM */
 		command = g_strdup_printf ("%s %s",
@@ -1284,12 +1286,12 @@ gs_lock_plug_set_switch_enabled (GSLockPlug *plug,
 
 	if (switch_enabled)
 	{
-		if (is_program_in_path (MDM_FLEXISERVER_COMMAND))
+		if (process_is_running ("mdm"))
 		{
 			/* MDM  */
 			gtk_widget_show (plug->priv->auth_switch_button);
 		}
-		else if (is_program_in_path (GDM_FLEXISERVER_COMMAND))
+		else if (process_is_running ("gdm") || process_is_running("gdm3"))
 		{
 			/* GDM */
 			gtk_widget_show (plug->priv->auth_switch_button);
