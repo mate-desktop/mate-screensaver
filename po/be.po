@@ -4,13 +4,14 @@
 # 
 # Translators:
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2006,2014
+# Mihail Varantsou <meequz@gmail.com>, 2014-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-02-26 12:34+0000\n"
-"Last-Translator: meequz <meequz@gmail.com>\n"
+"PO-Revision-Date: 2015-03-23 14:00+0000\n"
+"Last-Translator: Mihail Varantsou <meequz@gmail.com>\n"
 "Language-Team: Belarusian (http://www.transifex.com/projects/p/MATE/language/be/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,11 +46,11 @@ msgstr "_Тэма ахоўніка:"
 
 #: ../data/mate-screensaver-preferences.ui.h:5
 msgid "Regard the computer as _idle after:"
-msgstr "Лічыць, што кампутар бяздзейнічае, _пасля:"
+msgstr "Лічыць, што камп'ютар бяздзейнічае, _пасля:"
 
 #: ../data/mate-screensaver-preferences.ui.h:6
 msgid "_Activate screensaver when computer is idle"
-msgstr "Зад_зейнічаць ахоўнік экрану, калі кампутар бяздзейнічае"
+msgstr "Зад_зейнічаць ахоўнік экрану, калі камп'ютар бяздзейнічае"
 
 #: ../data/mate-screensaver-preferences.ui.h:7
 msgid "_Lock screen when screensaver is active"
@@ -105,19 +106,19 @@ msgstr ""
 
 #: ../data/lock-dialog-default.ui.h:9
 msgid "_Leave Message"
-msgstr ""
+msgstr "_Пакінуць паведамленне"
 
 #: ../data/lock-dialog-default.ui.h:10
 msgid "_Switch User"
-msgstr ""
+msgstr "_Пераключыць карыстальніка"
 
 #: ../data/lock-dialog-default.ui.h:11
 msgid "_Log Out"
-msgstr ""
+msgstr "_Скончыць сеанс"
 
 #: ../data/lock-dialog-default.ui.h:12
 msgid "_Cancel"
-msgstr ""
+msgstr "_Скасаваць"
 
 #: ../data/lock-dialog-default.ui.h:13 ../src/gs-lock-plug.c:1778
 msgid "_Unlock"
@@ -126,11 +127,11 @@ msgstr "Ада_мкнуць"
 #: ../data/lock-dialog-default.ui.h:15
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
-msgstr ""
+msgstr "<b>Пакінуць паведамленне для %R:</b>"
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
-msgstr "Адлюстроўвае слайд-шоў з выявамі космасу"
+msgstr "Паказвае слайд-шоў з выявамі космасу"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
 msgid "Floating MATE"
@@ -138,7 +139,7 @@ msgstr "MATE плавае"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
-msgstr ""
+msgstr "Бурбалкі з лагатыпам MATE па ўсім экране"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:1
 msgid "Floating GNOME"
@@ -146,7 +147,7 @@ msgstr "GNOME плавае"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the GNOME logo around the screen"
-msgstr ""
+msgstr "Бурбалкі з лагатыпам GNOME па ўсім экране"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
 msgid "Pictures folder"
@@ -179,7 +180,7 @@ msgstr "Выпадкова паварочваць выявы падчас рух
 
 #: ../savers/floaters.c:104
 msgid "Print out frame rate and other statistics"
-msgstr "Друкаваць частату кадраў і іншыя даныя"
+msgstr "Выводзіць чашчыню кадраў і іншыя даныя"
 
 #: ../savers/floaters.c:109
 msgid "The maximum number of images to keep on screen"
@@ -191,7 +192,7 @@ msgstr "MAX_IMAGES"
 
 #: ../savers/floaters.c:114
 msgid "The initial size and position of window"
-msgstr "Пачатковы памер і пазіцыя вакна"
+msgstr "Пачатковы памер і пазіцыя акна"
 
 #: ../savers/floaters.c:114
 msgid "WIDTHxHEIGHT+X+Y"
@@ -348,11 +349,11 @@ msgstr "Ахоўнік экрану быў актыўны %d секунд.\n"
 #: ../src/mate-screensaver-command.c:422
 #, c-format
 msgid "The screensaver is not currently active.\n"
-msgstr ""
+msgstr "Ахоўнік экрану цяпер неактыўны.\n"
 
 #: ../src/mate-screensaver-dialog.c:59
 msgid "Show debugging output"
-msgstr "Паказваць вывад адладкі"
+msgstr "Паказваць вывад наладкі"
 
 #: ../src/mate-screensaver-dialog.c:61
 msgid "Show the logout button"
@@ -465,28 +466,28 @@ msgstr "Выпадковая тэма"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d гадзіны"
+msgstr[1] "%d гадзін"
+msgstr[2] "%d гадзін"
+msgstr[3] "%d гадзін"
 
 #: ../src/mate-screensaver-preferences.c:986
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d хвіліны"
+msgstr[1] "%d хвілін"
+msgstr[2] "%d хвілін"
+msgstr[3] "%d хвілін"
 
 #: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d секунды"
+msgstr[1] "%d секунд"
+msgstr[2] "%d секунд"
+msgstr[3] "%d секунд"
 
 #. hour:minutes:seconds
 #: ../src/mate-screensaver-preferences.c:997
@@ -519,11 +520,11 @@ msgstr "Ніколі"
 
 #: ../src/mate-screensaver-preferences.c:1622
 msgid "Could not load the main interface"
-msgstr "Не загружаць асноўнае далучэнне"
+msgstr "Не выйшла загрузіць асноўны інтэрфейс"
 
 #: ../src/mate-screensaver-preferences.c:1624
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "Калі ласка, упэўніцеся, што ахоўнік экрану карэктна ўсталяваны"
+msgstr "Пераканайцеся, што ахоўнік экрану карэктна ўсталяваны"
 
 #: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
@@ -531,7 +532,7 @@ msgstr "Не працаваць як дэман"
 
 #: ../src/mate-screensaver.c:57
 msgid "Enable debugging code"
-msgstr "Задзейнічаць код адладкі"
+msgstr "Задзейнічаць код наладкі"
 
 #: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screen saver and locker program"
@@ -575,13 +576,13 @@ msgstr "ахоўнік экрану ўжо працуе ў гэтым сеанс
 #. GDateTime.html#g-date-time-format
 #: ../src/gs-lock-plug.c:304
 msgid "%l:%M %p"
-msgstr ""
+msgstr "%l:%M %p"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
 #: ../src/gs-lock-plug.c:306
 msgid "%A, %B %e"
-msgstr ""
+msgstr "%A, %B %e"
 
 #: ../src/gs-lock-plug.c:408
 msgid "Time has expired."
