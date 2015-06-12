@@ -5,13 +5,13 @@
 # Translators:
 # Микола Ткач <Stuartlittle1970@gmail.com>, 2013
 # wanderlust <wanderlust@ukr.net>, 2009
-# Микола Ткач <Stuartlittle1970@gmail.com>, 2013-2014
+# Микола Ткач <Stuartlittle1970@gmail.com>, 2013-2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-09-20 08:00+0000\n"
+"PO-Revision-Date: 2015-05-07 15:49+0000\n"
 "Last-Translator: Микола Ткач <Stuartlittle1970@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/MATE/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -256,7 +256,7 @@ msgstr "Копіювання тем"
 
 #: ../src/copy-theme-dialog.c:307
 msgid "Invalid screensaver theme"
-msgstr "Неправильна тема програми збереження екрану"
+msgstr "Неправильна тема проґрами збереження екрану"
 
 #: ../src/copy-theme-dialog.c:310
 #, c-format
@@ -270,11 +270,11 @@ msgstr "Копіюється файл: %u of %u"
 
 #: ../src/mate-screensaver-command.c:64
 msgid "Causes the screensaver to exit gracefully"
-msgstr "Призводить до виходу збереження екрану"
+msgstr "Призводить до виходу із зберігача екрану"
 
 #: ../src/mate-screensaver-command.c:68
 msgid "Query the state of the screensaver"
-msgstr "Запитує стан збереження екрану"
+msgstr "Запитує стан зберігача екрану"
 
 #: ../src/mate-screensaver-command.c:72
 msgid "Query the length of time the screensaver has been active"
@@ -298,17 +298,17 @@ msgstr "Якщо збереження екрану активне, деакти�
 
 #: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "Штовхнути запущений збереження екрану для імітації активності користувача"
+msgstr "Штовхнути запущений зберігач екрану для імітації активності користувача"
 
 #: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Затримувати активацію збереження екрану. Команда блокує при активації затримки."
+msgstr "Затримувати активацію збереження екрану. Команда блокується поки заборона активна."
 
 #: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
-msgstr "Виклик програми, яка затримує збереження екрану"
+msgstr "Виклик проґрами, яка затримує збереження екрану"
 
 #: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
@@ -317,7 +317,7 @@ msgstr "Причина для затримки збереження екрану
 #: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:60
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
-msgstr "Версія програми"
+msgstr "Версія проґрами"
 
 #: ../src/mate-screensaver-command.c:357
 #, c-format
@@ -378,7 +378,7 @@ msgstr "ПОВІДОМЛЕННЯ"
 
 #: ../src/mate-screensaver-dialog.c:65
 msgid "Not used"
-msgstr "Не використовується'"
+msgstr "Не використовується"
 
 #. login: is whacked always translate to Username:
 #: ../src/mate-screensaver-dialog.c:171 ../src/mate-screensaver-dialog.c:172
@@ -393,11 +393,11 @@ msgstr "Пароль:"
 
 #: ../src/mate-screensaver-dialog.c:176
 msgid "You are required to change your password immediately (password aged)"
-msgstr "Слід негайно змінити ваш пароль (пароль старий)"
+msgstr "Варто негайно змінити ваш пароль (пароль старий)"
 
 #: ../src/mate-screensaver-dialog.c:177
 msgid "You are required to change your password immediately (root enforced)"
-msgstr "Слід негайно змінити ваш пароль (за вимогою адміністратора)"
+msgstr "Варто негайно змінити ваш пароль (за вимогою адміністратора)"
 
 #: ../src/mate-screensaver-dialog.c:178
 msgid "Your account has expired; please contact your system administrator"
@@ -421,7 +421,7 @@ msgstr "Повторіть новий пароль UNIX:"
 
 #: ../src/mate-screensaver-dialog.c:183
 msgid "Enter new UNIX password:"
-msgstr "Введіть новий пароль UNIX:"
+msgstr "Уведіть новий пароль UNIX:"
 
 #: ../src/mate-screensaver-dialog.c:184
 msgid "(current) UNIX password:"
@@ -433,7 +433,7 @@ msgstr "Помилка при зміні паролю NIS."
 
 #: ../src/mate-screensaver-dialog.c:186
 msgid "You must choose a longer password"
-msgstr "Слід вибрати більш довгий пароль"
+msgstr "Потрібно вибрати довший пароль"
 
 #: ../src/mate-screensaver-dialog.c:187
 msgid "Password has been already used. Choose another."
@@ -522,11 +522,11 @@ msgstr "Не вдається завантажити головний інтер
 
 #: ../src/mate-screensaver-preferences.c:1624
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "Переконайтеся, що програму збереження екрану правильно встановлено"
+msgstr "Переконайтеся, що проґраму збереження екрану встановлено правильно"
 
 #: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
-msgstr "Не становитись службою"
+msgstr "Не ставати службою"
 
 #: ../src/mate-screensaver.c:57
 msgid "Enable debugging code"
@@ -534,7 +534,7 @@ msgstr "Увімкнути режим налагодження"
 
 #: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screen saver and locker program"
-msgstr "Програма запуску збереження екрану та блокування"
+msgstr "Проґрама запуску збереження екрану та блокування"
 
 #: ../src/gs-auth-pam.c:425
 #, c-format
