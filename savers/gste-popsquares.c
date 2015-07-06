@@ -598,7 +598,7 @@ draw_frame (GSTEPopsquares *pop, cairo_t *cr)
 
 	if (window == NULL)
 	{
-		return TRUE;
+		return;
 	}
 
 	gs_theme_engine_get_window_size (GS_THEME_ENGINE (pop),
@@ -645,7 +645,7 @@ draw_frame (GSTEPopsquares *pop, cairo_t *cr)
 		}
 	}
 
-	return TRUE;
+	return;
 }
 
 static void
