@@ -589,11 +589,7 @@ gs_grab_grab_offscreen (GSGrab *grab,
 	gs_debug ("Grabbing an offscreen window");
 
 	screen = gtk_invisible_get_screen (GTK_INVISIBLE (grab->priv->invisible));
-#if GTK_CHECK_VERSION (3, 0, 0)
 	res = gs_grab_grab_window (grab, gtk_widget_get_window (GTK_WIDGET (grab->priv->invisible)), screen, hide_cursor);
-#else
-	res = gs_grab_grab_window (grab, grab->priv->invisible->window, screen, hide_cursor);
-#endif
 
 	return res;
 }

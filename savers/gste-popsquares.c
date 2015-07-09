@@ -323,19 +323,11 @@ set_colors (GdkWindow *window,
 
 	widget = gtk_invisible_new ();
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	color = gtk_widget_get_style (widget)->dark [GTK_STATE_SELECTED];
-#else
-	color = widget->style->dark [GTK_STATE_SELECTED];
-#endif
 	fg->red   = color.red;
 	fg->green = color.green;
 	fg->blue  = color.blue;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	color = gtk_widget_get_style (widget)->bg [GTK_STATE_SELECTED];
-#else
-	color = widget->style->bg [GTK_STATE_SELECTED];
-#endif
 	bg->red   = color.red;
 	bg->green = color.green;
 	bg->blue  = color.blue;

@@ -73,11 +73,7 @@ static char* get_id_string(GtkWidget* widget)
 	g_return_val_if_fail(widget != NULL, NULL);
 	g_return_val_if_fail(GTK_IS_WIDGET(widget), NULL);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	id = g_strdup_printf("%" G_GUINT32_FORMAT, (guint32) GDK_WINDOW_XID(gtk_widget_get_window(widget)));
-#else
-	id = g_strdup_printf("%" G_GUINT32_FORMAT, (guint32) GDK_WINDOW_XID(widget->window));
-#endif
 	return id;
 }
 

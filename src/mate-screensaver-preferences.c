@@ -307,7 +307,7 @@ preview_clear (GtkWidget *widget)
 #if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_queue_draw (widget);
 #else
-	gdk_window_clear (widget->window);
+	gdk_window_clear (gtk_widget_get_window (widget));
 #endif
 }
 
@@ -918,11 +918,7 @@ drag_data_received_cb (GtkWidget        *widget,
 	if (!(info == TARGET_URI_LIST || info == TARGET_NS_URL))
 		return;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	files = uri_list_parse ((char *) gtk_selection_data_get_data (selection_data));
-#else
-	files = uri_list_parse ((char *) selection_data->data);
-#endif
 	if (files != NULL)
 	{
 		GtkWidget *prefs_dialog;

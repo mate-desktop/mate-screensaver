@@ -41,10 +41,6 @@
 
 #include "gs-theme-window.h"
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define GTK_WIDGET_REALIZED gtk_widget_get_realized
-#endif
-
 #ifndef trunc
 #define trunc(x) (((x) > 0.0) ? floor((x)) : -floor(-(x)))
 #endif
@@ -1042,7 +1038,7 @@ screen_saver_on_expose_event (ScreenSaver    *screen_saver,
 		screen_saver_create_floaters (screen_saver);
 
 #if !GTK_CHECK_VERSION (3, 0, 0)
-	context = gdk_cairo_create (screen_saver->drawing_area->window);
+	context = gdk_cairo_create (gtk_widget_get_window (screen_saver->drawing_area));
 
 	cairo_rectangle (context,
 	                 (double) event->area.x,
@@ -1107,7 +1103,7 @@ screen_saver_update_state (ScreenSaver *screen_saver,
 
 		screen_saver_floater_update_state (screen_saver, floater, time);
 
-		if (GTK_WIDGET_REALIZED (screen_saver->drawing_area)
+		if (gtk_widget_get_realized (screen_saver->drawing_area)
 		        && (floater->bounds.width > 0) && (floater->bounds.height > 0))
 		{
 			gint size;
@@ -1282,7 +1278,7 @@ main (int   argc,
 	gtk_widget_override_background_color (drawing_area, 0, &bg);
 	gtk_widget_override_color (drawing_area, 0, &fg);
 #else
-	style = drawing_area->style;
+	style = gtk_widget_get_style (drawing_area);
 	state = (GtkStateType) 0;
 	while (state < (GtkStateType) G_N_ELEMENTS (style->bg))
 	{

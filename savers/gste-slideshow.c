@@ -194,7 +194,7 @@ start_fade (GSTESlideshow *show,
 		                      gdk_pixbuf_get_height (colored),
 		                      pixbuf, 0, 0);
 #else
-		pixmap = gdk_pixmap_new (NULL, ph, pw,  gdk_visual_get_system ()->depth);
+		pixmap = gdk_pixmap_new (NULL, ph, pw,  gdk_visual_get_depth (gdk_visual_get_system ()));
 
 		gdk_draw_pixbuf (pixmap, NULL, colored, 0, 0, 0, 0, -1, -1, GDK_RGB_DITHER_MAX, 0, 0);
 		gdk_pixbuf_get_from_drawable (pixbuf, pixmap, NULL, 0, 0, 0, 0, -1, -1);
@@ -339,7 +339,7 @@ update_display (GSTESlideshow *show)
 	gtk_widget_queue_draw (GTK_WIDGET (show));
 #else
 	/* paint the image buffer into the window */
-	cr = gdk_cairo_create (GTK_WIDGET (show)->window);
+	cr = gdk_cairo_create (gtk_widget_get_window (GTK_WIDGET (show)));
 
 	cairo_set_source_surface (cr, show->priv->surf, 0, 0);
 
@@ -951,11 +951,7 @@ gste_slideshow_real_configure (GtkWidget         *widget,
 		cairo_surface_destroy (show->priv->surf);
 	}
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	cr = gdk_cairo_create (gtk_widget_get_window (widget));
-#else
-	cr = gdk_cairo_create (widget->window);
-#endif
 	show->priv->surf = cairo_surface_create_similar (cairo_get_target (cr),
 	                   CAIRO_CONTENT_COLOR,
 	                   show->priv->window_width,

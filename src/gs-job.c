@@ -80,11 +80,7 @@ widget_get_id_string (GtkWidget *widget)
 	g_return_val_if_fail (widget != NULL, NULL);
 
 	id = g_strdup_printf ("0x%X",
-#if GTK_CHECK_VERSION (3, 0, 0)
 	                      (guint32)GDK_WINDOW_XID (gtk_widget_get_window (widget)));
-#else
-	                      (guint32)GDK_WINDOW_XID (widget->window));
-#endif
 	return id;
 }
 
