@@ -255,9 +255,6 @@ copy_theme_dialog_init (CopyThemeDialog *dlg)
 
 	gtk_window_set_title (GTK_WINDOW (dlg),
 	                      _("Copying themes"));
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	gtk_dialog_set_has_separator (GTK_DIALOG (dlg), FALSE);
-#endif
 	gtk_container_set_border_width (GTK_CONTAINER (dlg), 6);
 
 	gtk_widget_show_all (dialog_vbox);
