@@ -39,7 +39,6 @@
 #include <gio/gio.h>
 
 #if GTK_CHECK_VERSION (3, 0, 0)
-#include <gdk/gdkkeysyms-compat.h>
 #include <gtk/gtkx.h>
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #include <libmate-desktop/mate-desktop-utils.h>
@@ -1432,7 +1431,7 @@ gs_lock_plug_class_init (GSLockPlugClass *klass)
 
 	binding_set = gtk_binding_set_by_class (klass);
 
-	gtk_binding_entry_add_signal (binding_set, GDK_Escape, 0,
+	gtk_binding_entry_add_signal (binding_set, GDK_KEY_Escape, 0,
 	                              "close", 0);
 }
 
