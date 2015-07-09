@@ -269,7 +269,7 @@ clear_children (Window window)
 	int               status;
 
 	children = NULL;
-	status = XQueryTree (GDK_DISPLAY (), window, &root, &parent, &children, &n_children);
+	status = XQueryTree (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), window, &root, &parent, &children, &n_children);
 
 	if (status == 0)
 	{
@@ -288,7 +288,7 @@ clear_children (Window window)
 
 			child = children [--n_children];
 
-			XClearWindow (GDK_DISPLAY (), child);
+			XClearWindow (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), child);
 
 			clear_children (child);
 		}
@@ -1078,18 +1078,10 @@ select_popup_events (void)
 	gdk_error_trap_push ();
 
 	memset (&attr, 0, sizeof (attr));
-#if GTK_CHECK_VERSION (3, 0, 0)
 	XGetWindowAttributes (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), GDK_ROOT_WINDOW (), &attr);
-#else
-	XGetWindowAttributes (GDK_DISPLAY (), GDK_ROOT_WINDOW (), &attr);
-#endif
 
 	events = SubstructureNotifyMask | attr.your_event_mask;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	XSelectInput (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), GDK_ROOT_WINDOW (), events);
-#else
-	XSelectInput (GDK_DISPLAY (), GDK_ROOT_WINDOW (), events);
-#endif
 
 	gdk_display_sync (gdk_display_get_default ());
 	gdk_error_trap_pop ();
@@ -1104,18 +1096,10 @@ window_select_shape_events (GSWindow *window)
 
 	gdk_error_trap_push ();
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	if (XShapeQueryExtension (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &window->priv->shape_event_base, &shape_error_base)) {
 		events = ShapeNotifyMask;
 		XShapeSelectInput (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), GDK_WINDOW_XID (gtk_widget_get_window (GTK_WIDGET (window))), events);
 	}
-#else
-	if (XShapeQueryExtension (GDK_DISPLAY (), &window->priv->shape_event_base, &shape_error_base))
-	{
-		events = ShapeNotifyMask;
-		XShapeSelectInput (GDK_DISPLAY (), GDK_WINDOW_XID (GTK_WIDGET (window)->window), events);
-	}
-#endif
 
 	gdk_display_sync (gdk_display_get_default ());
 	gdk_error_trap_pop ();

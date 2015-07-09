@@ -592,11 +592,7 @@ disable_builtin_screensaver (GSWatcher *watcher,
 	int desired_server_timeout, desired_server_interval;
 	int desired_prefer_blank,   desired_allow_exp;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	XGetScreenSaver (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-#else
-	XGetScreenSaver (GDK_DISPLAY (),
-#endif
 	                 &current_server_timeout,
 	                 &current_server_interval,
 	                 &current_prefer_blank,
@@ -635,31 +631,19 @@ disable_builtin_screensaver (GSWatcher *watcher,
 		          (desired_prefer_blank ? "blank" : "noblank"),
 		          (desired_allow_exp ? "expose" : "noexpose"));
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 		XSetScreenSaver (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-#else
-		XSetScreenSaver (GDK_DISPLAY (),
-#endif
 		                 desired_server_timeout,
 		                 desired_server_interval,
 		                 desired_prefer_blank,
 		                 desired_allow_exp);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 		XSync (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), FALSE);
-#else
-		XSync (GDK_DISPLAY (), FALSE);
-#endif
 	}
 
 	if (unblank_screen)
 	{
 		/* Turn off the server builtin saver if it is now running. */
-#if GTK_CHECK_VERSION (3, 0, 0)
 		XForceScreenSaver (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), ScreenSaverReset);
-#else
-		XForceScreenSaver (GDK_DISPLAY (), ScreenSaverReset);
-#endif
 	}
 }
 

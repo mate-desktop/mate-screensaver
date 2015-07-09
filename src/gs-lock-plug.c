@@ -2243,11 +2243,7 @@ gs_lock_plug_init (GSLockPlug *plug)
 	{
 		XklEngine *engine;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 		engine = xkl_engine_get_instance (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()));
-#else
-		engine = xkl_engine_get_instance (GDK_DISPLAY ());
-#endif
 		if (xkl_engine_get_num_groups (engine) > 1)
 		{
 			GtkWidget *layout_indicator;
