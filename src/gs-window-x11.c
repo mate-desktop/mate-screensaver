@@ -155,32 +155,11 @@ set_invisible_cursor (GdkWindow *window,
                       gboolean   invisible)
 {
 	GdkCursor *cursor = NULL;
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	GdkBitmap *empty_bitmap;
-	GdkColor   useless;
-	char       invisible_cursor_bits [] = { 0x0 };
-#endif
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-	cursor = gdk_cursor_new (GDK_BLANK_CURSOR);
-#else
 	if (invisible)
 	{
-		useless.red = useless.green = useless.blue = 0;
-		useless.pixel = 0;
-
-		empty_bitmap = gdk_bitmap_create_from_data (window,
-		               invisible_cursor_bits,
-		               1, 1);
-
-		cursor = gdk_cursor_new_from_pixmap (empty_bitmap,
-		                                     empty_bitmap,
-		                                     &useless,
-		                                     &useless, 0, 0);
-
-		g_object_unref (empty_bitmap);
+		cursor = gdk_cursor_new (GDK_BLANK_CURSOR);
 	}
-#endif
 
 	gdk_window_set_cursor (window, cursor);
 
