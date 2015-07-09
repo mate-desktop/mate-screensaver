@@ -793,11 +793,7 @@ get_best_visual_for_screen (GdkScreen *screen)
 			VisualID      visual_id;
 
 			visual_id = (VisualID) v;
-#if GTK_CHECK_VERSION (3, 0, 0)
 			visual = gdk_x11_screen_lookup_visual (screen, visual_id);
-#else
-			visual = gdkx_visual_get (visual_id);
-#endif
 
 			gs_debug ("Found best GL visual for screen %d: 0x%x",
 			          gdk_screen_get_number (screen),
