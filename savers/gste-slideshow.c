@@ -324,22 +324,7 @@ update_display (GSTESlideshow *show)
 
 	cairo_destroy (cr);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_queue_draw (GTK_WIDGET (show));
-#else
-	/* paint the image buffer into the window */
-	cr = gdk_cairo_create (gtk_widget_get_window (GTK_WIDGET (show)));
-
-	cairo_set_source_surface (cr, show->priv->surf, 0, 0);
-
-	gs_theme_engine_profile_start ("paint surface to window");
-	cairo_paint (cr);
-	gs_theme_engine_profile_end ("paint surface to window");
-
-	cairo_destroy (cr);
-
-	gs_theme_engine_profile_end ("end");
-#endif
 }
 
 static gboolean
@@ -890,32 +875,29 @@ gste_slideshow_real_expose (GtkWidget      *widget,
 #endif
 {
 	GSTESlideshow *show = GSTE_SLIDESHOW (widget);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	gboolean       handled = FALSE;
-
-	update_display (show);
-#endif
 
 #if GTK_CHECK_VERSION (3, 0, 0)
-	if (GTK_WIDGET_CLASS (parent_class)->draw)
-	{
+	if (GTK_WIDGET_CLASS (parent_class)->draw) {
 		GTK_WIDGET_CLASS (parent_class)->draw (widget, cr);
 	}
+#else
+	if (GTK_WIDGET_CLASS (parent_class)->expose_event) {
+		GTK_WIDGET_CLASS (parent_class)->expose_event (widget, event);
+	}
+
+	cairo_t *cr = gdk_cairo_create (event->window);
+#endif
 	cairo_set_source_surface (cr, show->priv->surf, 0, 0);
 
 	gs_theme_engine_profile_start ("paint surface to window");
 	cairo_paint (cr);
 	gs_theme_engine_profile_end ("paint surface to window");
 
-	return TRUE;
-#else
-	if (GTK_WIDGET_CLASS (parent_class)->expose_event)
-	{
-		handled = GTK_WIDGET_CLASS (parent_class)->expose_event (widget, event);
-	}
-
-	return handled;
+#if !GTK_CHECK_VERSION (3, 0, 0)
+	cairo_destroy (cr);
 #endif
+
+	return TRUE;
 }
 
 static gboolean
