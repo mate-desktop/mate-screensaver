@@ -1,4 +1,11 @@
 ===============
+Version 1.10.2
+===============
+
+Fix segfault due to wrong object being destroyed
+Translations update
+
+===============
 Version 1.10.1
 ===============
 
