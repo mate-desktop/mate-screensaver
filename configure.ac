@@ -502,16 +502,6 @@ else
   exit 1
 fi
 
-# We can't lock on MacOS X, so don't compile in support for it.
-#
-if test "$ac_macosx" = yes; then
-  if test "$enable_locking" = yes; then
-    AC_MSG_RESULT(locking disabled: it doesnt work on MacOS X)
-    enable_locking=no
-    AC_DEFINE(NO_LOCKING, 1, [Define if screen locking support is disabled])
-  fi
-fi
-
 # Check whether to use a xscreensaver hacks configuration directory
 AC_MSG_CHECKING([whether to use xscreensaver hacks configuration])
 AC_ARG_WITH(xscreensaverdir, AC_HELP_STRING([--with-xscreensaverdir=dir], [Use xscreensaver hack configs found in directory],))
