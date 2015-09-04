@@ -78,9 +78,9 @@ static DBusHandlerResult gs_listener_message_handler    (DBusConnection  *connec
 #define CK_MANAGER_INTERFACE "org.freedesktop.ConsoleKit.Manager"
 #define CK_SESSION_INTERFACE "org.freedesktop.ConsoleKit.Session"
 
-#define SESSION_NAME         "org.mate.SessionManager"
-#define SESSION_PATH         "/org/mate/SessionManager"
-#define SESSION_INTERFACE    "org.mate.SessionManager"
+#define SESSION_NAME         "org.gnome.SessionManager"
+#define SESSION_PATH         "/org/gnome/SessionManager"
+#define SESSION_INTERFACE    "org.gnome.SessionManager"
 
 #define TYPE_MISMATCH_ERROR GS_LISTENER_INTERFACE ".TypeMismatch"
 

@@ -434,9 +434,9 @@ connect_presence_watcher (GSWatcher *watcher)
 
 	error = NULL;
 	watcher->priv->presence_proxy = dbus_g_proxy_new_for_name_owner (bus,
-	                                "org.mate.SessionManager",
-	                                "/org/mate/SessionManager/Presence",
-	                                "org.mate.SessionManager.Presence",
+	                                "org.gnome.SessionManager",
+	                                "/org/gnome/SessionManager/Presence",
+	                                "org.gnome.SessionManager.Presence",
 	                                &error);
 	if (watcher->priv->presence_proxy != NULL)
 	{
@@ -463,7 +463,7 @@ connect_presence_watcher (GSWatcher *watcher)
 
 		proxy = dbus_g_proxy_new_from_proxy (watcher->priv->presence_proxy,
 		                                     "org.freedesktop.DBus.Properties",
-		                                     "/org/mate/SessionManager/Presence");
+		                                     "/org/gnome/SessionManager/Presence");
 		if (proxy != NULL)
 		{
 			guint       status;
@@ -477,7 +477,7 @@ connect_presence_watcher (GSWatcher *watcher)
 			dbus_g_proxy_call (proxy,
 			                   "Get",
 			                   &error,
-			                   G_TYPE_STRING, "org.mate.SessionManager.Presence",
+			                   G_TYPE_STRING, "org.gnome.SessionManager.Presence",
 			                   G_TYPE_STRING, "status",
 			                   G_TYPE_INVALID,
 			                   G_TYPE_VALUE, &value,
@@ -500,7 +500,7 @@ connect_presence_watcher (GSWatcher *watcher)
 			dbus_g_proxy_call (proxy,
 			                   "Get",
 			                   &error,
-			                   G_TYPE_STRING, "org.mate.SessionManager.Presence",
+			                   G_TYPE_STRING, "org.gnome.SessionManager.Presence",
 			                   G_TYPE_STRING, "status-text",
 			                   G_TYPE_INVALID,
 			                   G_TYPE_VALUE, &value,
