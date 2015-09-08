@@ -5,7 +5,7 @@ data/mate-screensaver-preferences.desktop.in
 data/mate-screensaver.directory.in
 data/images/cosmos/cosmos.xml.in.in
 [type: gettext/glade]data/lock-dialog-default.ui
-data/org.mate.screensaver.gschema.xml.in
+[type: gettext/gsettings]data/org.mate.screensaver.gschema.xml.in
 savers/cosmos-slideshow.desktop.in.in
 savers/footlogo-floaters.desktop.in.in
 savers/gnomelogo-floaters.desktop.in.in
