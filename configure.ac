@@ -935,8 +935,8 @@ AC_ARG_WITH(systemd,
             [with_systemd=$withval], [with_systemd=auto])
 
 PKG_CHECK_MODULES(SYSTEMD, [libsystemd], [have_systemd=yes],
-                  [PKG_CHECK_MODULES(SYSTEMD, [libsystemd-login >= $SYSTEMD_REQUIRED],
-                  [have_systemd=yes])])
+                  [PKG_CHECK_MODULES(SYSTEMD, [libsystemd-login],
+                  [have_systemd=yes], [have_systemd=no])])
 
 if test "x$with_systemd" = "xauto" ; then
         if test x$have_systemd = xno ; then
