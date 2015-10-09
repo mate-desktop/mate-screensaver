@@ -2,6 +2,11 @@
 Version 1.11.0
 ===============
 
+Switch to org.gnome.SessionManager
+Don't fade to black when locking the screen
+manager: fade out explicitly locks more quickly
+more improvements
+
 ===============
 Version 1.10.1
 ===============
