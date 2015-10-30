@@ -1,17 +1,12 @@
 ===============
-Version 1.11.1
-===============
-
-Fix systemd event handling
-
-===============
-Version 1.11.0
+Version 1.12.0
 ===============
 
 Retrieve strings directly from gschema (requires intltool 0.50.1)
 Switch to org.gnome.SessionManager
 Add support for libsystemd (in addition to libsystemd-login)
 Don't fade to black when locking the screen
+Fix systemd event handling
 Some more fixes and cleanups
 
 ===============
