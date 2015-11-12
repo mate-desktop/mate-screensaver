@@ -910,11 +910,15 @@ screen_saver_free (ScreenSaver *screen_saver)
 
 	g_hash_table_destroy (screen_saver->cached_sources);
 
-	if (screen_saver->state_update_timeout_id != 0)
+	if (screen_saver->state_update_timeout_id != 0) {
 		g_source_remove (screen_saver->state_update_timeout_id);
+		screen_saver->state_update_timeout_id = 0;
+	}
 
-	if (screen_saver->stats_update_timeout_id != 0)
+	if (screen_saver->stats_update_timeout_id != 0) {
 		g_source_remove (screen_saver->stats_update_timeout_id);
+		screen_saver->stats_update_timeout_id = 0;
+	}
 
 	screen_saver_destroy_floaters (screen_saver);
 

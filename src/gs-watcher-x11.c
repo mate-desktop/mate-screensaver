@@ -392,6 +392,7 @@ set_status (GSWatcher *watcher,
 		if (watcher->priv->idle_id > 0)
 		{
 			g_source_remove (watcher->priv->idle_id);
+			watcher->priv->idle_id = 0;
 		}
 		res = _gs_watcher_set_session_idle (watcher, FALSE);
 		res = _gs_watcher_set_session_idle_notice (watcher, FALSE);
@@ -566,6 +567,7 @@ gs_watcher_finalize (GObject *object)
 	if (watcher->priv->idle_id > 0)
 	{
 		g_source_remove (watcher->priv->idle_id);
+		watcher->priv->idle_id = 0;
 	}
 
 	watcher->priv->active = FALSE;

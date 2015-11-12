@@ -2784,6 +2784,7 @@ gs_window_finalize (GObject *object)
 	if (window->priv->info_bar_timer_id > 0)
 	{
 		g_source_remove (window->priv->info_bar_timer_id);
+		window->priv->info_bar_timer_id = 0;
 	}
 
 	remove_watchdog_timer (window);

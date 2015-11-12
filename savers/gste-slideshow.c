@@ -1072,6 +1072,7 @@ gste_slideshow_finalize (GObject *object)
 	if (show->priv->results_pull_id > 0)
 	{
 		g_source_remove (show->priv->results_pull_id);
+		show->priv->results_pull_id = 0;
 	}
 
 	if (show->priv->results_q != NULL)
