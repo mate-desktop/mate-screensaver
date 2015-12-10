@@ -1993,7 +1993,11 @@ create_page_one (GSLockPlug *plug)
 	gtk_box_pack_start (GTK_BOX (vbox), plug->priv->auth_message_label,
 	                    FALSE, FALSE, 0);
 	/* Buttons */
+#if GTK_CHECK_VERSION(3, 0, 0)
+	plug->priv->auth_action_area = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
+#else
 	plug->priv->auth_action_area = gtk_hbutton_box_new ();
+#endif
 
 	gtk_button_box_set_layout (GTK_BUTTON_BOX (plug->priv->auth_action_area),
 	                           GTK_BUTTONBOX_END);
