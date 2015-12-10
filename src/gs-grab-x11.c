@@ -121,7 +121,11 @@ xorg_lock_smasher_set_active (GSGrab  *grab,
 	status = XF86MiscSetGrabKeysState (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), active);
 
 	gdk_display_sync (gdk_display_get_default ());
+#if GTK_CHECK_VERSION (3, 0, 0)
+	error = gdk_error_trap_pop ();
+#else
 	gdk_error_trap_pop ();
+#endif
 
 	if (active && status == MiscExtGrabStateAlready)
 	{
@@ -129,12 +133,26 @@ xorg_lock_smasher_set_active (GSGrab  *grab,
 		status = MiscExtGrabStateSuccess;
 	}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+        if (error == Success) {
+                gs_debug ("XF86MiscSetGrabKeysState(%s) returned %s\n",
+                          active ? "on" : "off",
+                          (status == MiscExtGrabStateSuccess ? "MiscExtGrabStateSuccess" :
+                           status == MiscExtGrabStateLocked  ? "MiscExtGrabStateLocked"  :
+                           status == MiscExtGrabStateAlready ? "MiscExtGrabStateAlready" :
+                           "unknown value"));
+        } else {
+                gs_debug ("XF86MiscSetGrabKeysState(%s) failed with error code %d\n",
+                          active ? "on" : "off", error);
+        }
+#else
 	gs_debug ("XF86MiscSetGrabKeysState(%s) returned %s\n",
 	          active ? "on" : "off",
 	          (status == MiscExtGrabStateSuccess ? "MiscExtGrabStateSuccess" :
 	           status == MiscExtGrabStateLocked  ? "MiscExtGrabStateLocked"  :
 	           status == MiscExtGrabStateAlready ? "MiscExtGrabStateAlready" :
 	           "unknown value"));
+#endif
 }
 #else
 static void
@@ -416,8 +434,12 @@ gs_grab_nuke_focus (void)
 	XGetInputFocus (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &focus, &rev);
 	XSetInputFocus (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), None, RevertToNone, CurrentTime);
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gdk_error_trap_pop_ignored ();
+#else
 	gdk_display_sync (gdk_display_get_default ());
 	gdk_error_trap_pop ();
+#endif
 }
 
 void
