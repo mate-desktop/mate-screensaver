@@ -428,7 +428,9 @@ results_pull_func (GSTESlideshow *show)
 {
 	OpResult *result;
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	GDK_THREADS_ENTER ();
+#endif
 
 	g_async_queue_lock (show->priv->results_q);
 
@@ -447,7 +449,9 @@ results_pull_func (GSTESlideshow *show)
 
 	g_async_queue_unlock (show->priv->results_q);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	GDK_THREADS_LEAVE ();
+#endif
 
 	return FALSE;
 }
@@ -685,7 +689,9 @@ op_load_image (GSTESlideshow *show,
 	                                window_width,
 	                                window_height);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	GDK_THREADS_ENTER ();
+#endif
 	g_async_queue_lock (show->priv->results_q);
 	g_async_queue_push_unlocked (show->priv->results_q, op_result);
 
@@ -697,7 +703,9 @@ op_load_image (GSTESlideshow *show,
 	}
 
 	g_async_queue_unlock (show->priv->results_q);
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	GDK_THREADS_LEAVE ();
+#endif
 }
 
 static gpointer

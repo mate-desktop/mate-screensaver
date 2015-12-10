@@ -628,9 +628,13 @@ gs_lock_plug_run (GSLockPlug *plug)
 
 	ri.loop = g_main_loop_new (NULL, FALSE);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	GDK_THREADS_LEAVE ();
+#endif
 	g_main_loop_run (ri.loop);
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	GDK_THREADS_ENTER ();
+#endif
 
 	g_main_loop_unref (ri.loop);
 
