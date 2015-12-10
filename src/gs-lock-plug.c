@@ -82,6 +82,11 @@ static void gs_lock_plug_finalize   (GObject         *object);
 
 #define GS_LOCK_PLUG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_LOCK_PLUG, GSLockPlugPrivate))
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
+#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
+#endif
+
 struct GSLockPlugPrivate
 {
 	GtkWidget   *vbox;
