@@ -203,6 +203,7 @@ gs_window_override_user_time (GSWindow *window)
 	gdk_x11_window_set_user_time (gtk_widget_get_window (GTK_WIDGET (window)), ev_time);
 }
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 static void
 force_no_pixmap_background (GtkWidget *widget)
 {
@@ -230,7 +231,6 @@ force_no_pixmap_background (GtkWidget *widget)
 	gtk_widget_set_name (widget, "gs-window-drawing-area");
 }
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
 static void
 clear_children (Window window)
 {
@@ -2726,6 +2726,10 @@ create_info_bar (GSWindow *window)
 static void
 gs_window_init (GSWindow *window)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GdkRGBA black = { 0.0, 0.0, 0.0, 1.0 };
+
+#endif
 	window->priv = GS_WINDOW_GET_PRIVATE (window);
 
 	window->priv->geometry.x      = -1;
@@ -2767,9 +2771,16 @@ gs_window_init (GSWindow *window)
 	gtk_widget_set_app_paintable (window->priv->drawing_area, TRUE);
 #endif
 	gtk_box_pack_start (GTK_BOX (window->priv->vbox), window->priv->drawing_area, TRUE, TRUE, 0);
+#if GTK_CHECK_VERSION (3, 0, 0)
+        gtk_widget_realize (window->priv->drawing_area);
+        gdk_window_set_background_rgba (gtk_widget_get_window (window->priv->drawing_area), &black);
+
+#endif
 	create_info_bar (window);
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	force_no_pixmap_background (window->priv->drawing_area);
+#endif
 }
 
 static void
