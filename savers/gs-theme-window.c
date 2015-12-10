@@ -200,7 +200,11 @@ gs_theme_window_real_realize (GtkWidget *widget)
 		exit (1);
 	}
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+	gtk_widget_get_preferred_size (widget, &requisition, NULL);
+#else
 	gtk_widget_size_request (widget, &requisition);
+#endif
 	allocation.x = x;
 	allocation.y = y;
 	allocation.width = width;
