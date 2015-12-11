@@ -232,7 +232,11 @@ gs_grab_get_mouse (GSGrab    *grab,
 		grab->priv->mouse_hide_cursor = hide_cursor;
 	}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	g_object_unref (cursor);
+#else
 	gdk_cursor_unref (cursor);
+#endif
 
 	return status;
 }

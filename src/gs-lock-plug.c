@@ -1564,7 +1564,11 @@ gs_lock_plug_set_busy (GSLockPlug *plug)
 	cursor = gdk_cursor_new (GDK_WATCH);
 
 	gdk_window_set_cursor (gtk_widget_get_window (top_level), cursor);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	g_object_unref (cursor);
+#else
 	gdk_cursor_unref (cursor);
+#endif
 }
 
 void
@@ -1577,7 +1581,11 @@ gs_lock_plug_set_ready (GSLockPlug *plug)
 
 	cursor = gdk_cursor_new (GDK_LEFT_PTR);
 	gdk_window_set_cursor (gtk_widget_get_window (top_level), cursor);
+#if GTK_CHECK_VERSION (3, 0, 0)
+	g_object_unref (cursor);
+#else
 	gdk_cursor_unref (cursor);
+#endif
 }
 
 void
