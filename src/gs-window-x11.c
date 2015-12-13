@@ -159,11 +159,20 @@ static void
 set_invisible_cursor (GdkWindow *window,
                       gboolean   invisible)
 {
+#if GTK_CHECK_VERSION (3, 16, 0)
+	GdkDisplay *display;
+#endif
 	GdkCursor *cursor = NULL;
 
 	if (invisible)
 	{
+
+#if GTK_CHECK_VERSION (3, 16, 0)
+		display = gtk_widget_get_display (GTK_WIDGET (window));
+		cursor = gdk_cursor_new_for_display (display, GDK_BLANK_CURSOR);
+#else
 		cursor = gdk_cursor_new (GDK_BLANK_CURSOR);
+#endif
 	}
 
 	gdk_window_set_cursor (window, cursor);

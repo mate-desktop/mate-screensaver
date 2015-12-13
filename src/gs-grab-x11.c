@@ -204,12 +204,20 @@ gs_grab_get_mouse (GSGrab    *grab,
                    gboolean   hide_cursor)
 {
 	GdkGrabStatus status;
+#if GTK_CHECK_VERSION (3, 16, 0)
+	GdkDisplay *display;
+#endif
 	GdkCursor    *cursor;
 
 	g_return_val_if_fail (window != NULL, FALSE);
 	g_return_val_if_fail (screen != NULL, FALSE);
 
+#if GTK_CHECK_VERSION (3, 16, 0)
+	display = gtk_widget_get_display (GTK_WIDGET (window));
+	cursor = gdk_cursor_new_for_display (display, GDK_BLANK_CURSOR);
+#else
 	cursor = gdk_cursor_new (GDK_BLANK_CURSOR);
+#endif
 
 	gs_debug ("Grabbing mouse widget=%X", (guint32) GDK_WINDOW_XID (window));
 	status = gdk_pointer_grab (window, TRUE, 0, NULL,

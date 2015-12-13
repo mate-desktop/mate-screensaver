@@ -1556,12 +1556,20 @@ logout_button_clicked (GtkButton  *button,
 void
 gs_lock_plug_set_busy (GSLockPlug *plug)
 {
+#if GTK_CHECK_VERSION (3, 16, 0)
+	GdkDisplay *display;
+#endif
 	GdkCursor *cursor;
 	GtkWidget *top_level;
 
 	top_level = gtk_widget_get_toplevel (GTK_WIDGET (plug));
 
+#if GTK_CHECK_VERSION (3, 16, 0)
+	display = gtk_widget_get_display (GTK_WIDGET (plug));
+	cursor = gdk_cursor_new_for_display (display, GDK_WATCH);
+#else
 	cursor = gdk_cursor_new (GDK_WATCH);
+#endif
 
 	gdk_window_set_cursor (gtk_widget_get_window (top_level), cursor);
 #if GTK_CHECK_VERSION (3, 0, 0)
@@ -1574,12 +1582,20 @@ gs_lock_plug_set_busy (GSLockPlug *plug)
 void
 gs_lock_plug_set_ready (GSLockPlug *plug)
 {
+#if GTK_CHECK_VERSION (3, 16, 0)
+	GdkDisplay *display;
+#endif
 	GdkCursor *cursor;
 	GtkWidget *top_level;
 
 	top_level = gtk_widget_get_toplevel (GTK_WIDGET (plug));
 
+#if GTK_CHECK_VERSION (3, 16, 0)
+	display = gtk_widget_get_display (GTK_WIDGET (plug));
+	cursor = gdk_cursor_new_for_display (display, GDK_LEFT_PTR);
+#else
 	cursor = gdk_cursor_new (GDK_LEFT_PTR);
+#endif
 	gdk_window_set_cursor (gtk_widget_get_window (top_level), cursor);
 #if GTK_CHECK_VERSION (3, 0, 0)
 	g_object_unref (cursor);
