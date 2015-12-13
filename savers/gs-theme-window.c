@@ -100,10 +100,9 @@ gs_theme_window_init (GSThemeWindow *window)
 static void
 gs_theme_window_finalize (GObject *object)
 {
-	GSThemeWindow *window;
 	GObjectClass  *parent_class;
 
-	window = GS_THEME_WINDOW (object);
+	GS_THEME_WINDOW (object);
 
 	parent_class = G_OBJECT_CLASS (gs_theme_window_parent_class);
 

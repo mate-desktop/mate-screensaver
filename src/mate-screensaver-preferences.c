@@ -1552,7 +1552,6 @@ init_capplet (void)
 	GtkWidget *fullscreen_preview_window;
 	GtkWidget *fullscreen_preview_previous;
 	GtkWidget *fullscreen_preview_next;
-	GtkWidget *fullscreen_preview_area;
 	GtkWidget *fullscreen_preview_close;
 	char      *gtk_builder_file;
 	gdouble    activate_delay;
@@ -1599,7 +1598,7 @@ init_capplet (void)
 	preview_button     = GTK_WIDGET (gtk_builder_get_object (builder, "preview_button"));
 	gpm_button         = GTK_WIDGET (gtk_builder_get_object (builder, "gpm_button"));
 	fullscreen_preview_window = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_window"));
-	fullscreen_preview_area = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_area"));
+	GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_area"));
 	fullscreen_preview_close = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_close"));
 	fullscreen_preview_previous = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_previous_button"));
 	fullscreen_preview_next = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_next_button"));

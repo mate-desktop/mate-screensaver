@@ -336,9 +336,7 @@ gste_popsquares_set_property (GObject            *object,
                               const GValue       *value,
                               GParamSpec         *pspec)
 {
-	GSTEPopsquares *self;
-
-	self = GSTE_POPSQUARES (object);
+	GSTE_POPSQUARES (object);
 
 	switch (prop_id)
 	{
@@ -354,9 +352,7 @@ gste_popsquares_get_property (GObject            *object,
                               GValue             *value,
                               GParamSpec         *pspec)
 {
-	GSTEPopsquares *self;
-
-	self = GSTE_POPSQUARES (object);
+	GSTE_POPSQUARES (object);
 
 	switch (prop_id)
 	{

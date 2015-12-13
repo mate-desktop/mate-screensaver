@@ -81,9 +81,7 @@ gs_theme_engine_set_property (GObject            *object,
                               const GValue       *value,
                               GParamSpec         *pspec)
 {
-	GSThemeEngine *self;
-
-	self = GS_THEME_ENGINE (object);
+	GS_THEME_ENGINE (object);
 
 	switch (prop_id)
 	{
@@ -99,9 +97,7 @@ gs_theme_engine_get_property (GObject            *object,
                               GValue             *value,
                               GParamSpec         *pspec)
 {
-	GSThemeEngine *self;
-
-	self = GS_THEME_ENGINE (object);
+	GS_THEME_ENGINE (object);
 
 	switch (prop_id)
 	{
