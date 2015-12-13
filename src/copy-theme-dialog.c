@@ -221,7 +221,12 @@ copy_theme_dialog_init (CopyThemeDialog *dlg)
 	gtk_label_set_markup (GTK_LABEL (dlg->priv->status), markup);
 	g_free (markup);
 
+#if GTK_CHECK_VERSION (3, 14, 0)
+	gtk_widget_set_halign (dlg->priv->status, GTK_ALIGN_START);
+	gtk_widget_set_valign (dlg->priv->status, GTK_ALIGN_START);
+#else
 	gtk_misc_set_alignment (GTK_MISC (dlg->priv->status), 0.0, 0.0);
+#endif
 
 	gtk_box_pack_start (GTK_BOX (vbox), dlg->priv->status, FALSE, FALSE, 0);
 
@@ -253,7 +258,11 @@ copy_theme_dialog_init (CopyThemeDialog *dlg)
 	dlg->priv->current = gtk_label_new ("");
 	gtk_box_pack_start (GTK_BOX (progress_vbox),
 	                    dlg->priv->current, FALSE, FALSE, 0);
+#if GTK_CHECK_VERSION (3, 14, 0)
+	gtk_widget_set_halign (dlg->priv->current, GTK_ALIGN_START);
+#else
 	gtk_misc_set_alignment (GTK_MISC (dlg->priv->current), 0.0, 0.5);
+#endif
 
 	gtk_dialog_add_button (GTK_DIALOG (dlg),
 	                       GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
@@ -532,7 +541,12 @@ create_titled_label (GtkTable   *table,
 {
 	*title_widget = gtk_label_new ("");
 	eel_gtk_label_make_bold (GTK_LABEL (*title_widget));
+#if GTK_CHECK_VERSION (3, 14, 0)
+	gtk_widget_set_halign (*title_widget, GTK_ALIGN_END);
+	gtk_widget_set_valign (*title_widget, GTK_ALIGN_START);
+#else
 	gtk_misc_set_alignment (GTK_MISC (*title_widget), 1, 0);
+#endif
 	gtk_table_attach (table, *title_widget,
 	                  0, 1,
 	                  row, row + 1,
@@ -548,5 +562,10 @@ create_titled_label (GtkTable   *table,
 	                  GTK_FILL | GTK_EXPAND, 0,
 	                  0, 0);
 	gtk_widget_show (*label_text_widget);
+#if GTK_CHECK_VERSION (3, 14, 0)
+	gtk_widget_set_halign (*label_text_widget, GTK_ALIGN_START);
+	gtk_widget_set_valign (*label_text_widget, GTK_ALIGN_START);
+#else
 	gtk_misc_set_alignment (GTK_MISC (*label_text_widget), 0, 0);
+#endif
 }

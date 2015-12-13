@@ -1960,20 +1960,35 @@ create_page_one (GSLockPlug *plug)
 	str = g_strdup ("<span size=\"xx-large\" weight=\"ultrabold\">%s</span>");
 	plug->priv->auth_time_label = gtk_label_new (str);
 	g_free (str);
+#if GTK_CHECK_VERSION (3, 14, 0)
+	gtk_widget_set_halign (plug->priv->auth_time_label, GTK_ALIGN_CENTER);
+	gtk_widget_set_valign (plug->priv->auth_time_label, GTK_ALIGN_CENTER);
+#else
 	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_time_label), 0.5, 0.5);
+#endif
 	gtk_label_set_use_markup (GTK_LABEL (plug->priv->auth_time_label), TRUE);
 	gtk_box_pack_start (GTK_BOX (vbox2), plug->priv->auth_time_label, FALSE, FALSE, 0);
 
 	str = g_strdup ("<span size=\"large\">%s</span>");
 	plug->priv->auth_date_label = gtk_label_new (str);
 	g_free (str);
+#if GTK_CHECK_VERSION (3, 14, 0)
+	gtk_widget_set_halign (plug->priv->auth_date_label, GTK_ALIGN_CENTER);
+	gtk_widget_set_valign (plug->priv->auth_date_label, GTK_ALIGN_CENTER);
+#else
 	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_date_label), 0.5, 0.5);
+#endif
 	gtk_label_set_use_markup (GTK_LABEL (plug->priv->auth_date_label), TRUE);
 	gtk_box_pack_start (GTK_BOX (vbox2), plug->priv->auth_date_label, FALSE, FALSE, 0);
 
 	plug->priv->auth_face_image = gtk_image_new ();
 	gtk_box_pack_start (GTK_BOX (vbox), plug->priv->auth_face_image, TRUE, TRUE, 0);
+#if GTK_CHECK_VERSION (3, 14, 0)
+	gtk_widget_set_halign (plug->priv->auth_face_image, GTK_ALIGN_CENTER);
+	gtk_widget_set_valign (plug->priv->auth_face_image, GTK_ALIGN_END);
+#else
 	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_face_image), 0.5, 1.0);
+#endif
 
 	vbox2 = gtk_vbox_new (FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (vbox), vbox2, FALSE, FALSE, 0);
@@ -1982,7 +1997,12 @@ create_page_one (GSLockPlug *plug)
 	plug->priv->auth_realname_label = gtk_label_new (str);
 	g_free (str);
 	expand_string_for_label (plug->priv->auth_realname_label);
+#if GTK_CHECK_VERSION (3, 14, 0)
+	gtk_widget_set_halign (plug->priv->auth_realname_label, GTK_ALIGN_CENTER);
+	gtk_widget_set_valign (plug->priv->auth_realname_label, GTK_ALIGN_CENTER);
+#else
 	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_realname_label), 0.5, 0.5);
+#endif
 	gtk_label_set_use_markup (GTK_LABEL (plug->priv->auth_realname_label), TRUE);
 	gtk_box_pack_start (GTK_BOX (vbox2), plug->priv->auth_realname_label, FALSE, FALSE, 0);
 
@@ -1991,7 +2011,12 @@ create_page_one (GSLockPlug *plug)
 	plug->priv->auth_username_label = gtk_label_new (str);
 	g_free (str);
 	expand_string_for_label (plug->priv->auth_username_label);
+#if GTK_CHECK_VERSION (3, 14, 0)
+	gtk_widget_set_halign (plug->priv->auth_username_label, GTK_ALIGN_CENTER);
+	gtk_widget_set_valign (plug->priv->auth_username_label, GTK_ALIGN_CENTER);
+#else
 	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_username_label), 0.5, 0.5);
+#endif
 	gtk_label_set_use_markup (GTK_LABEL (plug->priv->auth_username_label), TRUE);
 	gtk_box_pack_start (GTK_BOX (vbox2), plug->priv->auth_username_label, FALSE, FALSE, 0);
 
@@ -2002,7 +2027,11 @@ create_page_one (GSLockPlug *plug)
 	gtk_box_pack_start (GTK_BOX (vbox2), hbox, FALSE, FALSE, 0);
 
 	plug->priv->auth_prompt_label = gtk_label_new_with_mnemonic (_("_Password:"));
+#if GTK_CHECK_VERSION (3, 14, 0)
+	gtk_widget_set_halign (plug->priv->auth_prompt_label, GTK_ALIGN_START);
+#else
 	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_prompt_label), 0, 0.5);
+#endif
 	gtk_box_pack_start (GTK_BOX (hbox), plug->priv->auth_prompt_label, FALSE, FALSE, 0);
 
 	plug->priv->auth_prompt_entry = gtk_entry_new ();
@@ -2012,7 +2041,12 @@ create_page_one (GSLockPlug *plug)
 	                               plug->priv->auth_prompt_entry);
 
 	plug->priv->auth_capslock_label = gtk_label_new ("");
+#if GTK_CHECK_VERSION (3, 14, 0)
+	gtk_widget_set_halign (plug->priv->auth_capslock_label, GTK_ALIGN_CENTER);
+	gtk_widget_set_valign (plug->priv->auth_capslock_label, GTK_ALIGN_CENTER);
+#else
 	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_capslock_label), 0.5, 0.5);
+#endif
 	gtk_box_pack_start (GTK_BOX (vbox2), plug->priv->auth_capslock_label, FALSE, FALSE, 0);
 
 	/* Status text */
