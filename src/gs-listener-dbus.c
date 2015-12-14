@@ -899,6 +899,7 @@ listener_dbus_get_ref_entries (GSListener     *listener,
 	return DBUS_HANDLER_RESULT_HANDLED;
 }
 
+#ifdef WITH_CONSOLE_KIT
 static void
 listener_add_ck_ref_entry (GSListener     *listener,
                            int             entry_type,
@@ -932,6 +933,7 @@ listener_remove_ck_ref_entry (GSListener *listener,
 {
 	listener_remove_ref_entry (listener, entry_type, cookie);
 }
+#endif
 
 static DBusHandlerResult
 listener_dbus_add_ref_entry (GSListener     *listener,
