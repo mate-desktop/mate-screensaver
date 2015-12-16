@@ -56,7 +56,7 @@
                                 <child>
                                   <object class="GtkLabel" id="auth-time-label">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">&lt;span size="xx-large" weight="ultrabold"&gt;%s&lt;/span&gt;</property>
+                                    <property name="label" translatable="no">&lt;span size="xx-large" weight="ultrabold"&gt;%s&lt;/span&gt;</property>
                                     <property name="use_underline">False</property>
                                     <property name="use_markup">True</property>
                                     <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -80,7 +80,7 @@
                                 <child>
                                   <object class="GtkLabel" id="auth-date-label">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">&lt;span size="large"&gt;%s&lt;/span&gt;</property>
+                                    <property name="label" translatable="no">&lt;span size="large"&gt;%s&lt;/span&gt;</property>
                                     <property name="use_underline">False</property>
                                     <property name="use_markup">True</property>
                                     <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -130,7 +130,7 @@
                                 <child>
                                   <object class="GtkLabel" id="auth-realname-label">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">&lt;span size="x-large"&gt;%R&lt;/span&gt;</property>
+                                    <property name="label" translatable="no">&lt;span size="x-large"&gt;%R&lt;/span&gt;</property>
                                     <property name="use_underline">False</property>
                                     <property name="use_markup">True</property>
                                     <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -154,7 +154,7 @@
                                 <child>
                                   <object class="GtkLabel" id="auth-username-label">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">&lt;span size="small"&gt;%U on %h&lt;/span&gt;</property>
+                                    <property name="label" translatable="no">&lt;span size="small"&gt;%U on %h&lt;/span&gt;</property>
                                     <property name="use_underline">False</property>
                                     <property name="use_markup">True</property>
                                     <property name="justify">GTK_JUSTIFY_LEFT</property>
