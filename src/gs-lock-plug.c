@@ -38,11 +38,11 @@
 #include <gtk/gtk.h>
 #include <gio/gio.h>
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#include <gtk/gtkx.h>
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #include <libmate-desktop/mate-desktop-utils.h>
-#define gdk_spawn_command_line_on_screen mate_gdk_spawn_command_line_on_screen
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+#include <gtk/gtkx.h>
 #endif
 
 #ifdef WITH_KBD_LAYOUT_INDICATOR
@@ -220,7 +220,7 @@ do_user_switch (GSLockPlug *plug)
 								   MDM_FLEXISERVER_ARGS);
 
 		error = NULL;
-		res = gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
+		res = mate_gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
 												command,
 												&error);
 
@@ -240,7 +240,7 @@ do_user_switch (GSLockPlug *plug)
 								   GDM_FLEXISERVER_ARGS);
 
 		error = NULL;
-		res = gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
+		res = mate_gdk_spawn_command_line_on_screen (gdk_screen_get_default (),
 												command,
 												&error);
 
