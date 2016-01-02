@@ -46,10 +46,6 @@ dbussessionservice_DATA = org.mate.ScreenSaver.service
 gsettingsschema_in_files = org.mate.screensaver.gschema.xml.in
 gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
 
-migrationdir = $(datadir)/MateConf/gsettings
-dist_migration_DATA = org.mate.screensaver.gschema.migrate
-
-
 EXTRA_DIST = 				\
 	$(gsettingsschema_in_files)	\
 	$(desktop_in_files)		\
