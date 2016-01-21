@@ -37,11 +37,6 @@
 #define GS_PATH      "/org/mate/ScreenSaver"
 #define GS_INTERFACE "org.mate.ScreenSaver"
 
-/* this is for dbus < 0.3 */
-#if ((DBUS_VERSION_MAJOR == 0) && (DBUS_VERSION_MINOR < 30))
-#define dbus_bus_name_has_owner(connection, name, err) dbus_bus_service_exists(connection, name, err)
-#endif
-
 static gboolean do_quit       = FALSE;
 static gboolean do_lock       = FALSE;
 static gboolean do_cycle      = FALSE;

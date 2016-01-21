@@ -41,12 +41,6 @@
 #include "gs-marshal.h"
 #include "gs-debug.h"
 
-/* this is for dbus < 0.3 */
-#if ((DBUS_VERSION_MAJOR == 0) && (DBUS_VERSION_MINOR < 30))
-#define dbus_bus_name_has_owner(connection, name, err)      dbus_bus_service_exists(connection, name, err)
-#define dbus_bus_request_name(connection, name, flags, err) dbus_bus_acquire_service(connection, name, flags, err)
-#endif
-
 static void              gs_listener_class_init         (GSListenerClass *klass);
 static void              gs_listener_init               (GSListener      *listener);
 static void              gs_listener_finalize           (GObject         *object);
