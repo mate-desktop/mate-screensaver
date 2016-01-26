@@ -1125,7 +1125,7 @@ set_info_text_and_icon (GSWindow   *window,
 	image = gtk_image_new_from_stock (icon_stock_id, GTK_ICON_SIZE_DIALOG);
 	gtk_widget_show (image);
 	gtk_box_pack_start (GTK_BOX (hbox_content), image, FALSE, FALSE, 0);
-#if GTK_CHECK_VERSION (3, 14, 0)
+#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_valign (image, GTK_ALIGN_START);
 #else
 	gtk_misc_set_alignment (GTK_MISC (image), 0.5, 0);
@@ -1142,7 +1142,7 @@ set_info_text_and_icon (GSWindow   *window,
 	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
 	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
 	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
-#if GTK_CHECK_VERSION (3, 14, 0)
+#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_halign (primary_label, GTK_ALIGN_START);
 #else
 	gtk_misc_set_alignment (GTK_MISC (primary_label), 0, 0.5);
@@ -1158,7 +1158,7 @@ set_info_text_and_icon (GSWindow   *window,
 		gtk_box_pack_start (GTK_BOX (vbox), secondary_label, TRUE, TRUE, 0);
 		gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
 		gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
-#if GTK_CHECK_VERSION (3, 14, 0)
+#if GTK_CHECK_VERSION (3, 0, 0)
 		gtk_widget_set_halign (secondary_label, GTK_ALIGN_START);
 #else
 		gtk_misc_set_alignment (GTK_MISC (secondary_label), 0, 0.5);
