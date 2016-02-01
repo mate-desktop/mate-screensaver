@@ -780,10 +780,6 @@ screen_saver_floater_do_draw (ScreenSaver        *screen_saver,
 	if (screen_saver->should_show_paths && (floater->path != NULL))
 	{
 		gdouble dash_pattern[] = { 5.0 };
-		gint size;
-
-		size = CLAMP ((int) (FLOATER_MAX_SIZE * floater->path_start_scale),
-		              FLOATER_MIN_SIZE, FLOATER_MAX_SIZE);
 
 		cairo_save (context);
 		cairo_set_source_rgba (context, 1.0, 1.0, 1.0, .2 * floater->opacity);

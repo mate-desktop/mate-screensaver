@@ -553,7 +553,7 @@ draw_frame (GSTEPopsquares *pop,
 	int      border = 1;
 	gboolean twitch = FALSE;
 	int      x, y;
-	int      sw, sh, gw, gh;
+	int      gw, gh;
 	int      nsquares;
 	int      window_width;
 	int      window_height;
@@ -569,8 +569,6 @@ draw_frame (GSTEPopsquares *pop,
 	gs_theme_engine_get_window_size (GS_THEME_ENGINE (pop),
 	                                 &window_width,
 	                                 &window_height);
-	sw = window_width / pop->priv->subdivision;
-	sh = window_height / pop->priv->subdivision;
 
 	gw = pop->priv->subdivision;
 	gh = pop->priv->subdivision;
