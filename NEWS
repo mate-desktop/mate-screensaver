@@ -2,9 +2,10 @@
 Version 1.13.0
 ===============
 
-Gtk+3: fix some deprecations
-get rid of some build warnings when --without-console-kit is set
-drop MateConf migration script
+Drop MateConf migration script
+GTK+3: fix several deprecations
+Some more fixes and cleanups
+Translations update
 
 ===============
 Version 1.12.0
