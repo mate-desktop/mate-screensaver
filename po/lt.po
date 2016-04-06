@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-16 17:00+0300\n"
-"PO-Revision-Date: 2016-02-15 19:22+0000\n"
+"PO-Revision-Date: 2016-03-26 21:55+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgstr "Nurodykite ekrano užsklandos nuostatas"
 
 #: ../data/mate-screensaver-preferences.ui.h:1
 msgid "Screensaver Preferences"
-msgstr "Ekrano užsklandos nustatos"
+msgstr "Ekrano užsklandos nuostatos"
 
 #: ../data/mate-screensaver-preferences.ui.h:2
 msgid "Power _Management"
@@ -101,7 +101,7 @@ msgstr "At_sijungti"
 
 #: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
-msgstr "_Atšaukti"
+msgstr "_Atsisakyti"
 
 #: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1792
 msgid "_Unlock"
@@ -399,7 +399,7 @@ msgstr "Kopijuojamas failas: %u iš %u"
 
 #: ../src/mate-screensaver-command.c:64
 msgid "Causes the screensaver to exit gracefully"
-msgstr "Paprasčiausiai uždaro ekrano užsklandą"
+msgstr "Paprasčiausiai užveria ekrano užsklandą"
 
 #: ../src/mate-screensaver-command.c:68
 msgid "Query the state of the screensaver"

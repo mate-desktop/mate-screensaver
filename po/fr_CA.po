@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-08 14:29+0200\n"
-"PO-Revision-Date: 2015-10-08 14:48+0000\n"
-"Last-Translator: Ir0nsh007er <eerlemm@hotmail.com>\n"
+"POT-Creation-Date: 2015-12-16 17:00+0300\n"
+"PO-Revision-Date: 2015-12-16 14:02+0000\n"
+"Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: French (Canada) (http://www.transifex.com/mate/MATE/language/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,47 +84,27 @@ msgstr ""
 msgid "Cosmos"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:2
-#, no-c-format
-msgid "<span size=\"xx-large\" weight=\"ultrabold\">%s</span>"
-msgstr ""
-
-#: ../data/lock-dialog-default.ui.h:4
-#, no-c-format
-msgid "<span size=\"large\">%s</span>"
-msgstr ""
-
-#: ../data/lock-dialog-default.ui.h:6
-#, no-c-format
-msgid "<span size=\"x-large\">%R</span>"
-msgstr ""
-
-#: ../data/lock-dialog-default.ui.h:8
-#, no-c-format
-msgid "<span size=\"small\">%U on %h</span>"
-msgstr ""
-
-#: ../data/lock-dialog-default.ui.h:9
+#: ../data/lock-dialog-default.ui.h:1
 msgid "_Leave Message"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:10
+#: ../data/lock-dialog-default.ui.h:2
 msgid "_Switch User"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:11
+#: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:12
+#: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:13 ../src/gs-lock-plug.c:1759
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1792
 msgid "_Unlock"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:15
+#: ../data/lock-dialog-default.ui.h:7
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
 msgstr ""
@@ -312,7 +292,7 @@ msgstr ""
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr ""
 
-#: ../savers/popsquares.c:51 ../savers/floaters.c:1248
+#: ../savers/popsquares.c:51 ../savers/floaters.c:1252
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr ""
@@ -351,11 +331,11 @@ msgstr ""
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#: ../savers/floaters.c:1242
+#: ../savers/floaters.c:1246
 msgid "image - floats images around the screen"
 msgstr ""
 
-#: ../savers/floaters.c:1257
+#: ../savers/floaters.c:1261
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr ""
@@ -384,32 +364,32 @@ msgstr ""
 msgid "Do not try to stretch images on screen"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:215
+#: ../src/copy-theme-dialog.c:220
 msgid "Copying files"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:233
+#: ../src/copy-theme-dialog.c:243
 msgid "From:"
 msgstr "De:"
 
-#: ../src/copy-theme-dialog.c:237
+#: ../src/copy-theme-dialog.c:247
 msgid "To:"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:257
+#: ../src/copy-theme-dialog.c:271
 msgid "Copying themes"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:300
+#: ../src/copy-theme-dialog.c:314
 msgid "Invalid screensaver theme"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:303
+#: ../src/copy-theme-dialog.c:317
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:483
+#: ../src/copy-theme-dialog.c:497
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr ""
@@ -528,7 +508,7 @@ msgstr ""
 
 #. login: is whacked always translate to Username:
 #: ../src/mate-screensaver-dialog.c:167 ../src/mate-screensaver-dialog.c:168
-#: ../src/mate-screensaver-dialog.c:169 ../src/gs-auth-pam.c:744
+#: ../src/mate-screensaver-dialog.c:169 ../src/gs-auth-pam.c:745
 msgid "Username:"
 msgstr ""
 
@@ -659,11 +639,11 @@ msgstr ""
 msgid "Never"
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:1575
+#: ../src/mate-screensaver-preferences.c:1578
 msgid "Could not load the main interface"
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:1577
+#: ../src/mate-screensaver-preferences.c:1580
 msgid "Please make sure that the screensaver is properly installed"
 msgstr ""
 
@@ -701,45 +681,45 @@ msgstr ""
 msgid "No longer permitted to access the system."
 msgstr ""
 
-#: ../src/gs-listener-dbus.c:2196
+#: ../src/gs-listener-dbus.c:2186
 msgid "failed to register with the message bus"
 msgstr ""
 
-#: ../src/gs-listener-dbus.c:2207
+#: ../src/gs-listener-dbus.c:2197
 msgid "not connected to the message bus"
 msgstr ""
 
-#: ../src/gs-listener-dbus.c:2217 ../src/gs-listener-dbus.c:2249
+#: ../src/gs-listener-dbus.c:2207 ../src/gs-listener-dbus.c:2239
 msgid "screensaver already running in this session"
 msgstr ""
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:303
+#: ../src/gs-lock-plug.c:308
 msgid "%A, %B %e"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:405
+#: ../src/gs-lock-plug.c:410
 msgid "Time has expired."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:436
+#: ../src/gs-lock-plug.c:441
 msgid "You have the Caps Lock key on."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1739
+#: ../src/gs-lock-plug.c:1772
 msgid "S_witch User..."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1748
+#: ../src/gs-lock-plug.c:1781
 msgid "Log _Out"
 msgstr ""
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1957
+#: ../src/gs-lock-plug.c:2010
 msgid "%U on %h"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1971
+#: ../src/gs-lock-plug.c:2029
 msgid "_Password:"
 msgstr ""

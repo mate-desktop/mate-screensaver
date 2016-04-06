@@ -3,18 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Faludi Zoltán, 2015
 # Gabor Kelemen <kelemeng at mate dot hu>, 2005, 2006, 2007, 2008, 2009, 2010
-# i_sty <szollosi.istv4n@gmail.com>, 2014
+# István Szőllősi <szollosi.istv4n@gmail.com>, 2014
 # Rezső Páder <rezso@rezso.net>, 2013-2014
 # Szilveszter Farkas <szilveszter.farkas at gmail dot com>, 2005
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-08 13:22+0100\n"
-"PO-Revision-Date: 2014-02-09 16:13+0000\n"
-"Last-Translator: Rezső Páder <rezso@rezso.net>\n"
-"Language-Team: Hungarian (http://www.transifex.com/projects/p/MATE/language/hu/)\n"
+"POT-Creation-Date: 2015-12-16 17:00+0300\n"
+"PO-Revision-Date: 2015-12-16 14:02+0000\n"
+"Last-Translator: monsta <monsta@inbox.ru>\n"
+"Language-Team: Hungarian (http://www.transifex.com/mate/MATE/language/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -75,6 +76,7 @@ msgid "Screensavers"
 msgstr "Képernyővédők"
 
 #: ../data/mate-screensaver.directory.in.h:2
+#: ../data/org.mate.screensaver.gschema.xml.in.h:7
 msgid "Screensaver themes"
 msgstr "Képernyővédő-témák"
 
@@ -86,50 +88,177 @@ msgstr "Képernyővédő-témák"
 msgid "Cosmos"
 msgstr "Kozmosz"
 
-#: ../data/lock-dialog-default.ui.h:2
-#, no-c-format
-msgid "<span size=\"xx-large\" weight=\"ultrabold\">%s</span>"
-msgstr "<span size=\"xx-large\" weight=\"ultrabold\">%s</span>"
-
-#: ../data/lock-dialog-default.ui.h:4
-#, no-c-format
-msgid "<span size=\"large\">%s</span>"
-msgstr "<span size=\"large\">%s</span>"
-
-#: ../data/lock-dialog-default.ui.h:6
-#, no-c-format
-msgid "<span size=\"x-large\">%R</span>"
-msgstr "<span size=\"x-large\">%R</span>"
-
-#: ../data/lock-dialog-default.ui.h:8
-#, no-c-format
-msgid "<span size=\"small\">%U on %h</span>"
-msgstr "<span size=\"small\">%U a következőn: %h</span>"
-
-#: ../data/lock-dialog-default.ui.h:9
+#: ../data/lock-dialog-default.ui.h:1
 msgid "_Leave Message"
 msgstr "Ü_zenet hagyása"
 
-#: ../data/lock-dialog-default.ui.h:10
+#: ../data/lock-dialog-default.ui.h:2
 msgid "_Switch User"
 msgstr "Felhasználó_váltás"
 
-#: ../data/lock-dialog-default.ui.h:11
+#: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
 msgstr "_Kijelentkezés"
 
-#: ../data/lock-dialog-default.ui.h:12
+#: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
 msgstr "Mé_gse"
 
-#: ../data/lock-dialog-default.ui.h:13 ../src/gs-lock-plug.c:1778
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1792
 msgid "_Unlock"
 msgstr "_Feloldás"
 
-#: ../data/lock-dialog-default.ui.h:15
+#: ../data/lock-dialog-default.ui.h:7
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
 msgstr "<b>Üzenet hagyása a következőnek: %R</b>"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:1
+msgid "Activate when idle"
+msgstr "Aktiválás üresjáratban"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:2
+msgid "Set this to TRUE to activate the screensaver when the session is idle."
+msgstr "Állítsa ezt igazra a képernyővédő aktiválásához, ha a munkamenet üresjáratban van."
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:3
+msgid "Lock on activation"
+msgstr "Zárolás aktiváláskor"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:4
+msgid "Set this to TRUE to lock the screen when the screensaver goes active."
+msgstr "Állítsa ezt igazra a képernyő zárolásához a képernyővédő aktiválásakor."
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:5
+msgid "Screensaver theme selection mode"
+msgstr "A képernyővédő témakiválasztásának módja"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:6
+msgid ""
+"The selection mode used by screensaver. May be \"blank-only\" to enable the "
+"screensaver without using any theme on activation, \"single\" to enable "
+"screensaver using only one theme on activation (specified in \"themes\" "
+"key), and \"random\" to enable the screensaver using a random theme on "
+"activation."
+msgstr "A képernyővédő által használandó kijelölési mód. Lehetséges értékek: „blank-only” - ne használjon témákat a képernyővédő aktiválásakor, „single” - csak egy (a „themes” kulcsban megadott) téma használata a képernyővédő aktiválásakor és „random” - a képernyővédő aktiválása véletlen téma használatával."
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:8
+msgid ""
+"This key specifies the list of themes to be used by the screensaver. It's "
+"ignored when \"mode\" key is \"blank-only\", should provide the theme name "
+"when \"mode\" is \"single\", and should provide a list of themes when "
+"\"mode\" is \"random\"."
+msgstr "Ez a kulcs megadja a képernyővédő által használandó témák listáját. Ez figyelmen kívül marad, ha a „mode” kulcs értéke „blank-only”, ha a „mode” értéke „single”, akkor a téma nevét adja meg és a témák listáját adja, ha a „mode” értéke „random”."
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:9
+msgid "Time before power management baseline"
+msgstr "Az energiakezelési tevékenységig eltelő idő"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:10
+msgid ""
+"The number of seconds of inactivity before signalling to power management. "
+"This key is set and maintained by the session power management agent."
+msgstr "The number of seconds of inactivity before signalling to power management. This key is set and maintained by the session power management agent."
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:11
+msgid "Time before theme change"
+msgstr "A témaváltásig eltelő idő"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:12
+msgid "The number of minutes to run before changing the screensaver theme."
+msgstr "A képernyővédő témájának cseréje előtt eltelő percek száma."
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:13
+msgid "Time before locking"
+msgstr "A zárolásig eltelő idő"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:14
+msgid ""
+"The number of minutes after screensaver activation before locking the "
+"screen."
+msgstr "A képernyővédő aktiválásától a képernyő zárolásáig eltelő percek száma."
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:15
+msgid "Allow embedding a keyboard into the window"
+msgstr "Billentyűzet beágyazásának engedélyezése az ablakba"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:16
+msgid ""
+"Set this to TRUE to allow embedding a keyboard into the window when trying "
+"to unlock. The \"keyboard_command\" key must be set with the appropriate "
+"command."
+msgstr "Állítsa ezt igazra billentyűzet beágyazásához az ablakba a feloldási kísérletkor. A „keyboard_command” kulcsot be kell állítani a megfelelő parancsra."
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:17
+msgid "Embedded keyboard command"
+msgstr "Beágyazott billentyűzet parancs"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:18
+msgid ""
+"The command that will be run, if the \"embedded_keyboard_enabled\" key is "
+"set to TRUE, to embed a keyboard widget into the window. This command should"
+" implement an XEMBED plug interface and output a window XID on the standard "
+"output."
+msgstr "A billentyűzet felületi elem ablakba ágyazásához futtatandó parancs, ha az „embedded_keyboard_enabled” kulcs be van állítva. A parancsnak meg kell valósítania egy XEMBED csatolófelületet és egy ablak XID-t kell kimenetként előállítania a szabványos kimenetre."
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:19
+msgid "Allow logout"
+msgstr "Kijelentkezés engedélyezése"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:20
+msgid ""
+"Set this to TRUE to offer an option in the unlock dialog to allow logging "
+"out after a delay. The delay is specified in the \"logout_delay\" key."
+msgstr "Set this to TRUE to offer an option in the unlock dialog to allow logging out after a delay. The delay is specified in the \"logout_delay\" key."
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:21
+msgid "Time before logout option"
+msgstr "A kijelentkezési lehetőség megjelenéséig eltelő idő"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:22
+msgid ""
+"The number of minutes after the screensaver activation before a logout "
+"option will appear in the unlock dialog. This key has effect only if the "
+"\"logout_enable\" key is set to TRUE."
+msgstr "A képernyővédő aktiválásától a kijelentkezés lehetőségének megjelenéséig eltelő percek száma a zárolás feloldása párbeszédablakban. Ez a kulcs csak akkor hatásos, ha a „logout_enable” kulcs értéke igaz."
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:23
+msgid "Logout command"
+msgstr "Kijelentkezési parancs"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:24
+msgid ""
+"The command to invoke when the logout button is clicked. This command should"
+" simply log the user out without any interaction. This key has effect only "
+"if the \"logout_enable\" key is set to TRUE."
+msgstr "A kijelentkezés gomb megnyomásakor meghívandó parancs. Ennek a parancsnak egyszerűen, beavatkozás nélkül ki kell jelentkeztetnie a felhasználót. Ez a kulcs csak akkor hatásos, ha a „logout_enable” kulcs értéke igaz."
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:25
+msgid "Allow user switching"
+msgstr "Felhasználóváltás engedélyezése"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:26
+msgid ""
+"Set this to TRUE to offer an option in the unlock dialog to switch to a "
+"different user account."
+msgstr "Állítsa ezt igazra, ha a zárolás feloldása párbeszédablak felajánlja a felhasználóváltás lehetőségét."
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:27
+msgid "Theme for lock dialog"
+msgstr "A zárolási párbeszédablak témája"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:28
+msgid "Theme to use for the lock dialog"
+msgstr "A zárolási párbeszédablakban használandó téma"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:29
+msgid "Allow the session status message to be displayed"
+msgstr "A munkamenet állapotüzenete megjeleníthető"
+
+#: ../data/org.mate.screensaver.gschema.xml.in.h:30
+msgid ""
+"Allow the session status message to be displayed when the screen is locked."
+msgstr "A munkamenet állapotüzenete megjeleníthető, ha a képernyő zárolva van."
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -172,35 +301,35 @@ msgstr "Pulzáló színek pop-artos rácsa"
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. Használati információkért lásd a --help kapcsolót.\n"
 
-#: ../savers/floaters.c:94
+#: ../savers/floaters.c:90
 msgid "Show paths that images follow"
 msgstr "A képek által követett útvonalak megjelenítése"
 
-#: ../savers/floaters.c:99
+#: ../savers/floaters.c:95
 msgid "Occasionally rotate images as they move"
 msgstr "Képek véletlenszerű forgatása mozgatás közben"
 
-#: ../savers/floaters.c:104
+#: ../savers/floaters.c:100
 msgid "Print out frame rate and other statistics"
 msgstr "Képkockasebesség és egyéb statisztikák kiírása"
 
-#: ../savers/floaters.c:109
+#: ../savers/floaters.c:105
 msgid "The maximum number of images to keep on screen"
 msgstr "A képernyőn tartandó képek maximális száma"
 
-#: ../savers/floaters.c:109
+#: ../savers/floaters.c:105
 msgid "MAX_IMAGES"
 msgstr "MAX_KÉPEK"
 
-#: ../savers/floaters.c:114
+#: ../savers/floaters.c:110
 msgid "The initial size and position of window"
 msgstr "Az ablak kezdeti mérete és pozíciója"
 
-#: ../savers/floaters.c:114
+#: ../savers/floaters.c:110
 msgid "WIDTHxHEIGHT+X+Y"
 msgstr "SZÉLESSÉGxMAGASSÁG+X+Y"
 
-#: ../savers/floaters.c:119
+#: ../savers/floaters.c:115
 msgid "The source image to use"
 msgstr "A használandó forráskép"
 
@@ -239,32 +368,32 @@ msgstr "Ne véletlenszerűsítse a képeket a hely alapján"
 msgid "Do not try to stretch images on screen"
 msgstr "Ne próbálja nyújtani a képeket a képernyőn"
 
-#: ../src/copy-theme-dialog.c:219
+#: ../src/copy-theme-dialog.c:220
 msgid "Copying files"
 msgstr "Fájlok másolása"
 
-#: ../src/copy-theme-dialog.c:237
+#: ../src/copy-theme-dialog.c:243
 msgid "From:"
 msgstr "Forrás:"
 
-#: ../src/copy-theme-dialog.c:241
+#: ../src/copy-theme-dialog.c:247
 msgid "To:"
 msgstr "Cél:"
 
-#: ../src/copy-theme-dialog.c:261
+#: ../src/copy-theme-dialog.c:271
 msgid "Copying themes"
 msgstr "Témák másolása"
 
-#: ../src/copy-theme-dialog.c:307
+#: ../src/copy-theme-dialog.c:314
 msgid "Invalid screensaver theme"
 msgstr "Érvénytelen képernyővédő téma"
 
-#: ../src/copy-theme-dialog.c:310
+#: ../src/copy-theme-dialog.c:317
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "A fájl (%s) nem tűnik érvényes képernyővédő témának."
 
-#: ../src/copy-theme-dialog.c:490
+#: ../src/copy-theme-dialog.c:497
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "Fájl másolása: %u/%u"
@@ -382,103 +511,103 @@ msgid "Not used"
 msgstr "Nincs használatban"
 
 #. login: is whacked always translate to Username:
-#: ../src/mate-screensaver-dialog.c:171 ../src/mate-screensaver-dialog.c:172
-#: ../src/mate-screensaver-dialog.c:173 ../src/gs-auth-pam.c:756
+#: ../src/mate-screensaver-dialog.c:167 ../src/mate-screensaver-dialog.c:168
+#: ../src/mate-screensaver-dialog.c:169 ../src/gs-auth-pam.c:745
 msgid "Username:"
 msgstr "Felhasználónév:"
 
-#: ../src/mate-screensaver-dialog.c:174 ../src/mate-screensaver-dialog.c:175
+#: ../src/mate-screensaver-dialog.c:170 ../src/mate-screensaver-dialog.c:171
 #: ../src/gs-auth-pam.c:171
 msgid "Password:"
 msgstr "Jelszó:"
 
-#: ../src/mate-screensaver-dialog.c:176
+#: ../src/mate-screensaver-dialog.c:172
 msgid "You are required to change your password immediately (password aged)"
 msgstr "Azonnal meg kell változtatnia a jelszavát (a régi jelszó lejárt)"
 
-#: ../src/mate-screensaver-dialog.c:177
+#: ../src/mate-screensaver-dialog.c:173
 msgid "You are required to change your password immediately (root enforced)"
 msgstr "Azonnal meg kell változtatnia a jelszavát (a rendszergazda kérése)"
 
-#: ../src/mate-screensaver-dialog.c:178
+#: ../src/mate-screensaver-dialog.c:174
 msgid "Your account has expired; please contact your system administrator"
 msgstr "Az Ön felhasználói fiókja lejárt; lépjen kapcsolatba a rendszergazdával"
 
-#: ../src/mate-screensaver-dialog.c:179
+#: ../src/mate-screensaver-dialog.c:175
 msgid "No password supplied"
 msgstr "Nincs jelszó megadva"
 
-#: ../src/mate-screensaver-dialog.c:180
+#: ../src/mate-screensaver-dialog.c:176
 msgid "Password unchanged"
 msgstr "A jelszó nem változott"
 
-#: ../src/mate-screensaver-dialog.c:181
+#: ../src/mate-screensaver-dialog.c:177
 msgid "Can not get username"
 msgstr "A felhasználónév nem található"
 
-#: ../src/mate-screensaver-dialog.c:182
+#: ../src/mate-screensaver-dialog.c:178
 msgid "Retype new UNIX password:"
 msgstr "Adja meg ismét az új UNIX jelszót:"
 
-#: ../src/mate-screensaver-dialog.c:183
+#: ../src/mate-screensaver-dialog.c:179
 msgid "Enter new UNIX password:"
 msgstr "Adja meg az új UNIX jelszót:"
 
-#: ../src/mate-screensaver-dialog.c:184
+#: ../src/mate-screensaver-dialog.c:180
 msgid "(current) UNIX password:"
 msgstr "(jelenlegi) UNIX jelszó:"
 
-#: ../src/mate-screensaver-dialog.c:185
+#: ../src/mate-screensaver-dialog.c:181
 msgid "Error while changing NIS password."
 msgstr "Hiba a NIS jelszó módosítása közben."
 
-#: ../src/mate-screensaver-dialog.c:186
+#: ../src/mate-screensaver-dialog.c:182
 msgid "You must choose a longer password"
 msgstr "Válasszon hosszabb jelszót"
 
-#: ../src/mate-screensaver-dialog.c:187
+#: ../src/mate-screensaver-dialog.c:183
 msgid "Password has been already used. Choose another."
 msgstr "A megadott jelszót már használta. Adjon meg egy másikat."
 
-#: ../src/mate-screensaver-dialog.c:188
+#: ../src/mate-screensaver-dialog.c:184
 msgid "You must wait longer to change your password"
 msgstr "Még várnia kell a jelszó megváltoztatásával"
 
-#: ../src/mate-screensaver-dialog.c:189
+#: ../src/mate-screensaver-dialog.c:185
 msgid "Sorry, passwords do not match"
 msgstr "Sajnálom, a megadott jelszavak nem egyeznek meg"
 
-#: ../src/mate-screensaver-dialog.c:260
+#: ../src/mate-screensaver-dialog.c:256
 msgid "Checking..."
 msgstr "Ellenőrzés…"
 
-#: ../src/mate-screensaver-dialog.c:306 ../src/gs-auth-pam.c:495
+#: ../src/mate-screensaver-dialog.c:302 ../src/gs-auth-pam.c:483
 msgid "Authentication failed."
 msgstr "A hitelesítés meghiúsult."
 
-#: ../src/mate-screensaver-preferences.c:487
+#: ../src/mate-screensaver-preferences.c:454
 msgid "Blank screen"
 msgstr "Üres képernyő"
 
-#: ../src/mate-screensaver-preferences.c:493
+#: ../src/mate-screensaver-preferences.c:460
 msgid "Random"
 msgstr "Véletlen"
 
-#: ../src/mate-screensaver-preferences.c:983
+#: ../src/mate-screensaver-preferences.c:944
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d óra"
 msgstr[1] "%d óra"
 
-#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:947
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d perc"
 msgstr[1] "%d perc"
 
-#: ../src/mate-screensaver-preferences.c:989
+#: ../src/mate-screensaver-preferences.c:950
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -486,15 +615,15 @@ msgstr[0] "%d másodperc"
 msgstr[1] "%d másodperc"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:997
+#: ../src/mate-screensaver-preferences.c:958
 #, c-format
 msgid "%s %s %s"
 msgstr "%s.%s.%s"
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1002
-#: ../src/mate-screensaver-preferences.c:1015
+#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:976
 #, c-format
 msgid "%s %s"
 msgstr "%s.%s"
@@ -502,23 +631,23 @@ msgstr "%s.%s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1007
-#: ../src/mate-screensaver-preferences.c:1020
-#: ../src/mate-screensaver-preferences.c:1026
+#: ../src/mate-screensaver-preferences.c:968
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:987
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1041
+#: ../src/mate-screensaver-preferences.c:1002
 #, c-format
 msgid "Never"
 msgstr "Soha"
 
-#: ../src/mate-screensaver-preferences.c:1622
+#: ../src/mate-screensaver-preferences.c:1578
 msgid "Could not load the main interface"
 msgstr "A fő kezelőfelület nem tölthető be"
 
-#: ../src/mate-screensaver-preferences.c:1624
+#: ../src/mate-screensaver-preferences.c:1580
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Kérem győződjön meg arról, hogy a képernyővédő megfelelően telepítve van-e"
 
@@ -531,76 +660,70 @@ msgid "Enable debugging code"
 msgstr "Hibakeresési kód engedélyezése"
 
 #: ../src/mate-screensaver.desktop.in.in.h:2
-msgid "Launch screen saver and locker program"
-msgstr "Képernyővédő és -zároló program indítása"
+msgid "Launch screensaver and locker program"
+msgstr "Képernyővédő és zároló program indítása"
 
-#: ../src/gs-auth-pam.c:425
+#: ../src/gs-auth-pam.c:413
 #, c-format
 msgid "Unable to establish service %s: %s\n"
 msgstr "Nem sikerült elindítani a(z) %s szolgáltatást: %s\n"
 
-#: ../src/gs-auth-pam.c:455
+#: ../src/gs-auth-pam.c:443
 #, c-format
 msgid "Can't set PAM_TTY=%s"
 msgstr "Nem állítható be a PAM_TTY=%s változó"
 
-#: ../src/gs-auth-pam.c:491
+#: ../src/gs-auth-pam.c:479
 msgid "Incorrect password."
 msgstr "Helytelen jelszó."
 
-#: ../src/gs-auth-pam.c:511
+#: ../src/gs-auth-pam.c:499
 msgid "Not permitted to gain access at this time."
 msgstr "Jelenleg nincs engedélye hozzáférést szerezni."
 
-#: ../src/gs-auth-pam.c:519
+#: ../src/gs-auth-pam.c:507
 msgid "No longer permitted to access the system."
 msgstr "Már nem engedélyezett a rendszer elérése."
 
-#: ../src/gs-listener-dbus.c:2219
+#: ../src/gs-listener-dbus.c:2186
 msgid "failed to register with the message bus"
 msgstr "nem sikerült regisztrálni az üzenetbusszal"
 
-#: ../src/gs-listener-dbus.c:2230
+#: ../src/gs-listener-dbus.c:2197
 msgid "not connected to the message bus"
 msgstr "nincs kapcsolat az üzenetbusszal"
 
-#: ../src/gs-listener-dbus.c:2240 ../src/gs-listener-dbus.c:2272
+#: ../src/gs-listener-dbus.c:2207 ../src/gs-listener-dbus.c:2239
 msgid "screensaver already running in this session"
 msgstr "már fut képernyővédő ebben a munkamenetben"
 
-#. Translators: Time format, see https://developer.gnome.org/glib/stable/glib-
-#. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
-msgid "%l:%M %p"
-msgstr "%l:%M %p"
-
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:306
+#: ../src/gs-lock-plug.c:308
 msgid "%A, %B %e"
 msgstr "%A, %B %e"
 
-#: ../src/gs-lock-plug.c:408
+#: ../src/gs-lock-plug.c:410
 msgid "Time has expired."
 msgstr "Az idő lejárt."
 
-#: ../src/gs-lock-plug.c:439
+#: ../src/gs-lock-plug.c:441
 msgid "You have the Caps Lock key on."
 msgstr "A Caps Lock be van kapcsolva."
 
-#: ../src/gs-lock-plug.c:1758
+#: ../src/gs-lock-plug.c:1772
 msgid "S_witch User..."
 msgstr "Felhasználó_váltás…"
 
-#: ../src/gs-lock-plug.c:1767
+#: ../src/gs-lock-plug.c:1781
 msgid "Log _Out"
 msgstr "_Kijelentkezés"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1976
+#: ../src/gs-lock-plug.c:2010
 msgid "%U on %h"
 msgstr "%U ezen: %h"
 
-#: ../src/gs-lock-plug.c:1990
+#: ../src/gs-lock-plug.c:2029
 msgid "_Password:"
 msgstr "_Jelszó:"

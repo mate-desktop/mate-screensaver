@@ -3,25 +3,24 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# mbarbero <bastayadefumar@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-16 17:00+0300\n"
-"PO-Revision-Date: 2015-12-16 14:02+0000\n"
+"PO-Revision-Date: 2016-03-29 15:36+0000\n"
 "Last-Translator: monsta <monsta@inbox.ru>\n"
-"Language-Team: Spanish (Argentina) (http://www.transifex.com/mate/MATE/language/es_AR/)\n"
+"Language-Team: Uzbek (http://www.transifex.com/mate/MATE/language/uz/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_AR\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: uz\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../data/mate-screensaver-preferences.desktop.in.h:1
 #: ../src/mate-screensaver.desktop.in.in.h:1
 msgid "Screensaver"
-msgstr "Protector de pantalla"
+msgstr ""
 
 #: ../data/mate-screensaver-preferences.desktop.in.h:2
 msgid "Set your screensaver preferences"
@@ -29,19 +28,19 @@ msgstr ""
 
 #: ../data/mate-screensaver-preferences.ui.h:1
 msgid "Screensaver Preferences"
-msgstr "Preferencias del protector de pantalla"
+msgstr ""
 
 #: ../data/mate-screensaver-preferences.ui.h:2
 msgid "Power _Management"
-msgstr "_Administración de Energía"
+msgstr ""
 
 #: ../data/mate-screensaver-preferences.ui.h:3
 msgid "_Preview"
-msgstr "_Vista previa"
+msgstr "_Oldindan ko'rish"
 
 #: ../data/mate-screensaver-preferences.ui.h:4
 msgid "_Screensaver theme:"
-msgstr "Tema del _protector de pantalla:"
+msgstr ""
 
 #: ../data/mate-screensaver-preferences.ui.h:5
 msgid "Regard the computer as _idle after:"
@@ -57,11 +56,11 @@ msgstr ""
 
 #: ../data/mate-screensaver-preferences.ui.h:8
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>Advertencia: la pantalla no se bloqueará para el usuario root.</b>"
+msgstr ""
 
 #: ../data/mate-screensaver-preferences.ui.h:9
 msgid "Screensaver Preview"
-msgstr "Vista previa del protector de pantalla"
+msgstr ""
 
 #: ../data/mate-screensaver-preferences.ui.h:10
 msgid "<b>Screensaver preview</b>"
@@ -69,12 +68,12 @@ msgstr ""
 
 #: ../data/mate-screensaver.directory.in.h:1
 msgid "Screensavers"
-msgstr "Protectores de pantalla"
+msgstr ""
 
 #: ../data/mate-screensaver.directory.in.h:2
 #: ../data/org.mate.screensaver.gschema.xml.in.h:7
 msgid "Screensaver themes"
-msgstr "Temas de protector de pantalla"
+msgstr ""
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -82,7 +81,7 @@ msgstr "Temas de protector de pantalla"
 #: ../data/images/cosmos/cosmos.xml.in.in.h:3
 #: ../savers/cosmos-slideshow.desktop.in.in.h:1
 msgid "Cosmos"
-msgstr "Cosmos"
+msgstr ""
 
 #: ../data/lock-dialog-default.ui.h:1
 msgid "_Leave Message"
@@ -90,24 +89,24 @@ msgstr ""
 
 #: ../data/lock-dialog-default.ui.h:2
 msgid "_Switch User"
-msgstr "Cambiar _Usuario"
+msgstr ""
 
 #: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
-msgstr "_Desconectarse"
+msgstr "_Chiqish"
 
 #: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
-msgstr "_Cancelar"
+msgstr ""
 
 #: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1792
 msgid "_Unlock"
-msgstr "_Desbloquear"
+msgstr ""
 
 #: ../data/lock-dialog-default.ui.h:7
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
-msgstr "<b>Dejar un mensaje para %R:</b>"
+msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:1
 msgid "Activate when idle"
@@ -258,7 +257,7 @@ msgstr ""
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
-msgstr "Muestra una galería de imágenes del cosmos"
+msgstr ""
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
 msgid "Floating MATE"
@@ -366,7 +365,7 @@ msgstr ""
 
 #: ../src/copy-theme-dialog.c:220
 msgid "Copying files"
-msgstr "Copiando archivos"
+msgstr ""
 
 #: ../src/copy-theme-dialog.c:243
 msgid "From:"
@@ -378,21 +377,21 @@ msgstr ""
 
 #: ../src/copy-theme-dialog.c:271
 msgid "Copying themes"
-msgstr "Copiando temas"
+msgstr ""
 
 #: ../src/copy-theme-dialog.c:314
 msgid "Invalid screensaver theme"
-msgstr "Tema de protector de pantalla no válido"
+msgstr ""
 
 #: ../src/copy-theme-dialog.c:317
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
-msgstr "%s no parece ser un tema de protector de pantalla válido."
+msgstr ""
 
 #: ../src/copy-theme-dialog.c:497
 #, c-format
 msgid "Copying file: %u of %u"
-msgstr "Copiando archivo: %u de %u"
+msgstr ""
 
 #: ../src/mate-screensaver-command.c:64
 msgid "Causes the screensaver to exit gracefully"
@@ -452,11 +451,11 @@ msgstr ""
 
 #: ../src/mate-screensaver-command.c:357
 msgid "active"
-msgstr "activo"
+msgstr ""
 
 #: ../src/mate-screensaver-command.c:357
 msgid "inactive"
-msgstr "inactivo"
+msgstr ""
 
 #: ../src/mate-screensaver-command.c:373
 #, c-format
@@ -504,18 +503,18 @@ msgstr ""
 
 #: ../src/mate-screensaver-dialog.c:65
 msgid "Not used"
-msgstr "No usado"
+msgstr ""
 
 #. login: is whacked always translate to Username:
 #: ../src/mate-screensaver-dialog.c:167 ../src/mate-screensaver-dialog.c:168
 #: ../src/mate-screensaver-dialog.c:169 ../src/gs-auth-pam.c:745
 msgid "Username:"
-msgstr "Nombre de usuario:"
+msgstr "Foydalanuvchi Nomi:"
 
 #: ../src/mate-screensaver-dialog.c:170 ../src/mate-screensaver-dialog.c:171
 #: ../src/gs-auth-pam.c:171
 msgid "Password:"
-msgstr "Contraseña:"
+msgstr "Maxfiy so'z:"
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "You are required to change your password immediately (password aged)"
@@ -593,28 +592,25 @@ msgstr ""
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d hora"
-msgstr[1] "%d horas"
+msgstr[0] ""
 
 #: ../src/mate-screensaver-preferences.c:947
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minuto"
-msgstr[1] "%d minutos"
+msgstr[0] ""
 
 #: ../src/mate-screensaver-preferences.c:950
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d segundo"
-msgstr[1] "%d segundos"
+msgstr[0] ""
 
 #. hour:minutes:seconds
 #: ../src/mate-screensaver-preferences.c:958
 #, c-format
 msgid "%s %s %s"
-msgstr "%s %s %s"
+msgstr ""
 
 #. hour:minutes
 #. minutes:seconds
@@ -622,7 +618,7 @@ msgstr "%s %s %s"
 #: ../src/mate-screensaver-preferences.c:976
 #, c-format
 msgid "%s %s"
-msgstr "%s %s"
+msgstr ""
 
 #. hour
 #. minutes
@@ -632,20 +628,20 @@ msgstr "%s %s"
 #: ../src/mate-screensaver-preferences.c:987
 #, c-format
 msgid "%s"
-msgstr "%s"
+msgstr ""
 
 #: ../src/mate-screensaver-preferences.c:1002
 #, c-format
 msgid "Never"
-msgstr "Nunca"
+msgstr "Hech qachon"
 
 #: ../src/mate-screensaver-preferences.c:1578
 msgid "Could not load the main interface"
-msgstr "No se pudo cargar la interfase principal"
+msgstr ""
 
 #: ../src/mate-screensaver-preferences.c:1580
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "Por favor, asegúrese de que el protector de pantalla está instalado apropiadamente"
+msgstr ""
 
 #: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
@@ -671,7 +667,7 @@ msgstr ""
 
 #: ../src/gs-auth-pam.c:479
 msgid "Incorrect password."
-msgstr "Contraseña incorrecta."
+msgstr ""
 
 #: ../src/gs-auth-pam.c:499
 msgid "Not permitted to gain access at this time."
@@ -722,4 +718,4 @@ msgstr ""
 
 #: ../src/gs-lock-plug.c:2029
 msgid "_Password:"
-msgstr ""
+msgstr "_Maxfiy so'z:"
