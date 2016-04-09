@@ -2253,6 +2253,13 @@ gs_lock_plug_init (GSLockPlug *plug)
 	plug->priv->leave_note_enabled = FALSE;
 #endif
 
+#if GTK_CHECK_VERSION(3, 0, 0)
+	GtkStyleContext *context;
+
+	context = gtk_widget_get_style_context (GTK_WIDGET (plug));
+	gtk_style_context_add_class (context, "lock-dialog");
+#endif
+
 	if (! load_theme (plug))
 	{
 		gs_debug ("Unable to load theme!");
