@@ -213,7 +213,7 @@ gs_grab_get_mouse (GSGrab    *grab,
 	g_return_val_if_fail (screen != NULL, FALSE);
 
 #if GTK_CHECK_VERSION (3, 16, 0)
-	display = gtk_widget_get_display (GTK_WIDGET (window));
+	display = gdk_window_get_display (window);
 	cursor = gdk_cursor_new_for_display (display, GDK_BLANK_CURSOR);
 #else
 	cursor = gdk_cursor_new (GDK_BLANK_CURSOR);

@@ -168,7 +168,7 @@ set_invisible_cursor (GdkWindow *window,
 	{
 
 #if GTK_CHECK_VERSION (3, 16, 0)
-		display = gtk_widget_get_display (GTK_WIDGET (window));
+		display = gdk_window_get_display (window);
 		cursor = gdk_cursor_new_for_display (display, GDK_BLANK_CURSOR);
 #else
 		cursor = gdk_cursor_new (GDK_BLANK_CURSOR);
