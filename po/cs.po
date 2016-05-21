@@ -4,7 +4,7 @@
 # 
 # Translators:
 # Jakub Friedl <jfriedl@suse.cz>, 2006
-# Jan Kalina <honza889@gmail.com>, 2014
+# Honza K. <honza889@gmail.com>, 2014
 # Lukas Novotny <lukasnov@cvs.gnome.org>, 2006
 # Martin Kříž <liberte.czech@gmail.com>, 2015
 # Michal <sinope@seznam.cz>, 2013-2014

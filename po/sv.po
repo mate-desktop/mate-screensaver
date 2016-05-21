@@ -7,14 +7,15 @@
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009
 # Erik, 2014
 # Henrik Mattsson-Mårn <h@reglage.net>, 2016
+# Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>, 2016
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-16 17:00+0300\n"
-"PO-Revision-Date: 2016-01-03 11:15+0000\n"
-"Last-Translator: Henrik Mattsson-Mårn <h@reglage.net>\n"
+"PO-Revision-Date: 2016-04-19 17:39+0000\n"
+"Last-Translator: Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/mate/MATE/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -123,7 +124,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
-msgstr ""
+msgstr "Lås vid aktivering"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."

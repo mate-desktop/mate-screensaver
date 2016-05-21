@@ -4,7 +4,8 @@
 # 
 # Translators:
 # alexandros_ <alexandros.venn@gmail.com>, 2014
-# Efstathios Iosifidis <iefstathios@gmail.com>, 2013-2014
+# Angelos Chraniotis <chraniotis@gmail.com>, 2016
+# Efstathios Iosifidis <iefstathios@gmail.com>, 2013-2014,2016
 # Jennie Petoumenou <epetoumenou@gmail.com>, 2009
 # Kostas Papadimas <pkst@gnome.org>, 2006, 2008
 # nikcha <nikosx@gmail.com>, 2006
@@ -14,8 +15,8 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-16 17:00+0300\n"
-"PO-Revision-Date: 2015-12-16 14:02+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2016-04-30 19:10+0000\n"
+"Last-Translator: Efstathios Iosifidis <iefstathios@gmail.com>\n"
 "Language-Team: Greek (http://www.transifex.com/mate/MATE/language/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -116,23 +117,23 @@ msgstr "<b>Αφήστε μήνυμα για %R:</b>"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:1
 msgid "Activate when idle"
-msgstr ""
+msgstr "Ενεργοποίηση στην αδράνεια"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr ""
+msgstr "Ορισμός αυτού σε TRUE για την ενεργοποίηση της προστασίας οθόνης όταν η συνεδρία είναι σε αδράνεια."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
-msgstr ""
+msgstr "Κλείδωμα στην ενεργοποίηση"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr ""
+msgstr "Ορισμός αυτού σε TRUE για να κλειδώνει η οθόνη όταν ενεργοποιείται η προστασία οθόνης."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
-msgstr ""
+msgstr "Λειτουργία επιλογής θέματος προστασίας οθόνης"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:6
 msgid ""
@@ -141,7 +142,7 @@ msgid ""
 "screensaver using only one theme on activation (specified in \"themes\" "
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
-msgstr ""
+msgstr "Η λειτουργία επιλογής που χρησιμοποιείται από την προστασία οθόνης. Μπορεί να είναι \"blank-only\" για ενεργοποίηση της προστασίας οθόνης χωρίς τη χρήση θέματος,  \"single\" για ενεργοποίηση της προστασίας οθόνης με τη χρήση μόνο ενός θέματος (που καθορίζεται στο κλειδί \"themes\"), και \"random\"  για ενεργοποίηση της προστασίας οθόνης με τη χρήση ενόςτυχαίου θέματος"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -149,7 +150,7 @@ msgid ""
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
-msgstr ""
+msgstr "Αυτό το κλειδί καθορίζει τη λίστα θεμάτων της προστασίας οθόνης. Αγνοείται όταν το κλειδί \"mode\" είναι \"blank-only\". Μπορεί να παρέχει το όνομα θέματος όταν το κλειδί \"mode\" είναι \"single\", και μπορεί να παρέχει μια λίστα θεμάτων όταν το κλειδί \"mode\" είναι \"random\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -163,15 +164,15 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
-msgstr ""
+msgstr "Χρόνος πριν την αλλαγή θέματος"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr ""
+msgstr "Το διάστημα του χρόνου σε λεπτά που θα μεσολαβήσει για να γίνει η αλλαγή της προφύλαξης οθόνης."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
-msgstr ""
+msgstr "Χρόνος πριν το κλείδωμα"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:14
 msgid ""
@@ -181,7 +182,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
-msgstr ""
+msgstr "Να επιτρέπεται η ενσωμάτωση πληκτρολογίου σε ένα παράθυρο"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:16
 msgid ""
@@ -192,7 +193,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
-msgstr ""
+msgstr "Εντολή ενσωματωμένου πληκτρολογίου"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:18
 msgid ""
@@ -200,11 +201,11 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr ""
+msgstr "Αυτή η εντολή θα εκτελείται αν το κλειδί \"embedded_keyboard_enabled\" έχει ορισθεί σε  TRUE, ώστε να ενσωματωθεί το πληκτρολόγιο σε ένα παράθυρο. Η εντολή θα πρέπει να εφαρμόζει μια διεπαφή XEMBED plug και να έχει αποτέλεσμα ένα παράθυρο XID."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
-msgstr ""
+msgstr "Να επιτρέπεται αποσύνδεση"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:20
 msgid ""
@@ -214,7 +215,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
-msgstr ""
+msgstr "Χρόνος πριν την επιλογή αποσύνδεσης"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:22
 msgid ""
@@ -225,28 +226,28 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
-msgstr ""
+msgstr "Εντολή αποσύνδεσης"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:24
 msgid ""
 "The command to invoke when the logout button is clicked. This command should"
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
-msgstr ""
+msgstr "Η εντολή που θα εκτελείται όταν πατιέται το κουμπί της αποσύνδεσης. Αυτή η εντολή θα πρέπει απλά να αποσυνδέει το χρήστη χωρίς καμία άλλη συναλλαγή. Αυτό το κλειδί έχει αποτέλεσμα μόνο αν το κλειδί \"logout_enable\" ορισθεί σε TRUE."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
-msgstr ""
+msgstr "Να επιτρέπεται η αλλαγή χρήστη"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:26
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
-msgstr ""
+msgstr "Ορισμός αυτού σε TRUE για να προσφέρεται η επιλογή του διαλόγου ξεκλειδώματος όταν γίνεται αλλαγή σε διαφορετικό λογαριασμό χρήστη."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
-msgstr ""
+msgstr "Θέμα για το διάλογο κλειδώματος"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:28
 msgid "Theme to use for the lock dialog"
@@ -254,12 +255,12 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:29
 msgid "Allow the session status message to be displayed"
-msgstr ""
+msgstr "Να επιτρέπεται η εμφάνιση του μηνύματος κατάστασης συνεδρίας"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:30
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
-msgstr ""
+msgstr "Να επιτρέπεται η εμφάνιση του μηνύματος κατάστασης συνεδρίας όταν η οθόνη είναι κλειδωμένη."
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"

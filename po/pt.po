@@ -6,7 +6,7 @@
 # crolidge, 2014
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2006, 2007, 2008, 2009
 # Gonçalo Silva <de2a9293@opayq.com>, 2013
-# Manuela Silva <h_manuela_rodsilva@gmail.com>, 2015
+# Manuela Silva <inactive+h_manuela_rodsilva@transifex.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"

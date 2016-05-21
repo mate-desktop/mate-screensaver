@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-16 17:00+0300\n"
-"PO-Revision-Date: 2016-03-31 15:49+0000\n"
+"PO-Revision-Date: 2016-05-09 15:34+0000\n"
 "Last-Translator: Alexandre Raymond\n"
 "Language-Team: Franco-Provençal (Arpitan) (http://www.transifex.com/mate/MATE/language/frp/)\n"
 "MIME-Version: 1.0\n"
@@ -90,7 +90,7 @@ msgstr ""
 
 #: ../data/lock-dialog-default.ui.h:2
 msgid "_Switch User"
-msgstr ""
+msgstr "_Changér d’usancér"
 
 #: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
@@ -709,7 +709,7 @@ msgstr ""
 
 #: ../src/gs-lock-plug.c:1772
 msgid "S_witch User..."
-msgstr ""
+msgstr "_Changér d’usancér"
 
 #: ../src/gs-lock-plug.c:1781
 msgid "Log _Out"

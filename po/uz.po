@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# muzaffar habibullayev <muzaffarlearner@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-16 17:00+0300\n"
-"PO-Revision-Date: 2016-03-29 15:36+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2016-05-13 14:26+0000\n"
+"Last-Translator: muzaffar habibullayev <muzaffarlearner@gmail.com>\n"
 "Language-Team: Uzbek (http://www.transifex.com/mate/MATE/language/uz/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,19 +21,19 @@ msgstr ""
 #: ../data/mate-screensaver-preferences.desktop.in.h:1
 #: ../src/mate-screensaver.desktop.in.in.h:1
 msgid "Screensaver"
-msgstr ""
+msgstr "Ekran Saqlovchi"
 
 #: ../data/mate-screensaver-preferences.desktop.in.h:2
 msgid "Set your screensaver preferences"
-msgstr ""
+msgstr "Ekran Saqlovchi Xususiyatlarini belgilang"
 
 #: ../data/mate-screensaver-preferences.ui.h:1
 msgid "Screensaver Preferences"
-msgstr ""
+msgstr "Ekran Saqlovchi Xususiyatlari"
 
 #: ../data/mate-screensaver-preferences.ui.h:2
 msgid "Power _Management"
-msgstr ""
+msgstr "Quvvat _Boshqaruvi"
 
 #: ../data/mate-screensaver-preferences.ui.h:3
 msgid "_Preview"
@@ -40,7 +41,7 @@ msgstr "_Oldindan ko'rish"
 
 #: ../data/mate-screensaver-preferences.ui.h:4
 msgid "_Screensaver theme:"
-msgstr ""
+msgstr "_Ekran Saqlovchi mavzusi:"
 
 #: ../data/mate-screensaver-preferences.ui.h:5
 msgid "Regard the computer as _idle after:"
@@ -52,28 +53,28 @@ msgstr ""
 
 #: ../data/mate-screensaver-preferences.ui.h:7
 msgid "_Lock screen when screensaver is active"
-msgstr ""
+msgstr "Ekran saqlovchi faol bo'lsa ekranni qulflash"
 
 #: ../data/mate-screensaver-preferences.ui.h:8
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr ""
+msgstr "<b>Ogohlantirish: ekran ildiz foydalanuvchi uchun qulflanmaydi.</b>"
 
 #: ../data/mate-screensaver-preferences.ui.h:9
 msgid "Screensaver Preview"
-msgstr ""
+msgstr "Oldindan koʻrish"
 
 #: ../data/mate-screensaver-preferences.ui.h:10
 msgid "<b>Screensaver preview</b>"
-msgstr ""
+msgstr "<b>Oldindan ko'rish</b>"
 
 #: ../data/mate-screensaver.directory.in.h:1
 msgid "Screensavers"
-msgstr ""
+msgstr "Ekran Saqlovchilar"
 
 #: ../data/mate-screensaver.directory.in.h:2
 #: ../data/org.mate.screensaver.gschema.xml.in.h:7
 msgid "Screensaver themes"
-msgstr ""
+msgstr "Ekran Saqlovchi mavzulari"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -81,15 +82,15 @@ msgstr ""
 #: ../data/images/cosmos/cosmos.xml.in.in.h:3
 #: ../savers/cosmos-slideshow.desktop.in.in.h:1
 msgid "Cosmos"
-msgstr ""
+msgstr "Fazo"
 
 #: ../data/lock-dialog-default.ui.h:1
 msgid "_Leave Message"
-msgstr ""
+msgstr "_Xabar Qoldirish"
 
 #: ../data/lock-dialog-default.ui.h:2
 msgid "_Switch User"
-msgstr ""
+msgstr "Foydalanuvchini _Oʻzgartirish"
 
 #: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
@@ -97,11 +98,11 @@ msgstr "_Chiqish"
 
 #: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
-msgstr ""
+msgstr "_Bekor qilish"
 
 #: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1792
 msgid "_Unlock"
-msgstr ""
+msgstr "_Qulfdan chiqarish"
 
 #: ../data/lock-dialog-default.ui.h:7
 #, no-c-format
@@ -277,7 +278,7 @@ msgstr ""
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
 msgid "Pictures folder"
-msgstr ""
+msgstr "Rasmlar jildi"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow from your Pictures folder"
@@ -353,7 +354,7 @@ msgstr ""
 
 #: ../savers/slideshow.c:59
 msgid "\"#rrggbb\""
-msgstr ""
+msgstr "\"#rrggbb\""
 
 #: ../savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
@@ -451,11 +452,11 @@ msgstr ""
 
 #: ../src/mate-screensaver-command.c:357
 msgid "active"
-msgstr ""
+msgstr "faol"
 
 #: ../src/mate-screensaver-command.c:357
 msgid "inactive"
-msgstr ""
+msgstr "nofaol"
 
 #: ../src/mate-screensaver-command.c:373
 #, c-format
@@ -499,7 +500,7 @@ msgstr ""
 
 #: ../src/mate-screensaver-dialog.c:64 ../src/mate-screensaver-dialog.c:65
 msgid "MESSAGE"
-msgstr ""
+msgstr "XABAR"
 
 #: ../src/mate-screensaver-dialog.c:65
 msgid "Not used"
@@ -574,19 +575,19 @@ msgstr ""
 
 #: ../src/mate-screensaver-dialog.c:256
 msgid "Checking..."
-msgstr ""
+msgstr "Tekshirilmoqda..."
 
 #: ../src/mate-screensaver-dialog.c:302 ../src/gs-auth-pam.c:483
 msgid "Authentication failed."
-msgstr ""
+msgstr "Tasdiqdan o'tmadi."
 
 #: ../src/mate-screensaver-preferences.c:454
 msgid "Blank screen"
-msgstr ""
+msgstr "Bo'sh ekran"
 
 #: ../src/mate-screensaver-preferences.c:460
 msgid "Random"
-msgstr ""
+msgstr "Tasodifiy"
 
 #: ../src/mate-screensaver-preferences.c:944
 #, c-format
@@ -598,19 +599,19 @@ msgstr[0] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
+msgstr[0] "%d daqiqa"
 
 #: ../src/mate-screensaver-preferences.c:950
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
+msgstr[0] "%d soniya"
 
 #. hour:minutes:seconds
 #: ../src/mate-screensaver-preferences.c:958
 #, c-format
 msgid "%s %s %s"
-msgstr ""
+msgstr "%s %s %s"
 
 #. hour:minutes
 #. minutes:seconds
@@ -618,7 +619,7 @@ msgstr ""
 #: ../src/mate-screensaver-preferences.c:976
 #, c-format
 msgid "%s %s"
-msgstr ""
+msgstr "%s %s"
 
 #. hour
 #. minutes
@@ -628,7 +629,7 @@ msgstr ""
 #: ../src/mate-screensaver-preferences.c:987
 #, c-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: ../src/mate-screensaver-preferences.c:1002
 #, c-format
@@ -637,7 +638,7 @@ msgstr "Hech qachon"
 
 #: ../src/mate-screensaver-preferences.c:1578
 msgid "Could not load the main interface"
-msgstr ""
+msgstr "Asosiy interfeysni yuklab boʻlmadi"
 
 #: ../src/mate-screensaver-preferences.c:1580
 msgid "Please make sure that the screensaver is properly installed"
@@ -667,7 +668,7 @@ msgstr ""
 
 #: ../src/gs-auth-pam.c:479
 msgid "Incorrect password."
-msgstr ""
+msgstr "Noto'g'ri maxfiy so'z."
 
 #: ../src/gs-auth-pam.c:499
 msgid "Not permitted to gain access at this time."
@@ -693,23 +694,23 @@ msgstr ""
 #. GDateTime.html#g-date-time-format
 #: ../src/gs-lock-plug.c:308
 msgid "%A, %B %e"
-msgstr ""
+msgstr "%A, %B %e"
 
 #: ../src/gs-lock-plug.c:410
 msgid "Time has expired."
-msgstr ""
+msgstr "Muddat tugadi."
 
 #: ../src/gs-lock-plug.c:441
 msgid "You have the Caps Lock key on."
-msgstr ""
+msgstr "Caps Lock yoqilgan."
 
 #: ../src/gs-lock-plug.c:1772
 msgid "S_witch User..."
-msgstr ""
+msgstr "Foydalanuvchini _Oʻzgartirish..."
 
 #: ../src/gs-lock-plug.c:1781
 msgid "Log _Out"
-msgstr ""
+msgstr "_Chiqish"
 
 #. To translators: This expands to USERNAME on HOSTNAME
 #: ../src/gs-lock-plug.c:2010
