@@ -1,4 +1,12 @@
 ===============
+Version 1.14.1
+===============
+
+Translations update
+GTK+-3: fix assertion 'GTK_IS_WIDGET (widget)' failed
+GTK+-3: add style class lock-dialog
+
+===============
 Version 1.14.0
 ===============
 
