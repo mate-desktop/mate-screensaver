@@ -73,6 +73,10 @@ grab_string (int status)
 		return "GrabNotViewable";
 	case GDK_GRAB_FROZEN:
 		return "GrabFrozen";
+#if GTK_CHECK_VERSION (3, 0, 0)
+	case GDK_GRAB_FAILED:
+		return "GrabFailed";
+#endif
 	default:
 	{
 		static char foo [255];
@@ -241,7 +245,7 @@ gs_grab_get_mouse (GSGrab    *grab,
 	}
 
 #if GTK_CHECK_VERSION (3, 0, 0)
-	g_object_unref (cursor);
+	g_object_unref (G_OBJECT (cursor));
 #else
 	gdk_cursor_unref (cursor);
 #endif
@@ -302,14 +306,15 @@ gs_grab_move_mouse (GSGrab    *grab,
                     GdkScreen *screen,
                     gboolean   hide_cursor)
 {
-	gboolean   result;
-	GdkWindow *old_window;
-	GdkScreen *old_screen;
+	gboolean    result;
+	GdkWindow  *old_window;
+	GdkScreen  *old_screen;
 	gboolean   old_hide_cursor;
+
 
 	/* if the pointer is not grabbed and we have a
 	   mouse_grab_window defined then we lost the grab */
-	if (! gdk_pointer_is_grabbed ())
+	if (!gdk_pointer_is_grabbed ())
 	{
 		gs_grab_mouse_reset (grab);
 	}
@@ -323,7 +328,7 @@ gs_grab_move_mouse (GSGrab    *grab,
 
 #if 0
 	gs_debug ("Intentionally skipping move pointer grabs");
-	/* FIXME: GTK doesn't like having the pointer grabbed */
+	/* FIXME: GTK+ doesn't like having the pointer grabbed */
 	return TRUE;
 #else
 	if (grab->priv->mouse_grab_window)
@@ -377,9 +382,9 @@ gs_grab_move_keyboard (GSGrab    *grab,
                        GdkWindow *window,
                        GdkScreen *screen)
 {
-	gboolean   result;
-	GdkWindow *old_window;
-	GdkScreen *old_screen;
+	gboolean    result;
+	GdkWindow  *old_window;
+	GdkScreen  *old_screen;
 
 	if (grab->priv->keyboard_grab_window == window)
 	{
@@ -475,11 +480,11 @@ gs_grab_grab_window (GSGrab    *grab,
                      GdkScreen *screen,
                      gboolean   hide_cursor)
 {
-	gboolean mstatus = FALSE;
-	gboolean kstatus = FALSE;
-	int      i;
-	int      retries = 4;
-	gboolean focus_fuckus = FALSE;
+	gboolean    mstatus = FALSE;
+	gboolean    kstatus = FALSE;
+	int         i;
+	int         retries = 4;
+	gboolean    focus_fuckus = FALSE;
 
 AGAIN:
 
@@ -524,7 +529,7 @@ AGAIN:
 	}
 
 #if 0
-	/* FIXME: release the pointer grab so GTK will work */
+	/* FIXME: release the pointer grab so GTK+ will work */
 	gs_grab_release_mouse (grab);
 #endif
 
@@ -568,12 +573,24 @@ gs_grab_grab_root (GSGrab  *grab,
 	GdkDisplay *display;
 	GdkWindow  *root;
 	GdkScreen  *screen;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GdkDevice  *device;
+#endif
 	gboolean    res;
 
 	gs_debug ("Grabbing the root window");
 
 	display = gdk_display_get_default ();
+#if GTK_CHECK_VERSION (3, 0, 0)
+#if GTK_CHECK_VERSION(3, 20, 0)
+	device = gdk_seat_get_pointer (gdk_display_get_default_seat (display));
+#else
+	device = gdk_device_manager_get_client_pointer (gdk_display_get_device_manager (display));
+#endif
+	gdk_device_get_position (device, &screen, NULL, NULL);
+#else
 	gdk_display_get_pointer (display, &screen, NULL, NULL, NULL);
+#endif
 	root = gdk_screen_get_root_window (screen);
 
 	res = gs_grab_grab_window (grab, root, screen, hide_cursor);

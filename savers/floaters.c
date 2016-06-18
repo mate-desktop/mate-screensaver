@@ -265,7 +265,7 @@ static CachedSource *cached_source_new (cairo_pattern_t *pattern,
                                         gint             height);
 static void cached_source_free (CachedSource *source);
 
-static ScreenSaver *screen_saver_new (GtkDrawingArea  *drawing_area,
+static ScreenSaver *screen_saver_new (GtkWidget       *drawing_area,
                                       const gchar     *filename,
                                       gint             max_floater_count,
                                       gboolean         should_do_rotations,
@@ -841,7 +841,7 @@ screen_saver_floater_do_draw (ScreenSaver        *screen_saver,
 }
 
 static ScreenSaver *
-screen_saver_new (GtkDrawingArea  *drawing_area,
+screen_saver_new (GtkWidget       *drawing_area,
                   const gchar     *filename,
                   gint             max_floater_count,
                   gboolean         should_do_rotations,
@@ -851,7 +851,7 @@ screen_saver_new (GtkDrawingArea  *drawing_area,
 
 	screen_saver = g_new (ScreenSaver, 1);
 	screen_saver->filename = g_strdup (filename);
-	screen_saver->drawing_area = GTK_WIDGET (drawing_area);
+	screen_saver->drawing_area = drawing_area;
 	screen_saver->cached_sources =
 	    g_hash_table_new_full (NULL, NULL, NULL,
 	                           (GDestroyNotify) cached_source_free);
@@ -1216,15 +1216,13 @@ int
 main (int   argc,
       char *argv[])
 {
-	ScreenSaver *screen_saver;
-	GtkWidget *window;
-	GtkWidget *drawing_area;
-#if GTK_CHECK_VERSION (3, 0, 0)
-    GdkRGBA bg;
-    GdkRGBA fg;
-#else
-	GtkStyle *style;
-	GtkStateType state;
+	ScreenSaver     *screen_saver;
+	GtkWidget       *window;
+	GtkWidget       *drawing_area;
+#if !GTK_CHECK_VERSION (3, 0, 0)
+	GtkStyle        *style;
+	GtkStateType     state;
+	GdkColor         black = { 0, 0x0000, 0x0000, 0x0000 };
 #endif
 
 	GError *error;
@@ -1264,25 +1262,14 @@ main (int   argc,
 	g_signal_connect (G_OBJECT (window), "delete-event",
 	                  G_CALLBACK (gtk_main_quit), NULL);
 
-	drawing_area = gtk_drawing_area_new ();
+	drawing_area = GTK_WIDGET (gtk_drawing_area_new ());
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-	bg.red = 0;
-	bg.green = 0;
-	bg.blue = 0;
-	bg.alpha = 1.0;
-	fg.red = 0.8;
-	fg.green = 0.8;
-	fg.blue = 0.8;
-	fg.alpha = 1.0;
-	gtk_widget_override_background_color (drawing_area, 0, &bg);
-	gtk_widget_override_color (drawing_area, 0, &fg);
-#else
+#if !GTK_CHECK_VERSION (3, 0, 0)
 	style = gtk_widget_get_style (drawing_area);
 	state = (GtkStateType) 0;
 	while (state < (GtkStateType) G_N_ELEMENTS (style->bg))
 	{
-		gtk_widget_modify_bg (drawing_area, state, &style->mid[state]);
+		gtk_widget_modify_bg (drawing_area, state, &black);
 		state++;
 	}
 #endif
@@ -1290,7 +1277,7 @@ main (int   argc,
 	gtk_widget_show (drawing_area);
 	gtk_container_add (GTK_CONTAINER (window), drawing_area);
 
-	screen_saver = screen_saver_new (GTK_DRAWING_AREA (drawing_area),
+	screen_saver = screen_saver_new (drawing_area,
 	                                 filenames[0], max_floater_count,
 	                                 should_do_rotations, should_show_paths);
 	g_strfreev (filenames);

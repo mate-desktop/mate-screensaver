@@ -1103,6 +1103,9 @@ find_window_at_pointer (GSManager *manager)
 {
 	GdkDisplay *display;
 	GdkScreen  *screen;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GdkDevice  *device;
+#endif
 	int         monitor;
 	int         x, y;
 	GSWindow   *window;
@@ -1110,7 +1113,17 @@ find_window_at_pointer (GSManager *manager)
 	GSList     *l;
 
 	display = gdk_display_get_default ();
+
+#if GTK_CHECK_VERSION (3, 0, 0)
+#if GTK_CHECK_VERSION(3, 20, 0)
+	device = gdk_seat_get_pointer (gdk_display_get_default_seat (display));
+#else
+	device = gdk_device_manager_get_client_pointer (gdk_display_get_device_manager (display));
+#endif
+	gdk_device_get_position (device, &screen, &x, &y);
+#else
 	gdk_display_get_pointer (display, &screen, &x, &y, NULL);
+#endif
 	monitor = gdk_screen_get_monitor_at_point (screen, x, y);
 	screen_num = gdk_screen_get_number (screen);
 
@@ -1163,12 +1176,24 @@ manager_maybe_grab_window (GSManager *manager,
 {
 	GdkDisplay *display;
 	GdkScreen  *screen;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GdkDevice  *device;
+#endif
 	int         monitor;
 	int         x, y;
 	gboolean    grabbed;
 
 	display = gdk_display_get_default ();
+#if GTK_CHECK_VERSION (3, 0, 0)
+#if GTK_CHECK_VERSION(3, 20, 0)
+	device = gdk_seat_get_pointer (gdk_display_get_default_seat (display));
+#else
+	device = gdk_device_manager_get_client_pointer (gdk_display_get_device_manager (display));
+#endif
+	gdk_device_get_position (device, &screen, &x, &y);
+#else
 	gdk_display_get_pointer (display, &screen, &x, &y, NULL);
+#endif
 	monitor = gdk_screen_get_monitor_at_point (screen, x, y);
 
 	gdk_flush ();
@@ -1641,8 +1666,10 @@ gs_manager_destroy_windows (GSManager *manager)
 {
 	GdkDisplay  *display;
 	GSList      *l;
+#if !GTK_CHECK_VERSION (3, 10, 0)
 	int          n_screens;
 	int          i;
+#endif
 
 	g_return_if_fail (manager != NULL);
 	g_return_if_fail (GS_IS_MANAGER (manager));
@@ -1654,6 +1681,11 @@ gs_manager_destroy_windows (GSManager *manager)
 
 	display = gdk_display_get_default ();
 
+#if GTK_CHECK_VERSION (3, 10, 0)
+	g_signal_handlers_disconnect_by_func (gdk_display_get_default_screen (display),
+	                                      on_screen_monitors_changed,
+	                                      manager);
+#else
 	n_screens = gdk_display_get_n_screens (display);
 
 	for (i = 0; i < n_screens; i++)
@@ -1662,6 +1694,7 @@ gs_manager_destroy_windows (GSManager *manager)
 		                                      on_screen_monitors_changed,
 		                                      manager);
 	}
+#endif
 
 	for (l = manager->priv->windows; l; l = l->next)
 	{
@@ -1744,8 +1777,10 @@ static void
 gs_manager_create_windows (GSManager *manager)
 {
 	GdkDisplay  *display;
+#if !GTK_CHECK_VERSION (3, 10, 0)
 	int          n_screens;
 	int          i;
+#endif
 
 	g_return_if_fail (manager != NULL);
 	g_return_if_fail (GS_IS_MANAGER (manager));
@@ -1753,6 +1788,15 @@ gs_manager_create_windows (GSManager *manager)
 	g_assert (manager->priv->windows == NULL);
 
 	display = gdk_display_get_default ();
+#if GTK_CHECK_VERSION (3, 10, 0)
+	g_signal_connect (gdk_display_get_default_screen (display),
+	                  "monitors-changed",
+	                  G_CALLBACK (on_screen_monitors_changed),
+	                  manager);
+
+	gs_manager_create_windows_for_screen (manager,
+	                                      gdk_display_get_default_screen (display));
+#else
 	n_screens = gdk_display_get_n_screens (display);
 
 	for (i = 0; i < n_screens; i++)
@@ -1762,8 +1806,10 @@ gs_manager_create_windows (GSManager *manager)
 		                  G_CALLBACK (on_screen_monitors_changed),
 		                  manager);
 
-		gs_manager_create_windows_for_screen (manager, gdk_display_get_screen (display, i));
+		gs_manager_create_windows_for_screen (manager,
+		                                      gdk_display_get_screen (display, i));
 	}
+#endif
 }
 
 GSManager *

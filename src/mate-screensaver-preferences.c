@@ -301,12 +301,15 @@ config_set_lock (gboolean lock)
 static void
 preview_clear (GtkWidget *widget)
 {
-	GdkColor color = { 0, 0, 0 };
-
-	gtk_widget_modify_bg (widget, GTK_STATE_NORMAL, &color);
 #if GTK_CHECK_VERSION (3, 0, 0)
+	GdkRGBA black = { 0.0, 0.0, 0.0, 1.0 };
+
+	gdk_window_set_background_rgba (gtk_widget_get_window (widget), &black);
 	gtk_widget_queue_draw (widget);
 #else
+	GdkColor black = { 0, 0x0000, 0x0000, 0x0000 };
+
+	gtk_widget_modify_bg (widget, GTK_STATE_NORMAL, &black);
 	gdk_window_clear (gtk_widget_get_window (widget));
 #endif
 }
@@ -1203,7 +1206,7 @@ fullscreen_preview_start_cb (GtkWidget *widget,
 
 static void
 constrain_list_size (GtkWidget      *widget,
-                     GtkRequisition *requisition,
+                     GtkAllocation  *allocation,
                      GtkWidget      *to_size)
 {
 	GtkRequisition req;
@@ -1218,14 +1221,14 @@ constrain_list_size (GtkWidget      *widget,
 	gtk_widget_size_request (to_size, &req);
 #endif
 
-	requisition->height = MIN (req.height, max_height);
+	allocation->height = MIN (req.height, max_height);
 }
 
 static void
 setup_list_size_constraint (GtkWidget *widget,
                             GtkWidget *to_size)
 {
-	g_signal_connect (widget, "size-request",
+	g_signal_connect (widget, "size-allocate",
 	                  G_CALLBACK (constrain_list_size), to_size);
 }
 

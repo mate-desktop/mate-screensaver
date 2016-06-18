@@ -1107,7 +1107,7 @@ gs_window_real_show (GtkWidget *widget)
 
 static void
 set_info_text_and_icon (GSWindow   *window,
-                        const char *icon_stock_id,
+                        const char *icon_name,
                         const char *primary_text,
                         const char *secondary_text)
 {
@@ -1123,7 +1123,7 @@ set_info_text_and_icon (GSWindow   *window,
 	hbox_content = gtk_hbox_new (FALSE, 8);
 	gtk_widget_show (hbox_content);
 
-	image = gtk_image_new_from_stock (icon_stock_id, GTK_ICON_SIZE_DIALOG);
+	image = gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_DIALOG);
 	gtk_widget_show (image);
 	gtk_box_pack_start (GTK_BOX (hbox_content), image, FALSE, FALSE, 0);
 #if GTK_CHECK_VERSION (3, 0, 0)
@@ -1700,7 +1700,15 @@ create_lock_socket (GSWindow *window,
                     guint32   id)
 {
 	window->priv->lock_socket = gtk_socket_new ();
+#if GTK_CHECK_VERSION(3, 12, 0)
+	window->priv->lock_box = gtk_grid_new ();
+	gtk_widget_set_halign (GTK_WIDGET (window->priv->lock_box),
+	                       GTK_ALIGN_CENTER);
+	gtk_widget_set_valign (GTK_WIDGET (window->priv->lock_box),
+	                       GTK_ALIGN_CENTER);
+#else
 	window->priv->lock_box = gtk_alignment_new (0.5, 0.5, 0, 0);
+#endif
 	gtk_widget_show (window->priv->lock_box);
 	gtk_box_pack_start (GTK_BOX (window->priv->vbox), window->priv->lock_box, TRUE, TRUE, 0);
 
@@ -1764,8 +1772,7 @@ static void
 shake_dialog (GSWindow *window)
 {
 	int   i;
-	guint left;
-	guint right;
+	guint start, end;
 
 	window->priv->dialog_shake_in_progress = TRUE;
 
@@ -1773,13 +1780,13 @@ shake_dialog (GSWindow *window)
 	{
 		if (i % 2 == 0)
 		{
-			left = 30;
-			right = 0;
+			start = 30;
+			end = 0;
 		}
 		else
 		{
-			left = 0;
-			right = 30;
+			start = 0;
+			end = 30;
 		}
 
 		if (! window->priv->lock_box)
@@ -1787,10 +1794,16 @@ shake_dialog (GSWindow *window)
 			break;
 		}
 
+#if GTK_CHECK_VERSION(3, 12, 0)
+		gtk_widget_set_margin_start (GTK_WIDGET (window->priv->lock_box),
+		                             start);
+		gtk_widget_set_margin_end (GTK_WIDGET (window->priv->lock_box),
+		                           end);
+#else
 		gtk_alignment_set_padding (GTK_ALIGNMENT (window->priv->lock_box),
 		                           0, 0,
-		                           left,
-		                           right);
+		                           start, end);
+#endif
 
 		while (gtk_events_pending ())
 		{

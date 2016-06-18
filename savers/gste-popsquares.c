@@ -51,7 +51,11 @@ struct GSTEPopsquaresPrivate
 	int        ncolors;
 	int        subdivision;
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GdkRGBA   *colors;
+#else
 	GdkColor  *colors;
+#endif
 	square    *squares;
 
 };
@@ -63,12 +67,12 @@ static GObjectClass *parent_class = NULL;
 G_DEFINE_TYPE (GSTEPopsquares, gste_popsquares, GS_TYPE_THEME_ENGINE)
 
 static void
-hsv_to_rgb (int             h,
-            double          s,
-            double          v,
-            unsigned short *r,
-            unsigned short *g,
-            unsigned short *b)
+hsv_to_rgb (int     h,
+            double  s,
+            double  v,
+            double *r,
+            double *g,
+            double *b)
 {
 	double H, S, V, R, G, B;
 	double p1, p2, p3;
@@ -138,27 +142,27 @@ hsv_to_rgb (int             h,
 		B = p2;
 	}
 
-	*r = R * 65535;
-	*g = G * 65535;
-	*b = B * 65535;
+	*r = R;
+	*g = G;
+	*b = B;
 }
 
 static void
-rgb_to_hsv (unsigned short r,
-            unsigned short g,
-            unsigned short b,
-            int           *h,
-            double        *s,
-            double        *v)
+rgb_to_hsv (double  r,
+            double  g,
+            double  b,
+            int    *h,
+            double *s,
+            double *v)
 {
 	double R, G, B, H, S, V;
 	double cmax, cmin;
 	double cmm;
 	int    imax;
 
-	R = ((double) r) / 65535.0;
-	G = ((double) g) / 65535.0;
-	B = ((double) b) / 65535.0;
+	R = r;
+	G = g;
+	B = b;
 	cmax = R;
 	cmin = G;
 	imax = 1;
@@ -226,11 +230,13 @@ make_color_ramp (GdkColormap *colormap,
                  int          h2,
                  double       s2,
                  double       v2,
-                 GdkColor    *colors,
-                 int          n_colors,
 #if GTK_CHECK_VERSION (3, 0, 0)
+                 GdkRGBA     *colors,
+                 int          n_colors,
                  gboolean     closed)
 #else
+                 GdkColor    *colors,
+                 int          n_colors,
                  gboolean     closed,
                  gboolean     allocate,
                  gboolean     writable)
@@ -267,13 +273,25 @@ make_color_ramp (GdkColormap *colormap,
 
 	for (i = 0; i < ncolors; i++)
 	{
+#if !GTK_CHECK_VERSION (3, 0, 0)
+		double red, green, blue;
+
+#endif
 		hsv_to_rgb ((int) (h1 + (i * dh)),
 		            (s1 + (i * ds)),
 		            (v1 + (i * dv)),
+#if GTK_CHECK_VERSION (3, 0, 0)
 		            &colors [i].red,
 		            &colors [i].green,
 		            &colors [i].blue);
-#if !GTK_CHECK_VERSION (3, 0, 0)
+		colors [i].alpha = 1.0;
+#else
+		            &red, &green, &blue);
+
+		colors [i].red = (guint16) (red * 65535.0);
+		colors [i].green = (guint16) (green * 65535.0);
+		colors [i].blue = (guint16) (blue * 65535.0);
+
 		if (allocate)
 		{
 			gdk_colormap_alloc_color (colormap,
@@ -310,25 +328,55 @@ randomize_square_colors (square *squares,
 	}
 }
 
+#if GTK_CHECK_VERSION (3, 0, 0)
 static void
-set_colors (GdkWindow *window,
+set_colors (GtkWidget *widget,
+            GdkRGBA   *fg,
+            GdkRGBA   *bg)
+{
+	GtkStyleContext  *style;
+
+	style = gtk_widget_get_style_context (widget);
+
+	gtk_style_context_save (style);
+	gtk_style_context_set_state (style, GTK_STATE_FLAG_SELECTED);
+	gtk_style_context_get_background_color (style,
+	                                        gtk_style_context_get_state (style),
+	                                        bg);
+	if (bg->alpha == 0.0)
+		gtk_style_context_get_color (style,
+		                             gtk_style_context_get_state (style),
+		                             bg);
+	gtk_style_context_restore (style);
+
+	fg->red   = bg->red * 0.7;
+	fg->green = bg->green * 0.7;
+	fg->blue  = bg->blue * 0.7;
+	fg->alpha = bg->alpha;
+}
+#else
+static void
+set_colors (GtkWidget *widget,
             GdkColor  *fg,
             GdkColor  *bg)
 {
-	GtkWidget *widget;
+	GtkWidget *style_widget;
+	GtkStyle  *style;
 	GdkColor   color;
 
-	widget = gtk_invisible_new ();
+	style_widget = gtk_invisible_new ();
+	style = gtk_widget_get_style (style_widget);
 
-	color = gtk_widget_get_style (widget)->dark [GTK_STATE_SELECTED];
+	color = style->dark [GTK_STATE_SELECTED];
 	fg->red   = color.red;
 	fg->green = color.green;
 	fg->blue  = color.blue;
-	color = gtk_widget_get_style (widget)->bg [GTK_STATE_SELECTED];
+	color = style->bg [GTK_STATE_SELECTED];
 	bg->red   = color.red;
 	bg->green = color.green;
 	bg->blue  = color.blue;
 }
+#endif
 
 static void
 gste_popsquares_set_property (GObject            *object,
@@ -413,8 +461,13 @@ setup_colors (GSTEPopsquares *pop)
 	double    s1, v1, s2, v2 = 0;
 	int       h1, h2 = 0;
 	int       nsquares;
+#if GTK_CHECK_VERSION (3, 0, 0)
+	GdkRGBA   fg;
+	GdkRGBA   bg;
+#else
 	GdkColor  fg;
 	GdkColor  bg;
+#endif
 	GdkWindow *window;
 
 	window = gs_theme_engine_get_window (GS_THEME_ENGINE (pop));
@@ -424,24 +477,37 @@ setup_colors (GSTEPopsquares *pop)
 		return;
 	}
 
-	set_colors (window, &fg, &bg);
+	set_colors (GTK_WIDGET (pop), &fg, &bg);
 
 	if (pop->priv->colors)
 	{
 		g_free (pop->priv->colors);
 	}
+#if GTK_CHECK_VERSION (3, 0, 0)
+	pop->priv->colors = g_new0 (GdkRGBA, pop->priv->ncolors);
+#else
 	pop->priv->colors = g_new0 (GdkColor, pop->priv->ncolors);
+#endif
 
+#if GTK_CHECK_VERSION (3, 0, 0)
 	rgb_to_hsv (fg.red, fg.green, fg.blue, &h1, &s1, &v1);
 	rgb_to_hsv (bg.red, bg.green, bg.blue, &h2, &s2, &v2);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	make_color_ramp (h1, s1, v1,
 	                 h2, s2, v2,
 	                 pop->priv->colors,
 	                 pop->priv->ncolors,
 	                 TRUE);
 #else
+	rgb_to_hsv ((double) (fg.red / 65535.0),
+	            (double) (fg.green / 65535.0),
+	            (double) (fg.blue / 65535.0),
+	            &h1, &s1, &v1);
+	rgb_to_hsv ((double) (bg.red / 65535.0),
+	            (double) (bg.green / 65535.0),
+	            (double) (bg.blue / 65535.0),
+	            &h2, &s2, &v2);
+
 	make_color_ramp (gtk_widget_get_colormap (GTK_WIDGET (pop)),
 	                 h1, s1, v1,
 	                 h2, s2, v2,
@@ -484,10 +550,12 @@ gste_popsquares_real_draw (GtkWidget *widget,
 gste_popsquares_real_expose (GtkWidget      *widget,
                              GdkEventExpose *event)
 {
+	cairo_t *cr;
+
 	if (GTK_WIDGET_CLASS (parent_class)->expose_event) {
 		GTK_WIDGET_CLASS (parent_class)->expose_event (widget, event);
 	}
-	cairo_t *cr = gdk_cairo_create (event->window);
+	cr = gdk_cairo_create (event->window);
 #endif
 
 	draw_frame (GSTE_POPSQUARES (widget), cr);
@@ -545,7 +613,6 @@ gste_popsquares_class_init (GSTEPopsquaresClass *klass)
 	g_type_class_add_private (klass, sizeof (GSTEPopsquaresPrivate));
 }
 
-
 static void
 draw_frame (GSTEPopsquares *pop,
             cairo_t        *cr)
@@ -580,7 +647,11 @@ draw_frame (GSTEPopsquares *pop,
 		{
 			square *s = (square *) &pop->priv->squares [gw * y + x];
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+			gdk_cairo_set_source_rgba (cr, &(pop->priv->colors [s->color]));
+#else
 			gdk_cairo_set_source_color (cr, &(pop->priv->colors [s->color]));
+#endif
 			cairo_rectangle (cr, s->x, s->y,
 			                 border ? s->w - border : s->w,
 			                 border ? s->h - border : s->h);

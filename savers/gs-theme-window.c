@@ -62,6 +62,7 @@ gs_theme_window_class_init (GSThemeWindowClass *klass)
 	widget_class->realize = gs_theme_window_real_realize;
 }
 
+#if !GTK_CHECK_VERSION (3, 0, 0)
 static void
 force_no_pixmap_background (GtkWidget *widget)
 {
@@ -90,11 +91,16 @@ force_no_pixmap_background (GtkWidget *widget)
 
 	gtk_widget_set_name (widget, "gs-window");
 }
+#endif
 
 static void
 gs_theme_window_init (GSThemeWindow *window)
 {
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
+#else
 	force_no_pixmap_background (GTK_WIDGET (window));
+#endif
 }
 
 static void
@@ -177,9 +183,14 @@ gs_theme_window_real_realize (GtkWidget *widget)
 		return;
 	}
 
+#if GTK_CHECK_VERSION (3, 0, 0)
+	gtk_style_context_set_background (gtk_widget_get_style_context (widget),
+	                                  window);
+#else
 	gtk_style_set_background (gtk_widget_get_style (widget),
 	                          window,
 	                          GTK_STATE_NORMAL);
+#endif
 	gdk_window_set_decorations (window, (GdkWMDecoration) 0);
 	gdk_window_set_events (window, gdk_window_get_events (window) | event_mask);
 
