@@ -212,34 +212,6 @@ gs_window_override_user_time (GSWindow *window)
 	gdk_x11_window_set_user_time (gtk_widget_get_window (GTK_WIDGET (window)), ev_time);
 }
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-static void
-force_no_pixmap_background (GtkWidget *widget)
-{
-	static gboolean first_time = TRUE;
-
-	if (first_time)
-	{
-		gtk_rc_parse_string ("\n"
-		                     "   style \"gs-theme-engine-style\"\n"
-		                     "   {\n"
-		                     "      bg_pixmap[NORMAL] = \"<none>\"\n"
-		                     "      bg_pixmap[INSENSITIVE] = \"<none>\"\n"
-		                     "      bg_pixmap[ACTIVE] = \"<none>\"\n"
-		                     "      bg_pixmap[PRELIGHT] = \"<none>\"\n"
-		                     "      bg[NORMAL] = { 0.0, 0.0, 0.0 }\n"
-		                     "      bg[INSENSITIVE] = { 0.0, 0.0, 0.0 }\n"
-		                     "      bg[ACTIVE] = { 0.0, 0.0, 0.0 }\n"
-		                     "      bg[PRELIGHT] = { 0.0, 0.0, 0.0 }\n"
-		                     "   }\n"
-		                     "   widget \"gs-window-drawing-area*\" style : highest \"gs-theme-engine-style\"\n"
-		                     "\n");
-		first_time = FALSE;
-	}
-
-	gtk_widget_set_name (widget, "gs-window-drawing-area");
-}
-
 static void
 clear_children (Window window)
 {
@@ -298,7 +270,6 @@ widget_clear_all_children (GtkWidget *widget)
 	gdk_error_trap_pop ();
 #endif
 }
-#endif
 
 #if GTK_CHECK_VERSION (3, 0, 0)
 static void
@@ -310,6 +281,33 @@ gs_window_reset_background_surface (GSWindow *window)
 									   pattern);
 	cairo_pattern_destroy (pattern);
 	gtk_widget_queue_draw (GTK_WIDGET (window));
+}
+#else
+static void
+force_no_pixmap_background (GtkWidget *widget)
+{
+	static gboolean first_time = TRUE;
+
+	if (first_time)
+	{
+		gtk_rc_parse_string ("\n"
+		                     "   style \"gs-theme-engine-style\"\n"
+		                     "   {\n"
+		                     "      bg_pixmap[NORMAL] = \"<none>\"\n"
+		                     "      bg_pixmap[INSENSITIVE] = \"<none>\"\n"
+		                     "      bg_pixmap[ACTIVE] = \"<none>\"\n"
+		                     "      bg_pixmap[PRELIGHT] = \"<none>\"\n"
+		                     "      bg[NORMAL] = { 0.0, 0.0, 0.0 }\n"
+		                     "      bg[INSENSITIVE] = { 0.0, 0.0, 0.0 }\n"
+		                     "      bg[ACTIVE] = { 0.0, 0.0, 0.0 }\n"
+		                     "      bg[PRELIGHT] = { 0.0, 0.0, 0.0 }\n"
+		                     "   }\n"
+		                     "   widget \"gs-window-drawing-area*\" style : highest \"gs-theme-engine-style\"\n"
+		                     "\n");
+		first_time = FALSE;
+	}
+
+	gtk_widget_set_name (widget, "gs-window-drawing-area");
 }
 #endif
 
@@ -420,7 +418,8 @@ static void
 clear_widget (GtkWidget *widget)
 {
 #if GTK_CHECK_VERSION (3, 0, 0)
-	GdkRGBA      rgba = { 0.0, 0.0, 0.0, 1.0 };
+	GdkRGBA       rgba = { 0.0, 0.0, 0.0, 1.0 };
+	GtkStateFlags state;
 #else
 	GdkColormap *colormap;
 	GdkColor     color = { 0, 0x0000, 0x0000, 0x0000 };
@@ -436,10 +435,12 @@ clear_widget (GtkWidget *widget)
 
 	gs_debug ("Clearing widget");
 
-	gtk_widget_override_background_color (widget, GTK_STATE_FLAG_NORMAL, &rgba);
+	state = gtk_widget_get_state_flags (widget);
+	gtk_widget_override_background_color (widget, state, &rgba);
+	gdk_window_set_background_rgba (gtk_widget_get_window (widget), &rgba);
 	gtk_widget_queue_draw (GTK_WIDGET (widget));
 #else
-	if (! gtk_widget_get_visible (widget))
+	if (!gtk_widget_get_visible (widget))
 	{
 		return;
 	}
@@ -476,12 +477,12 @@ clear_widget (GtkWidget *widget)
 	g_object_unref (style);
 
 	gdk_window_clear (gtk_widget_get_window (widget));
+#endif
 
 	/* If a screensaver theme adds child windows we need to clear them too */
 	widget_clear_all_children (widget);
 
 	gdk_flush ();
-#endif
 }
 
 void

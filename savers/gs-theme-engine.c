@@ -111,12 +111,14 @@ static void
 gs_theme_engine_clear (GtkWidget *widget)
 {
 #if GTK_CHECK_VERSION (3, 0, 0)
-	GdkRGBA     color = { 0.0, 0.0, 0.0, 1.0 };
+	GdkRGBA color = { 0.0, 0.0, 0.0, 1.0 };
+	GtkStateFlags state;
 #else
 	GdkColor     color = { 0, 0x0000, 0x0000, 0x0000 };
-	GdkColormap *colormap;
-#endif
+	GdkColormap  *colormap;
+	GtkStyle     *style;
 	GtkStateType state;
+#endif
 
 	g_return_if_fail (GS_IS_THEME_ENGINE (widget));
 
@@ -125,20 +127,19 @@ gs_theme_engine_clear (GtkWidget *widget)
 		return;
 	}
 
-	state = (GtkStateType) 0;
-	while (state < (GtkStateType) G_N_ELEMENTS (gtk_widget_get_style (widget)->bg))
-	{
 #if GTK_CHECK_VERSION (3, 0, 0)
-		gtk_widget_override_background_color (widget, state, &color);
+	state = gtk_widget_get_state_flags (widget);
+	gtk_widget_override_background_color (widget, state, &color);
+	gdk_window_set_background_rgba (gtk_widget_get_window (widget), &color);
 #else
+	style = gtk_widget_get_style (widget);
+	state = (GtkStateType) 0;
+	while (state < (GtkStateType) G_N_ELEMENTS (style->bg))
+	{
 		gtk_widget_modify_bg (widget, state, &color);
-#endif
 		state++;
 	}
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-	gdk_window_set_background_rgba (gtk_widget_get_window (widget), &color);
-#else
 	colormap = gdk_drawable_get_colormap (gtk_widget_get_window (widget));
 	gdk_colormap_alloc_color (colormap, &color, FALSE, TRUE);
 	gdk_window_set_background (gtk_widget_get_window (widget), &color);
