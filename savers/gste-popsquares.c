@@ -344,9 +344,12 @@ set_colors (GtkWidget *widget,
 	                                        gtk_style_context_get_state (style),
 	                                        bg);
 	if (bg->alpha == 0.0)
-		gtk_style_context_get_color (style,
-		                             gtk_style_context_get_state (style),
-		                             bg);
+	{
+		gtk_style_context_add_class (style, GTK_STYLE_CLASS_VIEW);
+		gtk_style_context_get_background_color (style,
+		                                        gtk_style_context_get_state (style),
+		                                        bg);
+	}
 	gtk_style_context_restore (style);
 
 	fg->red   = bg->red * 0.7;
