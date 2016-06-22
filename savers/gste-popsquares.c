@@ -375,6 +375,8 @@ set_colors (GtkWidget *widget,
 	bg->red   = color.red;
 	bg->green = color.green;
 	bg->blue  = color.blue;
+
+	gtk_widget_destroy (style_widget);
 }
 #endif
 
