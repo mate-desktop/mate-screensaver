@@ -62,9 +62,9 @@ enum
 
 #define GS_WINDOW_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_WINDOW, GSWindowPrivate))
 
-#if GTK_CHECK_VERSION (3, 0, 0)
-#define gtk_hbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_HORIZONTAL,Y)
-#define gtk_vbox_new(X,Y) gtk_box_new(GTK_ORIENTATION_VERTICAL,Y)
+#if !GTK_CHECK_VERSION (3, 0, 0)
+#define gtk_box_new(GTK_ORIENTATION_HORIZONTAL, b) gtk_hbox_new(FALSE, b)
+#define gtk_box_new(GTK_ORIENTATION_VERTICAL, b) gtk_vbox_new(FALSE, b)
 #endif
 
 struct GSWindowPrivate
@@ -1120,7 +1120,7 @@ set_info_text_and_icon (GSWindow   *window,
 	GtkWidget *primary_label;
 	GtkWidget *secondary_label;
 
-	hbox_content = gtk_hbox_new (FALSE, 8);
+	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
 	gtk_widget_show (hbox_content);
 
 	image = gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_DIALOG);
@@ -1132,7 +1132,7 @@ set_info_text_and_icon (GSWindow   *window,
 	gtk_misc_set_alignment (GTK_MISC (image), 0.5, 0);
 #endif
 
-	vbox = gtk_vbox_new (FALSE, 6);
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_widget_show (vbox);
 	gtk_box_pack_start (GTK_BOX (hbox_content), vbox, FALSE, FALSE, 0);
 
@@ -2799,7 +2799,7 @@ gs_window_init (GSWindow *window)
 	                       | GDK_ENTER_NOTIFY_MASK
 	                       | GDK_LEAVE_NOTIFY_MASK);
 
-	window->priv->vbox = gtk_vbox_new (FALSE, 12);
+	window->priv->vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 12);
 	gtk_widget_show (window->priv->vbox);
 	gtk_container_add (GTK_CONTAINER (window), window->priv->vbox);
 
