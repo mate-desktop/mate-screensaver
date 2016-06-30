@@ -256,7 +256,7 @@ copy_theme_dialog_init (CopyThemeDialog *dlg)
 #else
 	progress_vbox = gtk_vbox_new (FALSE, 0);
 #endif
-	gtk_box_set_homogeneous (progress_vbox, TRUE);
+	gtk_box_set_homogeneous (GTK_BOX (progress_vbox), TRUE);
 	gtk_box_pack_start (GTK_BOX (vbox), progress_vbox, FALSE, FALSE, 0);
 
 	dlg->priv->progress = gtk_progress_bar_new ();
