@@ -75,6 +75,8 @@ case "$with_gtk" in
        ;;
 esac
 
+AC_SUBST(GTK_API_VERSION)
+
 AC_CHECK_HEADERS(unistd.h)
 AC_CHECK_HEADERS(crypt.h sys/select.h)
 AC_CHECK_FUNCS(select fcntl uname nice setpriority getcwd getwd putenv sbrk)

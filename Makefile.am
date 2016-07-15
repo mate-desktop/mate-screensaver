@@ -5,7 +5,9 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 NULL =
 
-DISTCHECK_CONFIGURE_FLAGS = --without-systemd
+DISTCHECK_CONFIGURE_FLAGS = \
+	--without-systemd \
+	--with-gtk=$(GTK_API_VERSION)
 
 SUBDIRS =			\
 	src			\
