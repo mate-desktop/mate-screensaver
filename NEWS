@@ -1,12 +1,13 @@
 ===============
-Version 1.15.1
+Version 1.16.0
 ===============
 
-===============
-Version 1.15.0
-===============
-
+Fix locking when screensaver is already active
+GTK+3: fix background and locking in multi-monitor setup
+GTK+3: fix several deprecations
+Some more fixes and cleanups
 Translations update
+Make distcheck use currently selected GTK+ version
 
 ===============
 Version 1.14.1
