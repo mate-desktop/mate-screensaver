@@ -5,15 +5,15 @@
 # Translators:
 # Gil Forcada <gilforcada@guifi.net>, 2006, 2007, 2008, 2009
 # Josep Puigdemont <josep.puigdemont@gmail.com>, 2006
-# Pere Orga <gotrunks@gmail.com>, 2013
-# Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>, 2015-2016
+# Pere O. <gotrunks@gmail.com>, 2013
+# Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2015-2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-16 17:00+0300\n"
-"PO-Revision-Date: 2016-01-28 11:22+0000\n"
-"Last-Translator: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>\n"
+"PO-Revision-Date: 2016-06-19 11:04+0000\n"
+"Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>\n"
 "Language-Team: Catalan (http://www.transifex.com/mate/MATE/language/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -60,15 +60,15 @@ msgstr "_Bloqueja la pantalla quan l'estalvi de pantalla estigui actiu"
 
 #: ../data/mate-screensaver-preferences.ui.h:8
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>Avís: la pantalla no es bloquejarà per al superusuari (root).</b>"
+msgstr "<b>Advertència: la pantalla no es bloquejarà per a l'usuari root.</b>"
 
 #: ../data/mate-screensaver-preferences.ui.h:9
 msgid "Screensaver Preview"
-msgstr "Previsualització de l'estalvi de pantalla"
+msgstr "Vista prèvia de l'estalvi de pantalla"
 
 #: ../data/mate-screensaver-preferences.ui.h:10
 msgid "<b>Screensaver preview</b>"
-msgstr "<b>Previsualització de l'estalvi de pantalla</b>"
+msgstr "<b>Vista prèvia de l'estalvi de pantalla</b>"
 
 #: ../data/mate-screensaver.directory.in.h:1
 msgid "Screensavers"
@@ -198,7 +198,7 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr "L'ordre que s'executarà, si la clau «embedded_keyboard_enabled» s'estableix a TRUE, per incrustar un teclat a la pantalla. Aquesta ordre hauria d'implementar un connector d'interfície XEMBED, i escriure a la sortida estàndard del XID d'una finestra."
+msgstr "L'ordre que s'executarà, si la clau «embedded_keyboard_enabled» s'estableix a TRUE, per incrustar un estri de teclat a la pantalla. Aquesta ordre hauria d'implementar un connector d'interfície XEMBED, i escriure a la sortida estàndard del XID d'una finestra."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
@@ -546,11 +546,11 @@ msgstr "No s'ha pogut obtenir el nom d'usuari"
 
 #: ../src/mate-screensaver-dialog.c:178
 msgid "Retype new UNIX password:"
-msgstr "Reescriviu la nova contrasenya UNIX:"
+msgstr "Reescriviu la contrasenya nova UNIX:"
 
 #: ../src/mate-screensaver-dialog.c:179
 msgid "Enter new UNIX password:"
-msgstr "Introduïu la nova contrasenya UNIX:"
+msgstr "Introduïu la contrasenya nova UNIX:"
 
 #: ../src/mate-screensaver-dialog.c:180
 msgid "(current) UNIX password:"

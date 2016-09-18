@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-16 17:00+0300\n"
-"PO-Revision-Date: 2016-03-26 21:55+0000\n"
+"PO-Revision-Date: 2016-06-24 12:36+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -261,7 +261,7 @@ msgstr "Leisti rodyti seanso būsenos pranešimą, kai ekranas užrakintas."
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
-msgstr "Rodyti kosmoso paveikslų skaidrių šou"
+msgstr "Rodyti kosmoso paveikslų skaidrių rodymą"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
 msgid "Floating MATE"
@@ -302,11 +302,11 @@ msgstr "%s. Norėdami daugiau informacijos, žr. --help.\n"
 
 #: ../savers/floaters.c:90
 msgid "Show paths that images follow"
-msgstr "Rodyti paveikslėlių sekamus kelius"
+msgstr "Rodyti paveikslų sekamus kelius"
 
 #: ../savers/floaters.c:95
 msgid "Occasionally rotate images as they move"
-msgstr "Retkarčiais pasukti paveikslėlius, kai šie juda"
+msgstr "Retkarčiais pasukti paveikslus, kai šie juda"
 
 #: ../savers/floaters.c:100
 msgid "Print out frame rate and other statistics"
@@ -314,7 +314,7 @@ msgstr "Rodyti kadrų dažnį ir kitą statistiką"
 
 #: ../savers/floaters.c:105
 msgid "The maximum number of images to keep on screen"
-msgstr "Maksimalus ekrane rodomų paveikslėlių skaičius"
+msgstr "Maksimalus ekrane rodomų paveikslų skaičius"
 
 #: ../savers/floaters.c:105
 msgid "MAX_IMAGES"
@@ -330,22 +330,22 @@ msgstr "PLOTISxAUKŠTIS+X+Y"
 
 #: ../savers/floaters.c:115
 msgid "The source image to use"
-msgstr "Naudotinas paveikslėlis"
+msgstr "Naudotinas paveikslas"
 
 #. translators: the word "image" here
 #. * represents a command line argument
 #: ../savers/floaters.c:1246
 msgid "image - floats images around the screen"
-msgstr "image - ekrane plaukioja paveikslėlis"
+msgstr "image - ekrane plaukioja paveikslas"
 
 #: ../savers/floaters.c:1261
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "Turite nurodyti bent vieną paveikslėlį. Norėdami sužinoti kaip naudotis, žr. --help.\n"
+msgstr "Turite nurodyti bent vieną paveikslą. Norėdami sužinoti kaip naudotis, žr. --help.\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
-msgstr "Vieta iš kur gaunami paveikslėliai"
+msgstr "Vieta iš kur gaunami paveikslai"
 
 #: ../savers/slideshow.c:55
 msgid "PATH"
@@ -353,7 +353,7 @@ msgstr "KELIAS"
 
 #: ../savers/slideshow.c:59
 msgid "Color to use for images background"
-msgstr "Paveikslėlių fono spalva"
+msgstr "Paveikslų fono spalva"
 
 #: ../savers/slideshow.c:59
 msgid "\"#rrggbb\""
@@ -365,7 +365,7 @@ msgstr "Imti paveikslus iš eilės"
 
 #: ../savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"
-msgstr "Neištempti paveikslėlių ekrane"
+msgstr "Neištempti paveikslų ekrane"
 
 #: ../src/copy-theme-dialog.c:220
 msgid "Copying files"
@@ -655,7 +655,7 @@ msgstr "Įsitikinkite, kad ekrano užsklanda yra tinkamai įdiegta"
 
 #: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
-msgstr "Netapti demonu"
+msgstr "Netapti tarnyba"
 
 #: ../src/mate-screensaver.c:57
 msgid "Enable debugging code"

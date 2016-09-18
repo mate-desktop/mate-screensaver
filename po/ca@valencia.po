@@ -3,15 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Gil Forcada <gilforcada@guifi.net>, 2006, 2007, 2008, 2009
+# Gil Forcada <gilforcada@guifi.net>, 2006-2009
 # Josep Puigdemont <josep.puigdemont@gmail.com>, 2006
+# Josep Puigdemont <josep.puigdemont@gmail.com>, 2006
+# Pilar Embid Giner <embid_mar@gva.es>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-16 17:00+0300\n"
-"PO-Revision-Date: 2015-12-16 14:02+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2016-09-15 07:17+0000\n"
+"Last-Translator: Jose Alfredo Murcia Andrés <joamuran@gmail.com>\n"
 "Language-Team: Catalan (Valencian) (http://www.transifex.com/mate/MATE/language/ca@valencia/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,11 +56,11 @@ msgstr "_Activa l'estalvi de pantalla quan l'ordinador estiga inactiu"
 
 #: ../data/mate-screensaver-preferences.ui.h:7
 msgid "_Lock screen when screensaver is active"
-msgstr "_Bloca la pantalla quan l'estalvi de pantalla estiga actiu"
+msgstr "_Bloqueja la pantalla quan l'estalvi de pantalla estiga actiu"
 
 #: ../data/mate-screensaver-preferences.ui.h:8
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>Avís: la pantalla no es bloquejarà per al superusuari (root).</b>"
+msgstr "<b>Avís: La pantalla no es bloquejarà per al superusuari (root).</b>"
 
 #: ../data/mate-screensaver-preferences.ui.h:9
 msgid "Screensaver Preview"
@@ -87,48 +89,48 @@ msgstr "Cosmos"
 
 #: ../data/lock-dialog-default.ui.h:1
 msgid "_Leave Message"
-msgstr ""
+msgstr "_Deixa un missatge"
 
 #: ../data/lock-dialog-default.ui.h:2
 msgid "_Switch User"
-msgstr ""
+msgstr "Canvia d'u_suari"
 
 #: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
-msgstr ""
+msgstr "Tanca _la sessió"
 
 #: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
-msgstr ""
+msgstr "_Cancel·la"
 
 #: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1792
 msgid "_Unlock"
-msgstr "_Desbloca"
+msgstr "_Desbloqueja"
 
 #: ../data/lock-dialog-default.ui.h:7
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
-msgstr ""
+msgstr "<b>Deixa un missatge per a %R:</b>"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:1
 msgid "Activate when idle"
-msgstr ""
+msgstr "Activa quan estiga inactiu"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr ""
+msgstr "Establiu-ho a TRUE per a activar l'estalvi de pantalla quan la sessió estiga inactiva."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
-msgstr ""
+msgstr "Bloqueja amb l'activació"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr ""
+msgstr "Establiu-ho a TRUE per a bloquejar la pantalla quan l'estalvi de pantalla estiga actiu."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
-msgstr ""
+msgstr "Mode de selecció del tema de l'estalvi de pantalla"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:6
 msgid ""
@@ -137,7 +139,7 @@ msgid ""
 "screensaver using only one theme on activation (specified in \"themes\" "
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
-msgstr ""
+msgstr "El mode de selecció utilitzat per l'estalvi de pantalla. Pot ser «blank-only» per a habilitar l'estalvi de pantalla sense utilitzar cap tema en l'activació, «single» per a habilitar que l'estalvi de pantalla utilitze només un tema en activar-se (especificat en la clau «themes»), i «random» per a habilitar que l'estalvi de pantalla utilitze un tema aleatori en activar-se."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -145,50 +147,50 @@ msgid ""
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
-msgstr ""
+msgstr "Aquesta clau especifica la llista de temes que s'utilitzen per a l'estalvi de pantalla. S'ignora si la clau «mode» és «blank-only», ha de tindre el nom del tema quan «mode» és «single», i ha de tindre una llista de temes quan «mode» és «random»."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
-msgstr ""
+msgstr "Temps que ha de passar abans de la línia base del gestor d'energia"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:10
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
-msgstr ""
+msgstr "El nombre de segons d'inactivitat que han de passar abans que s'avise el gestor d'energia. Aquesta clau s'estableix i es manté per l'agent de la sessió del gestor d'energia."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
-msgstr ""
+msgstr "Temps abans del canvi de tema"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr ""
+msgstr "El nombre de minuts que han de passar abans que es canvie el tema de l'estalvi de pantalla."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
-msgstr ""
+msgstr "Temps abans de bloquejar"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:14
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
-msgstr ""
+msgstr "El nombre de minuts que han de passar abans que es bloquege la pantalla després que s'haja activat l'estalvi de pantalla."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
-msgstr ""
+msgstr "Permet que s'incruste un teclat a la finestra"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:16
 msgid ""
 "Set this to TRUE to allow embedding a keyboard into the window when trying "
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
-msgstr ""
+msgstr "Establiu-ho a TRUE per a permetre la incrustació d'un teclat a la pantalla quan es prove de desbloquejar. La clau «keyboard_command» s'ha d'establir amb l'ordre apropiada."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
-msgstr ""
+msgstr "Ordre per a incrustar el teclat a la pantalla"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:18
 msgid ""
@@ -196,66 +198,66 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr ""
+msgstr "L'ordre que s'executarà, si la clau «embedded_keyboard_enabled» s'estableix a TRUE, per a incrustar un giny de teclat a la pantalla. Aquesta ordre ha d'implementar un connector d'interfície XEMBED, i escriure a l'eixida estàndard de l'XID d'una finestra."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
-msgstr ""
+msgstr "Permet tancar la sessió"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:20
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
-msgstr ""
+msgstr "Establiu-ho a TRUE per a oferir una opció al diàleg de desbloqueig, per al tancament de la sessió després d'un retard. El retard s'especifica a la clau «logout_delay»."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
-msgstr ""
+msgstr "Temps abans de l'opció de tancar la sessió"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:22
 msgid ""
 "The number of minutes after the screensaver activation before a logout "
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
-msgstr ""
+msgstr "El nombre de minuts que han de passar perquè aparega l'opció de tancament de la sessió al diàleg de desbloqueig, després que s'haja activat l'estalvi de pantalla. Aquesta clau només té efecte si la clau «logout_enable» està establida a TRUE."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
-msgstr ""
+msgstr "Ordre per a tancar la sessió"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:24
 msgid ""
 "The command to invoke when the logout button is clicked. This command should"
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
-msgstr ""
+msgstr "L'ordre que s'ha d'invocar quan es faça clic al botó de tancament de la sessió. Aquesta ordre només ha de tancar la sessió de l'usuari sense cap interacció. Aquesta clau només té efecte si la clau «logout_enable» està establida a TRUE."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
-msgstr ""
+msgstr "Permet el canvi d'usuari"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:26
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
-msgstr ""
+msgstr "Establiu-ho a TRUE per a oferir una opció al diàleg de desbloqueig per a canviar a un compte diferent d'usuari."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
-msgstr ""
+msgstr "Tema per al diàleg de bloqueig"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:28
 msgid "Theme to use for the lock dialog"
-msgstr ""
+msgstr "Tema que s'utilitza per al diàleg de bloqueig"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:29
 msgid "Allow the session status message to be displayed"
-msgstr ""
+msgstr "Permet que es mostre el missatge d'estat de la sessió"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:30
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
-msgstr ""
+msgstr "Permet que es mostre el missatge d'estat de la sessió quan la pantalla estiga bloquejada."
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -263,19 +265,19 @@ msgstr "Mostra una projecció amb diapositives d'imatges del cosmos"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
 msgid "Floating MATE"
-msgstr ""
+msgstr "MATE flotant"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
-msgstr ""
+msgstr "Bambolles amb el logotip del MATE per tota la pantalla"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:1
 msgid "Floating GNOME"
-msgstr ""
+msgstr "GNOME flotant"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the GNOME logo around the screen"
-msgstr ""
+msgstr "Bambolles amb el logotip del GNOME per tota la pantalla"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
 msgid "Pictures folder"
@@ -283,7 +285,7 @@ msgstr "Carpeta d'imatges"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow from your Pictures folder"
-msgstr "Mostra una projecció amb diapositives de la vostre carpeta d'imatges"
+msgstr "Mostra una projecció amb diapositives de la vostra carpeta d'imatges"
 
 #: ../savers/popsquares.desktop.in.in.h:1
 msgid "Pop art squares"
@@ -291,7 +293,7 @@ msgstr "Quadrats pop-art"
 
 #: ../savers/popsquares.desktop.in.in.h:2
 msgid "A pop-art-ish grid of pulsing colors."
-msgstr "Una xarxa de colors de pulsació d'estil pop-art."
+msgstr "Una graella de colors de pulsació d'estil pop-art."
 
 #: ../savers/popsquares.c:51 ../savers/floaters.c:1252
 #, c-format
@@ -312,7 +314,7 @@ msgstr "Mostra les imatges per segon i altres estadístiques"
 
 #: ../savers/floaters.c:105
 msgid "The maximum number of images to keep on screen"
-msgstr "El nombre màxim d'imatges a mantindre en pantalla"
+msgstr "El nombre màxim d'imatges que s'han de mantindre en pantalla"
 
 #: ../savers/floaters.c:105
 msgid "MAX_IMAGES"
@@ -324,7 +326,7 @@ msgstr "La mida i posició inicials de la finestra"
 
 #: ../savers/floaters.c:110
 msgid "WIDTHxHEIGHT+X+Y"
-msgstr "AMPLADAxALÇADA+X+Y"
+msgstr "AMPLÀRIAxALÇÀRIA+X+Y"
 
 #: ../savers/floaters.c:115
 msgid "The source image to use"
@@ -351,7 +353,7 @@ msgstr "CAMÍ"
 
 #: ../savers/slideshow.c:59
 msgid "Color to use for images background"
-msgstr "El color a utilitzar per a les imatges de fons"
+msgstr "El color que s'ha d'utilitzar per a les imatges de fons"
 
 #: ../savers/slideshow.c:59
 msgid "\"#rrggbb\""
@@ -405,11 +407,11 @@ msgstr "Consulta l'estat de l'estalvi de pantalla"
 
 #: ../src/mate-screensaver-command.c:72
 msgid "Query the length of time the screensaver has been active"
-msgstr "Consulta quan temps fa que l'estalvi de pantalla s'ha activat"
+msgstr "Consulta quan de temps fa que l'estalvi de pantalla s'ha activat"
 
 #: ../src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to lock the screen immediately"
-msgstr "Diu al procés d'estalvi de pantalla en funcionament que bloquegi la pantalla immediatament"
+msgstr "Diu al procés d'estalvi de pantalla en funcionament que bloquege la pantalla immediatament"
 
 #: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -425,26 +427,26 @@ msgstr "Si l'estalvi de pantalla està actiu, desactiva'l (restableix la pantall
 
 #: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "Burxa l'estalvi de pantalla actiu per simular activitat de l'usuari"
+msgstr "Burxa l'estalvi de pantalla actiu per a simular activitat de l'usuari"
 
 #: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Inhibeix l'activació de l'estalvi de pantalla. L'orde bloqueja mentre la inhibició està activa."
+msgstr "Inhibeix l'activació de l'estalvi de pantalla. L'ordre bloqueja mentre la inhibició està activa."
 
 #: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
-msgstr "L'aplicació que està demanant d'inhibir l'estalvi de pantalla"
+msgstr "L'aplicació que demana inhibir l'estalvi de pantalla"
 
 #: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
-msgstr "El motiu per inhibir l'estalvi de pantalla"
+msgstr "El motiu per a inhibir l'estalvi de pantalla"
 
 #: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:60
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
-msgstr "Versió d'esta aplicació"
+msgstr "Versió d'aquesta aplicació"
 
 #: ../src/mate-screensaver-command.c:357
 #, c-format
@@ -489,7 +491,7 @@ msgstr "Mostra el botó d'eixida"
 
 #: ../src/mate-screensaver-dialog.c:62
 msgid "Command to invoke from the logout button"
-msgstr "Orde per invocar des del botó d'eixir"
+msgstr "Ordre per a invocar des del botó de tancar la sessió"
 
 #: ../src/mate-screensaver-dialog.c:63
 msgid "Show the switch user button"
@@ -524,11 +526,11 @@ msgstr "Heu de canviar la contrasenya immediatament (la contrasenya s'ha fet vel
 
 #: ../src/mate-screensaver-dialog.c:173
 msgid "You are required to change your password immediately (root enforced)"
-msgstr "Heu de canviar la contrasenya immediatament (vos hi obliga el superusuari)"
+msgstr "Heu de canviar la contrasenya immediatament (us hi obliga el superusuari)"
 
 #: ../src/mate-screensaver-dialog.c:174
 msgid "Your account has expired; please contact your system administrator"
-msgstr "El vostre compte ha expirat, contacteu amb l'administrador d'este sistema"
+msgstr "El vostre compte ha expirat, contacteu amb l'administrador d'aquest sistema"
 
 #: ../src/mate-screensaver-dialog.c:175
 msgid "No password supplied"
@@ -548,7 +550,7 @@ msgstr "Reescriviu la nova contrasenya UNIX:"
 
 #: ../src/mate-screensaver-dialog.c:179
 msgid "Enter new UNIX password:"
-msgstr "Entreu la nova contrasenya UNIX:"
+msgstr "Introduïu la nova contrasenya UNIX:"
 
 #: ../src/mate-screensaver-dialog.c:180
 msgid "(current) UNIX password:"
@@ -560,15 +562,15 @@ msgstr "S'ha produït un error en canviar la contrasenya NIS."
 
 #: ../src/mate-screensaver-dialog.c:182
 msgid "You must choose a longer password"
-msgstr "Heu d'escollir una contrasenya més llarga"
+msgstr "Heu de triar una contrasenya més llarga"
 
 #: ../src/mate-screensaver-dialog.c:183
 msgid "Password has been already used. Choose another."
-msgstr "La contrasenya ja s'ha fet servir. Escolliu-ne una altra."
+msgstr "La contrasenya ja s'ha fet servir. Trieu-ne una altra."
 
 #: ../src/mate-screensaver-dialog.c:184
 msgid "You must wait longer to change your password"
-msgstr "Heu d'esperar més per canviar la contrasenya"
+msgstr "Heu d'esperar més per a canviar la contrasenya"
 
 #: ../src/mate-screensaver-dialog.c:185
 msgid "Sorry, passwords do not match"
@@ -650,7 +652,7 @@ msgstr "Assegureu-vos que l'estalvi de pantalla estiga ben instal·lat"
 
 #: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
-msgstr "No esdevinguis un dimoni"
+msgstr "No esdevingues un dimoni"
 
 #: ../src/mate-screensaver.c:57
 msgid "Enable debugging code"
@@ -658,7 +660,7 @@ msgstr "Habilita el codi de depuració"
 
 #: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screensaver and locker program"
-msgstr ""
+msgstr "Executa l'estalvi de pantalla i el programa de bloqueig"
 
 #: ../src/gs-auth-pam.c:413
 #, c-format
@@ -692,13 +694,13 @@ msgstr "no s'ha pogut connectar al bus de missatges"
 
 #: ../src/gs-listener-dbus.c:2207 ../src/gs-listener-dbus.c:2239
 msgid "screensaver already running in this session"
-msgstr "l'estalvi de pantalla ja està funcionant en esta sessió"
+msgstr "l'estalvi de pantalla ja està funcionant en aquesta sessió"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
 #: ../src/gs-lock-plug.c:308
 msgid "%A, %B %e"
-msgstr ""
+msgstr "%A, %e de %B"
 
 #: ../src/gs-lock-plug.c:410
 msgid "Time has expired."
