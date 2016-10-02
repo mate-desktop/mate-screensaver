@@ -73,7 +73,7 @@ grab_string (int status)
 		return "GrabNotViewable";
 	case GDK_GRAB_FROZEN:
 		return "GrabFrozen";
-#if GTK_CHECK_VERSION (3, 0, 0)
+#if GTK_CHECK_VERSION (3, 16, 0)
 	case GDK_GRAB_FAILED:
 		return "GrabFailed";
 #endif
