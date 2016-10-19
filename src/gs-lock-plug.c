@@ -231,7 +231,7 @@ do_user_switch (GSLockPlug *plug)
 			g_error_free (error);
 		}
 	}
-	else if (process_is_running ("gdm") || process_is_running("gdm3"))
+	else if (process_is_running ("gdm") || process_is_running("gdm3") || process_is_running("gdm-binary"))
 	{
 		/* GDM */
 		command = g_strdup_printf ("%s %s",
@@ -1291,7 +1291,7 @@ gs_lock_plug_set_switch_enabled (GSLockPlug *plug,
 			/* MDM  */
 			gtk_widget_show (plug->priv->auth_switch_button);
 		}
-		else if (process_is_running ("gdm") || process_is_running("gdm3"))
+		else if (process_is_running ("gdm") || process_is_running("gdm3") || process_is_running("gdm-binary"))
 		{
 			/* GDM */
 			gtk_widget_show (plug->priv->auth_switch_button);
