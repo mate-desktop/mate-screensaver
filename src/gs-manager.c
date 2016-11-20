@@ -1115,7 +1115,7 @@ find_window_at_pointer (GSManager *manager)
 	display = gdk_display_get_default ();
 
 #if GTK_CHECK_VERSION (3, 0, 0)
-#if GTK_CHECK_VERSION(3, 20, 0)
+#if GTK_CHECK_VERSION (3, 20, 0)
 	device = gdk_seat_get_pointer (gdk_display_get_default_seat (display));
 #else
 	device = gdk_device_manager_get_client_pointer (gdk_display_get_device_manager (display));
@@ -1185,7 +1185,7 @@ manager_maybe_grab_window (GSManager *manager,
 
 	display = gdk_display_get_default ();
 #if GTK_CHECK_VERSION (3, 0, 0)
-#if GTK_CHECK_VERSION(3, 20, 0)
+#if GTK_CHECK_VERSION (3, 20, 0)
 	device = gdk_seat_get_pointer (gdk_display_get_default_seat (display));
 #else
 	device = gdk_device_manager_get_client_pointer (gdk_display_get_device_manager (display));
