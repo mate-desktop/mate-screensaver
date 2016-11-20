@@ -23,6 +23,8 @@
 #ifndef __GS_LISTENER_H
 #define __GS_LISTENER_H
 
+#include <glib.h>
+
 G_BEGIN_DECLS
 
 #define GS_TYPE_LISTENER         (gs_listener_get_type ())

@@ -339,7 +339,6 @@ spawn_on_widget (GtkWidget  *widget,
 	env = get_env_vars (widget);
 
 	error = NULL;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	result = g_spawn_async_with_pipes (NULL,
 	         argv,
 	         (char **)env->pdata,
@@ -351,20 +350,7 @@ spawn_on_widget (GtkWidget  *widget,
 	         NULL,
 	         &standard_error,
 	         &error);
-#else
-	result = gdk_spawn_on_screen_with_pipes (gtk_widget_get_screen (widget),
-	         NULL,
-	         argv,
-	         (char **)env->pdata,
-	         G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD,
-	         NULL,
-	         NULL,
-	         &child_pid,
-	         NULL,
-	         NULL,
-	         &standard_error,
-	         &error);
-#endif
+
 	for (i = 0; i < env->len; i++)
 	{
 		g_free (g_ptr_array_index (env, i));

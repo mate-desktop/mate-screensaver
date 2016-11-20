@@ -23,6 +23,8 @@
 #ifndef __GS_PREFS_H
 #define __GS_PREFS_H
 
+#include <glib.h>
+
 G_BEGIN_DECLS
 
 #define GS_TYPE_PREFS         (gs_prefs_get_type ())

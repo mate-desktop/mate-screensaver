@@ -2,7 +2,7 @@ dnl -*- mode: m4 -*-
 
 AC_PREREQ(2.60)
 AC_INIT([mate-screensaver],
-        [1.16.0],
+        [1.17.0],
         [http://www.mate-desktop.org/])
 
 AC_CONFIG_SRCDIR(src/mate-screensaver.c)
@@ -51,31 +51,11 @@ GLIB_GSETTINGS
 
 DBUS_REQUIRED_VERSION=0.30
 GLIB_REQUIRED_VERSION=2.36.0
+GTK_REQUIRED_VERSION=3.14.0
 X11_REQUIRED_VERSION=1.0
 LIBMATE_MENU_REQUIRED_VERSION=1.10.0
-MATE_DESKTOP_REQUIRED_VERSION=1.9.4
-LIBMATEKBDUI_REQUIRED_VERSION=1.7.1
-
-AC_MSG_CHECKING([which gtk+ version to compile against])
-AC_ARG_WITH([gtk],
-  [AS_HELP_STRING([--with-gtk=2.0|3.0],[which gtk+ version to compile against (default: 2.0)])],
-  [case "$with_gtk" in
-     2.0|3.0) ;;
-     *) AC_MSG_ERROR([invalid gtk version specified]) ;;
-   esac],
-  [with_gtk=2.0])
-AC_MSG_RESULT([$with_gtk])
-
-case "$with_gtk" in
-  2.0) GTK_API_VERSION=2.0
-       GTK_REQUIRED_VERSION=2.24.0
-       ;;
-  3.0) GTK_API_VERSION=3.0
-       GTK_REQUIRED_VERSION=3.0.0
-       ;;
-esac
-
-AC_SUBST(GTK_API_VERSION)
+MATE_DESKTOP_REQUIRED_VERSION=1.17.0
+LIBMATEKBDUI_REQUIRED_VERSION=1.17.0
 
 AC_CHECK_HEADERS(unistd.h)
 AC_CHECK_HEADERS(crypt.h sys/select.h)
@@ -88,7 +68,7 @@ AC_CHECK_FUNCS([setresuid setenv unsetenv clearenv])
 PKG_CHECK_MODULES(MATE_SCREENSAVER,
         x11 >= $X11_REQUIRED_VERSION
         xscrnsaver
-        gtk+-$GTK_API_VERSION >= $GTK_REQUIRED_VERSION
+        gtk+-3.0 >= $GTK_REQUIRED_VERSION
         dbus-glib-1 >= $DBUS_REQUIRED_VERSION
         gio-2.0 >= $GLIB_REQUIRED_VERSION
         mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION
@@ -99,14 +79,14 @@ AC_SUBST(MATE_SCREENSAVER_LIBS)
 PKG_CHECK_MODULES(MATE_SCREENSAVER_DIALOG,
         gio-2.0 >= $GLIB_REQUIRED_VERSION
         gthread-2.0
-        gtk+-$GTK_API_VERSION >= $GTK_REQUIRED_VERSION
+        gtk+-3.0 >= $GTK_REQUIRED_VERSION
         mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION)
 AC_SUBST(MATE_SCREENSAVER_DIALOG_CFLAGS)
 AC_SUBST(MATE_SCREENSAVER_DIALOG_LIBS)
 
 PKG_CHECK_MODULES(MATE_SCREENSAVER_CAPPLET,
         gio-2.0 >= $GLIB_REQUIRED_VERSION
-        gtk+-$GTK_API_VERSION >= $GTK_REQUIRED_VERSION
+        gtk+-3.0 >= $GTK_REQUIRED_VERSION
         mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION
         libmate-menu >= $LIBMATE_MENU_REQUIRED_VERSION)
 AC_SUBST(MATE_SCREENSAVER_CAPPLET_CFLAGS)
@@ -137,7 +117,7 @@ esac
 
 # Optional dependencies for the theme engines
 
-SAVER_MODULES="gthread-2.0 gtk+-$GTK_API_VERSION >= $GTK_REQUIRED_VERSION gobject-2.0 >= $GLIB_REQUIRED_VERSION"
+SAVER_MODULES="gthread-2.0 gtk+-3.0 >= $GTK_REQUIRED_VERSION gobject-2.0 >= $GLIB_REQUIRED_VERSION"
 
 PKG_CHECK_MODULES(MATE_SCREENSAVER_SAVER, $SAVER_MODULES)
 AC_SUBST(MATE_SCREENSAVER_SAVER_CFLAGS)
@@ -167,7 +147,7 @@ AC_SUBST(PAM_PREFIX)
 # Desktop entry handling
 
 PKG_CHECK_MODULES(LIB_MATE_MENU,
-        gtk+-$GTK_API_VERSION >= $GTK_REQUIRED_VERSION)
+        gtk+-3.0 >= $GTK_REQUIRED_VERSION)
 
 AC_SUBST(LIB_MATE_MENU_CFLAGS)
 AC_SUBST(LIB_MATE_MENU_LIBS)
@@ -1140,7 +1120,6 @@ echo "
         Docs enabled:             ${enable_docbook_docs}
 
         GL:                       ${have_libgl}
-        GTK+ API version:         ${GTK_API_VERSION}
 
         Screen locking enabled:   ${enable_locking}
         Show keyboard indicator:  ${with_kbd_layout_indicator}

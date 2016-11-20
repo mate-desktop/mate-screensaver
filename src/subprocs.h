@@ -17,6 +17,7 @@
 #define __GS_SUBPROCS_H
 
 #include <signal.h>
+#include <glib.h>
 
 G_BEGIN_DECLS
 

@@ -62,45 +62,10 @@ gs_theme_window_class_init (GSThemeWindowClass *klass)
 	widget_class->realize = gs_theme_window_real_realize;
 }
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-static void
-force_no_pixmap_background (GtkWidget *widget)
-{
-	static gboolean first_time = TRUE;
-
-	if (first_time)
-	{
-		gtk_rc_parse_string ("\n"
-		                     "   style \"gs-theme-engine-style\"\n"
-		                     "   {\n"
-		                     "      bg_pixmap[NORMAL] = \"<none>\"\n"
-		                     "      bg_pixmap[ACTIVE] = \"<none>\"\n"
-		                     "      bg_pixmap[PRELIGHT] = \"<none>\"\n"
-		                     "      bg_pixmap[SELECTED] = \"<none>\"\n"
-		                     "      bg_pixmap[INSENSITIVE] = \"<none>\"\n"
-		                     "      bg[NORMAL] = \"#000000\"\n"
-		                     "      bg[ACTIVE] = \"#000000\"\n"
-		                     "      bg[PRELIGHT] = \"#000000\"\n"
-		                     "      bg[SELECTED] = \"#000000\"\n"
-		                     "      bg[INSENSITIVE] = \"#000000\"\n"
-		                     "   }\n"
-		                     "   widget \"gs-window*\" style : highest \"gs-theme-engine-style\"\n"
-		                     "\n");
-		first_time = FALSE;
-	}
-
-	gtk_widget_set_name (widget, "gs-window");
-}
-#endif
-
 static void
 gs_theme_window_init (GSThemeWindow *window)
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
-#else
-	force_no_pixmap_background (GTK_WIDGET (window));
-#endif
 }
 
 static void
@@ -144,12 +109,7 @@ gs_theme_window_real_realize (GtkWidget *widget)
 		        ((*end == ' ') || (*end == '\0')) &&
 		        ((remote_xwindow < G_MAXULONG) || (errno != ERANGE)))
 		{
-#if GTK_CHECK_VERSION (3, 0, 0)
 			window = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (), remote_xwindow);
-#else
-			window = gdk_window_foreign_new (remote_xwindow);
-#endif
-
 			if (window != NULL)
 			{
 				/* This is a kludge; we need to set the same
@@ -183,14 +143,8 @@ gs_theme_window_real_realize (GtkWidget *widget)
 		return;
 	}
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_style_context_set_background (gtk_widget_get_style_context (widget),
 	                                  window);
-#else
-	gtk_style_set_background (gtk_widget_get_style (widget),
-	                          window,
-	                          GTK_STATE_NORMAL);
-#endif
 	gdk_window_set_decorations (window, (GdkWMDecoration) 0);
 	gdk_window_set_events (window, gdk_window_get_events (window) | event_mask);
 
@@ -198,11 +152,7 @@ gs_theme_window_real_realize (GtkWidget *widget)
 	gdk_window_set_user_data (window, widget);
 	gtk_widget_set_realized (widget, TRUE);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gdk_window_get_geometry (window, &x, &y, &width, &height);
-#else
-	gdk_window_get_geometry (window, &x, &y, &width, &height, NULL);
-#endif
 
 	if (width < MIN_SIZE || height < MIN_SIZE)
 	{
@@ -210,11 +160,7 @@ gs_theme_window_real_realize (GtkWidget *widget)
 		exit (1);
 	}
 
-#if GTK_CHECK_VERSION(3, 0, 0)
 	gtk_widget_get_preferred_size (widget, &requisition, NULL);
-#else
-	gtk_widget_size_request (widget, &requisition);
-#endif
 	allocation.x = x;
 	allocation.y = y;
 	allocation.width = width;

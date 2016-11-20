@@ -23,6 +23,8 @@
 #ifndef __GS_MONITOR_H
 #define __GS_MONITOR_H
 
+#include <glib.h>
+
 G_BEGIN_DECLS
 
 #define GS_TYPE_MONITOR         (gs_monitor_get_type ())

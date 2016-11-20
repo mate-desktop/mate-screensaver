@@ -23,6 +23,8 @@
 #ifndef __GS_WATCHER_H
 #define __GS_WATCHER_H
 
+#include <glib.h>
+
 G_BEGIN_DECLS
 
 #define GS_TYPE_WATCHER         (gs_watcher_get_type ())

@@ -207,11 +207,7 @@ copy_theme_dialog_init (CopyThemeDialog *dlg)
 	                                4);
 	gtk_box_set_spacing (GTK_BOX (dialog_vbox), 4);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-#else
-	vbox = gtk_vbox_new (FALSE, 6);
-#endif
 	gtk_container_set_border_width (GTK_CONTAINER (vbox), 6);
 	gtk_box_pack_start (GTK_BOX (dialog_vbox), vbox, TRUE, TRUE, 0);
 
@@ -220,20 +216,11 @@ copy_theme_dialog_init (CopyThemeDialog *dlg)
 	gtk_label_set_markup (GTK_LABEL (dlg->priv->status), markup);
 	g_free (markup);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_halign (dlg->priv->status, GTK_ALIGN_START);
 	gtk_widget_set_valign (dlg->priv->status, GTK_ALIGN_START);
-#else
-	gtk_misc_set_alignment (GTK_MISC (dlg->priv->status), 0.0, 0.0);
-#endif
-
 	gtk_box_pack_start (GTK_BOX (vbox), dlg->priv->status, FALSE, FALSE, 0);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-#else
-	hbox = gtk_hbox_new (FALSE, 0);
-#endif
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, 0);
 
 	table = gtk_table_new (2, 2, FALSE);
@@ -251,11 +238,7 @@ copy_theme_dialog_init (CopyThemeDialog *dlg)
 
 	gtk_box_pack_start (GTK_BOX (vbox), GTK_WIDGET (table), FALSE, FALSE, 0);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	progress_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-#else
-	progress_vbox = gtk_vbox_new (FALSE, 0);
-#endif
 	gtk_box_set_homogeneous (GTK_BOX (progress_vbox), TRUE);
 	gtk_box_pack_start (GTK_BOX (vbox), progress_vbox, FALSE, FALSE, 0);
 
@@ -266,11 +249,7 @@ copy_theme_dialog_init (CopyThemeDialog *dlg)
 	dlg->priv->current = gtk_label_new ("");
 	gtk_box_pack_start (GTK_BOX (progress_vbox),
 	                    dlg->priv->current, FALSE, FALSE, 0);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_halign (dlg->priv->current, GTK_ALIGN_START);
-#else
-	gtk_misc_set_alignment (GTK_MISC (dlg->priv->current), 0.0, 0.5);
-#endif
 
 	gtk_dialog_add_button (GTK_DIALOG (dlg),
 	                       GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
@@ -535,12 +514,7 @@ eel_gtk_label_make_bold (GtkLabel *label)
 	 * theme or user prefs, since the font desc only has the
 	 * weight flag turned on.
 	 */
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_override_font (GTK_WIDGET (label), font_desc);
-#else
-	gtk_widget_modify_font (GTK_WIDGET (label), font_desc);
-#endif
-
 	pango_font_description_free (font_desc);
 }
 
@@ -553,12 +527,9 @@ create_titled_label (GtkTable   *table,
 {
 	*title_widget = gtk_label_new ("");
 	eel_gtk_label_make_bold (GTK_LABEL (*title_widget));
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_halign (*title_widget, GTK_ALIGN_END);
 	gtk_widget_set_valign (*title_widget, GTK_ALIGN_START);
-#else
-	gtk_misc_set_alignment (GTK_MISC (*title_widget), 1, 0);
-#endif
+
 	gtk_table_attach (table, *title_widget,
 	                  0, 1,
 	                  row, row + 1,
@@ -574,10 +545,6 @@ create_titled_label (GtkTable   *table,
 	                  GTK_FILL | GTK_EXPAND, 0,
 	                  0, 0);
 	gtk_widget_show (*label_text_widget);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gtk_widget_set_halign (*label_text_widget, GTK_ALIGN_START);
 	gtk_widget_set_valign (*label_text_widget, GTK_ALIGN_START);
-#else
-	gtk_misc_set_alignment (GTK_MISC (*label_text_widget), 0, 0);
-#endif
 }

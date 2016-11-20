@@ -14,6 +14,8 @@
 #ifndef __GS_SETUID_H
 #define __GS_SETUID_H
 
+#include <glib.h>
+
 G_BEGIN_DECLS
 
 gboolean hack_uid (char **nolock_reason,

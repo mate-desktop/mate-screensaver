@@ -428,10 +428,6 @@ results_pull_func (GSTESlideshow *show)
 {
 	OpResult *result;
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	GDK_THREADS_ENTER ();
-#endif
-
 	g_async_queue_lock (show->priv->results_q);
 
 	result = g_async_queue_try_pop_unlocked (show->priv->results_q);
@@ -448,10 +444,6 @@ results_pull_func (GSTESlideshow *show)
 	show->priv->results_pull_id = 0;
 
 	g_async_queue_unlock (show->priv->results_q);
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	GDK_THREADS_LEAVE ();
-#endif
 
 	return FALSE;
 }
@@ -689,9 +681,6 @@ op_load_image (GSTESlideshow *show,
 	                                window_width,
 	                                window_height);
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	GDK_THREADS_ENTER ();
-#endif
 	g_async_queue_lock (show->priv->results_q);
 	g_async_queue_push_unlocked (show->priv->results_q, op_result);
 
@@ -703,9 +692,6 @@ op_load_image (GSTESlideshow *show,
 	}
 
 	g_async_queue_unlock (show->priv->results_q);
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	GDK_THREADS_LEAVE ();
-#endif
 }
 
 static gpointer
@@ -874,36 +860,20 @@ gste_slideshow_real_show (GtkWidget *widget)
 }
 
 static gboolean
-#if GTK_CHECK_VERSION (3, 0, 0)
 gste_slideshow_real_draw (GtkWidget *widget,
                           cairo_t   *cr)
-#else
-gste_slideshow_real_expose (GtkWidget      *widget,
-                            GdkEventExpose *event)
-#endif
 {
 	GSTESlideshow *show = GSTE_SLIDESHOW (widget);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	if (GTK_WIDGET_CLASS (parent_class)->draw) {
 		GTK_WIDGET_CLASS (parent_class)->draw (widget, cr);
 	}
-#else
-	if (GTK_WIDGET_CLASS (parent_class)->expose_event) {
-		GTK_WIDGET_CLASS (parent_class)->expose_event (widget, event);
-	}
 
-	cairo_t *cr = gdk_cairo_create (event->window);
-#endif
 	cairo_set_source_surface (cr, show->priv->surf, 0, 0);
 
 	gs_theme_engine_profile_start ("paint surface to window");
 	cairo_paint (cr);
 	gs_theme_engine_profile_end ("paint surface to window");
-
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	cairo_destroy (cr);
-#endif
 
 	return TRUE;
 }
@@ -961,11 +931,7 @@ gste_slideshow_class_init (GSTESlideshowClass *klass)
 	object_class->set_property = gste_slideshow_set_property;
 
 	widget_class->show = gste_slideshow_real_show;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	widget_class->draw = gste_slideshow_real_draw;
-#else
-	widget_class->expose_event = gste_slideshow_real_expose;
-#endif
 	widget_class->configure_event = gste_slideshow_real_configure;
 
 	g_type_class_add_private (klass, sizeof (GSTESlideshowPrivate));
@@ -1000,7 +966,6 @@ gste_slideshow_class_init (GSTESlideshowClass *klass)
 	                                         G_PARAM_READWRITE));
 }
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 static void
 set_visual (GtkWidget *widget)
 {
@@ -1016,23 +981,6 @@ set_visual (GtkWidget *widget)
 
 	gtk_widget_set_visual (widget, visual);
 }
-#else
-static void
-set_colormap (GtkWidget *widget)
-{
-	GdkScreen   *screen;
-	GdkColormap *colormap;
-
-	screen = gtk_widget_get_screen (widget);
-	colormap = gdk_screen_get_rgba_colormap (screen);
-	if (colormap == NULL)
-	{
-		colormap = gdk_screen_get_rgb_colormap (screen);
-	}
-
-	gtk_widget_set_colormap (widget, colormap);
-}
-#endif
 
 static void
 gste_slideshow_init (GSTESlideshow *show)
@@ -1046,11 +994,7 @@ gste_slideshow_init (GSTESlideshow *show)
 
 	g_thread_new ("loadthread", (GThreadFunc)load_threadfunc, show->priv->op_q);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	set_visual (GTK_WIDGET (show));
-#else
-	set_colormap (GTK_WIDGET (show));
-#endif
 }
 
 static void

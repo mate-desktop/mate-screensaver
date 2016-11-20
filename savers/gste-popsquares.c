@@ -51,13 +51,8 @@ struct GSTEPopsquaresPrivate
 	int        ncolors;
 	int        subdivision;
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GdkRGBA   *colors;
-#else
-	GdkColor  *colors;
-#endif
 	square    *squares;
-
 };
 
 #define GSTE_POPSQUARES_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSTE_TYPE_POPSQUARES, GSTEPopsquaresPrivate))
@@ -219,28 +214,15 @@ rgb_to_hsv (double  r,
 }
 
 static void
-#if GTK_CHECK_VERSION (3, 0, 0)
 make_color_ramp (int          h1,
-#else
-make_color_ramp (GdkColormap *colormap,
-                 int          h1,
-#endif
                  double       s1,
                  double       v1,
                  int          h2,
                  double       s2,
                  double       v2,
-#if GTK_CHECK_VERSION (3, 0, 0)
                  GdkRGBA     *colors,
                  int          n_colors,
                  gboolean     closed)
-#else
-                 GdkColor    *colors,
-                 int          n_colors,
-                 gboolean     closed,
-                 gboolean     allocate,
-                 gboolean     writable)
-#endif
 {
 	double   dh, ds, dv;		/* deltas */
 	int      i;
@@ -273,33 +255,13 @@ make_color_ramp (GdkColormap *colormap,
 
 	for (i = 0; i < ncolors; i++)
 	{
-#if !GTK_CHECK_VERSION (3, 0, 0)
-		double red, green, blue;
-
-#endif
 		hsv_to_rgb ((int) (h1 + (i * dh)),
 		            (s1 + (i * ds)),
 		            (v1 + (i * dv)),
-#if GTK_CHECK_VERSION (3, 0, 0)
 		            &colors [i].red,
 		            &colors [i].green,
 		            &colors [i].blue);
 		colors [i].alpha = 1.0;
-#else
-		            &red, &green, &blue);
-
-		colors [i].red = (guint16) (red * 65535.0);
-		colors [i].green = (guint16) (green * 65535.0);
-		colors [i].blue = (guint16) (blue * 65535.0);
-
-		if (allocate)
-		{
-			gdk_colormap_alloc_color (colormap,
-			                          &colors [i],
-			                          writable,
-			                          TRUE);
-		}
-#endif
 	}
 
 	if (closed)
@@ -328,7 +290,6 @@ randomize_square_colors (square *squares,
 	}
 }
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 static void
 set_colors (GtkWidget *widget,
             GdkRGBA   *fg,
@@ -357,31 +318,6 @@ set_colors (GtkWidget *widget,
 	fg->blue  = bg->blue * 0.7;
 	fg->alpha = bg->alpha;
 }
-#else
-static void
-set_colors (GtkWidget *widget,
-            GdkColor  *fg,
-            GdkColor  *bg)
-{
-	GtkWidget *style_widget;
-	GtkStyle  *style;
-	GdkColor   color;
-
-	style_widget = gtk_invisible_new ();
-	style = gtk_widget_get_style (style_widget);
-
-	color = style->dark [GTK_STATE_SELECTED];
-	fg->red   = color.red;
-	fg->green = color.green;
-	fg->blue  = color.blue;
-	color = style->bg [GTK_STATE_SELECTED];
-	bg->red   = color.red;
-	bg->green = color.green;
-	bg->blue  = color.blue;
-
-	gtk_widget_destroy (style_widget);
-}
-#endif
 
 static void
 gste_popsquares_set_property (GObject            *object,
@@ -466,13 +402,8 @@ setup_colors (GSTEPopsquares *pop)
 	double    s1, v1, s2, v2 = 0;
 	int       h1, h2 = 0;
 	int       nsquares;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GdkRGBA   fg;
 	GdkRGBA   bg;
-#else
-	GdkColor  fg;
-	GdkColor  bg;
-#endif
 	GdkWindow *window;
 
 	window = gs_theme_engine_get_window (GS_THEME_ENGINE (pop));
@@ -488,13 +419,8 @@ setup_colors (GSTEPopsquares *pop)
 	{
 		g_free (pop->priv->colors);
 	}
-#if GTK_CHECK_VERSION (3, 0, 0)
 	pop->priv->colors = g_new0 (GdkRGBA, pop->priv->ncolors);
-#else
-	pop->priv->colors = g_new0 (GdkColor, pop->priv->ncolors);
-#endif
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	rgb_to_hsv (fg.red, fg.green, fg.blue, &h1, &s1, &v1);
 	rgb_to_hsv (bg.red, bg.green, bg.blue, &h2, &s2, &v2);
 
@@ -503,25 +429,6 @@ setup_colors (GSTEPopsquares *pop)
 	                 pop->priv->colors,
 	                 pop->priv->ncolors,
 	                 TRUE);
-#else
-	rgb_to_hsv ((double) (fg.red / 65535.0),
-	            (double) (fg.green / 65535.0),
-	            (double) (fg.blue / 65535.0),
-	            &h1, &s1, &v1);
-	rgb_to_hsv ((double) (bg.red / 65535.0),
-	            (double) (bg.green / 65535.0),
-	            (double) (bg.blue / 65535.0),
-	            &h2, &s2, &v2);
-
-	make_color_ramp (gtk_widget_get_colormap (GTK_WIDGET (pop)),
-	                 h1, s1, v1,
-	                 h2, s2, v2,
-	                 pop->priv->colors,
-	                 pop->priv->ncolors,
-	                 TRUE,
-	                 TRUE,
-	                 FALSE);
-#endif
 
 	nsquares = pop->priv->subdivision * pop->priv->subdivision;
 
@@ -544,30 +451,15 @@ gste_popsquares_real_show (GtkWidget *widget)
 }
 
 static gboolean
-#if GTK_CHECK_VERSION (3, 0, 0)
 gste_popsquares_real_draw (GtkWidget *widget,
                            cairo_t   *cr)
 {
 	if (GTK_WIDGET_CLASS (parent_class)->draw) {
 		GTK_WIDGET_CLASS (parent_class)->draw (widget, cr);
 	}
-#else
-gste_popsquares_real_expose (GtkWidget      *widget,
-                             GdkEventExpose *event)
-{
-	cairo_t *cr;
-
-	if (GTK_WIDGET_CLASS (parent_class)->expose_event) {
-		GTK_WIDGET_CLASS (parent_class)->expose_event (widget, event);
-	}
-	cr = gdk_cairo_create (event->window);
-#endif
 
 	draw_frame (GSTE_POPSQUARES (widget), cr);
 
-#if !GTK_CHECK_VERSION (3, 0, 0)
-	cairo_destroy (cr);
-#endif
 	return TRUE;
 }
 
@@ -608,11 +500,7 @@ gste_popsquares_class_init (GSTEPopsquaresClass *klass)
 	object_class->set_property = gste_popsquares_set_property;
 
 	widget_class->show = gste_popsquares_real_show;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	widget_class->draw = gste_popsquares_real_draw;
-#else
-	widget_class->expose_event = gste_popsquares_real_expose;
-#endif
 	widget_class->configure_event = gste_popsquares_real_configure;
 
 	g_type_class_add_private (klass, sizeof (GSTEPopsquaresPrivate));
@@ -652,11 +540,7 @@ draw_frame (GSTEPopsquares *pop,
 		{
 			square *s = (square *) &pop->priv->squares [gw * y + x];
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 			gdk_cairo_set_source_rgba (cr, &(pop->priv->colors [s->color]));
-#else
-			gdk_cairo_set_source_color (cr, &(pop->priv->colors [s->color]));
-#endif
 			cairo_rectangle (cr, s->x, s->y,
 			                 border ? s->w - border : s->w,
 			                 border ? s->h - border : s->h);

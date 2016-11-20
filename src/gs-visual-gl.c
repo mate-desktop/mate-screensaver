@@ -28,7 +28,6 @@
 
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
-#include <gtk/gtk.h>
 
 #ifdef HAVE_LIBGL
 #include <GL/gl.h>
@@ -104,16 +103,9 @@ gs_visual_gl_get_best_for_screen (GdkScreen *screen)
 		}
 	}
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gdk_error_trap_pop_ignored ();
 #else
-	gdk_display_sync (display);
-	gdk_error_trap_pop ();
-#endif
-
-#else
 	visual = NULL;
-
 #endif /* HAVE_LIBGL */
 
 	return visual;

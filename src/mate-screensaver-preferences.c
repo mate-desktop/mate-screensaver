@@ -39,9 +39,7 @@
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #include <libmate-desktop/mate-desktop-utils.h>
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 #include "gs-debug.h"
-#endif
 
 #include "copy-theme-dialog.h"
 
@@ -301,17 +299,10 @@ config_set_lock (gboolean lock)
 static void
 preview_clear (GtkWidget *widget)
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GdkRGBA black = { 0.0, 0.0, 0.0, 1.0 };
 
 	gdk_window_set_background_rgba (gtk_widget_get_window (widget), &black);
 	gtk_widget_queue_draw (widget);
-#else
-	GdkColor black = { 0, 0x0000, 0x0000, 0x0000 };
-
-	gtk_widget_modify_bg (widget, GTK_STATE_NORMAL, &black);
-	gdk_window_clear (gtk_widget_get_window (widget));
-#endif
 }
 
 static void
@@ -1215,12 +1206,7 @@ constrain_list_size (GtkWidget      *widget,
 	/* constrain height to be the tree height up to a max */
 	max_height = (gdk_screen_get_height (gtk_widget_get_screen (widget))) / 4;
 
-#if GTK_CHECK_VERSION(3, 0, 0)
 	gtk_widget_get_preferred_size (to_size, &req, NULL);
-#else
-	gtk_widget_size_request (to_size, &req);
-#endif
-
 	allocation->height = MIN (req.height, max_height);
 }
 
@@ -1274,58 +1260,6 @@ setup_for_root_user (void)
 	gtk_widget_show (label);
 }
 
-static GdkVisual *
-get_best_visual (void)
-{
-	char         *command;
-	char         *std_output;
-	int           exit_status;
-	GError       *error;
-	unsigned long v;
-	char          c;
-	GdkVisual    *visual;
-	gboolean      res;
-
-	visual = NULL;
-
-	command = g_build_filename (LIBEXECDIR, "mate-screensaver-gl-helper", NULL);
-
-	error = NULL;
-	res = g_spawn_command_line_sync (command,
-	                                 &std_output,
-	                                 NULL,
-	                                 &exit_status,
-	                                 &error);
-
-	if (! res)
-	{
-		g_debug ("Could not run command '%s': %s", command, error->message);
-		g_error_free (error);
-		goto out;
-	}
-
-	if (1 == sscanf (std_output, "0x%lx %c", &v, &c))
-	{
-		if (v != 0)
-		{
-			VisualID      visual_id;
-
-			visual_id = (VisualID) v;
-			visual = gdk_x11_screen_lookup_visual (gdk_screen_get_default (), visual_id);
-
-			g_debug ("Found best visual for GL: 0x%x",
-			         (unsigned int) visual_id);
-		}
-	}
-
-out:
-	g_free (std_output);
-	g_free (command);
-
-	return visual;
-}
-
-#if GTK_CHECK_VERSION (3, 0, 0)
 /* copied from gs-window-x11.c */
 extern char **environ;
 
@@ -1471,41 +1405,6 @@ widget_set_best_visual (GtkWidget *widget)
 		g_object_unref (visual);
 	}
 }
-#else
-static GdkColormap *
-get_best_colormap_for_screen (GdkScreen *screen)
-{
-	GdkColormap *colormap;
-	GdkVisual   *visual;
-
-	g_return_val_if_fail (screen != NULL, NULL);
-
-	visual = get_best_visual ();
-
-	colormap = NULL;
-	if (visual != NULL)
-	{
-		colormap = gdk_colormap_new (visual, FALSE);
-	}
-
-	return colormap;
-}
-
-static void
-widget_set_best_colormap (GtkWidget *widget)
-{
-	GdkColormap *colormap;
-
-	g_return_if_fail (widget != NULL);
-
-	colormap = get_best_colormap_for_screen (gtk_widget_get_screen (widget));
-	if (colormap != NULL)
-	{
-		gtk_widget_set_colormap (widget, colormap);
-		g_object_unref (colormap);
-	}
-}
-#endif
 
 static gboolean
 setup_treeview_idle (gpointer data)
@@ -1612,11 +1511,7 @@ init_capplet (void)
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), treeview);
 
 	gtk_widget_set_no_show_all (root_warning_label, TRUE);
-#if GTK_CHECK_VERSION (3, 0, 0)
 	widget_set_best_visual (preview);
-#else
-	widget_set_best_colormap (preview);
-#endif
 
 	if (! is_program_in_path (GPM_COMMAND))
 	{

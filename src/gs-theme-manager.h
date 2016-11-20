@@ -23,6 +23,8 @@
 #ifndef __GS_THEME_MANAGER_H
 #define __GS_THEME_MANAGER_H
 
+#include <glib.h>
+
 G_BEGIN_DECLS
 
 #define GS_TYPE_THEME_MANAGER         (gs_theme_manager_get_type ())

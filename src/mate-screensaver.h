@@ -23,6 +23,8 @@
 #ifndef __MATE_SCREENSAVER_H
 #define __MATE_SCREENSAVER_H
 
+#include <glib.h>
+
 G_BEGIN_DECLS
 
 void mate_screensaver_quit(void);

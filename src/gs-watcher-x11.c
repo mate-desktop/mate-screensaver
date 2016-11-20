@@ -28,7 +28,6 @@
 #include <errno.h>
 
 #include <string.h>
-#include <gtk/gtk.h>
 #include <gdk/gdkx.h>
 
 #include <dbus/dbus.h>

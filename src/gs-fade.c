@@ -82,20 +82,10 @@ struct GSFadeScreenPrivate
 	/* one per screen also */
 	XF86VidModeGamma    vmg;
 #endif /* HAVE_XF86VMODE_GAMMA */
-#if GTK_CHECK_VERSION(3, 10, 0)
 	gboolean (*fade_setup)           (GSFade *fade);
 	gboolean (*fade_set_alpha_gamma) (GSFade *fade,
 	                                  gdouble alpha);
 	void     (*fade_finish)          (GSFade *fade);
-#else
-	gboolean (*fade_setup)           (GSFade *fade,
-	                                  int     screen);
-	gboolean (*fade_set_alpha_gamma) (GSFade *fade,
-	                                  int     screen,
-	                                  gdouble alpha);
-	void     (*fade_finish)          (GSFade *fade,
-	                                  int     screen);
-#endif
 };
 
 struct GSFadePrivate
@@ -112,13 +102,7 @@ struct GSFadePrivate
 	gdouble          alpha_per_iter;
 	gdouble          current_alpha;
 
-#if GTK_CHECK_VERSION(3, 10, 0)
 	struct GSFadeScreenPrivate screen_priv;
-#else
-	int              num_screens;
-
-	struct GSFadeScreenPrivate *screen_priv;
-#endif
 };
 
 enum
@@ -297,20 +281,12 @@ gs_fade_set_enabled (GSFade  *fade,
 
 #ifdef HAVE_XF86VMODE_GAMMA
 static gboolean
-#if GTK_CHECK_VERSION(3, 10, 0)
 gamma_fade_setup (GSFade *fade)
-#else
-gamma_fade_setup (GSFade *fade, int screen_idx)
-#endif
 {
 	gboolean         res;
 	struct GSFadeScreenPrivate *screen_priv;
 
-#if GTK_CHECK_VERSION(3, 10, 0)
 	screen_priv = &fade->priv->screen_priv;
-#else
-	screen_priv = &fade->priv->screen_priv[screen_idx];
-#endif
 
 	if (screen_priv->info)
 		return TRUE;
@@ -334,11 +310,7 @@ gamma_fade_setup (GSFade *fade, int screen_idx)
 
 
 		res = XF86VidModeGetGammaRampSize (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-#if GTK_CHECK_VERSION(3, 10, 0)
 		                                   gdk_screen_get_number (gdk_screen_get_default ()),
-#else
-		                                   screen_idx,
-#endif
 		                                   &screen_priv->info->size);
 		if (!res || screen_priv->info->size <= 0)
 		{
@@ -357,11 +329,7 @@ gamma_fade_setup (GSFade *fade, int screen_idx)
 		}
 
 		res = XF86VidModeGetGammaRamp (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-#if GTK_CHECK_VERSION(3, 10, 0)
 		                               gdk_screen_get_number (gdk_screen_get_default ()),
-#else
-		                               screen_idx,
-#endif
 		                               screen_priv->info->size,
 		                               screen_priv->info->r,
 		                               screen_priv->info->g,
@@ -381,11 +349,7 @@ test_number:
 		/* only have gamma parameter, not ramps. */
 
 		res = XF86VidModeGetGamma (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-#if GTK_CHECK_VERSION(3, 10, 0)
 		                           gdk_screen_get_number (gdk_screen_get_default ()),
-#else
-		                           screen_idx,
-#endif
 		                           &screen_priv->vmg);
 		if (! res)
 		{
@@ -412,19 +376,11 @@ FAIL:
 #endif /* HAVE_XF86VMODE_GAMMA */
 
 static void
-#if GTK_CHECK_VERSION(3, 10, 0)
 screen_fade_finish (GSFade *fade)
-#else
-screen_fade_finish (GSFade *fade, int screen_idx)
-#endif
 {
 	struct GSFadeScreenPrivate *screen_priv;
 	int i;
-#if GTK_CHECK_VERSION(3, 10, 0)
 	screen_priv = &fade->priv->screen_priv;
-#else
-	screen_priv = &fade->priv->screen_priv[screen_idx];
-#endif
 
 	if (!screen_priv->info)
 		return;
@@ -447,33 +403,20 @@ screen_fade_finish (GSFade *fade, int screen_idx)
 #ifdef HAVE_XF86VMODE_GAMMA
 static gboolean
 gamma_fade_set_alpha_gamma (GSFade *fade,
-#if !GTK_CHECK_VERSION(3, 10, 0)
-                            int screen_idx,
-#endif
                             gdouble alpha)
 {
 	struct GSFadeScreenPrivate *screen_priv;
-#if GTK_CHECK_VERSION(3, 10, 0)
 	int screen_idx = gdk_screen_get_number (gdk_screen_get_default ());
 
 	screen_priv = &fade->priv->screen_priv;
 	xf86_whack_gamma (screen_idx, screen_priv, alpha);
-#else
-
-	screen_priv = &fade->priv->screen_priv[screen_idx];
-	xf86_whack_gamma (screen_idx, screen_priv, alpha);
-#endif
 
 	return TRUE;
 }
 #endif /* HAVE_XF86VMODE_GAMMA */
 
 static void
-#if GTK_CHECK_VERSION(3, 10, 0)
 check_gamma_extension (GSFade *fade)
-#else
-check_gamma_extension (GSFade *fade, int screen_idx)
-#endif
 {
 	struct GSFadeScreenPrivate *screen_priv;
 #ifdef HAVE_XF86VMODE_GAMMA
@@ -484,11 +427,7 @@ check_gamma_extension (GSFade *fade, int screen_idx)
 	gboolean res;
 #endif /* HAVE_XF86VMODE_GAMMA */
 
-#if GTK_CHECK_VERSION(3, 10, 0)
 	screen_priv = &fade->priv->screen_priv;
-#else
-	screen_priv = &fade->priv->screen_priv[screen_idx];
-#endif
 
 #ifdef HAVE_XF86VMODE_GAMMA
 	res = XF86VidModeQueryExtension (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &event, &error);
@@ -526,11 +465,7 @@ fade_none:
 
 /* Xrandr support */
 
-#if GTK_CHECK_VERSION(3, 10, 0)
 static gboolean xrandr_fade_setup (GSFade *fade)
-#else
-static gboolean xrandr_fade_setup (GSFade *fade, int screen_idx)
-#endif
 {
 	struct GSFadeScreenPrivate *screen_priv;
 	MateRRCrtc *crtc;
@@ -539,11 +474,7 @@ static gboolean xrandr_fade_setup (GSFade *fade, int screen_idx)
 	struct GSGammaInfo *info;
 	gboolean res;
 
-#if GTK_CHECK_VERSION(3, 10, 0)
 	screen_priv = &fade->priv->screen_priv;
-#else
-	screen_priv = &fade->priv->screen_priv[screen_idx];
-#endif
 
 	if (screen_priv->info)
 		return TRUE;
@@ -632,9 +563,6 @@ static void xrandr_crtc_whack_gamma (MateRRCrtc *crtc,
 }
 
 static gboolean xrandr_fade_set_alpha_gamma (GSFade *fade,
-#if !GTK_CHECK_VERSION(3, 10, 0)
-        int screen_idx,
-#endif
         gdouble alpha)
 {
 	struct GSFadeScreenPrivate *screen_priv;
@@ -642,11 +570,7 @@ static gboolean xrandr_fade_set_alpha_gamma (GSFade *fade,
 	MateRRCrtc **crtcs;
 	int i;
 
-#if GTK_CHECK_VERSION(3, 10, 0)
 	screen_priv = &fade->priv->screen_priv;
-#else
-	screen_priv = &fade->priv->screen_priv[screen_idx];
-#endif
 
 	if (!screen_priv->info)
 		return FALSE;
@@ -665,25 +589,13 @@ static gboolean xrandr_fade_set_alpha_gamma (GSFade *fade,
 }
 
 static void
-#if GTK_CHECK_VERSION(3, 10, 0)
 check_randr_extension (GSFade *fade)
-#else
-check_randr_extension (GSFade *fade, int screen_idx)
-#endif
 {
 	GdkDisplay *display = gdk_display_get_default ();
-#if GTK_CHECK_VERSION(3, 10, 0)
 	GdkScreen *screen = gdk_display_get_default_screen (display);
-#else
-	GdkScreen *screen = gdk_display_get_screen (display, screen_idx);
-#endif
 	struct GSFadeScreenPrivate *screen_priv;
 
-#if GTK_CHECK_VERSION(3, 10, 0)
 	screen_priv = &fade->priv->screen_priv;
-#else
-	screen_priv = &fade->priv->screen_priv[screen_idx];
-#endif
 
 	screen_priv->rrscreen = mate_rr_screen_new (screen,
 	                        NULL);
@@ -704,7 +616,6 @@ gs_fade_set_alpha (GSFade *fade,
                    gdouble alpha)
 {
 	gboolean ret = FALSE;
-#if GTK_CHECK_VERSION (3, 10, 0)
 
 	switch (fade->priv->screen_priv.fade_type)
 	{
@@ -721,28 +632,7 @@ gs_fade_set_alpha (GSFade *fade,
 		ret = FALSE;
 		break;
 	}
-#else
-	int i;
 
-	for (i = 0; i < fade->priv->num_screens; i++)
-	{
-		switch (fade->priv->screen_priv[i].fade_type)
-		{
-		case FADE_TYPE_GAMMA_RAMP:
-		case FADE_TYPE_GAMMA_NUMBER:
-		case FADE_TYPE_XRANDR:
-			ret = fade->priv->screen_priv[i].fade_set_alpha_gamma (fade, i, alpha);
-			break;
-		case FADE_TYPE_NONE:
-			ret = FALSE;
-			break;
-		default:
-			g_warning ("Unknown fade type");
-			ret = FALSE;
-			break;
-		}
-	}
-#endif
 	return ret;
 }
 
@@ -835,33 +725,16 @@ gs_fade_start (GSFade *fade,
 {
 	guint steps_per_sec = 60;
 	guint msecs_per_step;
-#if !GTK_CHECK_VERSION (3, 10, 0)
-	struct GSFadeScreenPrivate *screen_priv;
-	int i;
-#endif
 	gboolean active_fade, res;
 
 	g_return_if_fail (GS_IS_FADE (fade));
 
-#if GTK_CHECK_VERSION (3, 10, 0)
 	if (fade->priv->screen_priv.fade_type != FADE_TYPE_NONE)
 	{
 		res = fade->priv->screen_priv.fade_setup (fade);
 		if (res == FALSE)
 			return;
 	}
-#else
-	for (i = 0; i < fade->priv->num_screens; i++)
-	{
-		screen_priv = &fade->priv->screen_priv[i];
-		if (screen_priv->fade_type != FADE_TYPE_NONE)
-		{
-			res = screen_priv->fade_setup (fade, i);
-			if (res == FALSE)
-				return;
-		}
-	}
-#endif
 
 	if (fade->priv->timer_id > 0)
 	{
@@ -873,17 +746,8 @@ gs_fade_start (GSFade *fade,
 	gs_fade_set_timeout (fade, timeout);
 
 	active_fade = FALSE;
-#if GTK_CHECK_VERSION (3, 10, 0)
 	if (fade->priv->screen_priv.fade_type != FADE_TYPE_NONE)
 		active_fade = TRUE;
-#else
-	for (i = 0; i < fade->priv->num_screens; i++)
-	{
-		screen_priv = &fade->priv->screen_priv[i];
-		if (screen_priv->fade_type != FADE_TYPE_NONE)
-			active_fade = TRUE;
-	}
-#endif
 
 	if (active_fade)
 	{
@@ -992,9 +856,6 @@ gs_fade_sync (GSFade        *fade,
 void
 gs_fade_reset (GSFade *fade)
 {
-#if !GTK_CHECK_VERSION(3, 10, 0)
-	int i;
-#endif
 	g_return_if_fail (GS_IS_FADE (fade));
 
 	gs_debug ("Resetting fade");
@@ -1008,14 +869,8 @@ gs_fade_reset (GSFade *fade)
 
 	gs_fade_set_alpha (fade, fade->priv->current_alpha);
 
-#if GTK_CHECK_VERSION (3, 10, 0)
 	if (fade->priv->screen_priv.fade_type != FADE_TYPE_NONE)
 		fade->priv->screen_priv.fade_finish (fade);
-#else
-	for (i = 0; i < fade->priv->num_screens; i++)
-		if (fade->priv->screen_priv[i].fade_type != FADE_TYPE_NONE)
-			fade->priv->screen_priv[i].fade_finish (fade, i);
-#endif
 }
 
 static void
@@ -1042,42 +897,21 @@ gs_fade_class_init (GSFadeClass *klass)
 static void
 gs_fade_init (GSFade *fade)
 {
-#if !GTK_CHECK_VERSION (3, 10, 0)
-	int i;
-#endif
-
 	fade->priv = GS_FADE_GET_PRIVATE (fade);
 
 	fade->priv->timeout = 1000;
 	fade->priv->current_alpha = 1.0;
 
-#if GTK_CHECK_VERSION (3, 10, 0)
 	check_randr_extension (fade);
 	if (!fade->priv->screen_priv.fade_type)
 		check_gamma_extension (fade);
 	gs_debug ("Fade type: %d", fade->priv->screen_priv.fade_type);
-#else
-	fade->priv->num_screens = gdk_display_get_n_screens (gdk_display_get_default ());
-
-	fade->priv->screen_priv = g_new0 (struct GSFadeScreenPrivate, fade->priv->num_screens);
-
-	for (i = 0; i < fade->priv->num_screens; i++)
-	{
-		check_randr_extension (fade, i);
-		if (!fade->priv->screen_priv[i].fade_type)
-			check_gamma_extension (fade, i);
-		gs_debug ("Fade type: %d", fade->priv->screen_priv[i].fade_type);
-	}
-#endif
 }
 
 static void
 gs_fade_finalize (GObject *object)
 {
 	GSFade *fade;
-#if !GTK_CHECK_VERSION (3, 10, 0)
-	int i;
-#endif
 
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (GS_IS_FADE (object));
@@ -1086,29 +920,11 @@ gs_fade_finalize (GObject *object)
 
 	g_return_if_fail (fade->priv != NULL);
 
-#if GTK_CHECK_VERSION (3, 10, 0)
 	fade->priv->screen_priv.fade_finish(fade);
 
 	if (fade->priv->screen_priv.rrscreen)
 		g_object_unref (fade->priv->screen_priv.rrscreen);
 	fade->priv->screen_priv.rrscreen = NULL;
-#else
-	for (i = 0; i < fade->priv->num_screens; i++)
-		fade->priv->screen_priv[i].fade_finish(fade, i);
-
-	if (fade->priv->screen_priv)
-	{
-		for (i = 0; i < fade->priv->num_screens; i++)
-		{
-			if (!fade->priv->screen_priv[i].rrscreen)
-				continue;
-			g_object_unref (fade->priv->screen_priv[i].rrscreen);
-		}
-
-		g_free (fade->priv->screen_priv);
-		fade->priv->screen_priv = NULL;
-	}
-#endif
 
 	G_OBJECT_CLASS (gs_fade_parent_class)->finalize (object);
 }

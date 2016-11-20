@@ -125,11 +125,7 @@ xorg_lock_smasher_set_active (GSGrab  *grab,
 	status = XF86MiscSetGrabKeysState (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), active);
 
 	gdk_display_sync (gdk_display_get_default ());
-#if GTK_CHECK_VERSION (3, 0, 0)
 	error = gdk_error_trap_pop ();
-#else
-	gdk_error_trap_pop ();
-#endif
 
 	if (active && status == MiscExtGrabStateAlready)
 	{
@@ -137,7 +133,6 @@ xorg_lock_smasher_set_active (GSGrab  *grab,
 		status = MiscExtGrabStateSuccess;
 	}
 
-#if GTK_CHECK_VERSION (3, 0, 0)
         if (error == Success) {
                 gs_debug ("XF86MiscSetGrabKeysState(%s) returned %s\n",
                           active ? "on" : "off",
@@ -149,14 +144,6 @@ xorg_lock_smasher_set_active (GSGrab  *grab,
                 gs_debug ("XF86MiscSetGrabKeysState(%s) failed with error code %d\n",
                           active ? "on" : "off", error);
         }
-#else
-	gs_debug ("XF86MiscSetGrabKeysState(%s) returned %s\n",
-	          active ? "on" : "off",
-	          (status == MiscExtGrabStateSuccess ? "MiscExtGrabStateSuccess" :
-	           status == MiscExtGrabStateLocked  ? "MiscExtGrabStateLocked"  :
-	           status == MiscExtGrabStateAlready ? "MiscExtGrabStateAlready" :
-	           "unknown value"));
-#endif
 }
 #else
 static void
@@ -244,11 +231,7 @@ gs_grab_get_mouse (GSGrab    *grab,
 		grab->priv->mouse_hide_cursor = hide_cursor;
 	}
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	g_object_unref (G_OBJECT (cursor));
-#else
-	gdk_cursor_unref (cursor);
-#endif
 
 	return status;
 }
@@ -451,12 +434,7 @@ gs_grab_nuke_focus (void)
 	XGetInputFocus (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &focus, &rev);
 	XSetInputFocus (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), None, RevertToNone, CurrentTime);
 
-#if GTK_CHECK_VERSION (3, 0, 0)
 	gdk_error_trap_pop_ignored ();
-#else
-	gdk_display_sync (gdk_display_get_default ());
-	gdk_error_trap_pop ();
-#endif
 }
 
 void
@@ -573,24 +551,18 @@ gs_grab_grab_root (GSGrab  *grab,
 	GdkDisplay *display;
 	GdkWindow  *root;
 	GdkScreen  *screen;
-#if GTK_CHECK_VERSION (3, 0, 0)
 	GdkDevice  *device;
-#endif
 	gboolean    res;
 
 	gs_debug ("Grabbing the root window");
 
 	display = gdk_display_get_default ();
-#if GTK_CHECK_VERSION (3, 0, 0)
 #if GTK_CHECK_VERSION (3, 20, 0)
 	device = gdk_seat_get_pointer (gdk_display_get_default_seat (display));
 #else
 	device = gdk_device_manager_get_client_pointer (gdk_display_get_device_manager (display));
 #endif
 	gdk_device_get_position (device, &screen, NULL, NULL);
-#else
-	gdk_display_get_pointer (display, &screen, NULL, NULL, NULL);
-#endif
 	root = gdk_screen_get_root_window (screen);
 
 	res = gs_grab_grab_window (grab, root, screen, hide_cursor);
