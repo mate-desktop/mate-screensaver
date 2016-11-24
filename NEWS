@@ -2,6 +2,12 @@
 Version 1.17.0
 ===============
 
+Translations update
+move to GTK+3 (>= 3.14), drop GTK+2 code and --with-gtk build option
+build: require libmate-menu 1.10
+Also look for gdm-binary process
+GTK+-3 gs-grab-x11: use correct GTK_VERSION_CHECK
+
 ===============
 Version 1.16.0
 ===============
