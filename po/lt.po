@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-16 17:00+0300\n"
-"PO-Revision-Date: 2016-06-24 12:36+0000\n"
+"PO-Revision-Date: 2016-09-19 11:25+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/mate/MATE/language/lt/)\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "_Užrakinti ekraną, kai aktyvuota ekrano užsklanda"
 
 #: ../data/mate-screensaver-preferences.ui.h:8
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>Dėmesio: ekranas root naudotojui bus neužrakintas.</b>"
+msgstr "<b>Dėmesio: ekranas root naudotojui nebus užrakintas.</b>"
 
 #: ../data/mate-screensaver-preferences.ui.h:9
 msgid "Screensaver Preview"
@@ -93,7 +93,7 @@ msgstr "_Palikti žinutę"
 
 #: ../data/lock-dialog-default.ui.h:2
 msgid "_Switch User"
-msgstr "_Keisti naudotoją"
+msgstr "_Perjungti naudotoją"
 
 #: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
@@ -711,11 +711,11 @@ msgstr "Baigėsi laikas."
 
 #: ../src/gs-lock-plug.c:441
 msgid "You have the Caps Lock key on."
-msgstr "Įjungtas Jūsų Caps Lock klavišas."
+msgstr "Įjungtas jūsų Caps Lock klavišas."
 
 #: ../src/gs-lock-plug.c:1772
 msgid "S_witch User..."
-msgstr "_Pakeisti naudotoją..."
+msgstr "_Perjungti naudotoją..."
 
 #: ../src/gs-lock-plug.c:1781
 msgid "Log _Out"

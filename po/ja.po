@@ -4,7 +4,7 @@
 # 
 # Translators:
 # ABE Tsunehiko, 2014-2015
-# Ikuru Kanum <kanumaiku@gmail.com>, 2015
+# Ikuru K <kanumaiku@gmail.com>, 2015
 # Satoru SATOH <ss@gnome.gr.jp>, 2006
 # Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2009
 msgid ""

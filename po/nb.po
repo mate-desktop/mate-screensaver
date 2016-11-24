@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-16 17:00+0300\n"
-"PO-Revision-Date: 2016-03-25 19:59+0000\n"
+"PO-Revision-Date: 2016-11-19 14:44+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/mate/MATE/language/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +43,7 @@ msgstr "_Forhåndsvis"
 
 #: ../data/mate-screensaver-preferences.ui.h:4
 msgid "_Screensaver theme:"
-msgstr "Tema for _skjermsparer:"
+msgstr "Draktvalg for _skjermsparer:"
 
 #: ../data/mate-screensaver-preferences.ui.h:5
 msgid "Regard the computer as _idle after:"
@@ -76,7 +76,7 @@ msgstr "Skjermsparere"
 #: ../data/mate-screensaver.directory.in.h:2
 #: ../data/org.mate.screensaver.gschema.xml.in.h:7
 msgid "Screensaver themes"
-msgstr "Tema for skjermsparer"
+msgstr "Drakt for skjermsparer"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -138,7 +138,7 @@ msgid ""
 "screensaver using only one theme on activation (specified in \"themes\" "
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
-msgstr "Utvalgsmodus som brukes av skjermspareren. Kan være «blank-only» for å aktivere skjermspareren uten å bruke et tema, «single» for å aktivere skjermspareren med kun et tema (oppgitt i nøkkelen «themes»), og «random» for å aktivere skjermspareren med et tilfeldig tema."
+msgstr "Utvalgsmodus som brukes av skjermspareren. Kan være «blank-only» for å aktivere skjermspareren uten å bruke en drakt, «single» for å aktivere skjermspareren med kun et tema (oppgitt i nøkkelen «themes»), og «random» for å aktivere skjermspareren med et tilfeldig tema."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -146,7 +146,7 @@ msgid ""
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
-msgstr "Denne nøkkelen angir listen over drakter bruk som skjermsparer. Den ignoreres når \"mode\" nøkkelen er \"blank-only\", den bør gi draktnavn når \"mode\" er \"single\" og bør gi en liste over drakter når \"mode\" er \"random\"."
+msgstr "Denne nøkkelen angir listen over drakter til bruk som skjermsparer. Den ignoreres når \"mode\" nøkkelen er \"blank-only\", den bør gi draktnavn når \"mode\" er \"single\" og bør gi en liste over drakter når \"mode\" er \"random\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -197,7 +197,7 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr "Kommando som skal kjøres hvis nøkkelen «embedded_keyboard_enabled» er satt til TRUE. Denne kommandoen må implementere et grensesnitt basert på XEMBED og skrive ut en XID for vinduet på standard utdatakanal."
+msgstr "Kommando som skal kjøres hvis nøkkelen «embedded_keyboard_enabled» er satt til TRUE. Denne kommandoen må implementere et grensesnitt basert på XEMBED og skrive ut en XID for vinduet på forvalgt utdatakanal."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
@@ -344,7 +344,7 @@ msgstr "Du må oppgi ett bilde. Se --help for bruksinformasjon.\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
-msgstr "Lokasjon bilder skal hentes fra"
+msgstr "Plassen bilder skal hentes fra"
 
 #: ../savers/slideshow.c:55
 msgid "PATH"
@@ -360,7 +360,7 @@ msgstr "«#rrggbb»"
 
 #: ../savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
-msgstr "Ikke hent bilder i tilfeldig rekkefølge fra lokasjon"
+msgstr "Ikke hent bilder i tilfeldig rekkefølge fra plassering"
 
 #: ../savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"
@@ -380,16 +380,16 @@ msgstr "Til:"
 
 #: ../src/copy-theme-dialog.c:271
 msgid "Copying themes"
-msgstr "Kopierer tema"
+msgstr "Kopierer drakter"
 
 #: ../src/copy-theme-dialog.c:314
 msgid "Invalid screensaver theme"
-msgstr "Ugyldig tema for skjermsparer"
+msgstr "Ugyldig draktvalg for skjermsparer"
 
 #: ../src/copy-theme-dialog.c:317
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
-msgstr "%s ser ikke ut til å være et gyldig tema for skjermspareren."
+msgstr "%s ser ikke ut til å være en gyldig drakt for skjermspareren."
 
 #: ../src/copy-theme-dialog.c:497
 #, c-format
@@ -529,7 +529,7 @@ msgstr "Du må endre ditt passord nå (bestemt av administrator)"
 
 #: ../src/mate-screensaver-dialog.c:174
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Din konto har utgått; vennligst kontakt systemadministrator"
+msgstr "Din konto har utgått; kontakt systemadministrator"
 
 #: ../src/mate-screensaver-dialog.c:175
 msgid "No password supplied"
@@ -647,7 +647,7 @@ msgstr "Kunne ikke laste hovedbrukergrensesnittet"
 
 #: ../src/mate-screensaver-preferences.c:1580
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "Vennligst se til at skjermspareren er skikkelig installert"
+msgstr "Se til at skjermspareren er skikkelig installert"
 
 #: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"

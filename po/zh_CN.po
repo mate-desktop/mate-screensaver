@@ -5,7 +5,7 @@
 # Translators:
 # Funda Wang <fundawang@linux.net.cn>, 2005
 # liushuyu011 <liushuyu011@gmail.com>, 2016
-# Wylmer Wang <wantinghard@gmail.com>, 2013-2014
+# Wylmer Wang, 2013-2014
 # Yang Zhang <zyangmath@gmail.com>, 2009
 # Mingcong Bai <jeffbai@aosc.xyz>, 2015
 msgid ""
