@@ -1054,7 +1054,7 @@ gs_manager_init (GSManager *manager)
 					  G_CALLBACK (on_bg_changed),
 					  manager);
 
-	mate_bg_load_from_system_preferences (manager->priv->bg);
+	mate_bg_load_from_preferences (manager->priv->bg);
 }
 
 static void
@@ -1269,6 +1269,8 @@ apply_background_to_window (GSManager *manager,
 	GdkScreen       *screen;
 	int              width;
 	int              height;
+
+        mate_bg_load_from_preferences (manager->priv->bg);
 
 	if (manager->priv->bg == NULL)
 	{
@@ -1940,6 +1942,7 @@ gs_manager_request_unlock (GSManager *manager)
 
 	/* Find the GSWindow that contains the pointer */
 	window = find_window_at_pointer (manager);
+        apply_background_to_window (manager, window);
 	gs_window_request_unlock (window);
 
 	return TRUE;
