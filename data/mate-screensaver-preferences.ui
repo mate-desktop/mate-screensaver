@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.20.0 -->
 <interface>
-  <requires lib="gtk+" version="2.22"/>
-  <!-- interface-naming-policy toplevel-contextual -->
+  <requires lib="gtk+" version="3.14"/>
+  <!-- interface-license-type gplv2 -->
+  <!-- interface-name mate-screensaver -->
+  <!-- interface-description screensaver preferences -->
+  <!-- interface-copyright MATE Developer -->
+  <!-- interface-authors Wolfgang Ulbrich -->
   <object class="GtkAdjustment" id="adjustment1">
     <property name="lower">1</property>
     <property name="upper">120</property>
@@ -20,18 +25,20 @@
     <property name="skip_pager_hint">True</property>
     <property name="decorated">False</property>
     <child>
-      <object class="GtkVBox" id="vbox10">
+      <object class="GtkBox" id="vbox10">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
         <child>
-          <object class="GtkHBox" id="hbox9">
+          <object class="GtkBox" id="hbox9">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
               <object class="GtkImage" id="image2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="xpad">10</property>
+                <property name="margin_left">5</property>
+                <property name="margin_right">5</property>
                 <property name="stock">gtk-dialog-warning</property>
               </object>
               <packing>
@@ -44,7 +51,8 @@
               <object class="GtkLabel" id="label15">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="xalign">0</property>
+                <property name="halign">start</property>
+                <property name="hexpand">True</property>
                 <property name="label" translatable="yes">&lt;b&gt;Screensaver preview&lt;/b&gt;</property>
                 <property name="use_markup">True</property>
                 <property name="justify">fill</property>
@@ -157,12 +165,13 @@
     <property name="default_height">400</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
-      <object class="GtkVBox" id="dialog-vbox1">
+      <object class="GtkBox" id="dialog-vbox1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkHButtonBox" id="dialog-action_area1">
+          <object class="GtkButtonBox" id="dialog-action_area1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -237,26 +246,28 @@
           </packing>
         </child>
         <child>
-          <object class="GtkVBox" id="vbox1">
+          <object class="GtkBox" id="vbox1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="border_width">5</property>
+            <property name="orientation">vertical</property>
             <property name="spacing">12</property>
             <child>
-              <object class="GtkHBox" id="hbox1">
+              <object class="GtkBox" id="hbox1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="spacing">12</property>
                 <child>
-                  <object class="GtkVBox" id="vbox8">
+                  <object class="GtkBox" id="vbox8">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="orientation">vertical</property>
                     <property name="spacing">6</property>
                     <child>
                       <object class="GtkLabel" id="savers_label">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">0</property>
+                        <property name="halign">start</property>
                         <property name="label" translatable="yes">_Screensaver theme:</property>
                         <property name="use_markup">True</property>
                         <property name="use_underline">True</property>
@@ -268,28 +279,29 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkHBox" id="hbox6">
+                      <object class="GtkBox" id="hbox6">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkTable" id="table1">
+                          <object class="GtkGrid" id="grid1">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="n_columns">2</property>
-                            <property name="column_spacing">6</property>
                             <property name="row_spacing">6</property>
+                            <property name="column_spacing">6</property>
                             <child>
                               <object class="GtkScrolledWindow" id="themes_scrolled_window">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="hscrollbar_policy">never</property>
-                                <property name="vscrollbar_policy">automatic</property>
                                 <property name="shadow_type">in</property>
                                 <child>
                                   <object class="GtkTreeView" id="savers_treeview">
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="headers_visible">False</property>
+                                    <child internal-child="selection">
+                                      <object class="GtkTreeSelection"/>
+                                    </child>
                                     <accessibility>
                                       <relation type="label-for" target="savers_treeview"/>
                                     </accessibility>
@@ -297,16 +309,18 @@
                                 </child>
                               </object>
                               <packing>
-                                <property name="x_options">GTK_FILL</property>
+                                <property name="left_attach">0</property>
+                                <property name="top_attach">0</property>
                               </packing>
                             </child>
                             <child>
                               <object class="GtkDrawingArea" id="preview_area">
                                 <property name="can_focus">False</property>
+                                <property name="hexpand">True</property>
                               </object>
                               <packing>
                                 <property name="left_attach">1</property>
-                                <property name="right_attach">2</property>
+                                <property name="top_attach">0</property>
                               </packing>
                             </child>
                           </object>
@@ -338,28 +352,31 @@
               </packing>
             </child>
             <child>
-              <object class="GtkHBox" id="hbox2">
+              <object class="GtkBox" id="hbox2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <child>
-                  <object class="GtkVBox" id="vbox5">
+                  <object class="GtkBox" id="vbox5">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="orientation">vertical</property>
                     <child>
-                      <object class="GtkHBox" id="hbox3">
+                      <object class="GtkBox" id="hbox3">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkVBox" id="vbox6">
+                          <object class="GtkBox" id="vbox6">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="orientation">vertical</property>
                             <child>
-                              <object class="GtkVBox" id="vbox3">
+                              <object class="GtkBox" id="vbox3">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
+                                <property name="orientation">vertical</property>
                                 <property name="spacing">6</property>
                                 <child>
-                                  <object class="GtkHBox" id="activate_delay_hbox">
+                                  <object class="GtkBox" id="activate_delay_hbox">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
                                     <property name="spacing">12</property>
@@ -377,12 +394,12 @@
                                       </packing>
                                     </child>
                                     <child>
-                                      <object class="GtkHBox" id="hbox4">
+                                      <object class="GtkBox" id="hbox4">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="spacing">6</property>
                                         <child>
-                                          <object class="GtkHScale" id="activate_delay_hscale">
+                                          <object class="GtkScale" id="activate_delay_hscale">
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
                                             <property name="adjustment">adjustment1</property>
@@ -441,7 +458,7 @@
                                 <child>
                                   <object class="GtkLabel" id="root_warning_label">
                                     <property name="can_focus">False</property>
-                                    <property name="xalign">0</property>
+                                    <property name="halign">start</property>
                                     <property name="label" translatable="yes">&lt;b&gt;Warning: the screen will not be locked for the root user.&lt;/b&gt;</property>
                                     <property name="use_markup">True</property>
                                     <property name="wrap">True</property>
