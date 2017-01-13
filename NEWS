@@ -1,84 +1,63 @@
-===============
-Version 1.17.0
-===============
+### mate-screensaver 1.17.0
 
-Translations update
-move to GTK+3 (>= 3.14), drop GTK+2 code and --with-gtk build option
-build: require libmate-menu 1.10
-Also look for gdm-binary process
-GTK+-3 gs-grab-x11: use correct GTK_VERSION_CHECK
+  * Translations update
+  * move to GTK+3 (>= 3.14), drop GTK+2 code and --with-gtk build option
+  * build: require libmate-menu 1.10
+  * Also look for gdm-binary process
+  * GTK+-3 gs-grab-x11: use correct GTK_VERSION_CHECK
 
-===============
-Version 1.16.0
-===============
+### mate-screensaver 1.16.0
 
-Fix locking when screensaver is already active
-GTK+3: fix background and locking in multi-monitor setup
-GTK+3: fix several deprecations
-Some more fixes and cleanups
-Translations update
-Make distcheck use currently selected GTK+ version
+  * Fix locking when screensaver is already active
+  * GTK+3: fix background and locking in multi-monitor setup
+  * GTK+3: fix several deprecations
+  * Some more fixes and cleanups
+  * Translations update
+  * Make distcheck use currently selected GTK+ version
 
-===============
-Version 1.14.1
-===============
+### mate-screensaver 1.14.1
 
-Translations update
-GTK+-3: fix assertion 'GTK_IS_WIDGET (widget)' failed
-GTK+-3: add style class lock-dialog
+  * Translations update
+  * GTK+-3: fix assertion 'GTK_IS_WIDGET (widget)' failed
+  * GTK+-3: add style class lock-dialog
 
-===============
-Version 1.14.0
-===============
+### mate-screensaver 1.14.0
 
-Drop MateConf migration script
-GTK+3: fix several deprecations
-Some more fixes and cleanups
-Translations update
-Add Changelog generation
+  * Drop MateConf migration script
+  * GTK+3: fix several deprecations
+  * Some more fixes and cleanups
+  * Translations update
+  * Add Changelog generation
 
-===============
-Version 1.12.0
-===============
+### mate-screensaver 1.12.0
 
-Retrieve strings directly from gschema (requires intltool 0.50.1)
-Switch to org.gnome.SessionManager
-Add support for libsystemd (in addition to libsystemd-login)
-Don't fade to black when locking the screen
-Fix systemd event handling
-Some more fixes and cleanups
+  * Retrieve strings directly from gschema (requires intltool 0.50.1)
+  * Switch to org.gnome.SessionManager
+  * Add support for libsystemd (in addition to libsystemd-login)
+  * Don't fade to black when locking the screen
+  * Fix systemd event handling
+  * Some more fixes and cleanups
 
-===============
-Version 1.10.2
-===============
+### mate-screensaver 1.10.2
 
-Fix segfault due to wrong object being destroyed
-Translations update
+  * Fix segfault due to wrong object being destroyed
+  * Translations update
 
-===============
-Version 1.10.1
-===============
+### mate-screensaver 1.10.1
 
-Check for running display manager when user switching 
+  * Check for running display manager when user switching 
 
-===============
-Version 1.10.0
-===============
+### mate-screensaver 1.10.0
 
-Update to api changes for MateRR* in mate-desktop (thanks monsta for testing)
+  * Update to api changes for MateRR* in mate-desktop (thanks monsta for testing)
 
-===============
-Version 1.8.0
-===============
+### mate-screensaver 1.8.0
 
-Show date and time in lock dialog.
-Add theme to use GNOME foot logo as floaters screensaver
-Rename Floating Feet as Floating MATE
-Add GTK3 support
+  * Show date and time in lock dialog.
+  * Add theme to use GNOME foot logo as floaters screensaver
+  * Rename Floating Feet as Floating MATE
+  * Add GTK3 support
 
-===============
-Version  1.1.0
-===============
+### mate-screensaver 1.1.0
 
-First MATE release.
-
+  * First MATE release.
