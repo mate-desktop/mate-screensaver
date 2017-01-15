@@ -107,34 +107,15 @@ gs_theme_engine_get_property (GObject            *object,
 	}
 }
 
-static void
-gs_theme_engine_clear (GtkWidget *widget)
-{
-	GdkRGBA color = { 0.0, 0.0, 0.0, 1.0 };
-	GtkStateFlags state;
-
-	g_return_if_fail (GS_IS_THEME_ENGINE (widget));
-
-	if (! gtk_widget_get_visible (widget))
-	{
-		return;
-	}
-
-	state = gtk_widget_get_state_flags (widget);
-	gtk_widget_override_background_color (widget, state, &color);
-	gdk_window_set_background_rgba (gtk_widget_get_window (widget), &color);
-	gdk_flush ();
-}
-
 static gboolean
-gs_theme_engine_real_map_event (GtkWidget   *widget,
-                                GdkEventAny *event)
+gs_theme_engine_real_draw (GtkWidget *widget,
+                           cairo_t   *cr)
 {
-	gboolean handled = FALSE;
+	cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
+	cairo_set_source_rgb (cr, 0, 0, 0);
+	cairo_paint (cr);
 
-	gs_theme_engine_clear (widget);
-
-	return handled;
+	return FALSE;
 }
 
 static void
@@ -149,7 +130,7 @@ gs_theme_engine_class_init (GSThemeEngineClass *klass)
 	object_class->get_property = gs_theme_engine_get_property;
 	object_class->set_property = gs_theme_engine_set_property;
 
-	widget_class->map_event = gs_theme_engine_real_map_event;
+	widget_class->draw = gs_theme_engine_real_draw;
 
 	g_type_class_add_private (klass, sizeof (GSThemeEnginePrivate));
 }

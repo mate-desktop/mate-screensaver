@@ -1050,8 +1050,9 @@ screen_saver_update_state (ScreenSaver *screen_saver,
 
 		screen_saver_floater_update_state (screen_saver, floater, time);
 
-		if (gtk_widget_get_realized (screen_saver->drawing_area)
-		        && (floater->bounds.width > 0) && (floater->bounds.height > 0))
+		if (screen_saver->drawing_area != NULL &&
+		    gtk_widget_get_realized (screen_saver->drawing_area) &&
+		    (floater->bounds.width > 0) && (floater->bounds.height > 0))
 		{
 			gint size;
 			size = CLAMP ((int) (FLOATER_MAX_SIZE * floater->scale),

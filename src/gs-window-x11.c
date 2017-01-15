@@ -251,17 +251,6 @@ widget_clear_all_children (GtkWidget *widget)
 	gdk_error_trap_pop_ignored ();
 }
 
-static void
-gs_window_reset_background_surface (GSWindow *window)
-{
-	cairo_pattern_t *pattern;
-	pattern = cairo_pattern_create_for_surface (window->priv->background_surface);
-	gdk_window_set_background_pattern (gtk_widget_get_window (GTK_WIDGET (window)),
-									   pattern);
-	cairo_pattern_destroy (pattern);
-	gtk_widget_queue_draw (GTK_WIDGET (window));
-}
-
 void
 gs_window_set_background_surface (GSWindow        *window,
                                   cairo_surface_t *surface)
@@ -272,57 +261,14 @@ gs_window_set_background_surface (GSWindow        *window,
 	{
 		cairo_surface_destroy (window->priv->background_surface);
 	}
+	window->priv->background_surface = NULL;
 
 	if (surface != NULL)
 	{
 		window->priv->background_surface = cairo_surface_reference (surface);
-		gs_window_reset_background_surface (window);
-	}
-}
-
-static void
-gs_window_clear_to_background_surface (GSWindow *window)
-{
-	g_return_if_fail (GS_IS_WINDOW (window));
-
-	if (! gtk_widget_get_visible (GTK_WIDGET (window)))
-	{
-		return;
 	}
 
-	if (window->priv->background_surface == NULL)
-	{
-		/* don't allow null surfaces */
-		return;
-	}
-
-	gs_debug ("Clearing window to background pixmap");
-
-	gs_window_reset_background_surface (window);
-}
-
-static void
-clear_widget (GtkWidget *widget)
-{
-	GdkRGBA       rgba = { 0.0, 0.0, 0.0, 1.0 };
-	GtkStateFlags state;
-
-	if (!gtk_widget_get_realized (widget))
-	{
-		return;
-	}
-
-	gs_debug ("Clearing widget");
-
-	state = gtk_widget_get_state_flags (widget);
-	gtk_widget_override_background_color (widget, state, &rgba);
-	gdk_window_set_background_rgba (gtk_widget_get_window (widget), &rgba);
-	gtk_widget_queue_draw (GTK_WIDGET (widget));
-
-	/* If a screensaver theme adds child windows we need to clear them too */
-	widget_clear_all_children (widget);
-
-	gdk_flush ();
+	gtk_widget_queue_draw (GTK_WIDGET (window));
 }
 
 void
@@ -330,8 +276,23 @@ gs_window_clear (GSWindow *window)
 {
 	g_return_if_fail (GS_IS_WINDOW (window));
 
-	clear_widget (GTK_WIDGET (window));
-	clear_widget (window->priv->drawing_area);
+	gs_debug ("Clearing widgets");
+
+	if (gtk_widget_get_realized (GTK_WIDGET (window)))
+	{
+		gtk_widget_queue_draw (GTK_WIDGET (window));
+		/* If a screensaver theme adds child windows
+		   we need to clear them too */
+		widget_clear_all_children (GTK_WIDGET (window));
+	}
+
+	if (gtk_widget_get_realized (window->priv->drawing_area))
+	{
+		gtk_widget_queue_draw (window->priv->drawing_area);
+		widget_clear_all_children (window->priv->drawing_area);
+	}
+
+	gdk_flush ();
 }
 
 static cairo_region_t *
@@ -829,6 +790,27 @@ window_select_shape_events (GSWindow *window)
 
 	gdk_error_trap_pop_ignored ();
 #endif
+}
+
+static gboolean
+gs_window_real_draw (GtkWidget *widget,
+                     cairo_t   *cr)
+{
+	GSWindow *window = GS_WINDOW (widget);
+	cairo_surface_t *bg_surface = window->priv->background_surface;
+
+	cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
+	if (bg_surface != NULL)
+	{
+		cairo_set_source_surface (cr, bg_surface, 0, 0);
+	}
+	else
+	{
+		cairo_set_source_rgb (cr, 0, 0, 0);
+	}
+	cairo_paint (cr);
+
+	return FALSE;
 }
 
 static void
@@ -1738,7 +1720,7 @@ popup_dialog (GSWindow *window)
 
 	gtk_widget_hide (window->priv->drawing_area);
 
-	gs_window_clear_to_background_surface (window);
+	gtk_widget_queue_draw (GTK_WIDGET (window));
 	set_invisible_cursor (gtk_widget_get_window (GTK_WIDGET (window)), FALSE);
 
 	window->priv->dialog_quit_requested = FALSE;
@@ -2334,6 +2316,7 @@ gs_window_class_init (GSWindowClass *klass)
 
 	widget_class->show                = gs_window_real_show;
 	widget_class->hide                = gs_window_real_hide;
+	widget_class->draw                = gs_window_real_draw;
 	widget_class->realize             = gs_window_real_realize;
 	widget_class->unrealize           = gs_window_real_unrealize;
 	widget_class->key_press_event     = gs_window_real_key_press_event;
@@ -2454,13 +2437,15 @@ create_info_bar (GSWindow *window)
 	gtk_box_pack_end (GTK_BOX (window->priv->vbox), window->priv->info_bar, FALSE, FALSE, 0);
 }
 
-static void
-on_drawing_area_realized (GtkWidget *drawing_area)
+static gboolean
+on_drawing_area_draw (GtkWidget *widget,
+                      cairo_t   *cr)
 {
-	GdkRGBA black = { 0.0, 0.0, 0.0, 1.0 };
+	cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
+	cairo_set_source_rgb (cr, 0, 0, 0);
+	cairo_paint (cr);
 
-	gdk_window_set_background_rgba (gtk_widget_get_window (drawing_area),
-	                                &black);
+	return FALSE;
 }
 
 static void
@@ -2504,10 +2489,11 @@ gs_window_init (GSWindow *window)
 	window->priv->drawing_area = gtk_drawing_area_new ();
 	gtk_widget_show (window->priv->drawing_area);
 	gtk_widget_set_app_paintable (window->priv->drawing_area, TRUE);
-	gtk_box_pack_start (GTK_BOX (window->priv->vbox), window->priv->drawing_area, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (window->priv->vbox),
+	                    window->priv->drawing_area, TRUE, TRUE, 0);
 	g_signal_connect (window->priv->drawing_area,
-	                  "realize",
-	                  G_CALLBACK (on_drawing_area_realized),
+	                  "draw",
+	                  G_CALLBACK (on_drawing_area_draw),
 	                  NULL);
 	create_info_bar (window);
 

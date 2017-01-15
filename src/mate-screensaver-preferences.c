@@ -297,15 +297,6 @@ config_set_lock (gboolean lock)
 }
 
 static void
-preview_clear (GtkWidget *widget)
-{
-	GdkRGBA black = { 0.0, 0.0, 0.0, 1.0 };
-
-	gdk_window_set_background_rgba (gtk_widget_get_window (widget), &black);
-	gtk_widget_queue_draw (widget);
-}
-
-static void
 job_set_theme (GSJob      *job,
                const char *theme)
 {
@@ -328,6 +319,21 @@ job_set_theme (GSJob      *job,
 	}
 }
 
+static gboolean
+preview_on_draw (GtkWidget *widget,
+                 cairo_t   *cr,
+                 gpointer   data)
+{
+	if (job == NULL || !gs_job_is_running (job))
+	{
+		cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
+		cairo_set_source_rgb (cr, 0, 0, 0);
+		cairo_paint (cr);
+	}
+
+	return FALSE;
+}
+
 static void
 preview_set_theme (GtkWidget  *widget,
                    const char *theme,
@@ -341,7 +347,7 @@ preview_set_theme (GtkWidget  *widget,
 		gs_job_stop (job);
 	}
 
-	preview_clear (widget);
+	gtk_widget_queue_draw (widget);
 
 	label = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_theme_label"));
 	markup = g_markup_printf_escaped ("<i>%s</i>", name);
@@ -1161,7 +1167,7 @@ fullscreen_preview_cancelled_cb (GtkWidget *button,
 	gs_job_set_widget (job, preview_area);
 
 	fullscreen_preview_area = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_area"));
-	preview_clear (fullscreen_preview_area);
+	gtk_widget_queue_draw (fullscreen_preview_area);
 
 	fullscreen_preview_window = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_window"));
 	gtk_widget_hide (fullscreen_preview_window);
@@ -1191,7 +1197,7 @@ fullscreen_preview_start_cb (GtkWidget *widget,
 	gtk_widget_grab_focus (fullscreen_preview_window);
 
 	fullscreen_preview_area = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_area"));
-	preview_clear (fullscreen_preview_area);
+	gtk_widget_queue_draw (fullscreen_preview_area);
 	gs_job_set_widget (job, fullscreen_preview_area);
 }
 
@@ -1452,6 +1458,7 @@ init_capplet (void)
 	GtkWidget *preview_button;
 	GtkWidget *gpm_button;
 	GtkWidget *fullscreen_preview_window;
+	GtkWidget *fullscreen_preview_area;
 	GtkWidget *fullscreen_preview_previous;
 	GtkWidget *fullscreen_preview_next;
 	GtkWidget *fullscreen_preview_close;
@@ -1500,7 +1507,7 @@ init_capplet (void)
 	preview_button     = GTK_WIDGET (gtk_builder_get_object (builder, "preview_button"));
 	gpm_button         = GTK_WIDGET (gtk_builder_get_object (builder, "gpm_button"));
 	fullscreen_preview_window = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_window"));
-	GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_area"));
+	fullscreen_preview_area = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_area"));
 	fullscreen_preview_close = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_close"));
 	fullscreen_preview_previous = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_previous_button"));
 	fullscreen_preview_next = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_next_button"));
@@ -1568,6 +1575,10 @@ init_capplet (void)
 	gtk_window_set_icon_name (GTK_WINDOW (dialog), "preferences-desktop-screensaver");
 	gtk_window_set_icon_name (GTK_WINDOW (fullscreen_preview_window), "screensaver");
 
+	g_signal_connect (fullscreen_preview_area,
+	                  "draw", G_CALLBACK (preview_on_draw),
+	                  NULL);
+
 	gtk_drag_dest_set (dialog, GTK_DEST_DEFAULT_ALL,
 	                   drop_types, G_N_ELEMENTS (drop_types),
 	                   GDK_ACTION_COPY | GDK_ACTION_LINK | GDK_ACTION_MOVE);
@@ -1590,7 +1601,7 @@ init_capplet (void)
 		g_strfreev (list);
 	}
 
-	preview_clear (preview);
+	g_signal_connect (preview, "draw", G_CALLBACK (preview_on_draw), NULL);
 	gs_job_set_widget (job, preview);
 
 	if (check_is_root_user ())
