@@ -1149,10 +1149,20 @@ fullscreen_preview_previous_cb (GtkWidget *fullscreen_preview_window,
 {
 	GtkWidget        *treeview;
 	GtkTreeSelection *selection;
+#if !GTK_CHECK_VERSION (3, 0, 0)
+	GtkWidget        *fullscreen_preview_area;
+#endif
 
 	treeview = GTK_WIDGET (gtk_builder_get_object (builder, "savers_treeview"));
 	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (treeview));
 	tree_selection_previous (selection);
+#if !GTK_CHECK_VERSION (3, 0, 0)
+
+	fullscreen_preview_area =
+	  GTK_WIDGET (gtk_builder_get_object (builder,
+	                                      "fullscreen_preview_area"));
+	gtk_widget_queue_draw (fullscreen_preview_area);
+#endif
 }
 
 static void
@@ -1161,10 +1171,20 @@ fullscreen_preview_next_cb (GtkWidget *fullscreen_preview_window,
 {
 	GtkWidget        *treeview;
 	GtkTreeSelection *selection;
+#if !GTK_CHECK_VERSION (3, 0, 0)
+	GtkWidget        *fullscreen_preview_area;
+#endif
 
 	treeview = GTK_WIDGET (gtk_builder_get_object (builder, "savers_treeview"));
 	selection = gtk_tree_view_get_selection (GTK_TREE_VIEW (treeview));
 	tree_selection_next (selection);
+#if !GTK_CHECK_VERSION (3, 0, 0)
+
+	fullscreen_preview_area =
+	  GTK_WIDGET (gtk_builder_get_object (builder,
+	                                      "fullscreen_preview_area"));
+	gtk_widget_queue_draw (fullscreen_preview_area);
+#endif
 }
 
 static void
