@@ -1270,15 +1270,15 @@ setup_for_root_user (void)
 extern char **environ;
 
 static gchar **
-spawn_make_environment_for_screen (GdkScreen  *screen,
-                                   gchar     **envp)
+spawn_make_environment_for_display (GdkDisplay *display,
+                                    gchar     **envp)
 {
 	gchar **retval = NULL;
-	gchar  *display_name;
+	const gchar *display_name;
 	gint    display_index = -1;
 	gint    i, env_len;
 
-	g_return_val_if_fail (GDK_IS_SCREEN (screen), NULL);
+	g_return_val_if_fail (GDK_IS_DISPLAY (display), NULL);
 
 	if (envp == NULL)
 		envp = environ;
@@ -1290,7 +1290,7 @@ spawn_make_environment_for_screen (GdkScreen  *screen,
 	retval = g_new (char *, env_len + 1);
 	retval[env_len] = NULL;
 
-	display_name = gdk_screen_make_display_name (screen);
+	display_name = gdk_display_get_name (display);
 
 	for (i = 0; i < env_len; i++)
 		if (i == display_index)
@@ -1300,18 +1300,16 @@ spawn_make_environment_for_screen (GdkScreen  *screen,
 
 	g_assert (i == env_len);
 
-	g_free (display_name);
-
 	return retval;
 }
 
 static gboolean
-spawn_command_line_on_screen_sync (GdkScreen    *screen,
-                                   const gchar  *command_line,
-                                   char        **standard_output,
-                                   char        **standard_error,
-                                   int          *exit_status,
-                                   GError      **error)
+spawn_command_line_on_display_sync (GdkDisplay  *display,
+                                    const gchar  *command_line,
+                                    char        **standard_output,
+                                    char        **standard_error,
+                                    int          *exit_status,
+                                    GError      **error)
 {
 	char     **argv = NULL;
 	char     **envp = NULL;
@@ -1324,7 +1322,7 @@ spawn_command_line_on_screen_sync (GdkScreen    *screen,
 		return FALSE;
 	}
 
-	envp = spawn_make_environment_for_screen (screen, NULL);
+	envp = spawn_make_environment_for_display (display, NULL);
 
 	retval = g_spawn_sync (NULL,
 	                       argv,
@@ -1345,8 +1343,9 @@ spawn_command_line_on_screen_sync (GdkScreen    *screen,
 
 
 static GdkVisual *
-get_best_visual_for_screen (GdkScreen *screen)
+get_best_visual_for_display (GdkDisplay *display)
 {
+	GdkScreen    *screen;
 	char         *command;
 	char         *std_output;
 	int           exit_status;
@@ -1357,12 +1356,13 @@ get_best_visual_for_screen (GdkScreen *screen)
 	gboolean      res;
 
 	visual = NULL;
+	screen = gdk_display_get_default_screen (display);
 
 	command = g_build_filename (LIBEXECDIR, "mate-screensaver-gl-helper", NULL);
 
 	error = NULL;
 	std_output = NULL;
-	res = spawn_command_line_on_screen_sync (screen,
+	res = spawn_command_line_on_display_sync (display,
 	        command,
 	        &std_output,
 	        NULL,
@@ -1384,8 +1384,8 @@ get_best_visual_for_screen (GdkScreen *screen)
 			visual_id = (VisualID) v;
 			visual = gdk_x11_screen_lookup_visual (screen, visual_id);
 
-			gs_debug ("Found best GL visual for screen %d: 0x%x",
-			          gdk_screen_get_number (screen),
+			gs_debug ("Found best GL visual for display %s: 0x%x",
+			          gdk_display_get_name (display),
 			          (unsigned int) visual_id);
 		}
 	}
@@ -1404,7 +1404,7 @@ widget_set_best_visual (GtkWidget *widget)
 
 	g_return_if_fail (widget != NULL);
 
-	visual = get_best_visual_for_screen (gtk_widget_get_screen (widget));
+	visual = get_best_visual_for_display (gtk_widget_get_display (widget));
 	if (visual != NULL)
 	{
 		gtk_widget_set_visual (widget, visual);

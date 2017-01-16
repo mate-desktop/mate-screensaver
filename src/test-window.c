@@ -60,7 +60,7 @@ window_show_cb (GSWindow  *window,
 	/* Grab keyboard so dialog can be used */
 	gs_grab_move_to_window (grab,
 	                        gs_window_get_gdk_window (window),
-	                        gs_window_get_screen (window),
+	                        gs_window_get_display (window),
 	                        FALSE);
 
 }
@@ -120,18 +120,28 @@ connect_window_signals (GSWindow *window)
 static void
 test_window (void)
 {
-	GSWindow  *window;
-	gboolean   lock_active;
-	gboolean   user_switch_enabled;
-	GdkScreen *screen;
-	int        monitor;
+	GSWindow   *window;
+	gboolean    lock_active;
+	gboolean    user_switch_enabled;
+	GdkDisplay *display;
+#if GTK_CHECK_VERSION (3, 22, 0)
+	GdkMonitor *monitor;
+#else
+	GdkScreen  *screen;
+	int         monitor;
+#endif
 
 	lock_active = TRUE;
 	user_switch_enabled = TRUE;
-	screen = gdk_screen_get_default ();
-	monitor = 0;
+	display = gdk_display_get_default ();
+#if GTK_CHECK_VERSION (3, 22, 0)
+	monitor = gdk_display_get_primary_monitor (display);
+#else
+	screen = gdk_display_get_default_screen (display);
+	monitor = gdk_screen_get_primary_monitor (screen);
+#endif
 
-	window = gs_window_new (screen, monitor, lock_active);
+	window = gs_window_new (display, monitor, lock_active);
 
 	gs_window_set_user_switch_enabled (window, user_switch_enabled);
 

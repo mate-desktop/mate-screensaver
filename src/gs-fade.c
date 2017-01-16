@@ -310,7 +310,7 @@ gamma_fade_setup (GSFade *fade)
 
 
 		res = XF86VidModeGetGammaRampSize (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-		                                   gdk_screen_get_number (gdk_screen_get_default ()),
+		                                   GDK_SCREEN_XNUMBER (gdk_screen_get_default ()),
 		                                   &screen_priv->info->size);
 		if (!res || screen_priv->info->size <= 0)
 		{
@@ -329,7 +329,7 @@ gamma_fade_setup (GSFade *fade)
 		}
 
 		res = XF86VidModeGetGammaRamp (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-		                               gdk_screen_get_number (gdk_screen_get_default ()),
+		                               GDK_SCREEN_XNUMBER (gdk_screen_get_default ()),
 		                               screen_priv->info->size,
 		                               screen_priv->info->r,
 		                               screen_priv->info->g,
@@ -349,7 +349,7 @@ test_number:
 		/* only have gamma parameter, not ramps. */
 
 		res = XF86VidModeGetGamma (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
-		                           gdk_screen_get_number (gdk_screen_get_default ()),
+		                           GDK_SCREEN_XNUMBER (gdk_screen_get_default ()),
 		                           &screen_priv->vmg);
 		if (! res)
 		{
@@ -406,7 +406,7 @@ gamma_fade_set_alpha_gamma (GSFade *fade,
                             gdouble alpha)
 {
 	struct GSFadeScreenPrivate *screen_priv;
-	int screen_idx = gdk_screen_get_number (gdk_screen_get_default ());
+	int screen_idx = GDK_SCREEN_XNUMBER (gdk_screen_get_default ());
 
 	screen_priv = &fade->priv->screen_priv;
 	xf86_whack_gamma (screen_idx, screen_priv, alpha);

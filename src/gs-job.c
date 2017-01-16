@@ -260,9 +260,10 @@ nice_process (int pid,
 static GPtrArray *
 get_env_vars (GtkWidget *widget)
 {
-	GPtrArray *env;
-	char      *str;
-	int        i;
+	GPtrArray   *env;
+	const gchar *display_name;
+	gchar       *str;
+	int          i;
 	static const char *allowed_env_vars [] =
 	{
 		"PATH",
@@ -276,9 +277,8 @@ get_env_vars (GtkWidget *widget)
 
 	env = g_ptr_array_new ();
 
-	str = gdk_screen_make_display_name (gtk_widget_get_screen (widget));
-	g_ptr_array_add (env, g_strdup_printf ("DISPLAY=%s", str));
-	g_free (str);
+	display_name = gdk_display_get_name (gtk_widget_get_display (widget));
+	g_ptr_array_add (env, g_strdup_printf ("DISPLAY=%s", display_name));
 
 	g_ptr_array_add (env, g_strdup_printf ("HOME=%s",
 	                                       g_get_home_dir ()));
