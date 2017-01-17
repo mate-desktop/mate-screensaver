@@ -1658,7 +1658,7 @@ shake_dialog (GSWindow *window)
 
 	window->priv->dialog_shake_in_progress = TRUE;
 
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 8; i++)
 	{
 		if (i % 2 == 0)
 		{
