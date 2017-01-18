@@ -38,13 +38,14 @@
 #include "gs-debug.h"
 
 GdkVisual *
-gs_visual_gl_get_best_for_screen (GdkScreen *screen)
+gs_visual_gl_get_best_for_display (GdkDisplay *display)
 {
-	GdkVisual  *visual;
+	GdkVisual *visual;
 #ifdef HAVE_LIBGL
-	GdkDisplay *display;
-	int         screen_num;
-	int         i;
+	Display   *xdisplay;
+	GdkScreen *screen;
+	int        screen_num;
+	int        i;
 
 # define R GLX_RED_SIZE
 # define G GLX_GREEN_SIZE
@@ -72,10 +73,11 @@ gs_visual_gl_get_best_for_screen (GdkScreen *screen)
 		{ GLX_RGBA, R, 1, G, 1, B, 1, D, 1,           0 }  /* monochrome */
 	};
 
-	g_return_val_if_fail (screen != NULL, NULL);
+	g_return_val_if_fail (display != NULL, NULL);
 
-	display = gdk_screen_get_display (screen);
-	screen_num = gdk_screen_get_number (screen);
+	xdisplay = GDK_DISPLAY_XDISPLAY (display);
+	screen = gdk_display_get_default_screen (display);
+	screen_num = GDK_SCREEN_XNUMBER (screen);
 
 	gdk_error_trap_push ();
 
@@ -84,7 +86,7 @@ gs_visual_gl_get_best_for_screen (GdkScreen *screen)
 	{
 		XVisualInfo *vi;
 
-		vi = glXChooseVisual (GDK_DISPLAY_XDISPLAY (display), screen_num, attrs [i]);
+		vi = glXChooseVisual (xdisplay, screen_num, attrs [i]);
 
 		if (vi != NULL)
 		{

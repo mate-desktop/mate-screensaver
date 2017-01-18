@@ -35,7 +35,6 @@ main (int    argc,
       char **argv)
 {
 	GdkDisplay     *display;
-	GdkScreen      *screen;
 	GdkVisual      *visual;
 	Visual         *xvisual;
 	GError         *error = NULL;
@@ -64,8 +63,7 @@ main (int    argc,
 	}
 
 	display = gdk_display_get_default ();
-	screen = gdk_display_get_default_screen (display);
-	visual = gs_visual_gl_get_best_for_screen (screen);
+	visual = gs_visual_gl_get_best_for_display (display);
 
 	if (visual != NULL)
 	{

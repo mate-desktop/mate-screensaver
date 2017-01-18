@@ -137,6 +137,7 @@
         <child>
           <object class="GtkDrawingArea" id="fullscreen_preview_area">
             <property name="visible">True</property>
+            <property name="app_paintable">True</property>
             <property name="can_focus">False</property>
           </object>
           <packing>
@@ -316,6 +317,7 @@
                             </child>
                             <child>
                               <object class="GtkDrawingArea" id="preview_area">
+                                <property name="app_paintable">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="hexpand">True</property>
                               </object>
