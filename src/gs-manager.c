@@ -1277,9 +1277,9 @@ static void
 apply_background_to_window (GSManager *manager,
                             GSWindow  *window)
 {
-#if GTK_CHECK_VERSION (3, 0, 0)
 	cairo_surface_t *surface;
-#else
+#if !GTK_CHECK_VERSION (3, 0, 0)
+	cairo_t         *cr;
 	GdkPixmap       *pixmap;
 #endif
 	GdkScreen       *screen;
@@ -1289,11 +1289,7 @@ apply_background_to_window (GSManager *manager,
 	if (manager->priv->bg == NULL)
 	{
 		gs_debug ("No background available");
-#if GTK_CHECK_VERSION (3, 0, 0)
 		gs_window_set_background_surface (window, NULL);
-#else
-		gs_window_set_background_pixmap (window, NULL);
-#endif
 	}
 
 	screen = gs_window_get_screen (window);
@@ -1306,17 +1302,25 @@ apply_background_to_window (GSManager *manager,
 	                                  width,
 	                                  height,
 	                                  FALSE);
-	gs_window_set_background_surface (window, surface);
-	cairo_surface_destroy (surface);
 #else
+	surface = gdk_window_create_similar_surface (gs_window_get_gdk_window (window),
+	                                             CAIRO_CONTENT_COLOR,
+	                                             width,
+	                                             height);
+	cr = cairo_create (surface);
+
 	pixmap = mate_bg_create_pixmap (manager->priv->bg,
 	                                gs_window_get_gdk_window (window),
 	                                width,
 	                                height,
 	                                FALSE);
-	gs_window_set_background_pixmap (window, pixmap);
+	gdk_cairo_set_source_pixmap (cr, pixmap, 0, 0);
+	cairo_paint (cr);
+	cairo_destroy (cr);
 	g_object_unref (pixmap);
 #endif
+	gs_window_set_background_surface (window, surface);
+	cairo_surface_destroy (surface);
 }
 
 static void
