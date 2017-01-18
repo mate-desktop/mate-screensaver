@@ -1,3 +1,15 @@
+### mate-screensaver 1.17.1
+
+  * Change shake times to even number, so the dialog can return to its 
+    original position.
+  * GTK+3.22: fix some GdkScreen related deprecations
+  * avoid deprecated gdk_window_set_background functions
+  * preferences UI: fix vertical expand of the scrolledwindow of the 
+    themetreeview
+  * preferences UI: don't use gtk+ deprecations
+  * patch to use user's background for lock screen also.
+  * po: actually add new languages from Transifex
+
 ### mate-screensaver 1.17.0
 
   * Translations update
