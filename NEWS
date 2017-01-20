@@ -1,4 +1,14 @@
 ===============
+Version 1.16.1
+===============
+
+Fix build breakage with GTK+ 3.14
+Fix "Blank screen" theme with GTK+ 3.22
+GTK+2: fix switching to "Blank screen" theme in fullscreen preview
+Properly restore password dialog position after wrong password attempt
+Check for gdm-binary process when switching user
+
+===============
 Version 1.16.0
 ===============
 
