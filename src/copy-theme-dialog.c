@@ -53,7 +53,7 @@ copy_theme_dialog_response (GtkDialog *dialog, gint response_id);
 static void
 eel_gtk_label_make_bold (GtkLabel *label);
 static void
-create_titled_label (GtkTable   *table,
+create_titled_label (GtkGrid    *grid,
                      int         row,
                      GtkWidget **title_widget,
                      GtkWidget **label_text_widget);
@@ -180,7 +180,7 @@ copy_theme_dialog_init (CopyThemeDialog *dlg)
 	GtkWidget *vbox;
 	GtkWidget *hbox;
 	GtkWidget *progress_vbox;
-	GtkWidget *table;
+	GtkWidget *grid;
 	GtkWidget *label;
 	GtkWidget *dialog_vbox;
 	char      *markup;
@@ -223,20 +223,20 @@ copy_theme_dialog_init (CopyThemeDialog *dlg)
 	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, 0);
 
-	table = gtk_table_new (2, 2, FALSE);
-	gtk_table_set_row_spacings (GTK_TABLE (table), 4);
-	gtk_table_set_col_spacings (GTK_TABLE (table), 4);
+	grid = gtk_grid_new ();
+	gtk_grid_set_row_spacing (GTK_GRID (grid), 4);
+	gtk_grid_set_column_spacing (GTK_GRID (grid), 4);
 
-	create_titled_label (GTK_TABLE (table), 0,
+	create_titled_label (GTK_GRID (grid), 0,
 	                     &label,
 	                     &dlg->priv->from);
 	gtk_label_set_text (GTK_LABEL (label), _("From:"));
-	create_titled_label (GTK_TABLE (table), 1,
+	create_titled_label (GTK_GRID (grid), 1,
 	                     &label,
 	                     &dlg->priv->to);
 	gtk_label_set_text (GTK_LABEL (label), _("To:"));
 
-	gtk_box_pack_start (GTK_BOX (vbox), GTK_WIDGET (table), FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (vbox), GTK_WIDGET (grid), FALSE, FALSE, 0);
 
 	progress_vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 	gtk_box_set_homogeneous (GTK_BOX (progress_vbox), TRUE);
@@ -520,7 +520,7 @@ eel_gtk_label_make_bold (GtkLabel *label)
 
 /* from caja */
 static void
-create_titled_label (GtkTable   *table,
+create_titled_label (GtkGrid    *grid,
                      int         row,
                      GtkWidget **title_widget,
                      GtkWidget **label_text_widget)
@@ -530,20 +530,17 @@ create_titled_label (GtkTable   *table,
 	gtk_widget_set_halign (*title_widget, GTK_ALIGN_END);
 	gtk_widget_set_valign (*title_widget, GTK_ALIGN_START);
 
-	gtk_table_attach (table, *title_widget,
-	                  0, 1,
-	                  row, row + 1,
-	                  GTK_FILL, 0,
-	                  0, 0);
+	gtk_grid_set_column_homogeneous (*title_widget, TRUE);
+	gtk_grid_attach (grid, *title_widget,
+	                 0, row, 1, 1);
 	gtk_widget_show (*title_widget);
 
 	*label_text_widget = gtk_label_new ("");
 	gtk_label_set_ellipsize (GTK_LABEL (*label_text_widget), PANGO_ELLIPSIZE_END);
-	gtk_table_attach (table, *label_text_widget,
-	                  1, 2,
-	                  row, row + 1,
-	                  GTK_FILL | GTK_EXPAND, 0,
-	                  0, 0);
+	gtk_grid_set_column_homogeneous (*label_text_widget, TRUE);
+	gtk_widget_set_hexpand (*label_text_widget, TRUE);
+	gtk_grid_attach (grid, *label_text_widget,
+	                 1, row, 1, 1);
 	gtk_widget_show (*label_text_widget);
 	gtk_widget_set_halign (*label_text_widget, GTK_ALIGN_START);
 	gtk_widget_set_valign (*label_text_widget, GTK_ALIGN_START);
