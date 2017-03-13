@@ -1,22 +1,22 @@
-### mate-screensaver 1.17.1
+### mate-screensaver 1.18.0
 
-  * Change shake times to even number, so the dialog can return to its 
-    original position.
-  * GTK+3.22: fix some GdkScreen related deprecations
-  * avoid deprecated gdk_window_set_background functions
-  * preferences UI: fix vertical expand of the scrolledwindow of the 
-    themetreeview
-  * preferences UI: don't use gtk+ deprecations
-  * patch to use user's background for lock screen also.
-  * po: actually add new languages from Transifex
-
-### mate-screensaver 1.17.0
-
+  * NEWS: use consistent, project wide, markdown-like formatting to make
+    generating release announcements easier
+  * Build: require libmate-menu >= 1.10
+  * Build: require libmatekbd and libmate-desktop >= 1.17
+  * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and --with-gtk
+    build option
+  * Lock screen: load user's background instead of system one
+  * Preferences: fix some GTK+ deprecations
   * Translations update
-  * move to GTK+3 (>= 3.14), drop GTK+2 code and --with-gtk build option
-  * build: require libmate-menu 1.10
-  * Also look for gdm-binary process
-  * GTK+-3 gs-grab-x11: use correct GTK_VERSION_CHECK
+
+### mate-screensaver 1.16.1
+
+  * Fix build breakage with GTK+ 3.14
+  * Fix "Blank screen" theme with GTK+ 3.22
+  * GTK+2: fix switching to "Blank screen" theme in fullscreen preview
+  * Properly restore password dialog position after wrong password attempt
+  * Check for gdm-binary process when switching user
 
 ### mate-screensaver 1.16.0
 
