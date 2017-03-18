@@ -226,6 +226,7 @@ copy_theme_dialog_init (CopyThemeDialog *dlg)
 	grid = gtk_grid_new ();
 	gtk_grid_set_row_spacing (GTK_GRID (grid), 4);
 	gtk_grid_set_column_spacing (GTK_GRID (grid), 4);
+	gtk_grid_set_column_homogeneous (GTK_GRID (grid), TRUE);
 
 	create_titled_label (GTK_GRID (grid), 0,
 	                     &label,
@@ -530,14 +531,12 @@ create_titled_label (GtkGrid    *grid,
 	gtk_widget_set_halign (*title_widget, GTK_ALIGN_END);
 	gtk_widget_set_valign (*title_widget, GTK_ALIGN_START);
 
-	gtk_grid_set_column_homogeneous (*title_widget, TRUE);
 	gtk_grid_attach (grid, *title_widget,
 	                 0, row, 1, 1);
 	gtk_widget_show (*title_widget);
 
 	*label_text_widget = gtk_label_new ("");
 	gtk_label_set_ellipsize (GTK_LABEL (*label_text_widget), PANGO_ELLIPSIZE_END);
-	gtk_grid_set_column_homogeneous (*label_text_widget, TRUE);
 	gtk_widget_set_hexpand (*label_text_widget, TRUE);
 	gtk_grid_attach (grid, *label_text_widget,
 	                 1, row, 1, 1);
