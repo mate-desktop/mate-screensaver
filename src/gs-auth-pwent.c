@@ -171,10 +171,10 @@ get_encrypted_passwd (const char *user)
 		}
 	}
 
-#ifndef HAVE_PAM
-	/* We only issue this warning if not compiled with support for PAM.
-	   If we're using PAM, it's not unheard of that normal pwent passwords
-	   would be unavailable. */
+#if !defined(HAVE_PAM) && !defined(HAVE_BSDAUTH)
+	/* We only issue this warning if not compiled with support for PAM,
+	   or bsd_auth(3). If we're using PAM, it's not unheard of that
+	   normal pwent passwords would be unavailable. */
 
 	if (!result)
 	{

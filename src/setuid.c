@@ -209,6 +209,15 @@ hack_uid (char **nolock_reason,
 
 		if (uid != euid || gid != egid)
 		{
+#ifdef HAVE_BSDAUTH /* we need to setgid auth to run the bsd_auth(3) login_* helpers */
+			struct group *authg = getgrnam("auth");
+			if (!authg || !authg->gr_name || !*authg->gr_name) {
+				reason = g_strdup ("no such group as \"auth\" for bsdauth.");
+				ret = FALSE;
+				goto out;
+			}
+			gid = authg->gr_gid;
+#endif /* !HAVE_BSDAUTH */
 			if (! set_ids_by_number (uid, gid, uid_message))
 			{
 				reason = g_strdup ("unable to discard privileges.");
