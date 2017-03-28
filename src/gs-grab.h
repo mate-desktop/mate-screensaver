@@ -53,26 +53,29 @@ GType     gs_grab_get_type         (void);
 
 GSGrab  * gs_grab_new              (void);
 
-void      gs_grab_release          (GSGrab    *grab);
-gboolean  gs_grab_release_mouse    (GSGrab    *grab);
+void      gs_grab_release          (GSGrab    *grab,
+                                    gboolean   flush);
 
 gboolean  gs_grab_grab_window      (GSGrab     *grab,
                                     GdkWindow  *window,
                                     GdkDisplay *display,
+                                    gboolean    no_pointer_grab,
                                     gboolean    hide_cursor);
 
 gboolean  gs_grab_grab_root        (GSGrab    *grab,
+                                    gboolean   no_pointer_grab,
                                     gboolean   hide_cursor);
 gboolean  gs_grab_grab_offscreen   (GSGrab    *grab,
+                                    gboolean   no_pointer_grab,
                                     gboolean   hide_cursor);
 
 void      gs_grab_move_to_window   (GSGrab     *grab,
                                     GdkWindow  *window,
                                     GdkDisplay *display,
+                                    gboolean    no_pointer_grab,
                                     gboolean    hide_cursor);
 
-void      gs_grab_mouse_reset      (GSGrab    *grab);
-void      gs_grab_keyboard_reset   (GSGrab    *grab);
+void      gs_grab_reset            (GSGrab     *grab);
 
 G_END_DECLS
 
