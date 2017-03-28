@@ -57,12 +57,11 @@ static void
 window_show_cb (GSWindow  *window,
                 gpointer   data)
 {
-	/* Grab keyboard so dialog can be used */
+	/* move devices grab so that dialog can be used */
 	gs_grab_move_to_window (grab,
 	                        gs_window_get_gdk_window (window),
 	                        gs_window_get_display (window),
-	                        FALSE);
-
+	                        TRUE, FALSE);
 }
 
 static gboolean
@@ -92,7 +91,7 @@ window_destroyed_cb (GtkWindow *window,
                      gpointer   data)
 {
 	disconnect_window_signals (GS_WINDOW (window));
-	gs_grab_release (grab);
+	gs_grab_release (grab, TRUE);
 	gtk_main_quit ();
 }
 

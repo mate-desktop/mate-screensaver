@@ -102,7 +102,7 @@ static gboolean release_grab_timeout(GSMonitor* monitor)
 
 	if (! manager_active)
 	{
-		gs_grab_release(monitor->priv->grab);
+		gs_grab_release(monitor->priv->grab, TRUE);
 	}
 
 	monitor->priv->release_grab_id = 0;
@@ -128,7 +128,7 @@ static gboolean watcher_idle_notice_cb(GSWatcher* watcher, gboolean in_effect, G
 		if (activation_enabled && ! inhibited)
 		{
 			/* start slow fade */
-			if (gs_grab_grab_offscreen(monitor->priv->grab, FALSE))
+			if (gs_grab_grab_offscreen(monitor->priv->grab, FALSE, FALSE))
 			{
 				gs_fade_async(monitor->priv->fade, FADE_TIMEOUT, NULL, NULL);
 			}

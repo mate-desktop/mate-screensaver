@@ -1207,11 +1207,11 @@ manager_maybe_grab_window (GSManager *manager,
 	if (gs_window_get_display (window) == display &&
 	    gs_window_get_monitor (window) == monitor)
 	{
-		gs_debug ("Moving grab to %p", window);
+		gs_debug ("Initiate grab move to %p", window);
 		gs_grab_move_to_window (manager->priv->grab,
 		                        gs_window_get_gdk_window (window),
 		                        gs_window_get_display (window),
-		                        FALSE);
+		                        FALSE, FALSE);
 		grabbed = TRUE;
 	}
 
@@ -1223,14 +1223,35 @@ window_grab_broken_cb (GSWindow           *window,
                        GdkEventGrabBroken *event,
                        GSManager          *manager)
 {
-	gs_debug ("GRAB BROKEN!");
+#if GTK_CHECK_VERSION (3, 20, 0)
+	GdkDisplay *display;
+	GdkSeat    *seat;
+	GdkDevice  *device;
+
+	display = gdk_window_get_display (gs_window_get_gdk_window (window));
+	seat = gdk_display_get_default_seat (display);
+
+#endif
 	if (event->keyboard)
 	{
-		gs_grab_keyboard_reset (manager->priv->grab);
+		gs_debug ("KEYBOARD GRAB BROKEN!");
+#if GTK_CHECK_VERSION (3, 20, 0)
+		device = gdk_seat_get_pointer (seat);
+		if (!gdk_display_device_is_grabbed (display, device))
+			gs_grab_reset (manager->priv->grab);
+#else
+		if (!gdk_pointer_is_grabbed ())
+			gs_grab_reset (manager->priv->grab);
+#endif
 	}
 	else
 	{
-		gs_grab_mouse_reset (manager->priv->grab);
+		gs_debug ("POINTER GRAB BROKEN!");
+#if GTK_CHECK_VERSION (3, 20, 0)
+		device = gdk_seat_get_keyboard (seat);
+		if (!gdk_display_device_is_grabbed (display, device))
+			gs_grab_reset (manager->priv->grab);
+#endif
 	}
 }
 
@@ -1405,7 +1426,7 @@ handle_window_dialog_up (GSManager *manager,
 	g_signal_emit (manager, signals [AUTH_REQUEST_BEGIN], 0);
 
 	manager->priv->dialog_up = TRUE;
-	/* Make all other windows insensitive so we don't get events */
+	/* make all other windows insensitive to not get events */
 	for (l = manager->priv->windows; l; l = l->next)
 	{
 		if (l->data != window)
@@ -1414,15 +1435,14 @@ handle_window_dialog_up (GSManager *manager,
 		}
 	}
 
-	/* Move keyboard and mouse grabs so dialog can be used */
+	/* move devices grab so that dialog can be used;
+	   release the pointer grab while dialog is up so that
+	   the dialog can be used. We'll regrab it when the dialog goes down */
+	gs_debug ("Initiate pointer-less grab move to %p", window);
 	gs_grab_move_to_window (manager->priv->grab,
 	                        gs_window_get_gdk_window (window),
 	                        gs_window_get_display (window),
-	                        FALSE);
-
-	/* Release the pointer grab while dialog is up so that
-	   the dialog can be used.  We'll regrab it when the dialog goes down. */
-	gs_grab_release_mouse (manager->priv->grab);
+	                        TRUE, FALSE);
 
 	if (! manager->priv->throttled)
 	{
@@ -1443,13 +1463,13 @@ handle_window_dialog_down (GSManager *manager,
 
 	gs_debug ("Handling dialog down");
 
-	/* Regrab the mouse */
+	/* regrab pointer */
 	gs_grab_move_to_window (manager->priv->grab,
 	                        gs_window_get_gdk_window (window),
 	                        gs_window_get_display (window),
-	                        FALSE);
+	                        FALSE, FALSE);
 
-	/* Make all windows sensitive so we get events */
+	/* make all windows sensitive to get events */
 	for (l = manager->priv->windows; l; l = l->next)
 	{
 		gtk_widget_set_sensitive (GTK_WIDGET (l->data), TRUE);
@@ -1741,7 +1761,7 @@ gs_manager_finalize (GObject *object)
 	remove_unfade_idle (manager);
 	remove_timers (manager);
 
-	gs_grab_release (manager->priv->grab);
+	gs_grab_release (manager->priv->grab, TRUE);
 
 	manager_stop_jobs (manager);
 
@@ -1875,7 +1895,7 @@ gs_manager_activate (GSManager *manager)
 		return FALSE;
 	}
 
-	res = gs_grab_grab_root (manager->priv->grab, FALSE);
+	res = gs_grab_grab_root (manager->priv->grab, FALSE, FALSE);
 	if (! res)
 	{
 		return FALSE;
@@ -1933,7 +1953,7 @@ gs_manager_deactivate (GSManager *manager)
 	gs_fade_reset (manager->priv->fade);
 	remove_timers (manager);
 
-	gs_grab_release (manager->priv->grab);
+	gs_grab_release (manager->priv->grab, TRUE);
 
 	manager_stop_jobs (manager);
 
