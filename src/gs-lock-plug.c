@@ -1595,7 +1595,8 @@ get_user_display_name (void)
 
 	name = g_get_real_name ();
 
-	if (name == NULL || strcmp (name, "Unknown") == 0)
+	if (name == NULL || g_strcmp0 (name, "") == 0 ||
+	    g_strcmp0 (name, "Unknown") == 0)
 	{
 		name = g_get_user_name ();
 	}
