@@ -305,6 +305,7 @@ get_outside_region (GSWindow *window)
 	GdkDisplay *display;
 #if GTK_CHECK_VERSION (3, 22, 0)
 	int         i;
+	int         num_monitors;
 #else
 	GdkScreen  *screen;
 	int         mon;
@@ -319,16 +320,18 @@ get_outside_region (GSWindow *window)
 	region = cairo_region_create ();
 
 #if GTK_CHECK_VERSION (3, 22, 0)
-	for (i = 0; i < gdk_display_get_n_monitors (display); i++)
+	num_monitors = gdk_display_get_n_monitors (display);
+	for (i = 0; i < num_monitors; i++)
 #else
-	for (mon = 0; mon < gdk_screen_get_n_monitors (screen); mon++)
+	for (mon = 0; mon < window->priv->monitor; mon++)
 #endif
 	{
 #if GTK_CHECK_VERSION (3, 22, 0)
 		GdkMonitor *mon = gdk_display_get_monitor (display, i);
-#endif
+
 		if (mon != window->priv->monitor)
 		{
+#endif
 			GdkRectangle geometry;
 			cairo_rectangle_int_t rectangle;
 
@@ -343,7 +346,13 @@ get_outside_region (GSWindow *window)
 			rectangle.width = geometry.width;
 			rectangle.height = geometry.height;
 			cairo_region_union_rectangle (region, &rectangle);
+#if GTK_CHECK_VERSION (3, 22, 0)
 		}
+		else
+		{
+			break;
+		}
+#endif
 	}
 
 	return region;
