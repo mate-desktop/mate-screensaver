@@ -1,3 +1,13 @@
+### mate-screensaver 1.18.1
+
+  * Translations update
+  * lock-dialog UI: fix some deprecations
+  * g_get_real_name will never return NULL pointer
+  * screensaver and lock screen not correctly displayed in
+    configurations with overlapping monitor geometries
+  * [GTK+3.20] Switch to GdkSeat
+  * Set input purpose for the password entry widget
+
 ### mate-screensaver 1.18.0
 
   * NEWS: use consistent, project wide, markdown-like formatting to make
