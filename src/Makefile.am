@@ -148,6 +148,7 @@ EXTRA_mate_screensaver_dialog_SOURCES = \
 	gs-auth-pam.c		\
 	gs-auth-helper.c	\
 	gs-auth-pwent.c		\
+	gs-auth-bsdauth.c	\
 	$(NULL)
 
 mate_screensaver_dialog_LDADD =	\
