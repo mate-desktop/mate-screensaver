@@ -688,12 +688,15 @@
 
 
 ========== pl.po ==========
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Aviary.pl
-# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
-# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
-# matepl@aviary.pl
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Polish translation for gnome-screensaver.
+# Copyright © 2006-2010 the gnome-screensaver authors.
+# This file is distributed under the same license as the gnome-screensaver package.
+# Andrzej Polatyński <andrzej@datatel.net.pl>, 2006.
+# Wadim Dziedzic <wdziedzic@aviary.pl>, 2007-2008.
+# Tomasz Dominikowski <dominikowski@gmail.com>, 2007-2009.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010.
+# Aviary.pl <gnomepl@aviary.pl>, 2007-2010.
+#
 
 
 
