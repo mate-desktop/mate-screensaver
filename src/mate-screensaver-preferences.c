@@ -942,6 +942,8 @@ time_to_string_text (long time)
 	char *secs, *mins, *hours, *string;
 	int   sec, min, hour;
 
+	int   inc_len, len_hour, len_minutes;
+
 	sec = time % 60;
 	time = time - sec;
 	min = (time % (60 * 60)) / 60;
@@ -956,6 +958,37 @@ time_to_string_text (long time)
 
 	secs = g_strdup_printf (ngettext ("%d second",
 	                                  "%d seconds", sec), sec);
+
+	inc_len = strlen (g_strdup_printf (_("%s %s"), 
+	                  g_strdup_printf (ngettext ("%d hour",
+	                                             "%d hours", 1), 1),
+	                  g_strdup_printf (ngettext ("%d minute",
+	                                             "%d minutes", 59), 59))) - 1;
+
+	len_hour = strlen (g_strdup_printf (ngettext ("%d hour",
+	                                              "%d hours", 1), 1));
+
+	len_minutes = 0;
+
+	for (int n = 2; n < 60; n++)
+	{
+		if (n < 10)
+		{
+			if ((strlen (g_str_to_ascii (g_strdup_printf (ngettext ("%d minute",
+	                                                                        "%d minutes", n), n), NULL)) - 2) > len_minutes)
+
+				len_minutes = strlen (g_str_to_ascii (g_strdup_printf (ngettext ("%d minute",
+	                                                                                         "%d minutes", n), n), NULL)) - 2;
+		}
+		else
+		{
+			if ((strlen (g_str_to_ascii (g_strdup_printf (ngettext ("%d minute",
+	                                                                        "%d minutes", n), n), NULL)) - 3) > len_minutes)
+
+				len_minutes = strlen (g_str_to_ascii (g_strdup_printf (ngettext ("%d minute",
+	                                                                                         "%d minutes", n), n), NULL)) - 3;
+		}
+	}
 
 	if (hour > 0)
 	{
@@ -986,6 +1019,36 @@ time_to_string_text (long time)
 		{
 			/* minutes */
 			string = g_strdup_printf (_("%s"), mins);
+
+			if (min < 10)
+			{
+				if (min == 1)
+					while (strlen (string) != (2 * len_hour + inc_len - 4))
+					{
+						if (strlen (string) % 2 == 0)
+							string = g_strconcat (string, " ", NULL);
+						else
+							string = g_strconcat (" " , string, NULL);
+					}
+				else
+					while (strlen (string) != (len_minutes + inc_len))
+					{
+						if (strlen (string) % 2 == 0)
+							string = g_strconcat (string, " ", NULL);
+						else
+							string = g_strconcat (" " , string, NULL);
+					}
+			}
+			else
+			{
+				while (strlen (string) != (len_minutes + inc_len - 1))
+				{
+					if (strlen (string) % 2 == 0)
+						string = g_strconcat (string, " ", NULL);
+					else
+						string = g_strconcat (" " , string, NULL);
+				}
+			}
 		}
 	}
 	else
