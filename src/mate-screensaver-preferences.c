@@ -942,7 +942,7 @@ time_to_string_text (long time)
 	char *secs, *mins, *hours, *string;
 	int   sec, min, hour;
 
-	int   inc_len, len_hour, len_minutes;
+	int   inc_len, len_minutes;
 
 	sec = time % 60;
 	time = time - sec;
@@ -965,9 +965,6 @@ time_to_string_text (long time)
 	                  g_strdup_printf (ngettext ("%d minute",
 	                                             "%d minutes", 59), 59))) - 1;
 
-	len_hour = strlen (g_strdup_printf (ngettext ("%d hour",
-	                                              "%d hours", 1), 1));
-
 	len_minutes = 0;
 
 	for (int n = 2; n < 60; n++)
@@ -989,6 +986,15 @@ time_to_string_text (long time)
 	                                                                                         "%d minutes", n), n), NULL)) - 3;
 		}
 	}
+
+	if ((strlen (g_str_to_ascii (g_strdup_printf (ngettext ("%d minute",
+	                                                        "%d minutes", 1), 1), NULL)) - 2) > len_minutes)
+
+		len_minutes = strlen (g_str_to_ascii (g_strdup_printf (ngettext ("%d minute",
+	                                                                         "%d minutes", 1), 1), NULL)) - 2;
+
+	if (len_minutes < 1)
+		len_minutes = 1;
 
 	if (hour > 0)
 	{
@@ -1023,7 +1029,7 @@ time_to_string_text (long time)
 			if (min < 10)
 			{
 				if (min == 1)
-					while (strlen (string) != (2 * len_hour + inc_len - 4))
+					while (strlen (string) != (len_minutes + inc_len + 3))
 					{
 						if (strlen (string) % 2 == 0)
 							string = g_strconcat (string, " ", NULL);
