@@ -1,5 +1,20 @@
 ### mate-screensaver 1.19.0
 
+  * Translations update
+  * Fix: idle slider display in all languages
+  * drop glib required max version
+  * avoid deprecated gdk_screen_get_width/height
+  * don't use deprecated gtk_show_uri
+  * Restore Polish translation credits from GNOME
+  * Implement OpenBSD authentication using bsd_auth(3).
+  * Bug Fix: g_get_real_name will never return NULL pointer
+  * lock-dialog UI: avoid deprecated widgets
+  * Bug fix: screensaver and lock screen not correctly displayed
+    in configurations with overlapping monitor geometries
+  * [GTK+3.20] Switch to GdkSeat
+  * Set input purpose for the password entry widget
+  * copy theme dialog: fix build warning about wrong variable type
+
 ### mate-screensaver 1.18.0
 
   * NEWS: use consistent, project wide, markdown-like formatting to make
