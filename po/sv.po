@@ -7,16 +7,17 @@
 # Daniel Nylander <po@danielnylander.se>, 2006, 2007, 2008, 2009
 # Erik, 2014,2016
 # Henrik Mattsson-Mårn <h@reglage.net>, 2016
-# Jonatan Nyberg <jonatan@autistici.org>, 2016-2017
+# Jonatan Nyberg, 2016-2017
 # Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>, 2016
 # Patrik Nilsson <asavartzeth@gmail.com>, 2014
+# Tobias Lekare <lekare@linux.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-06 00:57+0300\n"
-"PO-Revision-Date: 2017-01-24 09:59+0000\n"
-"Last-Translator: Jonatan Nyberg <jonatan@autistici.org>\n"
+"PO-Revision-Date: 2017-08-09 19:17+0000\n"
+"Last-Translator: Tobias Lekare <lekare@linux.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/mate/MATE/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -233,7 +234,7 @@ msgid ""
 "The command to invoke when the logout button is clicked. This command should"
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
-msgstr ""
+msgstr "Kommandot att starta när logga ut-knappen används. Detta kommando borde helt enkelt logga ut användaren utan någon interaktion. Den här knappen träder endast i kraft om \"logout_enable\"-knappen är satt till SANT."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
@@ -247,20 +248,20 @@ msgstr "Ställ in den här till TRUE för att erbjuda ett alternativ om att byta
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
-msgstr ""
+msgstr "Tema för låsdialog"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:28
 msgid "Theme to use for the lock dialog"
-msgstr ""
+msgstr "Tema att använda för låsdialogen"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:29
 msgid "Allow the session status message to be displayed"
-msgstr ""
+msgstr "Tillåt att visa sessionens statusmeddelanden"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:30
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
-msgstr ""
+msgstr "Tillåt att visa sessionens statusmeddelanden när skärmen är låst."
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -663,7 +664,7 @@ msgstr "Aktivera felsökningskod"
 
 #: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screensaver and locker program"
-msgstr ""
+msgstr "Kör skärmsläckar och låsprogram"
 
 #: ../src/gs-auth-pam.c:413
 #, c-format

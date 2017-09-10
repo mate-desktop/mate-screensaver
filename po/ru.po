@@ -6,7 +6,7 @@
 # Alexander Saprykin <xelfium@gmail.com>, 2009
 # Alexei Sorokin <sor.alexei@meowr.ru>, 2012-2013
 # Alexei Sorokin <sor.alexei@meowr.ru>, 2013-2014
-# Дмитрий Михирев <bizdelnick@gmail.com>, 2015
+# Дмитрий Михирев, 2015
 # Leonid Kanter <leon@asplinux.ru>, 2006
 # monsta <monsta@inbox.ru>, 2017
 # Sergio Kvantos <kvantos@plotinka.ru>, 2006

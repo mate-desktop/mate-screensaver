@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Horazone Detex <thmmt2017d@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-06 00:57+0300\n"
-"PO-Revision-Date: 2015-12-16 14:02+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"PO-Revision-Date: 2017-07-06 14:00+0000\n"
+"Last-Translator: Horazone Detex <thmmt2017d@gmail.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/mate/MATE/language/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -85,19 +86,19 @@ msgstr "Vũ trụ"
 
 #: ../data/lock-dialog-default.ui.h:1
 msgid "_Leave Message"
-msgstr ""
+msgstr "Để lại _lời nhắn"
 
 #: ../data/lock-dialog-default.ui.h:2
 msgid "_Switch User"
-msgstr ""
+msgstr "_Chuyển đổi người dùng"
 
 #: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
-msgstr ""
+msgstr "Đăng _xuất"
 
 #: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
-msgstr ""
+msgstr "Th_ôi"
 
 #: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1658
 msgid "_Unlock"
@@ -106,27 +107,27 @@ msgstr "_Bỏ khoá"
 #: ../data/lock-dialog-default.ui.h:7
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
-msgstr ""
+msgstr "<b>Lời nhắn cho %R:</b>"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:1
 msgid "Activate when idle"
-msgstr ""
+msgstr "Kích hoạt khi nghỉ"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr ""
+msgstr "Đặt giá trị này là TRUE để hoạt hoá bộ bảo vệ màn hình khi phiên chạy nghỉ."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
-msgstr ""
+msgstr "Khoá khi mới kích hoạt"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr ""
+msgstr "Đặt giá trị này là TRUE để khóa màn hình khi bộ bảo vệ màn hình hoạt động."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
-msgstr ""
+msgstr "`Chế độ chọn chủ đề bộ bảo vệ màn hình"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:6
 msgid ""
@@ -135,7 +136,7 @@ msgid ""
 "screensaver using only one theme on activation (specified in \"themes\" "
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
-msgstr ""
+msgstr "Chế độ lựa chọn được dùng bởi bộ bảo vệ màn hình. blank-only để bật chạy bộ bảo vệ màn hình mà không dùng sắc thái nào khi mới hoạt động, single để bật chạy bộ bảo vệ màn hình mà dùng chỉ một sắc thái khi mới hoạt động thôi (được ghi rõ trong khoá sắc thái \"themes\"), random để bật chạy bộ bảo vệ màn hình mà dùng sắc thái ngẫu nhiên khi mới hoạt động."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -143,50 +144,50 @@ msgid ""
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
-msgstr ""
+msgstr "Khoá này ghi rõ danh sách các sắc thái cho bộ bảo vệ màn hình dùng. Nó bị bỏ qua khi khoá chế độ \"mode\" là \"blank-only\", cung cấp tên sắc thái khi \"mode\" là \"single\", cung cấp danh sách các sắc thái khi \"mode\" là \"random\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
-msgstr ""
+msgstr "Thời gian trước đường cơ bản quản lý điện năng"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:10
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
-msgstr ""
+msgstr "Số giây nghỉ trước khi gửi tín hiệu cho chức năng quản lý điện năng. Khoá này được đặt và bảo tồn bởi tác nhân quản lý điện năng của phiên chạy đó."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
-msgstr ""
+msgstr "Thời gian trước khi thay đổi sắc thái"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr ""
+msgstr "Bao nhiêu phút cần chạy trước khi thay đổi sắc thái ảnh bảo vệ màn hình."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
-msgstr ""
+msgstr "Thời gian trước khi khoá"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:14
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
-msgstr ""
+msgstr "Số phút sau khi bộ bảo vệ màn hình mới hoạt động, trước khi khoá màn hình."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
-msgstr ""
+msgstr "Cho phép nhúng bàn phím trong cửa sổ"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:16
 msgid ""
 "Set this to TRUE to allow embedding a keyboard into the window when trying "
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
-msgstr ""
+msgstr "Đặt là TRUE để cho phép nhúng bàn phím trong cửa sổ khi thử mở khoá. Khoá \" keyboard_command\" phải được đặt bằng lệnh thích hợp."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
-msgstr ""
+msgstr "Lệnh bàn phím nhúng"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:18
 msgid ""
@@ -194,66 +195,66 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr ""
+msgstr "Lệnh sẽ được chạy, nếu khoá \"embedded_keyboard_enabled\" được đặt là TRUE, để nhúng ô điều khiển bàn phím trong cửa sổ. Lệnh này nên thực hiện một giao diện nút XEMBED và xuất một XID cửa sổ ra thiết bị xuất chuẩn."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
-msgstr ""
+msgstr "Cho phép đăng xuất"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:20
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
-msgstr ""
+msgstr "Đặt giá trị này là TRUE để cung cấp trong hộp thoại bỏ khoá tùy chọn đăng xuất sau khi trễ. Sự trễ được ghi rõ trong khoá làm trễ đăng xuất \"logout_delay\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
-msgstr ""
+msgstr "Thời gian trước khi nhận tùy chọn đăng xuất"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:22
 msgid ""
 "The number of minutes after the screensaver activation before a logout "
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
-msgstr ""
+msgstr "Số phút sau khi bộ bảo vệ màn hình mới hoạt động, trước khi tùy chọn đăng xuất được hiển thị trong hộp thoại bỏ khoá. Khoá này có tác động chỉ nếu khoá bật đăng xuất \"logout_enable\" được đặt là TRUE."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
-msgstr ""
+msgstr "Lệnh đăng xuất"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:24
 msgid ""
 "The command to invoke when the logout button is clicked. This command should"
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
-msgstr ""
+msgstr "Lệnh cần chạy khi cái nút đăng xuất được bấm. Lệnh này nên đơn giản đăng xuất người dùng, không tương tác gì. Khoá này có tác động chỉ nếu khoá logout_enable được đặt là TRUE."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
-msgstr ""
+msgstr "Cho phép chuyển đổi người dùng"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:26
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
-msgstr ""
+msgstr "Đặt giá trị này là TRUE để cung cấp trong hộp thoại bỏ khoá tùy chọn chuyển đổi sang tài khoản người dùng khác."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
-msgstr ""
+msgstr "Sắc thái cho hộp thoại khoá"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:28
 msgid "Theme to use for the lock dialog"
-msgstr ""
+msgstr "Sắc thái cần dùng cho hộp thoại khoá"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:29
 msgid "Allow the session status message to be displayed"
-msgstr ""
+msgstr "Cho phép hiển thị thông điệp về trạng thái phiên chạy"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:30
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
-msgstr ""
+msgstr "Cho phép hiển thị thông điệp về trạng thái phiên chạy khi màn hình bị khoá."
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -261,19 +262,19 @@ msgstr "Hiển thị trình diễn các ảnh của vũ trụ"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
 msgid "Floating MATE"
-msgstr ""
+msgstr "Biểu tượng MATE lơ lửng"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
-msgstr ""
+msgstr "Thổi bong bóng biểu tượng MATE xung quanh màn hình"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:1
 msgid "Floating GNOME"
-msgstr ""
+msgstr "Biểu tượng GNOME lơ lửng"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the GNOME logo around the screen"
-msgstr ""
+msgstr "Thổi bong bóng biểu tượng GNOME xung quanh màn hình"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
 msgid "Pictures folder"
@@ -475,7 +476,7 @@ msgstr "Bộ bảo vệ màn hình đã hoạt động trong vòng %d giây.\n"
 #: ../src/mate-screensaver-command.c:417
 #, c-format
 msgid "The screensaver is not currently active.\n"
-msgstr ""
+msgstr "Bộ bảo vệ màn hình hiện tại không hoạt động.\n"
 
 #: ../src/mate-screensaver-dialog.c:57
 msgid "Show debugging output"
@@ -503,7 +504,7 @@ msgstr "THÔNG ĐIỆP"
 
 #: ../src/mate-screensaver-dialog.c:63
 msgid "Not used"
-msgstr ""
+msgstr "Không dùng"
 
 #. login: is whacked always translate to Username:
 #: ../src/mate-screensaver-dialog.c:165 ../src/mate-screensaver-dialog.c:166
@@ -653,7 +654,7 @@ msgstr "Bật chạy mã gỡ lỗi"
 
 #: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screensaver and locker program"
-msgstr ""
+msgstr "Chạy bộ bảo vệ màn hình và các chương trình khóa"
 
 #: ../src/gs-auth-pam.c:413
 #, c-format
@@ -693,7 +694,7 @@ msgstr "bộ bảo vệ màn hình đang chạy trong phiên làm việc này"
 #. GDateTime.html#g-date-time-format
 #: ../src/gs-lock-plug.c:304
 msgid "%A, %B %e"
-msgstr ""
+msgstr "%A, %B %e"
 
 #: ../src/gs-lock-plug.c:406
 msgid "Time has expired."
