@@ -935,7 +935,7 @@ time_to_string_text (long time)
 	char *secs, *mins, *hours, *string;
 	int   sec, min, hour;
 
-	int   inc_len, len_minutes;
+	int n, inc_len, len_minutes;
 
 	sec = time % 60;
 	time = time - sec;
@@ -960,7 +960,7 @@ time_to_string_text (long time)
 
 	len_minutes = 0;
 
-	for (int n = 2; n < 60; n++)
+	for (n = 2; n < 60; n++)
 	{
 		if (n < 10)
 		{
