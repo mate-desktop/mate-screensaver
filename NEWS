@@ -1,3 +1,10 @@
+### mate-screensaver 1.18.2
+
+  * Translations update
+  * fix loop initial declarations
+  * drop glib required max version
+  * Fix: idle slider display in all languages
+
 ### mate-screensaver 1.18.1
 
   * Translations update
