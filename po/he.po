@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# monsta <monsta@inbox.ru>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-06 00:57+0300\n"
-"PO-Revision-Date: 2015-12-16 14:02+0000\n"
+"PO-Revision-Date: 2017-10-20 09:58+0000\n"
 "Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: Hebrew (http://www.transifex.com/mate/MATE/language/he/)\n"
 "MIME-Version: 1.0\n"
@@ -64,7 +65,7 @@ msgstr "_נעל מסך כששומר המסך פועל"
 
 #: ../data/mate-screensaver-preferences.ui.h:10
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>אזהרה: המסך לא יינעל עבור מנהל המערכת./b>"
+msgstr "<b>אזהרה: המסך לא יינעל עבור מנהל המערכת.</b>"
 
 #: ../data/mate-screensaver.directory.in.h:1
 msgid "Screensavers"

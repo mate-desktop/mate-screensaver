@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-06 00:57+0300\n"
-"PO-Revision-Date: 2017-03-03 02:24+0000\n"
+"PO-Revision-Date: 2017-09-23 22:36+0000\n"
 "Last-Translator: samson <sambelet@yahoo.com>\n"
 "Language-Team: Amharic (http://www.transifex.com/mate/MATE/language/am/)\n"
 "MIME-Version: 1.0\n"
@@ -82,7 +82,7 @@ msgstr "የመመልከቻው ማዳኛ ገጽታዎች "
 #: ../data/images/cosmos/cosmos.xml.in.in.h:3
 #: ../savers/cosmos-slideshow.desktop.in.in.h:1
 msgid "Cosmos"
-msgstr ""
+msgstr "ጠፈር"
 
 #: ../data/lock-dialog-default.ui.h:1
 msgid "_Leave Message"
