@@ -1272,12 +1272,8 @@ create_keyboard_socket (GSWindow *window,
                         guint32   id)
 {
 	int height;
-	int sc_height;
 
-	gdk_window_get_geometry (gdk_screen_get_root_window (gtk_widget_get_screen (GTK_WIDGET (window))),
-				 NULL, NULL, NULL, &sc_height);
-
-	height = sc_height / 4;
+	height = (HeightOfScreen (gdk_x11_screen_get_xscreen (gtk_widget_get_screen (GTK_WIDGET (window))))) / 4;
 
 	window->priv->keyboard_socket = gtk_socket_new ();
 	gtk_widget_set_size_request (window->priv->keyboard_socket, -1, height);
@@ -2166,17 +2162,12 @@ gs_window_real_motion_notify_event (GtkWidget      *widget,
 	gdouble     min_percentage = 0.1;
 	GdkDisplay *display;
 	GdkScreen  *screen;
-	gint        sc_width;
 
 	window = GS_WINDOW (widget);
 
 	display = gs_window_get_display (window);
 	screen = gdk_display_get_default_screen (display);
-
-	gdk_window_get_geometry (gdk_screen_get_root_window (screen), NULL, NULL,
-				 &sc_width, NULL);
-
-	min_distance = sc_width * min_percentage;
+	min_distance = WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) * min_percentage;
 
 	/* if the last position was not set then don't detect motion */
 	if (window->priv->last_x < 0 || window->priv->last_y < 0)
