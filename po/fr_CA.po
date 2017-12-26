@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 00:57+0300\n"
+"POT-Creation-Date: 2017-11-28 15:01+0100\n"
 "PO-Revision-Date: 2017-09-22 02:12+0000\n"
 "Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: French (Canada) (http://www.transifex.com/mate/MATE/language/fr_CA/)\n"
@@ -100,7 +100,7 @@ msgstr ""
 msgid "_Cancel"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1658
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
 msgid "_Unlock"
 msgstr ""
 
@@ -292,7 +292,7 @@ msgstr ""
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr ""
 
-#: ../savers/popsquares.c:49 ../savers/floaters.c:1187
+#: ../savers/popsquares.c:49 ../savers/floaters.c:1188
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr ""
@@ -331,11 +331,11 @@ msgstr ""
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#: ../savers/floaters.c:1181
+#: ../savers/floaters.c:1182
 msgid "image - floats images around the screen"
 msgstr ""
 
-#: ../savers/floaters.c:1196
+#: ../savers/floaters.c:1197
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr ""
@@ -368,28 +368,28 @@ msgstr ""
 msgid "Copying files"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:233
+#: ../src/copy-theme-dialog.c:234
 msgid "From:"
 msgstr "De:"
 
-#: ../src/copy-theme-dialog.c:237
+#: ../src/copy-theme-dialog.c:238
 msgid "To:"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:258
+#: ../src/copy-theme-dialog.c:259
 msgid "Copying themes"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:301
+#: ../src/copy-theme-dialog.c:302
 msgid "Invalid screensaver theme"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:304
+#: ../src/copy-theme-dialog.c:305
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:484
+#: ../src/copy-theme-dialog.c:485
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr ""
@@ -581,69 +581,78 @@ msgstr ""
 msgid "Authentication failed."
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:448
+#: ../src/mate-screensaver-preferences.c:461
 msgid "Blank screen"
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:454
+#: ../src/mate-screensaver-preferences.c:467
 msgid "Random"
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:938
+#: ../src/mate-screensaver-preferences.c:953
+#: ../src/mate-screensaver-preferences.c:963
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:941
+#: ../src/mate-screensaver-preferences.c:956
+#: ../src/mate-screensaver-preferences.c:965
+#: ../src/mate-screensaver-preferences.c:974
+#: ../src/mate-screensaver-preferences.c:977
+#: ../src/mate-screensaver-preferences.c:982
+#: ../src/mate-screensaver-preferences.c:985
+#: ../src/mate-screensaver-preferences.c:990
+#: ../src/mate-screensaver-preferences.c:993
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:944
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:952
-#, c-format
-msgid "%s %s %s"
-msgstr ""
-
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:957
-#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:962
+#: ../src/mate-screensaver-preferences.c:1009
+#: ../src/mate-screensaver-preferences.c:1022
 #, c-format
 msgid "%s %s"
+msgstr ""
+
+#. hour:minutes:seconds
+#: ../src/mate-screensaver-preferences.c:1004
+#, c-format
+msgid "%s %s %s"
 msgstr ""
 
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:975
-#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:1014
+#: ../src/mate-screensaver-preferences.c:1027
+#: ../src/mate-screensaver-preferences.c:1063
 #, c-format
 msgid "%s"
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:996
+#: ../src/mate-screensaver-preferences.c:1078
 #, c-format
 msgid "Never"
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:1480
+#: ../src/mate-screensaver-preferences.c:1567
 msgid "Could not load the main interface"
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:1482
+#: ../src/mate-screensaver-preferences.c:1569
 msgid "Please make sure that the screensaver is properly installed"
 msgstr ""
 
@@ -707,19 +716,19 @@ msgstr ""
 msgid "You have the Caps Lock key on."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1638
+#: ../src/gs-lock-plug.c:1639
 msgid "S_witch User..."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1647
+#: ../src/gs-lock-plug.c:1648
 msgid "Log _Out"
 msgstr ""
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1872
+#: ../src/gs-lock-plug.c:1873
 msgid "%U on %h"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1891
+#: ../src/gs-lock-plug.c:1892
 msgid "_Password:"
 msgstr ""

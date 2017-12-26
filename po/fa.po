@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 00:57+0300\n"
+"POT-Creation-Date: 2017-11-28 15:01+0100\n"
 "PO-Revision-Date: 2017-09-19 13:40+0000\n"
 "Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: Persian (http://www.transifex.com/mate/MATE/language/fa/)\n"
@@ -102,7 +102,7 @@ msgstr "_خروج از سیستم"
 msgid "_Cancel"
 msgstr "ان_صراف"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1658
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
 msgid "_Unlock"
 msgstr "_باز کردن قفل"
 
@@ -294,7 +294,7 @@ msgstr "مربع‌های پاپ"
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr "چهارخانه‌ای با رنگ‌های تپنده به سبک هنر پاپ."
 
-#: ../savers/popsquares.c:49 ../savers/floaters.c:1187
+#: ../savers/popsquares.c:49 ../savers/floaters.c:1188
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s.  برای اطلاعات در مورد طرز استفاده --help را ببینید.\n"
@@ -333,11 +333,11 @@ msgstr "تصویر منبع برای استفاده"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#: ../savers/floaters.c:1181
+#: ../savers/floaters.c:1182
 msgid "image - floats images around the screen"
 msgstr "image - تصاویر را اطراف صفحهٔ نمایش شناور می‌کند"
 
-#: ../savers/floaters.c:1196
+#: ../savers/floaters.c:1197
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "باید یک تصویر مشخص کنید.  برای اطلاعات  در مورد استفاده --help را ببینید.\n"
@@ -370,28 +370,28 @@ msgstr "تصاویر را کشیده نمایش نده"
 msgid "Copying files"
 msgstr "در حال نسخه‌برداری از پرونده‌ها"
 
-#: ../src/copy-theme-dialog.c:233
+#: ../src/copy-theme-dialog.c:234
 msgid "From:"
 msgstr "از:"
 
-#: ../src/copy-theme-dialog.c:237
+#: ../src/copy-theme-dialog.c:238
 msgid "To:"
 msgstr "به:"
 
-#: ../src/copy-theme-dialog.c:258
+#: ../src/copy-theme-dialog.c:259
 msgid "Copying themes"
 msgstr "تم های کپی"
 
-#: ../src/copy-theme-dialog.c:301
+#: ../src/copy-theme-dialog.c:302
 msgid "Invalid screensaver theme"
 msgstr "تم محافظ صفحهٔ نمایش نامعتبر"
 
-#: ../src/copy-theme-dialog.c:304
+#: ../src/copy-theme-dialog.c:305
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "به نظر نمی رسد %s تم محافظ صفحه نمایش معتبری باشد"
 
-#: ../src/copy-theme-dialog.c:484
+#: ../src/copy-theme-dialog.c:485
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "در حال نسخه‌برداری پروندهٔ: %Iu از %Iu"
@@ -583,66 +583,75 @@ msgstr "در حال بررسی..."
 msgid "Authentication failed."
 msgstr "تأیید هویت شکست خورد."
 
-#: ../src/mate-screensaver-preferences.c:448
+#: ../src/mate-screensaver-preferences.c:461
 msgid "Blank screen"
 msgstr "صفحهٔ نمایش خالی"
 
-#: ../src/mate-screensaver-preferences.c:454
+#: ../src/mate-screensaver-preferences.c:467
 msgid "Random"
 msgstr "تصادفی"
 
-#: ../src/mate-screensaver-preferences.c:938
+#: ../src/mate-screensaver-preferences.c:953
+#: ../src/mate-screensaver-preferences.c:963
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%Id ساعت"
 
-#: ../src/mate-screensaver-preferences.c:941
+#: ../src/mate-screensaver-preferences.c:956
+#: ../src/mate-screensaver-preferences.c:965
+#: ../src/mate-screensaver-preferences.c:974
+#: ../src/mate-screensaver-preferences.c:977
+#: ../src/mate-screensaver-preferences.c:982
+#: ../src/mate-screensaver-preferences.c:985
+#: ../src/mate-screensaver-preferences.c:990
+#: ../src/mate-screensaver-preferences.c:993
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%Id دقیقه"
 
-#: ../src/mate-screensaver-preferences.c:944
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] "%Id ثانیه"
 
-#. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:952
-#, c-format
-msgid "%s %s %s"
-msgstr "%s %s %s"
-
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:957
-#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:962
+#: ../src/mate-screensaver-preferences.c:1009
+#: ../src/mate-screensaver-preferences.c:1022
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
+#. hour:minutes:seconds
+#: ../src/mate-screensaver-preferences.c:1004
+#, c-format
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:975
-#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:1014
+#: ../src/mate-screensaver-preferences.c:1027
+#: ../src/mate-screensaver-preferences.c:1063
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:996
+#: ../src/mate-screensaver-preferences.c:1078
 #, c-format
 msgid "Never"
 msgstr "هرگز"
 
-#: ../src/mate-screensaver-preferences.c:1480
+#: ../src/mate-screensaver-preferences.c:1567
 msgid "Could not load the main interface"
 msgstr "نمی‌توان واسط اصلی را بار  کرد"
 
-#: ../src/mate-screensaver-preferences.c:1482
+#: ../src/mate-screensaver-preferences.c:1569
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "لطفاً بررسی کنید که محافظ صفحهٔ نمایش درست نصب شده باشد"
 
@@ -706,19 +715,19 @@ msgstr "زمان منقضی شد."
 msgid "You have the Caps Lock key on."
 msgstr "کلید قفل تبدیل روشن است."
 
-#: ../src/gs-lock-plug.c:1638
+#: ../src/gs-lock-plug.c:1639
 msgid "S_witch User..."
 msgstr "ت_عویض کاربر..."
 
-#: ../src/gs-lock-plug.c:1647
+#: ../src/gs-lock-plug.c:1648
 msgid "Log _Out"
 msgstr "_خروج از سیستم"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1872
+#: ../src/gs-lock-plug.c:1873
 msgid "%U on %h"
 msgstr "%U روی %h"
 
-#: ../src/gs-lock-plug.c:1891
+#: ../src/gs-lock-plug.c:1892
 msgid "_Password:"
 msgstr "_گذرواژه:"

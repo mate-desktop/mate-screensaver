@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-06 00:57+0300\n"
+"POT-Creation-Date: 2017-11-28 15:01+0100\n"
 "PO-Revision-Date: 2017-09-19 13:39+0000\n"
 "Last-Translator: monsta <monsta@inbox.ru>\n"
 "Language-Team: Hindi (http://www.transifex.com/mate/MATE/language/hi/)\n"
@@ -102,7 +102,7 @@ msgstr "लॉग आउट (_L)"
 msgid "_Cancel"
 msgstr "रद्द करें (_C)"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1658
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
 msgid "_Unlock"
 msgstr "अनलॉक करें (_U)"
 
@@ -294,7 +294,7 @@ msgstr "पॉप अप वर्ग"
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr "पल्सिंग रंग का एक pop-art-ish ग्रिड"
 
-#: ../savers/popsquares.c:49 ../savers/floaters.c:1187
+#: ../savers/popsquares.c:49 ../savers/floaters.c:1188
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. देखें --मदद प्रयोग सूचना के लिये.\n"
@@ -333,11 +333,11 @@ msgstr "प्रयोग के लिये श्रोत चित्र"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#: ../savers/floaters.c:1181
+#: ../savers/floaters.c:1182
 msgid "image - floats images around the screen"
 msgstr "चित्र - स्क्रीन के गिर्द चित्र तैरता है"
 
-#: ../savers/floaters.c:1196
+#: ../savers/floaters.c:1197
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "आप जरूर एक चित्र निर्दिष्ट करें.  देखें --प्रयोग सूचना के लिये मदद देखें.\n"
@@ -370,28 +370,28 @@ msgstr "स्क्रीन पर छवि फैलाने की को�
 msgid "Copying files"
 msgstr "फ़ाइलें प्रतिलिपि कर रहे"
 
-#: ../src/copy-theme-dialog.c:233
+#: ../src/copy-theme-dialog.c:234
 msgid "From:"
 msgstr "द्वारा:"
 
-#: ../src/copy-theme-dialog.c:237
+#: ../src/copy-theme-dialog.c:238
 msgid "To:"
 msgstr "प्रति:"
 
-#: ../src/copy-theme-dialog.c:258
+#: ../src/copy-theme-dialog.c:259
 msgid "Copying themes"
 msgstr "प्रसंग की नक़ल ले रहा है"
 
-#: ../src/copy-theme-dialog.c:301
+#: ../src/copy-theme-dialog.c:302
 msgid "Invalid screensaver theme"
 msgstr "अवैध स्क्रीनसेवर थीम"
 
-#: ../src/copy-theme-dialog.c:304
+#: ../src/copy-theme-dialog.c:305
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "%s एक वैध स्क्रीनसेवर थीम प्रतीत नहीं होता है."
 
-#: ../src/copy-theme-dialog.c:484
+#: ../src/copy-theme-dialog.c:485
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "फाइल कॉपी कर रहा है: %u %u का"
@@ -583,69 +583,78 @@ msgstr "जांच रहा है..."
 msgid "Authentication failed."
 msgstr "सत्यापन असफल"
 
-#: ../src/mate-screensaver-preferences.c:448
+#: ../src/mate-screensaver-preferences.c:461
 msgid "Blank screen"
 msgstr "खाली स्क्रीन"
 
-#: ../src/mate-screensaver-preferences.c:454
+#: ../src/mate-screensaver-preferences.c:467
 msgid "Random"
 msgstr "बेतरतीब"
 
-#: ../src/mate-screensaver-preferences.c:938
+#: ../src/mate-screensaver-preferences.c:953
+#: ../src/mate-screensaver-preferences.c:963
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d घंटा"
 msgstr[1] "%d घंटा"
 
-#: ../src/mate-screensaver-preferences.c:941
+#: ../src/mate-screensaver-preferences.c:956
+#: ../src/mate-screensaver-preferences.c:965
+#: ../src/mate-screensaver-preferences.c:974
+#: ../src/mate-screensaver-preferences.c:977
+#: ../src/mate-screensaver-preferences.c:982
+#: ../src/mate-screensaver-preferences.c:985
+#: ../src/mate-screensaver-preferences.c:990
+#: ../src/mate-screensaver-preferences.c:993
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d मिनट"
 msgstr[1] "%d मिनट"
 
-#: ../src/mate-screensaver-preferences.c:944
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] "%d सेकेंड"
 msgstr[1] "%d सेकेंड"
 
-#. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:952
-#, c-format
-msgid "%s %s %s"
-msgstr "%s %s %s"
-
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:957
-#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:962
+#: ../src/mate-screensaver-preferences.c:1009
+#: ../src/mate-screensaver-preferences.c:1022
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
+#. hour:minutes:seconds
+#: ../src/mate-screensaver-preferences.c:1004
+#, c-format
+msgid "%s %s %s"
+msgstr "%s %s %s"
+
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:975
-#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:1014
+#: ../src/mate-screensaver-preferences.c:1027
+#: ../src/mate-screensaver-preferences.c:1063
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:996
+#: ../src/mate-screensaver-preferences.c:1078
 #, c-format
 msgid "Never"
 msgstr "कभी नहीं"
 
-#: ../src/mate-screensaver-preferences.c:1480
+#: ../src/mate-screensaver-preferences.c:1567
 msgid "Could not load the main interface"
 msgstr "मुख्य अंतरफलक लोड न कर सका"
 
-#: ../src/mate-screensaver-preferences.c:1482
+#: ../src/mate-screensaver-preferences.c:1569
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "निश्चित करें कि स्क्रीनसेवर विधिवत अधिष्ठापित है"
 
@@ -709,19 +718,19 @@ msgstr "समय समाप्त हो गया है."
 msgid "You have the Caps Lock key on."
 msgstr "आपके पास कैप्स लॉक कुंजी चालू है."
 
-#: ../src/gs-lock-plug.c:1638
+#: ../src/gs-lock-plug.c:1639
 msgid "S_witch User..."
 msgstr "उपयोक्ता बदलें (_w)..."
 
-#: ../src/gs-lock-plug.c:1647
+#: ../src/gs-lock-plug.c:1648
 msgid "Log _Out"
 msgstr "लॉग आउट (_O)"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1872
+#: ../src/gs-lock-plug.c:1873
 msgid "%U on %h"
 msgstr "%U %h पर"
 
-#: ../src/gs-lock-plug.c:1891
+#: ../src/gs-lock-plug.c:1892
 msgid "_Password:"
 msgstr "पासवर्ड: (_P)"
