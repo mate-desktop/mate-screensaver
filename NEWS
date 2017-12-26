@@ -1,3 +1,10 @@
+### mate-screensaver 1.19.1
+
+  * Translations update
+  * WidthOfScreen and HeightOfScreen implementation
+  * restore the correct mate-screensaver-command manpage
+  * fix loop initial declarations
+
 ### mate-screensaver 1.19.0
 
   * Translations update
