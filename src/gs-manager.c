@@ -1309,6 +1309,7 @@ apply_background_to_window (GSManager *manager,
 	GdkScreen       *screen;
 	int              width;
 	int              height;
+	gint             scale;
 
         mate_bg_load_from_preferences (manager->priv->bg);
 
@@ -1320,8 +1321,9 @@ apply_background_to_window (GSManager *manager,
 
 	display = gs_window_get_display (window);
 	screen = gdk_display_get_default_screen (display);
-	width = WidthOfScreen (gdk_x11_screen_get_xscreen (screen));
-	height = HeightOfScreen (gdk_x11_screen_get_xscreen (screen));
+	scale = gdk_window_get_scale_factor (gdk_screen_get_root_window (screen));
+	width = WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale;
+	height = HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / scale;
 	gs_debug ("Creating background w:%d h:%d", width, height);
 	surface = mate_bg_create_surface (manager->priv->bg,
 	                                  gs_window_get_gdk_window (window),

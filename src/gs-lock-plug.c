@@ -981,6 +981,30 @@ set_face_image (GSLockPlug *plug)
 }
 
 static void
+gs_lock_plug_get_preferred_width (GtkWidget *widget, gint *minimum_width, gint *natural_width)
+{
+    gint scale;
+
+    GTK_WIDGET_CLASS (gs_lock_plug_parent_class)->get_preferred_width (widget, minimum_width, natural_width);
+
+    scale = gtk_widget_get_scale_factor (widget);
+    *minimum_width /= scale;
+    *natural_width /= scale;
+}
+
+static void
+gs_lock_plug_get_preferred_height_for_width (GtkWidget *widget, gint width, gint *minimum_height, gint *natural_height)
+{
+    gint scale;
+
+    GTK_WIDGET_CLASS (gs_lock_plug_parent_class)->get_preferred_height_for_width (widget, width, minimum_height, natural_height);
+
+    scale = gtk_widget_get_scale_factor (widget);
+    *minimum_height /= scale;
+    *natural_height /= scale;
+}
+
+static void
 gs_lock_plug_show (GtkWidget *widget)
 {
 	GSLockPlug *plug = GS_LOCK_PLUG (widget);
@@ -1251,9 +1275,11 @@ gs_lock_plug_class_init (GSLockPlugClass *klass)
 	object_class->get_property = gs_lock_plug_get_property;
 	object_class->set_property = gs_lock_plug_set_property;
 
-	widget_class->style_set    = gs_lock_plug_style_set;
-	widget_class->show         = gs_lock_plug_show;
-	widget_class->hide         = gs_lock_plug_hide;
+	widget_class->style_set                      = gs_lock_plug_style_set;
+	widget_class->show                           = gs_lock_plug_show;
+	widget_class->hide                           = gs_lock_plug_hide;
+	widget_class->get_preferred_width            = gs_lock_plug_get_preferred_width;
+	widget_class->get_preferred_height_for_width = gs_lock_plug_get_preferred_height_for_width;
 
 	klass->close = gs_lock_plug_close;
 
