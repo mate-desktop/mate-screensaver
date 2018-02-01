@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-19 13:40+0000\n"
+"PO-Revision-Date: 2017-12-28 11:20+0000\n"
 "Last-Translator: Tobias Lekare <lekare@linux.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/mate/MATE/language/sv/)\n"
 "MIME-Version: 1.0\n"
@@ -143,7 +143,7 @@ msgid ""
 "screensaver using only one theme on activation (specified in \"themes\" "
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
-msgstr ""
+msgstr "Valläget som används av skärmsläckaren. Kan vara \"blank-only\" för att aktivera skärmsläckaren utan att använda något tema vid aktivering, \"single\" för att aktivera skärmsläckaren med endast ett tema vid aktivering (anges i nyckeln \"themes\" och \"random\" för att aktivera skärmsläckaren med ett slumpmässigt tema vid aktivering."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -151,17 +151,17 @@ msgid ""
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
-msgstr ""
+msgstr "Den här nyckeln anger temalistan som ska användas av skärmsläckaren. Den ignoreras när \"mode\"-nyckeln är \"blank-only\", ska ge temanamnet när \"mode\" är \"single\" och ska ge en temalista när \"mode\" är \"random\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
-msgstr ""
+msgstr "Tid innan strömhanteringsläge uppnås"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:10
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
-msgstr ""
+msgstr "Antalet sekunders inaktivitet innan signalering om strömhantering. Den här nyckeln är inställd och hanteras av sessionsagenten för strömhantering."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
@@ -169,7 +169,7 @@ msgstr "Tid innan tema förändring"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr ""
+msgstr "Antal minuter att köra innan skärmsläckartemat byts."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
@@ -183,18 +183,18 @@ msgstr "Antalet minuter efter skärmsläckaraktivering innan skärmen låses."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
-msgstr ""
+msgstr "Tillåt inbäddning av ett tangentbord i fönstret"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:16
 msgid ""
 "Set this to TRUE to allow embedding a keyboard into the window when trying "
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
-msgstr ""
+msgstr "Ställ in detta till TRUE för att tillåta inbäddning av ett tangentbord i fönstret vid försök att låsa upp. Nyckeln \"keyboard_command\" måste ställas in med lämpligt kommando."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
-msgstr ""
+msgstr "Kommando för inbäddat tangentbord"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:18
 msgid ""
@@ -202,7 +202,7 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr ""
+msgstr "Kommandot som kommer att köras, om nyckeln \"embedded_keyboard_enabled\" är inställd till TRUE, för att inbädda en tangentbordswidget i fönstret. Detta kommando bör implementera en XEMBED-insticksgränssnitt och skriva ut ett fönster-xid på standard ut."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
@@ -212,7 +212,7 @@ msgstr "Tillåt utloggning"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
-msgstr ""
+msgstr "Ställ in den här till TRUE för att erbjuda ett alternativ i upplåsningsdialogen om att logga ut efter en viss fördröjning. Fördröjningen anges i nyckeln \"logout_delay\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
@@ -223,7 +223,7 @@ msgid ""
 "The number of minutes after the screensaver activation before a logout "
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
-msgstr ""
+msgstr "Antal minuter efter att skärmsläckaren aktiverats innan ett utloggningsalternativ visas i upplåsningsdialogen.  Den här nyckeln har endast effekt om nyckeln \"logout_enable\" är inställd till TRUE."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"

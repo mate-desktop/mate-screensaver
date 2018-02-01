@@ -8,7 +8,7 @@
 # Alexei Sorokin <sor.alexei@meowr.ru>, 2013-2014
 # Дмитрий Михирев, 2015
 # Leonid Kanter <leon@asplinux.ru>, 2006
-# monsta <monsta@inbox.ru>, 2017
+# Vlad Orlov <monsta@inbox.ru>, 2017
 # Sergio Kvantos <kvantos@plotinka.ru>, 2006
 msgid ""
 msgstr ""
@@ -16,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-28 15:01+0100\n"
 "PO-Revision-Date: 2017-09-23 18:17+0000\n"
-"Last-Translator: monsta <monsta@inbox.ru>\n"
+"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
 "Language-Team: Russian (http://www.transifex.com/mate/MATE/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
