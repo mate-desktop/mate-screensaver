@@ -1,3 +1,10 @@
+### mate-screensaver 1.20.0
+
+  * Translations update
+  * require GTK+ 3.22 and GLib 2.50
+  * Add HiDPI support for lock screen
+  * gs-lock-plug.c: Fix build warning:
+
 ### mate-screensaver 1.19.1
 
   * Translations update
