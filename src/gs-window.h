@@ -60,15 +60,10 @@ gboolean    gs_window_is_obscured        (GSWindow  *window);
 gboolean    gs_window_is_dialog_up       (GSWindow  *window);
 
 GdkDisplay * gs_window_get_display       (GSWindow  *window);
-#if GTK_CHECK_VERSION (3, 22, 0)
+
 void        gs_window_set_monitor        (GSWindow   *window,
                                           GdkMonitor *monitor);
 GdkMonitor * gs_window_get_monitor        (GSWindow  *window);
-#else
-void        gs_window_set_monitor        (GSWindow   *window,
-                                          int         monitor);
-int         gs_window_get_monitor        (GSWindow  *window);
-#endif
 
 void        gs_window_set_background_surface (GSWindow *window,
         cairo_surface_t *surface);
@@ -97,11 +92,7 @@ void        gs_window_request_unlock     (GSWindow  *window);
 void        gs_window_cancel_unlock_request (GSWindow  *window);
 
 GSWindow  * gs_window_new                (GdkDisplay *display,
-#if GTK_CHECK_VERSION (3, 22, 0)
                                           GdkMonitor *monitor,
-#else
-                                          int         monitor,
-#endif
                                           gboolean   lock_enabled);
 void        gs_window_show               (GSWindow  *window);
 void        gs_window_destroy            (GSWindow  *window);

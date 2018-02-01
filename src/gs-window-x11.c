@@ -62,11 +62,7 @@ enum
 
 struct GSWindowPrivate
 {
-#if GTK_CHECK_VERSION (3, 22, 0)
 	GdkMonitor *monitor;
-#else
-	int        monitor;
-#endif
 
 	GdkRectangle geometry;
 	guint      obscured : 1;
@@ -152,20 +148,13 @@ static void
 set_invisible_cursor (GdkWindow *window,
                       gboolean   invisible)
 {
-#if GTK_CHECK_VERSION (3, 16, 0)
 	GdkDisplay *display;
-#endif
 	GdkCursor *cursor = NULL;
 
 	if (invisible)
 	{
-
-#if GTK_CHECK_VERSION (3, 16, 0)
 		display = gdk_window_get_display (window);
 		cursor = gdk_cursor_new_for_display (display, GDK_BLANK_CURSOR);
-#else
-		cursor = gdk_cursor_new (GDK_BLANK_CURSOR);
-#endif
 	}
 
 	gdk_window_set_cursor (window, cursor);
@@ -303,56 +292,35 @@ static cairo_region_t *
 get_outside_region (GSWindow *window)
 {
 	GdkDisplay *display;
-#if GTK_CHECK_VERSION (3, 22, 0)
 	int         i;
 	int         num_monitors;
-#else
-	GdkScreen  *screen;
-	int         mon;
-#endif
 	cairo_region_t *region;
 
 	display = gtk_widget_get_display (GTK_WIDGET (window));
-#if !GTK_CHECK_VERSION (3, 22, 0)
-	screen = gdk_display_get_default_screen (display);
-#endif
 
 	region = cairo_region_create ();
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 	num_monitors = gdk_display_get_n_monitors (display);
 	for (i = 0; i < num_monitors; i++)
-#else
-	for (mon = 0; mon < window->priv->monitor; mon++)
-#endif
 	{
-#if GTK_CHECK_VERSION (3, 22, 0)
 		GdkMonitor *mon = gdk_display_get_monitor (display, i);
 
 		if (mon != window->priv->monitor)
 		{
-#endif
 			GdkRectangle geometry;
 			cairo_rectangle_int_t rectangle;
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 			gdk_monitor_get_geometry (mon, &geometry);
-#else
-			gdk_screen_get_monitor_geometry (screen, mon,
-			                                 &geometry);
-#endif
 			rectangle.x = geometry.x;
 			rectangle.y = geometry.y;
 			rectangle.width = geometry.width;
 			rectangle.height = geometry.height;
 			cairo_region_union_rectangle (region, &rectangle);
-#if GTK_CHECK_VERSION (3, 22, 0)
 		}
 		else
 		{
 			break;
 		}
-#endif
 	}
 
 	return region;
@@ -367,13 +335,7 @@ update_geometry (GSWindow *window)
 
 	outside_region = get_outside_region (window);
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 	gdk_monitor_get_geometry (window->priv->monitor, &geometry);
-#else
-	gdk_screen_get_monitor_geometry (gtk_widget_get_screen (GTK_WIDGET (window)),
-	                                 window->priv->monitor,
-	                                 &geometry);
-#endif
 	gs_debug ("got geometry for monitor: x=%d y=%d w=%d h=%d",
 	          geometry.x,
 	          geometry.y,
@@ -1949,11 +1911,7 @@ gs_window_set_status_message (GSWindow   *window,
 
 void
 gs_window_set_monitor (GSWindow   *window,
-#if GTK_CHECK_VERSION (3, 22, 0)
                        GdkMonitor *monitor)
-#else
-                       int         monitor)
-#endif
 {
 	g_return_if_fail (GS_IS_WINDOW (window));
 
@@ -1969,18 +1927,10 @@ gs_window_set_monitor (GSWindow   *window,
 	g_object_notify (G_OBJECT (window), "monitor");
 }
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 GdkMonitor *
-#else
-int
-#endif
 gs_window_get_monitor (GSWindow *window)
 {
-#if GTK_CHECK_VERSION (3, 22, 0)
 	g_return_val_if_fail (GS_IS_WINDOW (window), NULL);
-#else
-	g_return_val_if_fail (GS_IS_WINDOW (window), -1);
-#endif
 
 	return window->priv->monitor;
 }
@@ -2019,11 +1969,7 @@ gs_window_set_property (GObject            *object,
 		gs_window_set_logout_timeout (self, g_value_get_long (value));
 		break;
 	case PROP_MONITOR:
-#if GTK_CHECK_VERSION (3, 22, 0)
 		gs_window_set_monitor (self, g_value_get_pointer (value));
-#else
-		gs_window_set_monitor (self, g_value_get_int (value));
-#endif
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -2065,11 +2011,7 @@ gs_window_get_property (GObject    *object,
 		g_value_set_long (value, self->priv->logout_timeout);
 		break;
 	case PROP_MONITOR:
-#if GTK_CHECK_VERSION (3, 22, 0)
 		g_value_set_pointer (value, (gpointer) self->priv->monitor);
-#else
-		g_value_set_int (value, self->priv->monitor);
-#endif
 		break;
 	case PROP_OBSCURED:
 		g_value_set_boolean (value, self->priv->obscured);
@@ -2470,21 +2412,10 @@ gs_window_class_init (GSWindowClass *klass)
 
 	g_object_class_install_property (object_class,
 	                                 PROP_MONITOR,
-#if GTK_CHECK_VERSION (3, 22, 0)
 	                                 g_param_spec_pointer ("monitor",
 	                                         "Gdk monitor",
 	                                         "The monitor (in terms of Gdk) which the window is on",
 	                                         G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
-#else
-	                                 g_param_spec_int ("monitor",
-	                                         "RandR monitor",
-	                                         "The monitor (in terms of RandR) which the window is on",
-	                                         0,
-	                                         G_MAXINT,
-	                                         0,
-	                                         G_PARAM_READWRITE | G_PARAM_CONSTRUCT));
-#endif
-
 }
 
 static void
@@ -2617,11 +2548,7 @@ gs_window_finalize (GObject *object)
 
 GSWindow *
 gs_window_new (GdkDisplay *display,
-#if GTK_CHECK_VERSION (3, 22, 0)
                GdkMonitor *monitor,
-#else
-               int         monitor,
-#endif
                gboolean   lock_enabled)
 {
 	GObject   *result;

@@ -79,10 +79,6 @@ static void gs_lock_plug_finalize   (GObject         *object);
 
 #define GS_LOCK_PLUG_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_LOCK_PLUG, GSLockPlugPrivate))
 
-#if !GTK_CHECK_VERSION (3, 20, 0)
-#define gtk_widget_set_focus_on_click(a, b) gtk_button_set_focus_on_click(GTK_BUTTON(a), b)
-#endif
-
 struct GSLockPlugPrivate
 {
 	GtkWidget   *vbox;
@@ -1459,20 +1455,14 @@ logout_button_clicked (GtkButton  *button,
 void
 gs_lock_plug_set_busy (GSLockPlug *plug)
 {
-#if GTK_CHECK_VERSION (3, 16, 0)
 	GdkDisplay *display;
-#endif
 	GdkCursor *cursor;
 	GtkWidget *top_level;
 
 	top_level = gtk_widget_get_toplevel (GTK_WIDGET (plug));
 
-#if GTK_CHECK_VERSION (3, 16, 0)
 	display = gtk_widget_get_display (GTK_WIDGET (plug));
 	cursor = gdk_cursor_new_for_display (display, GDK_WATCH);
-#else
-	cursor = gdk_cursor_new (GDK_WATCH);
-#endif
 
 	gdk_window_set_cursor (gtk_widget_get_window (top_level), cursor);
 	g_object_unref (cursor);
@@ -1481,20 +1471,14 @@ gs_lock_plug_set_busy (GSLockPlug *plug)
 void
 gs_lock_plug_set_ready (GSLockPlug *plug)
 {
-#if GTK_CHECK_VERSION (3, 16, 0)
 	GdkDisplay *display;
-#endif
 	GdkCursor *cursor;
 	GtkWidget *top_level;
 
 	top_level = gtk_widget_get_toplevel (GTK_WIDGET (plug));
 
-#if GTK_CHECK_VERSION (3, 16, 0)
 	display = gtk_widget_get_display (GTK_WIDGET (plug));
 	cursor = gdk_cursor_new_for_display (display, GDK_LEFT_PTR);
-#else
-	cursor = gdk_cursor_new (GDK_LEFT_PTR);
-#endif
 	gdk_window_set_cursor (gtk_widget_get_window (top_level), cursor);
 	g_object_unref (cursor);
 }
@@ -1856,24 +1840,16 @@ create_page_one (GSLockPlug *plug)
 	str = g_strdup ("<span size=\"xx-large\" weight=\"ultrabold\">%s</span>");
 	plug->priv->auth_time_label = gtk_label_new (str);
 	g_free (str);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (plug->priv->auth_time_label), 0.5);
 	gtk_label_set_yalign (GTK_LABEL (plug->priv->auth_time_label), 0.5);
-#else
-	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_time_label), 0.5, 0.5);
-#endif
 	gtk_label_set_use_markup (GTK_LABEL (plug->priv->auth_time_label), TRUE);
 	gtk_box_pack_start (GTK_BOX (vbox2), plug->priv->auth_time_label, FALSE, FALSE, 0);
 
 	str = g_strdup ("<span size=\"large\">%s</span>");
 	plug->priv->auth_date_label = gtk_label_new (str);
 	g_free (str);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (plug->priv->auth_date_label), 0.5);
 	gtk_label_set_yalign (GTK_LABEL (plug->priv->auth_date_label), 0.5);
-#else
-	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_date_label), 0.5, 0.5);
-#endif
 	gtk_label_set_use_markup (GTK_LABEL (plug->priv->auth_date_label), TRUE);
 	gtk_box_pack_start (GTK_BOX (vbox2), plug->priv->auth_date_label, FALSE, FALSE, 0);
 
@@ -1889,12 +1865,8 @@ create_page_one (GSLockPlug *plug)
 	plug->priv->auth_realname_label = gtk_label_new (str);
 	g_free (str);
 	expand_string_for_label (plug->priv->auth_realname_label);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (plug->priv->auth_realname_label), 0.5);
 	gtk_label_set_yalign (GTK_LABEL (plug->priv->auth_realname_label), 0.5);
-#else
-	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_realname_label), 0.5, 0.5);
-#endif
 	gtk_label_set_use_markup (GTK_LABEL (plug->priv->auth_realname_label), TRUE);
 	gtk_box_pack_start (GTK_BOX (vbox2), plug->priv->auth_realname_label, FALSE, FALSE, 0);
 
@@ -1903,12 +1875,8 @@ create_page_one (GSLockPlug *plug)
 	plug->priv->auth_username_label = gtk_label_new (str);
 	g_free (str);
 	expand_string_for_label (plug->priv->auth_username_label);
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (plug->priv->auth_realname_label), 0.5);
 	gtk_label_set_yalign (GTK_LABEL (plug->priv->auth_realname_label), 0.5);
-#else
-	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_username_label), 0.5, 0.5);
-#endif
 	gtk_label_set_use_markup (GTK_LABEL (plug->priv->auth_username_label), TRUE);
 	gtk_box_pack_start (GTK_BOX (vbox2), plug->priv->auth_username_label, FALSE, FALSE, 0);
 
@@ -1919,12 +1887,8 @@ create_page_one (GSLockPlug *plug)
 	gtk_box_pack_start (GTK_BOX (vbox2), hbox, FALSE, FALSE, 0);
 
 	plug->priv->auth_prompt_label = gtk_label_new_with_mnemonic (_("_Password:"));
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (plug->priv->auth_prompt_label), 0.0);
 	gtk_label_set_yalign (GTK_LABEL (plug->priv->auth_prompt_label), 0.5);
-#else
-	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_prompt_label), 0.0, 0.5);
-#endif
 	gtk_box_pack_start (GTK_BOX (hbox), plug->priv->auth_prompt_label, FALSE, FALSE, 0);
 
 	plug->priv->auth_prompt_entry = gtk_entry_new ();
@@ -1934,12 +1898,8 @@ create_page_one (GSLockPlug *plug)
 	                               plug->priv->auth_prompt_entry);
 
 	plug->priv->auth_capslock_label = gtk_label_new ("");
-#if GTK_CHECK_VERSION (3, 16, 0)
 	gtk_label_set_xalign (GTK_LABEL (plug->priv->auth_capslock_label), 0.5);
 	gtk_label_set_yalign (GTK_LABEL (plug->priv->auth_capslock_label), 0.5);
-#else
-	gtk_misc_set_alignment (GTK_MISC (plug->priv->auth_capslock_label), 0.5, 0.5);
-#endif
 	gtk_box_pack_start (GTK_BOX (vbox2), plug->priv->auth_capslock_label, FALSE, FALSE, 0);
 
 	/* Status text */

@@ -123,22 +123,12 @@ test_window (void)
 	gboolean    lock_active;
 	gboolean    user_switch_enabled;
 	GdkDisplay *display;
-#if GTK_CHECK_VERSION (3, 22, 0)
 	GdkMonitor *monitor;
-#else
-	GdkScreen  *screen;
-	int         monitor;
-#endif
 
 	lock_active = TRUE;
 	user_switch_enabled = TRUE;
 	display = gdk_display_get_default ();
-#if GTK_CHECK_VERSION (3, 22, 0)
 	monitor = gdk_display_get_primary_monitor (display);
-#else
-	screen = gdk_display_get_default_screen (display);
-	monitor = gdk_screen_get_primary_monitor (screen);
-#endif
 
 	window = gs_window_new (display, monitor, lock_active);
 
