@@ -1103,30 +1103,16 @@ find_window_at_pointer (GSManager *manager)
 {
 	GdkDisplay *display;
 	GdkDevice  *device;
-#if GTK_CHECK_VERSION (3, 22, 0)
 	GdkMonitor *monitor;
-#else
-	GdkScreen  *screen;
-	int         monitor;
-#endif
 	int         x, y;
 	GSWindow   *window;
 	GSList     *l;
 
 	display = gdk_display_get_default ();
 
-#if GTK_CHECK_VERSION (3, 20, 0)
 	device = gdk_seat_get_pointer (gdk_display_get_default_seat (display));
-#else
-	device = gdk_device_manager_get_client_pointer (gdk_display_get_device_manager (display));
-#endif
-#if GTK_CHECK_VERSION (3, 22, 0)
 	gdk_device_get_position (device, NULL, &x, &y);
 	monitor = gdk_display_get_monitor_at_point (display, x, y);
-#else
-	gdk_device_get_position (device, &screen, &x, &y);
-	monitor = gdk_screen_get_monitor_at_point (screen, x, y);
-#endif
 
 	/* Find the gs-window that is on that monitor */
 	window = NULL;
@@ -1179,28 +1165,14 @@ manager_maybe_grab_window (GSManager *manager,
 {
 	GdkDisplay *display;
 	GdkDevice  *device;
-#if GTK_CHECK_VERSION (3, 22, 0)
 	GdkMonitor *monitor;
-#else
-	GdkScreen  *screen;
-	int         monitor;
-#endif
 	int         x, y;
 	gboolean    grabbed;
 
 	display = gdk_display_get_default ();
-#if GTK_CHECK_VERSION (3, 20, 0)
 	device = gdk_seat_get_pointer (gdk_display_get_default_seat (display));
-#else
-	device = gdk_device_manager_get_client_pointer (gdk_display_get_device_manager (display));
-#endif
-#if GTK_CHECK_VERSION (3, 22, 0)
 	gdk_device_get_position (device, NULL, &x, &y);
 	monitor = gdk_display_get_monitor_at_point (display, x, y);
-#else
-	gdk_device_get_position (device, &screen, &x, &y);
-	monitor = gdk_screen_get_monitor_at_point (screen, x, y);
-#endif
 
 	gdk_flush ();
 	grabbed = FALSE;
@@ -1223,7 +1195,6 @@ window_grab_broken_cb (GSWindow           *window,
                        GdkEventGrabBroken *event,
                        GSManager          *manager)
 {
-#if GTK_CHECK_VERSION (3, 20, 0)
 	GdkDisplay *display;
 	GdkSeat    *seat;
 	GdkDevice  *device;
@@ -1231,27 +1202,19 @@ window_grab_broken_cb (GSWindow           *window,
 	display = gdk_window_get_display (gs_window_get_gdk_window (window));
 	seat = gdk_display_get_default_seat (display);
 
-#endif
 	if (event->keyboard)
 	{
 		gs_debug ("KEYBOARD GRAB BROKEN!");
-#if GTK_CHECK_VERSION (3, 20, 0)
 		device = gdk_seat_get_pointer (seat);
 		if (!gdk_display_device_is_grabbed (display, device))
 			gs_grab_reset (manager->priv->grab);
-#else
-		if (!gdk_pointer_is_grabbed ())
-			gs_grab_reset (manager->priv->grab);
-#endif
 	}
 	else
 	{
 		gs_debug ("POINTER GRAB BROKEN!");
-#if GTK_CHECK_VERSION (3, 20, 0)
 		device = gdk_seat_get_keyboard (seat);
 		if (!gdk_display_device_is_grabbed (display, device))
 			gs_grab_reset (manager->priv->grab);
-#endif
 	}
 }
 
@@ -1567,26 +1530,14 @@ connect_window_signals (GSManager *manager,
 
 static void
 gs_manager_create_window_for_monitor (GSManager  *manager,
-#if GTK_CHECK_VERSION (3, 22, 0)
                                       GdkMonitor *monitor)
-#else
-                                      GdkDisplay *display,
-                                      int         monitor)
-#endif
 {
 	GSWindow    *window;
-#if GTK_CHECK_VERSION (3, 22, 0)
 	GdkDisplay  *display;
-#endif
 	GdkRectangle rect;
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 	display = gdk_monitor_get_display (monitor);
 	gdk_monitor_get_geometry (monitor, &rect);
-#else
-	gdk_screen_get_monitor_geometry (gdk_display_get_default_screen (display),
-	                                 monitor, &rect);
-#endif
 
 	gs_debug ("Creating a window for the monitor [%d,%d] (%dx%d)",
 	          monitor, rect.x, rect.y, rect.width, rect.height);
@@ -1622,11 +1573,7 @@ on_screen_monitors_changed (GdkScreen *screen,
 	int         i;
 
 	display = gdk_screen_get_display (screen);
-#if GTK_CHECK_VERSION (3, 22, 0)
 	n_monitors = gdk_display_get_n_monitors (display);
-#else
-	n_monitors = gdk_screen_get_n_monitors (screen);
-#endif
 	n_windows = g_slist_length (manager->priv->windows);
 
 	gs_debug ("Monitors changed for display %s: num=%d",
@@ -1649,13 +1596,8 @@ on_screen_monitors_changed (GdkScreen *screen,
 		/* add more windows */
 		for (i = n_windows; i < n_monitors; i++)
 		{
-#if GTK_CHECK_VERSION (3, 22, 0)
 			GdkMonitor *mon = gdk_display_get_monitor (display, i);
 			gs_manager_create_window_for_monitor (manager, mon);
-#else
-			gs_manager_create_window_for_monitor (manager,
-			                                      display, i);
-#endif
 		}
 
 		/* And put unlock dialog up where ever it's supposed to be
@@ -1672,22 +1614,13 @@ on_screen_monitors_changed (GdkScreen *screen,
 		while (l != NULL)
 		{
 			GdkDisplay *this_display;
-#if GTK_CHECK_VERSION (3, 22, 0)
 			GdkMonitor *this_monitor;
-#else
-			int         this_monitor;
-#endif
 			GSList     *next = l->next;
 
 			this_display = gs_window_get_display (GS_WINDOW (l->data));
 			this_monitor = gs_window_get_monitor (GS_WINDOW (l->data));
-#if GTK_CHECK_VERSION (3, 22, 0)
 			if (this_display == display &&
 			    !GDK_IS_MONITOR (this_monitor))
-#else
-			if (this_display == display &&
-			    this_monitor >= n_monitors)
-#endif
 			{
 				manager_maybe_stop_job_for_window (manager, GS_WINDOW (l->data));
 				g_hash_table_remove (manager->priv->jobs, l->data);
@@ -1784,9 +1717,6 @@ static void
 gs_manager_create_windows_for_display (GSManager  *manager,
                                        GdkDisplay *display)
 {
-#if !GTK_CHECK_VERSION (3, 22, 0)
-	GdkScreen *screen;
-#endif
 	int n_monitors;
 	int i;
 
@@ -1797,24 +1727,15 @@ gs_manager_create_windows_for_display (GSManager  *manager,
 	g_object_ref (manager);
 	g_object_ref (display);
 
-#if GTK_CHECK_VERSION (3, 22, 0)
 	n_monitors = gdk_display_get_n_monitors (display);
-#else
-	screen = gdk_display_get_default_screen (display);
-	n_monitors = gdk_screen_get_n_monitors (screen);
-#endif
 
 	gs_debug ("Creating %d windows for display %s",
 	          n_monitors, gdk_display_get_name (display));
 
 	for (i = 0; i < n_monitors; i++)
 	{
-#if GTK_CHECK_VERSION (3, 22, 0)
 		GdkMonitor *mon = gdk_display_get_monitor (display, i);
 		gs_manager_create_window_for_monitor (manager, mon);
-#else
-		gs_manager_create_window_for_monitor (manager, display, i);
-#endif
 	}
 
 	g_object_unref (display);

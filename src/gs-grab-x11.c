@@ -72,10 +72,8 @@ grab_string (int status)
 		return "GrabNotViewable";
 	case GDK_GRAB_FROZEN:
 		return "GrabFrozen";
-#if GTK_CHECK_VERSION (3, 16, 0)
 	case GDK_GRAB_FAILED:
 		return "GrabFailed";
-#endif
 	default:
 	{
 		static char foo [255];
@@ -152,7 +150,6 @@ xorg_lock_smasher_set_active (GSGrab  *grab,
 }
 #endif /* HAVE_XF86MISCSETGRABKEYSSTATE */
 
-#if GTK_CHECK_VERSION (3, 20, 0)
 static void
 prepare_window_grab_cb (GdkSeat   *seat,
                         GdkWindow *window,
@@ -160,7 +157,6 @@ prepare_window_grab_cb (GdkSeat   *seat,
 {
 	gdk_window_show_unraised (window);
 }
-#endif
 
 static int
 gs_grab_get (GSGrab     *grab,
@@ -170,10 +166,8 @@ gs_grab_get (GSGrab     *grab,
              gboolean    hide_cursor)
 {
 	GdkGrabStatus status;
-#if GTK_CHECK_VERSION (3, 20, 0)
 	GdkSeat      *seat;
 	GdkSeatCapabilities caps;
-#endif
 	GdkCursor    *cursor;
 
 	g_return_val_if_fail (window != NULL, FALSE);
@@ -183,7 +177,6 @@ gs_grab_get (GSGrab     *grab,
 
 	gs_debug ("Grabbing devices for window=%X", (guint32) GDK_WINDOW_XID (window));
 
-#if GTK_CHECK_VERSION (3, 20, 0)
 	seat = gdk_display_get_default_seat (display);
 	if (!no_pointer_grab)
 		caps = GDK_SEAT_CAPABILITY_ALL;
@@ -210,31 +203,6 @@ gs_grab_get (GSGrab     *grab,
 		                        (hide_cursor ? cursor : NULL),
 		                        NULL, NULL, NULL);
 	}
-#else
-	status = gdk_keyboard_grab (window, FALSE, GDK_CURRENT_TIME);
-
-	if (status == GDK_GRAB_SUCCESS && !no_pointer_grab)
-	{
-		GdkGrabStatus pstatus;
-
-		pstatus = gdk_pointer_grab (window, TRUE, 0, NULL,
-	                                    (hide_cursor ? cursor : NULL),
-	                                    GDK_CURRENT_TIME);
-
-		if (pstatus != GDK_GRAB_SUCCESS)
-		{
-			gdk_keyboard_ungrab (GDK_CURRENT_TIME);
-			if (status == GDK_GRAB_SUCCESS)
-			{
-				status = pstatus;
-			}
-		}
-	}
-	else
-	{
-		gdk_pointer_ungrab (GDK_CURRENT_TIME);
-	}
-#endif
 
 	if (status == GDK_GRAB_SUCCESS)
 	{
@@ -273,25 +241,15 @@ gs_grab_reset (GSGrab *grab)
 void
 gs_grab_release (GSGrab *grab, gboolean flush)
 {
-#if GTK_CHECK_VERSION (3, 20, 0)
 	GdkDisplay *display;
 	GdkSeat    *seat;
 
 	display = gdk_display_get_default ();
 	seat = gdk_display_get_default_seat (display);
 
-#endif
 	gs_debug ("Ungrabbing devices");
 
-#if GTK_CHECK_VERSION (3, 20, 0)
 	gdk_seat_ungrab (seat);
-#else
-	if (gdk_pointer_is_grabbed ())
-	{
-		gdk_pointer_ungrab (GDK_CURRENT_TIME);
-	}
-	gdk_keyboard_ungrab (GDK_CURRENT_TIME);
-#endif
 
 	gs_grab_reset (grab);
 
@@ -453,11 +411,7 @@ gs_grab_grab_root (GSGrab  *grab,
 	gs_debug ("Grabbing the root window");
 
 	display = gdk_display_get_default ();
-#if GTK_CHECK_VERSION (3, 20, 0)
 	device = gdk_seat_get_pointer (gdk_display_get_default_seat (display));
-#else
-	device = gdk_device_manager_get_client_pointer (gdk_display_get_device_manager (display));
-#endif
 	gdk_device_get_position (device, &screen, NULL, NULL);
 	root = gdk_screen_get_root_window (screen);
 
