@@ -253,7 +253,7 @@ copy_theme_dialog_init (CopyThemeDialog *dlg)
 	gtk_widget_set_halign (dlg->priv->current, GTK_ALIGN_START);
 
 	gtk_dialog_add_button (GTK_DIALOG (dlg),
-	                       GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
+	                       "gtk-cancel", GTK_RESPONSE_CANCEL);
 
 	gtk_window_set_title (GTK_WINDOW (dlg),
 	                      _("Copying themes"));
