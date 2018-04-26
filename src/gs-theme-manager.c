@@ -237,12 +237,14 @@ gs_theme_info_new_from_matemenu_tree_entry (MateMenuTreeEntry *entry)
 	GSThemeInfo *info;
 	const char     *str;
 	char           *pos;
+	GDesktopAppInfo *ginfo;
 
 	info = g_new0 (GSThemeInfo, 1);
+	ginfo = matemenu_tree_entry_get_app_info (entry);
 
 	info->refcount = 1;
-	info->name     = g_strdup (matemenu_tree_entry_get_name (entry));
-	info->exec     = g_strdup (matemenu_tree_entry_get_exec (entry));
+	info->name     = g_strdup (g_app_info_get_name(G_APP_INFO(ginfo)));
+	info->exec     = g_strdup (g_app_info_get_commandline(G_APP_INFO(ginfo)));
 
 	/* remove the .desktop suffix */
 	str = matemenu_tree_entry_get_desktop_file_id (entry);
@@ -265,8 +267,8 @@ find_info_for_id (MateMenuTree  *tree,
 {
 	GSThemeInfo     *info;
 	MateMenuTreeDirectory *root;
-	GSList             *items;
-	GSList             *l;
+	MateMenuTreeIter *iter;
+	MateMenuTreeItemType type;
 
 	root = matemenu_tree_get_root_directory (tree);
 	if (root == NULL)
@@ -274,31 +276,24 @@ find_info_for_id (MateMenuTree  *tree,
 		return NULL;
 	}
 
-	items = matemenu_tree_directory_get_contents (root);
-
 	info = NULL;
-
-	for (l = items; l; l = l->next)
-	{
-		if (info == NULL
-		        && matemenu_tree_item_get_type (l->data) == MATEMENU_TREE_ITEM_ENTRY)
-		{
-			MateMenuTreeEntry *entry = l->data;
+	iter = matemenu_tree_directory_iter (root);
+	while ((type = matemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
+		if (info == NULL && type == MATEMENU_TREE_ITEM_ENTRY) {
+			MateMenuTreeEntry *entry;
 			const char     *file_id;
 
+			entry = matemenu_tree_iter_get_entry(iter);
 			file_id = matemenu_tree_entry_get_desktop_file_id (entry);
 			if (file_id && id && strcmp (file_id, id) == 0)
 			{
 				info = gs_theme_info_new_from_matemenu_tree_entry (entry);
 			}
+			matemenu_tree_item_unref (entry);
 		}
-
-		matemenu_tree_item_unref (l->data);
 	}
-
-	g_slist_free (items);
+	matemenu_tree_iter_unref (iter);
 	matemenu_tree_item_unref (root);
-
 	return info;
 }
 
@@ -336,31 +331,19 @@ make_theme_list (GSList             **parent_list,
                  MateMenuTreeDirectory  *directory,
                  const char          *filename)
 {
-	GSList *items;
-	GSList *l;
+	MateMenuTreeIter *iter;
+	MateMenuTreeItemType type;
 
-	items = matemenu_tree_directory_get_contents (directory);
-
-	for (l = items; l; l = l->next)
-	{
-		switch (matemenu_tree_item_get_type (l->data))
-		{
-
-		case MATEMENU_TREE_ITEM_ENTRY:
-			theme_prepend_entry (parent_list, l->data, filename);
-			break;
-
-		case MATEMENU_TREE_ITEM_ALIAS:
-		case MATEMENU_TREE_ITEM_DIRECTORY:
-		default:
-			break;
+	iter = matemenu_tree_directory_iter (directory);
+	while ((type = matemenu_tree_iter_next (iter)) != MATEMENU_TREE_ITEM_INVALID) {
+		if (type == MATEMENU_TREE_ITEM_ENTRY) {
+			MateMenuTreeEntry *item;
+			item = matemenu_tree_iter_get_entry (iter);
+			theme_prepend_entry (parent_list, (MateMenuTreeEntry*)item, filename);
+			matemenu_tree_item_unref (item);
 		}
-
-		matemenu_tree_item_unref (l->data);
 	}
-
-	g_slist_free (items);
-
+	matemenu_tree_iter_unref (iter);
 	*parent_list = g_slist_reverse (*parent_list);
 }
 
@@ -397,12 +380,19 @@ static MateMenuTree *
 get_themes_tree (void)
 {
 	MateMenuTree *themes_tree = NULL;
+	GError *error = NULL;
 
 	/* we only need to add the locations to the path once
 	   and since this is only run once we'll do it here */
 	add_known_engine_locations_to_path ();
 
-	themes_tree = matemenu_tree_lookup ("mate-screensavers.menu", MATEMENU_TREE_FLAGS_NONE);
+	themes_tree = matemenu_tree_new ("mate-screensavers.menu", MATEMENU_TREE_FLAGS_NONE);
+	if (!matemenu_tree_load_sync (themes_tree, &error)) {
+		g_debug("Load matemenu tree got error: %s\n", error->message);
+		g_error_free(error);
+		g_object_unref(themes_tree);
+		return NULL;
+	}
 
 	return themes_tree;
 }
@@ -429,7 +419,7 @@ gs_theme_manager_finalize (GObject *object)
 
 	if (theme_manager->priv->menu_tree != NULL)
 	{
-		matemenu_tree_unref (theme_manager->priv->menu_tree);
+		g_object_unref(theme_manager->priv->menu_tree);
 	}
 
 	G_OBJECT_CLASS (gs_theme_manager_parent_class)->finalize (object);
