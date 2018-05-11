@@ -292,6 +292,7 @@ find_info_for_id (MateMenuTree  *tree,
 			matemenu_tree_item_unref (entry);
 		}
 	}
+	matemenu_tree_iter_unref (iter);
 	matemenu_tree_item_unref (root);
 	return info;
 }
@@ -342,6 +343,7 @@ make_theme_list (GSList             **parent_list,
 			matemenu_tree_item_unref (item);
 		}
 	}
+	matemenu_tree_iter_unref (iter);
 	*parent_list = g_slist_reverse (*parent_list);
 }
 
