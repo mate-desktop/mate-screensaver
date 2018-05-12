@@ -174,6 +174,7 @@ xf86_whack_gamma (int              screen,
 {
 	Bool status;
 	struct GSGammaInfo *gamma_info;
+	GdkDisplay *display;
 
 	gamma_info = screen_priv->info;
 
@@ -243,7 +244,8 @@ xf86_whack_gamma (int              screen,
 # endif /* !HAVE_XF86VMODE_GAMMA_RAMP */
 	}
 
-	gdk_flush ();
+	display = gdk_display_get_default ();
+	gdk_display_flush (display);
 
 	return status;
 }
