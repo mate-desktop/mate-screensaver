@@ -386,7 +386,7 @@ get_themes_tree (void)
 	   and since this is only run once we'll do it here */
 	add_known_engine_locations_to_path ();
 
-	themes_tree = matemenu_tree_new ("mate-screensavers.menu", MATEMENU_TREE_FLAGS_SORT_DISPLAY_NAME);
+	themes_tree = matemenu_tree_new ("mate-screensavers.menu", MATEMENU_TREE_FLAGS_NONE);
 	if (!matemenu_tree_load_sync (themes_tree, &error)) {
 		g_debug("Load matemenu tree got error: %s\n", error->message);
 		g_error_free(error);
