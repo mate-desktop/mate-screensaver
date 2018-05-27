@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Rockers <sumorock@hotmail.com>, 2016
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-19 13:40+0000\n"
-"Last-Translator: Rockers <sumorock@hotmail.com>\n"
-"Language-Team: Thai (http://www.transifex.com/mate/MATE/language/th/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Aefgh Threenine <aefgh3962@gmail.com>, 2018\n"
+"Language-Team: Thai (https://www.transifex.com/mate/teams/13566/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -100,7 +100,7 @@ msgstr "_ออกจากระบบ"
 msgid "_Cancel"
 msgstr "_ยกเลิก"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "_ปลดล็อค"
 
@@ -136,7 +136,11 @@ msgid ""
 "screensaver using only one theme on activation (specified in \"themes\" "
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
-msgstr "วิธีการเลือกที่โปรแกรมรักษาหน้าจอใช้ อาจเป็น \"blank-only\" เพื่อเปิดใช้โปรแกรมรักษาหน้าจอโดยไม่เรียกชุดโปรแกรมใด หรือ \"single\" เพื่อเปิดใช้โปรแกรมรักษาหน้าจอโดยใช้ชุดโปรแกรมเดียว (กำหนดโดยคีย์ \"themes\") หรือ \"random\" เพื่อเปิดใช้โดยสุ่มชุดโปรแกรมรักษาหน้าจอ"
+msgstr ""
+"วิธีการเลือกที่โปรแกรมรักษาหน้าจอใช้ อาจเป็น \"blank-only\" "
+"เพื่อเปิดใช้โปรแกรมรักษาหน้าจอโดยไม่เรียกชุดโปรแกรมใด หรือ \"single\" "
+"เพื่อเปิดใช้โปรแกรมรักษาหน้าจอโดยใช้ชุดโปรแกรมเดียว (กำหนดโดยคีย์ "
+"\"themes\") หรือ \"random\" เพื่อเปิดใช้โดยสุ่มชุดโปรแกรมรักษาหน้าจอ"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -144,7 +148,10 @@ msgid ""
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
-msgstr "คีย์นี้กำหนดรายการชุดโปรแกรมที่โปรแกรมรักษาหน้าจอจะใช้ จะไม่มีผลเมื่อคีย์ \"mode\" เป็น \"blank-only\" แต่จะกำหนดชื่อชุดโปรแกรมเมื่อคีย์ \"mode\" เป็น \"single\" และกำหนดรายการชุดโปรแกรมเมื่อ \"mode\" เป็น \"random\""
+msgstr ""
+"คีย์นี้กำหนดรายการชุดโปรแกรมที่โปรแกรมรักษาหน้าจอจะใช้ จะไม่มีผลเมื่อคีย์ "
+"\"mode\" เป็น \"blank-only\" แต่จะกำหนดชื่อชุดโปรแกรมเมื่อคีย์ \"mode\" เป็น"
+" \"single\" และกำหนดรายการชุดโปรแกรมเมื่อ \"mode\" เป็น \"random\""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -154,7 +161,10 @@ msgstr "ช่วงเวลาก่อนเริ่มจัดการก
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
-msgstr "จำนวนวินาทีที่ไม่มีความเคลื่อนไหว ก่อนที่จะส่งสัญญาณไปยังระบบจัดการการใช้พลังงาน คีย์นี้ดูแลและกำหนดค่าโดยตัวดำเนินการจัดการพลังงานของวาระที่เปิด"
+msgstr ""
+"จำนวนวินาทีที่ไม่มีความเคลื่อนไหว "
+"ก่อนที่จะส่งสัญญาณไปยังระบบจัดการการใช้พลังงาน "
+"คีย์นี้ดูแลและกำหนดค่าโดยตัวดำเนินการจัดการพลังงานของวาระที่เปิด"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
@@ -183,7 +193,9 @@ msgid ""
 "Set this to TRUE to allow embedding a keyboard into the window when trying "
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
-msgstr "กำหนดเป็น TRUE เพื่อเปิดใช้แป้นพิมพ์ฝังตัวในหน้าต่างเมื่อจะปลดล็อคหน้าจอ คุณต้องกำหนดคีย์ \"keyboard_command\" เป็นคำสั่งที่เหมาะสมด้วย"
+msgstr ""
+"กำหนดเป็น TRUE เพื่อเปิดใช้แป้นพิมพ์ฝังตัวในหน้าต่างเมื่อจะปลดล็อคหน้าจอ "
+"คุณต้องกำหนดคีย์ \"keyboard_command\" เป็นคำสั่งที่เหมาะสมด้วย"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
@@ -195,7 +207,10 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr "คำสั่งที่จะเรียก ถ้าคีย์ \"embedded_keyboard_enabled\" ถูกกำหนดเป็น TRUE เพื่อฝังวิดเจ็ตแป้นพิมพ์ลงในหน้าต่าง คำสั่งนี้ควรสร้างตามอินเทอร์เฟซ XEMBED และแสดง XID ของหน้าต่างออกทางเอาต์พุตมาตรฐาน"
+msgstr ""
+"คำสั่งที่จะเรียก ถ้าคีย์ \"embedded_keyboard_enabled\" ถูกกำหนดเป็น TRUE "
+"เพื่อฝังวิดเจ็ตแป้นพิมพ์ลงในหน้าต่าง คำสั่งนี้ควรสร้างตามอินเทอร์เฟซ XEMBED "
+"และแสดง XID ของหน้าต่างออกทางเอาต์พุตมาตรฐาน"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
@@ -205,7 +220,10 @@ msgstr "ให้ออกจากระบบได้"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
-msgstr "ตั้งค่านี้ให้เป็น TRUE เพื่อให้ถามตัวเลือกในการปลดล็อกกล่องโต้ตอบเพื่อให้ออกจากระบบหลังจากการหน่วงเวลาได้ การหน่วงเวลาจะระบุไว้ในคีย์ \"logout_delay\""
+msgstr ""
+"ตั้งค่านี้ให้เป็น TRUE "
+"เพื่อให้ถามตัวเลือกในการปลดล็อกกล่องโต้ตอบเพื่อให้ออกจากระบบหลังจากการหน่วงเวลาได้"
+" การหน่วงเวลาจะระบุไว้ในคีย์ \"logout_delay\""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
@@ -216,7 +234,9 @@ msgid ""
 "The number of minutes after the screensaver activation before a logout "
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
-msgstr "จำนวนนาทีหลังจากที่โปรแกรมรักษาหน้าจอทำงานก่อนที่ตัวเลือกการออกจากระบบจะปรากฏขึ้นในกล่องโต้ตอบการปลดล็อก คีย์นี้จะมีผลก็ต่อเมื่อคีย์ \"logout_enable\" ถูกตั้งค่าเป็น TRUE"
+msgstr ""
+"จำนวนนาทีหลังจากที่โปรแกรมรักษาหน้าจอทำงานก่อนที่ตัวเลือกการออกจากระบบจะปรากฏขึ้นในกล่องโต้ตอบการปลดล็อก"
+" คีย์นี้จะมีผลก็ต่อเมื่อคีย์ \"logout_enable\" ถูกตั้งค่าเป็น TRUE"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
@@ -227,7 +247,10 @@ msgid ""
 "The command to invoke when the logout button is clicked. This command should"
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
-msgstr "คำสั่งที่จะเรียกเมื่อผู้ใช้คลิกปุ่มออกจากระบบ คำสั่งนี้ควรจะออกจากวาระของผู้ใช้ โดยไม่มีการโต้ตอบกับผู้ใช้อีก คีย์นี้จะมีผลก็ต่อเมื่อคีย์ \"logout_enable\" มีค่าเป็น TRUE"
+msgstr ""
+"คำสั่งที่จะเรียกเมื่อผู้ใช้คลิกปุ่มออกจากระบบ "
+"คำสั่งนี้ควรจะออกจากวาระของผู้ใช้ โดยไม่มีการโต้ตอบกับผู้ใช้อีก "
+"คีย์นี้จะมีผลก็ต่อเมื่อคีย์ \"logout_enable\" มีค่าเป็น TRUE"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
@@ -237,7 +260,9 @@ msgstr "ให้เปลี่ยนผู้ใช้ได้"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
-msgstr "กำหนดเป็น TRUE เพื่อให้มีตัวเลือกในกล่องโต้ตอบปลดล็อคหน้าจอ ให้เปลี่ยนไปใช้บัญชีผู้ใช้อื่นได้"
+msgstr ""
+"กำหนดเป็น TRUE เพื่อให้มีตัวเลือกในกล่องโต้ตอบปลดล็อคหน้าจอ "
+"ให้เปลี่ยนไปใช้บัญชีผู้ใช้อื่นได้"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
@@ -424,13 +449,15 @@ msgstr "ถ้าโปรแกรมรักษาหน้าจอกำล
 
 #: ../src/mate-screensaver-command.c:87
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "รบเร้าโปรแกรมรักษาหน้าจอที่กำลังทำงานอยู่ เพื่อจำลองการเคลื่อนไหวของผู้ใช้"
+msgstr ""
+"รบเร้าโปรแกรมรักษาหน้าจอที่กำลังทำงานอยู่ เพื่อจำลองการเคลื่อนไหวของผู้ใช้"
 
 #: ../src/mate-screensaver-command.c:91
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "ระงับไม่ให้เรียกโปรแกรมรักษาหน้าจอ คำสั่งจะหยุดรอในระหว่างที่มีการระงับ"
+msgstr ""
+"ระงับไม่ให้เรียกโปรแกรมรักษาหน้าจอ คำสั่งจะหยุดรอในระหว่างที่มีการระงับ"
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -581,51 +608,51 @@ msgstr "กำลังตรวจสอบ..."
 msgid "Authentication failed."
 msgstr "การยืนยันตัวบุคคลไม่ผ่าน"
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "จอเปล่า"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "สุ่ม"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d ชั่วโมง"
+msgstr[0] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d นาที"
+msgstr[0] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d วินาที"
+msgstr[0] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -633,23 +660,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
-msgstr "ไม่ทำงาน"
+msgstr "ไม่"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "ไม่สามารถโหลดส่วนติดต่อผู้ใช้หลักได้"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "กรุณาตรวจสอบการติดตั้งโปรแกรมรักษาหน้าจอว่าครบถ้วนหรือไม่"
 
@@ -701,31 +728,31 @@ msgstr "โปรแกรมรักษาหน้าจอกำลังท
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr "%A, %B %e"
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "หมดเวลา"
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "ปุ่ม Caps Lock ถูกกดอยู่"
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr "_สลับผู้ใช้..."
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "_ออกจากระบบ"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr "%s ที่เครื่อง %s"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
-msgstr "_รหัสผ่าน:"
+msgstr "รหัส_ผ่าน:"

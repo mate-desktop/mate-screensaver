@@ -1,18 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# ciaran, 2014
-# Rhys Jones <rhys@sucs.org>, 2006
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-19 13:40+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Welsh (http://www.transifex.com/mate/MATE/language/cy/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: ciaran, 2018\n"
+"Language-Team: Welsh (https://www.transifex.com/mate/teams/13566/cy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,7 +90,7 @@ msgstr ""
 
 #: ../data/lock-dialog-default.ui.h:2
 msgid "_Switch User"
-msgstr ""
+msgstr "_Newid Defnyddiwr"
 
 #: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
@@ -101,7 +100,7 @@ msgstr "_Allgofnodi"
 msgid "_Cancel"
 msgstr "_Diddymu"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "_Datgloi"
 
@@ -112,23 +111,26 @@ msgstr "<b>Gadael neges i %R:</b>"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:1
 msgid "Activate when idle"
-msgstr ""
+msgstr "Rhoi ar waith pan yn segur"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
+"Gosod hyn yn WIR er mwyn rhoi'r arbedwr sgrin ar waith pan fo'r sesiwn yn "
+"segur."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
-msgstr ""
+msgstr "Cloi wrth roi ar waith"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
+"Gosod hyn yn WIR i gloi'r sgrin pan fo'r arbedwr sgrin yn cychwyn ar waith."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
-msgstr ""
+msgstr "Modd dewis thema arbedwr sgrin"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:6
 msgid ""
@@ -138,6 +140,11 @@ msgid ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 msgstr ""
+"Y modd dewis a ddefnyddir gan yr arbedwr sgrin. Gall fod yn \"blank-only\" i"
+" alluogi'r arbedwr sgrin heb ddefnyddio unrhyw thema pan gychwynir, "
+"\"single\" i alluogi'r arbedwr sgrin gan ddefnyddio dim ond un thema pan "
+"gychwynnir (penodir hyn yn yr allwedd \"themes\"), a \"random\" i alluogi'r "
+"arbedwr sgrin gyda thema ar hap wrth gychwyn."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -146,6 +153,10 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
+"Mae'r allwedd hon yn penodi'r rhestr o themâu i'w defnyddio gan yr arbedwr "
+"sgrin. Fe'i hanwybyddir pan fo'r allwedd \"modd\" yn \"blank-only\", fe "
+"ddylai ddarparu enw'r thema pan fo \"mode\" yn \"single\", ac fe ddylai "
+"ddarparu rhestr o enwau themâu pan fo \"mode\" yn \"random\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -159,21 +170,21 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
-msgstr ""
+msgstr "Amser cyn newid thema"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr ""
+msgstr "Sawl munud i redeg thema arbedwr sgrin cyn newid i un arall."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
-msgstr ""
+msgstr "Amser cyn cloi"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:14
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
-msgstr ""
+msgstr "Sawl munud ar ôl cychwyn yr arbedwr sgrin y dylid cloi'r sgrin."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
@@ -200,7 +211,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
-msgstr ""
+msgstr "Caniatáu allgofnodi"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:20
 msgid ""
@@ -210,7 +221,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
-msgstr ""
+msgstr "Amser cyn opsiwn allgofnodi"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:22
 msgid ""
@@ -221,7 +232,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
-msgstr ""
+msgstr "Gorchymyn allgofnodi"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:24
 msgid ""
@@ -229,16 +240,22 @@ msgid ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 msgstr ""
+"Pa orchymyn i'w redeg pan fo'r botwm allgofnodi yn cael ei glicio. Fe "
+"ddylai'r gorchymyn hwn allgofnodi'r defnyddiwr yn unig, heb unrhyw "
+"ryngweithio. Dim ond os yw'r allwedd \"logout_enable\" yn WIR y daw hwn i "
+"rym."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
-msgstr ""
+msgstr "Caniatáu newid defnyddiwr"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:26
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
+"Gosod hyn yn WIR er mwyn cynnig opsiwn yn y ddeialog datgloi i newid i "
+"gyfrif defnyddiwr gwahanol."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
@@ -582,60 +599,60 @@ msgstr ""
 msgid "Authentication failed."
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "Clirio'r sgrin"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "Ar hap"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d awr"
-msgstr[1] "%d awr"
-msgstr[2] "%d awr"
-msgstr[3] "%d awr"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d funud"
-msgstr[1] "%d funud"
-msgstr[2] "%d munud"
-msgstr[3] "%d munud"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d eiliad"
-msgstr[1] "%d eiliad"
-msgstr[2] "%d eiliad"
-msgstr[3] "%d eiliad"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -643,23 +660,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
 msgstr "Byth"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "Methu llwytho'r prif ryngwyneb"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Gwnewch yn siŵr fod yr arbedwr sgrin wedi'i osod yn gywir"
 
@@ -711,31 +728,31 @@ msgstr "arbedwr sgrin eisoes yn rhedeg o fewn y sesiwn hwn"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "Amser ar ben."
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "Mae'r fysell Caps Lock ymlaen gennych."
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "_Allgofnodi"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
 msgstr "_Cyfrinair:"

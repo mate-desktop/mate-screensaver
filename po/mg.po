@@ -1,17 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Thierry Randrianiriana <randrianiriana@gmail.com>, 2006
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-19 13:40+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Malagasy (http://www.transifex.com/mate/MATE/language/mg/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Malagasy (https://www.transifex.com/mate/teams/13566/mg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -65,7 +65,8 @@ msgstr "_Gejao ny efijery rehefa mandeha ny sary mitsitsy"
 
 #: ../data/mate-screensaver-preferences.ui.h:10
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>Fampilazana: tsy ho voageja ny efijery iasan'ny mpampiasa faka.</b>"
+msgstr ""
+"<b>Fampilazana: tsy ho voageja ny efijery iasan'ny mpampiasa faka.</b>"
 
 #: ../data/mate-screensaver.directory.in.h:1
 msgid "Screensavers"
@@ -94,13 +95,13 @@ msgstr ""
 
 #: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
-msgstr ""
+msgstr "_Hivoaka"
 
 #: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
-msgstr ""
+msgstr "_Aoka"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "_Vohay"
 
@@ -111,23 +112,26 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:1
 msgid "Activate when idle"
-msgstr ""
+msgstr "Alefaso rehefa tsy misy tranga"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
+"Ataovy MARINA ity raha handefa ny sary mitsitsy rehefa tsy misy tranga ny "
+"session."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
-msgstr ""
+msgstr "Gejao rehefa alefa"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
+"Ataovy MARINA ity raha hanageja ny efijery rehefa mandeha ny sary mitsitsy."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
-msgstr ""
+msgstr "Fomba fisafidianana endri-tsary mitsitsy"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:6
 msgid ""
@@ -137,6 +141,11 @@ msgid ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 msgstr ""
+"Ny fomba fisafidianana arahan'ilay sary mitsitsy. Mety ho \"blank-only\" "
+"raha handefa sary mitsitsy tsy misy endrika, \"single\" raha handefa sary "
+"mitsitsy tsy mampiasa afa-tsy endrika tokana (voafaritra anatin'ny famaha "
+"\"themes\"), ary \"random\" raha handefa sary mitsitsy mampiasa endrika an-"
+"tsapaka."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -145,6 +154,10 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
+"Io famaha io dia mamaritra ny amboaran'endrika hampiasain'ilay sary "
+"mitsitsy. Tsy horaharahaina izany rehefa \"blank-only\" ny famaha \"mode\", "
+"tokony hanome ny anaran'ilay endrika rehefa \"single\" ny \"mode\", ary "
+"tokony hanome amboaran'endrika rehefa \"random\" ny \"mode\". "
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -158,21 +171,24 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
-msgstr ""
+msgstr "Fotoana alohan'ny fanovana endrika"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
 msgstr ""
+"Ny halavam-potoana iandrasana alohan'ny hanovana ny endri-tsary mitsitsy."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
-msgstr ""
+msgstr "Fotoana alohan'ny fangejana"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:14
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
 msgstr ""
+"Ny fotoana iandrasana alohan'ny hangejana ny efijery aorian'ny fandefasana "
+"ny sary mitsitsy."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
@@ -199,7 +215,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
-msgstr ""
+msgstr "Ekeo ny fivoahana"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:20
 msgid ""
@@ -209,7 +225,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
-msgstr ""
+msgstr "Fotoana alohan'ny isehoan'ny safidy fivoahana"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:22
 msgid ""
@@ -220,7 +236,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
-msgstr ""
+msgstr "Baikon'ny fivoahana"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:24
 msgid ""
@@ -228,20 +244,25 @@ msgid ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 msgstr ""
+"Ny baiko antsoina rehefa voatsindry ny \"hivoaka\". Tokony hamoaka ilay "
+"mpampiasa fotsiny io baiko io fa tsy mila fifampiresahana. Tsy manan-kery io"
+" famaha io raha tsy natao MARINA ny famaha \"logout_enable\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
-msgstr ""
+msgstr "Ekeo ny fiovana mpampiasa"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:26
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
+"Ataovy MARINA ity raha hanome safidy hiovana kaontim-pampiasa hafa anatin'ny"
+" takilan'ny famohana."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
-msgstr ""
+msgstr "Endrika ho an'ny takilan'ny fangejana"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:28
 msgid "Theme to use for the lock dialog"
@@ -338,7 +359,9 @@ msgstr "sary - mampitsingevana sary eraky ny efijery"
 #: ../savers/floaters.c:1197
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "Tsy maintsy mamaritra sary iray ianao. Jereo anatin'ny --help hahalalana ny momba izany.\n"
+msgstr ""
+"Tsy maintsy mamaritra sary iray ianao. Jereo anatin'ny --help hahalalana ny "
+"momba izany.\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
@@ -408,7 +431,8 @@ msgstr ""
 
 #: ../src/mate-screensaver-command.c:71
 msgid "Tells the running screensaver process to lock the screen immediately"
-msgstr "Milaza ny asan'ny sary mitsitsy mandeha mba hangeja ny efijery avy hatrany"
+msgstr ""
+"Milaza ny asan'ny sary mitsitsy mandeha mba hangeja ny efijery avy hatrany"
 
 #: ../src/mate-screensaver-command.c:75
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -424,13 +448,17 @@ msgstr "Atsaharo ny sary mitsitsy raha mandeha (mamerina ny efijery)"
 
 #: ../src/mate-screensaver-command.c:87
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "Manosika ny sary mitsitsy mandeha haka tahaka ny fihetsiketsehan'ny mpampiasa"
+msgstr ""
+"Manosika ny sary mitsitsy mandeha haka tahaka ny fihetsiketsehan'ny "
+"mpampiasa"
 
 #: ../src/mate-screensaver-command.c:91
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Misakana ny sary mitsitsy handeha. Voasakana ny baiko rehefa mandeha ny fisakanana."
+msgstr ""
+"Misakana ny sary mitsitsy handeha. Voasakana ny baiko rehefa mandeha ny "
+"fisakanana."
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -519,11 +547,14 @@ msgstr "Teny fanalahidy:"
 
 #: ../src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (password aged)"
-msgstr "Mila manova ny teny fanalahidinao izao dieny izao ianao (tonta ny teny fanalahidy)"
+msgstr ""
+"Mila manova ny teny fanalahidinao izao dieny izao ianao (tonta ny teny "
+"fanalahidy)"
 
 #: ../src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (root enforced)"
-msgstr "Mila manova ny teny fanalahidinao izao dieny izao ianao (teren'ny faka)"
+msgstr ""
+"Mila manova ny teny fanalahidinao izao dieny izao ianao (teren'ny faka)"
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
@@ -567,7 +598,8 @@ msgstr "Efa nampiasaina io teny fanalahidy io. Manomeza hafa."
 
 #: ../src/mate-screensaver-dialog.c:182
 msgid "You must wait longer to change your password"
-msgstr "Tsy maintsy miandry elaela ianao vao afaka manova ny teny fanalahidinao"
+msgstr ""
+"Tsy maintsy miandry elaela ianao vao afaka manova ny teny fanalahidinao"
 
 #: ../src/mate-screensaver-dialog.c:183
 msgid "Sorry, passwords do not match"
@@ -581,54 +613,54 @@ msgstr ""
 msgid "Authentication failed."
 msgstr "Tsy nety ny fanamarinana."
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "Efijery foana"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "An-tsapaka"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d ora"
-msgstr[1] "%d ora"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minitra"
-msgstr[1] "%d minitra"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d segaondra"
-msgstr[1] "%d segaondra"
+msgstr[0] ""
+msgstr[1] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -636,23 +668,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
 msgstr "Na oviana na oviana"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "Tsy afaka naka ny mpanera fototra"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Amarino tsara hoe voapetraka araka ny tokony ho izy ny sary mitsitsy"
 
@@ -704,31 +736,31 @@ msgstr "Efa mandeha amin'ity session ity ny sary mitsitsy"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "Tapitra ny fotoana."
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "Mandeha ny kitendry Caps Lock."
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr "Hi_ova mpampiasa..."
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "Hi_ovaka"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr "%U amin'ny %h"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
 msgstr "_Teny fanalahidy:"

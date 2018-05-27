@@ -1,20 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Arangel Angov <arangel@linux.net.mk>, 2007
-# Arangel Angov <ufo@linux.net.mk>, 2006, 2008
-# Ivica Micev <icko@elfasko.org.mk>, 2006
-# Jovan Naumovski <jovan@lugola.net>, 2006
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-19 13:40+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Macedonian (http://www.transifex.com/mate/MATE/language/mk/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: exoos <mince.lesovski@gmail.com>, 2018\n"
+"Language-Team: Macedonian (https://www.transifex.com/mate/teams/13566/mk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -89,48 +86,52 @@ msgstr "Космос"
 
 #: ../data/lock-dialog-default.ui.h:1
 msgid "_Leave Message"
-msgstr ""
+msgstr "_Остави порака"
 
 #: ../data/lock-dialog-default.ui.h:2
 msgid "_Switch User"
-msgstr ""
+msgstr "_Смени корисник"
 
 #: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
-msgstr ""
+msgstr "_Одјава"
 
 #: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
-msgstr ""
+msgstr "_Откажи"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "_Отклучи"
 
 #: ../data/lock-dialog-default.ui.h:7
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
-msgstr ""
+msgstr "<b>Оставете порака за %R:</b>"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:1
 msgid "Activate when idle"
-msgstr ""
+msgstr "Активирај кога е неактивно"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
+"Постави го ова како TRUE за активирање на чуварот на екранот кога сесијата е"
+" неактивна"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
-msgstr ""
+msgstr "Заклучи на активација"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
+"постави го ова како TRUE да заклучите екран кога чуварот на екранот се "
+"активира"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
-msgstr ""
+msgstr "Режим за селекција на тема за чуварот на екранот"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:6
 msgid ""
@@ -140,6 +141,10 @@ msgid ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 msgstr ""
+"Избирачкиот режим користен од чуварот на екранот. Може да е \"blank-only\" "
+"да го овозможи чуварот на екранот користејќи една тема за активирање "
+"(одредена во \"теми\"), и \"случајни\" за да се овозможи чуварот на екранот "
+"да користи случајна тема на активацијата."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -148,6 +153,10 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
+"Ова копче ја специфицира листата од теми кои ќе бидат користени од чуварот "
+"на екранот. Се игнорирани кога копчето \"режим\" е \"blank-only\", би "
+"требало да произведе име на тема кофа \"режим\" e \"еден\", и треба да "
+"произведе листа од теми кога \"режим\" e \"случајни\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -161,25 +170,28 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
-msgstr ""
+msgstr "Време пред промена на тема"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
 msgstr ""
+"Број на минутити да извршува пред промена на тема за чуварот на екранот."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
-msgstr ""
+msgstr "Време пред заклучување"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:14
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
 msgstr ""
+"Број на минути по активирање на чуварот на екранот пред заклучување на "
+"екранот."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
-msgstr ""
+msgstr "Дозволи вградување тастатура во прозорецот"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:16
 msgid ""
@@ -187,10 +199,13 @@ msgid ""
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
+"Поставете го ова како TRUE за да дозволите вградена тастатура во прозорецот "
+"кога се обидувате да отклучете. \"keyboard_command\" клучот мора да биде "
+"поставен со соодветната команда."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
-msgstr ""
+msgstr "Команда за вградена тастатура"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:18
 msgid ""
@@ -199,10 +214,14 @@ msgid ""
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
 msgstr ""
+"Оваа команда ќе биде извршена ако \"embedded_keyboard_enabled\" клучот е "
+"поставен како TRUE за да вгради графичка контрола за тастатура во "
+"прозорецот. Оваа команда треба да имплементира XEMBED приклучен интерфејс и "
+"да извади XID прозорец на стандардниот излезен уред."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
-msgstr ""
+msgstr "Дозволи одлогирање"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:20
 msgid ""
@@ -212,7 +231,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
-msgstr ""
+msgstr "Време пред опција за одјава"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:22
 msgid ""
@@ -223,7 +242,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
-msgstr ""
+msgstr "Команда за одјава"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:24
 msgid ""
@@ -231,20 +250,25 @@ msgid ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 msgstr ""
+"Командата да повика кога одјавното копче е кликнато. Оваа команда би требало"
+" едноставно да го одјави корисникот без никаква интеракција. Ова копче ќе "
+"има ефект само ако \"logout_enable\" копчето е поставено како TRUE"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
-msgstr ""
+msgstr "Дозволи промена на корисници"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:26
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
+"Поставете го ова како TRUE да се овозможи опција во отклучувачкиот дијалог "
+"за промена на друга корисничка сметка."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
-msgstr ""
+msgstr "Тема за дијалог прозорецот за заклучување"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:28
 msgid "Theme to use for the lock dialog"
@@ -341,7 +365,9 @@ msgstr "слика - подвижни слики околу екранот"
 #: ../savers/floaters.c:1197
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "Морате да специфицирате една слика. Видете --help за употребливи информации.\n"
+msgstr ""
+"Морате да специфицирате една слика. Видете --help за употребливи "
+"информации.\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
@@ -377,7 +403,7 @@ msgstr "Од:"
 
 #: ../src/copy-theme-dialog.c:238
 msgid "To:"
-msgstr "Кон:"
+msgstr "До:"
 
 #: ../src/copy-theme-dialog.c:259
 msgid "Copying themes"
@@ -407,7 +433,8 @@ msgstr "Побарај ја состојбата на чуварот на екр
 
 #: ../src/mate-screensaver-command.c:67
 msgid "Query the length of time the screensaver has been active"
-msgstr "Побарај ја должината на времето колку што е активен чуварот на екранот"
+msgstr ""
+"Побарај ја должината на времето колку што е активен чуварот на екранот"
 
 #: ../src/mate-screensaver-command.c:71
 msgid "Tells the running screensaver process to lock the screen immediately"
@@ -427,13 +454,17 @@ msgstr "Ако чуварот на екранот е активен тогаш �
 
 #: ../src/mate-screensaver-command.c:87
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "Поттикни го чуварот на екранот што работи да симулира активност на корисникот"
+msgstr ""
+"Поттикни го чуварот на екранот што работи да симулира активност на "
+"корисникот"
 
 #: ../src/mate-screensaver-command.c:91
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Спречи го чуварот на екранот да се активира.  Командата го блокира додека чуварот на екранот се активира."
+msgstr ""
+"Спречи го чуварот на екранот да се активира.  Командата го блокира додека "
+"чуварот на екранот се активира."
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -530,7 +561,9 @@ msgstr "Треба да ја смените лозинката веднаш (roo
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Вашиот акаунт истече; Ве молам контактирајте го Вашиот администратор на системот"
+msgstr ""
+"Вашиот акаунт истече; Ве молам контактирајте го Вашиот администратор на "
+"системот"
 
 #: ../src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
@@ -584,37 +617,37 @@ msgstr "Проверувам..."
 msgid "Authentication failed."
 msgstr "Проверката на автентичност не успеа."
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "Црн екран"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "Рандом"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -623,15 +656,15 @@ msgstr[1] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -639,23 +672,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
 msgstr "Никогаш"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "Не можам да го вчитам главниот интерфејс"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Ве молам осигурајте се дека чуварот на екранот е правилно инсталиран"
 
@@ -707,31 +740,31 @@ msgstr "Чуварот на екранот веќе работи во оваа �
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "Времето истече."
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "Имате притиснати Caps Lock."
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr "П_ромени корисник..."
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "_Одјава"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr "%U на %h"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
-msgstr "_Лозинка"
+msgstr "_Лозинка:"

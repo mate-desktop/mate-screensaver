@@ -1,19 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2006
-# Ivica  Kolić <ikoli@yahoo.com>, 2013
-# Vlad Orlov <monsta@inbox.ru>, 2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-10-20 09:57+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Croatian (http://www.transifex.com/mate/MATE/language/hr/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: monsta <monsta@inbox.ru>, 2018\n"
+"Language-Team: Croatian (https://www.transifex.com/mate/teams/13566/hr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -102,7 +100,7 @@ msgstr "_Odjavi se"
 msgid "_Cancel"
 msgstr "_Opozovi"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "_Otključaj"
 
@@ -117,7 +115,9 @@ msgstr "Aktiviraj pri mirovanju"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr "Postavi ovo na ISTINITO za aktiviranje zaslonskog čuvara kada je pristupna dionica u mirovanju."
+msgstr ""
+"Postavi ovo na ISTINITO za aktiviranje zaslonskog čuvara kada je pristupna "
+"dionica u mirovanju."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
@@ -125,7 +125,9 @@ msgstr "Zaključaj pri aktivaciji"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr "Postavi ovo na ISTINITO za zaključavanje zaslona kada zaslonski čuvar postane djelatan."
+msgstr ""
+"Postavi ovo na ISTINITO za zaključavanje zaslona kada zaslonski čuvar "
+"postane djelatan."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
@@ -138,7 +140,12 @@ msgid ""
 "screensaver using only one theme on activation (specified in \"themes\" "
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
-msgstr "Način odabira koji koristi zaslonski čuvar. Može biti \"blank-only\" za omogućavanje zaslonskog čuvara bez korištenja ijedne teme pri aktivaciji, \"single\" za omogućavanje zaslonskom čuvaru da koristi samo jednu temu pri aktivaciji (određenu u ključu \"themes\"), te \"random\" za omogućavanje zaslonskom čuvaru da koristi nasumičnu temu pri aktivaciji."
+msgstr ""
+"Način odabira koji koristi zaslonski čuvar. Može biti \"blank-only\" za "
+"omogućavanje zaslonskog čuvara bez korištenja ijedne teme pri aktivaciji, "
+"\"single\" za omogućavanje zaslonskom čuvaru da koristi samo jednu temu pri "
+"aktivaciji (određenu u ključu \"themes\"), te \"random\" za omogućavanje "
+"zaslonskom čuvaru da koristi nasumičnu temu pri aktivaciji."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -146,7 +153,11 @@ msgid ""
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
-msgstr "Ovaj ključ određuje popis tema koje koristi zaslonski čuvar. To je zanemareno kada je ključ \"mode\" određen kao \"blank-only\", a mora pribaviti naziv teme kada je \"mode\" postavljen na \"single\", te mora pribaviti popis tema kada je \"mode\" postavljen na \"random\"."
+msgstr ""
+"Ovaj ključ određuje popis tema koje koristi zaslonski čuvar. To je "
+"zanemareno kada je ključ \"mode\" određen kao \"blank-only\", a mora "
+"pribaviti naziv teme kada je \"mode\" postavljen na \"single\", te mora "
+"pribaviti popis tema kada je \"mode\" postavljen na \"random\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -156,7 +167,10 @@ msgstr "Vremenski raspon prije osnovice energetskog upravljanja"
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
-msgstr "Broj sekunda neaktivnosti prije nego se to signalizira energetskom upravljanju. Ključ je postavljen i održavan putem agenta energetskog upravljanja u pristupnoj dionici."
+msgstr ""
+"Broj sekunda neaktivnosti prije nego se to signalizira energetskom "
+"upravljanju. Ključ je postavljen i održavan putem agenta energetskog "
+"upravljanja u pristupnoj dionici."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
@@ -164,7 +178,8 @@ msgstr "Vremenski raspon prije promjene teme"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr "Broj minuta koje trebaju proći prije mijenjanja teme zaslonskog čuvara."
+msgstr ""
+"Broj minuta koje trebaju proći prije mijenjanja teme zaslonskog čuvara."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
@@ -174,7 +189,8 @@ msgstr "Vremenski raspon prije zaključavanja"
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
-msgstr "Broj minuta nakon aktivacije zaslonskog čuvara prije zaključavanja zaslona."
+msgstr ""
+"Broj minuta nakon aktivacije zaslonskog čuvara prije zaključavanja zaslona."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
@@ -185,7 +201,10 @@ msgid ""
 "Set this to TRUE to allow embedding a keyboard into the window when trying "
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
-msgstr "Postavi ovo na ISTINITO za dozvolu ugrađivanja tipkovnice u prozor pri pokušaju otključavanja. Ključ \"keyboard_command\" mora biti postavljen uz odgovarajuću naredbu."
+msgstr ""
+"Postavi ovo na ISTINITO za dozvolu ugrađivanja tipkovnice u prozor pri "
+"pokušaju otključavanja. Ključ \"keyboard_command\" mora biti postavljen uz "
+"odgovarajuću naredbu."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
@@ -197,7 +216,11 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr "Naredba koju treba pokrenuti ako je ključ \"embedded_keyboard_enabled\" postavljen na ISTINITO, kako bi se pomoćni programčić tipkovnice ugradio u prozor. Ova naredba treba primijeniti priključno sučelje XEMBED te donijeti za rezultat prozorski XID na standardnom izlazu."
+msgstr ""
+"Naredba koju treba pokrenuti ako je ključ \"embedded_keyboard_enabled\" "
+"postavljen na ISTINITO, kako bi se pomoćni programčić tipkovnice ugradio u "
+"prozor. Ova naredba treba primijeniti priključno sučelje XEMBED te donijeti "
+"za rezultat prozorski XID na standardnom izlazu."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
@@ -207,7 +230,10 @@ msgstr "Dopusti odjavu"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
-msgstr "Postavi ovo na ISTINITO za ponudu mogućnosti u dijaloškom okviru otključavanja koja dopušta odgođenu odjavu. Odgoda je određena u ključu \"logout_delay\"."
+msgstr ""
+"Postavi ovo na ISTINITO za ponudu mogućnosti u dijaloškom okviru "
+"otključavanja koja dopušta odgođenu odjavu. Odgoda je određena u ključu "
+"\"logout_delay\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
@@ -218,7 +244,10 @@ msgid ""
 "The number of minutes after the screensaver activation before a logout "
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
-msgstr "Broj minuta nakon aktivacije zaslonskog čuvara prije nego se pojavi mogućnost odjave u dijaloškom okviru otključavanja. Ovaj ključ djeluje samo ako je ključ \"logout_enable\" postavljen na ISTINITO."
+msgstr ""
+"Broj minuta nakon aktivacije zaslonskog čuvara prije nego se pojavi "
+"mogućnost odjave u dijaloškom okviru otključavanja. Ovaj ključ djeluje samo "
+"ako je ključ \"logout_enable\" postavljen na ISTINITO."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
@@ -229,7 +258,10 @@ msgid ""
 "The command to invoke when the logout button is clicked. This command should"
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
-msgstr "Naredba koju treba pozvati kada je kliknut gumb odjave. Ova naredba treba jednostavno odjaviti korisnika bez ikakvog međudjelovanja. Ovaj ključ djeluje samo ako je ključ \"logout_enable\" postavljen na ISTINITO."
+msgstr ""
+"Naredba koju treba pozvati kada je kliknut gumb odjave. Ova naredba treba "
+"jednostavno odjaviti korisnika bez ikakvog međudjelovanja. Ovaj ključ "
+"djeluje samo ako je ključ \"logout_enable\" postavljen na ISTINITO."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
@@ -239,7 +271,9 @@ msgstr "Dopusti promjenu korisnika."
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
-msgstr "Postavi ovo na ISTINITO za ponudu mogućnosti izmjene korisničkog računa u dijaloškom okviru otključavanja. "
+msgstr ""
+"Postavi ovo na ISTINITO za ponudu mogućnosti izmjene korisničkog računa u "
+"dijaloškom okviru otključavanja. "
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
@@ -256,7 +290,9 @@ msgstr "Dopusti prikazivanje poruke o stanju pristupne dionice"
 #: ../data/org.mate.screensaver.gschema.xml.in.h:30
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
-msgstr "Dopusti prikazivanje poruke o stanju pristupne dionice kada je zaslon zaključan."
+msgstr ""
+"Dopusti prikazivanje poruke o stanju pristupne dionice kada je zaslon "
+"zaključan."
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -422,7 +458,9 @@ msgstr "Uključi zaslonskog čuvara (zatamni zaslon)"
 
 #: ../src/mate-screensaver-command.c:83
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr "Ako je zaslonski čuvar djelatan, tada ga deaktiviraj (obnovi sliku na zaslonu)"
+msgstr ""
+"Ako je zaslonski čuvar djelatan, tada ga deaktiviraj (obnovi sliku na "
+"zaslonu)"
 
 #: ../src/mate-screensaver-command.c:87
 msgid "Poke the running screensaver to simulate user activity"
@@ -432,7 +470,9 @@ msgstr "Potakni djelatnog zaslonskog čuvara da oponaša korisničko djelovanje"
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Onemogući pokretanje zaslonskog čuvara. Naredba sprječava dok je zabrana djelatna."
+msgstr ""
+"Onemogući pokretanje zaslonskog čuvara. Naredba sprječava dok je zabrana "
+"djelatna."
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -529,7 +569,8 @@ msgstr "Moraš odmah promijeniti svoju zaporku (zahtjev natkorisnika)"
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Tvoj korisnički račun je istekao; molimo obrati se svome upravitelju sustava"
+msgstr ""
+"Tvoj korisnički račun je istekao; molimo obrati se svome upravitelju sustava"
 
 #: ../src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
@@ -583,57 +624,57 @@ msgstr "Provjera..."
 msgid "Authentication failed."
 msgstr "Ovjera nije uspjela."
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "Zatamnjeni zaslon"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "Nasumični izbor"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d sat"
-msgstr[1] "%d sata"
-msgstr[2] "%d sati"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minuta"
-msgstr[1] "%d minute"
-msgstr[2] "%d minuta"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d sekunda"
-msgstr[1] "%d sekunde"
-msgstr[2] "%d sekunda"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -641,23 +682,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
 msgstr "Nikada"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "Nije bilo moguće učitati glavno sučelje"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Molimo provjeri je li zaslonski čuvar pravilno instaliran"
 
@@ -709,31 +750,31 @@ msgstr "zaslonski čuvar već je pokrenut u ovoj pristupnoj dionici"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr "%A, %B %e"
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "Vrijeme je isteklo."
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "Uključena ti je tipka prebacivanja na velika slova."
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr "P_romijeni korisnika..."
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "Odjavi _se"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr "%U na %h"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
 msgstr "_Zaporka:"

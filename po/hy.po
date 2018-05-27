@@ -1,18 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Vlad Orlov <monsta@inbox.ru>, 2017
-# Siranush <ss.m.95@mail.ru>, 2015-2016
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-10-20 09:56+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Armenian (http://www.transifex.com/mate/MATE/language/hy/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Siranush <ss.m.95@mail.ru>, 2018\n"
+"Language-Team: Armenian (https://www.transifex.com/mate/teams/13566/hy/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,7 +45,7 @@ msgstr "Հզորության _Կառավարում"
 
 #: ../data/mate-screensaver-preferences.ui.h:5
 msgid "_Preview"
-msgstr "_Նախադիտել"
+msgstr "_Նախնական դիտում"
 
 #: ../data/mate-screensaver-preferences.ui.h:6
 msgid "_Screensaver theme:"
@@ -101,7 +100,7 @@ msgstr "_Դուրս գալ"
 msgid "_Cancel"
 msgstr "_Չեղարկել "
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "_Բացել "
 
@@ -137,7 +136,12 @@ msgid ""
 "screensaver using only one theme on activation (specified in \"themes\" "
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
-msgstr "Ընտրված ռեժիմը օգտագործվում է էկրանապահի կողմից։ Կարող է լինել \"blank-only\", որը թույլ է տալիս ակտիվացնել էկրանապահը, առանց օգտագործելու որևէ տեմա, \"single\", որը ակտիվացնում է էկրանապահը օգտագործելով միայն մեկ ակտիվացման թեմա (նշված է \"themes\" ստեղնը) և \"random\" ,որը ակտիվացնում է էկրանապահը օգտագործելով ցանկացած ակտիվացման թեմա։"
+msgstr ""
+"Ընտրված ռեժիմը օգտագործվում է էկրանապահի կողմից։ Կարող է լինել \"blank-"
+"only\", որը թույլ է տալիս ակտիվացնել էկրանապահը, առանց օգտագործելու որևէ "
+"տեմա, \"single\", որը ակտիվացնում է էկրանապահը օգտագործելով միայն մեկ "
+"ակտիվացման թեմա (նշված է \"themes\" ստեղնը) և \"random\" ,որը ակտիվացնում է "
+"էկրանապահը օգտագործելով ցանկացած ակտիվացման թեմա։"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -145,7 +149,11 @@ msgid ""
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
-msgstr "Այս ստեղնը մասնավորեցնում է էկրանապահի կողմից օգտագործված թեմաների ցանկը։ Այն անտեսվում է, երբ \"mode\" ստեղնը \"blank-only\" է, պետք է ապահովի թեմայի անունը, երբ \"mode\" \"single\" է և պետք է ապահովի թեմաների ցուցակը, երբ \"mode\" \"random\" է։"
+msgstr ""
+"Այս ստեղնը մասնավորեցնում է էկրանապահի կողմից օգտագործված թեմաների ցանկը։ "
+"Այն անտեսվում է, երբ \"mode\" ստեղնը \"blank-only\" է, պետք է ապահովի թեմայի"
+" անունը, երբ \"mode\" \"single\" է և պետք է ապահովի թեմաների ցուցակը, երբ "
+"\"mode\" \"random\" է։"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -155,7 +163,10 @@ msgstr "Հզորության կառավարման բազային տողը ժամ
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
-msgstr "Արագագործության վարկյանների քանակը, նախքան ազդամշանի հզորության կառավարումը։ Այս ստեղնը սահմանում է և պահպանվված է նիստի հզորության կառավարման գործակալի կողմից։"
+msgstr ""
+"Արագագործության վարկյանների քանակը, նախքան ազդամշանի հզորության կառավարումը։"
+" Այս ստեղնը սահմանում է և պահպանվված է նիստի հզորության կառավարման գործակալի"
+" կողմից։"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
@@ -184,7 +195,10 @@ msgid ""
 "Set this to TRUE to allow embedding a keyboard into the window when trying "
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
-msgstr "Սա ՃԻՇՏ սահմանելը թույլ կտա ներկառուցել ստեղնաշարը պատուհանի մեջ, երբ փորձում է ապաարգելափակել։ \"keyboard_command\" ստեղնը պետք է սահմանել համապատասխան հրամանի հետ միասին։"
+msgstr ""
+"Սա ՃԻՇՏ սահմանելը թույլ կտա ներկառուցել ստեղնաշարը պատուհանի մեջ, երբ "
+"փորձում է ապաարգելափակել։ \"keyboard_command\" ստեղնը պետք է սահմանել "
+"համապատասխան հրամանի հետ միասին։"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
@@ -196,7 +210,11 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr "Հրամանը, որը պետք է գործարկվի, եթե \"embedded_keyboard_enabled\" ստեղնը սահմանվել է ՃԻՇՏ, ստեղնաշարը պատուհանի մեջ ներդնելու համար։ Այս հրամանը պետք է իրականացնի XEMBED plug ինտերֆեյսը և ելքային պատուհանը XID ատանդարտ ելքի վրա։"
+msgstr ""
+"Հրամանը, որը պետք է գործարկվի, եթե \"embedded_keyboard_enabled\" ստեղնը "
+"սահմանվել է ՃԻՇՏ, ստեղնաշարը պատուհանի մեջ ներդնելու համար։ Այս հրամանը պետք"
+" է իրականացնի XEMBED plug ինտերֆեյսը և ելքային պատուհանը XID ատանդարտ ելքի "
+"վրա։"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
@@ -206,7 +224,10 @@ msgstr "Թույլ տալ դուրս գալ"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
-msgstr "Սահմանել այս ՃՇՄԱՐԻՏ տարբերակ առաջարկելու համար բաց երկխոսության մեջ թույլ տալ մուտք գործել ուշացումից հետո։ Ուշացումը նշված է \"logout_delay\" ստեղնի մեջ։"
+msgstr ""
+"Սահմանել այս ՃՇՄԱՐԻՏ տարբերակ առաջարկելու համար բաց երկխոսության մեջ թույլ "
+"տալ մուտք գործել ուշացումից հետո։ Ուշացումը նշված է \"logout_delay\" ստեղնի "
+"մեջ։"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
@@ -217,7 +238,10 @@ msgid ""
 "The number of minutes after the screensaver activation before a logout "
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
-msgstr "Էկրանապահի ակտիվացումից հետո րոպեների քանակը  մինչ դուրս գալու տարբերակը կհայտնվի բաց երկխոսության մեջ։ Այս ստեղնը ունի ազդեցություն, եթե \"logout_enable\" սահմանվում է ՃԻՇՏ։"
+msgstr ""
+"Էկրանապահի ակտիվացումից հետո րոպեների քանակը  մինչ դուրս գալու տարբերակը "
+"կհայտնվի բաց երկխոսության մեջ։ Այս ստեղնը ունի ազդեցություն, եթե "
+"\"logout_enable\" սահմանվում է ՃԻՇՏ։"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
@@ -228,7 +252,10 @@ msgid ""
 "The command to invoke when the logout button is clicked. This command should"
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
-msgstr "Հրամանը կանչվում է, երբ դուրս դալ կոճակը սեղմված է։ Այս հրամանը պարզ կերպով դուրս է գալու օգտատիրոջից առանց որևէ փախազդեցության։ Այս ստեղնը ունի ազդեցություն, եթե \"logout_enable\" ստեղնը սահմանվում է ՃԻՇՏ։"
+msgstr ""
+"Հրամանը կանչվում է, երբ դուրս դալ կոճակը սեղմված է։ Այս հրամանը պարզ կերպով "
+"դուրս է գալու օգտատիրոջից առանց որևէ փախազդեցության։ Այս ստեղնը ունի "
+"ազդեցություն, եթե \"logout_enable\" ստեղնը սահմանվում է ՃԻՇՏ։"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
@@ -238,7 +265,9 @@ msgstr "Թույլատրիր օգտագործողի փոխանջատում"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
-msgstr "Սահմանել սա ՃԻՇՏ տարբերակ առաջարկելու համար բացված երկխոսության մեջ մեկ այլ օգտագործողի հաշիվ անցնելու համար։"
+msgstr ""
+"Սահմանել սա ՃԻՇՏ տարբերակ առաջարկելու համար բացված երկխոսության մեջ մեկ այլ "
+"օգտագործողի հաշիվ անցնելու համար։"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
@@ -255,7 +284,9 @@ msgstr "Թույլ տալ հաղորդագրությունը ցուցադրվե�
 #: ../data/org.mate.screensaver.gschema.xml.in.h:30
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
-msgstr "Թույլ տալ նիստի կարգավիճակի հաղորդագրությունը կցուցադրել, երբ էկրանը կողպված է:"
+msgstr ""
+"Թույլ տալ նիստի կարգավիճակի հաղորդագրությունը կցուցադրել, երբ էկրանը կողպված"
+" է:"
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -339,7 +370,9 @@ msgstr "image - floats պատկերներ էկրանի շուրջը"
 #: ../savers/floaters.c:1197
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "Դուք պետք է նշեք մեկ պատկերը. Տես --help տեղեկություններ օգտագործելու համար։\n"
+msgstr ""
+"Դուք պետք է նշեք մեկ պատկերը. Տես --help տեղեկություններ օգտագործելու "
+"համար։\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
@@ -409,7 +442,8 @@ msgstr "Էկրանապահի  ակտիվ եղած ժամանակի երկարո�
 
 #: ../src/mate-screensaver-command.c:71
 msgid "Tells the running screensaver process to lock the screen immediately"
-msgstr "Հրամայում է գործարկել էկրանապահի գործընթացը անմիջապես արգելափակել էկրանը"
+msgstr ""
+"Հրամայում է գործարկել էկրանապահի գործընթացը անմիջապես արգելափակել էկրանը"
 
 #: ../src/mate-screensaver-command.c:75
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -425,13 +459,16 @@ msgstr "Եթե էկրանապահը ակտիվ է, ապա ապաակտիվացն
 
 #: ../src/mate-screensaver-command.c:87
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "Խառնել ընթացող էկրանապահը օգտագործողի գործունեության մոդելավորման համար"
+msgstr ""
+"Խառնել ընթացող էկրանապահը օգտագործողի գործունեության մոդելավորման համար"
 
 #: ../src/mate-screensaver-command.c:91
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Արգելակել Էկրանապահը ակտիվացնելու հետո։ Հրամանը փակվում է մինչ արգելակումը ակտիվ է։"
+msgstr ""
+"Արգելակել Էկրանապահը ակտիվացնելու հետո։ Հրամանը փակվում է մինչ արգելակումը "
+"ակտիվ է։"
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -520,11 +557,13 @@ msgstr "Գաղտնաբառ։"
 
 #: ../src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (password aged)"
-msgstr "Ձեզնից պահանջվում է անմիջապես փոխել Ձեր գաղտնաբառը (գաղտնաբառը հնացած է)"
+msgstr ""
+"Ձեզնից պահանջվում է անմիջապես փոխել Ձեր գաղտնաբառը (գաղտնաբառը հնացած է)"
 
 #: ../src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (root enforced)"
-msgstr "Ձեզնից պահանջվում է անմիջապես փոխել Ձեր գաղտնաբառը  (արմատը չիրագործվեց)"
+msgstr ""
+"Ձեզնից պահանջվում է անմիջապես փոխել Ձեր գաղտնաբառը  (արմատը չիրագործվեց)"
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
@@ -582,54 +621,54 @@ msgstr "Ստուգում..."
 msgid "Authentication failed."
 msgstr "Նույնականացումը ձախողվեց."
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "Չգրառված էկրան"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "Պատահական"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d ժամ"
-msgstr[1] "%d ժամեր"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d րոպե"
-msgstr[1] "%d րոպեներ"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d վարկյան"
-msgstr[1] "%d վարկյաններ"
+msgstr[0] ""
+msgstr[1] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -637,23 +676,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
 msgstr "Երբեք"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "Չհաջողվեց բեռնել հիմնական ինտերֆեյսը"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Խնդրում ենք համոզվեք, որ Էկրանապահը պատշաճ կերպով է տեղադրված"
 
@@ -705,31 +744,31 @@ msgstr "Էկրանապահը արդեն գործարկվում է այս սես�
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr "%A, %B %e"
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "Ժամանակը լրացել է."
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "Դուք ունեք Caps Lock ստեղնը."
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr "Փոխել Օգտագործողին..."
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "Դուրս Գալ"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr "%U վրա %h"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
 msgstr "_Գաղտնաբառ"

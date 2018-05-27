@@ -1,23 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Alexander Saprykin <xelfium@gmail.com>, 2009
-# Alexei Sorokin <sor.alexei@meowr.ru>, 2012-2013
-# Alexei Sorokin <sor.alexei@meowr.ru>, 2013-2014
-# Дмитрий Михирев, 2015
-# Leonid Kanter <leon@asplinux.ru>, 2006
-# Vlad Orlov <monsta@inbox.ru>, 2017
-# Sergio Kvantos <kvantos@plotinka.ru>, 2006
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-23 18:17+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Russian (http://www.transifex.com/mate/MATE/language/ru/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: monsta <monsta@inbox.ru>, 2018\n"
+"Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -106,7 +100,7 @@ msgstr "Завершить _сеанс"
 msgid "_Cancel"
 msgstr "О_тмена"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "_Разблокировать"
 
@@ -121,7 +115,9 @@ msgstr "Включать при простое"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr "Установите значение TRUE, чтобы хранитель экрана включался, когда сеанс неактивен."
+msgstr ""
+"Установите значение TRUE, чтобы хранитель экрана включался, когда сеанс "
+"неактивен."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
@@ -129,7 +125,9 @@ msgstr "Блокировать при включении"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr "Установите значение TRUE, чтобы экран блокировался при включении хранителя экрана."
+msgstr ""
+"Установите значение TRUE, чтобы экран блокировался при включении хранителя "
+"экрана."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
@@ -142,7 +140,10 @@ msgid ""
 "screensaver using only one theme on activation (specified in \"themes\" "
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
-msgstr "Режим выбора, используемый хранителем экрана. Возможные варианты: «disabled» — отключён, «blank-only» — чёрный экран, «single» — использовать одну тему, указанную ключом «темы», «random» — использовать случайно выбранную тему."
+msgstr ""
+"Режим выбора, используемый хранителем экрана. Возможные варианты: «disabled»"
+" — отключён, «blank-only» — чёрный экран, «single» — использовать одну тему,"
+" указанную ключом «темы», «random» — использовать случайно выбранную тему."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -150,7 +151,11 @@ msgid ""
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
-msgstr "Этот ключ определяет список тем, используемых хранителем экрана. Он игнорируется, когда ключ «mode» установлен в «blank-only», должен предоставлять имя одной темы, если ключ «mode» установлен в «single», или список тем, если ключ «mode» установлен в «random»."
+msgstr ""
+"Этот ключ определяет список тем, используемых хранителем экрана. Он "
+"игнорируется, когда ключ «mode» установлен в «blank-only», должен "
+"предоставлять имя одной темы, если ключ «mode» установлен в «single», или "
+"список тем, если ключ «mode» установлен в «random»."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -160,7 +165,10 @@ msgstr "Время активации управления питанием"
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
-msgstr "Промежуток времени в секундах, по истечении которого система управления питанием получает сигнал о бездействии пользователя в сеансе. Этот ключ устанавливается и управляется агентом управления питанием."
+msgstr ""
+"Промежуток времени в секундах, по истечении которого система управления "
+"питанием получает сигнал о бездействии пользователя в сеансе. Этот ключ "
+"устанавливается и управляется агентом управления питанием."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
@@ -178,7 +186,9 @@ msgstr "Интервал блокировки"
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
-msgstr "Количество минут после активации хранителя экрана, по истечении которых экран будет заблокирован."
+msgstr ""
+"Количество минут после активации хранителя экрана, по истечении которых "
+"экран будет заблокирован."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
@@ -189,7 +199,10 @@ msgid ""
 "Set this to TRUE to allow embedding a keyboard into the window when trying "
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
-msgstr "Установите значение TRUE, чтобы разрешить встраивание клавиатуры в окно при попытке разблокирования. Соответствующая команда должна быть указана в ключе «keyboard_command»."
+msgstr ""
+"Установите значение TRUE, чтобы разрешить встраивание клавиатуры в окно при "
+"попытке разблокирования. Соответствующая команда должна быть указана в ключе"
+" «keyboard_command»."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
@@ -201,7 +214,11 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr "Команда, которая должна выполняться, если установлено значение TRUE для ключа «embedded_keyboard_enabled», чтобы встроить виджет клавиатуры в окно. Команда должна реализовать интерфейс подключения XEMBED и выводить XID окна на стандартный вывод."
+msgstr ""
+"Команда, которая должна выполняться, если установлено значение TRUE для "
+"ключа «embedded_keyboard_enabled», чтобы встроить виджет клавиатуры в окно. "
+"Команда должна реализовать интерфейс подключения XEMBED и выводить XID окна "
+"на стандартный вывод."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
@@ -211,7 +228,10 @@ msgstr "Разрешить выход из сеанса"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
-msgstr "Установите значение TRUE, чтобы к диалогу разблокирования экрана  добавилась возможность выхода из системы после некоторой задержки. Время задержки указывается в ключе «logout_delay»."
+msgstr ""
+"Установите значение TRUE, чтобы к диалогу разблокирования экрана  добавилась"
+" возможность выхода из системы после некоторой задержки. Время задержки "
+"указывается в ключе «logout_delay»."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
@@ -222,7 +242,11 @@ msgid ""
 "The number of minutes after the screensaver activation before a logout "
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
-msgstr "Интервал в минутах между активацией хранителя экрана и появлением параметра выхода из сеанса в диалоге разблокирования. Действие этого ключа проявляется только в том случае, если установлено значение TRUE для ключа «logout_enable»."
+msgstr ""
+"Интервал в минутах между активацией хранителя экрана и появлением параметра "
+"выхода из сеанса в диалоге разблокирования. Действие этого ключа проявляется"
+" только в том случае, если установлено значение TRUE для ключа "
+"«logout_enable»."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
@@ -233,7 +257,11 @@ msgid ""
 "The command to invoke when the logout button is clicked. This command should"
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
-msgstr "Команда, вызываемая при нажатии кнопки выхода из сеанса. Эта команда должна просто завершать сеанс пользователя без всякого интерактивного взаимодействия. Действие этого ключа проявляется только в том случае, если установлено значение TRUE для ключа «logout_enable»."
+msgstr ""
+"Команда, вызываемая при нажатии кнопки выхода из сеанса. Эта команда должна "
+"просто завершать сеанс пользователя без всякого интерактивного "
+"взаимодействия. Действие этого ключа проявляется только в том случае, если "
+"установлено значение TRUE для ключа «logout_enable»."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
@@ -243,7 +271,9 @@ msgstr "Разрешить переключение пользователей"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
-msgstr "Установите значение TRUE, чтобы диалог разблокирования экрана предоставлял возможность переключиться на другую учётную запись."
+msgstr ""
+"Установите значение TRUE, чтобы диалог разблокирования экрана предоставлял "
+"возможность переключиться на другую учётную запись."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
@@ -344,7 +374,9 @@ msgstr "image - плавающие по всему экрану изображе
 #: ../savers/floaters.c:1197
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "Необходимо указать один рисунок. Используйте --help для получения информации о параметрах.\n"
+msgstr ""
+"Необходимо указать один рисунок. Используйте --help для получения информации"
+" о параметрах.\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
@@ -410,15 +442,20 @@ msgstr "Запрашивает состояние хранителя экран�
 
 #: ../src/mate-screensaver-command.c:67
 msgid "Query the length of time the screensaver has been active"
-msgstr "Запрашивает промежуток времени, в течение которого работал хранитель экрана"
+msgstr ""
+"Запрашивает промежуток времени, в течение которого работал хранитель экрана"
 
 #: ../src/mate-screensaver-command.c:71
 msgid "Tells the running screensaver process to lock the screen immediately"
-msgstr "Указывает запущенному процессу хранителя экрана заблокировать экран немедленно"
+msgstr ""
+"Указывает запущенному процессу хранителя экрана заблокировать экран "
+"немедленно"
 
 #: ../src/mate-screensaver-command.c:75
 msgid "If the screensaver is active then switch to another graphics demo"
-msgstr "Если хранитель экрана активен, переключиться к другой графической демонстрации"
+msgstr ""
+"Если хранитель экрана активен, переключиться к другой графической "
+"демонстрации"
 
 #: ../src/mate-screensaver-command.c:79
 msgid "Turn the screensaver on (blank the screen)"
@@ -426,7 +463,8 @@ msgstr "Включить хранитель экрана (чёрный экра�
 
 #: ../src/mate-screensaver-command.c:83
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr "Если хранитель экрана активен, деактивировать его (восстановить экран)"
+msgstr ""
+"Если хранитель экрана активен, деактивировать его (восстановить экран)"
 
 #: ../src/mate-screensaver-command.c:87
 msgid "Poke the running screensaver to simulate user activity"
@@ -436,7 +474,9 @@ msgstr "Имитировать активность пользователя"
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Запретить активирование хранителя экрана.  Команда блокируется, пока запрет активен."
+msgstr ""
+"Запретить активирование хранителя экрана.  Команда блокируется, пока запрет "
+"активен."
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -525,7 +565,8 @@ msgstr "Пароль:"
 
 #: ../src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (password aged)"
-msgstr "Вам необходимо сменить ваш пароль немедленно (срок действия пароля истёк)"
+msgstr ""
+"Вам необходимо сменить ваш пароль немедленно (срок действия пароля истёк)"
 
 #: ../src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (root enforced)"
@@ -533,7 +574,9 @@ msgstr "Вам необходимо сменить пароль немедлен
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Срок действия вашей учетной записи истёк, свяжитесь со своим системным администратором"
+msgstr ""
+"Срок действия вашей учетной записи истёк, свяжитесь со своим системным "
+"администратором"
 
 #: ../src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
@@ -587,60 +630,60 @@ msgstr "Проверка..."
 msgid "Authentication failed."
 msgstr "Сбой аутентификации."
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "Пустой экран"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "Случайным образом"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d час"
-msgstr[1] "%d часа"
-msgstr[2] "%d часов"
-msgstr[3] "%d часов"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d минута"
-msgstr[1] "%d минуты"
-msgstr[2] "%d минут"
-msgstr[3] "%d минут"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d секунда"
-msgstr[1] "%d секунды"
-msgstr[2] "%d секунд"
-msgstr[3] "%d секунд"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -648,23 +691,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
 msgstr "Никогда"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "Не удалось загрузить основной интерфейс"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Убедитесь, что хранитель экрана установлен должным образом"
 
@@ -716,31 +759,31 @@ msgstr "хранитель экрана уже запущен в этом сеа
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr "%A, %B %e"
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "Время истекло."
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "Включен режим Caps Lock."
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr "Пе_реключить пользователя..."
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "Завершить _сеанс"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr "%U на %h"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
 msgstr "_Пароль:"

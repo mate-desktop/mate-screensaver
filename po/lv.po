@@ -1,19 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Raivis Dejus <orvils@gmail.com>, 2006, 2007, 2009
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2009, 2010
-# Valdis Vizulis <valdis.vizulis@gmail.com>, 2006
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-19 13:40+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Latvian (http://www.transifex.com/mate/MATE/language/lv/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Imants Liepiņš <imzzinator@gmail.com>, 2018\n"
+"Language-Team: Latvian (https://www.transifex.com/mate/teams/13566/lv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -47,7 +45,7 @@ msgstr "Barošanas _pārvaldība"
 
 #: ../data/mate-screensaver-preferences.ui.h:5
 msgid "_Preview"
-msgstr "_Priekšskatījums"
+msgstr "_Priekšstatījums"
 
 #: ../data/mate-screensaver-preferences.ui.h:6
 msgid "_Screensaver theme:"
@@ -88,48 +86,50 @@ msgstr "Kosmoss"
 
 #: ../data/lock-dialog-default.ui.h:1
 msgid "_Leave Message"
-msgstr ""
+msgstr "_Atstāt ziņojumu"
 
 #: ../data/lock-dialog-default.ui.h:2
 msgid "_Switch User"
-msgstr ""
+msgstr "Nomainīt _lietotāju"
 
 #: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
-msgstr ""
+msgstr "Beigt _darbu"
 
 #: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
-msgstr ""
+msgstr "At_celt"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "_Atslēgt"
 
 #: ../data/lock-dialog-default.ui.h:7
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
-msgstr ""
+msgstr "<b>Atstāt ziņojumu lietotājam %R:</b>"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:1
 msgid "Activate when idle"
-msgstr ""
+msgstr "Aktivizēt, kad neaktīvs"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
+"Iestatīt kā PATIESS, lai aktivizētu ekrānsaudzētāju, kad sesija ir neaktīva."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
-msgstr ""
+msgstr "Noslēgt aktivizācijas brīdī"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
+"Iestatīt kā PATIESS, lai noslēgtu ekrānu, kad ekrānsaudzētājs kļūst aktīvs."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
-msgstr ""
+msgstr "Ekrānsaudzētāja tēmas izvēles režīms"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:6
 msgid ""
@@ -139,6 +139,11 @@ msgid ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 msgstr ""
+"Ekrānsaudzētāja lietotais izvēles režīms. Var būt \"blank-only\", lai "
+"aktivizētu ekrānsaudzētāju, kas nelieto nevienu tēmu aktivizācijas brīdī, "
+"\"single\", lai aktivizētu ekrānsaudzētāju, kas lieto tikai vienu tēmu "
+"aktivizācijas brīdī (precizē atslēgā \"themes\"), un \"random\", lai "
+"aktivizētu ekrānsaudzētāju, kas lieto nejaušu tēmu aktivizācijas brīdī."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -147,6 +152,10 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
+"Šī atslēga precizē tēmu sarakstu, ko lietos ekrānsaudzētājs. Tās tiek "
+"ignorētas, ja \"mode\" atslēga ir \"blank-only\". Ieteicams norādīt tēmas "
+"nosaukumu, ja \"mode\" ir \"single\" un tēmu sarakstu, ja \"mode\" ir "
+"\"random\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -160,25 +169,26 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
-msgstr ""
+msgstr "Laiks pirms tēmas maiņas"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr ""
+msgstr "Minūšu skaits, kam jāpaiet, pirms tiek mainīta ekrānsaudzētāja tēma."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
-msgstr ""
+msgstr "Laiks pirms noslēgšanas"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:14
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
 msgstr ""
+"Minūšu skaits pēc ekrānsaudzētāja aktivizācijas pirms ekrāna noslēgšanas."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
-msgstr ""
+msgstr "Atļaut logos iegult tastatūru"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:16
 msgid ""
@@ -186,10 +196,12 @@ msgid ""
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
+"Iestatiet uz PATIESS, lai atļautu logos atslēgšanas laikā iegult tastatūru. "
+"\"keyboard_command\" vērtībā jānorāda atbilstoša komanda."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
-msgstr ""
+msgstr "Iegultā tastatūras komanda"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:18
 msgid ""
@@ -198,10 +210,13 @@ msgid ""
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
 msgstr ""
+"Komanda, kas tiks palaista, ja \"embedded_keyboard_enabled\" vērtība ir "
+"PATIESS, lai logā iegultu tastatūras sīklietotni. Komandai būtu jārealizē "
+"XEMBED ievades saskarne un izvades logs ar XID izvadu."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
-msgstr ""
+msgstr "Atļaut atteikšanos"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:20
 msgid ""
@@ -211,7 +226,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
-msgstr ""
+msgstr "Laiks pirms atteikšanās opcijas"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:22
 msgid ""
@@ -222,7 +237,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
-msgstr ""
+msgstr "Atteikšanās komanda"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:24
 msgid ""
@@ -230,20 +245,26 @@ msgid ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 msgstr ""
+"Komanda, kuru izsauc, kad ir nospiesta atteikšanās poga. Šai komandai "
+"vajadzētu vienkārši atteikt lietotāju bez jebkādas mijiedarbības. Šai "
+"atslēgai ir ietekme tikai, ja \"logout_enable\" atslēga ir iestatīta kā "
+"PATIESS."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
-msgstr ""
+msgstr "Atļaut lietotāju pārslēgšanu"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:26
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
+"Iestatīt kā PATIESS, lai piedāvātu opciju atslēgšanas dialoga logā, lai "
+"pārslēgtos uz citu lietotāja kontu."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
-msgstr ""
+msgstr "Noslēgšanas dialoga tēma"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:28
 msgid "Theme to use for the lock dialog"
@@ -251,12 +272,12 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:29
 msgid "Allow the session status message to be displayed"
-msgstr ""
+msgstr "Ļaut rādīt sesijas statusa ziņojumus"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:30
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
-msgstr ""
+msgstr "Ļaut rādīt sesijas statusa ziņojumus, kad ekrāns ir noslēgts"
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -340,7 +361,9 @@ msgstr "bilde - peldina bildes pa visu ekrānu"
 #: ../savers/floaters.c:1197
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "Jums jānorāda viena bilde.  Apskatiet --help, lai uzzinātu lietošanas instrukcijas.\n"
+msgstr ""
+"Jums jānorāda viena bilde.  Apskatiet --help, lai uzzinātu lietošanas "
+"instrukcijas.\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
@@ -414,7 +437,8 @@ msgstr "Liek strādājošam ekrānsaudzētāja procesam nekavējoties noslēgt e
 
 #: ../src/mate-screensaver-command.c:75
 msgid "If the screensaver is active then switch to another graphics demo"
-msgstr "Ja ekrānsaudzētājs ir aktīvs, tad pārslēgties uz citu grafikas demonstrāciju"
+msgstr ""
+"Ja ekrānsaudzētājs ir aktīvs, tad pārslēgties uz citu grafikas demonstrāciju"
 
 #: ../src/mate-screensaver-command.c:79
 msgid "Turn the screensaver on (blank the screen)"
@@ -426,13 +450,16 @@ msgstr "Ja ekrānsaudzētājs ir aktīvs, tad deaktivizēt to (at-notīrīt ekr�
 
 #: ../src/mate-screensaver-command.c:87
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "Pabikstīt darbojošos ekrānsaudzētāju, lai simulētu lietotāja aktivitāti"
+msgstr ""
+"Pabikstīt darbojošos ekrānsaudzētāju, lai simulētu lietotāja aktivitāti"
 
 #: ../src/mate-screensaver-command.c:91
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Atturēt ekrānsaudzētāju no aktivizēšanās. Komanda bloķē, kamēr atturēšana ir aktīva."
+msgstr ""
+"Atturēt ekrānsaudzētāju no aktivizēšanās. Komanda bloķē, kamēr atturēšana ir"
+" aktīva."
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -529,7 +556,9 @@ msgstr "Jums nekavējoties jānomaina parole (administratora prasība)"
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Jūsu konta derīgums ir beidzies. Lūdzu, sazinieties ar sistēmas administratoru"
+msgstr ""
+"Jūsu konta derīgums ir beidzies. Lūdzu, sazinieties ar sistēmas "
+"administratoru"
 
 #: ../src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
@@ -583,57 +612,57 @@ msgstr "Notiek pārbaude..."
 msgid "Authentication failed."
 msgstr "Autentifikācija nav izdevusies."
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "Tukšs ekrāns"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "Nejaušs"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d stunda"
-msgstr[1] "%d stundas"
-msgstr[2] "%d stundu"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minūte"
-msgstr[1] "%d minūtes"
-msgstr[2] "%d minūšu"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d sekunde"
-msgstr[1] "%d sekundes"
-msgstr[2] "%d sekunžu"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -641,23 +670,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
 msgstr "Nekad"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "Nevar ielādēt galveno saskarni"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Lūdzu, pārliecinieties, ka ekrānsaudzētājs ir pareizi uzinstalēts"
 
@@ -709,31 +738,31 @@ msgstr "Ekrānsaudzētājs jau darbojas šajā sesijā"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "Laiks ir iztecējis."
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "Jums ir ieslēgts Caps Lock taustiņš."
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr "Pār_slēgt lietotāju..."
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "Ats_lēgties"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr "%U uz %h"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
 msgstr "_Parole:"

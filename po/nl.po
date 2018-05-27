@@ -1,21 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# infirit <inactive+infirit@transifex.com>, 2014-2015
-# Michael Steenbeek <m.o.steenbeek@gmail.com>, 2013-2014
-# Pjotr <pjotrvertaalt@gmail.com>, 2017
-# Robbie Deighton <deightonrobbie@gmail.com>, 2016
-# Stef Pletinck <stef.plet@gmail.com>, 2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-23 18:17+0000\n"
-"Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
-"Language-Team: Dutch (http://www.transifex.com/mate/MATE/language/nl/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stef Pletinck <stef.plet@gmail.com>, 2018\n"
+"Language-Team: Dutch (https://www.transifex.com/mate/teams/13566/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,7 +45,7 @@ msgstr "_Energiebeheer"
 
 #: ../data/mate-screensaver-preferences.ui.h:5
 msgid "_Preview"
-msgstr "_Voorbeeldweergave"
+msgstr "_Voorbeeld"
 
 #: ../data/mate-screensaver-preferences.ui.h:6
 msgid "_Screensaver theme:"
@@ -69,7 +65,9 @@ msgstr "_Scherm vergrendelen wanneer schermbeveiliging is geactiveerd"
 
 #: ../data/mate-screensaver-preferences.ui.h:10
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>Waarschuwing: het scherm zal niet vergrendeld worden voor de gebruiker root.</b>"
+msgstr ""
+"<b>Waarschuwing: het scherm zal niet vergrendeld worden voor de gebruiker "
+"root.</b>"
 
 #: ../data/mate-screensaver.directory.in.h:1
 msgid "Screensavers"
@@ -104,7 +102,7 @@ msgstr "Af_melden"
 msgid "_Cancel"
 msgstr "_Annuleren"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "Ontgren_delen"
 
@@ -119,7 +117,9 @@ msgstr "Activeren bij inactiviteit"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr "Zet dit op TRUE (waar) om de schermbeveiliging te activeren wanneer de sessie inactief is."
+msgstr ""
+"Zet dit op TRUE (waar) om de schermbeveiliging te activeren wanneer de "
+"sessie inactief is."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
@@ -127,7 +127,9 @@ msgstr "Vergrendelen bij activering"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr "Zet dit op TRUE (waar) om het scherm te vergrendelen wanneer de schermbeveiliging wordt geactiveerd."
+msgstr ""
+"Zet dit op TRUE (waar) om het scherm te vergrendelen wanneer de "
+"schermbeveiliging wordt geactiveerd."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
@@ -140,7 +142,12 @@ msgid ""
 "screensaver using only one theme on activation (specified in \"themes\" "
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
-msgstr "De selectiemodus gebruikt door schermbeveiliging. Als de schermbeveiliging wordt geactiveerd, wordt bij \"blank-only\" alleen een zwart scherm getoond. Bij \"single\" wordt slechts één schermbeveiligingsthema gebruikt (aangegeven via de sleutel \"themes\"). Bij \"random\" wordt een willekeurig schermbeveiligingsthema gebruikt."
+msgstr ""
+"De selectiemodus gebruikt door schermbeveiliging. Als de schermbeveiliging "
+"wordt geactiveerd, wordt bij \"blank-only\" alleen een zwart scherm getoond."
+" Bij \"single\" wordt slechts één schermbeveiligingsthema gebruikt "
+"(aangegeven via de sleutel \"themes\"). Bij \"random\" wordt een willekeurig"
+" schermbeveiligingsthema gebruikt."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -148,7 +155,12 @@ msgid ""
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
-msgstr "Deze sleutel geeft de lijst met thema's die door de schermbeveiliging kunnen worden gebruikt. Het wordt genegeerd wanneer de sleutel: \"mode\" op \"blank only\" staat. Het moet de naam van het thema geven wanneer \"mode\" \"single\" is, en moet een lijst met thema's geven wanneer \"mode\" \"random\" is."
+msgstr ""
+"Deze sleutel geeft de lijst met thema's die door de schermbeveiliging kunnen"
+" worden gebruikt. Het wordt genegeerd wanneer de sleutel: \"mode\" op "
+"\"blank only\" staat. Het moet de naam van het thema geven wanneer \"mode\" "
+"\"single\" is, en moet een lijst met thema's geven wanneer \"mode\" "
+"\"random\" is."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -158,7 +170,10 @@ msgstr "Tijd tot energiebeheercontrole"
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
-msgstr "Dit is het aantal seconden inactiviteit voordat het energiebeheer op de hoogte wordt gebracht. De sessie-agent voor energiebeheer houdt deze sleutel bij."
+msgstr ""
+"Dit is het aantal seconden inactiviteit voordat het energiebeheer op de "
+"hoogte wordt gebracht. De sessie-agent voor energiebeheer houdt deze sleutel"
+" bij."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
@@ -166,7 +181,8 @@ msgstr "Tijd tot themawisseling"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr "Het aantal minuten voordat gewisseld wordt van schermbeveiligingsthema."
+msgstr ""
+"Het aantal minuten voordat gewisseld wordt van schermbeveiligingsthema."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
@@ -176,7 +192,9 @@ msgstr "Tijd tot vergrendeling"
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
-msgstr "Het aantal minuten tussen activeren van de schermbeveiliging en het vergrendelen van het beeldscherm."
+msgstr ""
+"Het aantal minuten tussen activeren van de schermbeveiliging en het "
+"vergrendelen van het beeldscherm."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
@@ -187,7 +205,10 @@ msgid ""
 "Set this to TRUE to allow embedding a keyboard into the window when trying "
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
-msgstr "Schakel dit in (TRUE) om toe te staan dat er een toetsenbord in het venster geplaatst wordt bij poging tot ontgrendeling. De ‘keyboard_command’-sleutel moet ingesteld worden met de juiste opdrachtregel."
+msgstr ""
+"Schakel dit in (TRUE) om toe te staan dat er een toetsenbord in het venster "
+"geplaatst wordt bij poging tot ontgrendeling. De ‘keyboard_command’-sleutel "
+"moet ingesteld worden met de juiste opdrachtregel."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
@@ -199,7 +220,11 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr "De opdrachtregel die uitgevoerd wordt als ‘embedded_keyboard_enabled’ is ingeschakeld om een toetsenbord in het venster te plaatsen. Dit programma moet een XEMBED-plug interface implementeren en een ‘window XID’ op ‘standard output’ geven."
+msgstr ""
+"De opdrachtregel die uitgevoerd wordt als ‘embedded_keyboard_enabled’ is "
+"ingeschakeld om een toetsenbord in het venster te plaatsen. Dit programma "
+"moet een XEMBED-plug interface implementeren en een ‘window XID’ op "
+"‘standard output’ geven."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
@@ -209,7 +234,10 @@ msgstr "Afmelden toestaan"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
-msgstr "Zet dit op TRUE (waar) om een optie te tonen in het ontgrendelings-dialoogvenster om na een bepaalde periode af te melden. De lengte van de periode kan worden ingesteld via de sleutel: \"logout_delay\"."
+msgstr ""
+"Zet dit op TRUE (waar) om een optie te tonen in het ontgrendelings-"
+"dialoogvenster om na een bepaalde periode af te melden. De lengte van de "
+"periode kan worden ingesteld via de sleutel: \"logout_delay\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
@@ -220,7 +248,11 @@ msgid ""
 "The number of minutes after the screensaver activation before a logout "
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
-msgstr "Het aantal minuten tussen activeren van de schermbeveiliging en het tonen van een afmeldoptie in het ontgrendelings-dialoogvenster. Deze sleutel heeft alleen effect wanneer de sleutel \"logout_enable\" ingesteld is op TRUE (waar)."
+msgstr ""
+"Het aantal minuten tussen activeren van de schermbeveiliging en het tonen "
+"van een afmeldoptie in het ontgrendelings-dialoogvenster. Deze sleutel heeft"
+" alleen effect wanneer de sleutel \"logout_enable\" ingesteld is op TRUE "
+"(waar)."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
@@ -231,7 +263,11 @@ msgid ""
 "The command to invoke when the logout button is clicked. This command should"
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
-msgstr "De opdracht die uitgevoerd wordt wanneer de afmeldknop wordt aangeklikt. Deze opdracht moet de gebruiker kunnen afmelden zonder verdere interactie. Deze sleutel heeft alleen effect wanneer de sleutel \"logout_enable\" ingesteld is op TRUE."
+msgstr ""
+"De opdracht die uitgevoerd wordt wanneer de afmeldknop wordt aangeklikt. "
+"Deze opdracht moet de gebruiker kunnen afmelden zonder verdere interactie. "
+"Deze sleutel heeft alleen effect wanneer de sleutel \"logout_enable\" "
+"ingesteld is op TRUE."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
@@ -241,7 +277,9 @@ msgstr "Gebruikerwisseling toestaan"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
-msgstr "Zet dit op TRUE (waar) om in het ontgrendelings-dialoogvenster een optie te tonen om van gebruiker te wisselen."
+msgstr ""
+"Zet dit op TRUE (waar) om in het ontgrendelings-dialoogvenster een optie te "
+"tonen om van gebruiker te wisselen."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
@@ -258,7 +296,8 @@ msgstr "Weergave van sessiestatusbericht toestaan"
 #: ../data/org.mate.screensaver.gschema.xml.in.h:30
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
-msgstr "Weergave van het sessiestatusbericht toestaan als het scherm vergrendeld is."
+msgstr ""
+"Weergave van het sessiestatusbericht toestaan als het scherm vergrendeld is."
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -412,11 +451,15 @@ msgstr "Opvragen hoe lang de schermbeveiliging actief is geweest"
 
 #: ../src/mate-screensaver-command.c:71
 msgid "Tells the running screensaver process to lock the screen immediately"
-msgstr "Geeft de actieve schermbeveiliging opdracht om het scherm onmiddellijk te vergrendelen"
+msgstr ""
+"Geeft de actieve schermbeveiliging opdracht om het scherm onmiddellijk te "
+"vergrendelen"
 
 #: ../src/mate-screensaver-command.c:75
 msgid "If the screensaver is active then switch to another graphics demo"
-msgstr "Indien de schermbeveiliging actief is, wisselen naar een andere grafische demo"
+msgstr ""
+"Indien de schermbeveiliging actief is, wisselen naar een andere grafische "
+"demo"
 
 #: ../src/mate-screensaver-command.c:79
 msgid "Turn the screensaver on (blank the screen)"
@@ -424,21 +467,27 @@ msgstr "De schermbeveiliging activeren (het scherm zwart maken)"
 
 #: ../src/mate-screensaver-command.c:83
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr "Indien de schermbeveiliging actief is, deze deactiveren (het scherm zichtbaar maken)"
+msgstr ""
+"Indien de schermbeveiliging actief is, deze deactiveren (het scherm "
+"zichtbaar maken)"
 
 #: ../src/mate-screensaver-command.c:87
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "De actieve schermbeveiliging laten denken dat er gebruikersactiviteit is"
+msgstr ""
+"De actieve schermbeveiliging laten denken dat er gebruikersactiviteit is"
 
 #: ../src/mate-screensaver-command.c:91
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Verhinderen dat de schermbeveiliging ingeschakeld wordt. Deze opdracht blokkeert zo lang als de verhindering actief is."
+msgstr ""
+"Verhinderen dat de schermbeveiliging ingeschakeld wordt. Deze opdracht "
+"blokkeert zo lang als de verhindering actief is."
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
-msgstr "De aanroepende toepassing die de schermbeveiliging verhindert te starten"
+msgstr ""
+"De aanroepende toepassing die de schermbeveiliging verhindert te starten"
 
 #: ../src/mate-screensaver-command.c:99
 msgid "The reason for inhibiting the screensaver"
@@ -527,11 +576,13 @@ msgstr "U dient uw wachtwoord direct te veranderen (wachtwoord verlopen)"
 
 #: ../src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (root enforced)"
-msgstr "U dient uw wachtwoord direct te veranderen (op last van de systeembeheerder)"
+msgstr ""
+"U dient uw wachtwoord direct te veranderen (op last van de systeembeheerder)"
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Uw account is verlopen; neem a.u.b. contact op met de systeembeheerder"
+msgstr ""
+"Uw account is verlopen; neem a.u.b. contact op met de systeembeheerder"
 
 #: ../src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
@@ -585,37 +636,37 @@ msgstr "Controle…"
 msgid "Authentication failed."
 msgstr "Authenticatie mislukt."
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "Zwart scherm"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "Willekeurig"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d uur"
 msgstr[1] "%d uur"
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d minuut"
 msgstr[1] "%d minuten"
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -624,15 +675,15 @@ msgstr[1] "%d seconden"
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -640,23 +691,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
 msgstr "Nooit"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "Kon de hoofd-bedieningsschil niet laden"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Controleer a.u.b. of de schermbeveiliging correct is geïnstalleerd"
 
@@ -708,31 +759,31 @@ msgstr "schermbeveiliging al actief in deze sessie"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr "%A %e %B"
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "Tijd is verlopen."
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "De Caps Lock-toets staat aan."
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr "Gebruiker _wisselen…"
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "_Afmelden"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr "%U op %h"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
 msgstr "_Wachtwoord:"

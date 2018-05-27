@@ -1,24 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# sir_hawell <arash.cordi@gmail.com>, 2014
-# Elnaz Sarbar <elnaz@farsiweb.info>, 2006
-# Meelad Zakaria <meelad@farsiweb.info>, 2006
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-19 13:40+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Persian (http://www.transifex.com/mate/MATE/language/fa/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Mahdi Pourghasem <mahdipourghasem@gmail.com>, 2018\n"
+"Language-Team: Persian (https://www.transifex.com/mate/teams/13566/fa/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fa\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../data/mate-screensaver-preferences.desktop.in.h:1
 #: ../src/mate-screensaver.desktop.in.in.h:1
@@ -102,7 +100,7 @@ msgstr "_خروج از سیستم"
 msgid "_Cancel"
 msgstr "ان_صراف"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "_باز کردن قفل"
 
@@ -113,23 +111,27 @@ msgstr "<b>باقی گذاشتن پیام برای %R</b>"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:1
 msgid "Activate when idle"
-msgstr ""
+msgstr "فعال شدن زمان بی‌کاری"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
+"برای فعال شدن محافظ صفحهٔ نمایش هنگام بی‌کار بودن نشست، این کلید را روی درست"
+" تنظیم کنید."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
-msgstr ""
+msgstr "قفل کردن هنگام فعال‌سازی"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
+"برای قفل شدن صفحهٔ نمایش هنگام فعال شدن محافظ صفحهٔ نمایش، این کلید را روی "
+"درست تنظیم کنید."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
-msgstr ""
+msgstr "حالت انتخاب تم محافظ صفحهٔ نمایش"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:6
 msgid ""
@@ -139,6 +141,12 @@ msgid ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 msgstr ""
+"حالت انتخابی که محافظ صفحهٔ نمایش استفاده می‌کند. مقادیر ممکن «blank-only» "
+"که در این صورت محافظ صفحهٔ نمایش بدون استفاده از هیچ تمی هنگام فعال‌سازی به "
+"کار می‌افتد، «single» که در این صورت محافظ صفحهٔ نمایش هنگام فعال‌سازی تنها"
+"  برای استفاده از یک تم (که در کلید «themes» مشخص شده است) به کار می‌افتد، و"
+" «random» که در این صورت محافظ صفحهٔ نمایش هنگام فعال‌سازی از یک تم تصادفی "
+"استفاده می‌کند."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -147,6 +155,11 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
+"این کلید فهرست تم‌هایی را که محافظ صفحهٔ نمایش استفاده می‌کند مشخص می‌کند. "
+"هر وقت که کلید «mode» روی «blank-only» تنظیم شده باشد نادیده گرفته می‌شود،‌ "
+"زمانی که کلید «mode» روی «single» تنظیم شده باشد نام تم مورد استفاده را "
+"ارائه می‌دهد، و زمانی که «mode» روی «random» تنظیم شده است فهرستی از تم‌ها "
+"ارائه می‌کند."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -160,25 +173,27 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
-msgstr ""
+msgstr "فاصلهٔ زمانی تغییر تم"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr ""
+msgstr "تعداد دقایق بین تغییر تم محافظ صفحهٔ نمایش."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
-msgstr ""
+msgstr "زمان تا قفل کردن"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:14
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
 msgstr ""
+"تعداد دقایقی که محافظ صفحهٔ نمایش فعال است و پس از آن که صفحهٔ نمایش قفل "
+"می‌شود."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
-msgstr ""
+msgstr "تعیبهٔ صفحه‌کلید در پنجره مجاز باشد"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:16
 msgid ""
@@ -186,10 +201,13 @@ msgid ""
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
+"برای مجاز بودن تعبیهٔ صفحه‌کلید در پنجره هنگام تلاش برای باز کردن قفل، این "
+"کلید را روی درست تنظیمکنید. کلید «keyboard_command» باید با فرمان مناسبی "
+"تنظیم شده باشد."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
-msgstr ""
+msgstr "فرمان صفحه‌کلید توکار"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:18
 msgid ""
@@ -198,10 +216,13 @@ msgid ""
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
 msgstr ""
+"فرمانی که در صورت تنظیم کلید «embedded_keyboard_enabled» روی درست، برای "
+"تعبیهٔ ویجت صفحه‌کلید در پنجره، اجرا خواهد شد. این فرمان باید یک واسط اتصال "
+"XEMBED را پیاده‌سازیکند و خروجی‌اش یک XID پنجره روی خروجی استاندارد باشد."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
-msgstr ""
+msgstr "خروج از سیستم مجاز باشد"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:20
 msgid ""
@@ -211,7 +232,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
-msgstr ""
+msgstr "زمان تا نمایش گزینهٔ خروج از سیستم"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:22
 msgid ""
@@ -222,7 +243,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
-msgstr ""
+msgstr "فرمان خروج از سیستم"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:24
 msgid ""
@@ -230,20 +251,25 @@ msgid ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 msgstr ""
+"فرمانی که هنگام کلیک روی دکمهٔ خروج از سیستم فراخوانی می‌شود. این فرمان باید"
+" به سادگی کاربر را بدون هیچ تعاملی از سیستم خارج کند. این کلید زمانی "
+"تأثیرگذار است که کلید «ogout_enable» روی درست تنظیم شده باشد."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
-msgstr ""
+msgstr "تعویض کاربر مجاز باشد"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:26
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
+"برای نمایش گزینه‌ای برای تعویض به حساب یک کاربر دیگر در محاورهٔ باز کردن "
+"قفل، این کلید را روی درست تنظیم کنید."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
-msgstr ""
+msgstr "تم محاورهٔ قفل"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:28
 msgid "Theme to use for the lock dialog"
@@ -340,7 +366,8 @@ msgstr "image - تصاویر را اطراف صفحهٔ نمایش شناور م
 #: ../savers/floaters.c:1197
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "باید یک تصویر مشخص کنید.  برای اطلاعات  در مورد استفاده --help را ببینید.\n"
+msgstr ""
+"باید یک تصویر مشخص کنید.  برای اطلاعات  در مورد استفاده --help را ببینید.\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
@@ -410,7 +437,9 @@ msgstr "پرس و جوی مدت زمانی که محافظ صفحه نمایش �
 
 #: ../src/mate-screensaver-command.c:71
 msgid "Tells the running screensaver process to lock the screen immediately"
-msgstr "به فراروند در حال اجرای محافظ صفحهٔ نمایش خبر می‌دهد که صفحهٔ نمایش را بلافاصله قفل کند"
+msgstr ""
+"به فراروند در حال اجرای محافظ صفحهٔ نمایش خبر می‌دهد که صفحهٔ نمایش را "
+"بلافاصله قفل کند"
 
 #: ../src/mate-screensaver-command.c:75
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -422,7 +451,9 @@ msgstr "محافظ صفحهٔ نمایش روشن شود (صفحهٔ نمایش 
 
 #: ../src/mate-screensaver-command.c:83
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr "اگر محافظ صفحهٔ نمایش فعال است، غیر فعال شود. (صفحهٔ نمایش از خالی بودن درآید)"
+msgstr ""
+"اگر محافظ صفحهٔ نمایش فعال است، غیر فعال شود. (صفحهٔ نمایش از خالی بودن "
+"درآید)"
 
 #: ../src/mate-screensaver-command.c:87
 msgid "Poke the running screensaver to simulate user activity"
@@ -432,7 +463,8 @@ msgstr "انگولک کردن محافظ صفحه نمایش در حال اجر�
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "از فعال شدن محافظ صفحهٔ نمایش ممانعت شود. هنگام ممانعت، فرمان مسدود می‌شود."
+msgstr ""
+"از فعال شدن محافظ صفحهٔ نمایش ممانعت شود. هنگام ممانعت، فرمان مسدود می‌شود."
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -517,7 +549,7 @@ msgstr "نام کاربری:"
 #: ../src/mate-screensaver-dialog.c:168 ../src/mate-screensaver-dialog.c:169
 #: ../src/gs-auth-pam.c:171
 msgid "Password:"
-msgstr "گذرواژه:"
+msgstr "گذر واژه:"
 
 #: ../src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (password aged)"
@@ -583,51 +615,54 @@ msgstr "در حال بررسی..."
 msgid "Authentication failed."
 msgstr "تأیید هویت شکست خورد."
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "صفحهٔ نمایش خالی"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "تصادفی"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%Id ساعت"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%Id دقیقه"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%Id ثانیه"
+msgstr[0] ""
+msgstr[1] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -635,23 +670,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
 msgstr "هرگز"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "نمی‌توان واسط اصلی را بار  کرد"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "لطفاً بررسی کنید که محافظ صفحهٔ نمایش درست نصب شده باشد"
 
@@ -703,31 +738,31 @@ msgstr "محافظ صفحهٔ نمایش از قبل در این نشست در �
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr "%l:%M %p"
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "زمان منقضی شد."
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "کلید قفل تبدیل روشن است."
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr "ت_عویض کاربر..."
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "_خروج از سیستم"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr "%U روی %h"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
-msgstr "_گذرواژه:"
+msgstr "کلمه عبور"

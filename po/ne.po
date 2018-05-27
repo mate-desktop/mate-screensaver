@@ -1,20 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Mahesh Subedi <submanesh@hotmail.com>, 2006
-# Nabin Gautam <nabin@mpp.org.np>, 2007
-# Shiva Pokharel <pokharelshiva@hotmail.com>, 2006
-# Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>, 2006
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-19 13:40+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Nepali (http://www.transifex.com/mate/MATE/language/ne/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Nepali (https://www.transifex.com/mate/teams/13566/ne/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -89,48 +86,49 @@ msgstr "विश्व"
 
 #: ../data/lock-dialog-default.ui.h:1
 msgid "_Leave Message"
-msgstr ""
+msgstr "सन्देश छोड्नुहोस्"
 
 #: ../data/lock-dialog-default.ui.h:2
 msgid "_Switch User"
-msgstr ""
+msgstr "स्विच प्रयोगकर्ता"
 
 #: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
-msgstr ""
+msgstr "लगआउट गर्नुहोस्"
 
 #: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
-msgstr ""
+msgstr "रद्द गर्नुहोस्"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "ताल्चा खोल्नुहोस्"
 
 #: ../data/lock-dialog-default.ui.h:7
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
-msgstr ""
+msgstr "<b> %R का लागि सन्देश छोड्नुहोस्:</b>"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:1
 msgid "Activate when idle"
-msgstr ""
+msgstr "निस्क्रिय हुने वित्तिकै सक्रिय बनाउनुहोस् ।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
+"सत्र निस्क्रिय हुदा स्क्रिनसेभरलाई सक्रिय पार्न यसलाई ठीकमा सेट गर्नुहोस् ।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
-msgstr ""
+msgstr "सक्रिय हुदा ताल्चा लगाउनुहोस्"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr ""
+msgstr "स्क्रिनसेभर सक्रियमा जादा पर्दामा ताल्चा लगाउन ठीक मा सेट गर्नुहोस् ।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
-msgstr ""
+msgstr "स्क्रिनसेभर विषयवस्तु चयन मोड"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:6
 msgid ""
@@ -140,6 +138,11 @@ msgid ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 msgstr ""
+"स्क्रिनसेभरले प्रयोग गरेको चयन मोड । \"blank-only\", सक्रियतामा कुनै "
+"विषयवस्तुको प्रयोग नगरी स्क्रिनसेभरलाई सक्षम गर्न, \"single\", सक्रियतामा "
+"एउटा मात्र विषयवस्तु प्रयोग गरेर स्क्रिनसेभरलाई सक्षम गर्न (\"themes\" "
+"कुञ्जीमा निर्दिष्ट गरिएको), र \"random\" सक्रियतामा क्रमबद्ध विषयवस्तु "
+"प्रयोग गरेर स्क्रिनसेभरलाई सक्षम गर्न प्रयोग हुनसक्छ ।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -148,6 +151,10 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
+"यो कुञ्जीले स्क्रिनसेभरले प्रयोग गर्ने विषयवस्तुको सूचिलाई निर्दिष्ट गर्दछ ।"
+" \"मोड\" कुञ्जी \"खाली मात्र\" हुँदा यसलाई उपेक्षा गरिन्छ, \"मोड\" \"एकल\" "
+"हुदा विषयवस्तु नाम उपलब्ध गराउनुपर्दछ, र \"मोड\" \"अनियमित\" हुँदा "
+"विषयवस्तुको सूचि उपलब्ध गराउनुपर्दछ ।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -161,25 +168,26 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
-msgstr ""
+msgstr "विषयवस्तु परिवर्तन गर्नु पहिलाको समय"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr ""
+msgstr "स्क्रिनसेभर विषयवस्तु परिवर्तन गर्नु पहिले चलाइने मिनेटको सङ्ख्या ।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
-msgstr ""
+msgstr "ताल्चा लगाउनु पहिलेको समय"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:14
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
 msgstr ""
+"पर्दा बन्द गर्नु पहिले स्क्रिनसेभरलाई सक्रिय पारी सकेपछिका मिनेटको सङ्ख्या ।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
-msgstr ""
+msgstr "कुञ्जीपाटीलाइ सञ्झ्यालमा सम्मिलित गर्न अनुमति दिनुहोस्"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:16
 msgid ""
@@ -187,10 +195,13 @@ msgid ""
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
+"ताल्चा खोल्ने प्रयास गर्दा कुञ्जीपाटीलाई सञ्झ्यालमा सम्मिलन गर्न अनुमति दिन "
+"यसलाई ठीकमा सेट गर्नुहोस् । \"कुञ्जीपाटी आदेश\" मिल्दो आदेशसँग सेट "
+"गर्नुपर्दछ ।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
-msgstr ""
+msgstr "सम्मिलित कुञ्जीपाटी आदेश"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:18
 msgid ""
@@ -199,10 +210,14 @@ msgid ""
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
 msgstr ""
+" \"सम्मिलित कुञ्जीपाटी सक्षम पारिएको\" कुञ्जी ठीकमा सेट गरिएको छ भने, "
+"सञ्झ्यालमा कुञ्जीपाटी विजेट सम्मिलित गर्न, चलाइने आदेश । यस आदेशले XEMBED "
+"प्लग इन्टरफेस कार्यान्वयन गर्नुपर्दछ र मानक निर्गतमा सञ्झ्याल XID निर्गत "
+"गर्नुपर्दछ ।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
-msgstr ""
+msgstr "लगआउट गर्न अनुमति दिनुहोस्"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:20
 msgid ""
@@ -212,7 +227,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
-msgstr ""
+msgstr "लगआउट विकल्प पहिलेको समय"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:22
 msgid ""
@@ -223,7 +238,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
-msgstr ""
+msgstr "लगआउट आदेश"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:24
 msgid ""
@@ -231,20 +246,25 @@ msgid ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 msgstr ""
+"लगआउट बटनलाई क्लिक गर्दा आह्वान गर्ने आदेश । साधरणतया यो आदेशले कुनै "
+"अन्तरक्रिया विना प्रयोगकर्तालाई लगआउट गर्दछ । यदि \"logout_enable\" कुञ्जी "
+"ठीकमा सेट भएमा मात्र यो कुञ्जीमा असर पर्छ ।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
-msgstr ""
+msgstr "प्रयागकर्तालाई स्विचिङ गर्न अनुमति दिनुहोस्"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:26
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
+"विभिन्न प्रयोगकर्ता खातामा स्विच गर्न ताल्चा नलगाउनुहोस् भन्ने संवादमा एउटा "
+"विकल्प प्रदान गर्न यसलाई ठीकमा सेट गर्नुहोस् ।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
-msgstr ""
+msgstr "ताल्चा लगाउने संवादका लागि विषयवस्तु"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:28
 msgid "Theme to use for the lock dialog"
@@ -341,7 +361,9 @@ msgstr "छवि - पर्दा वरिपरि छविलाई उत
 #: ../savers/floaters.c:1197
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "तपाईँले एउटा छवि निर्दिष्ट गर्नुपर्दछ । उपयोगी सूचनाका लागि मद्दत हेर्नुहोस् ।\n"
+msgstr ""
+"तपाईँले एउटा छवि निर्दिष्ट गर्नुपर्दछ । उपयोगी सूचनाका लागि मद्दत हेर्नुहोस्"
+" ।\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
@@ -411,7 +433,8 @@ msgstr "स्क्रिनसेभर सक्रिय भएको सम
 
 #: ../src/mate-screensaver-command.c:71
 msgid "Tells the running screensaver process to lock the screen immediately"
-msgstr "पर्दामा तत्काल ताल्चा लगाउनका लागि चलिरहेको स्क्रिनसेभरलाई सुझाव दिन्छ"
+msgstr ""
+"पर्दामा तत्काल ताल्चा लगाउनका लागि चलिरहेको स्क्रिनसेभरलाई सुझाव दिन्छ"
 
 #: ../src/mate-screensaver-command.c:75
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -423,17 +446,21 @@ msgstr "स्क्रिनसेभर खोल्नुहोस् (पर
 
 #: ../src/mate-screensaver-command.c:83
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr "स्क्रिनसेभर सक्रिय भएमा यसलाई निस्क्रिय बनाउनुहोस् (पर्दा खाली नबनाउनुहोस्)"
+msgstr ""
+"स्क्रिनसेभर सक्रिय भएमा यसलाई निस्क्रिय बनाउनुहोस् (पर्दा खाली नबनाउनुहोस्)"
 
 #: ../src/mate-screensaver-command.c:87
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "प्रयोगकर्ताको क्रियाकलापलाई नक्कल गर्न चलिरहेको स्क्रिनसेभरलाई पोक गर्नुहोस्"
+msgstr ""
+"प्रयोगकर्ताको क्रियाकलापलाई नक्कल गर्न चलिरहेको स्क्रिनसेभरलाई पोक गर्नुहोस्"
 
 #: ../src/mate-screensaver-command.c:91
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "स्क्रिनसेभर सक्रिय बनाउन निषेध गर्नुहोस् ।  निषेध सक्रिय भएमा आदेशले केही समय रोक्दछ ।"
+msgstr ""
+"स्क्रिनसेभर सक्रिय बनाउन निषेध गर्नुहोस् ।  निषेध सक्रिय भएमा आदेशले केही "
+"समय रोक्दछ ।"
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -522,7 +549,8 @@ msgstr "पासवर्ड:"
 
 #: ../src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (password aged)"
-msgstr "तपाईँले तत्काल आफ्नो पासवर्ड परिवर्तन गर्नु आवश्यक हुन्छ (पासवर्ड अवधि)"
+msgstr ""
+"तपाईँले तत्काल आफ्नो पासवर्ड परिवर्तन गर्नु आवश्यक हुन्छ (पासवर्ड अवधि)"
 
 #: ../src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (root enforced)"
@@ -530,7 +558,9 @@ msgstr "तपाईँले तत्काल आफ्नो पासवर
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
-msgstr "तपाईँको खाताको म्याद समाप्त भएको छ; कृपया तपाईँको प्रणाली प्रसासकलाई सम्पर्क गर्नुहोस्"
+msgstr ""
+"तपाईँको खाताको म्याद समाप्त भएको छ; कृपया तपाईँको प्रणाली प्रसासकलाई सम्पर्क"
+" गर्नुहोस्"
 
 #: ../src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
@@ -584,54 +614,54 @@ msgstr "जाँच गरिदैँछ..."
 msgid "Authentication failed."
 msgstr "प्रमाणीकरण असफल ।"
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "खाली पर्दा"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "अनियमित"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d घन्टा"
-msgstr[1] "%d घन्टा"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d मिनेट"
-msgstr[1] "%d मिनेट"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d सेकेन्ड"
-msgstr[1] "%d सेकेन्ड"
+msgstr[0] ""
+msgstr[1] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -639,23 +669,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
-msgstr "कहिले पनि"
+msgstr "कहिल्यै पनि होइन"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "मुख्य इन्टरफेस लोड गर्न सकेन"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "कृपया स्क्रिनसेभर ठीकरूपमा स्थापित भएको निश्चित गर्नुहोस्"
 
@@ -707,31 +737,31 @@ msgstr "यस सत्रमा पहिले नै स्क्रिन�
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "समय समाप्त भएको छ ।"
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "तपाईँले Caps Lock कुञ्जी खुला राख्नुभएको छ ।"
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr "स्विच प्रयोगकर्ता..."
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "लगआउट"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr "%U मा %h"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
 msgstr "पासवर्ड:"

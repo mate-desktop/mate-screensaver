@@ -1,18 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# annajonna <annajonna@gmail.com>, 2008
-# Sveinn í Felli <sv1@fellsnet.is>, 2014-2015
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-19 13:39+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic (http://www.transifex.com/mate/MATE/language/is/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Icelandic (https://www.transifex.com/mate/teams/13566/is/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -46,7 +45,7 @@ msgstr "_Orkustjórnun"
 
 #: ../data/mate-screensaver-preferences.ui.h:5
 msgid "_Preview"
-msgstr "_Forsýning"
+msgstr "_Forsýn"
 
 #: ../data/mate-screensaver-preferences.ui.h:6
 msgid "_Screensaver theme:"
@@ -95,13 +94,13 @@ msgstr "_Skipta um notenda"
 
 #: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
-msgstr "_Skrá út"
+msgstr "_Útskrá"
 
 #: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
 msgstr "_Hætta við"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "_Aflæsa"
 
@@ -116,7 +115,8 @@ msgstr "Virkja þegar seta er iðjulaus"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr "Stilltu þetta til TRUE til að kveikja á skjáhvílu þegar seta er iðjulaus."
+msgstr ""
+"Stilltu þetta til TRUE til að kveikja á skjáhvílu þegar seta er iðjulaus."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
@@ -137,7 +137,11 @@ msgid ""
 "screensaver using only one theme on activation (specified in \"themes\" "
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
-msgstr "Valhamur sem skjáhvílan notar. Má vera \"blank-only\" til þess að nota skjáhvílu án þema, \"single\" til þess að nota skjáhvílu með bara eina þemu (valin með \"themes\" lykilinum), eða \"random\" til þess að velja þemu af handahófi þegar skjáhvílan er virkjuð."
+msgstr ""
+"Valhamur sem skjáhvílan notar. Má vera \"blank-only\" til þess að nota "
+"skjáhvílu án þema, \"single\" til þess að nota skjáhvílu með bara eina þemu "
+"(valin með \"themes\" lykilinum), eða \"random\" til þess að velja þemu af "
+"handahófi þegar skjáhvílan er virkjuð."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -145,7 +149,11 @@ msgid ""
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
-msgstr "Þessi lykill inniheldur listann yfir þemu sem skjáhvílan notar. Hann er ekki notaður þegar \"mode\" lykillinn er \"blank-only\", ætti að innihalda nafnið af þemanu sem á að nota þegar \"mode\" er stillt á \"single\", og ætti að innihalda lista af þemum þegar \"mode\" er stillt á \"random\"."
+msgstr ""
+"Þessi lykill inniheldur listann yfir þemu sem skjáhvílan notar. Hann er ekki"
+" notaður þegar \"mode\" lykillinn er \"blank-only\", ætti að innihalda "
+"nafnið af þemanu sem á að nota þegar \"mode\" er stillt á \"single\", og "
+"ætti að innihalda lista af þemum þegar \"mode\" er stillt á \"random\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -155,7 +163,9 @@ msgstr "Tími áður en orku-stjórnunargrunnur gangsettur"
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
-msgstr "Sekúndur í bið þar til orkustýringu er gert viðvart. Þessi lykill er stilltur og haldið við af orkustýringu setunnar."
+msgstr ""
+"Sekúndur í bið þar til orkustýringu er gert viðvart. Þessi lykill er "
+"stilltur og haldið við af orkustýringu setunnar."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
@@ -184,7 +194,10 @@ msgid ""
 "Set this to TRUE to allow embedding a keyboard into the window when trying "
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
-msgstr "Stilla þetta til TRUE til að leyfa innbyggt lyklaborð í gluggann þegar reynt er að aflæsa. \"keyboard_command\" lykillinn verður að vera stilltur með viðeigandi skipun."
+msgstr ""
+"Stilla þetta til TRUE til að leyfa innbyggt lyklaborð í gluggann þegar reynt"
+" er að aflæsa. \"keyboard_command\" lykillinn verður að vera stilltur með "
+"viðeigandi skipun."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
@@ -196,7 +209,11 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr "Skipunin sem mun vera keyrð ef \"embedded_keyboard_enabled\" lykillinn er settur sem TRUE til þess að byggja inn lyklaborðssmáforrit í gluggann. Þessi skipun ætti að fullbúa XEMBED tengingarviðmót og skrifa út XID glugga í staðlað frálag."
+msgstr ""
+"Skipunin sem mun vera keyrð ef \"embedded_keyboard_enabled\" lykillinn er "
+"settur sem TRUE til þess að byggja inn lyklaborðssmáforrit í gluggann. Þessi"
+" skipun ætti að fullbúa XEMBED tengingarviðmót og skrifa út XID glugga í "
+"staðlað frálag."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
@@ -206,7 +223,9 @@ msgstr "Leyfa að skrá sig út"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
-msgstr "Stilltu þetta á TRUE til að bjóða uppá útskráningarmöguleika eftir nokkra stund í aflæsingarglugganum. Biðin er stillt í \"logout_delay\" lyklinum."
+msgstr ""
+"Stilltu þetta á TRUE til að bjóða uppá útskráningarmöguleika eftir nokkra "
+"stund í aflæsingarglugganum. Biðin er stillt í \"logout_delay\" lyklinum."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
@@ -217,7 +236,10 @@ msgid ""
 "The number of minutes after the screensaver activation before a logout "
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
-msgstr "Fjöldi mínútna eftir kveikt er á skjáhvílunni áður en útskráningarmöguleiki birtist í aflæsingarglugganum. Þessi lykill er bara notaður ef \"logout_enable\" lykillinn er stilltur á TRUE."
+msgstr ""
+"Fjöldi mínútna eftir kveikt er á skjáhvílunni áður en útskráningarmöguleiki "
+"birtist í aflæsingarglugganum. Þessi lykill er bara notaður ef "
+"\"logout_enable\" lykillinn er stilltur á TRUE."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
@@ -228,7 +250,10 @@ msgid ""
 "The command to invoke when the logout button is clicked. This command should"
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
-msgstr "Fyrirskipunin til að nota þegar smellt er á útskráningarhnapp. Þessi fyrirskipun ætti bara að skrá út notandann án þess að leyfa honum að gera neitt. Þessi lykill er bara notaður er \"logout_enable\" er stillt á TRUE."
+msgstr ""
+"Fyrirskipunin til að nota þegar smellt er á útskráningarhnapp. Þessi "
+"fyrirskipun ætti bara að skrá út notandann án þess að leyfa honum að gera "
+"neitt. Þessi lykill er bara notaður er \"logout_enable\" er stillt á TRUE."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
@@ -238,7 +263,8 @@ msgstr "Leyfa að skipta um notenda"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
-msgstr "Stillið þetta á TRUE til að bjóða upp á möguleika á að skipta um notanda."
+msgstr ""
+"Stillið þetta á TRUE til að bjóða upp á möguleika á að skipta um notanda."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
@@ -375,7 +401,7 @@ msgstr "Frá:"
 
 #: ../src/copy-theme-dialog.c:238
 msgid "To:"
-msgstr "Til:"
+msgstr "Sem:"
 
 #: ../src/copy-theme-dialog.c:259
 msgid "Copying themes"
@@ -431,7 +457,9 @@ msgstr "Ýta í skjáhvíluna til að það virðist vera notenda virkni"
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Hindra skjáhvíluna frá því að virkjast. Skipun rofin á meðan hindrun er virk."
+msgstr ""
+"Hindra skjáhvíluna frá því að virkjast. Skipun rofin á meðan hindrun er "
+"virk."
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -520,7 +548,8 @@ msgstr "Lykilorð:"
 
 #: ../src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (password aged)"
-msgstr "Þú verður að breyta lykilorðinu þínu umsvifalaust (það er orðið of gamallt)"
+msgstr ""
+"Þú verður að breyta lykilorðinu þínu umsvifalaust (það er orðið of gamallt)"
 
 #: ../src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (root enforced)"
@@ -528,7 +557,8 @@ msgstr "Þú verður að breyta lykilorðinu þínu umsvifalaust (rótarskipun)"
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Aðgangur þinn er útrunninn; vinsamlegast hafðu samband við kerfisstjóra"
+msgstr ""
+"Aðgangur þinn er útrunninn; vinsamlegast hafðu samband við kerfisstjóra"
 
 #: ../src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
@@ -582,54 +612,54 @@ msgstr "Skoða..."
 msgid "Authentication failed."
 msgstr "Auðkenning tókst ekki."
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "Tómur skrár"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "Slembið"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d klukkutími"
-msgstr[1] "%d klukkutímar"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d mínúta"
-msgstr[1] "%d mínútur"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d sekúnda"
-msgstr[1] "%d sekúndur"
+msgstr[0] ""
+msgstr[1] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -637,23 +667,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
 msgstr "Aldrei"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
-msgstr "Gat ekki hlaðið aðalviðmót"
+msgstr "Gat ekki hlaðið aðal gluggan"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Vinsamlegast gangið úr skugga um að skjáhvíla sé rétt uppsett"
 
@@ -705,31 +735,31 @@ msgstr "skjáhvíla er nú þegar keyrandi í þessari setu"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr "%A, %e. %B "
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "Tíminn er útrunninn."
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "Þú ert að nota HÁSTAFI."
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr "S_kipta um notanda..."
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "_Skrá út"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr "%U á %h"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
 msgstr "_Lykilorð:"

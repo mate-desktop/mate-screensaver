@@ -1,24 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# alexandros_ <alexandros.venn@gmail.com>, 2014
-# Angelos Chraniotis <chraniotis@gmail.com>, 2016
-# Efstathios Iosifidis <iefstathios@gmail.com>, 2013-2014,2016
-# Jennie Petoumenou <epetoumenou@gmail.com>, 2009
-# Kostas Papadimas <pkst@gnome.org>, 2006, 2008
-# nikcha <nikosx@gmail.com>, 2006
-# thunk <thunk77@gmail.com>, 2014
-# Γιώργος Μηντζιλώνης, 2017
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-23 18:17+0000\n"
-"Last-Translator: Αλέξανδρος Καπετάνιος <alexandros@gnugr.org>\n"
-"Language-Team: Greek (http://www.transifex.com/mate/MATE/language/el/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Γιώργος Μηντζιλώνης <gi_orgos1986@hotmail.com>, 2018\n"
+"Language-Team: Greek (https://www.transifex.com/mate/teams/13566/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -105,9 +98,9 @@ msgstr "_Αποσύνδεση"
 
 #: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
-msgstr "_Ακύρωση"
+msgstr "Α_κύρωση"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "_Ξεκλείδωμα"
 
@@ -122,7 +115,9 @@ msgstr "Ενεργοποίηση στην αδράνεια"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr "Ορισμός αυτού σε TRUE για την ενεργοποίηση της προστασίας οθόνης όταν η συνεδρία είναι σε αδράνεια."
+msgstr ""
+"Ορισμός αυτού σε TRUE για την ενεργοποίηση της προστασίας οθόνης όταν η "
+"συνεδρία είναι σε αδράνεια."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
@@ -130,7 +125,9 @@ msgstr "Κλείδωμα στην ενεργοποίηση"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr "Ορισμός αυτού σε TRUE για να κλειδώνει η οθόνη όταν ενεργοποιείται η προστασία οθόνης."
+msgstr ""
+"Ορισμός αυτού σε TRUE για να κλειδώνει η οθόνη όταν ενεργοποιείται η "
+"προστασία οθόνης."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
@@ -143,7 +140,13 @@ msgid ""
 "screensaver using only one theme on activation (specified in \"themes\" "
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
-msgstr "Η λειτουργία επιλογής που χρησιμοποιείται από την προστασία οθόνης. Μπορεί να είναι \"blank-only\" για ενεργοποίηση της προστασίας οθόνης χωρίς τη χρήση θέματος,  \"single\" για ενεργοποίηση της προστασίας οθόνης με τη χρήση μόνο ενός θέματος (που καθορίζεται στο κλειδί \"themes\"), και \"random\"  για ενεργοποίηση της προστασίας οθόνης με τη χρήση ενόςτυχαίου θέματος"
+msgstr ""
+"Η λειτουργία επιλογής που χρησιμοποιείται από την προστασία οθόνης. Μπορεί "
+"να είναι \"blank-only\" για ενεργοποίηση της προστασίας οθόνης χωρίς τη "
+"χρήση θέματος,  \"single\" για ενεργοποίηση της προστασίας οθόνης με τη "
+"χρήση μόνο ενός θέματος (που καθορίζεται στο κλειδί \"themes\"), και "
+"\"random\"  για ενεργοποίηση της προστασίας οθόνης με τη χρήση ενόςτυχαίου "
+"θέματος"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -151,7 +154,11 @@ msgid ""
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
-msgstr "Αυτό το κλειδί καθορίζει τη λίστα θεμάτων της προστασίας οθόνης. Αγνοείται όταν το κλειδί \"mode\" είναι \"blank-only\". Μπορεί να παρέχει το όνομα θέματος όταν το κλειδί \"mode\" είναι \"single\", και μπορεί να παρέχει μια λίστα θεμάτων όταν το κλειδί \"mode\" είναι \"random\"."
+msgstr ""
+"Αυτό το κλειδί καθορίζει τη λίστα θεμάτων της προστασίας οθόνης. Αγνοείται "
+"όταν το κλειδί \"mode\" είναι \"blank-only\". Μπορεί να παρέχει το όνομα "
+"θέματος όταν το κλειδί \"mode\" είναι \"single\", και μπορεί να παρέχει μια "
+"λίστα θεμάτων όταν το κλειδί \"mode\" είναι \"random\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -161,7 +168,10 @@ msgstr "Χρόνος πριν την αναφορά διαχείρισης εν�
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
-msgstr "Ο χρόνος δευτερολέπτων αδράνειας πριν τη σηματοδότηση της διαχείρισης ενέργειας. Το κλειδί είναι ορισμένο και συντηρείται από τη συνεδρία της διαχείρισης ενέργειας."
+msgstr ""
+"Ο χρόνος δευτερολέπτων αδράνειας πριν τη σηματοδότηση της διαχείρισης "
+"ενέργειας. Το κλειδί είναι ορισμένο και συντηρείται από τη συνεδρία της "
+"διαχείρισης ενέργειας."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
@@ -169,7 +179,9 @@ msgstr "Χρόνος πριν την αλλαγή θέματος"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr "Το διάστημα του χρόνου σε λεπτά που θα μεσολαβήσει για να γίνει η αλλαγή της προφύλαξης οθόνης."
+msgstr ""
+"Το διάστημα του χρόνου σε λεπτά που θα μεσολαβήσει για να γίνει η αλλαγή της"
+" προφύλαξης οθόνης."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
@@ -179,7 +191,9 @@ msgstr "Χρόνος πριν το κλείδωμα"
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
-msgstr "Ο αριθμός των λεπτών αφού ενεργοποιηθεί η προστασίας οθόνης για το κλείδωμα της οθόνης."
+msgstr ""
+"Ο αριθμός των λεπτών αφού ενεργοποιηθεί η προστασίας οθόνης για το κλείδωμα "
+"της οθόνης."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
@@ -190,7 +204,10 @@ msgid ""
 "Set this to TRUE to allow embedding a keyboard into the window when trying "
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
-msgstr "Ορισμός αυτού σε TRUE για να επιτρέπεται η ενσωμάτωση πληκτρολογίου στο παράθυρο κατα την προσπάθεια ξεκλειδώματις. Το κλειδί \"keyboard_command\" πρέπει να ορισθεί με την κατάλληλη εντολή."
+msgstr ""
+"Ορισμός αυτού σε TRUE για να επιτρέπεται η ενσωμάτωση πληκτρολογίου στο "
+"παράθυρο κατα την προσπάθεια ξεκλειδώματις. Το κλειδί \"keyboard_command\" "
+"πρέπει να ορισθεί με την κατάλληλη εντολή."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
@@ -202,7 +219,11 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr "Αυτή η εντολή θα εκτελείται αν το κλειδί \"embedded_keyboard_enabled\" έχει ορισθεί σε  TRUE, ώστε να ενσωματωθεί το πληκτρολόγιο σε ένα παράθυρο. Η εντολή θα πρέπει να εφαρμόζει μια διεπαφή XEMBED plug και να έχει αποτέλεσμα ένα παράθυρο XID."
+msgstr ""
+"Αυτή η εντολή θα εκτελείται αν το κλειδί \"embedded_keyboard_enabled\" έχει "
+"ορισθεί σε  TRUE, ώστε να ενσωματωθεί το πληκτρολόγιο σε ένα παράθυρο. Η "
+"εντολή θα πρέπει να εφαρμόζει μια διεπαφή XEMBED plug και να έχει αποτέλεσμα"
+" ένα παράθυρο XID."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
@@ -212,7 +233,10 @@ msgstr "Να επιτρέπεται αποσύνδεση"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
-msgstr "Ορισμός αυτού σε TRUE για να προσφέρεται η επιλογή του διαλόγου ξεκλειδώματος για αποσύνδεση μετά από κάποια καθυστέρηση. Η καθυστέρηση καθορίζεται στο κλειδί \"logout_delay\"."
+msgstr ""
+"Ορισμός αυτού σε TRUE για να προσφέρεται η επιλογή του διαλόγου "
+"ξεκλειδώματος για αποσύνδεση μετά από κάποια καθυστέρηση. Η καθυστέρηση "
+"καθορίζεται στο κλειδί \"logout_delay\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
@@ -223,7 +247,10 @@ msgid ""
 "The number of minutes after the screensaver activation before a logout "
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
-msgstr "Ο αριθμός των λεπτών αφού ενεργοποιηθεί η προστασίας οθόνης μέχρι να εμφανιστεί η επιλογή αποσύνδεσης. Αυτό το κλειδί έχει αποτέλεσμα μόνο αν το κλειδί \"logout_enable\" έχει ορισθεί TRUE."
+msgstr ""
+"Ο αριθμός των λεπτών αφού ενεργοποιηθεί η προστασίας οθόνης μέχρι να "
+"εμφανιστεί η επιλογή αποσύνδεσης. Αυτό το κλειδί έχει αποτέλεσμα μόνο αν το "
+"κλειδί \"logout_enable\" έχει ορισθεί TRUE."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
@@ -234,7 +261,11 @@ msgid ""
 "The command to invoke when the logout button is clicked. This command should"
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
-msgstr "Η εντολή που θα εκτελείται όταν πατιέται το κουμπί της αποσύνδεσης. Αυτή η εντολή θα πρέπει απλά να αποσυνδέει το χρήστη χωρίς καμία άλλη συναλλαγή. Αυτό το κλειδί έχει αποτέλεσμα μόνο αν το κλειδί \"logout_enable\" ορισθεί σε TRUE."
+msgstr ""
+"Η εντολή που θα εκτελείται όταν πατιέται το κουμπί της αποσύνδεσης. Αυτή η "
+"εντολή θα πρέπει απλά να αποσυνδέει το χρήστη χωρίς καμία άλλη συναλλαγή. "
+"Αυτό το κλειδί έχει αποτέλεσμα μόνο αν το κλειδί \"logout_enable\" ορισθεί "
+"σε TRUE."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
@@ -244,7 +275,9 @@ msgstr "Να επιτρέπεται η αλλαγή χρήστη"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
-msgstr "Ορισμός αυτού σε TRUE για να προσφέρεται η επιλογή του διαλόγου ξεκλειδώματος όταν γίνεται αλλαγή σε διαφορετικό λογαριασμό χρήστη."
+msgstr ""
+"Ορισμός αυτού σε TRUE για να προσφέρεται η επιλογή του διαλόγου "
+"ξεκλειδώματος όταν γίνεται αλλαγή σε διαφορετικό λογαριασμό χρήστη."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
@@ -261,7 +294,9 @@ msgstr "Να επιτρέπεται η εμφάνιση του μηνύματο�
 #: ../data/org.mate.screensaver.gschema.xml.in.h:30
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
-msgstr "Να επιτρέπεται η εμφάνιση του μηνύματος κατάστασης συνεδρίας όταν η οθόνη είναι κλειδωμένη."
+msgstr ""
+"Να επιτρέπεται η εμφάνιση του μηνύματος κατάστασης συνεδρίας όταν η οθόνη "
+"είναι κλειδωμένη."
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -345,7 +380,8 @@ msgstr "εικόνα - πλωτές εικόνες στην οθόνη"
 #: ../savers/floaters.c:1197
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "Θα πρέπει να καθορίσετε μια εικόνα. Βλέπε --help για πληροφορίες χρήσης.\n"
+msgstr ""
+"Θα πρέπει να καθορίσετε μια εικόνα. Βλέπε --help για πληροφορίες χρήσης.\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
@@ -415,11 +451,15 @@ msgstr "Ερώτημα για το χρόνο που ήταν ενεργή η π
 
 #: ../src/mate-screensaver-command.c:71
 msgid "Tells the running screensaver process to lock the screen immediately"
-msgstr "Ειδοποιεί την προστασία οθόνης που εκτελείται για να κλειδώσει την οθόνη άμεσα."
+msgstr ""
+"Ειδοποιεί την προστασία οθόνης που εκτελείται για να κλειδώσει την οθόνη "
+"άμεσα."
 
 #: ../src/mate-screensaver-command.c:75
 msgid "If the screensaver is active then switch to another graphics demo"
-msgstr "Αν η προστασία οθόνης είναι ενεργή τότε να γίνει αλλαγή σε ένα άλλο graphics demo"
+msgstr ""
+"Αν η προστασία οθόνης είναι ενεργή τότε να γίνει αλλαγή σε ένα άλλο graphics"
+" demo"
 
 #: ../src/mate-screensaver-command.c:79
 msgid "Turn the screensaver on (blank the screen)"
@@ -437,7 +477,8 @@ msgstr "Η εκτελούμενη προστασία οθόνης να εξομ�
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Παρεμπόδιση της προστασίας οθόνης. Command blocks while inhibit is active."
+msgstr ""
+"Παρεμπόδιση της προστασίας οθόνης. Command blocks while inhibit is active."
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -522,11 +563,12 @@ msgstr "Όνομα χρήστη:"
 #: ../src/mate-screensaver-dialog.c:168 ../src/mate-screensaver-dialog.c:169
 #: ../src/gs-auth-pam.c:171
 msgid "Password:"
-msgstr "Κωδικός:"
+msgstr "Συνθηματικό:"
 
 #: ../src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (password aged)"
-msgstr "Απαιτείται να αλλάξετε κωδικό άμεσα (ο κωδικός σας έχει ημερομηνία λήξης)"
+msgstr ""
+"Απαιτείται να αλλάξετε κωδικό άμεσα (ο κωδικός σας έχει ημερομηνία λήξης)"
 
 #: ../src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (root enforced)"
@@ -534,7 +576,9 @@ msgstr "Απαιτείται να αλλάξετε κωδικό άμεσα (εξ
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Ο λογαριασμός σας έχει λήξει. Παρακαλώ επικοινωνήστε με το διαχειριστή του συστήματος σας"
+msgstr ""
+"Ο λογαριασμός σας έχει λήξει. Παρακαλώ επικοινωνήστε με το διαχειριστή του "
+"συστήματος σας"
 
 #: ../src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
@@ -588,54 +632,54 @@ msgstr "Έλεγχος..."
 msgid "Authentication failed."
 msgstr "Αποτυχία πιστοποίησης."
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "Κενή οθόνη"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "Τυχαία"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d ώρα"
-msgstr[1] "%d ώρες"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d λεπτό"
-msgstr[1] "%d λεπτά"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d δευτερόλεπτο"
-msgstr[1] "%d δευτερόλεπτα"
+msgstr[0] ""
+msgstr[1] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -643,23 +687,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
 msgstr "Ποτέ"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "Αδυναμία φόρτωση της κύριας επιφάνειας χρήσης"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Βεβαιωθείτε ότι η προστασία οθόνης έχει εγκατασταθεί σωστά"
 
@@ -673,7 +717,8 @@ msgstr "Ενεργοποίηση κώδικα αποσφαλμάτωσης"
 
 #: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screensaver and locker program"
-msgstr "Έναρξη της προφύλαξης οθόνης και του προγράμματος κλειδώματος υπολογιστή"
+msgstr ""
+"Έναρξη της προφύλαξης οθόνης και του προγράμματος κλειδώματος υπολογιστή"
 
 #: ../src/gs-auth-pam.c:413
 #, c-format
@@ -711,31 +756,31 @@ msgstr "η προστασία οθόνης εκτελείται ήδη σε αυ
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr "%A, %B %e"
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "Ο χρόνος έχει λήξει."
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "Έχετε πατημένο το πλήκτρο Caps Lock."
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr "Α_λλαγή χρήστη..."
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "Α_ποσύνδεση"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr "%U σε %h"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
 msgstr "_Κωδικός:"

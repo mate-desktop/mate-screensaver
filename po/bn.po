@@ -1,21 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Israt Jahan <israt@ankur.org.bd>, 2010
-# Loba Yeasmeen <loba@ankur.org.bd>, 2009
-# Mahay Alam Khan (মাহে আলম খান) <makl10n@yahoo.com>, 2006
-# Runa Bhattacharjee <runab@fedoraproject.org>, 2008
-# runab <runab@redhat.com>, 2008, 2009
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-19 13:40+0000\n"
-"Last-Translator: Vlad Orlov <monsta@inbox.ru>\n"
-"Language-Team: Bengali (http://www.transifex.com/mate/MATE/language/bn/)\n"
+"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"Language-Team: Bengali (https://www.transifex.com/mate/teams/13566/bn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -90,48 +86,50 @@ msgstr "কসমস"
 
 #: ../data/lock-dialog-default.ui.h:1
 msgid "_Leave Message"
-msgstr ""
+msgstr "বার্তা লিখুন (_L)"
 
 #: ../data/lock-dialog-default.ui.h:2
 msgid "_Switch User"
-msgstr ""
+msgstr "ব্যবহারকারী পরিবর্তন করুন (_S)"
 
 #: ../data/lock-dialog-default.ui.h:3
 msgid "_Log Out"
-msgstr ""
+msgstr "লগ আউট (_L)"
 
 #: ../data/lock-dialog-default.ui.h:4
 msgid "_Cancel"
-msgstr ""
+msgstr "বাতিল (_C)"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "অনবরুদ্ধ (_U)"
 
 #: ../data/lock-dialog-default.ui.h:7
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
-msgstr ""
+msgstr "<b>%R এর জন্য বার্তা লিখুন:</b>"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:1
 msgid "Activate when idle"
-msgstr ""
+msgstr "যখন নিষ্ক্রিয় থাকবে তখন সক্রিয় করা হবে"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
+"সেশন নিষ্ক্রিয় হলে স্ক্রিন-সেভার সক্রিয় করার জন্য এই মান TRUE নির্ধারণ করুন।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
-msgstr ""
+msgstr "সক্রিয় হলে লক করা হবে"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
+"স্ক্রিন-সেভার সক্রিয় করার সময় পর্দা লক করার জন্য মান TRUE নির্ধারণ করুন।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
-msgstr ""
+msgstr "স্ক্রিন-সেভারের থীম নির্বাচনের মোড"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:6
 msgid ""
@@ -141,6 +139,11 @@ msgid ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 msgstr ""
+"স্ক্রিন-সেভার দ্বারা ব্যবহৃত নির্বাচনের মোড। সম্ভাব্য মান \"blank-only\" - "
+"স্ক্রিন-সেভার আরম্ভ করা হলে কোনো থীম প্রয়োগ করা হবে না, \"single\" - "
+"স্ক্রিন-সেভার আরম্ভ করা হলে শুধুমাত্র একটি থীম প্রয়োগ করা হবে (\"themes\" কী"
+" এর মান দ্বারা নির্দিষ্ট), এবং \"random\" - স্ক্রিন-সেভার আরম্ভ করা হলে যে "
+"কোনো একটি থীম যথেচ্ছ ভাবে নির্বাচন করে প্রয়োগ করা হবে।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -149,6 +152,10 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
+"স্ক্রিন-সেভার দ্বারা ব্যবহারযোগ্য থীমের তালিকা এই কী দ্বারা নির্ধারণ করা হয়।"
+" \"mode\" কী এর মান \"blank-only\" হলে এটি অগ্রাহ্য করা হবে, \"mode\" কী এর "
+"মান  \"single\" হলে থীমের নাম সরবরাহ করা হবে ও \"mode\" কী এর মান \"random\""
+" হলে থীমের তালিকা সরবরাহ করা হবে।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -162,25 +169,29 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
-msgstr ""
+msgstr "থীম পরিবর্তনের পূর্বের সময়"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
 msgstr ""
+"স্ক্রিন-সেভারের থীম পরিবর্তনের পূর্ব স্ক্রিন-সেভার চালনার সময়কাল, মিনিট "
+"অনুযায়ী ধার্য।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
-msgstr ""
+msgstr "লক করার পূর্বের সময়"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:14
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
 msgstr ""
+"স্ক্রিন-সেভার সক্রিয়করণ ও পর্দা লক করার মধ্যে সময়ের ব্যবধান, মিনিট অনুযায়ী "
+"নির্ধারিত।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
-msgstr ""
+msgstr "উইন্ডোর মধ্যে কীবোর্ড সন্নিবেশ করা যাবে"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:16
 msgid ""
@@ -188,10 +199,13 @@ msgid ""
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
+"অনবরুদ্ধ করার প্রচেষ্টাকালে উইন্ডোর মধ্যে একটি কীবোর্ড সন্নিবেশ করার জন্য "
+"মান TRUE নির্ধারণ করুন। \"keyboard_command\" কী এর ক্ষেত্রে প্রযোজ্য মান "
+"নির্ধারণ করা আবশ্যক।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
-msgstr ""
+msgstr "সন্নিবেশিত কীবোর্ড কমান্ড"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:18
 msgid ""
@@ -200,10 +214,14 @@ msgid ""
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
 msgstr ""
+"\"embedded_keyboard_enabled\" কী এর মান TRUE নির্ধারণ করা হলে, উইন্ডোর মধ্যে"
+" কীবোর্ড উইজেট সন্নিবেশ করার জন্য যে কমান্ড সঞ্চালিত হবে। এই কমান্ড দ্বারা "
+"একটি XEMBED প্লাগ ইন্টারফেস প্রয়োগ করা হবে ও আদর্শ আউটপুটের মধ্যে একটি "
+"উইন্ডো XID প্রদর্শন করা হবে।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
-msgstr ""
+msgstr "লগআউট অনুমোদন করুন"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:20
 msgid ""
@@ -213,7 +231,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
-msgstr ""
+msgstr "লগ-আউট অপশনের পূর্বের সময়"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:22
 msgid ""
@@ -224,7 +242,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
-msgstr ""
+msgstr "লগআউট কমান্ড"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:24
 msgid ""
@@ -232,20 +250,25 @@ msgid ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 msgstr ""
+"লগ-আউটের বোতাম ক্লিক করা হলে যে কমান্ড প্রয়োগ করা হবে। এই কমান্ডের সাহায্যে,"
+" কোনো ধরনের যোগাযোগ ব্যতীত ব্যবহারকারীকে লগ-আউট করা হবে। \"logout_enable\" "
+"কী এর মান TRUE নির্ধারণ করা হলেই এই বৈশিষ্ট্য প্রয়োগ করা যাবে।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
-msgstr ""
+msgstr "ব্যবহারকারী পরিবর্তন অনুমোদন করুন"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:26
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
+"অনবরুদ্ধ করার ডায়ালগ বাক্সের মধ্যে ভিন্ন অ্যাকাউন্টে পরিবর্তনের অপশন "
+"প্রস্তাব করার জন্য মান TRUE নির্ধারণ করুন।"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
-msgstr ""
+msgstr "লক ডায়ালগে ব্যবহারের জন্য থীম"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:28
 msgid "Theme to use for the lock dialog"
@@ -253,12 +276,13 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:29
 msgid "Allow the session status message to be displayed"
-msgstr ""
+msgstr "প্রদর্শন করার জন্য সেশনের অবস্থার বার্তা অনুমোদন করা হবে"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:30
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr ""
+"পর্দা লক করা হলে, প্রদর্শন করার জন্য সেশনের অবস্থার বার্তা অনুমোদন করা হবে।"
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -342,7 +366,9 @@ msgstr "চিত্র - পর্দা জুড়ে চিত্র ভাস
 #: ../savers/floaters.c:1197
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "একটি ছবি উল্লেখ করা আবশ্যক।  ব্যবহারপ্রণালী সম্পর্কিত তথ্য জানার জন্য --help দেখুন।\n"
+msgstr ""
+"একটি ছবি উল্লেখ করা আবশ্যক।  ব্যবহারপ্রণালী সম্পর্কিত তথ্য জানার জন্য --help"
+" দেখুন।\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
@@ -412,7 +438,8 @@ msgstr "স্ক্রিন-সেভার সক্রিয়তার সম
 
 #: ../src/mate-screensaver-command.c:71
 msgid "Tells the running screensaver process to lock the screen immediately"
-msgstr "এর ফলে, স্ক্রিন-সেভার প্রক্রিয়াকে অবিলম্বে পর্দা লক করার নির্দেশ দেওয়া হয়"
+msgstr ""
+"এর ফলে, স্ক্রিন-সেভার প্রক্রিয়াকে অবিলম্বে পর্দা লক করার নির্দেশ দেওয়া হয়"
 
 #: ../src/mate-screensaver-command.c:75
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -424,17 +451,21 @@ msgstr "স্ক্রিন-সেভার সক্রিয় করুন (�
 
 #: ../src/mate-screensaver-command.c:83
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr "স্ক্রিন-সেভার সক্রিয় থাকলে তা নিষ্ক্রিয় করা হবে (পর্দা ফাঁকা থাকবে না)"
+msgstr ""
+"স্ক্রিন-সেভার সক্রিয় থাকলে তা নিষ্ক্রিয় করা হবে (পর্দা ফাঁকা থাকবে না)"
 
 #: ../src/mate-screensaver-command.c:87
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "ব্যবহারকারীর কাজের অনুকরণ করার জন্য চলমান স্ক্রিন-সেভার প্রবেশ করানো হয়"
+msgstr ""
+"ব্যবহারকারীর কাজের অনুকরণ করার জন্য চলমান স্ক্রিন-সেভার প্রবেশ করানো হয়"
 
 #: ../src/mate-screensaver-command.c:91
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "স্ক্রিন-সেভার সক্রিয় করতে প্রতিরোধ করা হবে।  প্রতিরোধ ব্যবস্থা সক্রিয় থাকাকালীন কমান্ডের সক্রিয়তা সীমাবদ্ধতা।"
+msgstr ""
+"স্ক্রিন-সেভার সক্রিয় করতে প্রতিরোধ করা হবে।  প্রতিরোধ ব্যবস্থা সক্রিয় "
+"থাকাকালীন কমান্ডের সক্রিয়তা সীমাবদ্ধতা।"
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -523,7 +554,8 @@ msgstr "পাসওয়ার্ড:"
 
 #: ../src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (password aged)"
-msgstr "অবিলম্বে পাসওয়ার্ড পরিবর্তন করা আবশ্যক (পাসওয়ার্ডের মেয়াদ পূর্ণ হয়েছে)"
+msgstr ""
+"অবিলম্বে পাসওয়ার্ড পরিবর্তন করা আবশ্যক (পাসওয়ার্ডের মেয়াদ পূর্ণ হয়েছে)"
 
 #: ../src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (root enforced)"
@@ -531,7 +563,9 @@ msgstr "অবিলম্বে পাসওয়ার্ড পরিবর্�
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
-msgstr "আপনার অ্যাকাউন্টের ব্যবহারকালের মেয়াদ উত্তীর্ণ হয়েছে; অনুগ্রহ করে সিস্টেম অ্যাডমিনিস্ট্রেটরের সাথে যোগাযোগ করুন"
+msgstr ""
+"আপনার অ্যাকাউন্টের ব্যবহারকালের মেয়াদ উত্তীর্ণ হয়েছে; অনুগ্রহ করে সিস্টেম "
+"অ্যাডমিনিস্ট্রেটরের সাথে যোগাযোগ করুন"
 
 #: ../src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
@@ -567,7 +601,8 @@ msgstr "দীর্ঘ পাসওয়ার্ড নির্বাচন ক
 
 #: ../src/mate-screensaver-dialog.c:181
 msgid "Password has been already used. Choose another."
-msgstr "এই পাসওয়ার্ড ইতোমধ্যেই ব্যবহৃত হয়েছে। অনুগ্রহ করে একটি পৃথক পাসওয়ার্ড লিখুন।"
+msgstr ""
+"এই পাসওয়ার্ড ইতোমধ্যেই ব্যবহৃত হয়েছে। অনুগ্রহ করে একটি পৃথক পাসওয়ার্ড লিখুন।"
 
 #: ../src/mate-screensaver-dialog.c:182
 msgid "You must wait longer to change your password"
@@ -585,54 +620,54 @@ msgstr "পরীক্ষা করা হচ্ছে..."
 msgid "Authentication failed."
 msgstr "প্রমানিকরণ ব্যর্থ।"
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "ফাঁকা পর্দা"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "যথেচ্ছ"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d ঘন্টা"
-msgstr[1] "%d ঘন্টা"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d মিনিট"
-msgstr[1] "%d মিনিট"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d সেকেন্ড"
-msgstr[1] "%d সেকেন্ড"
+msgstr[0] ""
+msgstr[1] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -640,25 +675,26 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
-msgstr "কখনোই না"
+msgstr "কখনো না"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "প্রধান ইন্টারফেস লোড করা যায়নি"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "অনুগ্রহ করে স্ক্রিন-সেভার সঠিক রূপে ইনস্টল করা হয়েছে কি না তা নিশ্চিত করুন"
+msgstr ""
+"অনুগ্রহ করে স্ক্রিন-সেভার সঠিক রূপে ইনস্টল করা হয়েছে কি না তা নিশ্চিত করুন"
 
 #: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
@@ -708,31 +744,31 @@ msgstr "বর্তমান সেশনে ইতোমধ্যেই স্
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "সময় অতিবাহিত হয়ে গেছে।"
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "Caps Lock কী সক্রিয়।"
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr "ব্যবহারকারী পরিবর্তন করুন (_w)"
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "লগ আউট (_O)"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr "%U, %h এর উপর"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
-msgstr "পাসওয়ার্ড (_P):"
+msgstr "পাসওয়ার্ড: (_P)"
