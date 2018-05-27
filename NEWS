@@ -1,3 +1,12 @@
+### mate-screensaver 1.21.0
+
+    sync with transifex
+    bump required version of mate-menus
+    support new mate-menus api
+    Fixed some gdk deprecations
+    fixed gdk_flush warning
+    avoid deprecated GtkStock
+
 ### mate-screensaver 1.20.0
 
   * Translations update
