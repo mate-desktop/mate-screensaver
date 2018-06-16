@@ -1,21 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Ammuu5, 2017
-# Lasse Liehu <larso@gmx.com>, 2015
-# nomen omen <vapoursoft@gmail.com>, 2017
-# Timo Jyrinki <timo.jyrinki@iki.fi>, 2008
-# Tommi Vainikainen <Tommi.Vainikainen@iki.fi>, 2005, 2009
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-11-05 13:51+0000\n"
-"Last-Translator: Ammuu5\n"
-"Language-Team: Finnish (http://www.transifex.com/mate/MATE/language/fi/)\n"
+"POT-Creation-Date: 2018-03-17 15:12+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Ammuu5, 2018\n"
+"Language-Team: Finnish (https://www.transifex.com/mate/teams/13566/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -104,7 +100,7 @@ msgstr "_Kirjaudu ulos"
 msgid "_Cancel"
 msgstr "_Peru"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1672
 msgid "_Unlock"
 msgstr "_Avaa lukitus"
 
@@ -115,19 +111,22 @@ msgstr "<b>Jätä viesti käyttäjälle %R:</b>"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:1
 msgid "Activate when idle"
-msgstr ""
+msgstr "Käynnistä joutilaana"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
+"Aseta todeksi, jos haluat käynnistää näytönsäästäjän, kun istunto ei ole "
+"käytössä."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
-msgstr ""
+msgstr "Lukitse aktivoitaessa"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
+"Aseta todeksi, jos haluat lukita näytön näytönsäästäjän aktivoituessa."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
@@ -141,6 +140,11 @@ msgid ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 msgstr ""
+"Näytönsäästäjän valintatila. Arvo voi olla joko \"blank-only\", jolloin "
+"näytönsäästäjä käynnistetään ilman teemaa, \"single\", jolloin "
+"näytönsäästäjä näyttää aina \"themes\" avaimessa valittua näytönsäästäjää, "
+"tai \"random\", jolloin näytönsäästäjä valitsee näytettävän teeman "
+"satunnaisesti."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -149,6 +153,10 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
+"Tämä avain määrittelee näytönsäästäjän käyttämät teemat. Arvolla ei ole "
+"vaikutusta, jos avain \"mode\" on joko \"disabled\" tai \"blank-only\". Sen "
+"tulee sisältää teeman nimen, kun arvo on \"single\", ja sen tulee sisältää "
+"lista teemoista, kun \"mode\"-avaimen arvo on \"random\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -166,7 +174,7 @@ msgstr "Viive ennen teeman vaihtoa"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:12
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr ""
+msgstr "Kuinka pitkän joutenolon kuluttua näytönsäästäjän teemaa vaihdetaan."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:13
 msgid "Time before locking"
@@ -177,10 +185,12 @@ msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
 msgstr ""
+"Kuinka monen minuutin kuluttua näytönsäästäjän aktivoinnista näyttö "
+"lukitaan."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:15
 msgid "Allow embedding a keyboard into the window"
-msgstr ""
+msgstr "Salli näppäimistön upottaminen ikkunaan"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:16
 msgid ""
@@ -188,10 +198,13 @@ msgid ""
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
+"Aseta arvoksi TRUE, jos haluat sallia näppäimistön upottamisen ikkunaan "
+"yritettäessä avata lukitusta. Avaimen \"keyboard_command\" arvon tulee olla "
+"asetettu sisältämään haluttu komento."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
-msgstr ""
+msgstr "Upotetun näppäimistön komento"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:18
 msgid ""
@@ -200,6 +213,9 @@ msgid ""
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
 msgstr ""
+"Suoritettava komento näppäimistön upottamiseksi ikkunaan, kun avaimen "
+"\"embedded_keyboard_enabled\" arvo on TRUE. Tämän komennon täytyy toteuttaa "
+"XEMBED-liitännäisrajapinta ja muodostaa ikkunan XID oletussyötteeseen."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
@@ -213,7 +229,7 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
-msgstr ""
+msgstr "Viive ennen uloskirjautumispainiketta"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:22
 msgid ""
@@ -232,20 +248,25 @@ msgid ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 msgstr ""
+"Uloskirjautumispainiketta painettaessa suoritettava komento . Tämän komennon"
+" tulee kirjata käyttäjä ulos vaatimatta mitään toimenpiteitä. Avain on "
+"käytössä vain silloin, kun avain \"logout_enable\" on asetettu arvoon TRUE."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
-msgstr ""
+msgstr "Salli käyttäjän vaihto"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:26
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
+"Aseta todeksi, jos haluat lukituksen avausikkunan näyttävän valinnan, josta "
+"voi vaihtaa toiseksi käyttäjäksi."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
-msgstr ""
+msgstr "Lukitusikkunan teema"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:28
 msgid "Theme to use for the lock dialog"
@@ -253,12 +274,12 @@ msgstr ""
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:29
 msgid "Allow the session status message to be displayed"
-msgstr ""
+msgstr "Salli istunnon tilaviestin näyttäminen"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:30
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
-msgstr ""
+msgstr "Salli istunnon tilaviestin näyttäminen, kun istunto on lukittu."
 
 #: ../savers/cosmos-slideshow.desktop.in.in.h:2
 msgid "Display a slideshow of pictures of the cosmos"
@@ -434,7 +455,9 @@ msgstr "Simuloi käyttäjän syötettä lähettämällä viesti näytönsääst�
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Estä näytönsäästäjän käynnistyminen. Komento pysähtyy niin pitkäksi aikaa kun esto on päällä."
+msgstr ""
+"Estä näytönsäästäjän käynnistyminen. Komento pysähtyy niin pitkäksi aikaa "
+"kun esto on päällä."
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -514,7 +537,7 @@ msgstr "Ei käytössä"
 #: ../src/mate-screensaver-dialog.c:165 ../src/mate-screensaver-dialog.c:166
 #: ../src/mate-screensaver-dialog.c:167 ../src/gs-auth-pam.c:745
 msgid "Username:"
-msgstr "Käyttäjä:"
+msgstr "Käyttäjätunnus:"
 
 #: ../src/mate-screensaver-dialog.c:168 ../src/mate-screensaver-dialog.c:169
 #: ../src/gs-auth-pam.c:171
@@ -585,54 +608,54 @@ msgstr "Tarkistetaan..."
 msgid "Authentication failed."
 msgstr "Tunnistautuminen epäonnistui."
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "Tyhjä näyttö"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "Satunnainen"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d tunti"
-msgstr[1] "%d tuntia"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minuutti"
-msgstr[1] "%d minuuttia"
+msgstr[0] ""
+msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d sekunti"
-msgstr[1] "%d sekuntia"
+msgstr[0] ""
+msgstr[1] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s, %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s, %s, %s"
@@ -640,23 +663,23 @@ msgstr "%s, %s, %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
 msgstr "Ei koskaan"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "Pääkäyttöliittymää ei voitu ladata"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Varmista, että näytönsäästäjä on kunnolla asennettu"
 
@@ -666,7 +689,7 @@ msgstr "Älä käynnistä palvelinprosessina"
 
 #: ../src/mate-screensaver.c:57
 msgid "Enable debugging code"
-msgstr "Käytä vianetsintäkoodia"
+msgstr "Käytä vianetsintätilaa"
 
 #: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screensaver and locker program"
@@ -708,31 +731,31 @@ msgstr "näytönsäästäjä on jo käynnissä tässä istunnossa"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "Aika loppui."
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "Näppäimistössä on Caps Lock päällä."
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1652
 msgid "S_witch User..."
 msgstr "_Vaihda käyttäjää..."
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1661
 msgid "Log _Out"
 msgstr "Kirjaudu _ulos"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1874
 msgid "%U on %h"
 msgstr "%s@%s"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1889
 msgid "_Password:"
 msgstr "_Salasana:"

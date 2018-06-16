@@ -1,22 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# ahmad riza h nst <rizahnst@id.gnome.org>, 2006
-# Andika Triwidada <andika@gmail.com>, 2015
-# hpiece 8 <hpiece8@gmail.com>, 2016
-# Ibnu Daru Aji, 2013
-# La Ode Muh. Fadlun Akbar <fadlun.net@gmail.com>, 2015
-# Willy Sudiarto Raharjo <willysr@slackware-id.org>, 2014
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-28 15:01+0100\n"
-"PO-Revision-Date: 2017-09-19 13:39+0000\n"
-"Last-Translator: hpiece 8 <hpiece8@gmail.com>\n"
-"Language-Team: Indonesian (http://www.transifex.com/mate/MATE/language/id/)\n"
+"POT-Creation-Date: 2018-03-17 15:12+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: hpiece 8 <hpiece8@gmail.com>, 2018\n"
+"Language-Team: Indonesian (https://www.transifex.com/mate/teams/13566/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -105,7 +100,7 @@ msgstr "_Log Out"
 msgid "_Cancel"
 msgstr "_Batal"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1659
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1672
 msgid "_Unlock"
 msgstr "B_uka kunci"
 
@@ -120,7 +115,9 @@ msgstr "Aktifkan ketika menganggur"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
-msgstr "Buat menjadi TRUE untuk mengaktifkan screensaver ketika sesi sedang menganggur."
+msgstr ""
+"Buat menjadi TRUE untuk mengaktifkan screensaver ketika sesi sedang "
+"menganggur."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
@@ -128,7 +125,8 @@ msgstr "Kunci pada aktivasi"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr "Buat menjadi TRUE untuk mengunci layar ketika screensaver sedang aktif."
+msgstr ""
+"Buat menjadi TRUE untuk mengunci layar ketika screensaver sedang aktif."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
@@ -141,7 +139,12 @@ msgid ""
 "screensaver using only one theme on activation (specified in \"themes\" "
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
-msgstr "Mode pemilihan yang digunakan oleh screensaver. Pilih \"blank-only\" untuk mengaktifkan screensaver tanpa menggunakan tema lain pada aktifasi, \"single\" untuk mengaktifkan screensaver dengan menggunakan satu tema pada saat aktifasi (terutama pada kunci \"tema\"), dan \"random\" untuk mengaktifkan screensaver menggunakan tema acak pada saat aktifasi."
+msgstr ""
+"Mode pemilihan yang digunakan oleh screensaver. Pilih \"blank-only\" untuk "
+"mengaktifkan screensaver tanpa menggunakan tema lain pada aktifasi, "
+"\"single\" untuk mengaktifkan screensaver dengan menggunakan satu tema pada "
+"saat aktifasi (terutama pada kunci \"tema\"), dan \"random\" untuk "
+"mengaktifkan screensaver menggunakan tema acak pada saat aktifasi."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
 msgid ""
@@ -149,7 +152,11 @@ msgid ""
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
-msgstr "Kunci ini menentukan daftar dari tema yang digunakan oleh screensaver. Akan diabaikan ketika \"mode\" adalah \"blank-only\", memunculkan nama tema ketika \"mode\" adalah \"single\", dan menyediakan daftar tema ketika \"mode\" adalah \"random\"."
+msgstr ""
+"Kunci ini menentukan daftar dari tema yang digunakan oleh screensaver. Akan "
+"diabaikan ketika \"mode\" adalah \"blank-only\", memunculkan nama tema "
+"ketika \"mode\" adalah \"single\", dan menyediakan daftar tema ketika "
+"\"mode\" adalah \"random\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
@@ -159,7 +166,9 @@ msgstr "Waktu sebelum manajemen daya dasar"
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
-msgstr "Jumlah detik tidak aktif sebelum pemberitahuan kepada manajemen daya. Kunci ini diatur dan dikelola oleh agen sesi manajemen daya."
+msgstr ""
+"Jumlah detik tidak aktif sebelum pemberitahuan kepada manajemen daya. Kunci "
+"ini diatur dan dikelola oleh agen sesi manajemen daya."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
@@ -188,7 +197,10 @@ msgid ""
 "Set this to TRUE to allow embedding a keyboard into the window when trying "
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
-msgstr "Atur pengaturan ini ke TRUE untuk memperbolehkan menyambung keyboard ke jendela ketika membuka kunci. kunci \"keyboard_command\" harus diatur dengan perintah yang sesuai."
+msgstr ""
+"Atur pengaturan ini ke TRUE untuk memperbolehkan menyambung keyboard ke "
+"jendela ketika membuka kunci. kunci \"keyboard_command\" harus diatur dengan"
+" perintah yang sesuai."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
@@ -200,7 +212,11 @@ msgid ""
 "set to TRUE, to embed a keyboard widget into the window. This command should"
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
-msgstr "Perintah yang akan dijalankan jika \"embedded_keyboard_enabled\" diatur ke TRUE, untuk menyambungkan widget keyboard ke jendela. Perintah ini harus menerapkan interface XEMBED dan menghasilkan jendela XID pada keluaran standar."
+msgstr ""
+"Perintah yang akan dijalankan jika \"embedded_keyboard_enabled\" diatur ke "
+"TRUE, untuk menyambungkan widget keyboard ke jendela. Perintah ini harus "
+"menerapkan interface XEMBED dan menghasilkan jendela XID pada keluaran "
+"standar."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
@@ -210,7 +226,10 @@ msgstr "Boleh keluar"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
-msgstr "Atur pengaturan ini ke TRUE untuk menawarkan pilihan pada dialog buka kunci untuk dapat keluar setelah jeda. Jeda waktu ditentukan pada kunci \"logout_delay\"."
+msgstr ""
+"Atur pengaturan ini ke TRUE untuk menawarkan pilihan pada dialog buka kunci "
+"untuk dapat keluar setelah jeda. Jeda waktu ditentukan pada kunci "
+"\"logout_delay\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
@@ -221,7 +240,10 @@ msgid ""
 "The number of minutes after the screensaver activation before a logout "
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
-msgstr "Jumlah menit setelah aktifasi screensaver sebelum pilihan logout muncul di dialog buka kunci. Kunci ini hanya berlaku jika \"logout_enable\" diatur ke TRUE."
+msgstr ""
+"Jumlah menit setelah aktifasi screensaver sebelum pilihan logout muncul di "
+"dialog buka kunci. Kunci ini hanya berlaku jika \"logout_enable\" diatur ke "
+"TRUE."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
@@ -232,7 +254,10 @@ msgid ""
 "The command to invoke when the logout button is clicked. This command should"
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
-msgstr "Perintah yang dijalankan ketika tombol logout diklik. Perintah ini akan memudahkan pengguna untuk logout tanpa adanya interaksi. kunci ini hanya akan berlaku jika \"logout_enable\" diatur ke TRUE"
+msgstr ""
+"Perintah yang dijalankan ketika tombol logout diklik. Perintah ini akan "
+"memudahkan pengguna untuk logout tanpa adanya interaksi. kunci ini hanya "
+"akan berlaku jika \"logout_enable\" diatur ke TRUE"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
@@ -242,7 +267,9 @@ msgstr "Boleh pindah pengguna"
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
-msgstr "Atur ke TRUE untuk menawarkan pilihan dalam dialog buka kunci untuk mengganti pengguna."
+msgstr ""
+"Atur ke TRUE untuk menawarkan pilihan dalam dialog buka kunci untuk "
+"mengganti pengguna."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
@@ -343,7 +370,8 @@ msgstr "image - mengapungkan gambar di layar"
 #: ../savers/floaters.c:1197
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "Anda harus menentukan satu gambar.  Lihat --help untuk informasi lanjut.\n"
+msgstr ""
+"Anda harus menentukan satu gambar.  Lihat --help untuk informasi lanjut.\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
@@ -425,17 +453,21 @@ msgstr "Hidupkan screensaver (kosongkan layar)"
 
 #: ../src/mate-screensaver-command.c:83
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr "Screensavernya aktif dan kemudian dinonaktifkan (tidak kosongkan layar)"
+msgstr ""
+"Screensavernya aktif dan kemudian dinonaktifkan (tidak kosongkan layar)"
 
 #: ../src/mate-screensaver-command.c:87
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "Colek screensaver yang berjalan untuk menyimulasikan aktivitas pengguna"
+msgstr ""
+"Colek screensaver yang berjalan untuk menyimulasikan aktivitas pengguna"
 
 #: ../src/mate-screensaver-command.c:91
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
-msgstr "Halangi screensaver dari pengaktifan. Perintah yang diblok ketika penghalangan aktif."
+msgstr ""
+"Halangi screensaver dari pengaktifan. Perintah yang diblok ketika "
+"penghalangan aktif."
 
 #: ../src/mate-screensaver-command.c:95
 msgid "The calling application that is inhibiting the screensaver"
@@ -524,7 +556,8 @@ msgstr "Kata sandi:"
 
 #: ../src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (password aged)"
-msgstr "Anda diharuskan mengganti kata sandi Anda sekarang (kata sandi sudah usang)"
+msgstr ""
+"Anda diharuskan mengganti kata sandi Anda sekarang (kata sandi sudah usang)"
 
 #: ../src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (root enforced)"
@@ -532,7 +565,8 @@ msgstr "Anda diharuskan mengganti kata sandi Anda segera (root·enforced)"
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Account Anda sudah kadaluarsa, silahkan hubungi system administrator Anda"
+msgstr ""
+"Account Anda sudah kadaluarsa, silahkan hubungi system administrator Anda"
 
 #: ../src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
@@ -586,51 +620,51 @@ msgstr "Memeriksa..."
 msgid "Authentication failed."
 msgstr "Autentikasi gagal."
 
-#: ../src/mate-screensaver-preferences.c:461
+#: ../src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "Layar kosong"
 
-#: ../src/mate-screensaver-preferences.c:467
+#: ../src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "Acak"
 
-#: ../src/mate-screensaver-preferences.c:953
-#: ../src/mate-screensaver-preferences.c:963
+#: ../src/mate-screensaver-preferences.c:949
+#: ../src/mate-screensaver-preferences.c:959
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d jam"
+msgstr[0] ""
 
-#: ../src/mate-screensaver-preferences.c:956
-#: ../src/mate-screensaver-preferences.c:965
-#: ../src/mate-screensaver-preferences.c:974
-#: ../src/mate-screensaver-preferences.c:977
-#: ../src/mate-screensaver-preferences.c:982
-#: ../src/mate-screensaver-preferences.c:985
-#: ../src/mate-screensaver-preferences.c:990
-#: ../src/mate-screensaver-preferences.c:993
+#: ../src/mate-screensaver-preferences.c:952
+#: ../src/mate-screensaver-preferences.c:961
+#: ../src/mate-screensaver-preferences.c:970
+#: ../src/mate-screensaver-preferences.c:973
+#: ../src/mate-screensaver-preferences.c:978
+#: ../src/mate-screensaver-preferences.c:981
+#: ../src/mate-screensaver-preferences.c:986
+#: ../src/mate-screensaver-preferences.c:989
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d menit"
+msgstr[0] ""
 
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d detik"
+msgstr[0] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:962
-#: ../src/mate-screensaver-preferences.c:1009
-#: ../src/mate-screensaver-preferences.c:1022
+#: ../src/mate-screensaver-preferences.c:958
+#: ../src/mate-screensaver-preferences.c:1005
+#: ../src/mate-screensaver-preferences.c:1018
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1004
+#: ../src/mate-screensaver-preferences.c:1000
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
@@ -638,23 +672,23 @@ msgstr "%s %s %s"
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1014
-#: ../src/mate-screensaver-preferences.c:1027
-#: ../src/mate-screensaver-preferences.c:1063
+#: ../src/mate-screensaver-preferences.c:1010
+#: ../src/mate-screensaver-preferences.c:1023
+#: ../src/mate-screensaver-preferences.c:1059
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1078
+#: ../src/mate-screensaver-preferences.c:1074
 #, c-format
 msgid "Never"
-msgstr "Tidak pernah"
+msgstr "Tak pernah"
 
-#: ../src/mate-screensaver-preferences.c:1567
+#: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
 msgstr "Tidak dapat memuat antarmuka utama"
 
-#: ../src/mate-screensaver-preferences.c:1569
+#: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Coba pastikan bahwa screensaver telah terpasang dengan benar"
 
@@ -706,31 +740,31 @@ msgstr "screensaver sudah berjalan pada sesi ini"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:304
+#: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
 msgstr "%A, %B %e"
 
-#: ../src/gs-lock-plug.c:406
+#: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
 msgstr "Waktu telah kadaluarsa."
 
-#: ../src/gs-lock-plug.c:437
+#: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
 msgstr "Tombol Caps Lock Anda hidup."
 
-#: ../src/gs-lock-plug.c:1639
+#: ../src/gs-lock-plug.c:1652
 msgid "S_witch User..."
 msgstr "_Pindah Pengguna..."
 
-#: ../src/gs-lock-plug.c:1648
+#: ../src/gs-lock-plug.c:1661
 msgid "Log _Out"
 msgstr "Kel_uar"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1873
+#: ../src/gs-lock-plug.c:1874
 msgid "%U on %h"
 msgstr "%U pada %h"
 
-#: ../src/gs-lock-plug.c:1892
+#: ../src/gs-lock-plug.c:1889
 msgid "_Password:"
-msgstr "_Kata sandi:"
+msgstr "_Password:"
