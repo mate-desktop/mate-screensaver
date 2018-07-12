@@ -450,7 +450,7 @@ is_capslock_on (void)
 
 	res = FALSE;
 
-	keymap = gdk_keymap_get_default ();
+	keymap = gdk_keymap_get_for_display (gdk_display_get_default ());
 	if (keymap != NULL) {
 		res = gdk_keymap_get_caps_lock_state (keymap);
 	}
