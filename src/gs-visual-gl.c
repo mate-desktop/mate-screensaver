@@ -79,7 +79,7 @@ gs_visual_gl_get_best_for_display (GdkDisplay *display)
 	screen = gdk_display_get_default_screen (display);
 	screen_num = GDK_SCREEN_XNUMBER (screen);
 
-	gdk_error_trap_push ();
+	gdk_x11_display_error_trap_push (display);
 
 	visual = NULL;
 	for (i = 0; i < G_N_ELEMENTS (attrs); i++)
@@ -105,7 +105,7 @@ gs_visual_gl_get_best_for_display (GdkDisplay *display)
 		}
 	}
 
-	gdk_error_trap_pop_ignored ();
+	gdk_x11_display_error_trap_pop_ignored (display);
 #else
 	visual = NULL;
 #endif /* HAVE_LIBGL */
