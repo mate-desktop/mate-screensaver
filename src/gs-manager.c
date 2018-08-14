@@ -1539,8 +1539,8 @@ gs_manager_create_window_for_monitor (GSManager  *manager,
 	display = gdk_monitor_get_display (monitor);
 	gdk_monitor_get_geometry (monitor, &rect);
 
-	gs_debug ("Creating a window for the monitor [%d,%d] (%dx%d)",
-	          monitor, rect.x, rect.y, rect.width, rect.height);
+	gs_debug ("Creating a window [%d,%d] (%dx%d)",
+	          rect.x, rect.y, rect.width, rect.height);
 
 	window = gs_window_new (display, monitor, manager->priv->lock_active);
 
