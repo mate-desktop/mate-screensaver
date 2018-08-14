@@ -420,8 +420,7 @@ gs_window_move_resize_window (GSWindow *window,
 
 	g_assert (gtk_widget_get_realized (widget));
 
-	gs_debug ("Move and/or resize window on monitor %d: x=%d y=%d w=%d h=%d",
-	          window->priv->monitor,
+	gs_debug ("Move and/or resize window: x=%d y=%d w=%d h=%d",
 	          window->priv->geometry.x,
 	          window->priv->geometry.y,
 	          window->priv->geometry.width,
