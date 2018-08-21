@@ -91,8 +91,7 @@ void        gs_window_show_message         (GSWindow   *window,
 void        gs_window_request_unlock     (GSWindow  *window);
 void        gs_window_cancel_unlock_request (GSWindow  *window);
 
-GSWindow  * gs_window_new                (GdkDisplay *display,
-                                          GdkMonitor *monitor,
+GSWindow  * gs_window_new                (GdkMonitor *monitor,
                                           gboolean   lock_enabled);
 void        gs_window_show               (GSWindow  *window);
 void        gs_window_destroy            (GSWindow  *window);
