@@ -130,7 +130,7 @@ test_window (void)
 	display = gdk_display_get_default ();
 	monitor = gdk_display_get_primary_monitor (display);
 
-	window = gs_window_new (display, monitor, lock_active);
+	window = gs_window_new (monitor, lock_active);
 
 	gs_window_set_user_switch_enabled (window, user_switch_enabled);
 

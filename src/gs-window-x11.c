@@ -366,10 +366,11 @@ update_geometry (GSWindow *window)
 }
 
 static void
-screen_size_changed (GdkScreen *screen,
-                     GSWindow  *window)
+monitor_geometry_notify (GdkMonitor *monitor,
+                         GParamSpec *pspec,
+                         GSWindow   *window)
 {
-	gs_debug ("Got screen size changed signal");
+	gs_debug ("Got monitor geometry notify signal");
 	gtk_widget_queue_resize (GTK_WIDGET (window));
 }
 
@@ -418,8 +419,9 @@ gs_window_move_resize_window (GSWindow *window,
 static void
 gs_window_real_unrealize (GtkWidget *widget)
 {
-	g_signal_handlers_disconnect_by_func (gtk_window_get_screen (GTK_WINDOW (widget)),
-	                                      screen_size_changed,
+	GdkMonitor *monitor = GS_WINDOW (widget)->priv->monitor;
+
+	g_signal_handlers_disconnect_by_func (monitor, monitor_geometry_notify,
 	                                      widget);
 
 	if (GTK_WIDGET_CLASS (gs_window_parent_class)->unrealize)
@@ -575,6 +577,8 @@ widget_set_best_visual (GtkWidget *widget)
 static void
 gs_window_real_realize (GtkWidget *widget)
 {
+	GdkMonitor *monitor = GS_WINDOW (widget)->priv->monitor;
+
 	widget_set_best_visual (widget);
 
 	if (GTK_WIDGET_CLASS (gs_window_parent_class)->realize)
@@ -586,9 +590,9 @@ gs_window_real_realize (GtkWidget *widget)
 
 	gs_window_move_resize_window (GS_WINDOW (widget), TRUE, TRUE);
 
-	g_signal_connect (gtk_window_get_screen (GTK_WINDOW (widget)),
-	                  "size_changed",
-	                  G_CALLBACK (screen_size_changed),
+	g_signal_connect (monitor,
+	                  "notify::geometry",
+	                  G_CALLBACK (monitor_geometry_notify),
 	                  widget);
 }
 
@@ -2557,12 +2561,12 @@ gs_window_finalize (GObject *object)
 }
 
 GSWindow *
-gs_window_new (GdkDisplay *display,
-               GdkMonitor *monitor,
+gs_window_new (GdkMonitor *monitor,
                gboolean   lock_enabled)
 {
-	GObject   *result;
-	GdkScreen *screen = gdk_display_get_default_screen (display);
+	GObject    *result;
+	GdkDisplay *display = gdk_monitor_get_display (monitor);
+	GdkScreen  *screen = gdk_display_get_default_screen (display);
 
 	result = g_object_new (GS_TYPE_WINDOW,
 	                       "type", GTK_WINDOW_POPUP,
