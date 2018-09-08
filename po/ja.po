@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"POT-Creation-Date: 2018-05-27 15:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ikuru K <kanumaiku@gmail.com>, 2018\n"
 "Language-Team: Japanese (https://www.transifex.com/mate/teams/13566/ja/)\n"
@@ -309,7 +309,7 @@ msgstr "ポップな矩形のアート"
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr "四角形が脈打つように見えるポップアートを表示します"
 
-#: ../savers/popsquares.c:49 ../savers/floaters.c:1188
+#: ../savers/popsquares.c:49 ../savers/floaters.c:1191
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s (用法については --help オプションで確認して下さい)\n"
@@ -348,11 +348,11 @@ msgstr "使用する元の画像"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#: ../savers/floaters.c:1182
+#: ../savers/floaters.c:1185
 msgid "image - floats images around the screen"
 msgstr "画像 - スクリーンの回りに画像を浮かす"
 
-#: ../savers/floaters.c:1197
+#: ../savers/floaters.c:1200
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "少なくとも画像を一つ指定して下さい (用法については --help オプションで確認して下さい)\n"

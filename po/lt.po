@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"POT-Creation-Date: 2018-05-27 15:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Moo, 2018\n"
 "Language-Team: Lithuanian (https://www.transifex.com/mate/teams/13566/lt/)\n"
@@ -324,7 +324,7 @@ msgstr "Meniški kvadratėliai"
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr "Pulsuojančių spalvų kvadratėliai."
 
-#: ../savers/popsquares.c:49 ../savers/floaters.c:1188
+#: ../savers/popsquares.c:49 ../savers/floaters.c:1191
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. Norėdami daugiau informacijos, žr. --help.\n"
@@ -363,11 +363,11 @@ msgstr "Naudotinas paveikslas"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#: ../savers/floaters.c:1182
+#: ../savers/floaters.c:1185
 msgid "image - floats images around the screen"
 msgstr "image - ekrane plaukioja paveikslas"
 
-#: ../savers/floaters.c:1197
+#: ../savers/floaters.c:1200
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr ""
@@ -635,7 +635,7 @@ msgid_plural "%d hours"
 msgstr[0] "%d valanda"
 msgstr[1] "%d valandos"
 msgstr[2] "%d valandų"
-msgstr[3] "%d valandų"
+msgstr[3] "%d valanda"
 
 #: ../src/mate-screensaver-preferences.c:952
 #: ../src/mate-screensaver-preferences.c:961
@@ -651,7 +651,7 @@ msgid_plural "%d minutes"
 msgstr[0] "%d minutė"
 msgstr[1] "%d minutės"
 msgstr[2] "%d minučių"
-msgstr[3] "%d minučių"
+msgstr[3] "%d minutė"
 
 #: ../src/mate-screensaver-preferences.c:955
 #, c-format
@@ -660,7 +660,7 @@ msgid_plural "%d seconds"
 msgstr[0] "%d sekundė"
 msgstr[1] "%d sekundės"
 msgstr[2] "%d sekundžių"
-msgstr[3] "%d sekundžių"
+msgstr[3] "%d sekundė"
 
 #. hour:minutes
 #. minutes:seconds

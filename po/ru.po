@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"POT-Creation-Date: 2018-05-27 15:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: monsta <monsta@inbox.ru>, 2018\n"
+"Last-Translator: Alex Putz, 2018\n"
 "Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -328,7 +328,7 @@ msgstr "Пульсирующие ячейки"
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr "Сеть из пульсирующих цветных ячеек"
 
-#: ../savers/popsquares.c:49 ../savers/floaters.c:1188
+#: ../savers/popsquares.c:49 ../savers/floaters.c:1191
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. Используйте --help для получения информации о параметрах.\n"
@@ -367,11 +367,11 @@ msgstr "Используемое исходное изображение"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#: ../savers/floaters.c:1182
+#: ../savers/floaters.c:1185
 msgid "image - floats images around the screen"
 msgstr "image - плавающие по всему экрану изображения"
 
-#: ../savers/floaters.c:1197
+#: ../savers/floaters.c:1200
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr ""
@@ -643,10 +643,10 @@ msgstr "Случайным образом"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d час"
+msgstr[1] "%d часов"
+msgstr[2] "%d часов"
+msgstr[3] "%d часов"
 
 #: ../src/mate-screensaver-preferences.c:952
 #: ../src/mate-screensaver-preferences.c:961
@@ -659,19 +659,19 @@ msgstr[3] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d минута"
+msgstr[1] "%d минут"
+msgstr[2] "%d минут"
+msgstr[3] "%d минут"
 
 #: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d секунда"
+msgstr[1] "%d секунд"
+msgstr[2] "%d секунд"
+msgstr[3] "%d секунд"
 
 #. hour:minutes
 #. minutes:seconds

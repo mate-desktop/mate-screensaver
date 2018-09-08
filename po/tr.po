@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"POT-Creation-Date: 2018-05-27 15:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Butterfly <gokhanlnx@gmail.com>, 2018\n"
 "Language-Team: Turkish (https://www.transifex.com/mate/teams/13566/tr/)\n"
@@ -330,7 +330,7 @@ msgstr "Pop art kareleri"
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr "Bir pop-art-ish nabız gibi atan renklerin ızgarası."
 
-#: ../savers/popsquares.c:49 ../savers/floaters.c:1188
+#: ../savers/popsquares.c:49 ../savers/floaters.c:1191
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. Kullanım bilgisi için --help çıktısına bakınız.\n"
@@ -369,11 +369,11 @@ msgstr "Kullanılacak kaynak görüntü"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#: ../savers/floaters.c:1182
+#: ../savers/floaters.c:1185
 msgid "image - floats images around the screen"
 msgstr "görüntü - görüntüleri ekran boyunca kaydır"
 
-#: ../savers/floaters.c:1197
+#: ../savers/floaters.c:1200
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr ""

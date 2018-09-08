@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"POT-Creation-Date: 2018-05-27 15:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: hpiece 8 <hpiece8@gmail.com>, 2018\n"
 "Language-Team: Indonesian (https://www.transifex.com/mate/teams/13566/id/)\n"
@@ -324,7 +324,7 @@ msgstr "Lapangan pop art"
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr "Warna pulsa baris pop-art-ish"
 
-#: ../savers/popsquares.c:49 ../savers/floaters.c:1188
+#: ../savers/popsquares.c:49 ../savers/floaters.c:1191
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. Lihat --help untuk informasi penggunaan.\n"
@@ -363,11 +363,11 @@ msgstr "Sumber citra yang digunakan"
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#: ../savers/floaters.c:1182
+#: ../savers/floaters.c:1185
 msgid "image - floats images around the screen"
 msgstr "image - mengapungkan gambar di layar"
 
-#: ../savers/floaters.c:1197
+#: ../savers/floaters.c:1200
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr ""

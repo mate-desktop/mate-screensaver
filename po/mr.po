@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:10+0100\n"
+"POT-Creation-Date: 2018-05-27 15:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Vaibhav S Dalvi <vaibhav.dlv@gmail.com>, 2018\n"
 "Language-Team: Marathi (https://www.transifex.com/mate/teams/13566/mr/)\n"
@@ -315,7 +315,7 @@ msgstr "पॉप कला चौकोन"
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr "पल्सींग रंगाचे पॉप-कला ग्रीड."
 
-#: ../savers/popsquares.c:49 ../savers/floaters.c:1188
+#: ../savers/popsquares.c:49 ../savers/floaters.c:1191
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. वापर माहिती करीता --help पहा.\n"
@@ -354,11 +354,11 @@ msgstr "वापरण्याकरीताचे स्त्रोत प�
 
 #. translators: the word "image" here
 #. * represents a command line argument
-#: ../savers/floaters.c:1182
+#: ../savers/floaters.c:1185
 msgid "image - floats images around the screen"
 msgstr "प्रतिमा - पडद्याभोवती प्रतिमा तरंगविते"
 
-#: ../savers/floaters.c:1197
+#: ../savers/floaters.c:1200
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "तुम्ही प्रतिमा निश्चित केली पाहिजे.  वापर माहिती करीता --help पहा.\n"
