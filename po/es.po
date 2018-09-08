@@ -643,8 +643,8 @@ msgstr "Aleatorio"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d hora"
+msgstr[1] "%d horas"
 
 #: ../src/mate-screensaver-preferences.c:952
 #: ../src/mate-screensaver-preferences.c:961
@@ -657,15 +657,15 @@ msgstr[1] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d minuto"
+msgstr[1] "%d minutos"
 
 #: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d segundo"
+msgstr[1] "%d segundos"
 
 #. hour:minutes
 #. minutes:seconds

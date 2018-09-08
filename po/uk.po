@@ -297,7 +297,7 @@ msgstr "Показує слайди космічних малюнків"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
 msgid "Floating MATE"
-msgstr "Пляваючий MATE"
+msgstr "Плаваючий MATE"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
@@ -305,7 +305,7 @@ msgstr "Логотипи MATE, що виринають по усьому екр�
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:1
 msgid "Floating GNOME"
-msgstr "Пляваючий GNOME"
+msgstr "Плаваючий GNOME"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the GNOME logo around the screen"
@@ -481,7 +481,7 @@ msgstr "Причина для затримки зберігача екрану"
 #: ../src/mate-screensaver-command.c:103 ../src/mate-screensaver-dialog.c:58
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
-msgstr "Версія цієї проґрами"
+msgstr "Версія цієї програми"
 
 #: ../src/mate-screensaver-command.c:352
 #, c-format
@@ -633,10 +633,10 @@ msgstr "Випадкова"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d година"
+msgstr[1] "%d години"
+msgstr[2] "%d годин"
+msgstr[3] "%d годин"
 
 #: ../src/mate-screensaver-preferences.c:952
 #: ../src/mate-screensaver-preferences.c:961
@@ -649,19 +649,19 @@ msgstr[3] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d хвилина"
+msgstr[1] "%d хвилини"
+msgstr[2] "%d хвилин"
+msgstr[3] "%d хвилин"
 
 #: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d секунда"
+msgstr[1] "%d секунди"
+msgstr[2] "%d секунд"
+msgstr[3] "%d секунд"
 
 #. hour:minutes
 #. minutes:seconds
@@ -759,7 +759,7 @@ msgstr "Час сплив."
 
 #: ../src/gs-lock-plug.c:436
 msgid "You have the Caps Lock key on."
-msgstr "Натиснута клявіша Caps Lock."
+msgstr "Натиснута клавіша Caps Lock."
 
 #: ../src/gs-lock-plug.c:1652
 msgid "S_witch User..."
@@ -776,4 +776,4 @@ msgstr "%U на %h"
 
 #: ../src/gs-lock-plug.c:1889
 msgid "_Password:"
-msgstr "_Потайслово:"
+msgstr "_Пароль:"

@@ -632,10 +632,10 @@ msgstr "Atsitiktinė"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d valanda"
+msgstr[1] "%d valandos"
+msgstr[2] "%d valandų"
+msgstr[3] "%d valanda"
 
 #: ../src/mate-screensaver-preferences.c:952
 #: ../src/mate-screensaver-preferences.c:961
@@ -648,19 +648,19 @@ msgstr[3] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d minutė"
+msgstr[1] "%d minutės"
+msgstr[2] "%d minučių"
+msgstr[3] "%d minutė"
 
 #: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d sekundė"
+msgstr[1] "%d sekundės"
+msgstr[2] "%d sekundžių"
+msgstr[3] "%d sekundė"
 
 #. hour:minutes
 #. minutes:seconds
