@@ -1,3 +1,9 @@
+### mate-screensaver 1.20.2
+
+  * sync with transifex
+  * fix more GdkScreen related deprecations
+  * lock-plug: Only scale lock-screen widgets on older versions of GTK
+
 ### mate-screensaver 1.20.1
 
   * Translations update
