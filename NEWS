@@ -1,3 +1,9 @@
+### mate-screensaver 1.18.3
+
+  * fix more GdkScreen related deprecations
+  * restore the correct mate-screensaver-command manpage
+  * some misc fixes
+
 ### mate-screensaver 1.18.2
 
   * Translations update
