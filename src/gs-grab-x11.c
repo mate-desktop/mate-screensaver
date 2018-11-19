@@ -101,8 +101,10 @@ xorg_lock_smasher_set_active (GSGrab  *grab,
                               gboolean active)
 {
 	int status, event, error;
+	GdkDisplay *display = gdk_display_get_default ();
+	Display *xdisplay = GDK_DISPLAY_XDISPLAY (display);
 
-	if (!XF86MiscQueryExtension (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &event, &error))
+	if (!XF86MiscQueryExtension (xdisplay), &event, &error))
 	{
 		gs_debug ("No XFree86-Misc extension present");
 		return;
@@ -117,12 +119,12 @@ xorg_lock_smasher_set_active (GSGrab  *grab,
 		gs_debug ("Disabling the x.org grab smasher");
 	}
 
-	gdk_error_trap_push ();
+	gdk_x11_display_error_trap_push (display);
 
-	status = XF86MiscSetGrabKeysState (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), active);
+	status = XF86MiscSetGrabKeysState (xdisplay, active);
 
-	gdk_display_sync (gdk_display_get_default ());
-	error = gdk_error_trap_pop ();
+	gdk_display_sync (display);
+	error = gdk_x11_display_error_trap_pop (display);
 
 	if (active && status == MiscExtGrabStateAlready)
 	{
