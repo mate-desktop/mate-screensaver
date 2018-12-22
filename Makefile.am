@@ -6,7 +6,8 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 NULL =
 
 DISTCHECK_CONFIGURE_FLAGS = \
-	--without-systemd
+	--without-systemd \
+	CFLAGS='-Wno-deprecated-declarations'
 
 SUBDIRS =			\
 	src			\
