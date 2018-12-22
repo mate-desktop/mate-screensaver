@@ -6,15 +6,15 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 15:12+0100\n"
+"POT-Creation-Date: 2018-12-22 16:20+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
@@ -99,7 +99,7 @@ msgstr ""
 msgid "_Cancel"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1672
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr ""
 
@@ -714,19 +714,19 @@ msgstr ""
 msgid "You have the Caps Lock key on."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1652
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1661
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr ""
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1874
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1889
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
 msgstr ""
