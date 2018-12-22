@@ -3,13 +3,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Piotr Drąg <piotrdrag@gmail.com>, 2018
+# Piotr Strębski <strebski@gmail.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Marcin Kralka <marcink96@gmail.com>, 2018
+# Artur Motyka <slashcraftpl@gmail.com>, 2018
+# Przemek P <ppjg@dami.pl>, 2018
+# pietrasagh <pietrasagh@gmail.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-17 15:12+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-03-11 21:01+0000\n"
 "Last-Translator: pietrasagh <pietrasagh@gmail.com>, 2018\n"
 "Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
