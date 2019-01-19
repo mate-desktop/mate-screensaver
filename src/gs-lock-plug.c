@@ -39,6 +39,10 @@
 #include <gtk/gtkx.h>
 #include <gio/gio.h>
 
+#ifdef HAVE_RDA
+#include <rda/rda.h>
+#endif /* HAVE_RDA */
+
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #include <libmate-desktop/mate-desktop-utils.h>
 
@@ -99,6 +103,7 @@ struct GSLockPlugPrivate
 	GtkWidget   *auth_switch_button;
 	GtkWidget   *auth_cancel_button;
 	GtkWidget   *auth_logout_button;
+	GtkWidget   *auth_suspend_button;
 	GtkWidget   *auth_note_button;
 	GtkWidget   *note_tab;
 	GtkWidget   *note_tab_label;
@@ -110,6 +115,9 @@ struct GSLockPlugPrivate
 
 	gboolean     caps_lock_on;
 	gboolean     switch_enabled;
+#ifdef HAVE_RDA
+	gboolean     suspend_enabled;
+#endif /* HAVE_RDA */
 	gboolean     leave_note_enabled;
 	gboolean     logout_enabled;
 	char        *logout_command;
@@ -146,6 +154,9 @@ enum
     PROP_LOGOUT_ENABLED,
     PROP_LOGOUT_COMMAND,
     PROP_SWITCH_ENABLED,
+#ifdef HAVE_RDA
+    PROP_SUSPEND_ENABLED,
+#endif /* HAVE_RDA */
     PROP_STATUS_MESSAGE
 };
 
@@ -1094,6 +1105,37 @@ gs_lock_plug_set_logout_enabled (GSLockPlug *plug,
 	}
 }
 
+#ifdef HAVE_RDA
+static void
+gs_lock_plug_set_suspend_enabled (GSLockPlug *plug,
+                                  gboolean    suspend_enabled)
+{
+	g_return_if_fail (GS_LOCK_PLUG (plug));
+
+	if (plug->priv->suspend_enabled == suspend_enabled)
+	{
+		return;
+	}
+
+	plug->priv->suspend_enabled = suspend_enabled;
+	g_object_notify (G_OBJECT (plug), "suspend-enabled");
+
+	if (plug->priv->auth_suspend_button == NULL)
+	{
+		return;
+	}
+
+	if (suspend_enabled)
+	{
+		gtk_widget_show (plug->priv->auth_suspend_button);
+	}
+	else
+	{
+		gtk_widget_hide (plug->priv->auth_suspend_button);
+	}
+}
+#endif /* HAVE_RDA */
+
 static void
 gs_lock_plug_set_logout_command (GSLockPlug *plug,
                                  const char *command)
@@ -1157,6 +1199,11 @@ gs_lock_plug_get_property (GObject    *object,
 	case PROP_SWITCH_ENABLED:
 		g_value_set_boolean (value, self->priv->switch_enabled);
 		break;
+#ifdef HAVE_RDA
+	case PROP_SUSPEND_ENABLED:
+		g_value_set_boolean (value, self->priv->suspend_enabled);
+		break;
+#endif /* HAVE_RDA */
 	case PROP_STATUS_MESSAGE:
 		g_value_set_string (value, self->priv->status_message);
 		break;
@@ -1238,6 +1285,11 @@ gs_lock_plug_set_property (GObject            *object,
 	case PROP_SWITCH_ENABLED:
 		gs_lock_plug_set_switch_enabled (self, g_value_get_boolean (value));
 		break;
+#ifdef HAVE_RDA
+	case PROP_SUSPEND_ENABLED:
+		gs_lock_plug_set_suspend_enabled (self, g_value_get_boolean (value));
+		break;
+#endif /* HAVE_RDA */
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 		break;
@@ -1325,6 +1377,15 @@ gs_lock_plug_class_init (GSLockPlugClass *klass)
 	                                         NULL,
 	                                         FALSE,
 	                                         G_PARAM_READWRITE));
+#ifdef HAVE_RDA
+	g_object_class_install_property (object_class,
+	                                 PROP_SUSPEND_ENABLED,
+	                                 g_param_spec_boolean ("suspend-enabled",
+	                                         NULL,
+	                                         NULL,
+	                                         FALSE,
+	                                         G_PARAM_READWRITE));
+#endif /* HAVE_RDA */
 
 	binding_set = gtk_binding_set_by_class (klass);
 
@@ -1451,6 +1512,25 @@ logout_button_clicked (GtkButton  *button,
 		g_error_free (error);
 	}
 }
+
+#ifdef HAVE_RDA
+static void
+suspend_button_clicked (GtkButton  *button,
+                        GSLockPlug *plug)
+{
+	remove_response_idle (plug);
+
+	gs_lock_plug_set_sensitive (plug, FALSE);
+
+	plug->priv->response_idle_id = g_timeout_add (2000,
+	        (GSourceFunc)response_cancel_idle_cb,
+	        plug);
+
+	gs_lock_plug_set_busy (plug);
+
+	rda_session_suspend();
+}
+#endif
 
 void
 gs_lock_plug_set_busy (GSLockPlug *plug)
@@ -1665,6 +1745,12 @@ create_page_one_buttons (GSLockPlug *plug)
 	                                  _("Log _Out"));
 	gtk_widget_set_focus_on_click (GTK_WIDGET (plug->priv->auth_logout_button), FALSE);
 	gtk_widget_set_no_show_all (plug->priv->auth_logout_button, TRUE);
+
+	plug->priv->auth_suspend_button = gs_lock_plug_add_button (GS_LOCK_PLUG (plug),
+	                                  plug->priv->auth_action_area,
+	                                  _("Disconnect"));
+	gtk_widget_set_focus_on_click (GTK_WIDGET (plug->priv->auth_suspend_button), FALSE);
+	gtk_widget_set_no_show_all (plug->priv->auth_suspend_button, TRUE);
 
 	plug->priv->auth_cancel_button =  gs_lock_plug_add_button (GS_LOCK_PLUG (plug),
 	                                  plug->priv->auth_action_area,
@@ -2049,6 +2135,7 @@ load_theme (GSLockPlug *plug)
 	plug->priv->auth_cancel_button = GTK_WIDGET (gtk_builder_get_object(builder, "auth-cancel-button"));
 	plug->priv->auth_logout_button = GTK_WIDGET (gtk_builder_get_object(builder, "auth-logout-button"));
 	plug->priv->auth_switch_button = GTK_WIDGET (gtk_builder_get_object(builder, "auth-switch-button"));
+	plug->priv->auth_suspend_button = GTK_WIDGET (gtk_builder_get_object(builder, "auth-suspend-button"));
 	plug->priv->auth_note_button = GTK_WIDGET (gtk_builder_get_object(builder, "auth-note-button"));
 	plug->priv->note_tab = GTK_WIDGET (gtk_builder_get_object(builder, "note-tab"));
 	plug->priv->note_tab_label = GTK_WIDGET (gtk_builder_get_object(builder, "note-tab-label"));
@@ -2065,6 +2152,10 @@ load_theme (GSLockPlug *plug)
 	if (plug->priv->auth_switch_button != NULL)
 	{
 		gtk_widget_set_no_show_all (plug->priv->auth_switch_button, TRUE);
+	}
+	if (plug->priv->auth_suspend_button != NULL)
+	{
+		gtk_widget_set_no_show_all (plug->priv->auth_suspend_button, TRUE);
 	}
 	if (plug->priv->auth_note_button != NULL)
 	{
@@ -2224,6 +2315,24 @@ gs_lock_plug_init (GSLockPlug *plug)
 		}
 	}
 
+#ifdef HAVE_RDA
+	if (! plug->priv->suspend_enabled)
+	{
+		if (plug->priv->auth_suspend_button != NULL)
+		{
+			gtk_widget_hide (plug->priv->auth_suspend_button);
+		}
+	}
+	if (plug->priv->auth_suspend_button != NULL)
+	{
+		gchar *btn_label;
+		btn_label = g_strdup_printf (_("_Disconnect %s"), rda_get_remote_technology_name());
+		gs_debug ("Renaming remote suspension button to %s", btn_label);
+		gtk_button_set_label (GTK_BUTTON (plug->priv->auth_suspend_button), btn_label);
+		g_free (btn_label);
+	}
+#endif /* HAVE_RDA */
+
 	plug->priv->timeout = DIALOG_TIMEOUT_MSEC;
 
 	g_signal_connect (plug, "key_press_event",
@@ -2259,6 +2368,14 @@ gs_lock_plug_init (GSLockPlug *plug)
 		g_signal_connect (plug->priv->auth_switch_button, "clicked",
 		                  G_CALLBACK (switch_user_button_clicked), plug);
 	}
+
+#ifdef HAVE_RDA
+	if (plug->priv->auth_suspend_button != NULL)
+	{
+		g_signal_connect (plug->priv->auth_suspend_button, "clicked",
+		                  G_CALLBACK (suspend_button_clicked), plug);
+	}
+#endif /* HAVE_RDA */
 
 	if (plug->priv->auth_note_button != NULL)
 	{

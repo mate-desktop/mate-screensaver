@@ -49,6 +49,9 @@ static gboolean verbose = FALSE;
 static gboolean show_version = FALSE;
 static gboolean enable_logout = FALSE;
 static gboolean enable_switch = FALSE;
+#ifdef HAVE_RDA
+static gboolean enable_suspend = FALSE;
+#endif /* HAVE_RDA */
 static char* logout_command = NULL;
 static char* status_message = NULL;
 static char* away_message = NULL;
@@ -57,6 +60,9 @@ static GOptionEntry entries[] = {
 	{"verbose", 0, 0, G_OPTION_ARG_NONE, &verbose, N_("Show debugging output"), NULL},
 	{"version", 0, 0, G_OPTION_ARG_NONE, &show_version, N_("Version of this application"), NULL},
 	{"enable-logout", 0, 0, G_OPTION_ARG_NONE, &enable_logout, N_("Show the logout button"), NULL},
+#ifdef HAVE_RDA
+	{"enable-suspend", 0, 0, G_OPTION_ARG_NONE, &enable_suspend, N_("Show the suspend button if session is remote\n\t\t\t\t and suspension is supported"), NULL},
+#endif /* HAVE_RDA */
 	{"logout-command", 0, 0, G_OPTION_ARG_STRING, &logout_command, N_("Command to invoke from the logout button"), NULL},
 	{"enable-switch", 0, 0, G_OPTION_ARG_NONE, &enable_switch, N_("Show the switch user button"), NULL},
 	{"status-message", 0, 0, G_OPTION_ARG_STRING, &status_message, N_("Message to show in the dialog"), N_("MESSAGE")},
@@ -388,6 +394,13 @@ static gboolean popup_dialog_idle(void)
 	{
 		g_object_set(widget, "logout-enabled", TRUE, NULL);
 	}
+
+#ifdef HAVE_RDA
+	if (enable_suspend)
+	{
+		g_object_set(widget, "suspend-enabled", TRUE, NULL);
+	}
+#endif /* HAVE_RDA */
 
 	if (logout_command)
 	{
