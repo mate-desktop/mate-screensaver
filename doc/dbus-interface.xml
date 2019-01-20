@@ -52,6 +52,15 @@
       </para>
     </sect2>
 
+    <sect2 id="gs-method-Unlock">
+      <title>
+        <literal>Unlock</literal>
+      </title>
+      <para>
+        Request that the screen be unlocked.
+      </para>
+    </sect2>
+
     <sect2 id="gs-method-Cycle">
       <title>
         <literal>Cycle</literal>

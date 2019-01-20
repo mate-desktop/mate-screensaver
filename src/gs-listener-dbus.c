@@ -1373,6 +1373,8 @@ do_introspect (DBusConnection *connection,
 	                       "  <interface name=\"org.mate.ScreenSaver\">\n"
 	                       "    <method name=\"Lock\">\n"
 	                       "    </method>\n"
+	                       "    <method name=\"Unlock\">\n"
+	                       "    </method>\n"
 	                       "    <method name=\"Cycle\">\n"
 	                       "    </method>\n"
 	                       "    <method name=\"SimulateUserActivity\">\n"
@@ -1463,6 +1465,11 @@ listener_dbus_handle_session_message (DBusConnection *connection,
 	if (dbus_message_is_method_call (message, GS_LISTENER_SERVICE, "Lock"))
 	{
 		g_signal_emit (listener, signals [LOCK], 0);
+		return DBUS_HANDLER_RESULT_HANDLED;
+	}
+	if (dbus_message_is_method_call (message, GS_LISTENER_SERVICE, "Unlock"))
+	{
+		gs_listener_set_active (listener, FALSE);
 		return DBUS_HANDLER_RESULT_HANDLED;
 	}
 	if (dbus_message_is_method_call (message, GS_LISTENER_SERVICE, "Quit"))
