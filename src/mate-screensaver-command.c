@@ -39,6 +39,7 @@
 
 static gboolean do_quit       = FALSE;
 static gboolean do_lock       = FALSE;
+static gboolean do_unlock     = FALSE;
 static gboolean do_cycle      = FALSE;
 static gboolean do_activate   = FALSE;
 static gboolean do_deactivate = FALSE;
@@ -69,6 +70,10 @@ static GOptionEntry entries [] =
 	{
 		"lock", 'l', 0, G_OPTION_ARG_NONE, &do_lock,
 		N_("Tells the running screensaver process to lock the screen immediately"), NULL
+	},
+	{
+		"unlock", 'u', 0, G_OPTION_ARG_NONE, &do_unlock,
+		N_("Tells the running screensaver process to unlock the screen immediately"), NULL
 	},
 	{
 		"cycle", 'c', 0, G_OPTION_ARG_NONE, &do_cycle,
@@ -421,6 +426,11 @@ do_command (DBusConnection *connection)
 	if (do_lock)
 	{
 		reply = screensaver_send_message_void (connection, "Lock", FALSE);
+	}
+
+	if (do_unlock)
+	{
+		reply = screensaver_send_message_void (connection, "Unlock", FALSE);
 	}
 
 	if (do_cycle)
