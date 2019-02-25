@@ -3,13 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Daniel <danny3@tutanota.com>, 2018
+# sorinn <nemes.sorin@gmail.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-27 15:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"PO-Revision-Date: 2018-03-11 21:02+0000\n"
 "Last-Translator: sorinn <nemes.sorin@gmail.com>, 2018\n"
 "Language-Team: Romanian (https://www.transifex.com/mate/teams/13566/ro/)\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +105,7 @@ msgstr "_Deconectează"
 msgid "_Cancel"
 msgstr "_Renunță"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "_Deblocare"
 
@@ -422,41 +427,45 @@ msgstr "%s nu pare a fi o temă validă de protector ecran."
 msgid "Copying file: %u of %u"
 msgstr "Se copiază fișierul: %u din %u"
 
-#: ../src/mate-screensaver-command.c:59
+#: ../src/mate-screensaver-command.c:60
 msgid "Causes the screensaver to exit gracefully"
 msgstr "Determină protectorul ecran să se încheie normal"
 
-#: ../src/mate-screensaver-command.c:63
+#: ../src/mate-screensaver-command.c:64
 msgid "Query the state of the screensaver"
 msgstr "Interoghează starea protectorului ecran"
 
-#: ../src/mate-screensaver-command.c:67
+#: ../src/mate-screensaver-command.c:68
 msgid "Query the length of time the screensaver has been active"
 msgstr "Obține timpul de activitate al protectorului ecran"
 
-#: ../src/mate-screensaver-command.c:71
+#: ../src/mate-screensaver-command.c:72
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr ""
 "Transmite procesului protector ecran pornit o comandă de blocare imediată a "
 "ecranului"
 
-#: ../src/mate-screensaver-command.c:75
+#: ../src/mate-screensaver-command.c:76
+msgid "Tells the running screensaver process to unlock the screen immediately"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr "Dacă protectorul ecran este activ, atunci schimbă la alt demo grafic"
 
-#: ../src/mate-screensaver-command.c:79
+#: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
 msgstr "Pornește protectorul ecran (înnegrește ecranul)"
 
-#: ../src/mate-screensaver-command.c:83
+#: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr "Dacă protectorul ecran este activ, atunci deactivează-l"
 
-#: ../src/mate-screensaver-command.c:87
+#: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr "Păcălește protectorul ecran simulând activitate de utilizator"
 
-#: ../src/mate-screensaver-command.c:91
+#: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
@@ -464,48 +473,48 @@ msgstr ""
 "Inhibă activarea protectorul ecran. Comanda blochează când inhibarea este "
 "activă."
 
-#: ../src/mate-screensaver-command.c:95
+#: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
 msgstr "Aplicația care va inhiba protectorul ecran"
 
-#: ../src/mate-screensaver-command.c:99
+#: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
 msgstr "Motivul pentru inhibarea protectorul ecran"
 
-#: ../src/mate-screensaver-command.c:103 ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:58
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "Versiunea acestei aplicații"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr "Protectorul ecran este %s\n"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "active"
 msgstr "activ"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "inactive"
 msgstr "inactiv"
 
-#: ../src/mate-screensaver-command.c:368
+#: ../src/mate-screensaver-command.c:373
 #, c-format
 msgid "The screensaver is not inhibited\n"
 msgstr "Protectorul ecran nu este întrerupt de nimic\n"
 
-#: ../src/mate-screensaver-command.c:376
+#: ../src/mate-screensaver-command.c:381
 #, c-format
 msgid "The screensaver is being inhibited by:\n"
 msgstr "Protectorul ecran este întrerupt de:\n"
 
-#: ../src/mate-screensaver-command.c:411
+#: ../src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
 msgstr "Protectorul ecran a fost activ pentru %d secunde.\n"
 
-#: ../src/mate-screensaver-command.c:417
+#: ../src/mate-screensaver-command.c:422
 #, c-format
 msgid "The screensaver is not currently active.\n"
 msgstr "Protectorul ecran nu este activ în acest moment.\n"
@@ -726,15 +735,15 @@ msgstr "Deocamdată nu vă este permis accesul."
 msgid "No longer permitted to access the system."
 msgstr "Nu vă mai este permis accesul la sistem."
 
-#: ../src/gs-listener-dbus.c:2180
+#: ../src/gs-listener-dbus.c:2187
 msgid "failed to register with the message bus"
 msgstr "eșec la înregistrarea cu magistrala de mesaje"
 
-#: ../src/gs-listener-dbus.c:2191
+#: ../src/gs-listener-dbus.c:2198
 msgid "not connected to the message bus"
 msgstr "deconectat de la magistrala de mesaje"
 
-#: ../src/gs-listener-dbus.c:2201 ../src/gs-listener-dbus.c:2233
+#: ../src/gs-listener-dbus.c:2208 ../src/gs-listener-dbus.c:2240
 msgid "screensaver already running in this session"
 msgstr "protectorul ecran rulează deja în această sesiune"
 
@@ -752,19 +761,19 @@ msgstr "Timpul a expirat."
 msgid "You have the Caps Lock key on."
 msgstr "Caps Lock activat."
 
-#: ../src/gs-lock-plug.c:1656
+#: ../src/gs-lock-plug.c:1660
 msgid "S_witch User..."
 msgstr "S_chimbă utilizatorul..."
 
-#: ../src/gs-lock-plug.c:1665
+#: ../src/gs-lock-plug.c:1669
 msgid "Log _Out"
 msgstr "_Ieșire din sesiune"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1878
+#: ../src/gs-lock-plug.c:1882
 msgid "%U on %h"
 msgstr "%U pe %h"
 
-#: ../src/gs-lock-plug.c:1893
+#: ../src/gs-lock-plug.c:1897
 msgid "_Password:"
 msgstr "_Parolă:"

@@ -3,13 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Rockers <sumorock@hotmail.com>, 2018
+# Aefgh Threenine <aefgh3962@gmail.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-27 15:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"PO-Revision-Date: 2018-03-11 21:02+0000\n"
 "Last-Translator: Aefgh Threenine <aefgh3962@gmail.com>, 2018\n"
 "Language-Team: Thai (https://www.transifex.com/mate/teams/13566/th/)\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +105,7 @@ msgstr "_ออกจากระบบ"
 msgid "_Cancel"
 msgstr "_ยกเลิก"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "_ปลดล็อค"
 
@@ -419,88 +424,92 @@ msgstr "%s ดูเหมือนไม่ใช่ชุดโปรแกร
 msgid "Copying file: %u of %u"
 msgstr "กำลังคัดลอกแฟ้ม: %u จาก %u"
 
-#: ../src/mate-screensaver-command.c:59
+#: ../src/mate-screensaver-command.c:60
 msgid "Causes the screensaver to exit gracefully"
 msgstr "ทำให้โปรแกรมรักษาหน้าจอจบอย่างนุ่มนวล"
 
-#: ../src/mate-screensaver-command.c:63
+#: ../src/mate-screensaver-command.c:64
 msgid "Query the state of the screensaver"
 msgstr "สอบถามสถานะของโปรแกรมรักษาหน้าจอ"
 
-#: ../src/mate-screensaver-command.c:67
+#: ../src/mate-screensaver-command.c:68
 msgid "Query the length of time the screensaver has been active"
 msgstr "สอบถามระยะเวลาที่โปรแกรมรักษาหน้าจอได้ทำงานมา"
 
-#: ../src/mate-screensaver-command.c:71
+#: ../src/mate-screensaver-command.c:72
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr "บอกโพรเซสโปรแกรมรักษาหน้าจอที่กำลังทำงานอยู่ให้ล็อคหน้าจอทันที"
 
-#: ../src/mate-screensaver-command.c:75
+#: ../src/mate-screensaver-command.c:76
+msgid "Tells the running screensaver process to unlock the screen immediately"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr "ถ้าโปรแกรมรักษาหน้าจอกำลังวาดอยู่ ก็ให้สลับไปใช้ชุดโปรแกรมอื่นวาด"
 
-#: ../src/mate-screensaver-command.c:79
+#: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
 msgstr "ให้โปรแกรมรักษาหน้าจอเริ่มทำงาน (ล้างหน้าจอ)"
 
-#: ../src/mate-screensaver-command.c:83
+#: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr "ถ้าโปรแกรมรักษาหน้าจอกำลังวาดอยู่ ก็ให้หยุดวาด (เลิกล้างหน้าจอ)"
 
-#: ../src/mate-screensaver-command.c:87
+#: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr ""
 "รบเร้าโปรแกรมรักษาหน้าจอที่กำลังทำงานอยู่ เพื่อจำลองการเคลื่อนไหวของผู้ใช้"
 
-#: ../src/mate-screensaver-command.c:91
+#: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
 msgstr ""
 "ระงับไม่ให้เรียกโปรแกรมรักษาหน้าจอ คำสั่งจะหยุดรอในระหว่างที่มีการระงับ"
 
-#: ../src/mate-screensaver-command.c:95
+#: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
 msgstr "ชื่อโปรแกรมผู้เรียก ซึ่งระงับโปรแกรมรักษาหน้าจอ"
 
-#: ../src/mate-screensaver-command.c:99
+#: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
 msgstr "สาเหตุของการระงับโปรแกรมรักษาหน้าจอ"
 
-#: ../src/mate-screensaver-command.c:103 ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:58
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "รุ่นของโปรแกรมนี้"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr "โปรแกรมรักษาหน้าจอกำลัง%s\n"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "active"
 msgstr "ทำงาน"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "inactive"
 msgstr "หลับ"
 
-#: ../src/mate-screensaver-command.c:368
+#: ../src/mate-screensaver-command.c:373
 #, c-format
 msgid "The screensaver is not inhibited\n"
 msgstr "โปรแกรมรักษาหน้าจอไม่ได้ถูกระงับ\n"
 
-#: ../src/mate-screensaver-command.c:376
+#: ../src/mate-screensaver-command.c:381
 #, c-format
 msgid "The screensaver is being inhibited by:\n"
 msgstr "โปรแกรมรักษาหน้าจอกำลังถูกระงับโดย:\n"
 
-#: ../src/mate-screensaver-command.c:411
+#: ../src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
 msgstr "โปรแกรมรักษาหน้าจอทำงานมาแล้ว %d วินาที\n"
 
-#: ../src/mate-screensaver-command.c:417
+#: ../src/mate-screensaver-command.c:422
 #, c-format
 msgid "The screensaver is not currently active.\n"
 msgstr "โปรแกรมรักษาหน้าจอไม่ได้ทำงานอยู่\n"
@@ -714,15 +723,15 @@ msgstr "คุณไม่ได้รับอนุญาตให้ใช้
 msgid "No longer permitted to access the system."
 msgstr "คุณไม่ได้รับอนุญาตให้ใช้ระบบอีกต่อไป"
 
-#: ../src/gs-listener-dbus.c:2180
+#: ../src/gs-listener-dbus.c:2187
 msgid "failed to register with the message bus"
 msgstr "ลงทะเบียนกับบัสข้อความไม่สำเร็จ"
 
-#: ../src/gs-listener-dbus.c:2191
+#: ../src/gs-listener-dbus.c:2198
 msgid "not connected to the message bus"
 msgstr "ไม่ได้เชื่อมต่อกับบัสข้อความ"
 
-#: ../src/gs-listener-dbus.c:2201 ../src/gs-listener-dbus.c:2233
+#: ../src/gs-listener-dbus.c:2208 ../src/gs-listener-dbus.c:2240
 msgid "screensaver already running in this session"
 msgstr "โปรแกรมรักษาหน้าจอกำลังทำงานอยู่แล้วในวาระนี้"
 
@@ -740,19 +749,19 @@ msgstr "หมดเวลา"
 msgid "You have the Caps Lock key on."
 msgstr "ปุ่ม Caps Lock ถูกกดอยู่"
 
-#: ../src/gs-lock-plug.c:1656
+#: ../src/gs-lock-plug.c:1660
 msgid "S_witch User..."
 msgstr "_สลับผู้ใช้..."
 
-#: ../src/gs-lock-plug.c:1665
+#: ../src/gs-lock-plug.c:1669
 msgid "Log _Out"
 msgstr "_ออกจากระบบ"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1878
+#: ../src/gs-lock-plug.c:1882
 msgid "%U on %h"
 msgstr "%s ที่เครื่อง %s"
 
-#: ../src/gs-lock-plug.c:1893
+#: ../src/gs-lock-plug.c:1897
 msgid "_Password:"
 msgstr "รหัส_ผ่าน:"

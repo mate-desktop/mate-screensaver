@@ -3,13 +3,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# mauron, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Scoubidou <david.vantyghem@free.fr>, 2018
+# Tubuntu <tubuntu@testimonium.be>, 2018
+# Charles Monzat <c.monzat@laposte.net>, 2018
+# yoplait <yoplait@tememe.org>, 2018
+# Étienne Deparis <etienne@depar.is>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-27 15:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"PO-Revision-Date: 2018-03-11 21:02+0000\n"
 "Last-Translator: Étienne Deparis <etienne@depar.is>, 2018\n"
 "Language-Team: French (https://www.transifex.com/mate/teams/13566/fr/)\n"
 "MIME-Version: 1.0\n"
@@ -101,7 +110,7 @@ msgstr "_Déconnexion"
 msgid "_Cancel"
 msgstr "_Annuler"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "_Déverrouiller"
 
@@ -436,43 +445,47 @@ msgstr "%s ne semble pas être un thème d'économiseur d'écran valide."
 msgid "Copying file: %u of %u"
 msgstr "Copie du fichier : %u sur %u"
 
-#: ../src/mate-screensaver-command.c:59
+#: ../src/mate-screensaver-command.c:60
 msgid "Causes the screensaver to exit gracefully"
 msgstr "Demande à l'économiseur d'écran de quitter proprement"
 
-#: ../src/mate-screensaver-command.c:63
+#: ../src/mate-screensaver-command.c:64
 msgid "Query the state of the screensaver"
 msgstr "Indique l'état de l'économiseur d'écran"
 
-#: ../src/mate-screensaver-command.c:67
+#: ../src/mate-screensaver-command.c:68
 msgid "Query the length of time the screensaver has been active"
 msgstr "Indique la durée pendant laquelle l'économiseur d'écran a été actif"
 
-#: ../src/mate-screensaver-command.c:71
+#: ../src/mate-screensaver-command.c:72
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr ""
 "Demande à l'économiseur d'écran en cours de fonctionnement de verrouiller "
 "l'écran immédiatement"
 
-#: ../src/mate-screensaver-command.c:75
+#: ../src/mate-screensaver-command.c:76
+msgid "Tells the running screensaver process to unlock the screen immediately"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr "Change de démonstration graphique si l'économiseur d'écran est actif"
 
-#: ../src/mate-screensaver-command.c:79
+#: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
 msgstr "Démarre l'économiseur d'écran (efface l'écran)"
 
-#: ../src/mate-screensaver-command.c:83
+#: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr "Désactive l'économiseur d'écran s'il est actif (réaffiche l'écran)"
 
-#: ../src/mate-screensaver-command.c:87
+#: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr ""
 "Demande à l'économiseur d'écran en cours de fonctionnement de simuler "
 "l'activité d'un utilisateur"
 
-#: ../src/mate-screensaver-command.c:91
+#: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
@@ -480,48 +493,48 @@ msgstr ""
 "Empêche l'activation de l'économiseur d'écran. La commande se bloque lorsque"
 " la désactivation est active."
 
-#: ../src/mate-screensaver-command.c:95
+#: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
 msgstr "L'application demandant la désactivation de l'économiseur d'écran"
 
-#: ../src/mate-screensaver-command.c:99
+#: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
 msgstr "La raison de la désactivation de l'économiseur d'écran"
 
-#: ../src/mate-screensaver-command.c:103 ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:58
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "Version de cette application"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr "L'économiseur d'écran est %s\n"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "active"
 msgstr "actif"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "inactive"
 msgstr "inactif"
 
-#: ../src/mate-screensaver-command.c:368
+#: ../src/mate-screensaver-command.c:373
 #, c-format
 msgid "The screensaver is not inhibited\n"
 msgstr "L'économiseur d'écran n'est pas inhibé\n"
 
-#: ../src/mate-screensaver-command.c:376
+#: ../src/mate-screensaver-command.c:381
 #, c-format
 msgid "The screensaver is being inhibited by:\n"
 msgstr "L'économiseur d'écran est inhibé par :\n"
 
-#: ../src/mate-screensaver-command.c:411
+#: ../src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
 msgstr "L'économiseur d'écran a été actif pendant %d secondes.\n"
 
-#: ../src/mate-screensaver-command.c:417
+#: ../src/mate-screensaver-command.c:422
 #, c-format
 msgid "The screensaver is not currently active.\n"
 msgstr "L'économiseur d'écran n'est actuellement pas actif.\n"
@@ -574,12 +587,13 @@ msgstr ""
 msgid "You are required to change your password immediately (root enforced)"
 msgstr ""
 "Vous devez modifier votre mot de passe immédiatement (à la demande de "
-"l'administrateur)"
+"l'administratrice ou de l'administrateur)"
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
 msgstr ""
-"Votre compte a expiré ; veuillez contacter votre administrateur système"
+"Votre compte a expiré ; veuillez contacter votre administratrice ou "
+"administrateur système"
 
 #: ../src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
@@ -742,15 +756,15 @@ msgstr "Vous n'êtes pas autorisé à accéder au système à cette heure."
 msgid "No longer permitted to access the system."
 msgstr "Vous n'êtes plus autorisé à accéder au système."
 
-#: ../src/gs-listener-dbus.c:2180
+#: ../src/gs-listener-dbus.c:2187
 msgid "failed to register with the message bus"
 msgstr "l'enregistrement sur le bus de message a échoué"
 
-#: ../src/gs-listener-dbus.c:2191
+#: ../src/gs-listener-dbus.c:2198
 msgid "not connected to the message bus"
 msgstr "non connecté au bus de message"
 
-#: ../src/gs-listener-dbus.c:2201 ../src/gs-listener-dbus.c:2233
+#: ../src/gs-listener-dbus.c:2208 ../src/gs-listener-dbus.c:2240
 msgid "screensaver already running in this session"
 msgstr ""
 "l'économiseur d'écran est déjà en cours de fonctionnement pour cette session"
@@ -769,19 +783,19 @@ msgstr "Délai expiré."
 msgid "You have the Caps Lock key on."
 msgstr "La touche Verr. Maj. est enfoncée."
 
-#: ../src/gs-lock-plug.c:1656
+#: ../src/gs-lock-plug.c:1660
 msgid "S_witch User..."
 msgstr "Changer d'_utilisateur..."
 
-#: ../src/gs-lock-plug.c:1665
+#: ../src/gs-lock-plug.c:1669
 msgid "Log _Out"
 msgstr "Se _déconnecter"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1878
+#: ../src/gs-lock-plug.c:1882
 msgid "%U on %h"
 msgstr "%U sur %h"
 
-#: ../src/gs-lock-plug.c:1893
+#: ../src/gs-lock-plug.c:1897
 msgid "_Password:"
 msgstr "_Mot de passe :"

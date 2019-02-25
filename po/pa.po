@@ -3,13 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-27 15:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"PO-Revision-Date: 2018-03-11 21:02+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
 "Language-Team: Panjabi (Punjabi) (https://www.transifex.com/mate/teams/13566/pa/)\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +103,7 @@ msgstr "ਲਾਗਆਉਟ(_L)"
 msgid "_Cancel"
 msgstr "ਰੱਦ ਕਰੋ(_C)"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "ਤਾਲਾ ਖੋਲ੍ਹੋ(_U)"
 
@@ -417,39 +420,43 @@ msgstr "%s ਫਾਇਲ ਇੱਕ ਠੀਕ ਸਕਰੀਨ-ਸੇਵਰ ਥੀ�
 msgid "Copying file: %u of %u"
 msgstr "ਫਾਇਲ ਕਾਪੀ ਜਾਰੀ: %2$u ਵਿੱਚੋਂ %1$u"
 
-#: ../src/mate-screensaver-command.c:59
+#: ../src/mate-screensaver-command.c:60
 msgid "Causes the screensaver to exit gracefully"
 msgstr "ਸਕਰੀਨ-ਸੇਵਰ ਨੂੰ ਮਾਣ ਨਾਲ ਬੰਦ ਕਰਨ ਦਾ ਕਾਰਨ ਬਣਦਾ ਹੈ"
 
-#: ../src/mate-screensaver-command.c:63
+#: ../src/mate-screensaver-command.c:64
 msgid "Query the state of the screensaver"
 msgstr "ਸਕਰੀਨ-ਸੇਵਰ ਦੀ ਹਾਲਤ ਬਾਰੇ ਸਵਾਲ"
 
-#: ../src/mate-screensaver-command.c:67
+#: ../src/mate-screensaver-command.c:68
 msgid "Query the length of time the screensaver has been active"
 msgstr "ਸਕਰੀਨ-ਸੇਵਰ ਸਰਗਰਮ ਹੋਣ ਦੇ ਸਮੇਂ ਦੀ ਲੰਬਾਈ ਬਾਰੇ ਸਵਾਲ"
 
-#: ../src/mate-screensaver-command.c:71
+#: ../src/mate-screensaver-command.c:72
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr "ਚੱਲਦੇ ਸਕਰੀਨ-ਸੇਵਰ ਕਾਰਵਾਈ ਨੂੰ ਸਕਰੀਨ ਨੂੰ ਤੁਰੰਤ ਲਾਕ ਕਰਨ ਦਾ ਸੰਕੇਤ ਦਿਓ"
 
-#: ../src/mate-screensaver-command.c:75
+#: ../src/mate-screensaver-command.c:76
+msgid "Tells the running screensaver process to unlock the screen immediately"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr "ਜੇਕਰ ਸਕਰੀਨ-ਸੇਵਰ ਸਰਗਰਮ ਹੋਵੇ ਤਾਂ ਹੋਰ ਗਰਾਫਿਕਸ ਡੈਮੋ ਲਈ ਤਬਦੀਲ ਕਰੋ"
 
-#: ../src/mate-screensaver-command.c:79
+#: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
 msgstr "ਸਕਰੀਨ-ਸੇਵਰ ਚਾਲੂ ਕਰੋ (ਖਾਲੀ ਸਕਰੀਨ ਹੀ)"
 
-#: ../src/mate-screensaver-command.c:83
+#: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr "ਜੇਕਰ ਸਕਰੀਨ-ਸੇਵਰ ਸਰਗਰਮ ਹੋਵੇ ਤਾਂ ਉਸ ਨੂੰ ਨਾ-ਸਰਗਰਮ ਕਰੋ (ਨਾ-ਖਾਲੀ ਸਕਰੀਨ)"
 
-#: ../src/mate-screensaver-command.c:87
+#: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr "ਸਕਰੀਨ-ਸੇਵਰ ਨੂੰ ਯੂਜ਼ਰ ਕਾਰਵਾਈਆਂ ਮੁਤਾਬਕ ਨਕਲ ਕਰਨ ਲਈ ਤਿਆਰ ਕਰੋ"
 
-#: ../src/mate-screensaver-command.c:91
+#: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
@@ -457,48 +464,48 @@ msgstr ""
 "ਸਕਰੀਨ-ਸੇਵਰ ਨੂੰ ਸਰਗਰਮ ਹੋਣ ਤੋਂ ਰੋਕਿਆ ਗਿਆ।  ਕਮਾਂਡਾਂ ਉੱਤੇ ਰੋਕ ਹੈ, ਜਦੋਂ ਕਿ ਰੋਕਣਾ "
 "ਸਰਗਰਮ ਹੈ।"
 
-#: ../src/mate-screensaver-command.c:95
+#: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
 msgstr "ਸਕਰੀਨ-ਸੇਵਰ ਨੂੰ ਰੋਕਣ ਵਾਲੇ ਕਾਰਜ ਬਾਰੇ ਜਾਣਕਾਰੀ ਲਈ ਜਾ ਰਹੀ ਹੈ"
 
-#: ../src/mate-screensaver-command.c:99
+#: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
 msgstr "ਸਕਰੀਨ-ਸੇਵਰ ਰੋਕਣ ਲਈ ਕਾਰਨ"
 
-#: ../src/mate-screensaver-command.c:103 ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:58
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "ਇਹ ਐਪਲੀਕੇਸ਼ਨ ਦਾ ਵਰਜਨ"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr "ਸਕਰੀਨ-ਸੇਵਰ %s ਹੈ।\n"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "active"
 msgstr "ਸਰਗਰਮ"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "inactive"
 msgstr "ਨਾ-ਸਰਗਰਮ"
 
-#: ../src/mate-screensaver-command.c:368
+#: ../src/mate-screensaver-command.c:373
 #, c-format
 msgid "The screensaver is not inhibited\n"
 msgstr "ਸਕਰੀਨ-ਸੇਵਰ ਇੰਹੈਬਿਟ ਨਹੀਂ ਹੈ\n"
 
-#: ../src/mate-screensaver-command.c:376
+#: ../src/mate-screensaver-command.c:381
 #, c-format
 msgid "The screensaver is being inhibited by:\n"
 msgstr "ਸਕਰੀਨ-ਸੇਵਰ ਇੰਹੈਬਿਟ ਕੀਤਾ ਹੈ:\n"
 
-#: ../src/mate-screensaver-command.c:411
+#: ../src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
 msgstr "ਸਕਰੀਨ-ਸੇਵਰ %d ਸਕਿੰਟਾਂ ਤੋਂ ਸਰਗਰਮ ਹੈ।\n"
 
-#: ../src/mate-screensaver-command.c:417
+#: ../src/mate-screensaver-command.c:422
 #, c-format
 msgid "The screensaver is not currently active.\n"
 msgstr "ਸਕਰੀਨ-ਸੇਵਰ ਹਾਲੇ ਐਕਟਿਵ ਨਹੀਂ ਹੈ।\n"
@@ -716,15 +723,15 @@ msgstr "ਇਸ ਸਮੇਂ ਵਰਤੋਂ ਲਈ ਆਗਿਆ ਨਹੀਂ ਹ
 msgid "No longer permitted to access the system."
 msgstr "ਹੁਣ ਸਿਸਟਮ ਦੀ ਵਰਤੋਂ ਲਈ ਆਗਿਆ ਨਹੀਂ ਹੈ।"
 
-#: ../src/gs-listener-dbus.c:2180
+#: ../src/gs-listener-dbus.c:2187
 msgid "failed to register with the message bus"
 msgstr "ਸੁਨੇਹਾ ਬਸ ਨਾਲ ਰਜਿਸਟਰ ਹੋਣ ਲਈ ਅਸਫ਼ਲ"
 
-#: ../src/gs-listener-dbus.c:2191
+#: ../src/gs-listener-dbus.c:2198
 msgid "not connected to the message bus"
 msgstr "ਸੁਨੇਹਾ ਬਸ ਨਾਲ ਜੁੜਿਆ ਨਹੀਂ ਹੈ"
 
-#: ../src/gs-listener-dbus.c:2201 ../src/gs-listener-dbus.c:2233
+#: ../src/gs-listener-dbus.c:2208 ../src/gs-listener-dbus.c:2240
 msgid "screensaver already running in this session"
 msgstr "ਇਹ ਸ਼ੈਸ਼ਨ ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ ਸਕਰੀਨ-ਸੇਵਰ ਚੱਲ ਰਿਹਾ ਹੈ"
 
@@ -742,19 +749,19 @@ msgstr "ਟਾਈਮ ਖਤਮ ਹੋ ਗਿਆ ਹੈ।"
 msgid "You have the Caps Lock key on."
 msgstr "ਤੁਹਾਡਾ ਕੈਪਸ (Caps) ਬਟਨ ਦੱਬਿਆ ਹੈ।"
 
-#: ../src/gs-lock-plug.c:1656
+#: ../src/gs-lock-plug.c:1660
 msgid "S_witch User..."
 msgstr "ਯੂਜ਼ਰ ਬਦਲੋ(_w)..."
 
-#: ../src/gs-lock-plug.c:1665
+#: ../src/gs-lock-plug.c:1669
 msgid "Log _Out"
 msgstr "ਲਾਗ-ਆਉਟ(_O)"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1878
+#: ../src/gs-lock-plug.c:1882
 msgid "%U on %h"
 msgstr "%h ਉੱਤੇ %U"
 
-#: ../src/gs-lock-plug.c:1893
+#: ../src/gs-lock-plug.c:1897
 msgid "_Password:"
 msgstr "ਪਾਸਵਰਡ(_P):"

@@ -3,14 +3,18 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Benedikt Straub <benedikt-straub@web.de>, 2019
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-27 15:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
+"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"PO-Revision-Date: 2018-03-11 21:02+0000\n"
+"Last-Translator: Benedikt Straub <benedikt-straub@web.de>, 2019\n"
 "Language-Team: Low German (https://www.transifex.com/mate/teams/13566/nds/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -100,7 +104,7 @@ msgstr "_Avmellen"
 msgid "_Cancel"
 msgstr "_Avbreken"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "_Opmaken"
 
@@ -272,7 +276,7 @@ msgstr "Avmellensdialogfinsterthema"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:28
 msgid "Theme to use for the lock dialog"
-msgstr ""
+msgstr "Dat Thema för dat Sperrfenster"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:29
 msgid "Allow the session status message to be displayed"
@@ -290,19 +294,19 @@ msgstr "Een Döörloop vun Universumsbillers opwiesen"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
 msgid "Floating MATE"
-msgstr ""
+msgstr "Swevendes MATE"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
-msgstr ""
+msgstr "Dat MATE-Teken flüggt över de Billschirm"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:1
 msgid "Floating GNOME"
-msgstr ""
+msgstr "Swevendes GNOME"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the GNOME logo around the screen"
-msgstr ""
+msgstr "Dat GNOME-Teken flüggt över de Billschirm"
 
 #: ../savers/personal-slideshow.desktop.in.in.h:1
 msgid "Pictures folder"
@@ -424,95 +428,99 @@ msgstr "%s is vermoudlich keen valides Billschirmschonerthema."
 msgid "Copying file: %u of %u"
 msgstr "Kopiere Datei: %u vun %u"
 
-#: ../src/mate-screensaver-command.c:59
+#: ../src/mate-screensaver-command.c:60
 msgid "Causes the screensaver to exit gracefully"
 msgstr "Billschirmschoner scheun sluten"
 
-#: ../src/mate-screensaver-command.c:63
+#: ../src/mate-screensaver-command.c:64
 msgid "Query the state of the screensaver"
 msgstr "Op'n Tostand vun Billschirmschoner oppassen"
 
-#: ../src/mate-screensaver-command.c:67
+#: ../src/mate-screensaver-command.c:68
 msgid "Query the length of time the screensaver has been active"
 msgstr "De Tiet rutfinnen, de de Billschirmschoner nu schon an is"
 
-#: ../src/mate-screensaver-command.c:71
+#: ../src/mate-screensaver-command.c:72
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr ""
 "Vertellt de lööpenden Billschirmschoner, dat de Billschirm avslut werrn "
 "schall"
 
-#: ../src/mate-screensaver-command.c:75
+#: ../src/mate-screensaver-command.c:76
+msgid "Tells the running screensaver process to unlock the screen immediately"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr ""
 "Wenn de Billschirmschoner an is, schall to eene annere "
 "Grafikdemonstratschoon wesselt werrn"
 
-#: ../src/mate-screensaver-command.c:79
+#: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
 msgstr "Billschirmschoner anmaken (Blanker Billschirm)"
 
-#: ../src/mate-screensaver-command.c:83
+#: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr ""
 "Wenn de Billschirmschoner an is, denn schall dat utmakt werrn. (Denn is de "
 "Billschirm nich blank)"
 
-#: ../src/mate-screensaver-command.c:87
+#: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr ""
 "De Räkner schall so doon, as ob he aktiv is, dormit de Billschirmschoner "
 "nich angeiht."
 
-#: ../src/mate-screensaver-command.c:91
+#: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
 msgstr "De Billschirmschoner stoppen, ehe de losgeiht. "
 
-#: ../src/mate-screensaver-command.c:95
+#: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
 msgstr ""
 "Dat Programm, dat bi'n Utföhren vun Billschirmschoner datwüschen funkt"
 
-#: ../src/mate-screensaver-command.c:99
+#: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
 msgstr "De Grund, warum de Billschirmschoner stoppt werrn künn"
 
-#: ../src/mate-screensaver-command.c:103 ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:58
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "Verschoon vun düssem Programm"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr "De Billschirmschoner is %s\n"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "active"
 msgstr "Aktiv"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "inactive"
 msgstr "Nich aktiv"
 
-#: ../src/mate-screensaver-command.c:368
+#: ../src/mate-screensaver-command.c:373
 #, c-format
 msgid "The screensaver is not inhibited\n"
 msgstr "De Billschirmschoner is nich stoppt worrn\n"
 
-#: ../src/mate-screensaver-command.c:376
+#: ../src/mate-screensaver-command.c:381
 #, c-format
 msgid "The screensaver is being inhibited by:\n"
 msgstr "De Billschirmschoner is stoppt worrn bi:\n"
 
-#: ../src/mate-screensaver-command.c:411
+#: ../src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
 msgstr "De Billschirmschoner is nu aktiv siet %d Sekunnen.\n"
 
-#: ../src/mate-screensaver-command.c:417
+#: ../src/mate-screensaver-command.c:422
 #, c-format
 msgid "The screensaver is not currently active.\n"
 msgstr "De Billschirmschoner is grade nich aktiv.\n"
@@ -634,8 +642,8 @@ msgstr "Liek"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d Stunn"
+msgstr[1] "%d Stunnen"
 
 #: ../src/mate-screensaver-preferences.c:952
 #: ../src/mate-screensaver-preferences.c:961
@@ -648,15 +656,15 @@ msgstr[1] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d Menüüt"
+msgstr[1] "%d Menüten"
 
 #: ../src/mate-screensaver-preferences.c:955
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d Sekunn"
+msgstr[1] "%d Sekunnen"
 
 #. hour:minutes
 #. minutes:seconds
@@ -706,7 +714,7 @@ msgstr "Debugging code möglich maken"
 
 #: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screensaver and locker program"
-msgstr ""
+msgstr "Billschirmschoner un Ofslutprogramm starten"
 
 #: ../src/gs-auth-pam.c:413
 #, c-format
@@ -732,15 +740,15 @@ msgstr "Togang is just nich togelaten."
 msgid "No longer permitted to access the system."
 msgstr "Systemtogang is nich mehr togelaten."
 
-#: ../src/gs-listener-dbus.c:2180
+#: ../src/gs-listener-dbus.c:2187
 msgid "failed to register with the message bus"
 msgstr "Kunn nich bi'm Nahrichtenbus anmellen"
 
-#: ../src/gs-listener-dbus.c:2191
+#: ../src/gs-listener-dbus.c:2198
 msgid "not connected to the message bus"
 msgstr "Nich mit de Nahrichtenbus verbunnen"
 
-#: ../src/gs-listener-dbus.c:2201 ../src/gs-listener-dbus.c:2233
+#: ../src/gs-listener-dbus.c:2208 ../src/gs-listener-dbus.c:2240
 msgid "screensaver already running in this session"
 msgstr "Billschirmschoner lööpt allmal in düssem Törn"
 
@@ -748,7 +756,7 @@ msgstr "Billschirmschoner lööpt allmal in düssem Törn"
 #. GDateTime.html#g-date-time-format
 #: ../src/gs-lock-plug.c:303
 msgid "%A, %B %e"
-msgstr ""
+msgstr "%A, %e. %B"
 
 #: ../src/gs-lock-plug.c:405
 msgid "Time has expired."
@@ -758,19 +766,19 @@ msgstr "De Tiet is to Enn."
 msgid "You have the Caps Lock key on."
 msgstr "De CapsLock-Knopp is an."
 
-#: ../src/gs-lock-plug.c:1656
+#: ../src/gs-lock-plug.c:1660
 msgid "S_witch User..."
 msgstr "B_ruker wesseln"
 
-#: ../src/gs-lock-plug.c:1665
+#: ../src/gs-lock-plug.c:1669
 msgid "Log _Out"
 msgstr "Av _mellen"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1878
+#: ../src/gs-lock-plug.c:1882
 msgid "%U on %h"
 msgstr "%U on %h"
 
-#: ../src/gs-lock-plug.c:1893
+#: ../src/gs-lock-plug.c:1897
 msgid "_Password:"
 msgstr "_Passwoord:"

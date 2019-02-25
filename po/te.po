@@ -3,13 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-27 15:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"PO-Revision-Date: 2018-03-11 21:02+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
 "Language-Team: Telugu (https://www.transifex.com/mate/teams/13566/te/)\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +103,7 @@ msgstr "నిష్క్రమణ ద్వారం(_L)"
 msgid "_Cancel"
 msgstr "రద్దు(_C)"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "తెరచివేయు(_U)"
 
@@ -420,39 +423,43 @@ msgstr "%s విలువైన తెరకాపరి థీమ్‌లా�
 msgid "Copying file: %u of %u"
 msgstr "దస్త్రాన్ని నకలు చేస్తోంది :%u లో %u"
 
-#: ../src/mate-screensaver-command.c:59
+#: ../src/mate-screensaver-command.c:60
 msgid "Causes the screensaver to exit gracefully"
 msgstr "తెరకాపరిని అందంగా వెళ్లిపోయేట్టు చేస్తుంది"
 
-#: ../src/mate-screensaver-command.c:63
+#: ../src/mate-screensaver-command.c:64
 msgid "Query the state of the screensaver"
 msgstr "తెరకాపరి యొక్క స్థితిని ప్రశ్నించు"
 
-#: ../src/mate-screensaver-command.c:67
+#: ../src/mate-screensaver-command.c:68
 msgid "Query the length of time the screensaver has been active"
 msgstr "తెరకాపరి ఎంత సమయం వరకు  చురుకుగా ఉందో ప్రశ్నించు"
 
-#: ../src/mate-screensaver-command.c:71
+#: ../src/mate-screensaver-command.c:72
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr "నడిచే తెరకాపరి కార్యాన్ని వెంటనే తెరకు తాళం వేయమని చెబుతుంది"
 
-#: ../src/mate-screensaver-command.c:75
+#: ../src/mate-screensaver-command.c:76
+msgid "Tells the running screensaver process to unlock the screen immediately"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr "ఒక వేళ తెరకాపరి చురుకుగా ఉంటే వేరే గ్రాఫిక్స్    డెమోకి మరలు "
 
-#: ../src/mate-screensaver-command.c:79
+#: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
 msgstr "తెరకాపరిని చురుకుగా చేయు "
 
-#: ../src/mate-screensaver-command.c:83
+#: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr "తెరకాపరి చురుకుగా ఉంటే దానిని "
 
-#: ../src/mate-screensaver-command.c:87
+#: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr "నడుస్తున్న తెరకాపరిని వినియోగదారి క్రియాశీలతను అనుకరించుటకు పెట్టుము"
 
-#: ../src/mate-screensaver-command.c:91
+#: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
@@ -460,48 +467,48 @@ msgstr ""
 "తెరకాపరిని చురుకుగా ఉండకుండా నిషేధించు.ఆటంకము చురుకుగా ఉన్నప్పుడు ఆదేశం "
 "నిషేధిస్తుంది."
 
-#: ../src/mate-screensaver-command.c:95
+#: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
 msgstr "తెరకాపరిని ఆపడానికి పిలుస్తున్న కార్యక్షేత్రం"
 
-#: ../src/mate-screensaver-command.c:99
+#: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
 msgstr "తెరకాపరి ఆటంకానికి కారణం"
 
-#: ../src/mate-screensaver-command.c:103 ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:58
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "ఈ కార్యక్షేత్ర వివరణం"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr "తెరకాపరి %s\n"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "active"
 msgstr "చురుకుగా ఉంది"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "inactive"
 msgstr "చురుకుగాలేదు"
 
-#: ../src/mate-screensaver-command.c:368
+#: ../src/mate-screensaver-command.c:373
 #, c-format
 msgid "The screensaver is not inhibited\n"
 msgstr "తెరకాపరి ఆక్షేపితమైనది కాదు\n"
 
-#: ../src/mate-screensaver-command.c:376
+#: ../src/mate-screensaver-command.c:381
 #, c-format
 msgid "The screensaver is being inhibited by:\n"
 msgstr "తెరకాపరి దీనిచేత అక్షేపించబడుచున్నది:\n"
 
-#: ../src/mate-screensaver-command.c:411
+#: ../src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
 msgstr "తెరకాపరి %d క్షణాలు చురుకుగా ఉంది.\n"
 
-#: ../src/mate-screensaver-command.c:417
+#: ../src/mate-screensaver-command.c:422
 #, c-format
 msgid "The screensaver is not currently active.\n"
 msgstr "తెరకాపరి ప్రస్తుతం క్రియాశీలముగా లేదు.\n"
@@ -718,15 +725,15 @@ msgstr "ఈ సమయంలో సాంగత్యాన్ని పొంద
 msgid "No longer permitted to access the system."
 msgstr "ఇక ఏ మాత్రము వ్యవస్థను ప్రవేశించింటానికి అనుమతి  లేదు."
 
-#: ../src/gs-listener-dbus.c:2180
+#: ../src/gs-listener-dbus.c:2187
 msgid "failed to register with the message bus"
 msgstr "సందేశ వాహకముతో నమోదు చేయలేకపోయింది"
 
-#: ../src/gs-listener-dbus.c:2191
+#: ../src/gs-listener-dbus.c:2198
 msgid "not connected to the message bus"
 msgstr "సందేశ వాహకానికి బంధింపబడలేదు"
 
-#: ../src/gs-listener-dbus.c:2201 ../src/gs-listener-dbus.c:2233
+#: ../src/gs-listener-dbus.c:2208 ../src/gs-listener-dbus.c:2240
 msgid "screensaver already running in this session"
 msgstr "ఈ సమకూర్పులో తెరకాపరి మునుపే నడుస్తున్నది "
 
@@ -744,19 +751,19 @@ msgstr "సమయం ముగిసినది"
 msgid "You have the Caps Lock key on."
 msgstr "కాప్స్ లాక్ ఆన్లో ఉంది"
 
-#: ../src/gs-lock-plug.c:1656
+#: ../src/gs-lock-plug.c:1660
 msgid "S_witch User..."
 msgstr "వినియోగదారున్ని మార్చు(_w)..."
 
-#: ../src/gs-lock-plug.c:1665
+#: ../src/gs-lock-plug.c:1669
 msgid "Log _Out"
 msgstr "నిష్క్రమణద్వారం(_O)"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1878
+#: ../src/gs-lock-plug.c:1882
 msgid "%U on %h"
 msgstr "%U మీద %h"
 
-#: ../src/gs-lock-plug.c:1893
+#: ../src/gs-lock-plug.c:1897
 msgid "_Password:"
 msgstr "సంకేతపదం(_P):"

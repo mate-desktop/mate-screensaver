@@ -3,13 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Mohammadreza Abdollahzadeh <morealaz@gmail.com>, 2018
+# sir_hawell <arash.cordi@gmail.com>, 2018
+# Mahdi Pourghasem <mahdipourghasem@gmail.com>, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-27 15:51+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"PO-Revision-Date: 2018-03-11 21:02+0000\n"
 "Last-Translator: Mahdi Pourghasem <mahdipourghasem@gmail.com>, 2018\n"
 "Language-Team: Persian (https://www.transifex.com/mate/teams/13566/fa/)\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +106,7 @@ msgstr "_خروج از سیستم"
 msgid "_Cancel"
 msgstr "ان_صراف"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1676
+#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "_باز کردن قفل"
 
@@ -423,91 +429,95 @@ msgstr "به نظر نمی رسد %s تم محافظ صفحه نمایش معت�
 msgid "Copying file: %u of %u"
 msgstr "در حال نسخه‌برداری پروندهٔ: %Iu از %Iu"
 
-#: ../src/mate-screensaver-command.c:59
+#: ../src/mate-screensaver-command.c:60
 msgid "Causes the screensaver to exit gracefully"
 msgstr "باعث می‌شود محافظ صفحهٔ نمایش به آرامی خارج شود"
 
-#: ../src/mate-screensaver-command.c:63
+#: ../src/mate-screensaver-command.c:64
 msgid "Query the state of the screensaver"
 msgstr "پرس‌وجو از وضعیت محافظ صفحهٔ نمایش"
 
-#: ../src/mate-screensaver-command.c:67
+#: ../src/mate-screensaver-command.c:68
 msgid "Query the length of time the screensaver has been active"
 msgstr "پرس و جوی مدت زمانی که محافظ صفحه نمایش فعال بوده"
 
-#: ../src/mate-screensaver-command.c:71
+#: ../src/mate-screensaver-command.c:72
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr ""
 "به فراروند در حال اجرای محافظ صفحهٔ نمایش خبر می‌دهد که صفحهٔ نمایش را "
 "بلافاصله قفل کند"
 
-#: ../src/mate-screensaver-command.c:75
+#: ../src/mate-screensaver-command.c:76
+msgid "Tells the running screensaver process to unlock the screen immediately"
+msgstr ""
+
+#: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr "اگر محافظ صفحهٔ نمایش فعال است گرافیک در حال نمایش تعویض شود"
 
-#: ../src/mate-screensaver-command.c:79
+#: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
 msgstr "محافظ صفحهٔ نمایش روشن شود (صفحهٔ نمایش خالی شود)"
 
-#: ../src/mate-screensaver-command.c:83
+#: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr ""
 "اگر محافظ صفحهٔ نمایش فعال است، غیر فعال شود. (صفحهٔ نمایش از خالی بودن "
 "درآید)"
 
-#: ../src/mate-screensaver-command.c:87
+#: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr "انگولک کردن محافظ صفحه نمایش در حال اجرا برای شبیه سازی فعالیت کاربر"
 
-#: ../src/mate-screensaver-command.c:91
+#: ../src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
 msgstr ""
 "از فعال شدن محافظ صفحهٔ نمایش ممانعت شود. هنگام ممانعت، فرمان مسدود می‌شود."
 
-#: ../src/mate-screensaver-command.c:95
+#: ../src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
 msgstr "برنامه‌ای که از فعالیت محافظ صفحهٔ نمایش ممانعت می‌کند"
 
-#: ../src/mate-screensaver-command.c:99
+#: ../src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
 msgstr "دلیل ممانعت از اجرای محافظ صفحهٔ نمایش"
 
-#: ../src/mate-screensaver-command.c:103 ../src/mate-screensaver-dialog.c:58
+#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:58
 #: ../src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "نسخهٔ این برنامه"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr "محافظ صفحهٔ نمایش %s است\n"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "active"
 msgstr "فعال"
 
-#: ../src/mate-screensaver-command.c:352
+#: ../src/mate-screensaver-command.c:357
 msgid "inactive"
 msgstr "غیرفعال"
 
-#: ../src/mate-screensaver-command.c:368
+#: ../src/mate-screensaver-command.c:373
 #, c-format
 msgid "The screensaver is not inhibited\n"
 msgstr "محافظ صفحه نمایش مهار نشده است\n"
 
-#: ../src/mate-screensaver-command.c:376
+#: ../src/mate-screensaver-command.c:381
 #, c-format
 msgid "The screensaver is being inhibited by:\n"
 msgstr "محافظ صفحه نمایش مهار شده توسط:\n"
 
-#: ../src/mate-screensaver-command.c:411
+#: ../src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
 msgstr "مدت %d ثانیه است که محافظ صفحه نمایش فعال است.\n"
 
-#: ../src/mate-screensaver-command.c:417
+#: ../src/mate-screensaver-command.c:422
 #, c-format
 msgid "The screensaver is not currently active.\n"
 msgstr "محافظ صفحه نمایش در حال حاضر غیرفعال است.\n"
@@ -724,15 +734,15 @@ msgstr "اجازهٔ دسترسی این بار داده نشده است."
 msgid "No longer permitted to access the system."
 msgstr "دیگر اجازهٔ دسترسی به سیستم را ندارد."
 
-#: ../src/gs-listener-dbus.c:2180
+#: ../src/gs-listener-dbus.c:2187
 msgid "failed to register with the message bus"
 msgstr "ثبت نام در گذرگاه پیغام شکست خورد"
 
-#: ../src/gs-listener-dbus.c:2191
+#: ../src/gs-listener-dbus.c:2198
 msgid "not connected to the message bus"
 msgstr "به گذرگاه پیغام متصل نیست"
 
-#: ../src/gs-listener-dbus.c:2201 ../src/gs-listener-dbus.c:2233
+#: ../src/gs-listener-dbus.c:2208 ../src/gs-listener-dbus.c:2240
 msgid "screensaver already running in this session"
 msgstr "محافظ صفحهٔ نمایش از قبل در این نشست در حال اجرا است"
 
@@ -750,19 +760,19 @@ msgstr "زمان منقضی شد."
 msgid "You have the Caps Lock key on."
 msgstr "کلید قفل تبدیل روشن است."
 
-#: ../src/gs-lock-plug.c:1656
+#: ../src/gs-lock-plug.c:1660
 msgid "S_witch User..."
 msgstr "ت_عویض کاربر..."
 
-#: ../src/gs-lock-plug.c:1665
+#: ../src/gs-lock-plug.c:1669
 msgid "Log _Out"
 msgstr "_خروج از سیستم"
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1878
+#: ../src/gs-lock-plug.c:1882
 msgid "%U on %h"
 msgstr "%U روی %h"
 
-#: ../src/gs-lock-plug.c:1893
+#: ../src/gs-lock-plug.c:1897
 msgid "_Password:"
 msgstr "کلمه عبور"
