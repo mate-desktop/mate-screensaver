@@ -945,6 +945,32 @@ fi
 AC_SUBST(SYSTEMD_CFLAGS)
 AC_SUBST(SYSTEMD_LIBS)
 
+dnl ====================================================================
+dnl Check for elogind
+dnl
+dnl elogind is not officially supported, but since it's a subset of
+dnl systemd, it should work out of the box
+dnl ====================================================================
+
+AC_ARG_WITH(elogind,
+            AS_HELP_STRING([--with-elogind],
+            [Use libelogind instead of libsystemd-login]),
+            [with_elogind=$withval], [with_elogind=no])
+
+use_elogind=no
+if test "x$with_elogind" = "xyes"; then
+    PKG_CHECK_MODULES(LIBELOGIND,[libelogind], [use_elogind=yes], [use_elogind=no])
+
+    if test "x$use_elogind" = "xyes"; then
+        AC_DEFINE([WITH_ELOGIND], 1, [elogind support])
+        AC_DEFINE([WITH_SYSTEMD], 1, [Define to 1 to reduce ifdefs since elogind is a drop-in replacement for systemd])
+        AC_SUBST(LIBELOGIND_CFLAGS)
+        AC_SUBST(LIBELOGIND_LIBS)
+    fi
+fi
+AM_CONDITIONAL(WITH_ELOGIND, [test "x$use_elogind" = "xyes"])
+AC_SUBST(WITH_ELOGIND)
+
 dnl ---------------------------------------------------------------------------
 dnl libmatekbd
 dnl ---------------------------------------------------------------------------
@@ -1163,6 +1189,7 @@ echo "
         Screen locking enabled:   ${enable_locking}
         Show keyboard indicator:  ${with_kbd_layout_indicator}
         systemd support:          ${use_systemd}
+        elogind support:          ${use_elogind}
         ConsoleKit support:       ${use_console_kit}
         libnotify support:        ${have_libnotify}
         PAM support:              ${have_pam}

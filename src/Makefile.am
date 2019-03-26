@@ -32,6 +32,7 @@ AM_CPPFLAGS =							\
 	$(LIBMATEKBDUI_CFLAGS)					\
 	$(LIBNOTIFY_CFLAGS)					\
 	$(SYSTEMD_CFLAGS)					\
+	$(LIBELOGIND_CFLAGS)					\
 	$(NULL)
 
 bin_PROGRAMS = \
@@ -216,6 +217,7 @@ mate_screensaver_LDADD =		\
 	$(MATE_SCREENSAVER_LIBS)	\
 	$(SAVER_LIBS)			\
 	$(SYSTEMD_LIBS)			\
+	$(LIBELOGIND_LIBS)		\
 	$(NULL)
 
 mate_screensaver_LDFLAGS = -export-dynamic
