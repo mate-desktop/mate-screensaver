@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
+# Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Miguel Anxo Bouzada <mbouzada@gmail.com>, 2019
 # 
 #, fuzzy
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-10 14:27+0100\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
+"PO-Revision-Date: 2019-03-15 20:07+0000\n"
 "Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2019\n"
 "Language-Team: Galician (https://www.transifex.com/mate/teams/13566/gl/)\n"
 "MIME-Version: 1.0\n"
@@ -403,7 +403,7 @@ msgstr "«#rrggbb»"
 
 #: ../savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
-msgstr "Non dispoñer as imaxes ao chou desde a localización"
+msgstr "Non dispoñer as imaxes ao chou dende a localización"
 
 #: ../savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"
@@ -548,7 +548,7 @@ msgstr "Amosar o botón para saír da sesión"
 
 #: ../src/mate-screensaver-dialog.c:60
 msgid "Command to invoke from the logout button"
-msgstr "A orde que hai que invocar desde o botón para saír da sesión"
+msgstr "A orde que hai que invocar dende o botón para saír da sesión"
 
 #: ../src/mate-screensaver-dialog.c:61
 msgid "Show the switch user button"
