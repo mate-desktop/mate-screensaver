@@ -193,7 +193,7 @@ dnl ---------------------------------------------------------------------------
 #
 AC_DEFUN([AC_CHECK_X_HEADER], [
   ac_save_CPPFLAGS="$CPPFLAGS"
-  if test \! -z "$includedir" ; then 
+  if test \! -z "$includedir" ; then
     CPPFLAGS="$CPPFLAGS -I$includedir"
   fi
   CPPFLAGS="$CPPFLAGS $X_CFLAGS"
@@ -204,7 +204,7 @@ AC_DEFUN([AC_CHECK_X_HEADER], [
 #
 AC_DEFUN([AC_TRY_X_COMPILE], [
   ac_save_CPPFLAGS="$CPPFLAGS"
-  if test \! -z "$includedir" ; then 
+  if test \! -z "$includedir" ; then
     CPPFLAGS="$CPPFLAGS -I$includedir"
   fi
   CPPFLAGS="$CPPFLAGS $X_CFLAGS"
@@ -220,7 +220,7 @@ AC_DEFUN([AC_CHECK_X_LIB], [
   ac_save_LDFLAGS="$LDFLAGS"
 #  ac_save_LIBS="$LIBS"
 
-  if test \! -z "$includedir" ; then 
+  if test \! -z "$includedir" ; then
     CPPFLAGS="$CPPFLAGS -I$includedir"
   fi
   # note: $X_CFLAGS includes $x_includes
@@ -335,7 +335,7 @@ if test "$with_mit" = yes; then
 
     if test "$have_mit" = no; then
       # Looks like some versions of XFree86 (whichever version
-      # it is that comes with RedHat Linux 2.0 -- I can't find a version 
+      # it is that comes with RedHat Linux 2.0 -- I can't find a version
       # number) put this in Xss instead of Xext.
       AC_CHECK_X_LIB(Xss, XScreenSaverRegister,
                      [have_mit=yes; SAVER_LIBS="$SAVER_LIBS -lXss"],

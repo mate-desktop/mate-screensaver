@@ -955,7 +955,7 @@ time_to_string_text (long time)
 	secs = g_strdup_printf (ngettext ("%d second",
 	                                  "%d seconds", sec), sec);
 
-	inc_len = strlen (g_strdup_printf (_("%s %s"), 
+	inc_len = strlen (g_strdup_printf (_("%s %s"),
 	                  g_strdup_printf (ngettext ("%d hour",
 	                                             "%d hours", 1), 1),
 	                  g_strdup_printf (ngettext ("%d minute",
