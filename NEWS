@@ -1,5 +1,12 @@
 ### mate-screensaver 1.23.0
 
+  * tx: sync with transifex
+  * Remove trailing whitespaces
+  * Change url project's website
+  * [ci] Add cppcheck html report
+  * [ci] Enable Clang Static Analyzer
+  * Add ELOGIND support
+
 ### mate-screensaver 1.22.0
 
   * Translations update
