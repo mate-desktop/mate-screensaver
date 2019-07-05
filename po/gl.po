@@ -403,7 +403,7 @@ msgstr "«#rrggbb»"
 
 #: ../savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
-msgstr "Non dispoñer as imaxes ao chou desde a localización"
+msgstr "Non dispoñer as imaxes ao chou dende a localización"
 
 #: ../savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"
@@ -548,7 +548,7 @@ msgstr "Amosar o botón para saír da sesión"
 
 #: ../src/mate-screensaver-dialog.c:60
 msgid "Command to invoke from the logout button"
-msgstr "A orde que hai que invocar desde o botón para saír da sesión"
+msgstr "A orde que hai que invocar dende o botón para saír da sesión"
 
 #: ../src/mate-screensaver-dialog.c:61
 msgid "Show the switch user button"

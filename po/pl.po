@@ -10,7 +10,7 @@
 # Marcin Kralka <marcink96@gmail.com>, 2018
 # Artur Motyka <slashcraftpl@gmail.com>, 2018
 # Przemek P <ppjg@dami.pl>, 2018
-# pietrasagh <pietrasagh@gmail.com>, 2018
+# Piotr Kowalik <pietrasagh@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -19,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-10 14:27+0100\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: pietrasagh <pietrasagh@gmail.com>, 2018\n"
+"Last-Translator: Piotr Kowalik <pietrasagh@gmail.com>, 2019\n"
 "Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -459,6 +459,7 @@ msgstr "Powoduje natychmiastowe zablokowanie ekranu w uruchomionym wygaszaczu"
 #: ../src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
+"Karze procesowi działającego wygaszacza ekranu natychmiast odblokować ekran"
 
 #: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"

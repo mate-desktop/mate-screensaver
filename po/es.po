@@ -4,13 +4,14 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Adolfo Jayme-Barrientos, 2018
+# Fito JB, 2018
 # Artopal <artopal+transifex@fastmail.fm>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Lluís Tusquellas <lutusq@gmail.com>, 2018
 # Benjamin Perez Carrillo <benperezc@gmail.com>, 2018
 # ZenWalker <scow@riseup.net>, 2018
 # Joel Barrios <darkshram@gmail.com>, 2018
+# Toni Estévez <toni.estevez@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
@@ -19,7 +20,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-10 14:27+0100\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Joel Barrios <darkshram@gmail.com>, 2018\n"
+"Last-Translator: Toni Estévez <toni.estevez@gmail.com>, 2019\n"
 "Language-Team: Spanish (https://www.transifex.com/mate/teams/13566/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +35,7 @@ msgstr "Salvapantallas"
 
 #: ../data/mate-screensaver-preferences.desktop.in.h:2
 msgid "Set your screensaver preferences"
-msgstr "Configure su salvapantallas"
+msgstr "Configure el salvapantallas"
 
 #: ../data/mate-screensaver-preferences.ui.h:1
 msgid "Screensaver Preview"
@@ -54,7 +55,7 @@ msgstr "Gestión de _energía"
 
 #: ../data/mate-screensaver-preferences.ui.h:5
 msgid "_Preview"
-msgstr "_Previsualizar"
+msgstr "Vista _previa"
 
 #: ../data/mate-screensaver-preferences.ui.h:6
 msgid "_Screensaver theme:"
@@ -125,7 +126,8 @@ msgstr "Activar cuando esté inactivo"
 #: ../data/org.mate.screensaver.gschema.xml.in.h:2
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
-"Active esto para activar el salvapantallas cuando la sesión esté inactiva."
+"Active esta clave para activar el salvapantallas cuando la sesión esté "
+"inactiva."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:3
 msgid "Lock on activation"
@@ -134,7 +136,8 @@ msgstr "Bloquear al activar"
 #: ../data/org.mate.screensaver.gschema.xml.in.h:4
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
-"Active esto para bloquear la pantalla cuando se activa el salvapantallas."
+"Active esta clave para bloquear la pantalla cuando se activa el "
+"salvapantallas."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:5
 msgid "Screensaver theme selection mode"
@@ -150,7 +153,7 @@ msgid ""
 msgstr ""
 "El modo de selección usado por el salvapantallas. Puede ser \"blank-only\" "
 "para activar el salvapantallas sin usar ningún tema, \"single\" para activar"
-" el salvapantallas usando sólo un tema (especificado en la clave \"themes\" "
+" el salvapantallas usando solo un tema (especificado en la clave \"themes\" "
 "), y \"random\" para activar el salvapantallas usando un tema aleatorio."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:8
@@ -161,22 +164,21 @@ msgid ""
 "\"mode\" is \"random\"."
 msgstr ""
 "Esta clave especifica la lista de temas que usará el salvapantallas. Se "
-"ignora cuando la clave \"mode\" sea \"blank-only\", debería proporcionar el "
-"nombre del tema cuando \"mode\" es \"single\", y debería proporcionar una "
-"lista de temas cuando \"mode\" es \"random\"."
+"ignora cuando la clave «mode» es «blank-only», debe proporcionar el nombre "
+"del tema cuando «mode» es «single» y debe proporcionar una lista de temas "
+"cuando «mode» es «random»."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:9
 msgid "Time before power management baseline"
-msgstr "Tiempo antes del minimo de la gestión de energía"
+msgstr "Tiempo mínimo para activar la gestión de energía"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:10
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
 msgstr ""
-"El número de segundos de inactividad antes de dar la alerta a la gestión de "
-"energía. Esta clave se establece y mantiene por el agente de sesión de "
-"gestión de energía."
+"El número de segundos de inactividad antes de activar la gestión de energía."
+" Esta clave la configura el agente de gestión de energía de la sesión."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:11
 msgid "Time before theme change"
@@ -210,13 +212,13 @@ msgid ""
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
-"Establezca esto a TRUE para permitir embeber un teclado en la ventana al "
+"Active esta clave para permitir empotrar un teclado en la ventana al "
 "intentar desbloquear. La clave \"keyboard_command\" debe estar establecida "
-"con el comando apropiado."
+"con la orden apropiada."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:17
 msgid "Embedded keyboard command"
-msgstr "Comando de teclado empotrado"
+msgstr "Orden de teclado empotrado"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:18
 msgid ""
@@ -225,10 +227,10 @@ msgid ""
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
 msgstr ""
-"El comando que se ejecutará, si la clave \"embadded_keyboard_enabled\" está "
-"activada, para embeber un widget de teclado dentro de la ventana. Este "
-"comando debería implementar un interfaz XEMBED y sacar una ventana XID en la"
-" salida estándar."
+"La orden que se ejecutará, si la clave \"embadded_keyboard_enabled\" se ha "
+"activado, para empotrar una miniaplicación de teclado en la ventana. Esta "
+"orden debe implementar una interfaz del conector XEMBED y mostrar una "
+"ventana XID en la salida estándar."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:19
 msgid "Allow logout"
@@ -239,9 +241,9 @@ msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
 msgstr ""
-"Active esto para ofrecer una opción en el diálogo de desbloqueo para cerrar "
-"la sesión después de un intervalo de tiempo. El retardo se especifica en la "
-"clave \"logout_delay\"."
+"Active esta clave para ofrecer una opción en el diálogo de desbloqueo que "
+"permita el cierre de sesión después de un tiempo de espera. El tiempo de "
+"espera se especifica en la clave \"logout_delay\"."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:21
 msgid "Time before logout option"
@@ -255,11 +257,11 @@ msgid ""
 msgstr ""
 "El número de minutos después de la activación del salvapantallas y antes de "
 "que se muestre la opción de cerrar sesión en el diálogo de desbloqueo. Esta "
-"clave tiene efecto sólo si la clave \"logout_enable\" está activada."
+"clave solo tiene efecto si la clave \"logout_enable\" se ha activado."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:23
 msgid "Logout command"
-msgstr "Comando de cierre de sesión"
+msgstr "Orden de cierre de sesión"
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:24
 msgid ""
@@ -267,10 +269,10 @@ msgid ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 msgstr ""
-"El comando que invocar cuando se pulsa el botón de cierre de sesión. Este "
-"comando simplemente debe cerrar la sesión del usuario sin ninguna "
-"interacción. Esta clave tiene efecto sólo si la clave \"logout_enable\" está"
-" activada."
+"La orden que invocar cuando se hace clic en el botón de cierre de sesión. "
+"Esta orden simplemente debe cerrar sesión del usuario sin ninguna "
+"interacción. Esta clave solo tiene efecto si se ha activado la clave "
+"«logout_enable»."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:25
 msgid "Allow user switching"
@@ -281,8 +283,8 @@ msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
-"Active esto para ofrecer una opción en el diálogo de desbloqueo para cambiar"
-" a una cuenta de usuario diferente."
+"Active esta clave para ofrecer una opción en el diálogo de desbloqueo para "
+"cambiar a una cuenta de usuario diferente."
 
 #: ../data/org.mate.screensaver.gschema.xml.in.h:27
 msgid "Theme for lock dialog"
@@ -337,12 +339,12 @@ msgstr "Cuadrados pop art"
 
 #: ../savers/popsquares.desktop.in.in.h:2
 msgid "A pop-art-ish grid of pulsing colors."
-msgstr "Esto dibuja una rejilla de cuadros pop-art de colores pulsantes."
+msgstr "Una rejilla de estilo pop-art de colores pulsantes."
 
 #: ../savers/popsquares.c:49 ../savers/floaters.c:1191
 #, c-format
 msgid "%s. See --help for usage information.\n"
-msgstr "%s. Vea --help para la información de uso.\n"
+msgstr "%s. Consulte --help para la información de uso.\n"
 
 #: ../savers/floaters.c:88
 msgid "Show paths that images follow"
@@ -385,11 +387,12 @@ msgstr "imagen - las imágenes flotan alrededor de la pantalla"
 #: ../savers/floaters.c:1200
 #, c-format
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "Debe especificar una imagen. Vea --help para la información de uso.\n"
+msgstr ""
+"Debe especificar una imagen. Consulte --help para la información de uso.\n"
 
 #: ../savers/slideshow.c:55
 msgid "Location to get images from"
-msgstr "Lugar del que obtener las imágenes"
+msgstr "Ubicación para obtener las imágenes"
 
 #: ../savers/slideshow.c:55
 msgid "PATH"
@@ -429,12 +432,12 @@ msgstr "Copiando temas"
 
 #: ../src/copy-theme-dialog.c:302
 msgid "Invalid screensaver theme"
-msgstr "Tema del salvapantallas inválido"
+msgstr "Tema del salvapantallas no válido"
 
 #: ../src/copy-theme-dialog.c:305
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
-msgstr "%s no parece ser un tema válido del salvapantallas."
+msgstr "%s no parece un tema válido del salvapantallas."
 
 #: ../src/copy-theme-dialog.c:485
 #, c-format
@@ -462,10 +465,12 @@ msgstr ""
 #: ../src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
+"Indica el proceso del protector de pantalla en ejecución que desbloquee la "
+"pantalla inmediatamente"
 
 #: ../src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
-msgstr "Si el salvapantallas está activo, cambiar a otra demo gráfica"
+msgstr "Si el salvapantallas está activo, cambiar a otra demostración gráfica"
 
 #: ../src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
@@ -474,8 +479,7 @@ msgstr "Activar el salvapantallas (ennegrecer la pantalla)"
 #: ../src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr ""
-"Si el salvapantallas está activo entonces lo desactiva (desenegrece la "
-"pantalla)"
+"Si el salvapantallas está activo,  lo desactiva (desenegrece la pantalla)"
 
 #: ../src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
@@ -584,16 +588,16 @@ msgstr "Tiene que cambiar la contraseña inmediatamente (la contraseña caducó)
 #: ../src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (root enforced)"
 msgstr ""
-"Tiene que cambiar la contraseña inmediatamente (forzado por el "
-"administrador)"
+"Tiene que cambiar la contraseña inmediatamente (forzado por el superusuario)"
 
 #: ../src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Su cuenta ha caducado. Contacte con su administrador de sistemas"
+msgstr ""
+"Su cuenta ha caducado. Póngase en contacto con el administrador del sistema"
 
 #: ../src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
-msgstr "No introdujo ninguna contraseña"
+msgstr "No se ha proporcionado ninguna contraseña"
 
 #: ../src/mate-screensaver-dialog.c:174
 msgid "Password unchanged"
@@ -605,7 +609,7 @@ msgstr "No se puede obtener el nombre de usuario"
 
 #: ../src/mate-screensaver-dialog.c:176
 msgid "Retype new UNIX password:"
-msgstr "Vuelva a teclear la contraseña de UNIX nueva:"
+msgstr "Vuelva a escribir la contraseña de UNIX nueva:"
 
 #: ../src/mate-screensaver-dialog.c:177
 msgid "Enter new UNIX password:"
@@ -617,7 +621,7 @@ msgstr "Contraseña UNIX (actual):"
 
 #: ../src/mate-screensaver-dialog.c:179
 msgid "Error while changing NIS password."
-msgstr "Error al cambiar la contraseña NIS."
+msgstr "Se ha producido un error al cambiar la contraseña NIS."
 
 #: ../src/mate-screensaver-dialog.c:180
 msgid "You must choose a longer password"
@@ -712,7 +716,7 @@ msgstr "Nunca"
 
 #: ../src/mate-screensaver-preferences.c:1559
 msgid "Could not load the main interface"
-msgstr "No se pudo cargar el interfaz principal"
+msgstr "No se ha podido cargar la interfaz principal"
 
 #: ../src/mate-screensaver-preferences.c:1561
 msgid "Please make sure that the screensaver is properly installed"
@@ -720,7 +724,7 @@ msgstr "Asegúrese de que el salvapantallas está instalado apropiadamente"
 
 #: ../src/mate-screensaver.c:56
 msgid "Don't become a daemon"
-msgstr "No convertirse en un demonio"
+msgstr "No convertirse en un servicio"
 
 #: ../src/mate-screensaver.c:57
 msgid "Enable debugging code"
@@ -754,7 +758,7 @@ msgstr "Ya no se le permite acceder en adelante a este sistema."
 
 #: ../src/gs-listener-dbus.c:2187
 msgid "failed to register with the message bus"
-msgstr "falló al registrarse con el bus del mensaje"
+msgstr "no se ha podido registrarse con el bus del mensaje"
 
 #: ../src/gs-listener-dbus.c:2198
 msgid "not connected to the message bus"
@@ -780,7 +784,7 @@ msgstr "Tiene la tecla «Bloq. Mayúsculas» pulsada."
 
 #: ../src/gs-lock-plug.c:1660
 msgid "S_witch User..."
-msgstr "_Cambiar usuario…"
+msgstr "_Cambiar de usuario…"
 
 #: ../src/gs-lock-plug.c:1669
 msgid "Log _Out"
