@@ -414,23 +414,6 @@ elif test "$with_xf86gamma" != no; then
 fi
 
 dnl ---------------------------------------------------------------------------
-dnl - Check for XF86MiscSetGrabKeysState (but only bother if we are already
-dnl - using other XF86 stuff.)
-dnl ---------------------------------------------------------------------------
-
-
-have_xf86miscsetgrabkeysstate=no
-if test "$have_xf86gamma" = yes -o "$have_xf86vmode" = yes; then
-  AC_CHECK_X_LIB(Xxf86misc, XF86MiscSetGrabKeysState,
-                [have_xf86miscsetgrabkeysstate=yes],
-                [true], -lXext -lX11)
-  if test "$have_xf86miscsetgrabkeysstate" = yes ; then
-    SAVER_LIBS="$SAVER_LIBS -lXxf86misc"
-    AC_DEFINE(HAVE_XF86MISCSETGRABKEYSSTATE, , [Define this if you have the XF86MiscSetGrabKeysState function])
-  fi
-fi
-
-dnl ---------------------------------------------------------------------------
 dnl - The --enable-locking option
 dnl ---------------------------------------------------------------------------
 
