@@ -29,10 +29,6 @@
 #include <gdk/gdkx.h>
 #include <gtk/gtk.h>
 
-#ifdef HAVE_XF86MISCSETGRABKEYSSTATE
-# include <X11/extensions/xf86misc.h>
-#endif /* HAVE_XF86MISCSETGRABKEYSSTATE */
-
 #include "gs-window.h"
 #include "gs-grab.h"
 #include "gs-debug.h"
@@ -83,75 +79,11 @@ grab_string (int status)
 	}
 }
 
-#ifdef HAVE_XF86MISCSETGRABKEYSSTATE
-/* This function enables and disables the Ctrl-Alt-KP_star and
-   Ctrl-Alt-KP_slash hot-keys, which (in XFree86 4.2) break any
-   grabs and/or kill the grabbing client.  That would effectively
-   unlock the screen, so we don't like that.
-
-   The Ctrl-Alt-KP_star and Ctrl-Alt-KP_slash hot-keys only exist
-   if AllowDeactivateGrabs and/or AllowClosedownGrabs are turned on
-   in XF86Config.  I believe they are disabled by default.
-
-   This does not affect any other keys (specifically Ctrl-Alt-BS or
-   Ctrl-Alt-F1) but I wish it did.  Maybe it will someday.
- */
-static void
-xorg_lock_smasher_set_active (GSGrab  *grab,
-                              gboolean active)
-{
-	int status, event, error;
-	GdkDisplay *display;
-
-	display = gdk_display_get_default ();
-
-	if (!XF86MiscQueryExtension (GDK_DISPLAY_XDISPLAY (display), &event, &error))
-	{
-		gs_debug ("No XFree86-Misc extension present");
-		return;
-	}
-
-	if (active)
-	{
-		gs_debug ("Enabling the x.org grab smasher");
-	}
-	else
-	{
-		gs_debug ("Disabling the x.org grab smasher");
-	}
-
-	gdk_x11_display_error_trap_push (display);
-
-	status = XF86MiscSetGrabKeysState (GDK_DISPLAY_XDISPLAY (display), active);
-
-	gdk_display_sync (display);
-	error = gdk_x11_display_error_trap_pop (display);
-
-	if (active && status == MiscExtGrabStateAlready)
-	{
-		/* shut up, consider this success */
-		status = MiscExtGrabStateSuccess;
-	}
-
-        if (error == Success) {
-                gs_debug ("XF86MiscSetGrabKeysState(%s) returned %s\n",
-                          active ? "on" : "off",
-                          (status == MiscExtGrabStateSuccess ? "MiscExtGrabStateSuccess" :
-                           status == MiscExtGrabStateLocked  ? "MiscExtGrabStateLocked"  :
-                           status == MiscExtGrabStateAlready ? "MiscExtGrabStateAlready" :
-                           "unknown value"));
-        } else {
-                gs_debug ("XF86MiscSetGrabKeysState(%s) failed with error code %d\n",
-                          active ? "on" : "off", error);
-        }
-}
-#else
 static void
 xorg_lock_smasher_set_active (GSGrab  *grab,
                               gboolean active)
 {
 }
-#endif /* HAVE_XF86MISCSETGRABKEYSSTATE */
 
 static void
 prepare_window_grab_cb (GdkSeat   *seat,
