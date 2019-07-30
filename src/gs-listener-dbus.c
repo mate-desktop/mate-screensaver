@@ -96,7 +96,8 @@ struct GSListenerPrivate
 	char           *session_id;
 
 #ifdef WITH_SYSTEMD
-	gboolean have_systemd;
+	gboolean        have_systemd;
+	gint            logind_inhibit_lock;
 #endif
 
 	guint32         ck_throttle_cookie;
@@ -122,7 +123,8 @@ enum
     ACTIVE_CHANGED,
     THROTTLE_CHANGED,
     SHOW_MESSAGE,
-    LAST_SIGNAL
+    PREPARE_FOR_SLEEP,
+    LAST_SIGNAL,
 };
 
 enum
@@ -1619,6 +1621,66 @@ failure:
 	gs_debug ("Failed to decode PropertiesChanged message.");
 	return FALSE;
 }
+
+static gint
+take_logind_inhibit_lock (DBusConnection *connection)
+{
+	DBusMessage    *message;
+	DBusMessage    *reply;
+	DBusError       error;
+	DBusMessageIter reply_iter;
+	gint            fd;
+
+	const char* what = "sleep";
+	const char* who  = g_get_user_name ();
+	const char* why  = "Lock screen before sleep";
+	const char* mode = "delay";
+
+	g_return_val_if_fail (connection != NULL, FALSE);
+
+	dbus_error_init (&error);
+
+	message = dbus_message_new_method_call (SYSTEMD_LOGIND_SERVICE,
+	                                        SYSTEMD_LOGIND_PATH,
+	                                        SYSTEMD_LOGIND_INTERFACE,
+	                                        "Inhibit");
+	if (message == NULL)
+	{
+		gs_debug ("Couldn't allocate the dbus message");
+		return 0;
+	}
+
+	if (dbus_message_append_args (message,
+	                              DBUS_TYPE_STRING, &what,
+	                              DBUS_TYPE_STRING, &who,
+	                              DBUS_TYPE_STRING, &why,
+	                              DBUS_TYPE_STRING, &mode,
+	                              DBUS_TYPE_INVALID) == FALSE)
+	{
+		gs_debug ("Couldn't add args to the dbus message");
+		return 0;
+	}
+
+	reply = dbus_connection_send_with_reply_and_block (connection, message,
+	                                                  -1, &error);
+	dbus_message_unref (message);
+
+	if (dbus_error_is_set (&error))
+	{
+		gs_debug ("%s raised:\n %s\n\n", error.name, error.message);
+		dbus_error_free (&error);
+		return 0;
+	}
+
+	dbus_message_iter_init (reply, &reply_iter);
+	dbus_message_iter_get_basic (&reply_iter, &fd);
+
+	dbus_message_unref (reply);
+
+	gs_debug ("System inhibitor fd is %d\n", fd);
+
+	return fd;
+}
 #endif
 
 static DBusHandlerResult
@@ -1655,6 +1717,28 @@ listener_dbus_handle_system_message (DBusConnection *connection,
 				gs_debug ("systemd requested session lock");
 				g_signal_emit (listener, signals [LOCK], 0);
 			}
+
+			return DBUS_HANDLER_RESULT_HANDLED;
+		} else if (dbus_message_is_signal (message, SYSTEMD_LOGIND_INTERFACE, "PrepareForSleep")) {
+			gboolean  active = 0;
+			DBusError error;
+
+			dbus_error_init (&error);
+			dbus_message_get_args (message, &error, DBUS_TYPE_BOOLEAN, &active, DBUS_TYPE_INVALID);
+			if (active) {
+				gs_debug ("Logind wanted to sleep");
+				g_signal_emit (listener, signals [PREPARE_FOR_SLEEP], 0, active);
+				if (listener->priv->logind_inhibit_lock) {
+					gs_debug ("Releasing inihibitor lock");
+					close (listener->priv->logind_inhibit_lock);
+					listener->priv->logind_inhibit_lock = 0;
+				}
+			} else {
+				gs_debug ("Logind resumed from sleep");
+				listener->priv->logind_inhibit_lock = take_logind_inhibit_lock (listener->priv->system_connection);
+				g_signal_emit (listener, signals [PREPARE_FOR_SLEEP], 0, active);
+			}
+			gs_debug ("Logind PrepareForSleepHandled");
 
 			return DBUS_HANDLER_RESULT_HANDLED;
 		} else if (dbus_message_is_signal (message, DBUS_INTERFACE_PROPERTIES, "PropertiesChanged")) {
@@ -2130,6 +2214,17 @@ gs_listener_class_init (GSListenerClass *klass)
 	                  G_TYPE_STRING,
 	                  G_TYPE_STRING,
 	                  G_TYPE_STRING);
+	signals [PREPARE_FOR_SLEEP] =
+	    g_signal_new ("prepare-for-sleep",
+	                  G_TYPE_FROM_CLASS (object_class),
+	                  G_SIGNAL_RUN_LAST,
+	                  G_STRUCT_OFFSET (GSListenerClass, prepare_for_sleep),
+	                  NULL,
+	                  NULL,
+	                  g_cclosure_marshal_VOID__BOOLEAN,
+	                  G_TYPE_NONE,
+	                  1,
+	                  G_TYPE_BOOLEAN);
 
 	g_object_class_install_property (object_class,
 	                                 PROP_ACTIVE,
@@ -2272,6 +2367,13 @@ gs_listener_acquire (GSListener *listener,
 					    ",interface='"SYSTEMD_LOGIND_SESSION_INTERFACE"'"
 					    ",member='Lock'",
 					    NULL);
+			dbus_bus_add_match (listener->priv->system_connection,
+					    "type='signal'"
+					    ",sender='"SYSTEMD_LOGIND_SERVICE"'"
+					    ",interface='"SYSTEMD_LOGIND_INTERFACE"'"
+					    ",member='PrepareForSleep'",
+					    NULL);
+			listener->priv->logind_inhibit_lock = take_logind_inhibit_lock (listener->priv->system_connection);
 			dbus_bus_add_match (listener->priv->system_connection,
 					    "type='signal'"
 					    ",sender='"SYSTEMD_LOGIND_SERVICE"'"
