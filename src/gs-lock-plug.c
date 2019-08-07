@@ -2008,7 +2008,11 @@ load_theme (GSLockPlug *plug)
 	g_free (filename);
 	if (g_file_test (css, G_FILE_TEST_IS_REGULAR))
 	{
-		GtkCssProvider *style_provider = gtk_css_provider_get_default ();
+		static GtkCssProvider *style_provider = NULL;
+
+		if (style_provider == NULL)
+			style_provider = gtk_css_provider_new ();
+
 		gtk_css_provider_load_from_path (style_provider, css, NULL);
 	}
 	g_free (css);
