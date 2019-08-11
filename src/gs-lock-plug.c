@@ -2003,7 +2003,6 @@ load_theme (GSLockPlug *plug)
 
 	filename = g_strdup_printf ("lock-dialog-%s.css", theme);
 	g_free (theme);
-
 	css = g_build_filename (GTKBUILDERDIR, filename, NULL);
 	g_free (filename);
 	if (g_file_test (css, G_FILE_TEST_IS_REGULAR))
@@ -2011,7 +2010,13 @@ load_theme (GSLockPlug *plug)
 		static GtkCssProvider *style_provider = NULL;
 
 		if (style_provider == NULL)
+		{
 			style_provider = gtk_css_provider_new ();
+
+			gtk_style_context_add_provider_for_screen (gdk_screen_get_default(),
+			                                           GTK_STYLE_PROVIDER (style_provider),
+			                                           GTK_STYLE_PROVIDER_PRIORITY_USER);
+		}
 
 		gtk_css_provider_load_from_path (style_provider, css, NULL);
 	}
