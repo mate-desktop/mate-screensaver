@@ -47,8 +47,6 @@
 #include "gs-job.h"
 #include "gs-prefs.h" /* for GS_MODE enum */
 
-#define GTK_BUILDER_FILE "mate-screensaver-preferences.ui"
-
 #define LOCKDOWN_SETTINGS_SCHEMA "org.mate.lockdown"
 #define KEY_LOCK_DISABLE "disable-lock-screen"
 
@@ -1534,21 +1532,18 @@ init_capplet (void)
 	GtkWidget *fullscreen_preview_previous;
 	GtkWidget *fullscreen_preview_next;
 	GtkWidget *fullscreen_preview_close;
-	char      *gtk_builder_file;
 	gdouble    activate_delay;
 	gboolean   enabled;
 	gboolean   is_writable;
 	GError    *error=NULL;
 	gint       mode;
 
-	gtk_builder_file = g_build_filename (GTKBUILDERDIR, GTK_BUILDER_FILE, NULL);
 	builder = gtk_builder_new();
-	if (!gtk_builder_add_from_file(builder, gtk_builder_file, &error))
+	if (!gtk_builder_add_from_resource (builder, "/org/mate/screensaver/preferences.ui", &error))
 	{
-		g_warning("Couldn't load builder file: %s", error->message);
+		g_warning("Couldn't load builder resource: %s", error->message);
 		g_error_free(error);
 	}
-	g_free (gtk_builder_file);
 
 	if (builder == NULL)
 	{

@@ -30,7 +30,6 @@ menu_DATA =					\
 
 gtkbuilderdir = $(pkgdatadir)
 gtkbuilder_DATA = 					\
-	mate-screensaver-preferences.ui	\
 	lock-dialog-default.ui		\
 	$(NULL)
 
@@ -54,7 +53,9 @@ EXTRA_DIST = 				\
 	$(man_MANS)			\
 	mate-screensaver		\
 	mate-screensaver.pc.in		\
-	org.mate.ScreenSaver.service.in\
+	mate-screensaver-preferences.ui \
+	org.mate.screensaver.gresource.xml \
+	org.mate.ScreenSaver.service.in \
 	xscreensaver-config.xsl		\
 	migrate-xscreensaver-config.sh	\
 	$(NULL)
