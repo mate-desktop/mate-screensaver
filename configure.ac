@@ -99,6 +99,21 @@ SAVER_LIBS="$ALL_X_LIBS"
 
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
+# GLIB_COMPILE_RESOURCES
+
+AC_ARG_VAR([GLIB_COMPILE_RESOURCES],[glib-compile-resources bin])
+AC_PATH_PROG([GLIB_COMPILE_RESOURCES],[glib-compile-resources],[])
+if test -z "$GLIB_COMPILE_RESOURCES"; then
+  AC_MSG_ERROR([glib-compile-resources not found])
+fi
+
+# XMLLINT
+
+AC_ARG_VAR([XMLLINT],[xmllint bin])
+AC_PATH_PROG([XMLLINT],[xmllint],[])
+if test -z "$XMLLINT"; then
+  AC_MSG_ERROR([xmllint not found])
+fi
 
 MATE_COMPILE_WARNINGS(yes)
 
