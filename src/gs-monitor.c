@@ -280,6 +280,17 @@ static void listener_simulate_user_activity_cb(GSListener* listener, GSMonitor* 
 	gs_monitor_simulate_user_activity(monitor);
 }
 
+static void listener_prepare_for_sleep_cb(GSListener* listener, gboolean prepare, GSMonitor* monitor)
+{
+	gboolean locked;
+
+	gs_manager_get_lock_active(monitor->priv->manager, &locked);
+	if (locked) {
+		/* show unlock dialog */
+		gs_manager_show_message(monitor->priv->manager, NULL, NULL, NULL);
+	}
+}
+
 static void _gs_monitor_update_from_prefs(GSMonitor* monitor, GSPrefs* prefs)
 {
 	gboolean idle_detection_enabled;
@@ -347,6 +358,7 @@ static void disconnect_listener_signals(GSMonitor* monitor)
 	g_signal_handlers_disconnect_by_func(monitor->priv->listener, listener_throttle_changed_cb, monitor);
 	g_signal_handlers_disconnect_by_func(monitor->priv->listener, listener_simulate_user_activity_cb, monitor);
 	g_signal_handlers_disconnect_by_func(monitor->priv->listener, listener_show_message_cb, monitor);
+	g_signal_handlers_disconnect_by_func(monitor->priv->listener, listener_prepare_for_sleep_cb, monitor);
 }
 
 static void connect_listener_signals(GSMonitor* monitor)
@@ -358,6 +370,7 @@ static void connect_listener_signals(GSMonitor* monitor)
 	g_signal_connect(monitor->priv->listener, "throttle-changed", G_CALLBACK(listener_throttle_changed_cb), monitor);
 	g_signal_connect(monitor->priv->listener, "simulate-user-activity", G_CALLBACK(listener_simulate_user_activity_cb), monitor);
 	g_signal_connect(monitor->priv->listener, "show-message", G_CALLBACK(listener_show_message_cb), monitor);
+	g_signal_connect(monitor->priv->listener, "prepare-for-sleep", G_CALLBACK(listener_prepare_for_sleep_cb), monitor);
 }
 
 static void on_watcher_status_message_changed(GSWatcher* watcher, GParamSpec* pspec, GSMonitor* monitor)
