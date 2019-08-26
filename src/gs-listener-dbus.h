@@ -58,6 +58,8 @@ typedef struct
 	        const char *summary,
 	        const char *body,
 	        const char *icon);
+	void            (* prepare_for_sleep)         (GSListener *listener,
+	        gboolean    prepare); /* prepare or resume from sleep */
 
 } GSListenerClass;
 
