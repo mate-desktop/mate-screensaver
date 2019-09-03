@@ -58,8 +58,6 @@ enum
 #define MAX_QUEUED_EVENTS 16
 #define INFO_BAR_SECONDS 30
 
-#define GS_WINDOW_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_WINDOW, GSWindowPrivate))
-
 struct GSWindowPrivate
 {
 	GdkMonitor *monitor;
@@ -142,7 +140,7 @@ enum
 
 static guint           signals [LAST_SIGNAL] = { 0, };
 
-G_DEFINE_TYPE (GSWindow, gs_window, GTK_TYPE_WINDOW)
+G_DEFINE_TYPE_WITH_PRIVATE (GSWindow, gs_window, GTK_TYPE_WINDOW)
 
 static void
 set_invisible_cursor (GdkWindow *window,
@@ -2335,8 +2333,6 @@ gs_window_class_init (GSWindowClass *klass)
 	widget_class->grab_broken_event   = gs_window_real_grab_broken;
 	widget_class->visibility_notify_event = gs_window_real_visibility_notify_event;
 
-	g_type_class_add_private (klass, sizeof (GSWindowPrivate));
-
 	signals [ACTIVITY] =
 	    g_signal_new ("activity",
 	                  G_TYPE_FROM_CLASS (object_class),
@@ -2454,7 +2450,7 @@ on_drawing_area_draw (GtkWidget *widget,
 static void
 gs_window_init (GSWindow *window)
 {
-	window->priv = GS_WINDOW_GET_PRIVATE (window);
+	window->priv = gs_window_get_instance_private (window);
 
 	window->priv->geometry.x      = -1;
 	window->priv->geometry.y      = -1;
