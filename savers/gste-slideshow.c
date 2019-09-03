@@ -87,11 +87,9 @@ enum
     PROP_NO_STRETCH_HINT
 };
 
-#define GSTE_SLIDESHOW_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSTE_TYPE_SLIDESHOW, GSTESlideshowPrivate))
-
 static GObjectClass *parent_class = NULL;
 
-G_DEFINE_TYPE (GSTESlideshow, gste_slideshow, GS_TYPE_THEME_ENGINE)
+G_DEFINE_TYPE_WITH_PRIVATE (GSTESlideshow, gste_slideshow, GS_TYPE_THEME_ENGINE)
 
 #define N_FADE_TICKS 10
 #define MINIMUM_FPS 3.0
@@ -934,8 +932,6 @@ gste_slideshow_class_init (GSTESlideshowClass *klass)
 	widget_class->draw = gste_slideshow_real_draw;
 	widget_class->configure_event = gste_slideshow_real_configure;
 
-	g_type_class_add_private (klass, sizeof (GSTESlideshowPrivate));
-
 	g_object_class_install_property (object_class,
 	                                 PROP_IMAGES_LOCATION,
 	                                 g_param_spec_string ("images-location",
@@ -985,7 +981,7 @@ set_visual (GtkWidget *widget)
 static void
 gste_slideshow_init (GSTESlideshow *show)
 {
-	show->priv = GSTE_SLIDESHOW_GET_PRIVATE (show);
+	show->priv = gste_slideshow_get_instance_private (show);
 
 	show->priv->images_location = g_strdup (DEFAULT_IMAGES_LOCATION);
 
