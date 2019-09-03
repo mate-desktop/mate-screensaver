@@ -55,11 +55,9 @@ struct GSTEPopsquaresPrivate
 	square    *squares;
 };
 
-#define GSTE_POPSQUARES_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GSTE_TYPE_POPSQUARES, GSTEPopsquaresPrivate))
-
 static GObjectClass *parent_class = NULL;
 
-G_DEFINE_TYPE (GSTEPopsquares, gste_popsquares, GS_TYPE_THEME_ENGINE)
+G_DEFINE_TYPE_WITH_PRIVATE (GSTEPopsquares, gste_popsquares, GS_TYPE_THEME_ENGINE)
 
 static void
 hsv_to_rgb (int     h,
@@ -502,8 +500,6 @@ gste_popsquares_class_init (GSTEPopsquaresClass *klass)
 	widget_class->show = gste_popsquares_real_show;
 	widget_class->draw = gste_popsquares_real_draw;
 	widget_class->configure_event = gste_popsquares_real_configure;
-
-	g_type_class_add_private (klass, sizeof (GSTEPopsquaresPrivate));
 }
 
 static void
@@ -574,7 +570,7 @@ gste_popsquares_init (GSTEPopsquares *pop)
 {
 	int delay;
 
-	pop->priv = GSTE_POPSQUARES_GET_PRIVATE (pop);
+	pop->priv = gste_popsquares_get_instance_private (pop);
 
 	pop->priv->ncolors = 128;
 	pop->priv->subdivision = 5;
