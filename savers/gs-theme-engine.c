@@ -40,11 +40,9 @@ struct GSThemeEnginePrivate
 	gpointer reserved;
 };
 
-#define GS_THEME_ENGINE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_THEME_ENGINE, GSThemeEnginePrivate))
-
 static GObjectClass *parent_class = NULL;
 
-G_DEFINE_ABSTRACT_TYPE (GSThemeEngine, gs_theme_engine, GTK_TYPE_DRAWING_AREA)
+G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (GSThemeEngine, gs_theme_engine, GTK_TYPE_DRAWING_AREA)
 
 void
 _gs_theme_engine_profile_log (const char *func,
@@ -131,14 +129,12 @@ gs_theme_engine_class_init (GSThemeEngineClass *klass)
 	object_class->set_property = gs_theme_engine_set_property;
 
 	widget_class->draw = gs_theme_engine_real_draw;
-
-	g_type_class_add_private (klass, sizeof (GSThemeEnginePrivate));
 }
 
 static void
 gs_theme_engine_init (GSThemeEngine *engine)
 {
-	engine->priv = GS_THEME_ENGINE_GET_PRIVATE (engine);
+	engine->priv = gs_theme_engine_get_instance_private (engine);
 }
 
 static void
