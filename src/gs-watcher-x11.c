@@ -43,8 +43,6 @@ static void     gs_watcher_finalize   (GObject        *object);
 
 static gboolean watchdog_timer        (GSWatcher      *watcher);
 
-#define GS_WATCHER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_WATCHER, GSWatcherPrivate))
-
 struct GSWatcherPrivate
 {
 	/* settings */
@@ -78,7 +76,7 @@ enum
 
 static guint signals [LAST_SIGNAL] = { 0, };
 
-G_DEFINE_TYPE (GSWatcher, gs_watcher, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GSWatcher, gs_watcher, G_TYPE_OBJECT)
 
 static void
 remove_watchdog_timer (GSWatcher *watcher)
@@ -188,8 +186,6 @@ gs_watcher_class_init (GSWatcherClass *klass)
 	                  gs_marshal_BOOLEAN__BOOLEAN,
 	                  G_TYPE_BOOLEAN,
 	                  1, G_TYPE_BOOLEAN);
-
-	g_type_class_add_private (klass, sizeof (GSWatcherPrivate));
 }
 
 static gboolean
@@ -535,7 +531,7 @@ done:
 static void
 gs_watcher_init (GSWatcher *watcher)
 {
-	watcher->priv = GS_WATCHER_GET_PRIVATE (watcher);
+	watcher->priv = gs_watcher_get_instance_private (watcher);
 
 	watcher->priv->enabled = TRUE;
 	watcher->priv->active = FALSE;
