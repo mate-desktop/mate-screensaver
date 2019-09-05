@@ -60,8 +60,6 @@ static void     gs_fade_class_init (GSFadeClass *klass);
 static void     gs_fade_init       (GSFade      *fade);
 static void     gs_fade_finalize   (GObject        *object);
 
-#define GS_FADE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_FADE, GSFadePrivate))
-
 struct GSGammaInfo
 {
 	int              size;
@@ -121,7 +119,7 @@ enum
 
 static guint         signals [LAST_SIGNAL] = { 0, };
 
-G_DEFINE_TYPE (GSFade, gs_fade, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GSFade, gs_fade, G_TYPE_OBJECT)
 
 static gpointer fade_object = NULL;
 
@@ -892,14 +890,12 @@ gs_fade_class_init (GSFadeClass *klass)
 	                  g_cclosure_marshal_VOID__VOID,
 	                  G_TYPE_NONE,
 	                  0, G_TYPE_NONE);
-
-	g_type_class_add_private (klass, sizeof (GSFadePrivate));
 }
 
 static void
 gs_fade_init (GSFade *fade)
 {
-	fade->priv = GS_FADE_GET_PRIVATE (fade);
+	fade->priv = gs_fade_get_instance_private (fade);
 
 	fade->priv->timeout = 1000;
 	fade->priv->current_alpha = 1.0;
