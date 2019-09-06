@@ -40,8 +40,6 @@ static void     gs_theme_manager_class_init (GSThemeManagerClass *klass);
 static void     gs_theme_manager_init       (GSThemeManager      *theme_manager);
 static void     gs_theme_manager_finalize   (GObject             *object);
 
-#define GS_THEME_MANAGER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_THEME_MANAGER, GSThemeManagerPrivate))
-
 struct _GSThemeInfo
 {
 	char  *name;
@@ -55,7 +53,7 @@ struct GSThemeManagerPrivate
 	MateMenuTree *menu_tree;
 };
 
-G_DEFINE_TYPE (GSThemeManager, gs_theme_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GSThemeManager, gs_theme_manager, G_TYPE_OBJECT)
 
 static gpointer theme_manager_object = NULL;
 
@@ -372,8 +370,6 @@ gs_theme_manager_class_init (GSThemeManagerClass *klass)
 	GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
 	object_class->finalize = gs_theme_manager_finalize;
-
-	g_type_class_add_private (klass, sizeof (GSThemeManagerPrivate));
 }
 
 static MateMenuTree *
@@ -400,7 +396,7 @@ get_themes_tree (void)
 static void
 gs_theme_manager_init (GSThemeManager *theme_manager)
 {
-	theme_manager->priv = GS_THEME_MANAGER_GET_PRIVATE (theme_manager);
+	theme_manager->priv = gs_theme_manager_get_instance_private (theme_manager);
 
 	theme_manager->priv->menu_tree = get_themes_tree ();
 }
