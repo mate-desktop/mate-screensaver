@@ -83,44 +83,14 @@ struct _CopyThemeDialogPrivate
 	GCancellable *cancellable;
 };
 
+G_DEFINE_TYPE_WITH_PRIVATE (CopyThemeDialog, copy_theme_dialog, GTK_TYPE_DIALOG)
+
 guint signals[SIGNAL_COUNT] = {0, 0};
-
-GType
-copy_theme_dialog_get_type (void)
-{
-	static GType copy_theme_dialog_type = 0;
-
-	if (!copy_theme_dialog_type)
-	{
-		static GTypeInfo copy_theme_dialog_info =
-		{
-			sizeof (CopyThemeDialogClass),
-			NULL, /* GBaseInitFunc */
-			NULL, /* GBaseFinalizeFunc */
-			(GClassInitFunc) copy_theme_dialog_class_init,
-			NULL, /* GClassFinalizeFunc */
-			NULL, /* data */
-			sizeof (CopyThemeDialog),
-			0, /* n_preallocs */
-			(GInstanceInitFunc) copy_theme_dialog_init,
-			NULL
-		};
-
-		copy_theme_dialog_type = g_type_register_static (GTK_TYPE_DIALOG,
-		                         "CopyThemeDialog",
-		                         &copy_theme_dialog_info,
-		                         0);
-	}
-
-	return copy_theme_dialog_type;
-}
 
 static void
 copy_theme_dialog_class_init (CopyThemeDialogClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-	g_type_class_add_private (klass, sizeof (CopyThemeDialogPrivate));
 
 	klass->cancelled = copy_theme_dialog_cancel;
 	object_class->finalize = copy_theme_dialog_finalize;
@@ -186,8 +156,7 @@ copy_theme_dialog_init (CopyThemeDialog *dlg)
 	char      *markup;
 	gchar     *theme_dir_path;
 
-	dlg->priv = G_TYPE_INSTANCE_GET_PRIVATE (dlg, COPY_THEME_DIALOG_TYPE,
-	            CopyThemeDialogPrivate);
+	dlg->priv = copy_theme_dialog_get_instance_private (dlg);
 
 	/* Find and, if needed, create the directory for storing themes */
 	theme_dir_path = g_build_filename (g_get_user_data_dir (),
