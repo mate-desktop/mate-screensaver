@@ -76,8 +76,6 @@ static DBusHandlerResult gs_listener_message_handler    (DBusConnection  *connec
 
 #define TYPE_MISMATCH_ERROR GS_LISTENER_INTERFACE ".TypeMismatch"
 
-#define GS_LISTENER_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_LISTENER, GSListenerPrivate))
-
 struct GSListenerPrivate
 {
 	DBusConnection *connection;
@@ -150,7 +148,7 @@ gs_listener_vtable = { &gs_listener_unregister_handler,
 
 static guint         signals [LAST_SIGNAL] = { 0, };
 
-G_DEFINE_TYPE (GSListener, gs_listener, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GSListener, gs_listener, G_TYPE_OBJECT)
 
 GQuark
 gs_listener_error_quark (void)
@@ -2209,8 +2207,6 @@ gs_listener_class_init (GSListenerClass *klass)
 	                                         NULL,
 	                                         TRUE,
 	                                         G_PARAM_READWRITE));
-
-	g_type_class_add_private (klass, sizeof (GSListenerPrivate));
 }
 
 
@@ -2482,7 +2478,7 @@ init_session_id (GSListener *listener)
 static void
 gs_listener_init (GSListener *listener)
 {
-	listener->priv = GS_LISTENER_GET_PRIVATE (listener);
+	listener->priv = gs_listener_get_instance_private (listener);
 
 #ifdef WITH_SYSTEMD
 	/* check if logind is running */
