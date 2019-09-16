@@ -57,8 +57,6 @@ static void gs_prefs_finalize   (GObject      *object);
 #define KEY_KEYBOARD_COMMAND "embedded-keyboard-command"
 #define KEY_STATUS_MESSAGE_ENABLED "status-message-enabled"
 
-#define GS_PREFS_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_PREFS, GSPrefsPrivate))
-
 struct GSPrefsPrivate
 {
 	GSettings *settings;
@@ -79,7 +77,7 @@ enum
 
 static guint         signals [LAST_SIGNAL] = { 0, };
 
-G_DEFINE_TYPE (GSPrefs, gs_prefs, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GSPrefs, gs_prefs, G_TYPE_OBJECT)
 
 static void
 gs_prefs_set_property (GObject            *object,
@@ -129,9 +127,6 @@ gs_prefs_class_init (GSPrefsClass *klass)
 	                  g_cclosure_marshal_VOID__VOID,
 	                  G_TYPE_NONE,
 	                  0);
-
-	g_type_class_add_private (klass, sizeof (GSPrefsPrivate));
-
 }
 
 static void
@@ -542,7 +537,7 @@ key_changed_cb (GSettings *settings,
 static void
 gs_prefs_init (GSPrefs *prefs)
 {
-	prefs->priv = GS_PREFS_GET_PRIVATE (prefs);
+	prefs->priv = gs_prefs_get_instance_private (prefs);
 
 	prefs->priv->settings = g_settings_new (GSETTINGS_SCHEMA);
 	g_signal_connect (prefs->priv->settings,
