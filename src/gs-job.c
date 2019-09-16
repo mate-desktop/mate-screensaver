@@ -48,8 +48,6 @@ static void gs_job_class_init (GSJobClass *klass);
 static void gs_job_init       (GSJob      *job);
 static void gs_job_finalize   (GObject    *object);
 
-#define GS_JOB_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), GS_TYPE_JOB, GSJobPrivate))
-
 typedef enum
 {
     GS_JOB_INVALID,
@@ -70,7 +68,7 @@ struct GSJobPrivate
 	char           *command;
 };
 
-G_DEFINE_TYPE (GSJob, gs_job, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GSJob, gs_job, G_TYPE_OBJECT)
 
 static char *
 widget_get_id_string (GtkWidget *widget)
@@ -90,14 +88,12 @@ gs_job_class_init (GSJobClass *klass)
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
 	object_class->finalize  = gs_job_finalize;
-
-	g_type_class_add_private (klass, sizeof (GSJobPrivate));
 }
 
 static void
 gs_job_init (GSJob *job)
 {
-	job->priv = GS_JOB_GET_PRIVATE (job);
+	job->priv = gs_job_get_instance_private (job);
 }
 
 /* adapted from gspawn.c */
