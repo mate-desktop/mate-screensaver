@@ -1,3 +1,10 @@
+### mate-screensaver 1.22.2
+
+  * Translations update
+  * remove old HAL remnants
+  * Ensure lock on suspend and unlock on resume
+  * drop libXxf86 dependency
+
 ### mate-screensaver 1.22.1
 
   * Translations update
