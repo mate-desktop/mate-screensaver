@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"POT-Creation-Date: 2019-04-23 20:18+0200\n"
 "PO-Revision-Date: 2019-03-15 20:07+0000\n"
 "Last-Translator: Микола Ткач <chistomov@gmail.com>, 2019\n"
 "Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
@@ -93,27 +93,32 @@ msgstr "Теми зберігача екрану"
 msgid "Cosmos"
 msgstr "Космос"
 
-#: ../data/lock-dialog-default.ui.h:1
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U на %h</span>"
+
+#: ../data/lock-dialog-default.ui.h:3
 msgid "_Leave Message"
 msgstr "_Залиште повідомлення"
 
-#: ../data/lock-dialog-default.ui.h:2
+#: ../data/lock-dialog-default.ui.h:4
 msgid "_Switch User"
 msgstr "_Змінити користувача"
 
-#: ../data/lock-dialog-default.ui.h:3
+#: ../data/lock-dialog-default.ui.h:5
 msgid "_Log Out"
 msgstr "_Завершити сеанс"
 
-#: ../data/lock-dialog-default.ui.h:4
+#: ../data/lock-dialog-default.ui.h:6
 msgid "_Cancel"
 msgstr "_Скасувати"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
+#: ../data/lock-dialog-default.ui.h:7 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "_Розблокувати"
 
-#: ../data/lock-dialog-default.ui.h:7
+#: ../data/lock-dialog-default.ui.h:9
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
 msgstr "<b>Залишити повідомлення для %R:</b>"
@@ -304,7 +309,7 @@ msgstr "Показує слайди космічних малюнків"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
 msgid "Floating MATE"
-msgstr "Плаваючий MATE"
+msgstr "Плавучий MATE"
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
@@ -312,7 +317,7 @@ msgstr "Логотипи MATE, що виринають по усьому екр�
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:1
 msgid "Floating GNOME"
-msgstr "Плаваючий GNOME"
+msgstr "Плавучий GNOME"
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the GNOME logo around the screen"
@@ -328,11 +333,11 @@ msgstr "Показує слайди зображень з теки малюнк�
 
 #: ../savers/popsquares.desktop.in.in.h:1
 msgid "Pop art squares"
-msgstr "Пульсуючі комірки"
+msgstr "Пульсівні комірки"
 
 #: ../savers/popsquares.desktop.in.in.h:2
 msgid "A pop-art-ish grid of pulsing colors."
-msgstr "Мережа з пульсуючих кольорових комірок."
+msgstr "Мережа з пульсівних кольорових комірок."
 
 #: ../savers/popsquares.c:49 ../savers/floaters.c:1191
 #, c-format

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"POT-Creation-Date: 2019-04-23 20:18+0200\n"
 "PO-Revision-Date: 2019-03-15 20:07+0000\n"
 "Last-Translator: Renzo Sparta <exequiel0210@gmail.com>, 2019\n"
 "Language-Team: Spanish (Argentina) (https://www.transifex.com/mate/teams/13566/es_AR/)\n"
@@ -88,27 +88,32 @@ msgstr "Temas de protector de pantalla"
 msgid "Cosmos"
 msgstr "Cosmos"
 
-#: ../data/lock-dialog-default.ui.h:1
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr ""
+
+#: ../data/lock-dialog-default.ui.h:3
 msgid "_Leave Message"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:2
+#: ../data/lock-dialog-default.ui.h:4
 msgid "_Switch User"
 msgstr "Cambiar _Usuario"
 
-#: ../data/lock-dialog-default.ui.h:3
+#: ../data/lock-dialog-default.ui.h:5
 msgid "_Log Out"
 msgstr "_Desconectarse"
 
-#: ../data/lock-dialog-default.ui.h:4
+#: ../data/lock-dialog-default.ui.h:6
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
+#: ../data/lock-dialog-default.ui.h:7 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "_Desbloquear"
 
-#: ../data/lock-dialog-default.ui.h:7
+#: ../data/lock-dialog-default.ui.h:9
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
 msgstr "<b>Dejar un mensaje para %R:</b>"

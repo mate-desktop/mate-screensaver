@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"POT-Creation-Date: 2019-04-23 20:18+0200\n"
 "PO-Revision-Date: 2019-03-15 20:07+0000\n"
 "Last-Translator: ballpen, 2019\n"
 "Language-Team: Kyrgyz (https://www.transifex.com/mate/teams/13566/ky/)\n"
@@ -88,27 +88,32 @@ msgstr "Экран сактагыч темалары"
 msgid "Cosmos"
 msgstr "Космос"
 
-#: ../data/lock-dialog-default.ui.h:1
-msgid "_Leave Message"
-msgstr ""
-
 #: ../data/lock-dialog-default.ui.h:2
-msgid "_Switch User"
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
 msgstr ""
 
 #: ../data/lock-dialog-default.ui.h:3
+msgid "_Leave Message"
+msgstr ""
+
+#: ../data/lock-dialog-default.ui.h:4
+msgid "_Switch User"
+msgstr ""
+
+#: ../data/lock-dialog-default.ui.h:5
 msgid "_Log Out"
 msgstr "Сеансты _аяктоо"
 
-#: ../data/lock-dialog-default.ui.h:4
+#: ../data/lock-dialog-default.ui.h:6
 msgid "_Cancel"
 msgstr "_Жокко чыгаруу"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
+#: ../data/lock-dialog-default.ui.h:7 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:7
+#: ../data/lock-dialog-default.ui.h:9
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
 msgstr ""

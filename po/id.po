@@ -7,18 +7,18 @@
 # Andika Triwidada <andika@gmail.com>, 2019
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Ibnu Daru Aji, 2019
-# Willy Sudiarto Raharjo <willysr@slackware-id.org>, 2019
 # La Ode Muh. Fadlun Akbar <fadlun.net@gmail.com>, 2019
 # hpiece 8 <hpiece8@gmail.com>, 2019
+# Willy Sudiarto Raharjo <willysr@slackware-id.org>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"POT-Creation-Date: 2019-04-23 20:18+0200\n"
 "PO-Revision-Date: 2019-03-15 20:07+0000\n"
-"Last-Translator: hpiece 8 <hpiece8@gmail.com>, 2019\n"
+"Last-Translator: Willy Sudiarto Raharjo <willysr@slackware-id.org>, 2019\n"
 "Language-Team: Indonesian (https://www.transifex.com/mate/teams/13566/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -92,27 +92,32 @@ msgstr "Tema screensaver"
 msgid "Cosmos"
 msgstr "Cosmos"
 
-#: ../data/lock-dialog-default.ui.h:1
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U on %h</span>"
+
+#: ../data/lock-dialog-default.ui.h:3
 msgid "_Leave Message"
 msgstr "_Tinggalkan Pesan"
 
-#: ../data/lock-dialog-default.ui.h:2
+#: ../data/lock-dialog-default.ui.h:4
 msgid "_Switch User"
 msgstr "_Pindah Pengguna"
 
-#: ../data/lock-dialog-default.ui.h:3
+#: ../data/lock-dialog-default.ui.h:5
 msgid "_Log Out"
 msgstr "_Log Out"
 
-#: ../data/lock-dialog-default.ui.h:4
+#: ../data/lock-dialog-default.ui.h:6
 msgid "_Cancel"
 msgstr "_Batal"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
+#: ../data/lock-dialog-default.ui.h:7 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "B_uka kunci"
 
-#: ../data/lock-dialog-default.ui.h:7
+#: ../data/lock-dialog-default.ui.h:9
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
 msgstr "<b>Tinggalkan pesan untuk %R:</b>"

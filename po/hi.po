@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MATE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"POT-Creation-Date: 2019-04-23 20:18+0200\n"
 "PO-Revision-Date: 2019-03-15 20:07+0000\n"
 "Last-Translator: Sadgamaya <g.raghavan.g@gmail.com>, 2019\n"
 "Language-Team: Hindi (https://www.transifex.com/mate/teams/13566/hi/)\n"
@@ -88,27 +88,32 @@ msgstr "स्क्रीनसेवर थीम"
 msgid "Cosmos"
 msgstr "कॉसमॉस"
 
-#: ../data/lock-dialog-default.ui.h:1
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U पर %h</span>"
+
+#: ../data/lock-dialog-default.ui.h:3
 msgid "_Leave Message"
 msgstr "संदेश छोड़ें (_L)"
 
-#: ../data/lock-dialog-default.ui.h:2
+#: ../data/lock-dialog-default.ui.h:4
 msgid "_Switch User"
 msgstr "उपयोक्ता बदलें (_S)"
 
-#: ../data/lock-dialog-default.ui.h:3
+#: ../data/lock-dialog-default.ui.h:5
 msgid "_Log Out"
 msgstr "लॉग आउट (_L)"
 
-#: ../data/lock-dialog-default.ui.h:4
+#: ../data/lock-dialog-default.ui.h:6
 msgid "_Cancel"
 msgstr "रद्द करें (_C)"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
+#: ../data/lock-dialog-default.ui.h:7 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "अनलॉक करें (_U)"
 
-#: ../data/lock-dialog-default.ui.h:7
+#: ../data/lock-dialog-default.ui.h:9
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
 msgstr "<b>%R के लिए संदेश छोड़ें</b>"
