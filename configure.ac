@@ -14,6 +14,7 @@ m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 AC_CONFIG_HEADERS(config.h)
 
 AM_MAINTAINER_MODE
+MATE_DEBUG_CHECK([no])
 MATE_COMPILE_WARNINGS([yes])
 
 IT_PROG_INTLTOOL([0.50.1])
@@ -1053,13 +1054,12 @@ prefix=$old_prefix
 exec_prefix=$old_exec_prefix
 
 #
-# Enable Debug
+# Enable Debug Log
 #
-AC_ARG_ENABLE(debug, [AC_HELP_STRING([--enable-debug=[no/yes]], [turn on debugging])],, enable_debug=yes)
-if test "$enable_debug" = "yes"; then
+if test "$ax_enable_debug" = "yes"; then
   DEBUG_CFLAGS="-DG_ENABLE_DEBUG"
 else
-  if test "x$enable_debug" = "xno"; then
+  if test "x$ax_enable_debug" = "xno"; then
     DEBUG_CFLAGS="-DG_DISABLE_ASSERT -DG_DISABLE_CHECKS"
   else
     DEBUG_CFLAGS=""
