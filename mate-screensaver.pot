@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-05 15:19+0200\n"
+"POT-Creation-Date: 2019-10-12 14:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,11 @@ msgstr ""
 
 #: ../data/mate-screensaver-preferences.desktop.in.h:2
 msgid "Set your screensaver preferences"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../data/mate-screensaver-preferences.desktop.in.h:4
+msgid "MATE;screensaver;preferences;"
 msgstr ""
 
 #: ../data/mate-screensaver-preferences.ui.h:1
@@ -104,7 +109,7 @@ msgstr ""
 msgid "_Cancel"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:7 ../src/gs-lock-plug.c:1680
+#: ../data/lock-dialog-default.ui.h:7 ../src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr ""
 
@@ -263,12 +268,22 @@ msgstr ""
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr ""
 
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../savers/cosmos-slideshow.desktop.in.in.h:4
+msgid "MATE;screensaver;slideshow;cosmos;"
+msgstr ""
+
 #: ../savers/footlogo-floaters.desktop.in.in.h:1
 msgid "Floating MATE"
 msgstr ""
 
 #: ../savers/footlogo-floaters.desktop.in.in.h:2
 msgid "Bubbles the MATE logo around the screen"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../savers/footlogo-floaters.desktop.in.in.h:4
+msgid "MATE;screensaver;logo;bubbles;"
 msgstr ""
 
 #: ../savers/gnomelogo-floaters.desktop.in.in.h:1
@@ -279,6 +294,11 @@ msgstr ""
 msgid "Bubbles the GNOME logo around the screen"
 msgstr ""
 
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../savers/gnomelogo-floaters.desktop.in.in.h:4
+msgid "MATE;screensaver;GNOME;logo;bubbles;"
+msgstr ""
+
 #: ../savers/personal-slideshow.desktop.in.in.h:1
 msgid "Pictures folder"
 msgstr ""
@@ -287,12 +307,22 @@ msgstr ""
 msgid "Display a slideshow from your Pictures folder"
 msgstr ""
 
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../savers/personal-slideshow.desktop.in.in.h:4
+msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
+msgstr ""
+
 #: ../savers/popsquares.desktop.in.in.h:1
 msgid "Pop art squares"
 msgstr ""
 
 #: ../savers/popsquares.desktop.in.in.h:2
 msgid "A pop-art-ish grid of pulsing colors."
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../savers/popsquares.desktop.in.in.h:4
+msgid "MATE;screensaver;grid;pulsing;colors;"
 msgstr ""
 
 #: ../savers/popsquares.c:49 ../savers/floaters.c:1191
@@ -368,32 +398,32 @@ msgstr ""
 msgid "Do not try to stretch images on screen"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:215
+#: ../src/copy-theme-dialog.c:184
 msgid "Copying files"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:234
+#: ../src/copy-theme-dialog.c:203
 msgid "From:"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:238
+#: ../src/copy-theme-dialog.c:207
 msgid "To:"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:259
+#: ../src/copy-theme-dialog.c:228
 msgid "Copying themes"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:302
+#: ../src/copy-theme-dialog.c:271
 msgid "Invalid screensaver theme"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:305
+#: ../src/copy-theme-dialog.c:274
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:485
+#: ../src/copy-theme-dialog.c:454
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr ""
@@ -589,37 +619,37 @@ msgstr ""
 msgid "Authentication failed."
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:457
+#: ../src/mate-screensaver-preferences.c:455
 msgid "Blank screen"
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:463
+#: ../src/mate-screensaver-preferences.c:461
 msgid "Random"
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:949
-#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:947
+#: ../src/mate-screensaver-preferences.c:957
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:952
-#: ../src/mate-screensaver-preferences.c:961
-#: ../src/mate-screensaver-preferences.c:970
-#: ../src/mate-screensaver-preferences.c:973
-#: ../src/mate-screensaver-preferences.c:978
-#: ../src/mate-screensaver-preferences.c:981
-#: ../src/mate-screensaver-preferences.c:986
-#: ../src/mate-screensaver-preferences.c:989
+#: ../src/mate-screensaver-preferences.c:950
+#: ../src/mate-screensaver-preferences.c:959
+#: ../src/mate-screensaver-preferences.c:968
+#: ../src/mate-screensaver-preferences.c:971
+#: ../src/mate-screensaver-preferences.c:976
+#: ../src/mate-screensaver-preferences.c:979
+#: ../src/mate-screensaver-preferences.c:984
+#: ../src/mate-screensaver-preferences.c:987
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:955
+#: ../src/mate-screensaver-preferences.c:953
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -628,15 +658,15 @@ msgstr[1] ""
 
 #. hour:minutes
 #. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:958
-#: ../src/mate-screensaver-preferences.c:1005
-#: ../src/mate-screensaver-preferences.c:1018
+#: ../src/mate-screensaver-preferences.c:956
+#: ../src/mate-screensaver-preferences.c:1003
+#: ../src/mate-screensaver-preferences.c:1016
 #, c-format
 msgid "%s %s"
 msgstr ""
 
 #. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1000
+#: ../src/mate-screensaver-preferences.c:998
 #, c-format
 msgid "%s %s %s"
 msgstr ""
@@ -644,23 +674,23 @@ msgstr ""
 #. hour
 #. minutes
 #. seconds
-#: ../src/mate-screensaver-preferences.c:1010
-#: ../src/mate-screensaver-preferences.c:1023
-#: ../src/mate-screensaver-preferences.c:1059
+#: ../src/mate-screensaver-preferences.c:1008
+#: ../src/mate-screensaver-preferences.c:1021
+#: ../src/mate-screensaver-preferences.c:1057
 #, c-format
 msgid "%s"
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:1074
+#: ../src/mate-screensaver-preferences.c:1072
 #, c-format
 msgid "Never"
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:1559
+#: ../src/mate-screensaver-preferences.c:1554
 msgid "Could not load the main interface"
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:1561
+#: ../src/mate-screensaver-preferences.c:1556
 msgid "Please make sure that the screensaver is properly installed"
 msgstr ""
 
@@ -674,6 +704,11 @@ msgstr ""
 
 #: ../src/mate-screensaver.desktop.in.in.h:2
 msgid "Launch screensaver and locker program"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: ../src/mate-screensaver.desktop.in.in.h:4
+msgid "MATE;screensaver;locker;"
 msgstr ""
 
 #: ../src/gs-auth-pam.c:413
@@ -698,44 +733,44 @@ msgstr ""
 msgid "No longer permitted to access the system."
 msgstr ""
 
-#: ../src/gs-listener-dbus.c:2187
+#: ../src/gs-listener-dbus.c:2247
 msgid "failed to register with the message bus"
 msgstr ""
 
-#: ../src/gs-listener-dbus.c:2198
+#: ../src/gs-listener-dbus.c:2258
 msgid "not connected to the message bus"
 msgstr ""
 
-#: ../src/gs-listener-dbus.c:2208 ../src/gs-listener-dbus.c:2240
+#: ../src/gs-listener-dbus.c:2268 ../src/gs-listener-dbus.c:2300
 msgid "screensaver already running in this session"
 msgstr ""
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:303
+#: ../src/gs-lock-plug.c:301
 msgid "%A, %B %e"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:405
+#: ../src/gs-lock-plug.c:403
 msgid "Time has expired."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:436
+#: ../src/gs-lock-plug.c:434
 msgid "You have the Caps Lock key on."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1660
+#: ../src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1669
+#: ../src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr ""
 
 #. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1882
+#: ../src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1897
+#: ../src/gs-lock-plug.c:1893
 msgid "_Password:"
 msgstr ""
