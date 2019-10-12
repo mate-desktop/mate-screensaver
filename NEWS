@@ -1,6 +1,34 @@
+### mate-screensaver 1.23.1
+
+  * Translations update
+  * Set compiler debug flags / logging with MATE_DEBUG_CHECK
+  * Use WARN_CFLAGS which are only set with --enable-compiler-warnings
+  * Add keywords key to .desktop files
+  * gs_prefs: avoid 'g_type_class_add_private'
+  * gs-job: avoid 'g_type_class_add_private'
+  * gs-listener-dbus: avoid 'g_type_class_add_private'
+  * gs-manager: avoid 'g_type_class_add_private'
+  * copy-theme-dialog: avoid 'g_type_class_add_private'
+  * gs-theme-manager: avoid 'g_type_class_add_private'
+  * gs-lock-plug: avoid 'g_type_class_add_private'
+  * gs-fade: avoid 'g_type_class_add_private'
+  * gs-grab-x11: avoid 'g_type_class_add_private'
+  * gs-window-x11: avoid 'g_type_class_add_private'
+  * gs-monitor: avoid 'g_type_class_add_private'
+  * gs-watcher-x11: avoid 'g_type_class_add_private'
+  * gs-theme-engine: avoid 'g_type_class_add_private'
+  * gste-popsquares: avoid 'g_type_class_add_private'
+  * gste-slideshow: avoid 'g_type_class_add_private'
+  * remove old HAL remnants
+  * Ensure lock on suspend and unlock on resume
+  * Use gresources for mate-screensaver-preferences.ui
+  * lock-dialog: add style_provider to current screen globally
+  * Replace deprecated gtk_css_provider_get_default
+  * drop libXxf86 dependency
+
 ### mate-screensaver 1.23.0
 
-  * tx: sync with transifex
+  * Translations update
   * Remove trailing whitespaces
   * Change url project's website
   * [ci] Add cppcheck html report
