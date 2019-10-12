@@ -79,6 +79,7 @@ requires:
     - mate-menus
     - mate-session-manager
     - systemd
+    - unzip
     - which
 
   debian:
@@ -110,6 +111,7 @@ requires:
     - libxxf86vm-dev
     - make
     - mate-common
+    - unzip
     - x11proto-scrnsaver-dev
     - x11proto-xext-dev
     - x11proto-xf86vidmode-dev
@@ -144,6 +146,7 @@ requires:
     - pam-devel
     - redhat-rpm-config
     - systemd-devel
+    - unzip
     - xmlto
     - xorg-x11-proto-devel
 
@@ -172,6 +175,7 @@ requires:
     - libxxf86vm-dev
     - make
     - mate-common
+    - unzip
     - x11proto-scrnsaver-dev
     - x11proto-xext-dev
     - x11proto-xf86vidmode-dev
@@ -201,11 +205,12 @@ before_scripts:
   -     curl -Ls -o debian.sh https://github.com/mate-desktop/mate-dev-scripts/raw/master/travis/debian.sh
   -     bash ./debian.sh
   - fi
-  # Install mate-common from tarball
+  # Install mate-common from master branch
   - cd ${START_DIR}
-  - '[ -f mate-common-1.23.3.tar.xz ] || curl -Ls -o mate-common-1.23.3.tar.xz http://pub.mate-desktop.org/releases/1.23/mate-common-1.23.3.tar.xz'
-  - tar xf mate-common-1.23.3.tar.xz
-  - cd mate-common-1.23.3
+  - curl -Ls -o mate-common-master.zip https://github.com/mate-desktop/mate-common/archive/master.zip
+  - unzip mate-common-master.zip
+  - cd mate-common-master
+  - ./autogen.sh
   - if [ ${DISTRO_NAME} == "debian" -o ${DISTRO_NAME} == "ubuntu" ];then
   -     ./configure --prefix=/usr --libdir=/usr/lib/x86_64-linux-gnu --libexecdir=/usr/lib/x86_64-linux-gnu
   - else
