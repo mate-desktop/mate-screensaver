@@ -6,21 +6,21 @@
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Ondřej Kolín <ondrej.kolin@gmail.com>, 2018
-# Honza K. <honza889@gmail.com>, 2018
 # Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2018
 # Michal <sinope@seznam.cz>, 2018
 # LiberteCzech <liberte.czech@gmail.com>, 2018
 # Roman Horník <roman.hornik@debian-linux.cz>, 2018
 # Lucas Lommer <drom@kdyne.net>, 2019
+# Honza K. <honza889@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"POT-Creation-Date: 2019-07-05 15:19+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Lucas Lommer <drom@kdyne.net>, 2019\n"
+"Last-Translator: Honza K. <honza889@gmail.com>, 2019\n"
 "Language-Team: Czech (https://www.transifex.com/mate/teams/13566/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,27 +94,32 @@ msgstr "Motivy šetřiče obrazovky"
 msgid "Cosmos"
 msgstr "Kosmos"
 
-#: ../data/lock-dialog-default.ui.h:1
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U na %h</span>"
+
+#: ../data/lock-dialog-default.ui.h:3
 msgid "_Leave Message"
 msgstr "Zane_chat zprávu"
 
-#: ../data/lock-dialog-default.ui.h:2
+#: ../data/lock-dialog-default.ui.h:4
 msgid "_Switch User"
 msgstr "_Přepnout uživatele"
 
-#: ../data/lock-dialog-default.ui.h:3
+#: ../data/lock-dialog-default.ui.h:5
 msgid "_Log Out"
 msgstr "_Odhlásit se"
 
-#: ../data/lock-dialog-default.ui.h:4
+#: ../data/lock-dialog-default.ui.h:6
 msgid "_Cancel"
 msgstr "_Zrušit"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
+#: ../data/lock-dialog-default.ui.h:7 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "_Odemknout"
 
-#: ../data/lock-dialog-default.ui.h:7
+#: ../data/lock-dialog-default.ui.h:9
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
 msgstr "<b>Zanechat zprávu uživateli %R:</b>"

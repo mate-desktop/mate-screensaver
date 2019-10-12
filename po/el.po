@@ -7,20 +7,20 @@
 # Efstathios Iosifidis <iefstathios@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # Petros Freris (Πέτρος Φρέρης) <petrosfreris@gmail.com>, 2018
-# thunk <thunk77@gmail.com>, 2018
 # alexandros_ <alexandros.venn@gmail.com>, 2018
 # Αλέξανδρος Καπετάνιος <alexandros@gnugr.org>, 2018
 # Angelos Chraniotis <chraniotis@gmail.com>, 2018
 # 437c9d6e19936ed69f57bed9e0fe4716, 2018
+# thunk <thunk77@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"POT-Creation-Date: 2019-07-05 15:19+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: 437c9d6e19936ed69f57bed9e0fe4716, 2018\n"
+"Last-Translator: thunk <thunk77@gmail.com>, 2019\n"
 "Language-Team: Greek (https://www.transifex.com/mate/teams/13566/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,27 +94,32 @@ msgstr "Θέματα προστασίας οθόνης"
 msgid "Cosmos"
 msgstr "Cosmos"
 
-#: ../data/lock-dialog-default.ui.h:1
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U σε %h</span>"
+
+#: ../data/lock-dialog-default.ui.h:3
 msgid "_Leave Message"
 msgstr "_Αφήστε μήνυμα"
 
-#: ../data/lock-dialog-default.ui.h:2
+#: ../data/lock-dialog-default.ui.h:4
 msgid "_Switch User"
 msgstr "_Αλλαγή χρήστη"
 
-#: ../data/lock-dialog-default.ui.h:3
+#: ../data/lock-dialog-default.ui.h:5
 msgid "_Log Out"
 msgstr "_Αποσύνδεση"
 
-#: ../data/lock-dialog-default.ui.h:4
+#: ../data/lock-dialog-default.ui.h:6
 msgid "_Cancel"
 msgstr "Α_κύρωση"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
+#: ../data/lock-dialog-default.ui.h:7 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "_Ξεκλείδωμα"
 
-#: ../data/lock-dialog-default.ui.h:7
+#: ../data/lock-dialog-default.ui.h:9
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
 msgstr "<b>Αφήστε μήνυμα για %R:</b>"

@@ -7,19 +7,19 @@
 # Piotr Drąg <piotrdrag@gmail.com>, 2018
 # Piotr Strębski <strebski@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Marcin Kralka <marcink96@gmail.com>, 2018
 # Artur Motyka <slashcraftpl@gmail.com>, 2018
 # Przemek P <ppjg@dami.pl>, 2018
-# Piotr Kowalik <pietrasagh@gmail.com>, 2019
+# pietrasagh <pietrasagh@gmail.com>, 2019
+# Marcin Kralka <marcink96@gmail.com>, 2019
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-10 14:27+0100\n"
+"POT-Creation-Date: 2019-07-05 15:19+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Piotr Kowalik <pietrasagh@gmail.com>, 2019\n"
+"Last-Translator: Marcin Kralka <marcink96@gmail.com>, 2019\n"
 "Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -94,27 +94,32 @@ msgstr "Motywy wygaszacza ekranu"
 msgid "Cosmos"
 msgstr "Kosmos"
 
-#: ../data/lock-dialog-default.ui.h:1
+#: ../data/lock-dialog-default.ui.h:2
+#, no-c-format
+msgid "<span size=\"small\">%U on %h</span>"
+msgstr "<span size=\"small\">%U na %h</span>"
+
+#: ../data/lock-dialog-default.ui.h:3
 msgid "_Leave Message"
 msgstr "_Zostaw wiadomość"
 
-#: ../data/lock-dialog-default.ui.h:2
+#: ../data/lock-dialog-default.ui.h:4
 msgid "_Switch User"
 msgstr "_Przełącz użytkownika"
 
-#: ../data/lock-dialog-default.ui.h:3
+#: ../data/lock-dialog-default.ui.h:5
 msgid "_Log Out"
 msgstr "_Wyloguj"
 
-#: ../data/lock-dialog-default.ui.h:4
+#: ../data/lock-dialog-default.ui.h:6
 msgid "_Cancel"
 msgstr "_Anuluj"
 
-#: ../data/lock-dialog-default.ui.h:5 ../src/gs-lock-plug.c:1680
+#: ../data/lock-dialog-default.ui.h:7 ../src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr "_Odblokuj"
 
-#: ../data/lock-dialog-default.ui.h:7
+#: ../data/lock-dialog-default.ui.h:9
 #, no-c-format
 msgid "<b>Leave a message for %R:</b>"
 msgstr "<b>Zostaw wiadomość dla %R:</b>"
