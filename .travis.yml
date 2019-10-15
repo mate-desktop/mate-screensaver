@@ -68,7 +68,6 @@ requires:
     - clang
     - gcc
     - git
-    - intltool
     - libmatekbd
     - libnotify
     - libxss
@@ -84,12 +83,12 @@ requires:
     # Useful URL: https://github.com/mate-desktop/debian-packages
     # Useful URL: https://salsa.debian.org/debian-mate-team/mate-screensaver
     - autoconf-archive
+    - autopoint
     - clang
     - clang-tools
     - cppcheck
     - gcc
     - git
-    - intltool
     - libdbus-glib-1-dev
     - libdconf-dev
     - libglib2.0-dev
@@ -146,10 +145,10 @@ requires:
 
   ubuntu:
     - autoconf-archive
+    - autopoint
     - clang
     - clang-tools
     - git
-    - intltool
     - libdbus-glib-1-dev
     - libdconf-dev
     - libglib2.0-dev
