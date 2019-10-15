@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Screensavers
+Comment=Screensaver themes
+# Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+Icon=screensaver
+Type=Directory
+OnlyShowIn=MATE;
+NoDisplay=false

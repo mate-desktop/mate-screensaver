@@ -1,12 +1,12 @@
 [Desktop Entry]
-_Name=Pictures folder
-_Comment=Display a slideshow from your Pictures folder
+Name=Pictures folder
+Comment=Display a slideshow from your Pictures folder
 Exec=@SAVERDIR@/slideshow
 TryExec=@SAVERDIR@/slideshow
 StartupNotify=false
 Terminal=false
 Type=Application
 Categories=Screensaver;
-#Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-_Keywords=MATE;screensaver;custom;slideshow;pictures;folder;
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=MATE;screensaver;custom;slideshow;pictures;folder;
 OnlyShowIn=MATE;

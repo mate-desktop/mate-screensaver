@@ -1,11 +1,11 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
 data/mate-screensaver-preferences.desktop.in
-[type: gettext/glade]data/mate-screensaver-preferences.ui
-data/mate-screensaver.directory.in
+data/mate-screensaver-preferences.ui
+data/mate-screensaver.directory.desktop.in
 data/images/cosmos/cosmos.xml.in.in
-[type: gettext/glade]data/lock-dialog-default.ui
-[type: gettext/gsettings]data/org.mate.screensaver.gschema.xml.in
+data/lock-dialog-default.ui
+data/org.mate.screensaver.gschema.xml.in
 savers/cosmos-slideshow.desktop.in.in
 savers/footlogo-floaters.desktop.in.in
 savers/gnomelogo-floaters.desktop.in.in
