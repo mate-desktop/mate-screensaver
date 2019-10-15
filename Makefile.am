@@ -10,9 +10,9 @@ DISTCHECK_CONFIGURE_FLAGS = \
 	CFLAGS='-Wno-deprecated-declarations'
 
 SUBDIRS =			\
+	po 			\
 	src			\
 	savers			\
-	po 			\
 	data			\
 	doc			\
 	$(NULL)
@@ -25,22 +25,15 @@ EXTRA_DIST =			\
 	INSTALL			\
 	README			\
 	ChangeLog		\
+	its			\
 	NEWS			\
-	intltool-extract.in     \
-	intltool-merge.in       \
-	intltool-update.in	\
 	$(NULL)
 
 DISTCLEANFILES =		\
-	intltool-extract	\
-	intltool-merge		\
-	intltool-update		\
-	./po/.intltool-merge-cache	\
 	$(NULL)
 
 MAINTAINERCLEANFILES =		\
 	*~			\
-	intltool-*.in		\
 	compile			\
 	configure		\
 	INSTALL			\

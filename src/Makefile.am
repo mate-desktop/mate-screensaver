@@ -56,7 +56,8 @@ noinst_PROGRAMS = 	\
 desktopdir = $(sysconfdir)/xdg/autostart
 desktop_in_files = mate-screensaver.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
-@INTLTOOL_DESKTOP_RULE@
+$(desktop_DATA): $(desktop_in_files)
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
 mate_screensaver_command_SOURCES = 	\
 	mate-screensaver-command.c	\

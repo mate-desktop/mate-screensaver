@@ -1,12 +1,12 @@
 [Desktop Entry]
-_Name=Floating GNOME
-_Comment=Bubbles the GNOME logo around the screen
+Name=Floating GNOME
+Comment=Bubbles the GNOME logo around the screen
 Exec=@SAVERDIR@/floaters @FLOATERS_FOOT_GNOME_LOGO_IMAGE@
 TryExec=@SAVERDIR@/floaters
 StartupNotify=false
 Terminal=false
 Type=Application
 Categories=Screensaver;
-#Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-_Keywords=MATE;screensaver;GNOME;logo;bubbles;
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=MATE;screensaver;GNOME;logo;bubbles;
 OnlyShowIn=MATE;

@@ -23,23 +23,24 @@ DESKTOP_IN_IN_FILES = 			 \
 	$(NULL)
 
 cosmos-slideshow.desktop.in: cosmos-slideshow.desktop.in.in Makefile
-	$(edit) $< >$@
+	@$(edit) $< >$@
 footlogo-floaters.desktop.in: footlogo-floaters.desktop.in.in Makefile
-	$(edit) $< >$@
+	@$(edit) $< >$@
 gnomelogo-floaters.desktop.in: gnomelogo-floaters.desktop.in.in Makefile
-	$(edit) $< >$@
+	@$(edit) $< >$@
 personal-slideshow.desktop.in: personal-slideshow.desktop.in.in Makefile
-	$(edit) $< >$@
+	@$(edit) $< >$@
 popsquares.desktop.in: popsquares.desktop.in.in Makefile
-	$(edit) $< >$@
-
-@INTLTOOL_DESKTOP_RULE@
+	@$(edit) $< >$@
 
 edit = sed \
 	-e 's|@SLIDESHOW_COSMOS_DIR[@]|$(SLIDESHOW_COSMOS_DIR)|g' \
 	-e 's|@FLOATERS_FOOT_LOGO_IMAGE[@]|$(FLOATERS_FOOT_LOGO_IMAGE)|g' \
 	-e 's|@FLOATERS_FOOT_GNOME_LOGO_IMAGE[@]|$(FLOATERS_FOOT_GNOME_LOGO_IMAGE)|g' \
 	-e 's|@SAVERDIR[@]|$(privlibexecdir)|g'
+
+%.desktop: %.desktop.in
+	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
 themesdir = $(datadir)/applications/screensavers
 themes_in_files = 			\

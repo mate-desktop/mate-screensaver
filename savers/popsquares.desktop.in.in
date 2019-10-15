@@ -1,12 +1,12 @@
 [Desktop Entry]
-_Name=Pop art squares
-_Comment=A pop-art-ish grid of pulsing colors.
+Name=Pop art squares
+Comment=A pop-art-ish grid of pulsing colors.
 Exec=@SAVERDIR@/popsquares
 TryExec=@SAVERDIR@/popsquares
 StartupNotify=false
 Terminal=false
 Type=Application
 Categories=Screensaver;
-#Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-_Keywords=MATE;screensaver;grid;pulsing;colors;
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=MATE;screensaver;grid;pulsing;colors;
 OnlyShowIn=MATE;

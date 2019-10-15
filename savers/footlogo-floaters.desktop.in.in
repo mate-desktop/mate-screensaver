@@ -1,12 +1,12 @@
 [Desktop Entry]
-_Name=Floating MATE
-_Comment=Bubbles the MATE logo around the screen
+Name=Floating MATE
+Comment=Bubbles the MATE logo around the screen
 Exec=@SAVERDIR@/floaters @FLOATERS_FOOT_LOGO_IMAGE@
 TryExec=@SAVERDIR@/floaters
 StartupNotify=false
 Terminal=false
 Type=Application
 Categories=Screensaver;
-#Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-_Keywords=MATE;screensaver;logo;bubbles;
+# Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+Keywords=MATE;screensaver;logo;bubbles;
 OnlyShowIn=MATE;

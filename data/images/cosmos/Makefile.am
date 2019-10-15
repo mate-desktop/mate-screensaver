@@ -19,15 +19,17 @@ images_DATA =			\
 	$(NULL)
 
 cosmos.xml.in: cosmos.xml.in.in Makefile
-	$(edit) $< >$@
+	@$(edit) $< >$@
 
 background-1.xml: background-1.xml.in Makefile
-	$(edit) $< >$@
+	$(AM_V_GEN) $(edit) $< >$@
 
 metadata_in_files = cosmos.xml.in
 metadatadir = $(datadir)/mate-background-properties
 metadata_DATA = $(metadata_in_files:.xml.in=.xml)
-@INTLTOOL_XML_RULE@
+
+$(metadata_DATA): $(metadata_in_files)
+	$(AM_V_GEN) GETTEXTDATADIR=$(top_srcdir) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 
 edit = sed \
 	-e 's|@IMAGESDIR[@]|$(imagesdir)|g'
