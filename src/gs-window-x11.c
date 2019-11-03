@@ -41,8 +41,6 @@
 #include <X11/extensions/shape.h>
 #endif
 
-static void gs_window_class_init (GSWindowClass *klass);
-static void gs_window_init       (GSWindow      *window);
 static void gs_window_finalize   (GObject       *object);
 
 static gboolean popup_dialog_idle (GSWindow *window);

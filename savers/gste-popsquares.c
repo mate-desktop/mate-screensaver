@@ -32,8 +32,6 @@
 #include "gs-theme-engine.h"
 #include "gste-popsquares.h"
 
-static void     gste_popsquares_class_init (GSTEPopsquaresClass *klass);
-static void     gste_popsquares_init       (GSTEPopsquares      *engine);
 static void     gste_popsquares_finalize   (GObject             *object);
 static void     draw_frame                 (GSTEPopsquares      *pop,
                                             cairo_t *cr);

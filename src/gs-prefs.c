@@ -30,8 +30,6 @@
 
 #include "gs-prefs.h"
 
-static void gs_prefs_class_init (GSPrefsClass *klass);
-static void gs_prefs_init       (GSPrefs      *prefs);
 static void gs_prefs_finalize   (GObject      *object);
 
 #define LOCKDOWN_SETTINGS_SCHEMA "org.mate.lockdown"

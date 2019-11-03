@@ -43,8 +43,6 @@
 #include "gs-prefs.h"
 #include "gs-debug.h"
 
-static void gs_monitor_class_init(GSMonitorClass* klass);
-static void gs_monitor_init(GSMonitor* monitor);
 static void gs_monitor_finalize(GObject* object);
 
 struct GSMonitorPrivate {

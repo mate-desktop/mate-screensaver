@@ -44,8 +44,6 @@
 
 #include "subprocs.h"
 
-static void gs_job_class_init (GSJobClass *klass);
-static void gs_job_init       (GSJob      *job);
 static void gs_job_finalize   (GObject    *object);
 
 typedef enum

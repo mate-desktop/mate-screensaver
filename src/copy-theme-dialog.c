@@ -32,10 +32,6 @@
 #include "copy-theme-dialog.h"
 
 static void
-copy_theme_dialog_class_init (CopyThemeDialogClass *klass);
-static void
-copy_theme_dialog_init (CopyThemeDialog *dlg);
-static void
 add_file_to_dialog (gpointer data, gpointer user_data);
 static void
 single_copy_complete (GObject *source_object, GAsyncResult *res,

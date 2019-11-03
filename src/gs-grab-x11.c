@@ -33,8 +33,6 @@
 #include "gs-grab.h"
 #include "gs-debug.h"
 
-static void     gs_grab_class_init (GSGrabClass *klass);
-static void     gs_grab_init       (GSGrab      *grab);
 static void     gs_grab_finalize   (GObject     *object);
 
 static gpointer grab_object = NULL;

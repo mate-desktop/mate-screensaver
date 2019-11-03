@@ -32,8 +32,6 @@
 #include "gs-theme-engine.h"
 #include "gste-slideshow.h"
 
-static void     gste_slideshow_class_init (GSTESlideshowClass *klass);
-static void     gste_slideshow_init       (GSTESlideshow      *engine);
 static void     gste_slideshow_finalize   (GObject            *object);
 
 struct GSTESlideshowPrivate
