@@ -36,8 +36,6 @@
 #include "gs-theme-manager.h"
 #include "gs-debug.h"
 
-static void     gs_theme_manager_class_init (GSThemeManagerClass *klass);
-static void     gs_theme_manager_init       (GSThemeManager      *theme_manager);
 static void     gs_theme_manager_finalize   (GObject             *object);
 
 struct _GSThemeInfo

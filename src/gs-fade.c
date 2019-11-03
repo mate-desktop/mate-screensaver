@@ -56,8 +56,6 @@
 
 #endif /* HAVE_XF86VMODE_GAMMA */
 
-static void     gs_fade_class_init (GSFadeClass *klass);
-static void     gs_fade_init       (GSFade      *fade);
 static void     gs_fade_finalize   (GObject        *object);
 
 struct GSGammaInfo

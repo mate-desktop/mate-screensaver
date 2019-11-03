@@ -37,8 +37,6 @@
 #include "gs-marshal.h"
 #include "gs-debug.h"
 
-static void     gs_watcher_class_init (GSWatcherClass *klass);
-static void     gs_watcher_init       (GSWatcher      *watcher);
 static void     gs_watcher_finalize   (GObject        *object);
 
 static gboolean watchdog_timer        (GSWatcher      *watcher);
