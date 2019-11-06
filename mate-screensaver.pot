@@ -3,7 +3,6 @@
 # This file is distributed under the same license as the mate-screensaver package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-screensaver 1.23.1\n"
