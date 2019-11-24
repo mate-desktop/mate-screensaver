@@ -128,7 +128,6 @@ requires:
     - libXinerama-devel
     - libXmu-devel
     - libXtst-devel
-    - libXxf86misc-devel
     - libXxf86vm-devel
     - libmatekbd-devel
     - libnotify-devel
