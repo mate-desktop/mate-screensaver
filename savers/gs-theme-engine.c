@@ -31,8 +31,6 @@
 #include "gs-theme-engine.h"
 #include "gs-theme-engine-marshal.h"
 
-static void     gs_theme_engine_class_init (GSThemeEngineClass *klass);
-static void     gs_theme_engine_init       (GSThemeEngine      *engine);
 static void     gs_theme_engine_finalize   (GObject            *object);
 
 struct GSThemeEnginePrivate
