@@ -1234,6 +1234,12 @@ gs_lock_plug_set_switch_enabled (GSLockPlug *plug,
 
 	if (switch_enabled)
 	{
+#ifdef HAVE_RDA
+		if (rda_session_is_remote()) {
+			gs_debug ("No switch user capability if session is remote");
+			gtk_widget_hide (plug->priv->auth_switch_button);
+		} else
+#endif /* HAVE_RDA */
 		if (process_is_running ("mdm"))
 		{
 			/* MDM  */
