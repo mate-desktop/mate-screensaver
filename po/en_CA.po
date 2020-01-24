@@ -1,17 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR MATE Desktop Environment team
+# This file is distributed under the same license as the mate-screensaver package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # 
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-05 15:19+0200\n"
+"Project-Id-Version: mate-screensaver 1.23.1\n"
+"Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
+"POT-Creation-Date: 2019-11-04 23:36+0100\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2018\n"
 "Language-Team: English (Canada) (https://www.transifex.com/mate/teams/13566/en_CA/)\n"
@@ -21,124 +20,141 @@ msgstr ""
 "Language: en_CA\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/mate-screensaver-preferences.desktop.in.h:1
-#: ../src/mate-screensaver.desktop.in.in.h:1
+#: data/mate-screensaver-preferences.desktop.in:3
+#: src/mate-screensaver.desktop.in.in:4
 msgid "Screensaver"
 msgstr "Screensaver"
 
-#: ../data/mate-screensaver-preferences.desktop.in.h:2
+#: data/mate-screensaver-preferences.desktop.in:4
 msgid "Set your screensaver preferences"
 msgstr "Set your screensaver preferences"
 
-#: ../data/mate-screensaver-preferences.ui.h:1
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: data/mate-screensaver-preferences.desktop.in:6
+#: src/mate-screensaver.desktop.in.in:7
+msgid "preferences-desktop-screensaver"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/mate-screensaver-preferences.desktop.in:12
+msgid "MATE;screensaver;preferences;"
+msgstr ""
+
+#: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
 msgstr ""
 
-#: ../data/mate-screensaver-preferences.ui.h:2
+#: data/mate-screensaver-preferences.ui:56
 msgid "<b>Screensaver preview</b>"
 msgstr ""
 
-#: ../data/mate-screensaver-preferences.ui.h:3
+#: data/mate-screensaver-preferences.ui:164
 msgid "Screensaver Preferences"
 msgstr "Screensaver Preferences"
 
-#: ../data/mate-screensaver-preferences.ui.h:4
+#: data/mate-screensaver-preferences.ui:196
 msgid "Power _Management"
 msgstr ""
 
-#: ../data/mate-screensaver-preferences.ui.h:5
+#: data/mate-screensaver-preferences.ui:212
 msgid "_Preview"
 msgstr ""
 
-#: ../data/mate-screensaver-preferences.ui.h:6
+#: data/mate-screensaver-preferences.ui:272
 msgid "_Screensaver theme:"
 msgstr ""
 
-#: ../data/mate-screensaver-preferences.ui.h:7
+#: data/mate-screensaver-preferences.ui:390
 msgid "Regard the computer as _idle after:"
 msgstr ""
 
-#: ../data/mate-screensaver-preferences.ui.h:8
+#: data/mate-screensaver-preferences.ui:433
 msgid "_Activate screensaver when computer is idle"
 msgstr ""
 
-#: ../data/mate-screensaver-preferences.ui.h:9
+#: data/mate-screensaver-preferences.ui:448
 msgid "_Lock screen when screensaver is active"
 msgstr "_Lock screen when screensaver is active"
 
-#: ../data/mate-screensaver-preferences.ui.h:10
+#: data/mate-screensaver-preferences.ui:465
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
 msgstr ""
 
-#: ../data/mate-screensaver.directory.in.h:1
+#: data/mate-screensaver.directory.desktop.in:4
 msgid "Screensavers"
 msgstr "Screensavers"
 
-#: ../data/mate-screensaver.directory.in.h:2
-#: ../data/org.mate.screensaver.gschema.xml.in.h:7
+#: data/mate-screensaver.directory.desktop.in:5
+#: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
 msgstr "Screensaver themes"
+
+#. Translators: Do NOT translate or transliterate this text (this is an icon
+#. file name)!
+#: data/mate-screensaver.directory.desktop.in:7
+msgid "screensaver"
+msgstr ""
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
 #. You might want to translate it into the equivalent words of your language
-#: ../data/images/cosmos/cosmos.xml.in.in.h:3
-#: ../savers/cosmos-slideshow.desktop.in.in.h:1
+#: data/images/cosmos/cosmos.xml.in.in:7
+#: savers/cosmos-slideshow.desktop.in.in:3
 msgid "Cosmos"
 msgstr "Cosmos"
 
-#: ../data/lock-dialog-default.ui.h:2
-#, no-c-format
+#: data/lock-dialog-default.ui:100
 msgid "<span size=\"small\">%U on %h</span>"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:3
+#: data/lock-dialog-default.ui:222
 msgid "_Leave Message"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:4
+#: data/lock-dialog-default.ui:238
 msgid "_Switch User"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:5
+#: data/lock-dialog-default.ui:254
 msgid "_Log Out"
 msgstr "_Log Out"
 
-#: ../data/lock-dialog-default.ui.h:6
+#: data/lock-dialog-default.ui:270
 msgid "_Cancel"
 msgstr ""
 
-#: ../data/lock-dialog-default.ui.h:7 ../src/gs-lock-plug.c:1680
+#: data/lock-dialog-default.ui:286 src/gs-lock-plug.c:1676
 msgid "_Unlock"
 msgstr "_Unlock"
 
-#: ../data/lock-dialog-default.ui.h:9
-#, no-c-format
+#: data/lock-dialog-default.ui:328
 msgid "<b>Leave a message for %R:</b>"
 msgstr ""
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:1
+#: data/org.mate.screensaver.gschema.xml.in:10
 msgid "Activate when idle"
 msgstr "Activate when idle"
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:2
+#: data/org.mate.screensaver.gschema.xml.in:11
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
 "Set this to TRUE to activate the screensaver when the session is idle."
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:3
+#: data/org.mate.screensaver.gschema.xml.in:15
 msgid "Lock on activation"
 msgstr "Lock on activation"
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:4
+#: data/org.mate.screensaver.gschema.xml.in:16
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr "Set this to TRUE to lock the screen when the screensaver activates."
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:5
+#: data/org.mate.screensaver.gschema.xml.in:20
 msgid "Screensaver theme selection mode"
 msgstr "Screensaver theme selection mode"
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:6
+#: data/org.mate.screensaver.gschema.xml.in:21
 msgid ""
 "The selection mode used by screensaver. May be \"blank-only\" to enable the "
 "screensaver without using any theme on activation, \"single\" to enable "
@@ -152,7 +168,7 @@ msgstr ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:8
+#: data/org.mate.screensaver.gschema.xml.in:26
 msgid ""
 "This key specifies the list of themes to be used by the screensaver. It's "
 "ignored when \"mode\" key is \"blank-only\", should provide the theme name "
@@ -164,29 +180,29 @@ msgstr ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:9
+#: data/org.mate.screensaver.gschema.xml.in:30
 msgid "Time before power management baseline"
 msgstr ""
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:10
+#: data/org.mate.screensaver.gschema.xml.in:31
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
 msgstr ""
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:11
+#: data/org.mate.screensaver.gschema.xml.in:35
 msgid "Time before theme change"
 msgstr "Time before theme change"
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:12
+#: data/org.mate.screensaver.gschema.xml.in:36
 msgid "The number of minutes to run before changing the screensaver theme."
 msgstr "The number of minutes to run before changing the screensaver theme."
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:13
+#: data/org.mate.screensaver.gschema.xml.in:40
 msgid "Time before locking"
 msgstr "Time before locking"
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:14
+#: data/org.mate.screensaver.gschema.xml.in:41
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
@@ -194,22 +210,22 @@ msgstr ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:15
+#: data/org.mate.screensaver.gschema.xml.in:45
 msgid "Allow embedding a keyboard into the window"
 msgstr ""
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:16
+#: data/org.mate.screensaver.gschema.xml.in:46
 msgid ""
 "Set this to TRUE to allow embedding a keyboard into the window when trying "
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:17
+#: data/org.mate.screensaver.gschema.xml.in:50
 msgid "Embedded keyboard command"
 msgstr ""
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:18
+#: data/org.mate.screensaver.gschema.xml.in:51
 msgid ""
 "The command that will be run, if the \"embedded_keyboard_enabled\" key is "
 "set to TRUE, to embed a keyboard widget into the window. This command should"
@@ -217,32 +233,32 @@ msgid ""
 "output."
 msgstr ""
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:19
+#: data/org.mate.screensaver.gschema.xml.in:55
 msgid "Allow logout"
 msgstr "Allow logout"
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:20
+#: data/org.mate.screensaver.gschema.xml.in:56
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
 msgstr ""
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:21
+#: data/org.mate.screensaver.gschema.xml.in:60
 msgid "Time before logout option"
 msgstr "Time before logout option"
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:22
+#: data/org.mate.screensaver.gschema.xml.in:61
 msgid ""
 "The number of minutes after the screensaver activation before a logout "
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
 msgstr ""
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:23
+#: data/org.mate.screensaver.gschema.xml.in:65
 msgid "Logout command"
 msgstr "Logout command"
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:24
+#: data/org.mate.screensaver.gschema.xml.in:66
 msgid ""
 "The command to invoke when the logout button is clicked. This command should"
 " simply log the user out without any interaction. This key has effect only "
@@ -252,11 +268,11 @@ msgstr ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:25
+#: data/org.mate.screensaver.gschema.xml.in:70
 msgid "Allow user switching"
 msgstr "Allow user switching"
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:26
+#: data/org.mate.screensaver.gschema.xml.in:71
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
@@ -264,500 +280,521 @@ msgstr ""
 "Set this to TRUE to offer an option in the unlock dialogue to switch to a "
 "different user account."
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:27
+#: data/org.mate.screensaver.gschema.xml.in:75
 msgid "Theme for lock dialog"
 msgstr ""
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:28
+#: data/org.mate.screensaver.gschema.xml.in:76
 msgid "Theme to use for the lock dialog"
 msgstr ""
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:29
+#: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Allow the session status message to be displayed"
 msgstr ""
 
-#: ../data/org.mate.screensaver.gschema.xml.in.h:30
+#: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr ""
 
-#: ../savers/cosmos-slideshow.desktop.in.in.h:2
+#: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "Display a slideshow of pictures of the cosmos"
 
-#: ../savers/footlogo-floaters.desktop.in.in.h:1
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: savers/cosmos-slideshow.desktop.in.in:12
+msgid "MATE;screensaver;slideshow;cosmos;"
+msgstr ""
+
+#: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
 msgstr ""
 
-#: ../savers/footlogo-floaters.desktop.in.in.h:2
+#: savers/footlogo-floaters.desktop.in.in:4
 msgid "Bubbles the MATE logo around the screen"
 msgstr ""
 
-#: ../savers/gnomelogo-floaters.desktop.in.in.h:1
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: savers/footlogo-floaters.desktop.in.in:12
+msgid "MATE;screensaver;logo;bubbles;"
+msgstr ""
+
+#: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
 msgstr ""
 
-#: ../savers/gnomelogo-floaters.desktop.in.in.h:2
+#: savers/gnomelogo-floaters.desktop.in.in:4
 msgid "Bubbles the GNOME logo around the screen"
 msgstr ""
 
-#: ../savers/personal-slideshow.desktop.in.in.h:1
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: savers/gnomelogo-floaters.desktop.in.in:12
+msgid "MATE;screensaver;GNOME;logo;bubbles;"
+msgstr ""
+
+#: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
 msgstr "Pictures folder"
 
-#: ../savers/personal-slideshow.desktop.in.in.h:2
+#: savers/personal-slideshow.desktop.in.in:4
 msgid "Display a slideshow from your Pictures folder"
 msgstr "Display a slideshow from your Pictures folder"
 
-#: ../savers/popsquares.desktop.in.in.h:1
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: savers/personal-slideshow.desktop.in.in:12
+msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
+msgstr ""
+
+#: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
 msgstr "Pop art squares"
 
-#: ../savers/popsquares.desktop.in.in.h:2
+#: savers/popsquares.desktop.in.in:4
 msgid "A pop-art-ish grid of pulsing colors."
 msgstr "A pop-art-ish grid of pulsing colours."
 
-#: ../savers/popsquares.c:49 ../savers/floaters.c:1191
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: savers/popsquares.desktop.in.in:12
+msgid "MATE;screensaver;grid;pulsing;colors;"
+msgstr ""
+
+#: savers/popsquares.c:49 savers/floaters.c:1191
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. See --help for usage information.\n"
 
-#: ../savers/floaters.c:88
+#: savers/floaters.c:88
 msgid "Show paths that images follow"
 msgstr ""
 
-#: ../savers/floaters.c:93
+#: savers/floaters.c:93
 msgid "Occasionally rotate images as they move"
 msgstr ""
 
-#: ../savers/floaters.c:98
+#: savers/floaters.c:98
 msgid "Print out frame rate and other statistics"
 msgstr ""
 
-#: ../savers/floaters.c:103
+#: savers/floaters.c:103
 msgid "The maximum number of images to keep on screen"
 msgstr ""
 
-#: ../savers/floaters.c:103
+#: savers/floaters.c:103
 msgid "MAX_IMAGES"
 msgstr ""
 
-#: ../savers/floaters.c:108
+#: savers/floaters.c:108
 msgid "The initial size and position of window"
 msgstr ""
 
-#: ../savers/floaters.c:108
+#: savers/floaters.c:108
 msgid "WIDTHxHEIGHT+X+Y"
 msgstr "WIDTHxHEIGHT+X+Y"
 
-#: ../savers/floaters.c:113
+#: savers/floaters.c:113
 msgid "The source image to use"
 msgstr ""
 
-#. translators: the word "image" here
-#. * represents a command line argument
-#: ../savers/floaters.c:1185
+#: savers/floaters.c:1185
 msgid "image - floats images around the screen"
 msgstr "image - floats images around the screen"
 
-#: ../savers/floaters.c:1200
-#, c-format
+#: savers/floaters.c:1200
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "You must specify one image.  See --help for usage information.\n"
 
-#: ../savers/slideshow.c:55
+#: savers/slideshow.c:55
 msgid "Location to get images from"
 msgstr "Location to get images from"
 
-#: ../savers/slideshow.c:55
+#: savers/slideshow.c:55
 msgid "PATH"
 msgstr "PATH"
 
-#: ../savers/slideshow.c:59
+#: savers/slideshow.c:59
 msgid "Color to use for images background"
 msgstr ""
 
-#: ../savers/slideshow.c:59
+#: savers/slideshow.c:59
 msgid "\"#rrggbb\""
 msgstr ""
 
-#: ../savers/slideshow.c:63
+#: savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
 msgstr ""
 
-#: ../savers/slideshow.c:67
+#: savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:215
+#: src/copy-theme-dialog.c:184
 msgid "Copying files"
 msgstr "Copying files"
 
-#: ../src/copy-theme-dialog.c:234
+#: src/copy-theme-dialog.c:203
 msgid "From:"
 msgstr "From:"
 
-#: ../src/copy-theme-dialog.c:238
+#: src/copy-theme-dialog.c:207
 msgid "To:"
 msgstr "To:"
 
-#: ../src/copy-theme-dialog.c:259
+#: src/copy-theme-dialog.c:228
 msgid "Copying themes"
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:302
+#: src/copy-theme-dialog.c:271
 msgid "Invalid screensaver theme"
 msgstr "Invalid screensaver theme"
 
-#: ../src/copy-theme-dialog.c:305
+#: src/copy-theme-dialog.c:274
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr ""
 
-#: ../src/copy-theme-dialog.c:485
+#: src/copy-theme-dialog.c:454
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "Copying file: %u of %u"
 
-#: ../src/mate-screensaver-command.c:60
+#: src/mate-screensaver-command.c:60
 msgid "Causes the screensaver to exit gracefully"
 msgstr "Causes the screensaver to exit gracefully"
 
-#: ../src/mate-screensaver-command.c:64
+#: src/mate-screensaver-command.c:64
 msgid "Query the state of the screensaver"
 msgstr "Query the state of the screensaver"
 
-#: ../src/mate-screensaver-command.c:68
+#: src/mate-screensaver-command.c:68
 msgid "Query the length of time the screensaver has been active"
 msgstr ""
 
-#: ../src/mate-screensaver-command.c:72
+#: src/mate-screensaver-command.c:72
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr "Tells the running screensaver process to lock the screen immediately"
 
-#: ../src/mate-screensaver-command.c:76
+#: src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
 
-#: ../src/mate-screensaver-command.c:80
+#: src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr "If the screensaver is active then switch to another graphics demo"
 
-#: ../src/mate-screensaver-command.c:84
+#: src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
 msgstr "Turn the screensaver on (blank the screen)"
 
-#: ../src/mate-screensaver-command.c:88
+#: src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr "If the screensaver is active then deactivate it (un-blank the screen)"
 
-#: ../src/mate-screensaver-command.c:92
+#: src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr "Poke the running screensaver to simulate user activity"
 
-#: ../src/mate-screensaver-command.c:96
+#: src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
 msgstr ""
 
-#: ../src/mate-screensaver-command.c:100
+#: src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
 msgstr ""
 
-#: ../src/mate-screensaver-command.c:104
+#: src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
 msgstr ""
 
-#: ../src/mate-screensaver-command.c:108 ../src/mate-screensaver-dialog.c:58
-#: ../src/mate-screensaver.c:55
+#: src/mate-screensaver-command.c:108 src/mate-screensaver-dialog.c:58
+#: src/mate-screensaver.c:55
 msgid "Version of this application"
 msgstr "Version of this application"
 
-#: ../src/mate-screensaver-command.c:357
+#: src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr "The screensaver is %s\n"
 
-#: ../src/mate-screensaver-command.c:357
+#: src/mate-screensaver-command.c:357
 msgid "active"
 msgstr "active"
 
-#: ../src/mate-screensaver-command.c:357
+#: src/mate-screensaver-command.c:357
 msgid "inactive"
 msgstr "inactive"
 
-#: ../src/mate-screensaver-command.c:373
-#, c-format
+#: src/mate-screensaver-command.c:373
 msgid "The screensaver is not inhibited\n"
 msgstr ""
 
-#: ../src/mate-screensaver-command.c:381
-#, c-format
+#: src/mate-screensaver-command.c:381
 msgid "The screensaver is being inhibited by:\n"
 msgstr ""
 
-#: ../src/mate-screensaver-command.c:416
+#: src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
 msgstr ""
 
-#: ../src/mate-screensaver-command.c:422
-#, c-format
+#: src/mate-screensaver-command.c:422
 msgid "The screensaver is not currently active.\n"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:57
+#: src/mate-screensaver-dialog.c:57
 msgid "Show debugging output"
 msgstr "Show debugging output"
 
-#: ../src/mate-screensaver-dialog.c:59
+#: src/mate-screensaver-dialog.c:59
 msgid "Show the logout button"
 msgstr "Show the \"logout\" button"
 
-#: ../src/mate-screensaver-dialog.c:60
+#: src/mate-screensaver-dialog.c:60
 msgid "Command to invoke from the logout button"
 msgstr "Command to invoke from the logout button"
 
-#: ../src/mate-screensaver-dialog.c:61
+#: src/mate-screensaver-dialog.c:61
 msgid "Show the switch user button"
 msgstr "Show the \"switch user\" button"
 
-#: ../src/mate-screensaver-dialog.c:62
+#: src/mate-screensaver-dialog.c:62
 msgid "Message to show in the dialog"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:62 ../src/mate-screensaver-dialog.c:63
+#: src/mate-screensaver-dialog.c:62 src/mate-screensaver-dialog.c:63
 msgid "MESSAGE"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:63
+#: src/mate-screensaver-dialog.c:63
 msgid "Not used"
 msgstr ""
 
-#. login: is whacked always translate to Username:
-#: ../src/mate-screensaver-dialog.c:165 ../src/mate-screensaver-dialog.c:166
-#: ../src/mate-screensaver-dialog.c:167 ../src/gs-auth-pam.c:745
+#: src/mate-screensaver-dialog.c:165 src/mate-screensaver-dialog.c:166
+#: src/mate-screensaver-dialog.c:167 src/gs-auth-pam.c:745
 msgid "Username:"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:168 ../src/mate-screensaver-dialog.c:169
-#: ../src/gs-auth-pam.c:171
+#: src/mate-screensaver-dialog.c:168 src/mate-screensaver-dialog.c:169
+#: src/gs-auth-pam.c:171
 msgid "Password:"
 msgstr "Password:"
 
-#: ../src/mate-screensaver-dialog.c:170
+#: src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (password aged)"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:171
+#: src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (root enforced)"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:172
+#: src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:173
+#: src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:174
+#: src/mate-screensaver-dialog.c:174
 msgid "Password unchanged"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:175
+#: src/mate-screensaver-dialog.c:175
 msgid "Can not get username"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:176
+#: src/mate-screensaver-dialog.c:176
 msgid "Retype new UNIX password:"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:177
+#: src/mate-screensaver-dialog.c:177
 msgid "Enter new UNIX password:"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:178
+#: src/mate-screensaver-dialog.c:178
 msgid "(current) UNIX password:"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:179
+#: src/mate-screensaver-dialog.c:179
 msgid "Error while changing NIS password."
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:180
+#: src/mate-screensaver-dialog.c:180
 msgid "You must choose a longer password"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:181
+#: src/mate-screensaver-dialog.c:181
 msgid "Password has been already used. Choose another."
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:182
+#: src/mate-screensaver-dialog.c:182
 msgid "You must wait longer to change your password"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:183
+#: src/mate-screensaver-dialog.c:183
 msgid "Sorry, passwords do not match"
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:254
+#: src/mate-screensaver-dialog.c:254
 msgid "Checking..."
 msgstr ""
 
-#: ../src/mate-screensaver-dialog.c:300 ../src/gs-auth-pam.c:483
+#: src/mate-screensaver-dialog.c:300 src/gs-auth-pam.c:483
 msgid "Authentication failed."
 msgstr ""
 
-#: ../src/mate-screensaver-preferences.c:457
+#: src/mate-screensaver-preferences.c:455
 msgid "Blank screen"
 msgstr "Blank screen"
 
-#: ../src/mate-screensaver-preferences.c:463
+#: src/mate-screensaver-preferences.c:461
 msgid "Random"
 msgstr "Random"
 
-#: ../src/mate-screensaver-preferences.c:949
-#: ../src/mate-screensaver-preferences.c:959
+#: src/mate-screensaver-preferences.c:947
+#: src/mate-screensaver-preferences.c:957
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:952
-#: ../src/mate-screensaver-preferences.c:961
-#: ../src/mate-screensaver-preferences.c:970
-#: ../src/mate-screensaver-preferences.c:973
-#: ../src/mate-screensaver-preferences.c:978
-#: ../src/mate-screensaver-preferences.c:981
-#: ../src/mate-screensaver-preferences.c:986
-#: ../src/mate-screensaver-preferences.c:989
+#: src/mate-screensaver-preferences.c:950
+#: src/mate-screensaver-preferences.c:959
+#: src/mate-screensaver-preferences.c:968
+#: src/mate-screensaver-preferences.c:971
+#: src/mate-screensaver-preferences.c:976
+#: src/mate-screensaver-preferences.c:979
+#: src/mate-screensaver-preferences.c:984
+#: src/mate-screensaver-preferences.c:987
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/mate-screensaver-preferences.c:955
+#: src/mate-screensaver-preferences.c:953
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#. hour:minutes
-#. minutes:seconds
-#: ../src/mate-screensaver-preferences.c:958
-#: ../src/mate-screensaver-preferences.c:1005
-#: ../src/mate-screensaver-preferences.c:1018
+#: src/mate-screensaver-preferences.c:956
+#: src/mate-screensaver-preferences.c:1003
+#: src/mate-screensaver-preferences.c:1016
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
-#. hour:minutes:seconds
-#: ../src/mate-screensaver-preferences.c:1000
+#: src/mate-screensaver-preferences.c:998
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
 
-#. hour
-#. minutes
-#. seconds
-#: ../src/mate-screensaver-preferences.c:1010
-#: ../src/mate-screensaver-preferences.c:1023
-#: ../src/mate-screensaver-preferences.c:1059
+#: src/mate-screensaver-preferences.c:1008
+#: src/mate-screensaver-preferences.c:1021
+#: src/mate-screensaver-preferences.c:1057
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: ../src/mate-screensaver-preferences.c:1074
-#, c-format
+#: src/mate-screensaver-preferences.c:1072
 msgid "Never"
 msgstr "Never"
 
-#: ../src/mate-screensaver-preferences.c:1559
+#: src/mate-screensaver-preferences.c:1554
 msgid "Could not load the main interface"
 msgstr "Could not load the main interface"
 
-#: ../src/mate-screensaver-preferences.c:1561
+#: src/mate-screensaver-preferences.c:1556
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Please make sure that the screensaver is properly installed"
 
-#: ../src/mate-screensaver.c:56
+#: src/mate-screensaver.c:56
 msgid "Don't become a daemon"
 msgstr "Do not become a daemon"
 
-#: ../src/mate-screensaver.c:57
+#: src/mate-screensaver.c:57
 msgid "Enable debugging code"
 msgstr "Enable debugging code"
 
-#: ../src/mate-screensaver.desktop.in.in.h:2
+#: src/mate-screensaver.desktop.in.in:5
 msgid "Launch screensaver and locker program"
 msgstr ""
 
-#: ../src/gs-auth-pam.c:413
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: src/mate-screensaver.desktop.in.in:12
+msgid "MATE;screensaver;locker;"
+msgstr ""
+
+#: src/gs-auth-pam.c:413
 #, c-format
 msgid "Unable to establish service %s: %s\n"
 msgstr ""
 
-#: ../src/gs-auth-pam.c:443
+#: src/gs-auth-pam.c:443
 #, c-format
 msgid "Can't set PAM_TTY=%s"
 msgstr ""
 
-#: ../src/gs-auth-pam.c:479
+#: src/gs-auth-pam.c:479
 msgid "Incorrect password."
 msgstr ""
 
-#: ../src/gs-auth-pam.c:499
+#: src/gs-auth-pam.c:499
 msgid "Not permitted to gain access at this time."
 msgstr ""
 
-#: ../src/gs-auth-pam.c:507
+#: src/gs-auth-pam.c:507
 msgid "No longer permitted to access the system."
 msgstr ""
 
-#: ../src/gs-listener-dbus.c:2187
+#: src/gs-listener-dbus.c:2247
 msgid "failed to register with the message bus"
 msgstr "Failed to register with the message bus"
 
-#: ../src/gs-listener-dbus.c:2198
+#: src/gs-listener-dbus.c:2258
 msgid "not connected to the message bus"
 msgstr "not connected to the message bus"
 
-#: ../src/gs-listener-dbus.c:2208 ../src/gs-listener-dbus.c:2240
+#: src/gs-listener-dbus.c:2268 src/gs-listener-dbus.c:2300
 msgid "screensaver already running in this session"
 msgstr "Screensaver already running in this session"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: ../src/gs-lock-plug.c:303
+#: src/gs-lock-plug.c:301
 msgid "%A, %B %e"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:405
+#: src/gs-lock-plug.c:403
 msgid "Time has expired."
 msgstr "Time has expired."
 
-#: ../src/gs-lock-plug.c:436
+#: src/gs-lock-plug.c:434
 msgid "You have the Caps Lock key on."
 msgstr "You have the Caps Lock key on."
 
-#: ../src/gs-lock-plug.c:1660
+#: src/gs-lock-plug.c:1656
 msgid "S_witch User..."
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1669
+#: src/gs-lock-plug.c:1665
 msgid "Log _Out"
 msgstr "Log _Out"
 
-#. To translators: This expands to USERNAME on HOSTNAME
-#: ../src/gs-lock-plug.c:1882
+#: src/gs-lock-plug.c:1878
 msgid "%U on %h"
 msgstr ""
 
-#: ../src/gs-lock-plug.c:1897
+#: src/gs-lock-plug.c:1893
 msgid "_Password:"
 msgstr "_Password:"
