@@ -283,7 +283,7 @@ config_get_lock (gboolean *is_writable)
 }
 
 static gboolean
-config_get_lock_disabled ()
+config_get_lock_disabled (void)
 {
 	return g_settings_get_boolean (lockdown_settings, KEY_LOCK_DISABLE);
 }
