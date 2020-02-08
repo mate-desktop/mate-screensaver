@@ -417,7 +417,7 @@ screen_saver_floater_should_come_on_screen (ScreenSaver        *screen_saver,
 	if (!screen_saver_floater_is_off_canvas (screen_saver, floater))
 		return FALSE;
 
-	if ((abs (performance_ratio - .5) >= G_MINDOUBLE) &&
+	if ((fabs (performance_ratio - .5) >= G_MINDOUBLE) &&
 	        (g_random_double () > .5))
 	{
 		if (duration)
@@ -582,7 +582,7 @@ screen_saver_floater_create_path (ScreenSaver        *screen_saver,
 	performance_ratio =
 	    screen_saver_get_frames_per_second (screen_saver) / OPTIMAL_FRAME_RATE;
 
-	if (abs (performance_ratio) <= G_MINDOUBLE)
+	if (fabs (performance_ratio) <= G_MINDOUBLE)
 		performance_ratio = 1.0;
 
 	if (screen_saver_floater_should_bubble_up (screen_saver, floater, performance_ratio, &duration))
@@ -732,7 +732,7 @@ screen_saver_floater_do_draw (ScreenSaver        *screen_saver,
 
 	cairo_save (context);
 
-	if (screen_saver->should_do_rotations && (abs (floater->angle) > G_MINDOUBLE))
+	if (screen_saver->should_do_rotations && (fabs (floater->angle) > G_MINDOUBLE))
 	{
 		floater->bounds.width = G_SQRT2 * source->width + 2;
 		floater->bounds.height = G_SQRT2 * source->height + 2;
@@ -1001,7 +1001,7 @@ compare_floaters (ScreenSaverFloater *a,
 {
 	if (a->scale > b->scale)
 		return 1;
-	else if (abs (a->scale - b->scale) <= G_MINDOUBLE)
+	else if (fabs (a->scale - b->scale) <= G_MINDOUBLE)
 		return 0;
 	else
 		return -1;
@@ -1133,7 +1133,7 @@ screen_saver_do_update_stats (ScreenSaver *screen_saver)
 	    screen_saver_get_timestamp (screen_saver);
 	screen_saver->last_calculated_stats_time = last_calculated_stats_time;
 
-	if (abs (last_calculated_stats_time) <= G_MINDOUBLE)
+	if (fabs (last_calculated_stats_time) <= G_MINDOUBLE)
 		return TRUE;
 
 	seconds_since_last_stats_update =
