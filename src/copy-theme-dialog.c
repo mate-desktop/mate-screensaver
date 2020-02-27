@@ -434,10 +434,8 @@ copy_theme_dialog_finalize (GObject *obj)
 	CopyThemeDialog *dlg = COPY_THEME_DIALOG (obj);
 
 	g_object_unref (dlg->priv->theme_dir);
-	g_slist_foreach (dlg->priv->all_files, (GFunc) (g_object_unref), NULL);
-	g_slist_free (dlg->priv->all_files);
-	g_slist_foreach (dlg->priv->all_basenames, (GFunc) (g_free), NULL);
-	g_slist_free (dlg->priv->all_basenames);
+	g_slist_free_full (dlg->priv->all_files, g_object_unref);
+	g_slist_free_full (dlg->priv->all_basenames, g_free);
 	g_object_unref (dlg->priv->cancellable);
 
 	if (parent_class->finalize)

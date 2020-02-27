@@ -807,8 +807,7 @@ theme_installer_run (GtkWidget *prefs_dialog, GList *files)
 	GtkWidget *copy_dialog;
 
 	copy_dialog = copy_theme_dialog_new (files);
-	g_list_foreach (files, (GFunc) (g_object_unref), NULL);
-	g_list_free (files);
+	g_list_free_full (files, g_object_unref);
 
 	gtk_window_set_transient_for (GTK_WINDOW (copy_dialog),
 	                              GTK_WINDOW (prefs_dialog));

@@ -202,8 +202,7 @@ _gs_prefs_set_themes (GSPrefs *prefs,
 	guint i;
 	if (prefs->themes)
 	{
-		g_slist_foreach (prefs->themes, (GFunc)g_free, NULL);
-		g_slist_free (prefs->themes);
+		g_slist_free_full (prefs->themes, g_free);
 	}
 
 	/* take ownership of the list */
@@ -600,8 +599,7 @@ gs_prefs_finalize (GObject *object)
 
 	if (prefs->themes)
 	{
-		g_slist_foreach (prefs->themes, (GFunc)g_free, NULL);
-		g_slist_free (prefs->themes);
+		g_slist_free_full (prefs->themes, g_free);
 	}
 
 	g_free (prefs->logout_command);

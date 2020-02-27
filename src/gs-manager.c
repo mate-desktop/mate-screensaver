@@ -387,8 +387,7 @@ free_themes (GSManager *manager)
 {
 	if (manager->priv->themes)
 	{
-		g_slist_foreach (manager->priv->themes, (GFunc)g_free, NULL);
-		g_slist_free (manager->priv->themes);
+		g_slist_free_full (manager->priv->themes, g_free);
 	}
 }
 
