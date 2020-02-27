@@ -345,7 +345,7 @@ static gboolean auth_check_idle(GSLockPlug* plug)
 	if (res)
 	{
 		again = FALSE;
-		g_idle_add((GSourceFunc) quit_response_ok, NULL);
+		g_idle_add (G_SOURCE_FUNC (quit_response_ok), NULL);
 	}
 	else
 	{
@@ -363,7 +363,7 @@ static gboolean auth_check_idle(GSLockPlug* plug)
 			/* Don't quit immediately, but rather request that mate-screensaver
 			 * terminates us after it has finished the dialog shake. Time out
 			 * after 5 seconds and quit anyway if this doesn't happen though */
-			g_idle_add((GSourceFunc) response_request_quit, NULL);
+			g_idle_add (G_SOURCE_FUNC (response_request_quit), NULL);
 			g_timeout_add(5000, (GSourceFunc) quit_timeout_cb, NULL);
 		}
 	}
@@ -595,7 +595,7 @@ int main(int argc, char** argv)
 
 	gs_debug_init(verbose, FALSE);
 
-	g_idle_add((GSourceFunc) popup_dialog_idle, NULL);
+	g_idle_add (G_SOURCE_FUNC (popup_dialog_idle), NULL);
 
 	gtk_main();
 

@@ -2141,7 +2141,7 @@ gs_lock_plug_init (GSLockPlug *plug)
 		date_time_update (plug);
 		gtk_widget_show_all (plug->priv->vbox);
 	}
-	plug->priv->datetime_timeout_id = g_timeout_add_seconds (1, (GSourceFunc) date_time_update, plug);
+	plug->priv->datetime_timeout_id = g_timeout_add_seconds (1, G_SOURCE_FUNC (date_time_update), plug);
 
 	if (plug->priv->note_text_view != NULL)
 	{
