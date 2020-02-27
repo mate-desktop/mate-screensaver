@@ -380,7 +380,7 @@ gs_window_move_resize_window (GSWindow *window,
 	GdkWindow *gdkwindow;
 
 	widget = GTK_WIDGET (window);
-	gdkwindow = gtk_widget_get_window (GTK_WIDGET (window));
+	gdkwindow = gtk_widget_get_window (widget);
 
 	g_assert (gtk_widget_get_realized (widget));
 
