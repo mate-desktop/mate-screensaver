@@ -1112,7 +1112,6 @@ data/Makefile
 data/mate-screensavers.menu
 data/mate-screensaver.pc
 data/org.mate.ScreenSaver.service
-data/org.mate.screensaver.gschema.xml
 data/images/Makefile
 data/images/cosmos/Makefile
 savers/Makefile
