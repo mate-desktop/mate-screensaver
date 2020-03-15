@@ -1,4 +1,4 @@
-<schemalist gettext-domain="@GETTEXT_PACKAGE@">
+<schemalist gettext-domain="mate-screensaver">
   <enum id="org.mate.screensaver.Mode">
     <value nick="blank-only" value="0"/>
     <value nick="random" value="1"/>
@@ -79,6 +79,11 @@
       <default>true</default>
       <summary>Allow the session status message to be displayed</summary>
       <description>Allow the session status message to be displayed when the screen is locked.</description>
+    </key>
+    <key name="picture-filename" type="s">
+      <default>'@datadir@/backgrounds/mate/desktop/Stripes.png'</default>
+      <summary>Picture Filename</summary>
+      <description>File to use for the background image.</description>
     </key>
   </schema>
 </schemalist>

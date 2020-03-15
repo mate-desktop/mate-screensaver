@@ -1049,6 +1049,13 @@ gs_manager_init (GSManager *manager)
 					  manager);
 
 	mate_bg_load_from_preferences (manager->priv->bg);
+	GSettings *settings = g_settings_new ("org.mate.screensaver");
+	char *filename= g_settings_get_string (settings, "picture-filename");
+	if (g_file_test (filename, G_FILE_TEST_EXISTS)) {
+		mate_bg_set_filename (manager->priv->bg, filename);
+	}
+	g_free (filename);
+	g_object_unref (settings);
 }
 
 static void
@@ -1261,11 +1268,22 @@ static void
 apply_background_to_window (GSManager *manager,
                             GSWindow  *window)
 {
+	GSettings       *settings;
+	char            *filename;
 	cairo_surface_t *surface;
 	int              width;
 	int              height;
 
-        mate_bg_load_from_preferences (manager->priv->bg);
+	mate_bg_load_from_preferences(manager->priv->bg);
+
+	settings = g_settings_new ("org.mate.screensaver");
+	filename = g_settings_get_string (settings, "picture-filename");
+
+	if (g_file_test (filename, G_FILE_TEST_EXISTS)) {
+		mate_bg_set_filename (manager->priv->bg, filename);
+	}
+	g_free (filename);
+	g_object_unref (settings);
 
 	if (manager->priv->bg == NULL)
 	{
