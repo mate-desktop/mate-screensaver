@@ -1486,6 +1486,7 @@ widget_set_best_visual (GtkWidget *widget)
 static gboolean
 setup_treeview_idle (gpointer data)
 {
+	(void)data;			/* remove warning unused parameter ‘data’ */
 	GtkWidget *preview;
 	GtkWidget *treeview;
 
@@ -1694,7 +1695,7 @@ init_capplet (void)
 	g_signal_connect (fullscreen_preview_next, "clicked",
 	                  G_CALLBACK (fullscreen_preview_next_cb), NULL);
 
-	g_idle_add ((GSourceFunc)setup_treeview_idle, NULL);
+	g_idle_add (setup_treeview_idle, NULL);
 }
 
 static void

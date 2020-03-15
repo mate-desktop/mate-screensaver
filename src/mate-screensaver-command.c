@@ -329,8 +329,9 @@ oom:
 }
 
 static gboolean
-do_command (DBusConnection *connection)
+do_command (gpointer data)
 {
+	DBusConnection *connection = data;
 	DBusMessage *reply;
 
 	if (do_quit)
@@ -545,7 +546,7 @@ main (int    argc,
 		exit (1);
 	}
 
-	g_idle_add ((GSourceFunc)do_command, connection);
+	g_idle_add (do_command, connection);
 
 	loop = g_main_loop_new (NULL, FALSE);
 	g_main_loop_run (loop);
