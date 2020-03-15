@@ -1086,6 +1086,12 @@ enabled_checkbox_toggled (GtkToggleButton *button, gpointer user_data)
 }
 
 static void
+picture_filename_changed (GtkFileChooserButton *button, gpointer user_data)
+{
+	g_settings_set_string (screensaver_settings, "picture-filename", gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (button)));
+}
+
+static void
 ui_disable_lock (gboolean disable)
 {
 	GtkWidget *widget;
@@ -1533,6 +1539,7 @@ init_capplet (void)
 	GtkWidget *fullscreen_preview_previous;
 	GtkWidget *fullscreen_preview_next;
 	GtkWidget *fullscreen_preview_close;
+	GtkWidget *picture_filename;
 	gdouble    activate_delay;
 	gboolean   enabled;
 	gboolean   is_writable;
@@ -1579,6 +1586,7 @@ init_capplet (void)
 	fullscreen_preview_close = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_close"));
 	fullscreen_preview_previous = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_previous_button"));
 	fullscreen_preview_next = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_next_button"));
+	picture_filename = GTK_WIDGET (gtk_builder_get_object (builder, "picture_filename"));
 
 	label              = GTK_WIDGET (gtk_builder_get_object (builder, "activate_delay_label"));
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), activate_delay_hscale);
@@ -1628,6 +1636,13 @@ init_capplet (void)
 	}
 	g_signal_connect (lock_checkbox, "toggled",
 	                  G_CALLBACK (lock_checkbox_toggled), NULL);
+
+	char *path = g_settings_get_string (screensaver_settings, "picture-filename");
+	gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (gtk_builder_get_object (builder, "picture_filename")), path);
+	gtk_file_filter_add_pixbuf_formats (GTK_FILE_FILTER (gtk_builder_get_object (builder, "picture_filefilter")));
+	g_free (path);
+	g_signal_connect (picture_filename, "selection-changed",
+	                  G_CALLBACK (picture_filename_changed), NULL);
 
 	enabled = config_get_enabled (&is_writable);
 	ui_set_enabled (enabled);
