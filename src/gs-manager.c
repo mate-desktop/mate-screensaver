@@ -1076,8 +1076,10 @@ remove_unfade_idle (GSManager *manager)
 
 
 static gboolean
-window_deactivated_idle (GSManager *manager)
+window_deactivated_idle (gpointer data)
 {
+	GSManager *manager = data;
+
 	g_return_val_if_fail (manager != NULL, FALSE);
 	g_return_val_if_fail (GS_IS_MANAGER (manager), FALSE);
 
@@ -1095,7 +1097,7 @@ window_deactivated_cb (GSWindow  *window,
 	g_return_if_fail (manager != NULL);
 	g_return_if_fail (GS_IS_MANAGER (manager));
 
-	g_idle_add ((GSourceFunc)window_deactivated_idle, manager);
+	g_idle_add (window_deactivated_idle, manager);
 }
 
 static GSWindow *

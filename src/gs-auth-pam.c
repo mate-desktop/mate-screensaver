@@ -185,8 +185,9 @@ auth_message_handler (GSAuthMessageStyle style,
 }
 
 static gboolean
-gs_auth_queued_message_handler (GsAuthMessageHandlerData *data)
+gs_auth_queued_message_handler (gpointer user_data)
 {
+	GsAuthMessageHandlerData *data = user_data;
 	gboolean res;
 
 	if (gs_auth_get_verbose ())
@@ -237,7 +238,7 @@ gs_auth_run_message_handler (struct pam_closure *c,
 
 	/* Queue the callback in the gui (the main) thread
 	 */
-	g_idle_add ((GSourceFunc) gs_auth_queued_message_handler, &data);
+	g_idle_add (gs_auth_queued_message_handler, &data);
 
 	if (gs_auth_get_verbose ())
 	{

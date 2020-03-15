@@ -104,8 +104,9 @@ static void response_ok(void)
 	fflush(stdout);
 }
 
-static gboolean quit_response_ok(void)
+static gboolean quit_response_ok(gpointer data)
 {
+	(void)data;			/* remove warning unused parameter ‘data’ */
 	response_ok();
 	gtk_main_quit();
 	return FALSE;
@@ -320,8 +321,9 @@ static void response_cb(GSLockPlug* plug, gint response_id)
 	}
 }
 
-static gboolean response_request_quit(void)
+static gboolean response_request_quit(gpointer data)
 {
+	(void)data;			/* remove warning unused parameter ‘data’ */
 	printf("REQUEST QUIT\n");
 	fflush(stdout);
 	return FALSE;
@@ -333,8 +335,9 @@ static gboolean quit_timeout_cb(gpointer data)
 	return FALSE;
 }
 
-static gboolean auth_check_idle(GSLockPlug* plug)
+static gboolean auth_check_idle(gpointer data)
 {
+	GSLockPlug* plug = data;
 	gboolean res;
 	gboolean again;
 	static guint loop_counter = 0;
@@ -345,7 +348,7 @@ static gboolean auth_check_idle(GSLockPlug* plug)
 	if (res)
 	{
 		again = FALSE;
-		g_idle_add (G_SOURCE_FUNC (quit_response_ok), NULL);
+		g_idle_add (quit_response_ok, NULL);
 	}
 	else
 	{
@@ -363,7 +366,7 @@ static gboolean auth_check_idle(GSLockPlug* plug)
 			/* Don't quit immediately, but rather request that mate-screensaver
 			 * terminates us after it has finished the dialog shake. Time out
 			 * after 5 seconds and quit anyway if this doesn't happen though */
-			g_idle_add (G_SOURCE_FUNC (response_request_quit), NULL);
+			g_idle_add (response_request_quit, NULL);
 			g_timeout_add(5000, (GSourceFunc) quit_timeout_cb, NULL);
 		}
 	}
@@ -376,10 +379,11 @@ static void show_cb(GtkWidget* widget, gpointer data)
 	print_id(widget);
 }
 
-static gboolean popup_dialog_idle(void)
+static gboolean popup_dialog_idle(gpointer data)
 {
 	GtkWidget* widget;
 
+	(void)data;			/* remove warning unused parameter ‘data’ */
 	gs_profile_start(NULL);
 
 	widget = gs_lock_plug_new();
@@ -409,7 +413,7 @@ static gboolean popup_dialog_idle(void)
 
 	gtk_widget_realize(widget);
 
-	g_idle_add((GSourceFunc) auth_check_idle, widget);
+	g_idle_add(auth_check_idle, widget);
 
 	gs_profile_end(NULL);
 
@@ -595,7 +599,7 @@ int main(int argc, char** argv)
 
 	gs_debug_init(verbose, FALSE);
 
-	g_idle_add (G_SOURCE_FUNC (popup_dialog_idle), NULL);
+	g_idle_add (popup_dialog_idle, NULL);
 
 	gtk_main();
 

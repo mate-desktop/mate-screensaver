@@ -43,7 +43,7 @@
 
 static void gs_window_finalize   (GObject       *object);
 
-static gboolean popup_dialog_idle (GSWindow *window);
+static gboolean popup_dialog_idle (gpointer data);
 static void gs_window_dialog_finish (GSWindow *window);
 static void remove_command_watches (GSWindow *window);
 
@@ -636,7 +636,7 @@ remove_popup_dialog_idle (GSWindow *window)
 static void
 add_popup_dialog_idle (GSWindow *window)
 {
-	window->priv->popup_dialog_idle_id = g_idle_add ((GSourceFunc)popup_dialog_idle, window);
+	window->priv->popup_dialog_idle_id = g_idle_add (popup_dialog_idle, window);
 }
 
 static gboolean
@@ -1753,12 +1753,12 @@ popup_dialog (GSWindow *window)
 }
 
 static gboolean
-popup_dialog_idle (GSWindow *window)
+popup_dialog_idle (gpointer data)
 {
+	GSWindow *window = data;
+
 	popup_dialog (window);
-
 	window->priv->popup_dialog_idle_id = 0;
-
 	return FALSE;
 }
 
