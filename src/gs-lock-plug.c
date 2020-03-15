@@ -387,8 +387,10 @@ gs_lock_plug_response (GSLockPlug *plug,
 }
 
 static gboolean
-response_cancel_idle_cb (GSLockPlug *plug)
+response_cancel_idle_cb (gpointer user_data)
 {
+	GSLockPlug *plug = user_data;
+
 	plug->priv->response_idle_id = 0;
 
 	gs_lock_plug_response (plug, GS_LOCK_PLUG_RESPONSE_CANCEL);
@@ -397,8 +399,10 @@ response_cancel_idle_cb (GSLockPlug *plug)
 }
 
 static gboolean
-dialog_timed_out (GSLockPlug *plug)
+dialog_timed_out (gpointer user_data)
 {
+	GSLockPlug *plug = user_data;
+
 	gs_lock_plug_set_sensitive (plug, FALSE);
 	set_status_text (plug, _("Time has expired."));
 
@@ -410,8 +414,8 @@ dialog_timed_out (GSLockPlug *plug)
 	remove_response_idle (plug);
 
 	plug->priv->response_idle_id = g_timeout_add (2000,
-	                               (GSourceFunc)response_cancel_idle_cb,
-	                               plug);
+	                                              response_cancel_idle_cb,
+	                                              plug);
 	return FALSE;
 }
 
@@ -462,8 +466,8 @@ restart_cancel_timeout (GSLockPlug *plug)
 	remove_cancel_timeout (plug);
 
 	plug->priv->cancel_timeout_id = g_timeout_add (plug->priv->timeout,
-	                                (GSourceFunc)dialog_timed_out,
-	                                plug);
+	                                               dialog_timed_out,
+	                                               plug);
 }
 
 void
@@ -1950,8 +1954,8 @@ switch_user_button_clicked (GtkButton  *button,
 	gs_lock_plug_set_sensitive (plug, FALSE);
 
 	plug->priv->response_idle_id = g_timeout_add (2000,
-	        (GSourceFunc)response_cancel_idle_cb,
-	        plug);
+	                                              response_cancel_idle_cb,
+	                                              plug);
 
 	gs_lock_plug_set_busy (plug);
 	do_user_switch (plug);
