@@ -55,7 +55,7 @@ after_success:
      fi'
 
 env:
-  - DISTRO="archlinux:testing"
+  - DISTRO="archlinux:latest"
   - DISTRO="debian:testing"
   - DISTRO="fedora:latest"
   - DISTRO="ubuntu:devel"
