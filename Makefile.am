@@ -7,6 +7,7 @@ NULL =
 
 DISTCHECK_CONFIGURE_FLAGS = \
 	--without-systemd \
+	--enable-compile-warnings=no \
 	CFLAGS='-Wno-deprecated-declarations'
 
 SUBDIRS =			\
