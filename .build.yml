@@ -131,10 +131,6 @@ variables:
     -enable-checker security.insecureAPI.strcpy"'
 
 before_scripts:
-  - if [ ${DISTRO_NAME} == "debian" ];then
-  -     curl -Ls -o debian.sh https://github.com/mate-desktop/mate-dev-scripts/raw/master/travis/debian.sh
-  -     bash ./debian.sh
-  - fi
   # Install mate-common from tarball
   - cd ${START_DIR}
   - '[ -f mate-common-1.24.1.tar.xz ] || curl -Ls -o mate-common-1.24.1.tar.xz https://github.com/mate-desktop/mate-common/releases/download/v1.24.1/mate-common-1.24.1.tar.xz'
