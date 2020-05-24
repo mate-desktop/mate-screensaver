@@ -285,3 +285,5 @@ install-exec-hook:
 	    echo "***           means that locking might not work." ; \
 	    echo "***" ; \
 	fi
+
+-include $(top_srcdir)/git.mk

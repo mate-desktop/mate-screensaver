@@ -149,3 +149,5 @@ MAINTAINERCLEANFILES =			\
 	personal-slideshow.desktop	\
 	popsquares.desktop		\
 	$(NULL)
+
+-include $(top_srcdir)/git.mk

@@ -108,3 +108,5 @@ install-data-hook:
 	        echo "***" ; \
 	   fi; \
 	fi
+
+-include $(top_srcdir)/git.mk
