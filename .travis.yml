@@ -8,7 +8,7 @@ addons:
   apt:
     packages:
       - python3-pip
-      - python3-setuptool
+      - python3-setuptools
 
 branches:
   except:
