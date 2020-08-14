@@ -30,9 +30,6 @@
 #include <string.h>
 #include <gdk/gdkx.h>
 
-#include <dbus/dbus.h>
-#include <dbus/dbus-glib.h>
-
 #include "gs-watcher.h"
 #include "gs-marshal.h"
 #include "gs-debug.h"
@@ -55,7 +52,7 @@ struct GSWatcherPrivate
 	guint           idle_id;
 	char           *status_message;
 
-	DBusGProxy     *presence_proxy;
+	GDBusProxy     *presence_proxy;
 	guint           watchdog_timer_id;
 };
 
@@ -392,125 +389,128 @@ set_status (GSWatcher *watcher,
 }
 
 static void
-on_presence_status_changed (DBusGProxy    *presence_proxy,
-                            guint          status,
-                            GSWatcher     *watcher)
+on_presence_signal_cb (GDBusProxy *proxy G_GNUC_UNUSED,
+                       gchar      *sender_name,
+                       gchar      *signal_name,
+                       GVariant   *parameters,
+                       gpointer    user_data)
 {
-	set_status (watcher, status);
-}
+	GSWatcher  *watcher;
+	guint       status;
+	const char *status_text;
 
-static void
-on_presence_status_text_changed (DBusGProxy    *presence_proxy,
-                                 const char    *status_text,
-                                 GSWatcher     *watcher)
-{
-	set_status_text (watcher, status_text);
+	if (g_strcmp0 (sender_name, "org.gnome.SessionManager") != 0)
+		return;
+
+	watcher = GS_WATCHER (user_data);
+
+	if (g_strcmp0 (signal_name, "StatusChanged") == 0 &&
+	    g_variant_is_of_type (parameters, G_VARIANT_TYPE("(u)")))
+	{
+		g_variant_get (parameters, "(u)", &status);
+		set_status (watcher, status);
+	}
+
+	if (g_strcmp0 (signal_name, "StatusTextChanged") == 0 &&
+	    g_variant_is_of_type (parameters, G_VARIANT_TYPE("(s)")))
+	{
+		g_variant_get (parameters, "(&s)", &status_text);
+		set_status_text (watcher, status_text);
+	}
 }
 
 static gboolean
 connect_presence_watcher (GSWatcher *watcher)
 {
-	DBusGConnection   *bus;
-	GError            *error;
-	gboolean           ret;
+	gboolean  ret = FALSE;
+	GError   *error = NULL;
 
-	ret = FALSE;
-
-	error = NULL;
-	bus = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-	if (bus == NULL)
-	{
-		g_warning ("Unable to get session bus: %s", error->message);
-		g_error_free (error);
-		goto done;
-	}
-
-	error = NULL;
-	watcher->priv->presence_proxy = dbus_g_proxy_new_for_name_owner (bus,
-	                                "org.gnome.SessionManager",
-	                                "/org/gnome/SessionManager/Presence",
-	                                "org.gnome.SessionManager.Presence",
-	                                &error);
+	watcher->priv->presence_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SESSION,
+								       G_DBUS_PROXY_FLAGS_NONE,
+								       NULL,
+								       "org.gnome.SessionManager",
+								       "/org/gnome/SessionManager/Presence",
+								       "org.gnome.SessionManager.Presence",
+								       NULL,
+								       &error);
 	if (watcher->priv->presence_proxy != NULL)
 	{
-		DBusGProxy *proxy;
+		GDBusProxy *proxy;
 
-		dbus_g_proxy_add_signal (watcher->priv->presence_proxy,
-		                         "StatusChanged",
-		                         G_TYPE_UINT,
-		                         G_TYPE_INVALID);
-		dbus_g_proxy_connect_signal (watcher->priv->presence_proxy,
-		                             "StatusChanged",
-		                             G_CALLBACK (on_presence_status_changed),
-		                             watcher,
-		                             NULL);
-		dbus_g_proxy_add_signal (watcher->priv->presence_proxy,
-		                         "StatusTextChanged",
-		                         G_TYPE_STRING,
-		                         G_TYPE_INVALID);
-		dbus_g_proxy_connect_signal (watcher->priv->presence_proxy,
-		                             "StatusTextChanged",
-		                             G_CALLBACK (on_presence_status_text_changed),
-		                             watcher,
-		                             NULL);
+		g_signal_connect (watcher->priv->presence_proxy, "g-signal",
+				  G_CALLBACK (on_presence_signal_cb),
+				  watcher);
 
-		proxy = dbus_g_proxy_new_from_proxy (watcher->priv->presence_proxy,
-		                                     "org.freedesktop.DBus.Properties",
-		                                     "/org/gnome/SessionManager/Presence");
+		proxy = g_dbus_proxy_new_sync (g_dbus_proxy_get_connection (watcher->priv->presence_proxy),
+					       G_DBUS_PROXY_FLAGS_NONE,
+					       NULL,
+					       g_dbus_proxy_get_name (watcher->priv->presence_proxy),
+					       g_dbus_proxy_get_object_path (watcher->priv->presence_proxy),
+					       "org.freedesktop.DBus.Properties",
+					       NULL,
+					       &error);
+
 		if (proxy != NULL)
 		{
 			guint       status;
 			const char *status_text;
-			GValue      value = { 0, };
+			GVariant   *variant = NULL;
 
 			status = 0;
 			status_text = NULL;
 
 			error = NULL;
-			dbus_g_proxy_call (proxy,
-			                   "Get",
-			                   &error,
-			                   G_TYPE_STRING, "org.gnome.SessionManager.Presence",
-			                   G_TYPE_STRING, "status",
-			                   G_TYPE_INVALID,
-			                   G_TYPE_VALUE, &value,
-			                   G_TYPE_INVALID);
+			variant = g_dbus_proxy_call_sync (proxy,
+							  "Get",
+							  g_variant_new ("(ss)",
+									 "org.gnome.SessionManager.Presence",
+									 "status"),
+							  G_DBUS_CALL_FLAGS_NONE,
+							  -1,
+							  NULL,
+							  &error);
 
-			if (error != NULL)
+			if (variant == NULL)
 			{
 				g_warning ("Couldn't get presence status: %s", error->message);
 				g_error_free (error);
+				g_object_unref (proxy);
 				goto done;
 			}
-			else
-			{
-				status = g_value_get_uint (&value);
-			}
 
-			g_value_unset (&value);
+			g_variant_get (variant, "(u)", &status);
+			g_clear_pointer (&variant, g_variant_unref);
 
 			error = NULL;
-			dbus_g_proxy_call (proxy,
-			                   "Get",
-			                   &error,
-			                   G_TYPE_STRING, "org.gnome.SessionManager.Presence",
-			                   G_TYPE_STRING, "status-text",
-			                   G_TYPE_INVALID,
-			                   G_TYPE_VALUE, &value,
-			                   G_TYPE_INVALID);
+			variant = g_dbus_proxy_call_sync (proxy,
+							  "Get",
+							  g_variant_new ("(ss)",
+									 "org.gnome.SessionManager.Presence",
+									 "status-text"),
+							  G_DBUS_CALL_FLAGS_NONE,
+							  -1,
+							  NULL,
+							  &error);
 
-			if (error != NULL)
+			if (variant == NULL)
 			{
 				g_warning ("Couldn't get presence status text: %s", error->message);
 				g_error_free (error);
+				g_object_unref (proxy);
+				goto done;
 			}
-			else
-			{
-				status_text = g_value_get_string (&value);
-			}
+
+			g_variant_get (variant, "(s)", &status_text);
+			g_clear_pointer (&variant, g_variant_unref);
 
 			set_status (watcher, status);
 			set_status_text (watcher, status_text);
+
+			g_object_unref (proxy);
+		} else {
+			g_warning ("Unable to contact Fprint Device daemon: %s\n", error->message);
+			g_error_free (error);
+			goto done;
 		}
 	}
 	else
@@ -578,7 +578,7 @@ gs_watcher_finalize (GObject *object)
    (one wouldn't expect this to be rocket science.)
 */
 static void
-disable_builtin_screensaver (GSWatcher *watcher,
+disable_builtin_screensaver (GSWatcher *watcher G_GNUC_UNUSED,
                              gboolean   unblank_screen)
 {
 	int current_server_timeout, current_server_interval;
