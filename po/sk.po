@@ -7,7 +7,7 @@
 # Ján Ďanovský <dagsoftware@yahoo.com>, 2018
 # Dušan Kazik <prescott66@gmail.com>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Juraj Oravec, 2018
+# 32442f8bc5cc500b59f161d95078a28a_525ed04, 2018
 # peter, 2018
 # Vendelín Slezák <klaykap@yandex.com>, 2018
 # Tibor Kaputa <tibbbi2@gmail.com>, 2019

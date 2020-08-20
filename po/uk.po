@@ -8,6 +8,7 @@
 # zubr139, 2018
 # Denis <prohibiti@gmail.com>, 2018
 # Микола Ткач <chistomov@gmail.com>, 2019
+# Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
@@ -15,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Микола Ткач <chistomov@gmail.com>, 2019\n"
+"Last-Translator: Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -298,8 +299,8 @@ msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
-"Якщо встановлено значення TRUE, діялоґ розблокування екрану надасть "
-"можливість  увійти в систему під иншим обліковим записом."
+"Якщо встановлено значення TRUE, діалог розблокування екрану надасть "
+"можливість  увійти в систему під іншим обліковим записом."
 
 #: data/org.mate.screensaver.gschema.xml.in:75
 msgid "Theme for lock dialog"
@@ -399,7 +400,7 @@ msgstr "Періодично обертати зображення при їх �
 
 #: savers/floaters.c:98
 msgid "Print out frame rate and other statistics"
-msgstr "Виводити частоту кадрів та иншу статистику"
+msgstr "Виводити частоту кадрів та іншу статистику"
 
 #: savers/floaters.c:103
 msgid "The maximum number of images to keep on screen"
@@ -656,7 +657,7 @@ msgstr "Потрібно вибрати довший пароль"
 
 #: src/mate-screensaver-dialog.c:181
 msgid "Password has been already used. Choose another."
-msgstr "Пароль вже використовувався. Виберіть инший пароль."
+msgstr "Пароль вже використовувався. Виберіть інший пароль."
 
 #: src/mate-screensaver-dialog.c:182
 msgid "You must wait longer to change your password"

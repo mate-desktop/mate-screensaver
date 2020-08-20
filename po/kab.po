@@ -4,8 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Øystein Steffensen-Alværvik, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Slimane Selyan AMIRI <selyan.kab@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
@@ -13,22 +12,22 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
-"Language-Team: Norwegian Nynorsk (https://www.transifex.com/mate/teams/13566/nn/)\n"
+"Last-Translator: Slimane Selyan AMIRI <selyan.kab@gmail.com>, 2020\n"
+"Language-Team: Kabyle (https://www.transifex.com/mate/teams/13566/kab/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: nn\n"
+"Language: kab\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/mate-screensaver-preferences.desktop.in:3
 #: src/mate-screensaver.desktop.in.in:4
 msgid "Screensaver"
-msgstr "Skjermsparar"
+msgstr ""
 
 #: data/mate-screensaver-preferences.desktop.in:4
 msgid "Set your screensaver preferences"
-msgstr "Set brukarval for skjermspararen"
+msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
@@ -45,52 +44,52 @@ msgstr ""
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
-msgstr "Førehandsvising av skjermsparar"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:56
 msgid "<b>Screensaver preview</b>"
-msgstr "<b>Førehandsvising av skjermsparar</b>"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:164
 msgid "Screensaver Preferences"
-msgstr "Brukarval for skjermsparar"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:196
 msgid "Power _Management"
-msgstr "Strø_mstyring"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:212
 msgid "_Preview"
-msgstr "_Førehandsvis"
+msgstr "_Taskant"
 
 #: data/mate-screensaver-preferences.ui:272
 msgid "_Screensaver theme:"
-msgstr "Tema for _skjermsparar:"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:390
 msgid "Regard the computer as _idle after:"
-msgstr "Sjå på datamaskinen som _inaktiv etter:"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:433
 msgid "_Activate screensaver when computer is idle"
-msgstr "_Aktiver skjermsparar når datamaskina er inaktiv"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:448
 msgid "_Lock screen when screensaver is active"
-msgstr "_Lås skjermen når aktiv"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:465
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>Advarsel: skjermen vil ikkje verta låst for root.</b>"
+msgstr ""
 
 #: data/mate-screensaver.directory.desktop.in:4
 msgid "Screensavers"
-msgstr "Skjermsparare"
+msgstr ""
 
 #: data/mate-screensaver.directory.desktop.in:5
 #: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
-msgstr "Tema for skjermsparar"
+msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
@@ -104,56 +103,55 @@ msgstr ""
 #: data/images/cosmos/cosmos.xml.in.in:7
 #: savers/cosmos-slideshow.desktop.in.in:3
 msgid "Cosmos"
-msgstr "Kosmos"
+msgstr ""
 
 #: data/lock-dialog-default.ui:100
 msgid "<span size=\"small\">%U on %h</span>"
-msgstr "<span size=\"small\">%U på %h</span>"
+msgstr ""
 
 #: data/lock-dialog-default.ui:222
 msgid "_Leave Message"
-msgstr "_Legg igjen ei melding"
+msgstr ""
 
 #: data/lock-dialog-default.ui:238
 msgid "_Switch User"
-msgstr "_Byt brukar"
+msgstr ""
 
 #: data/lock-dialog-default.ui:254
 msgid "_Log Out"
-msgstr "_Logg av"
+msgstr ""
 
 #: data/lock-dialog-default.ui:270
 msgid "_Cancel"
-msgstr "_Avbryt"
+msgstr "_Sefsex"
 
 #: data/lock-dialog-default.ui:286 src/gs-lock-plug.c:1676
 msgid "_Unlock"
-msgstr "Lå_s opp"
+msgstr ""
 
 #: data/lock-dialog-default.ui:328
 msgid "<b>Leave a message for %R:</b>"
-msgstr "<b>Legg igjen ei melding til %R:</b>"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:10
 msgid "Activate when idle"
-msgstr "Aktiver når inaktiv"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:11
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
-"Set denne til TRUE for å aktivere skjermspararen når sesjonen er ubrukt."
 
 #: data/org.mate.screensaver.gschema.xml.in:15
 msgid "Lock on activation"
-msgstr "Lås ved aktivering"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:16
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr "Set denne til TRUE for å låse skjermen når skjermspararen aktiverast."
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:20
 msgid "Screensaver theme selection mode"
-msgstr "Modus for val av drakt"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:21
 msgid ""
@@ -163,10 +161,6 @@ msgid ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 msgstr ""
-"Utvalsmodus som brukast av skjermspararen. Kan vera «blank-only» for å "
-"aktivere skjermspararen utan å bruka ein drakt, «single» for å aktivere "
-"skjermspararen med berre eit drakt (oppgjeven i nøkkelen «themes»), og "
-"«random» for å aktivere skjermspararen med eit tilfeldig drakt."
 
 #: data/org.mate.screensaver.gschema.xml.in:26
 msgid ""
@@ -175,10 +169,6 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
-"Denne nøkkelen spesifiserer listen med drakt som skal brukast av "
-"skjermspararen. Den ignorerast når «mode»-nøkkslen er «blank-only», gjev "
-"draktnamnet når «mode» er «single» og gjev ei lista med draktar når «mode» "
-"er «random»."
 
 #: data/org.mate.screensaver.gschema.xml.in:30
 msgid "Time before power management baseline"
@@ -192,25 +182,25 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:35
 msgid "Time before theme change"
-msgstr "Tid før endring av drakt"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:36
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr "Tal på minutt før endring av skjermsparardrakt."
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:40
 msgid "Time before locking"
-msgstr "Tid før låsing av skjerm"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:41
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
-msgstr "Tal på minutt før skjermen låses etter aktivering av skjermsparar."
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:45
 msgid "Allow embedding a keyboard into the window"
-msgstr "Tillat å byggja inn eit tastatur i vindauget"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:46
 msgid ""
@@ -218,13 +208,10 @@ msgid ""
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
-"Set denne til TRUE for å gjera det mogleg å innlemme eit tastatur i "
-"vindauget ved ein skal låse opp skjermen. Nøkkelen «keyboard_command» må "
-"vera sett med rett kommando."
 
 #: data/org.mate.screensaver.gschema.xml.in:50
 msgid "Embedded keyboard command"
-msgstr "Kommando for innebygget tastatur"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:51
 msgid ""
@@ -233,13 +220,10 @@ msgid ""
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
 msgstr ""
-"Kommando som skal køyrast viss nøkkelen «embedded_keyboard_enabled» er sett "
-"til TRUE. Denne kommandoen må implementere eit grensesnitt basert på XEMBED "
-"og skriva ut ein XID for vindauget på standard utdatakanal."
 
 #: data/org.mate.screensaver.gschema.xml.in:55
 msgid "Allow logout"
-msgstr "Tillat å logge ut"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:56
 msgid ""
@@ -249,7 +233,7 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:60
 msgid "Time before logout option"
-msgstr "Tid før utloggingsmulighet"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:61
 msgid ""
@@ -260,7 +244,7 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:65
 msgid "Logout command"
-msgstr "Kommando for å logge ut"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:66
 msgid ""
@@ -268,26 +252,20 @@ msgid ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 msgstr ""
-"Kommando som skal køyrast når utloggingsknappen vert klikkat på. Denne "
-"kommandoen bør enkelt og greit logge ut brukaren utan noko krav om handling "
-"frå brukarens side. Denne nøkkelen har inga effekt viss ikkje "
-"\"logout_enable\"-nøkkelen er sett til TRUE."
 
 #: data/org.mate.screensaver.gschema.xml.in:70
 msgid "Allow user switching"
-msgstr "Tillat byte av brukar"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:71
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
-"Set denne til TRUE for å gje eit val for å byte til ein annan brukarkonto i "
-"dialogen for å låse opp skjermen."
 
 #: data/org.mate.screensaver.gschema.xml.in:75
 msgid "Theme for lock dialog"
-msgstr "Tema for dialog for låsing av skjerm"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:76
 msgid "Theme to use for the lock dialog"
@@ -304,7 +282,7 @@ msgstr ""
 
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
-msgstr "Lysbiletvising med bileta frå verdensrommet"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -314,7 +292,7 @@ msgstr ""
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
-msgstr "Flytande MATE"
+msgstr ""
 
 #: savers/footlogo-floaters.desktop.in.in:4
 msgid "Bubbles the MATE logo around the screen"
@@ -328,7 +306,7 @@ msgstr ""
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
-msgstr "Flytande GNOME"
+msgstr ""
 
 #: savers/gnomelogo-floaters.desktop.in.in:4
 msgid "Bubbles the GNOME logo around the screen"
@@ -342,11 +320,11 @@ msgstr ""
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
-msgstr "Biletmappe"
+msgstr ""
 
 #: savers/personal-slideshow.desktop.in.in:4
 msgid "Display a slideshow from your Pictures folder"
-msgstr "Vis ein lysbiletfremvising frå din biletmappe"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -356,11 +334,11 @@ msgstr ""
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
-msgstr "Popkunstfirkantar"
+msgstr ""
 
 #: savers/popsquares.desktop.in.in:4
 msgid "A pop-art-ish grid of pulsing colors."
-msgstr "Eit popkunst-aktig rutenett med pulserande fargar."
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -371,117 +349,117 @@ msgstr ""
 #: savers/popsquares.c:49 savers/floaters.c:1191
 #, c-format
 msgid "%s. See --help for usage information.\n"
-msgstr "%s. Sjå --help for hjelp til bruk.\n"
+msgstr ""
 
 #: savers/floaters.c:88
 msgid "Show paths that images follow"
-msgstr "Vis stigane bileta følger"
+msgstr ""
 
 #: savers/floaters.c:93
 msgid "Occasionally rotate images as they move"
-msgstr "Roter bileta nokre gonger medan dei beveg seg"
+msgstr ""
 
 #: savers/floaters.c:98
 msgid "Print out frame rate and other statistics"
-msgstr "Vis bilethastighet og annan statistikk"
+msgstr ""
 
 #: savers/floaters.c:103
 msgid "The maximum number of images to keep on screen"
-msgstr "Maksimalt tal på bileta som skal behaldast på skjermen"
+msgstr ""
 
 #: savers/floaters.c:103
 msgid "MAX_IMAGES"
-msgstr "MAKS_BILDER"
+msgstr ""
 
 #: savers/floaters.c:108
 msgid "The initial size and position of window"
-msgstr "Initiell storleik og posisjon for vindauget"
+msgstr ""
 
 #: savers/floaters.c:108
 msgid "WIDTHxHEIGHT+X+Y"
-msgstr "BREDDExHØYDE+X+Y"
+msgstr ""
 
 #: savers/floaters.c:113
 msgid "The source image to use"
-msgstr "Bilete som skal brukast"
+msgstr ""
 
 #: savers/floaters.c:1185
 msgid "image - floats images around the screen"
-msgstr "bilete - lèt bileta flyte rundt på skjermen"
+msgstr ""
 
 #: savers/floaters.c:1200
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "Du må oppgje eitt bilete. Sjå --help for bruksinformasjon.\n"
+msgstr ""
 
 #: savers/slideshow.c:55
 msgid "Location to get images from"
-msgstr "Stad bileta skal hentes frå"
+msgstr ""
 
 #: savers/slideshow.c:55
 msgid "PATH"
-msgstr "STIGE"
+msgstr ""
 
 #: savers/slideshow.c:59
 msgid "Color to use for images background"
-msgstr "Farge som skal brukast for biletbakgrunn"
+msgstr ""
 
 #: savers/slideshow.c:59
 msgid "\"#rrggbb\""
-msgstr "«#rrggbb»"
+msgstr ""
 
 #: savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
-msgstr "Ikkje hent bileta i tilfeldig rekkjefølgja frå stad"
+msgstr ""
 
 #: savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"
-msgstr "Ikkje strekk bileta på skjermen"
+msgstr ""
 
 #: src/copy-theme-dialog.c:184
 msgid "Copying files"
-msgstr "Kopierer filer"
+msgstr ""
 
 #: src/copy-theme-dialog.c:203
 msgid "From:"
-msgstr "Frå:"
+msgstr ""
 
 #: src/copy-theme-dialog.c:207
 msgid "To:"
-msgstr "Til:"
+msgstr ""
 
 #: src/copy-theme-dialog.c:228
 msgid "Copying themes"
-msgstr "Kopierer draktar"
+msgstr ""
 
 #: src/copy-theme-dialog.c:271
 msgid "Invalid screensaver theme"
-msgstr "Ugyldig drakt for skjermsparar"
+msgstr ""
 
 #: src/copy-theme-dialog.c:274
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
-msgstr "%s ser ikkje ut til å vera ein gyldig skjermsparardrakt."
+msgstr ""
 
 #: src/copy-theme-dialog.c:454
 #, c-format
 msgid "Copying file: %u of %u"
-msgstr "Kopierer fil: %u av %u"
+msgstr ""
 
 #: src/mate-screensaver-command.c:60
 msgid "Causes the screensaver to exit gracefully"
-msgstr "Sørger for sikker avslutning av skjermspararen"
+msgstr ""
 
 #: src/mate-screensaver-command.c:64
 msgid "Query the state of the screensaver"
-msgstr "Spør etter skjermspararstatus"
+msgstr ""
 
 #: src/mate-screensaver-command.c:68
 msgid "Query the length of time the screensaver has been active"
-msgstr "Spør kor lenge skjermspararen har vore aktiv"
+msgstr ""
 
 #: src/mate-screensaver-command.c:72
 msgid "Tells the running screensaver process to lock the screen immediately"
-msgstr "Tvingar køyrande skjermsparar til å låse skjermen omgåande"
+msgstr ""
 
 #: src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to unlock the screen immediately"
@@ -489,53 +467,51 @@ msgstr ""
 
 #: src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
-msgstr "Skift til eit anna drakt om skjermspararen er aktiv"
+msgstr ""
 
 #: src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
-msgstr "Slå på skjermspararen (blank ut skjermen)"
+msgstr ""
 
 #: src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr "Deaktiver skjermspararen om den er aktiv"
+msgstr ""
 
 #: src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "Kommuniser med køyrande skjermsparar for å simulere brukaraktivitet"
+msgstr ""
 
 #: src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
 msgstr ""
-"Hindre skjermspararen frå å aktiverast. Kommandoen blokkerer så lenge "
-"hindringa er aktiv."
 
 #: src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
-msgstr "Programmet som hindrar skjermspararen"
+msgstr ""
 
 #: src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
-msgstr "Årsak for hinding av skjermsparar."
+msgstr ""
 
 #: src/mate-screensaver-command.c:108 src/mate-screensaver-dialog.c:58
 #: src/mate-screensaver.c:55
 msgid "Version of this application"
-msgstr "Skjermspararversjon"
+msgstr ""
 
 #: src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
-msgstr "Skjermsparar er %s\n"
+msgstr ""
 
 #: src/mate-screensaver-command.c:357
 msgid "active"
-msgstr "aktiv"
+msgstr ""
 
 #: src/mate-screensaver-command.c:357
 msgid "inactive"
-msgstr "inaktiv"
+msgstr ""
 
 #: src/mate-screensaver-command.c:373
 msgid "The screensaver is not inhibited\n"
@@ -548,7 +524,7 @@ msgstr ""
 #: src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
-msgstr "Skjermspararen har vore aktiv i %d sekund.\n"
+msgstr ""
 
 #: src/mate-screensaver-command.c:422
 msgid "The screensaver is not currently active.\n"
@@ -556,27 +532,27 @@ msgstr ""
 
 #: src/mate-screensaver-dialog.c:57
 msgid "Show debugging output"
-msgstr "Vis avlusingsinformasjon"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:59
 msgid "Show the logout button"
-msgstr "Vis knapp for å logge ut"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:60
 msgid "Command to invoke from the logout button"
-msgstr "Kommando som skal køyrast ved klikk på utloggingsknappen"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:61
 msgid "Show the switch user button"
-msgstr "Vis knapp for å byte brukar"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:62
 msgid "Message to show in the dialog"
-msgstr "Melding som skal vert viste i dialogen"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:62 src/mate-screensaver-dialog.c:63
 msgid "MESSAGE"
-msgstr "MELDING"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:63
 msgid "Not used"
@@ -585,84 +561,84 @@ msgstr ""
 #: src/mate-screensaver-dialog.c:165 src/mate-screensaver-dialog.c:166
 #: src/mate-screensaver-dialog.c:167 src/gs-auth-pam.c:745
 msgid "Username:"
-msgstr "Brukarnamn:"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:168 src/mate-screensaver-dialog.c:169
 #: src/gs-auth-pam.c:171
 msgid "Password:"
-msgstr "Passord:"
+msgstr "Awal n tbaḍnit:"
 
 #: src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (password aged)"
-msgstr "Du må endra ditt passord no (passordet er utløpt)"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (root enforced)"
-msgstr "Du må endra ditt passord no (bestemt av administrator)"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Din konto har utgått; vennligst kontakt systemadministrator"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
-msgstr "Inga passord oppgjeven"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:174
 msgid "Password unchanged"
-msgstr "Passordet er ikkje endra"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:175
 msgid "Can not get username"
-msgstr "Kan ikkje finna brukarnamn"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:176
 msgid "Retype new UNIX password:"
-msgstr "Skriv inn nytt UNIX-passord på nytt:"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:177
 msgid "Enter new UNIX password:"
-msgstr "Oppgje nytt UNIX-passord:"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:178
 msgid "(current) UNIX password:"
-msgstr "(aktivt) UNIX-passord:"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:179
 msgid "Error while changing NIS password."
-msgstr "Feil under endring av NIS-passord."
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:180
 msgid "You must choose a longer password"
-msgstr "Du må velja eit lenger passord"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:181
 msgid "Password has been already used. Choose another."
-msgstr "Passordet er allereie brukt. Vel eit anna."
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:182
 msgid "You must wait longer to change your password"
-msgstr "Du må vente lenger før du endrar ditt passord"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:183
 msgid "Sorry, passwords do not match"
-msgstr "Beklager, passorda er ikkje like"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:254
 msgid "Checking..."
-msgstr "Sjekkar..."
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:300 src/gs-auth-pam.c:483
 msgid "Authentication failed."
-msgstr "Autentisering feilet."
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:455
 msgid "Blank screen"
-msgstr "Blank skjerm"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:461
 msgid "Random"
-msgstr "Tilfeldig"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:947
 #: src/mate-screensaver-preferences.c:957
@@ -698,39 +674,39 @@ msgstr[1] ""
 #: src/mate-screensaver-preferences.c:1016
 #, c-format
 msgid "%s %s"
-msgstr "%s %s"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:998
 #, c-format
 msgid "%s %s %s"
-msgstr "%s %s %s"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:1008
 #: src/mate-screensaver-preferences.c:1021
 #: src/mate-screensaver-preferences.c:1057
 #, c-format
 msgid "%s"
-msgstr "%s"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:1072
 msgid "Never"
-msgstr "Aldri"
+msgstr "Jamais"
 
 #: src/mate-screensaver-preferences.c:1554
 msgid "Could not load the main interface"
-msgstr "Kunne ikkje lasta hovudbrukargrensesnittet"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:1556
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "Vennligst sjå til at skjermspararen er skikkeleg installert"
+msgstr ""
 
 #: src/mate-screensaver.c:56
 msgid "Don't become a daemon"
-msgstr "Ikkje køyr som teneste"
+msgstr ""
 
 #: src/mate-screensaver.c:57
 msgid "Enable debugging code"
-msgstr "Aktiver avlusingskode"
+msgstr ""
 
 #: src/mate-screensaver.desktop.in.in:5
 msgid "Launch screensaver and locker program"
@@ -745,36 +721,36 @@ msgstr ""
 #: src/gs-auth-pam.c:413
 #, c-format
 msgid "Unable to establish service %s: %s\n"
-msgstr "Kan ikkje etablere teneste %s: %s\n"
+msgstr ""
 
 #: src/gs-auth-pam.c:443
 #, c-format
 msgid "Can't set PAM_TTY=%s"
-msgstr "Kan ikkje setja PAM_TTY=%s"
+msgstr ""
 
 #: src/gs-auth-pam.c:479
 msgid "Incorrect password."
-msgstr "Ugyldig passord."
+msgstr ""
 
 #: src/gs-auth-pam.c:499
 msgid "Not permitted to gain access at this time."
-msgstr "Inga tillatelse til å få tilgang no."
+msgstr ""
 
 #: src/gs-auth-pam.c:507
 msgid "No longer permitted to access the system."
-msgstr "Tilgangen til systemet er fjerna."
+msgstr ""
 
 #: src/gs-listener-dbus.c:2247
 msgid "failed to register with the message bus"
-msgstr "klarte ikkje å registrere hos meldingsbussen"
+msgstr ""
 
 #: src/gs-listener-dbus.c:2258
 msgid "not connected to the message bus"
-msgstr "ikkje koblet til meldingsbussen"
+msgstr ""
 
 #: src/gs-listener-dbus.c:2268 src/gs-listener-dbus.c:2300
 msgid "screensaver already running in this session"
-msgstr "skjermsparar køyrer allereie i denne sesjonen"
+msgstr ""
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
@@ -784,24 +760,24 @@ msgstr ""
 
 #: src/gs-lock-plug.c:403
 msgid "Time has expired."
-msgstr "Tida har løpt ut."
+msgstr ""
 
 #: src/gs-lock-plug.c:434
 msgid "You have the Caps Lock key on."
-msgstr "Caps-Lock tasten er aktivert."
+msgstr ""
 
 #: src/gs-lock-plug.c:1656
 msgid "S_witch User..."
-msgstr "_Byt brukar..."
+msgstr ""
 
 #: src/gs-lock-plug.c:1665
 msgid "Log _Out"
-msgstr "Logg _ut"
+msgstr ""
 
 #: src/gs-lock-plug.c:1878
 msgid "%U on %h"
-msgstr "%U på %h"
+msgstr ""
 
 #: src/gs-lock-plug.c:1893
 msgid "_Password:"
-msgstr "_Passord:"
+msgstr "_Awal uffir:"

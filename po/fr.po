@@ -12,6 +12,7 @@
 # Étienne Deparis <etienne@depar.is>, 2018
 # David D, 2019
 # Tubuntu <tubuntu@testimonium.be>, 2019
+# Laurent Napias, 2020
 # 
 msgid ""
 msgstr ""
@@ -19,7 +20,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Tubuntu <tubuntu@testimonium.be>, 2019\n"
+"Last-Translator: Laurent Napias, 2020\n"
 "Language-Team: French (https://www.transifex.com/mate/teams/13566/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,7 +42,7 @@ msgstr "Définir vos préférences pour l'économiseur d'écran"
 #: data/mate-screensaver-preferences.desktop.in:6
 #: src/mate-screensaver.desktop.in.in:7
 msgid "preferences-desktop-screensaver"
-msgstr ""
+msgstr "preferences-desktop-screensaver"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -103,7 +104,7 @@ msgstr "Thèmes de l'économiseur d'écran"
 #. file name)!
 #: data/mate-screensaver.directory.desktop.in:7
 msgid "screensaver"
-msgstr ""
+msgstr "Économiseur d'écran"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.

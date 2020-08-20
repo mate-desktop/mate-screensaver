@@ -8,7 +8,8 @@
 # Дмитрий Михирев, 2018
 # monsta <monsta@inbox.ru>, 2018
 # Alex Putz, 2018
-# Alexei Sorokin <sor.alexei@meowr.ru>, 2019
+# Alexei Sorokin, 2019
+# Anna Vyalkova <cybertailor@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
@@ -16,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Alexei Sorokin <sor.alexei@meowr.ru>, 2019\n"
+"Last-Translator: Anna Vyalkova <cybertailor@gmail.com>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,13 +39,13 @@ msgstr "Параметры хранителя экрана"
 #: data/mate-screensaver-preferences.desktop.in:6
 #: src/mate-screensaver.desktop.in.in:7
 msgid "preferences-desktop-screensaver"
-msgstr ""
+msgstr "preferences-desktop-screensaver"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr ""
+msgstr "MATE;скринсейвер;хранитель;настройки;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
@@ -99,7 +100,7 @@ msgstr "Темы хранителя экрана"
 #. file name)!
 #: data/mate-screensaver.directory.desktop.in:7
 msgid "screensaver"
-msgstr ""
+msgstr "screensaver"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -328,7 +329,7 @@ msgstr "Показывает слайд-шоу космических рисун
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr ""
+msgstr "MATE;скринсейвер;хранитель;слайд-шоу;космос;"
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -342,7 +343,7 @@ msgstr "Всплывающие по всему экрану логотипы MAT
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr ""
+msgstr "MATE;скринсейвер;хранитель;логотип;плавающий;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -356,7 +357,7 @@ msgstr "Всплывающие по всему экрану логотипы GNO
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr ""
+msgstr "MATE;скринсейвер;хранитель;GNOME;логотип;плавающий;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -371,6 +372,8 @@ msgstr "Показывает слайд-шоу изображений из па�
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
 msgstr ""
+"MATE;скринсейвер;хранитель;пользовательский;настраиваемый;свой;слайд-"
+"шоу;картинки;изображения;папка;"
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
@@ -384,7 +387,7 @@ msgstr "Сеть из пульсирующих цветных ячеек"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr ""
+msgstr "MATE;скринсейвер;хранитель;сетка;пульсирующий;цвета;"
 
 #: savers/popsquares.c:49 savers/floaters.c:1191
 #, c-format
@@ -509,6 +512,8 @@ msgstr ""
 #: src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
+"Указывает запущенному процессу хранителя экрана разблокировать экран "
+"немедленно"
 
 #: src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -775,7 +780,7 @@ msgstr "Запустить хранитель экрана и программу
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr ""
+msgstr "MATE;скринсейвер;хранитель;блокировка;"
 
 #: src/gs-auth-pam.c:413
 #, c-format

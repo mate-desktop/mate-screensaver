@@ -9,6 +9,7 @@
 # l3nn4rt, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2019
 # Enrico B. <enricobe@hotmail.com>, 2019
+# Alessandro Volturno <alelvb@inwind.it>, 2020
 # 
 msgid ""
 msgstr ""
@@ -16,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Enrico B. <enricobe@hotmail.com>, 2019\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -44,7 +45,7 @@ msgstr "preferences-desktop-screensaver"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr "MATE;screensaver;preferenze;salvaschermo;"
+msgstr "MATE;screensaver;preferences;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
@@ -144,7 +145,8 @@ msgstr "Attivare quando inattivo"
 #: data/org.mate.screensaver.gschema.xml.in:11
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
-"Impostare a VERO per attivare il salvaschermo quando la sessione è inattiva."
+"Impostare a \"vero\" per attivare il salvaschermo quando la sessione è "
+"inattiva."
 
 #: data/org.mate.screensaver.gschema.xml.in:15
 msgid "Lock on activation"
@@ -153,7 +155,7 @@ msgstr "Blocca all'attivazione"
 #: data/org.mate.screensaver.gschema.xml.in:16
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
-"Impostare a VERO per bloccare lo schermo quando il salvaschermo viene "
+"Impostare a \"vero\" per bloccare lo schermo quando il salvaschermo viene "
 "avviato."
 
 #: data/org.mate.screensaver.gschema.xml.in:20
@@ -188,16 +190,16 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:30
 msgid "Time before power management baseline"
-msgstr "Tempo prima della linea di base del power-manager"
+msgstr "Tempo prima della linea di base del gestore energetico"
 
 #: data/org.mate.screensaver.gschema.xml.in:31
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
 msgstr ""
-"Il numero di secondi di assenza di attività prima della segnalazione a "
-"power-manager. Questa chiave è impostata e mantenuta dall'agente di sessione"
-" di power-manager."
+"Il numero di secondi di assenza di attività prima della segnalazione al "
+"gestore di alimentazione. Questa chiave è impostata e mantenuta dall'agente "
+"gestione di alimentazione della sessione."
 
 #: data/org.mate.screensaver.gschema.xml.in:35
 msgid "Time before theme change"
@@ -231,9 +233,9 @@ msgid ""
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
-"Impostare a VERO per consentire l'inserimento di una tastiera nella finestra"
-" quando si prova a sbloccare. La chiave \"keyboard_command\" deve essere "
-"impostata con il comando appropriato."
+"Impostare a \"vero\" per consentire l'inserimento di una tastiera nella "
+"finestra quando si prova a sbloccare. La chiave \"keyboard_command\" deve "
+"essere impostata con il comando appropriato."
 
 #: data/org.mate.screensaver.gschema.xml.in:50
 msgid "Embedded keyboard command"
@@ -247,21 +249,21 @@ msgid ""
 "output."
 msgstr ""
 "Il comando che viene eseguito, se la chiave \"embedded_keyboard_enabled\" è "
-"impostata a VERO, per inserire un widget tastiera nella finestra. Questo "
-"comando dovrebbe implementare una interfaccia di plug XEMBED e fornire come "
-"output un XID di finestra sullo standard output."
+"impostata a \"vero\", per inserire un oggetto tastiera nella finestra. "
+"Questo comando dovrebbe implementare una interfaccia di plug XEMBED e "
+"fornire come output uno XID di finestra sullo standard output."
 
 #: data/org.mate.screensaver.gschema.xml.in:55
 msgid "Allow logout"
-msgstr "Consente il logout"
+msgstr "Consentire il logout"
 
 #: data/org.mate.screensaver.gschema.xml.in:56
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
 msgstr ""
-"Impostare a VERO per fornire un'opzione nel dialogo di sblocco per poter "
-"effettuare il logout dopo un certo intervallo di tempo. Tale intervallo è "
+"Impostare a \"vero\" per fornire un'opzione nel dialogo di sblocco per poter"
+" effettuare il logout dopo un certo intervallo di tempo. Tale intervallo è "
 "specificato nella chiave \"logout_delay\"."
 
 #: data/org.mate.screensaver.gschema.xml.in:60
@@ -276,7 +278,7 @@ msgid ""
 msgstr ""
 "Il numero di minuti dopo l'avvio del salvaschermo prima che appaia "
 "un'opzione per terminare la sessione nel dialogo di sblocco. Questa chiave "
-"ha effetto solo se la chiave \"logout_enable\" è impostata a VERO."
+"ha effetto solo se la chiave \"logout_enable\" è impostata a \"vero\"."
 
 #: data/org.mate.screensaver.gschema.xml.in:65
 msgid "Logout command"
@@ -291,7 +293,7 @@ msgstr ""
 "Il comando da invocare quando si fa clic sul pulsante di logout. Questo "
 "comando dovrebbe semplicemente disconnettere l'utente senza alcuna "
 "interazione. Questa chiave ha effetto solo se la chiave \"logout_enable\" è "
-"impostata a VERO."
+"impostata a \"vero\"."
 
 #: data/org.mate.screensaver.gschema.xml.in:70
 msgid "Allow user switching"
@@ -302,7 +304,7 @@ msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
-"Impostare a VERO per fornire un'opzione nel dialogo di sblocco con cui "
+"Impostare a \"vero\" per fornire un'opzione nel dialogo di sblocco con cui "
 "passare a un diverso account utente."
 
 #: data/org.mate.screensaver.gschema.xml.in:75
@@ -332,7 +334,7 @@ msgstr "Mostra una sequenza di immagini del cosmo"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr "MATE;screensaver;presentazione;cosmos;"
+msgstr "MATE;screensaver;slideshow;cosmos;"
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -346,7 +348,7 @@ msgstr "Fa rimbalzare il logo di MATE sullo schermo"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr "MATE;screensaver;logo;bolle;"
+msgstr "MATE;screensaver;logo;bubbles;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -360,7 +362,7 @@ msgstr "Fa rimbalzare il logo di GNOME sullo schermo"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr "MATE;screensaver;GNOME;logo;bolle;"
+msgstr "MATE;screensaver;GNOME;logo;bubbles;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -374,7 +376,7 @@ msgstr "Mostra una sequenza dalla propria cartella Immagini"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
-msgstr "MATE;screensaver;personalizza;presentazione;immagini;cartella;"
+msgstr "MATE;screensaver;custom;slideshow;pictures;folder;"
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
@@ -388,7 +390,7 @@ msgstr "Una griglia in stile Pop-art di colori pulsanti."
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr "MATE;screensaver;griglia;pulsare;colori;"
+msgstr "MATE;screensaver;grid;pulsing;colors;"
 
 #: savers/popsquares.c:49 savers/floaters.c:1191
 #, c-format
@@ -413,7 +415,7 @@ msgstr "Il numero massimo di immagini da tenere sullo schermo"
 
 #: savers/floaters.c:103
 msgid "MAX_IMAGES"
-msgstr "MAX_IMMAGINI"
+msgstr "MAX_IMAGES"
 
 #: savers/floaters.c:108
 msgid "The initial size and position of window"
@@ -421,7 +423,7 @@ msgstr "La dimensione e posizione iniziale della finestra"
 
 #: savers/floaters.c:108
 msgid "WIDTHxHEIGHT+X+Y"
-msgstr "LARGxALT+X+Y"
+msgstr "WIDTHxHEIGHT+X+Y"
 
 #: savers/floaters.c:113
 msgid "The source image to use"
@@ -429,7 +431,7 @@ msgstr "L'immagine sorgente da usare"
 
 #: savers/floaters.c:1185
 msgid "image - floats images around the screen"
-msgstr "IMMAGINE - fa fluttuare immagini sullo schermo"
+msgstr "Image - fa fluttuare immagini sullo schermo"
 
 #: savers/floaters.c:1200
 msgid "You must specify one image.  See --help for usage information.\n"
@@ -443,7 +445,7 @@ msgstr "Posizione da cui prelevare le immagini"
 
 #: savers/slideshow.c:55
 msgid "PATH"
-msgstr "PERCORSO"
+msgstr "PATH"
 
 #: savers/slideshow.c:59
 msgid "Color to use for images background"
@@ -451,7 +453,7 @@ msgstr "Colore da usare per sfondo immagini"
 
 #: savers/slideshow.c:59
 msgid "\"#rrggbb\""
-msgstr "\"#RRGGBB\""
+msgstr "\"#rrggbb\""
 
 #: savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
@@ -459,7 +461,7 @@ msgstr "Non recupera a caso le immagini dalla posizione"
 
 #: savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"
-msgstr "Non tenta di adattare le immagini allo schermo"
+msgstr "Non tentare di adattare le immagini allo schermo"
 
 #: src/copy-theme-dialog.c:184
 msgid "Copying files"
@@ -506,32 +508,33 @@ msgstr "Interroga l'intervallo di tempo di esecuzione del salvaschermo"
 #: src/mate-screensaver-command.c:72
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr ""
-"Comunica al processo salvaschermo in esecuzione di bloccare immediatamente "
-"lo schermo"
+"Comunica al processo di salvaschermo in esecuzione di bloccare "
+"immediatamente lo schermo"
 
 #: src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
-"Comunica al processo salvaschermo in esecuzione di sbloccare immediatamente "
-"lo schermo"
+"Comunica al processo di salvaschermo in esecuzione di sbloccare "
+"immediatamente lo schermo"
 
 #: src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
-msgstr "Se il salvaschermo è in esecuzione passa ad altra demo grafica"
+msgstr ""
+"Se il salvaschermo è in esecuzione passa ad un'altra dimostrazione grafica"
 
 #: src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
-msgstr "Avvia il salvaschermo (blanking dello schermo)"
+msgstr "Avvia il salvaschermo (cancellazione dello schermo)"
 
 #: src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr ""
-"Se il salvaschermo è in esecuzione lo arresta (unblanking dello schermo)"
+"Se il salvaschermo è in esecuzione lo arresta (riattivazione dello schermo)"
 
 #: src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr ""
-"Simula al salvaschermo in esecuzione una segnalazione di attività utente"
+"Invia al salvaschermo in esecuzione una segnalazione di attività utente"
 
 #: src/mate-screensaver-command.c:96
 msgid ""
@@ -573,7 +576,7 @@ msgstr "Il salvaschermo non è inibito\n"
 
 #: src/mate-screensaver-command.c:381
 msgid "The screensaver is being inhibited by:\n"
-msgstr "Il salvaschermo sta per essere inibito da:\n"
+msgstr "Il salvaschermo è stato inibito da:\n"
 
 #: src/mate-screensaver-command.c:416
 #, c-format
@@ -642,7 +645,7 @@ msgstr "Nessuna password fornita"
 
 #: src/mate-screensaver-dialog.c:174
 msgid "Password unchanged"
-msgstr "Password non cambiata"
+msgstr "Password non modificata"
 
 #: src/mate-screensaver-dialog.c:175
 msgid "Can not get username"
@@ -662,7 +665,7 @@ msgstr "Password UNIX (attuale):"
 
 #: src/mate-screensaver-dialog.c:179
 msgid "Error while changing NIS password."
-msgstr "Errore durante il cambiamento della password NIS."
+msgstr "Errore durante la modifica della password NIS."
 
 #: src/mate-screensaver-dialog.c:180
 msgid "You must choose a longer password"
@@ -731,12 +734,12 @@ msgstr[1] "%d secondi"
 #: src/mate-screensaver-preferences.c:1016
 #, c-format
 msgid "%s %s"
-msgstr "%s e %s"
+msgstr "%s %s"
 
 #: src/mate-screensaver-preferences.c:998
 #, c-format
 msgid "%s %s %s"
-msgstr "%s, %s e %s"
+msgstr "%s %s %s"
 
 #: src/mate-screensaver-preferences.c:1008
 #: src/mate-screensaver-preferences.c:1021
@@ -773,7 +776,7 @@ msgstr "Lancia il programma per salvaschermo e per blocco schermo"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr "MATE;screensaver;blocco;"
+msgstr "MATE;screensaver;locker;"
 
 #: src/gs-auth-pam.c:413
 #, c-format
@@ -791,11 +794,11 @@ msgstr "Password non corretta."
 
 #: src/gs-auth-pam.c:499
 msgid "Not permitted to gain access at this time."
-msgstr "Per ora non è più concesso ottenere l'accesso."
+msgstr "Per adesso non è concesso ottenere l'accesso."
 
 #: src/gs-auth-pam.c:507
 msgid "No longer permitted to access the system."
-msgstr "L'accesso al sistema è stato perennemente revocato."
+msgstr "L'accesso al sistema è stato permanentemente revocato."
 
 #: src/gs-listener-dbus.c:2247
 msgid "failed to register with the message bus"
@@ -813,7 +816,7 @@ msgstr "salvaschermo già in esecuzione in questa sessione"
 #. GDateTime.html#g-date-time-format
 #: src/gs-lock-plug.c:301
 msgid "%A, %B %e"
-msgstr "%A %e %B"
+msgstr "%A, %B %e"
 
 #: src/gs-lock-plug.c:403
 msgid "Time has expired."

@@ -6,11 +6,11 @@
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2018
 # 370d6bb09451526e081e1849e906bc65, 2018
-# Manuela Silva <inactive+h_manuela_rodsilva@transifex.com>, 2018
+# 425fe09b3064b9f906f637fff94056ae_a00ea56 <0fa3588fa89906bfcb3a354600956e0e_308047>, 2018
 # Manuela Silva <manuelarodsilva@gmail.com>, 2018
-# José Vieira <jvieira33@sapo.pt>, 2018
 # Rui <xymarior@yandex.com>, 2019
 # Carlos Moreira, 2019
+# José Vieira <jvieira33@sapo.pt>, 2020
 # 
 msgid ""
 msgstr ""
@@ -18,7 +18,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Carlos Moreira, 2019\n"
+"Last-Translator: José Vieira <jvieira33@sapo.pt>, 2020\n"
 "Language-Team: Portuguese (https://www.transifex.com/mate/teams/13566/pt/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,13 +40,13 @@ msgstr "Defina as suas preferências de proteção de ecrã"
 #: data/mate-screensaver-preferences.desktop.in:6
 #: src/mate-screensaver.desktop.in.in:7
 msgid "preferences-desktop-screensaver"
-msgstr ""
+msgstr "preferences-desktop-screensaver"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr ""
+msgstr "MATE;proteção de ecrã;preferências;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
@@ -101,7 +101,7 @@ msgstr "Temas do Protetor de Ecrã"
 #. file name)!
 #: data/mate-screensaver.directory.desktop.in:7
 msgid "screensaver"
-msgstr ""
+msgstr "screensaver"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -328,13 +328,13 @@ msgstr ""
 
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
-msgstr "Apresenta um conjunto de fotografias do cosmos"
+msgstr "Apresenta um diaporama de fotografias do cosmos"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr ""
+msgstr "MATE;proteção de ecrã;diaporama;cosmos;"
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -348,7 +348,7 @@ msgstr "Bolhas com o logótipo do MATE por todo o ecrã"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr ""
+msgstr "MATE;proteção de ecrã;logótipo;bolhas;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -362,7 +362,7 @@ msgstr "Bolhas com o logótipo do GNOME por todo o ecrã"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr ""
+msgstr "MATE;proteção de ecrã;GNOME;logótipo;bolhas;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -376,7 +376,7 @@ msgstr "Mostrar uma apresentação a partir da sua pasta de Imagens"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
-msgstr ""
+msgstr "MATE;proteção de ecrã;personalizado;diaporama;fotos;pasta;"
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
@@ -390,7 +390,7 @@ msgstr "Uma grelha estilo pop-arte de cores pulsantes."
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr ""
+msgstr "MATE;proteção de ecrã;grelha;pulsante;cores;"
 
 #: savers/popsquares.c:49 savers/floaters.c:1191
 #, c-format
@@ -775,7 +775,7 @@ msgstr "Iniciar protetor de ecrã e aplicação de bloquear"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr ""
+msgstr "MATE;proteção de ecrã;tranca;"
 
 #: src/gs-auth-pam.c:413
 #, c-format

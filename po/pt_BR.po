@@ -8,11 +8,12 @@
 # Alberto Federman Neto <mrtabac@gmail.com>, 2018
 # Marcelo Ghelman <marcelo.ghelman@gmail.com>, 2018
 # Matheus  Martins, 2018
-# Marcus Vinícius Marques, 2018
+# 65f2af3cfa184c075942a0418b98d2de_d688669, 2018
 # Victor Gonçalves <hotcyv@gmail.com>, 2018
 # Roger Araújo <roger.rf@gmail.com>, 2018
 # 18ab4449a00621534598e84a949423ea, 2018
-# Marcio Andre Padula <padula1000@gmail.com>, 2019
+# 3f37d448649cd548fa5a733e33387c2a_dee4ccf, 2019
+# gustavo s, 2020
 # 
 msgid ""
 msgstr ""
@@ -20,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Marcio Andre Padula <padula1000@gmail.com>, 2019\n"
+"Last-Translator: gustavo s, 2020\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/mate/teams/13566/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -103,7 +104,7 @@ msgstr "Temas de proteção de tela"
 #. file name)!
 #: data/mate-screensaver.directory.desktop.in:7
 msgid "screensaver"
-msgstr ""
+msgstr "protetor de tela"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
