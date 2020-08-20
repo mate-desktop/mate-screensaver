@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.23.1\n"
+"Project-Id-Version: mate-screensaver 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-04 23:36+0100\n"
+"POT-Creation-Date: 2020-08-20 18:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,12 +26,6 @@ msgstr ""
 msgid "Set your screensaver preferences"
 msgstr ""
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/mate-screensaver-preferences.desktop.in:6
-#: src/mate-screensaver.desktop.in.in:7
-msgid "preferences-desktop-screensaver"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
@@ -41,39 +35,47 @@ msgstr ""
 msgid "Screensaver Preview"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:56
+#: data/mate-screensaver-preferences.ui:59
 msgid "<b>Screensaver preview</b>"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:164
+#: data/mate-screensaver-preferences.ui:168
 msgid "Screensaver Preferences"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:196
+#: data/mate-screensaver-preferences.ui:203
 msgid "Power _Management"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:212
+#: data/mate-screensaver-preferences.ui:219
 msgid "_Preview"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:272
+#: data/mate-screensaver-preferences.ui:279
 msgid "_Screensaver theme:"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:390
+#: data/mate-screensaver-preferences.ui:397
 msgid "Regard the computer as _idle after:"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:433
+#: data/mate-screensaver-preferences.ui:440
 msgid "_Activate screensaver when computer is idle"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:448
+#: data/mate-screensaver-preferences.ui:455
 msgid "_Lock screen when screensaver is active"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:465
+#: data/mate-screensaver-preferences.ui:477
+msgid "Background picture for lock screen:"
+msgstr ""
+
+#: data/mate-screensaver-preferences.ui:496
+msgid "Select Background Image"
+msgstr ""
+
+#: data/mate-screensaver-preferences.ui:522
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
 msgstr ""
 
@@ -84,11 +86,6 @@ msgstr ""
 #: data/mate-screensaver.directory.desktop.in:5
 #: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
-msgstr ""
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/mate-screensaver.directory.desktop.in:7
-msgid "screensaver"
 msgstr ""
 
 #. Translators: This is the name of a desktop background image that shows outer space images.
@@ -118,7 +115,7 @@ msgstr ""
 msgid "_Cancel"
 msgstr ""
 
-#: data/lock-dialog-default.ui:286 src/gs-lock-plug.c:1676
+#: data/lock-dialog-default.ui:286 src/gs-lock-plug.c:1680
 msgid "_Unlock"
 msgstr ""
 
@@ -272,6 +269,14 @@ msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr ""
 
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Picture Filename"
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid "File to use for the background image."
+msgstr ""
+
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr ""
@@ -402,32 +407,32 @@ msgstr ""
 msgid "Do not try to stretch images on screen"
 msgstr ""
 
-#: src/copy-theme-dialog.c:184
+#: src/copy-theme-dialog.c:180
 msgid "Copying files"
 msgstr ""
 
-#: src/copy-theme-dialog.c:203
+#: src/copy-theme-dialog.c:199
 msgid "From:"
 msgstr ""
 
-#: src/copy-theme-dialog.c:207
+#: src/copy-theme-dialog.c:203
 msgid "To:"
 msgstr ""
 
-#: src/copy-theme-dialog.c:228
+#: src/copy-theme-dialog.c:224
 msgid "Copying themes"
 msgstr ""
 
-#: src/copy-theme-dialog.c:271
+#: src/copy-theme-dialog.c:267
 msgid "Invalid screensaver theme"
 msgstr ""
 
-#: src/copy-theme-dialog.c:274
+#: src/copy-theme-dialog.c:270
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr ""
 
-#: src/copy-theme-dialog.c:454
+#: src/copy-theme-dialog.c:448
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr ""
@@ -487,33 +492,33 @@ msgstr ""
 msgid "Version of this application"
 msgstr ""
 
-#: src/mate-screensaver-command.c:357
+#: src/mate-screensaver-command.c:358
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr ""
 
-#: src/mate-screensaver-command.c:357
+#: src/mate-screensaver-command.c:358
 msgid "active"
 msgstr ""
 
-#: src/mate-screensaver-command.c:357
+#: src/mate-screensaver-command.c:358
 msgid "inactive"
 msgstr ""
 
-#: src/mate-screensaver-command.c:373
+#: src/mate-screensaver-command.c:374
 msgid "The screensaver is not inhibited\n"
 msgstr ""
 
-#: src/mate-screensaver-command.c:381
+#: src/mate-screensaver-command.c:382
 msgid "The screensaver is being inhibited by:\n"
 msgstr ""
 
-#: src/mate-screensaver-command.c:416
+#: src/mate-screensaver-command.c:417
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
 msgstr ""
 
-#: src/mate-screensaver-command.c:422
+#: src/mate-screensaver-command.c:423
 msgid "The screensaver is not currently active.\n"
 msgstr ""
 
@@ -545,77 +550,77 @@ msgstr ""
 msgid "Not used"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:165 src/mate-screensaver-dialog.c:166
-#: src/mate-screensaver-dialog.c:167 src/gs-auth-pam.c:745
+#: src/mate-screensaver-dialog.c:166 src/mate-screensaver-dialog.c:167
+#: src/mate-screensaver-dialog.c:168 src/gs-auth-pam.c:749
 msgid "Username:"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:168 src/mate-screensaver-dialog.c:169
+#: src/mate-screensaver-dialog.c:169 src/mate-screensaver-dialog.c:170
 #: src/gs-auth-pam.c:171
 msgid "Password:"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:170
+#: src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (password aged)"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:171
+#: src/mate-screensaver-dialog.c:172
 msgid "You are required to change your password immediately (root enforced)"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:172
+#: src/mate-screensaver-dialog.c:173
 msgid "Your account has expired; please contact your system administrator"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:173
+#: src/mate-screensaver-dialog.c:174
 msgid "No password supplied"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:174
+#: src/mate-screensaver-dialog.c:175
 msgid "Password unchanged"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:175
+#: src/mate-screensaver-dialog.c:176
 msgid "Can not get username"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:176
+#: src/mate-screensaver-dialog.c:177
 msgid "Retype new UNIX password:"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:177
+#: src/mate-screensaver-dialog.c:178
 msgid "Enter new UNIX password:"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:178
+#: src/mate-screensaver-dialog.c:179
 msgid "(current) UNIX password:"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:179
+#: src/mate-screensaver-dialog.c:180
 msgid "Error while changing NIS password."
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:180
+#: src/mate-screensaver-dialog.c:181
 msgid "You must choose a longer password"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:181
+#: src/mate-screensaver-dialog.c:182
 msgid "Password has been already used. Choose another."
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:182
+#: src/mate-screensaver-dialog.c:183
 msgid "You must wait longer to change your password"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:183
+#: src/mate-screensaver-dialog.c:184
 msgid "Sorry, passwords do not match"
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:254
+#: src/mate-screensaver-dialog.c:255
 msgid "Checking..."
 msgstr ""
 
-#: src/mate-screensaver-dialog.c:300 src/gs-auth-pam.c:483
+#: src/mate-screensaver-dialog.c:301 src/gs-auth-pam.c:484
 msgid "Authentication failed."
 msgstr ""
 
@@ -627,63 +632,63 @@ msgstr ""
 msgid "Random"
 msgstr ""
 
-#: src/mate-screensaver-preferences.c:947
-#: src/mate-screensaver-preferences.c:957
+#: src/mate-screensaver-preferences.c:946
+#: src/mate-screensaver-preferences.c:956
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/mate-screensaver-preferences.c:950
-#: src/mate-screensaver-preferences.c:959
-#: src/mate-screensaver-preferences.c:968
-#: src/mate-screensaver-preferences.c:971
-#: src/mate-screensaver-preferences.c:976
-#: src/mate-screensaver-preferences.c:979
-#: src/mate-screensaver-preferences.c:984
-#: src/mate-screensaver-preferences.c:987
+#: src/mate-screensaver-preferences.c:949
+#: src/mate-screensaver-preferences.c:958
+#: src/mate-screensaver-preferences.c:967
+#: src/mate-screensaver-preferences.c:970
+#: src/mate-screensaver-preferences.c:975
+#: src/mate-screensaver-preferences.c:978
+#: src/mate-screensaver-preferences.c:983
+#: src/mate-screensaver-preferences.c:986
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/mate-screensaver-preferences.c:953
+#: src/mate-screensaver-preferences.c:952
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/mate-screensaver-preferences.c:956
-#: src/mate-screensaver-preferences.c:1003
-#: src/mate-screensaver-preferences.c:1016
+#: src/mate-screensaver-preferences.c:955
+#: src/mate-screensaver-preferences.c:1002
+#: src/mate-screensaver-preferences.c:1015
 #, c-format
 msgid "%s %s"
 msgstr ""
 
-#: src/mate-screensaver-preferences.c:998
+#: src/mate-screensaver-preferences.c:997
 #, c-format
 msgid "%s %s %s"
 msgstr ""
 
-#: src/mate-screensaver-preferences.c:1008
-#: src/mate-screensaver-preferences.c:1021
-#: src/mate-screensaver-preferences.c:1057
+#: src/mate-screensaver-preferences.c:1007
+#: src/mate-screensaver-preferences.c:1020
+#: src/mate-screensaver-preferences.c:1056
 #, c-format
 msgid "%s"
 msgstr ""
 
-#: src/mate-screensaver-preferences.c:1072
+#: src/mate-screensaver-preferences.c:1071
 msgid "Never"
 msgstr ""
 
-#: src/mate-screensaver-preferences.c:1554
+#: src/mate-screensaver-preferences.c:1563
 msgid "Could not load the main interface"
 msgstr ""
 
-#: src/mate-screensaver-preferences.c:1556
+#: src/mate-screensaver-preferences.c:1565
 msgid "Please make sure that the screensaver is properly installed"
 msgstr ""
 
@@ -704,37 +709,37 @@ msgstr ""
 msgid "MATE;screensaver;locker;"
 msgstr ""
 
-#: src/gs-auth-pam.c:413
+#: src/gs-auth-pam.c:414
 #, c-format
 msgid "Unable to establish service %s: %s\n"
 msgstr ""
 
-#: src/gs-auth-pam.c:443
+#: src/gs-auth-pam.c:444
 #, c-format
 msgid "Can't set PAM_TTY=%s"
 msgstr ""
 
-#: src/gs-auth-pam.c:479
+#: src/gs-auth-pam.c:480
 msgid "Incorrect password."
 msgstr ""
 
-#: src/gs-auth-pam.c:499
+#: src/gs-auth-pam.c:500
 msgid "Not permitted to gain access at this time."
 msgstr ""
 
-#: src/gs-auth-pam.c:507
+#: src/gs-auth-pam.c:508
 msgid "No longer permitted to access the system."
 msgstr ""
 
-#: src/gs-listener-dbus.c:2247
+#: src/gs-listener-dbus.c:2245
 msgid "failed to register with the message bus"
 msgstr ""
 
-#: src/gs-listener-dbus.c:2258
+#: src/gs-listener-dbus.c:2256
 msgid "not connected to the message bus"
 msgstr ""
 
-#: src/gs-listener-dbus.c:2268 src/gs-listener-dbus.c:2300
+#: src/gs-listener-dbus.c:2266 src/gs-listener-dbus.c:2298
 msgid "screensaver already running in this session"
 msgstr ""
 
@@ -743,26 +748,26 @@ msgstr ""
 msgid "%A, %B %e"
 msgstr ""
 
-#: src/gs-lock-plug.c:403
+#: src/gs-lock-plug.c:407
 msgid "Time has expired."
 msgstr ""
 
-#: src/gs-lock-plug.c:434
+#: src/gs-lock-plug.c:438
 msgid "You have the Caps Lock key on."
 msgstr ""
 
-#: src/gs-lock-plug.c:1656
+#: src/gs-lock-plug.c:1660
 msgid "S_witch User..."
 msgstr ""
 
-#: src/gs-lock-plug.c:1665
+#: src/gs-lock-plug.c:1669
 msgid "Log _Out"
 msgstr ""
 
-#: src/gs-lock-plug.c:1878
+#: src/gs-lock-plug.c:1882
 msgid "%U on %h"
 msgstr ""
 
-#: src/gs-lock-plug.c:1893
+#: src/gs-lock-plug.c:1897
 msgid "_Password:"
 msgstr ""
