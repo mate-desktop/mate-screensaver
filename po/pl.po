@@ -4,21 +4,21 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Piotr Drąg <piotrdrag@gmail.com>, 2018
-# Piotr Strębski <strebski@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Artur Motyka <slashcraftpl@gmail.com>, 2018
-# Przemek P <ppjg@dami.pl>, 2018
-# pietrasagh <pietrasagh@gmail.com>, 2019
-# Marcin Kralka <marcink96@gmail.com>, 2019
+# Piotr Drąg <piotrdrag@gmail.com>, 2020
+# Piotr Strębski <strebski@gmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Marcin Kralka <marcink96@gmail.com>, 2020
+# Artur Motyka <slashcraftpl@gmail.com>, 2020
+# Przemek P <ppjg@dami.pl>, 2020
+# pietrasagh <pietrasagh@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-screensaver 1.23.1\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Marcin Kralka <marcink96@gmail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:34+0000\n"
+"Last-Translator: pietrasagh <pietrasagh@gmail.com>, 2020\n"
 "Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -698,10 +698,10 @@ msgstr "Losowo"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d godzinie"
-msgstr[1] "%d godzinach"
-msgstr[2] "%d godzinach"
-msgstr[3] "%d godzinach"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: src/mate-screensaver-preferences.c:950
 #: src/mate-screensaver-preferences.c:959
@@ -714,19 +714,19 @@ msgstr[3] "%d godzinach"
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minucie"
-msgstr[1] "%d minutach"
-msgstr[2] "%d minutach"
-msgstr[3] "%d minutach"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: src/mate-screensaver-preferences.c:953
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d sekundzie"
-msgstr[1] "%d sekundach"
-msgstr[2] "%d sekundach"
-msgstr[3] "%d sekundach"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
 
 #: src/mate-screensaver-preferences.c:956
 #: src/mate-screensaver-preferences.c:1003

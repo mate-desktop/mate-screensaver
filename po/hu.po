@@ -4,19 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# István Szőllősi <szollosi.istv4n@gmail.com>, 2018
-# Falu <info@falu.me>, 2018
-# Balázs Meskó <meskobalazs@gmail.com>, 2019
-# Rezső Páder <rezso@rezso.net>, 2019
+# Rezső Páder <rezso@rezso.net>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# István Szőllősi <szollosi.istv4n@gmail.com>, 2020
+# Falu <info@falu.me>, 2020
+# Balázs Meskó <meskobalazs@mailbox.org>, 2020
+# Szabó Máté <mateszabo2001@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-screensaver 1.23.1\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Rezső Páder <rezso@rezso.net>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:34+0000\n"
+"Last-Translator: Szabó Máté <mateszabo2001@gmail.com>, 2020\n"
 "Language-Team: Hungarian (https://www.transifex.com/mate/teams/13566/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,7 +39,7 @@ msgstr "A képernyővédő tulajdonságainak beállítása"
 #: data/mate-screensaver-preferences.desktop.in:6
 #: src/mate-screensaver.desktop.in.in:7
 msgid "preferences-desktop-screensaver"
-msgstr ""
+msgstr "tulajdonságok-asztal-képernyővédő"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -689,8 +690,8 @@ msgstr "Véletlen"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d óra"
-msgstr[1] "%d óra"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:950
 #: src/mate-screensaver-preferences.c:959
@@ -703,15 +704,15 @@ msgstr[1] "%d óra"
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d perc"
-msgstr[1] "%d perc"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:953
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d másodperc"
-msgstr[1] "%d másodperc"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:956
 #: src/mate-screensaver-preferences.c:1003

@@ -4,22 +4,23 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# mauron, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Scoubidou <david.vantyghem@free.fr>, 2018
-# Charles Monzat <c.monzat@laposte.net>, 2018
-# yoplait <yoplait@tememe.org>, 2018
-# Étienne Deparis <etienne@depar.is>, 2018
-# David D, 2019
-# Tubuntu <tubuntu@testimonium.be>, 2019
+# mauron, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Scoubidou <david.vantyghem@free.fr>, 2020
+# Tubuntu <tubuntu@testimonium.be>, 2020
+# clefebvre <clement.lefebvre@linuxmint.com>, 2020
+# Étienne Deparis <etienne@depar.is>, 2020
+# yoplait <yoplait@tememe.org>, 2020
+# David D, 2020
+# Laurent Napias, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-screensaver 1.23.1\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Tubuntu <tubuntu@testimonium.be>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:34+0000\n"
+"Last-Translator: Laurent Napias, 2020\n"
 "Language-Team: French (https://www.transifex.com/mate/teams/13566/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,7 +42,7 @@ msgstr "Définir vos préférences pour l'économiseur d'écran"
 #: data/mate-screensaver-preferences.desktop.in:6
 #: src/mate-screensaver.desktop.in.in:7
 msgid "preferences-desktop-screensaver"
-msgstr ""
+msgstr "preferences-desktop-screensaver"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -103,7 +104,7 @@ msgstr "Thèmes de l'économiseur d'écran"
 #. file name)!
 #: data/mate-screensaver.directory.desktop.in:7
 msgid "screensaver"
-msgstr ""
+msgstr "Économiseur d'écran"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.

@@ -4,18 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# crazyd <lebendig2002@yahoo.de>, 2018
-# Tobias Bannert <tobannert@gmail.com>, 2019
-# Ettore Atalan <atalanttore@googlemail.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# crazyd <lebendig2002@yahoo.de>, 2020
+# Ettore Atalan <atalanttore@googlemail.com>, 2020
+# Tobias Bannert <tobannert@gmail.com>, 2020
+# clefebvre <clement.lefebvre@linuxmint.com>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-screensaver 1.23.1\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:34+0000\n"
+"Last-Translator: Wolfgang Ulbrich <mate@raveit.de>, 2020\n"
 "Language-Team: German (https://www.transifex.com/mate/teams/13566/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,7 +57,7 @@ msgstr "<b>Vorschau des Bildschirmschoners</b>"
 
 #: data/mate-screensaver-preferences.ui:164
 msgid "Screensaver Preferences"
-msgstr "Einstellungen des Bildschirmschoners"
+msgstr "Bildschirmschoner-Einstellungen"
 
 #: data/mate-screensaver-preferences.ui:196
 msgid "Power _Management"
@@ -707,8 +709,8 @@ msgstr "Zufällig"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d Stunde"
-msgstr[1] "%d Stunden"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:950
 #: src/mate-screensaver-preferences.c:959
@@ -721,15 +723,15 @@ msgstr[1] "%d Stunden"
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d Minute"
-msgstr[1] "%d Minuten"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:953
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d Sekunde"
-msgstr[1] "%d Sekunden"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:956
 #: src/mate-screensaver-preferences.c:1003

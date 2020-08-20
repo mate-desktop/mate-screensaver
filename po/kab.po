@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Slimane Selyan AMIRI <selyan.kab@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
@@ -12,22 +12,22 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
 "PO-Revision-Date: 2020-02-16 14:34+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
-"Language-Team: Gujarati (https://www.transifex.com/mate/teams/13566/gu/)\n"
+"Last-Translator: Slimane Selyan AMIRI <selyan.kab@gmail.com>, 2020\n"
+"Language-Team: Kabyle (https://www.transifex.com/mate/teams/13566/kab/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: gu\n"
+"Language: kab\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/mate-screensaver-preferences.desktop.in:3
 #: src/mate-screensaver.desktop.in.in:4
 msgid "Screensaver"
-msgstr "સ્ક્રીનસેવર"
+msgstr ""
 
 #: data/mate-screensaver-preferences.desktop.in:4
 msgid "Set your screensaver preferences"
-msgstr "તમારી સ્ક્રીનસેવર પસંદગીઓ સુયોજિત કરો"
+msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
@@ -44,53 +44,52 @@ msgstr ""
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
-msgstr "સ્ક્રીનસેવર પૂર્વદર્શન"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:56
 msgid "<b>Screensaver preview</b>"
-msgstr "<b>સ્ક્રીનસેવર પૂર્વદર્શન</b>"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:164
 msgid "Screensaver Preferences"
-msgstr "સ્ક્રીનસેવર પસંદગીઓ"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:196
 msgid "Power _Management"
-msgstr "પાવર વ્યવસ્થાપન (_M)"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:212
 msgid "_Preview"
-msgstr "પૂર્વદર્શન (_P)"
+msgstr "_Taskant"
 
 #: data/mate-screensaver-preferences.ui:272
 msgid "_Screensaver theme:"
-msgstr "સ્ક્રીનસેવર થીમ (_S):"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:390
 msgid "Regard the computer as _idle after:"
-msgstr "આના પછી કમ્પ્યૂટરને ફાજલ તરીકે સમજો (_i):"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:433
 msgid "_Activate screensaver when computer is idle"
-msgstr "જ્યારે કમ્પ્યૂટર ફાજલ હોય ત્યારે સ્ક્રીનસેવર સક્રિય કરો (_A)"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:448
 msgid "_Lock screen when screensaver is active"
-msgstr "જ્યારે સ્ક્રીનસેવર સક્રિય હોય ત્યારે સ્ક્રીનને તાળું મારો (_L)"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:465
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
 msgstr ""
-"<b>ચેતવણી: રુટ વપરાશકર્તા માટે સ્ક્રીનને તાળું મારવામાં આવશે નહિં.</b>"
 
 #: data/mate-screensaver.directory.desktop.in:4
 msgid "Screensavers"
-msgstr "સ્ક્રીનસેવરો"
+msgstr ""
 
 #: data/mate-screensaver.directory.desktop.in:5
 #: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
-msgstr "સ્ક્રીનસેવર થીમો"
+msgstr ""
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
@@ -104,59 +103,55 @@ msgstr ""
 #: data/images/cosmos/cosmos.xml.in.in:7
 #: savers/cosmos-slideshow.desktop.in.in:3
 msgid "Cosmos"
-msgstr "કોસમોસ"
+msgstr ""
 
 #: data/lock-dialog-default.ui:100
 msgid "<span size=\"small\">%U on %h</span>"
-msgstr "<span size=\"small\">%U એ %h પર</span>"
+msgstr ""
 
 #: data/lock-dialog-default.ui:222
 msgid "_Leave Message"
-msgstr "સંદેશો છોડો (_L)"
+msgstr ""
 
 #: data/lock-dialog-default.ui:238
 msgid "_Switch User"
-msgstr "વપરાશકર્તા બદલો (_S)"
+msgstr ""
 
 #: data/lock-dialog-default.ui:254
 msgid "_Log Out"
-msgstr "બહાર નીકળો (_L)"
+msgstr ""
 
 #: data/lock-dialog-default.ui:270
 msgid "_Cancel"
-msgstr "રદ કરો (_C)"
+msgstr "_Sefsex"
 
 #: data/lock-dialog-default.ui:286 src/gs-lock-plug.c:1676
 msgid "_Unlock"
-msgstr "તાળું ખોલો (_U)"
+msgstr ""
 
 #: data/lock-dialog-default.ui:328
 msgid "<b>Leave a message for %R:</b>"
-msgstr "<b>%R માટે સંદેશો છોડો:</b>"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:10
 msgid "Activate when idle"
-msgstr "જ્યારે ફાજલ હોય ત્યારે સક્રિય કરો"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:11
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
-"જ્યારે સત્ર ફાજલ હોય ત્યારે સ્ક્રીનસેવરને સક્રિય કરવા માટે આને TRUE સુયોજિત "
-"કરો."
 
 #: data/org.mate.screensaver.gschema.xml.in:15
 msgid "Lock on activation"
-msgstr "સક્રિયકરણ પર તાળું મારો"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:16
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
-"જ્યારે સ્ક્રીનસેવર સક્રિય થઈ જાય ત્યારે સ્ક્રીનને તાળું મારવા માટે આને TRUE "
-"સુયોજિત કરો."
 
 #: data/org.mate.screensaver.gschema.xml.in:20
 msgid "Screensaver theme selection mode"
-msgstr "સ્ક્રીનસેવર થીમ પસંદગી સ્થિતિ"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:21
 msgid ""
@@ -166,11 +161,6 @@ msgid ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 msgstr ""
-"સ્ક્રીનસેવર દ્વારા વપરાતી પસંદગી સ્થિતિ. કદાચ સ્ક્રીનસેવર સક્રિયકરણ પર કોઈપણ"
-" થીમ વાપર્યા વિના સ્ક્રીનસેવર સક્રિય કરવા માટે \"માત્ર-કોરું\", સક્રિયકરણ "
-"(\"થીમો\" કીમાં સ્પષ્ટ થયેલ છે) પર માત્ર એક થીમની મદદથી સ્ક્રીનસેવર સક્રિય "
-"કરવા માટે \"એક\", અને સક્રિયકરણ પર રેન્ડમ થીમની મદદથી સ્ક્રીનસેવર સક્રિય "
-"કરવા માટે \"રેન્ડમ\"."
 
 #: data/org.mate.screensaver.gschema.xml.in:26
 msgid ""
@@ -179,10 +169,6 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
-"આ કી સ્ક્રીનસેવર દ્વારા વપરાતી થીમોની યાદી સ્પષ્ટ કરે છે. તે અવગણાય છે "
-"જ્યારે \"સ્થિતિ\" કી એ \"માત્ર-કોરી\" હોય, તમારે થીમ નામ પૂરું પાડવું જોઈએ "
-"જ્યારે \"સ્થિતિ\" એ \"એક\" હોય, અને થીમોની યાદી પૂરી પાડવી જોઈએ જ્યારે "
-"\"સ્થિતિ\" એ \"રેન્ડમ\" હોય."
 
 #: data/org.mate.screensaver.gschema.xml.in:30
 msgid "Time before power management baseline"
@@ -196,26 +182,25 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:35
 msgid "Time before theme change"
-msgstr "થીમ બદલાય તે પહેલાંનો સમય"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:36
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr "સ્ક્રીનસેવર થીમ બદલવા પહેલાં ચલાવવા માટેની મિનિટોની સંખ્યા."
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:40
 msgid "Time before locking"
-msgstr "તાળું મારવા પહેલાંનો સમય"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:41
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
 msgstr ""
-"સ્ક્રીનને તાળું મારવા પહેલાં સ્ક્રીનસેવર સક્રિયકરણ પછી મિનિટોની સંખ્યા."
 
 #: data/org.mate.screensaver.gschema.xml.in:45
 msgid "Allow embedding a keyboard into the window"
-msgstr "વિન્ડોમાં જડિત કીબોર્ડને પરવાનગી આપો"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:46
 msgid ""
@@ -223,13 +208,10 @@ msgid ""
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
-"વિન્ડોમાં જડિત કીબોર્ડને પરવાનગી આપવા માટે આને TRUE સુયોજિત કરો જ્યારે તેનું"
-" તાળું ખોલવાનો પ્રયત્ન કરી રહ્યા હોય. \"keyboard_command\" કી યોગ્ય આદેશ "
-"સાથે સુયોજિત થયેલ હોવી જ જોઈએ."
 
 #: data/org.mate.screensaver.gschema.xml.in:50
 msgid "Embedded keyboard command"
-msgstr "જડિત કીબોર્ડ આદેશ"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:51
 msgid ""
@@ -238,14 +220,10 @@ msgid ""
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
 msgstr ""
-"આદેશ કે જે ચલાવવામાં આવશે, જો \"embedded_keyboard_enabled\" કી TRUE તરીકે "
-"સુયોજિત થયેલ હોય, વિન્ડોમાં કીબોર્ડ વિજેટને જડવા માટે. આ આદેશે XEMBED પ્લગ "
-"ઈન્ટરફેસ અમલમાં મૂકવું જોઈએ અને વિન્ડો XID ને પ્રમાણભૂત આઉટપુટ પર આઉટપુટ "
-"આપવું જોઈએ."
 
 #: data/org.mate.screensaver.gschema.xml.in:55
 msgid "Allow logout"
-msgstr "બહાર નીકળવાની પરવાનગી આપો"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:56
 msgid ""
@@ -255,7 +233,7 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:60
 msgid "Time before logout option"
-msgstr "બહારનીકળો વિકલ્પ પહેલાંનો સમય"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:61
 msgid ""
@@ -266,7 +244,7 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:65
 msgid "Logout command"
-msgstr "બહાર નીકળો આદેશ"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:66
 msgid ""
@@ -274,25 +252,20 @@ msgid ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 msgstr ""
-"જ્યારે પ્રવેશ બહાર નીકળો બટન ક્લિક થયેલ હોય ત્યારે ચલાવવાનો આદેશ. આ આદેશે "
-"વપરાશકર્તાના કોઈપણ જાતના સંપર્ક વિના તેને બહાર કાઢી નાંખવો જોઈએ. આ કીને "
-"માત્ર ત્યારે જ હોય જો \"logout_enable\" કી એ TRUE તરીકે સુયોજિત થયેલ હોય."
 
 #: data/org.mate.screensaver.gschema.xml.in:70
 msgid "Allow user switching"
-msgstr "વપરાશકર્તા બદલવાની પરવાનગી આપો"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:71
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
-"અલગ વપરાશકર્તા ખાતામાં બદલાવા માટે તાળું ખોલો સંવાદમાં વિકલ્પની તક આપવા માટે"
-" આને TRUE સુયોજિત કરો."
 
 #: data/org.mate.screensaver.gschema.xml.in:75
 msgid "Theme for lock dialog"
-msgstr "તાળા સંવાદ માટે થીમ"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:76
 msgid "Theme to use for the lock dialog"
@@ -300,18 +273,16 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Allow the session status message to be displayed"
-msgstr "દર્શાવવા માટે સત્ર સ્થિતિ સંદેશ ને પરવાનગી આપો"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr ""
-"દર્શાવવા માટે સત્ર સ્થિતિ સંદેશ ને પરવાનગી આપો જ્યારે સ્ક્રીન ને તાળુ મારેલ "
-"હોય."
 
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
-msgstr "કોસમોસના ચિત્રોનો સ્લાઈડશો દર્શાવો"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -349,11 +320,11 @@ msgstr ""
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
-msgstr "ચિત્રો ફોલ્ડર"
+msgstr ""
 
 #: savers/personal-slideshow.desktop.in.in:4
 msgid "Display a slideshow from your Pictures folder"
-msgstr "તમારા ચિત્રો ફોલ્ડરમાંથી સ્લાઈડશો દર્શાવો"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -363,11 +334,11 @@ msgstr ""
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
-msgstr "ઝબૂકતા ચોકઠાઓ"
+msgstr ""
 
 #: savers/popsquares.desktop.in.in:4
 msgid "A pop-art-ish grid of pulsing colors."
-msgstr "રંગોના કંપન માટે pop-art-ish જાળી."
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -378,118 +349,117 @@ msgstr ""
 #: savers/popsquares.c:49 savers/floaters.c:1191
 #, c-format
 msgid "%s. See --help for usage information.\n"
-msgstr "%s. વપરાશ જાણકારી માટે --help જુઓ.\n"
+msgstr ""
 
 #: savers/floaters.c:88
 msgid "Show paths that images follow"
-msgstr "ચિત્રો જેને અનુસરે તે પાથ બતાવો"
+msgstr ""
 
 #: savers/floaters.c:93
 msgid "Occasionally rotate images as they move"
-msgstr "ઘટનાકીય રીતે ચિત્રો ફેરવો જેમ તેઓ ખસે"
+msgstr ""
 
 #: savers/floaters.c:98
 msgid "Print out frame rate and other statistics"
-msgstr "ચોકઠાં દર અને અન્ય પરિસ્થિતિ છાપો"
+msgstr ""
 
 #: savers/floaters.c:103
 msgid "The maximum number of images to keep on screen"
-msgstr "સ્ક્રીન પર રાખવા માટેના ચિત્રોની મહત્તમ સંખ્યા"
+msgstr ""
 
 #: savers/floaters.c:103
 msgid "MAX_IMAGES"
-msgstr "MAX_IMAGES"
+msgstr ""
 
 #: savers/floaters.c:108
 msgid "The initial size and position of window"
-msgstr "વિન્ડોનું આરંભિક માપ અને સ્થાન"
+msgstr ""
 
 #: savers/floaters.c:108
 msgid "WIDTHxHEIGHT+X+Y"
-msgstr "WIDTHxHEIGHT+X+Y"
+msgstr ""
 
 #: savers/floaters.c:113
 msgid "The source image to use"
-msgstr "વાપરવા માટેનું સ્રોત ચિત્ર"
+msgstr ""
 
 #: savers/floaters.c:1185
 msgid "image - floats images around the screen"
-msgstr "ચિત્ર - સ્ક્રીનની ફરતે ચિત્રો તરે છે"
+msgstr ""
 
 #: savers/floaters.c:1200
 msgid "You must specify one image.  See --help for usage information.\n"
-msgstr "તમારે એક ચિત્ર સ્પષ્ટ કરવું જ પડશે.  વપરાશ જાણકારી માટે --help જુઓ.\n"
+msgstr ""
 
 #: savers/slideshow.c:55
 msgid "Location to get images from"
-msgstr "ચિત્રો મેળવવા માટેનું સ્થાન"
+msgstr ""
 
 #: savers/slideshow.c:55
 msgid "PATH"
-msgstr "PATH"
+msgstr ""
 
 #: savers/slideshow.c:59
 msgid "Color to use for images background"
-msgstr "ચિત્રો પાશ્વ ભાગ માટે વાપરવાનો રંગ"
+msgstr ""
 
 #: savers/slideshow.c:59
 msgid "\"#rrggbb\""
-msgstr "\"#rrggbb\""
+msgstr ""
 
 #: savers/slideshow.c:63
 msgid "Do not randomize pictures from location"
-msgstr "સ્થાનમાંથી ચિત્રો રેન્ડમાઈઝ કરો નહિં"
+msgstr ""
 
 #: savers/slideshow.c:67
 msgid "Do not try to stretch images on screen"
-msgstr "સ્ક્રીન પર ચિત્રો ખેંચવાનો પ્રયાસ કરો નહિં"
+msgstr ""
 
 #: src/copy-theme-dialog.c:184
 msgid "Copying files"
-msgstr "ફાઈલોની નકલ કરી રહ્યા છીએ"
+msgstr ""
 
 #: src/copy-theme-dialog.c:203
 msgid "From:"
-msgstr "તરફથી:"
+msgstr ""
 
 #: src/copy-theme-dialog.c:207
 msgid "To:"
-msgstr "પ્રતિ:"
+msgstr ""
 
 #: src/copy-theme-dialog.c:228
 msgid "Copying themes"
-msgstr "થીમોની નકલ કરી રહ્યા છીએ"
+msgstr ""
 
 #: src/copy-theme-dialog.c:271
 msgid "Invalid screensaver theme"
-msgstr "અયોગ્ય સ્ક્રીનસેવર થીમ"
+msgstr ""
 
 #: src/copy-theme-dialog.c:274
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
-msgstr "%s માન્ય સ્ક્રીનસેવર થીમ હોય એમ દેખાતું નથી."
+msgstr ""
 
 #: src/copy-theme-dialog.c:454
 #, c-format
 msgid "Copying file: %u of %u"
-msgstr "ફાઈલની નકલ કરી રહ્યા છીએ: %u જેટલું %u માંથી"
+msgstr ""
 
 #: src/mate-screensaver-command.c:60
 msgid "Causes the screensaver to exit gracefully"
-msgstr "સ્ક્રીનસેવરને સારી રીતે બંધ કરવાનું કારણ બને છે"
+msgstr ""
 
 #: src/mate-screensaver-command.c:64
 msgid "Query the state of the screensaver"
-msgstr "સ્ક્રીનસેવરની સ્થિતિને પ્રશ્ન પૂછે છે"
+msgstr ""
 
 #: src/mate-screensaver-command.c:68
 msgid "Query the length of time the screensaver has been active"
-msgstr "સ્ક્રીનસેવર જેટલા સમયથી સક્રિય છે તેટલા સમયની લંબાઈનો પ્રશ્ન"
+msgstr ""
 
 #: src/mate-screensaver-command.c:72
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr ""
-"ચાલી રહેલ સ્ક્રીનસેવર પ્રક્રિયાને સ્ક્રીન તુરંત જ તાળું મારવા માટે કહે છે"
 
 #: src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to unlock the screen immediately"
@@ -497,186 +467,178 @@ msgstr ""
 
 #: src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
-msgstr "જો સ્ક્રીનસેવર સક્રિય હોય તો પછી અન્ય ગ્રાફિક્સ ડેમોમાં બદલાવ"
+msgstr ""
 
 #: src/mate-screensaver-command.c:84
 msgid "Turn the screensaver on (blank the screen)"
-msgstr "સ્ક્રીનસેવરને ચાલુ કરો (સ્ક્રીન કોરી કરો)"
+msgstr ""
 
 #: src/mate-screensaver-command.c:88
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr ""
-"જો સ્ક્રીનસેવર સક્રિય હોય તો પછી તેને અસક્રિય કરો (સ્ક્રીનને કોરી-નહિં રાખો)"
 
 #: src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr ""
-"વપરાશકર્તા ક્રિયા સિમ્યુલેટ કરવા માટે ચાલી રહેલ સ્ક્રીનસેવરને ધક્કો મારો"
 
 #: src/mate-screensaver-command.c:96
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
 msgstr ""
-"સ્ક્રીનસેવરને સક્રિય કરવાથી બચાવવું.  જ્યારે બચાવવાનું સક્રિય હોય ત્યારે "
-"આદેશો અટકાવે છે."
 
 #: src/mate-screensaver-command.c:100
 msgid "The calling application that is inhibiting the screensaver"
-msgstr "બોલાવી રહેલ કાર્યક્રમ કે જે સ્ક્રીનસેવરને અટકાવી રહ્યો છે"
+msgstr ""
 
 #: src/mate-screensaver-command.c:104
 msgid "The reason for inhibiting the screensaver"
-msgstr "સ્ક્રીનસેવરને બચાવવા માટેનું કારણ"
+msgstr ""
 
 #: src/mate-screensaver-command.c:108 src/mate-screensaver-dialog.c:58
 #: src/mate-screensaver.c:55
 msgid "Version of this application"
-msgstr "આ કાર્યક્રમની આવૃત્તિ"
+msgstr ""
 
 #: src/mate-screensaver-command.c:357
 #, c-format
 msgid "The screensaver is %s\n"
-msgstr "સ્ક્રીનસેવર એ %s છે\n"
+msgstr ""
 
 #: src/mate-screensaver-command.c:357
 msgid "active"
-msgstr "સક્રિય"
+msgstr ""
 
 #: src/mate-screensaver-command.c:357
 msgid "inactive"
-msgstr "અસક્રિય"
+msgstr ""
 
 #: src/mate-screensaver-command.c:373
 msgid "The screensaver is not inhibited\n"
-msgstr "સ્ક્રીનસેવર એ અટકાવાયેલ છે\n"
+msgstr ""
 
 #: src/mate-screensaver-command.c:381
 msgid "The screensaver is being inhibited by:\n"
-msgstr "સ્ક્રીનસેવર એ અટકાવી દેવામાં આવ્યું છે:\n"
+msgstr ""
 
 #: src/mate-screensaver-command.c:416
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
-msgstr "સ્ક્રીનસેવર %d સેકન્ડોથી સક્રિય છે.\n"
+msgstr ""
 
 #: src/mate-screensaver-command.c:422
 msgid "The screensaver is not currently active.\n"
-msgstr "સ્ક્રીનસેવર એ હમણાં સક્રિય નથી.\n"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:57
 msgid "Show debugging output"
-msgstr "ડિબગીંગ આઉટપુટ બતાવો"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:59
 msgid "Show the logout button"
-msgstr "બહાર નીકળો બટન બતાવો"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:60
 msgid "Command to invoke from the logout button"
-msgstr "બહાર નીકળો બટનમાંથી ચલાવવાનો આદેશ"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:61
 msgid "Show the switch user button"
-msgstr "વપરાશકર્તા બદલો બટન બતાવો"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:62
 msgid "Message to show in the dialog"
-msgstr "સંવાદમાં બતાવવા માટેનો સંદેશો"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:62 src/mate-screensaver-dialog.c:63
 msgid "MESSAGE"
-msgstr "MESSAGE"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:63
 msgid "Not used"
-msgstr "વપરાયેલ નથી"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:165 src/mate-screensaver-dialog.c:166
 #: src/mate-screensaver-dialog.c:167 src/gs-auth-pam.c:745
 msgid "Username:"
-msgstr "વપરાશકર્તાનામ:"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:168 src/mate-screensaver-dialog.c:169
 #: src/gs-auth-pam.c:171
 msgid "Password:"
-msgstr "પાસવર્ડ:"
+msgstr "Awal n tbaḍnit:"
 
 #: src/mate-screensaver-dialog.c:170
 msgid "You are required to change your password immediately (password aged)"
 msgstr ""
-"તમે તમારો પાસવર્ડ તુરંત બદલવા માટે આગ્રહ કરવામાં આવે છે (પાસવર્ડની આયુ)"
 
 #: src/mate-screensaver-dialog.c:171
 msgid "You are required to change your password immediately (root enforced)"
 msgstr ""
-"તમે તમારો પાસવર્ડ તુરંત બદલવા માટે આગ્રહ કરવામાં આવે છે (રુટ દ્વારા દબાણ)"
 
 #: src/mate-screensaver-dialog.c:172
 msgid "Your account has expired; please contact your system administrator"
 msgstr ""
-"તમારા ખાતાની સમયમર્યાદા સમાપ્ત થઈ ગઈ; મહેરબાની કરીને તમારા સિસ્ટમ સંચાલકનો "
-"સંપર્ક કરો"
 
 #: src/mate-screensaver-dialog.c:173
 msgid "No password supplied"
-msgstr "કોઈ પાસવર્ડો પૂરા પાડવામાં આવેલ નથી"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:174
 msgid "Password unchanged"
-msgstr "પાસવર્ડ બદલાયેલ નથી"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:175
 msgid "Can not get username"
-msgstr "વપરાશકર્તાનામ મેળવી શકતા નથી"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:176
 msgid "Retype new UNIX password:"
-msgstr "નવો UNIX પાસવર્ડ ફરી લખો:"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:177
 msgid "Enter new UNIX password:"
-msgstr "નવો UNIX પાસવર્ડ દાખલ કરો:"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:178
 msgid "(current) UNIX password:"
-msgstr "(વર્તમાન) UNIX પાસવર્ડ:"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:179
 msgid "Error while changing NIS password."
-msgstr "NIS પાસવર્ડ બદલતી વખતે ભૂલ."
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:180
 msgid "You must choose a longer password"
-msgstr "તમારે લાંબો પાસવર્ડ જ પસંદ કરવો જોઈએ"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:181
 msgid "Password has been already used. Choose another."
-msgstr "પાસવર્ડ પહેલાથી જ વપરાઈ ગયેલ છે. અન્ય પસંદ કરો."
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:182
 msgid "You must wait longer to change your password"
-msgstr "તમારે તમારો પાસવર્ડ બદલવા માટે લાંબે સુધી રાહ જોવી જ પડશે"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:183
 msgid "Sorry, passwords do not match"
-msgstr "માફ કરજો, પાસવર્ડો બંધ બેસતા નથી"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:254
 msgid "Checking..."
-msgstr "ચકાસી રહ્યા છીએ..."
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:300 src/gs-auth-pam.c:483
 msgid "Authentication failed."
-msgstr "સત્તાધિકરણ નિષ્ફળ."
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:455
 msgid "Blank screen"
-msgstr "ખાલી સ્ક્રીન"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:461
 msgid "Random"
-msgstr "રેન્ડમ"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:947
 #: src/mate-screensaver-preferences.c:957
@@ -712,39 +674,39 @@ msgstr[1] ""
 #: src/mate-screensaver-preferences.c:1016
 #, c-format
 msgid "%s %s"
-msgstr "%s %s"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:998
 #, c-format
 msgid "%s %s %s"
-msgstr "%s %s %s"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:1008
 #: src/mate-screensaver-preferences.c:1021
 #: src/mate-screensaver-preferences.c:1057
 #, c-format
 msgid "%s"
-msgstr "%s"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:1072
 msgid "Never"
-msgstr "ક્યારેય નહિં"
+msgstr "Jamais"
 
 #: src/mate-screensaver-preferences.c:1554
 msgid "Could not load the main interface"
-msgstr "મુખ્ય ઈન્ટરફેસ લાવી શક્યા નહિં"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:1556
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "મહેરબાની કરીને ખાતરી કરો કે સ્ક્રીનસેવર યોગ્ય રીતે સ્થાપિત થયેલ છે"
+msgstr ""
 
 #: src/mate-screensaver.c:56
 msgid "Don't become a daemon"
-msgstr "ડિમન બનશો નહિં"
+msgstr ""
 
 #: src/mate-screensaver.c:57
 msgid "Enable debugging code"
-msgstr "ડિબગીંગ કોડ સક્રિય કરો"
+msgstr ""
 
 #: src/mate-screensaver.desktop.in.in:5
 msgid "Launch screensaver and locker program"
@@ -759,36 +721,36 @@ msgstr ""
 #: src/gs-auth-pam.c:413
 #, c-format
 msgid "Unable to establish service %s: %s\n"
-msgstr "સેવા %s અધિષ્ઠાપિત કરવામાં અસમર્થ: %s\n"
+msgstr ""
 
 #: src/gs-auth-pam.c:443
 #, c-format
 msgid "Can't set PAM_TTY=%s"
-msgstr "PAM_TTY=%s સુયોજિત કરી શકતા નથી"
+msgstr ""
 
 #: src/gs-auth-pam.c:479
 msgid "Incorrect password."
-msgstr "અયોગ્ય પાસવર્ડ."
+msgstr ""
 
 #: src/gs-auth-pam.c:499
 msgid "Not permitted to gain access at this time."
-msgstr "આ સમયે વપરાશની પરવાનગી નથી."
+msgstr ""
 
 #: src/gs-auth-pam.c:507
 msgid "No longer permitted to access the system."
-msgstr "સિસ્ટમના વપરાશની લાંબા સમય સુધી પરવાનગી નથી."
+msgstr ""
 
 #: src/gs-listener-dbus.c:2247
 msgid "failed to register with the message bus"
-msgstr "સંદેશા બસ સાથે રજીસ્ટર કરવામાં નિષ્ફળ"
+msgstr ""
 
 #: src/gs-listener-dbus.c:2258
 msgid "not connected to the message bus"
-msgstr "સંદેશા બસમાં જોડાયેલ નથી"
+msgstr ""
 
 #: src/gs-listener-dbus.c:2268 src/gs-listener-dbus.c:2300
 msgid "screensaver already running in this session"
-msgstr "આ સત્રમાં સ્ક્રીનસેવર પહેલાથી જ ચાલી રહ્યું છે"
+msgstr ""
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
@@ -798,24 +760,24 @@ msgstr ""
 
 #: src/gs-lock-plug.c:403
 msgid "Time has expired."
-msgstr "સમય સમાપ્ત થઈ ગયો."
+msgstr ""
 
 #: src/gs-lock-plug.c:434
 msgid "You have the Caps Lock key on."
-msgstr "તમારી Caps Lock કી ચાલુ છે."
+msgstr ""
 
 #: src/gs-lock-plug.c:1656
 msgid "S_witch User..."
-msgstr "વપરાશકર્તા બદલો (_w)..."
+msgstr ""
 
 #: src/gs-lock-plug.c:1665
 msgid "Log _Out"
-msgstr "બહાર નીકળો (_O)"
+msgstr ""
 
 #: src/gs-lock-plug.c:1878
 msgid "%U on %h"
-msgstr "%U એ %h પર"
+msgstr ""
 
 #: src/gs-lock-plug.c:1893
 msgid "_Password:"
-msgstr "પાસવર્ડ (_P):"
+msgstr "_Awal uffir:"

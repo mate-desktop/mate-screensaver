@@ -4,19 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# tarakbumba <tarakbumba@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Butterfly <gokhanlnx@gmail.com>, 2018
-# Sabri Ünal <yakushabb@gmail.com>, 2019
-# mauron, 2019
+# tarakbumba <tarakbumba@gmail.com>, 2020
+# mauron, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Butterfly <gokhanlnx@gmail.com>, 2020
+# Sabri Ünal <yakushabb@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-screensaver 1.23.1\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: mauron, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:34+0000\n"
+"Last-Translator: Sabri Ünal <yakushabb@gmail.com>, 2020\n"
 "Language-Team: Turkish (https://www.transifex.com/mate/teams/13566/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,7 +56,7 @@ msgstr "<b>Ekran koruyucu önizleme</b>"
 
 #: data/mate-screensaver-preferences.ui:164
 msgid "Screensaver Preferences"
-msgstr "Ekran koruyucusu Tercihleri"
+msgstr "Ekran koruyucu Tercihleri"
 
 #: data/mate-screensaver-preferences.ui:196
 msgid "Power _Management"
@@ -692,8 +692,8 @@ msgstr "Rastgele"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d saat"
-msgstr[1] "%d saat"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:950
 #: src/mate-screensaver-preferences.c:959
@@ -706,15 +706,15 @@ msgstr[1] "%d saat"
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d dakika"
-msgstr[1] "%d dakika"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:953
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d saniye"
-msgstr[1] "%d saniye"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:956
 #: src/mate-screensaver-preferences.c:1003

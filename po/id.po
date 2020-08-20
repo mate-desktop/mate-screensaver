@@ -4,20 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Ibnu Daru Aji, 2018
-# La Ode Muh. Fadlun Akbar <fadlun.net@gmail.com>, 2018
-# hpiece 8 <hpiece8@gmail.com>, 2018
-# Andika Triwidada <andika@gmail.com>, 2018
-# Willy Sudiarto Raharjo <willysr@slackware-id.org>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Ibnu Daru Aji, 2020
+# Willy Sudiarto Raharjo <willysr@slackware-id.org>, 2020
+# La Ode Muh. Fadlun Akbar <fadlun.net@gmail.com>, 2020
+# hpiece 8 <hpiece8@gmail.com>, 2020
+# Andika Triwidada <andika@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-screensaver 1.23.1\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Willy Sudiarto Raharjo <willysr@slackware-id.org>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:34+0000\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>, 2020\n"
 "Language-Team: Indonesian (https://www.transifex.com/mate/teams/13566/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,13 +39,13 @@ msgstr "Tentukan setingan screensaver Anda"
 #: data/mate-screensaver-preferences.desktop.in:6
 #: src/mate-screensaver.desktop.in.in:7
 msgid "preferences-desktop-screensaver"
-msgstr ""
+msgstr "preferences-desktop-screensaver"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr ""
+msgstr "MATE;cuplikan layar;tangkapan layar;preferensi;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
@@ -100,7 +100,7 @@ msgstr "Tema screensaver"
 #. file name)!
 #: data/mate-screensaver.directory.desktop.in:7
 msgid "screensaver"
-msgstr ""
+msgstr "screensaver"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -325,7 +325,7 @@ msgstr "Tampilkan slideshow dari gambar cosmos"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr ""
+msgstr "MATE;"
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -339,7 +339,7 @@ msgstr "Balonkan logo MATE di sekitar layar"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr ""
+msgstr "MATE;screensaver;logo;gelembung;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -353,7 +353,7 @@ msgstr "Balonkan logo kaki MATE di sekitar layar"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr ""
+msgstr "MATE;screensaver;GNOME;logo;gelembung;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -367,7 +367,7 @@ msgstr "Tampilkan slideshow dari folder Gambar Anda"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
-msgstr ""
+msgstr "MATE;screensaver;ubahan;pertunjukan salindia;gambar;folder;"
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
@@ -381,7 +381,7 @@ msgstr "Warna pulsa baris pop-art-ish"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr ""
+msgstr "MATE;screensaver;grid;berdenyut;warna;"
 
 #: savers/popsquares.c:49 savers/floaters.c:1191
 #, c-format
@@ -502,6 +502,8 @@ msgstr "Meminta proses screensaver untuk mengunci layar dengan segera"
 #: src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
+"Memberitahu proses screensaver yang sedang berjalan untuk membuka kunci "
+"layar seketika"
 
 #: src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -757,7 +759,7 @@ msgstr "Luncurkan program screensaver dan pengunci."
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr ""
+msgstr "MATE;screensaver;pengunci;"
 
 #: src/gs-auth-pam.c:413
 #, c-format

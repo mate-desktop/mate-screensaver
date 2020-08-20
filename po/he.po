@@ -4,17 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# monsta <monsta@inbox.ru>, 2018
-# shy tzedaka <shaytzedaka123@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# monsta <monsta@inbox.ru>, 2020
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2020
+# shy tzedaka <shaytzedaka123@gmail.com>, 2020
+# Omer I.S., 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-screensaver 1.23.1\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:34+0000\n"
+"Last-Translator: Omer I.S., 2020\n"
 "Language-Team: Hebrew (https://www.transifex.com/mate/teams/13566/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +38,7 @@ msgstr "קבע את העדפות שומר המסך"
 #: data/mate-screensaver-preferences.desktop.in:6
 #: src/mate-screensaver.desktop.in.in:7
 msgid "preferences-desktop-screensaver"
-msgstr ""
+msgstr "preferences-desktop-screensaver"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -615,7 +617,7 @@ msgstr "לא סופקה סיסמה"
 
 #: src/mate-screensaver-dialog.c:174
 msgid "Password unchanged"
-msgstr "סיסמה לא השתנתה"
+msgstr "הסיסמה לא שונתה"
 
 #: src/mate-screensaver-dialog.c:175
 msgid "Can not get username"
@@ -651,7 +653,7 @@ msgstr "אתה חייב לחכות יותר כדי לשנות את הסיסמה"
 
 #: src/mate-screensaver-dialog.c:183
 msgid "Sorry, passwords do not match"
-msgstr "סליחה, הסיסמאות אינן מתאימות"
+msgstr "סליחה, הסיסמאות אינן תואמות."
 
 #: src/mate-screensaver-dialog.c:254
 msgid "Checking..."
@@ -815,4 +817,4 @@ msgstr "‏%U ב־%h"
 
 #: src/gs-lock-plug.c:1893
 msgid "_Password:"
-msgstr "ססמה:"
+msgstr "_סיסמה:"

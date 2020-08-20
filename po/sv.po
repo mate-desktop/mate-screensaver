@@ -4,22 +4,23 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Kristoffer Grundström <hamnisdude@gmail.com>, 2018
-# 6a42dd6e7ca9a813693714b0d9aa1ad8, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2018
-# Henrik Mattsson-Mårn <h@reglage.net>, 2018
-# Jonatan Nyberg, 2018
-# Tobias Lekare <lekare@linux.com>, 2018
-# Philip Andersen <renegadevi@codeofmagi.net>, 2018
-# Patrik Nilsson <asavartzeth@gmail.com>, 2019
+# Kristoffer Grundström <lovaren@gmail.com>, 2020
+# 6a42dd6e7ca9a813693714b0d9aa1ad8, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Henrik Mattsson-Mårn <h@reglage.net>, 2020
+# Patrik Nilsson <asavartzeth@gmail.com>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Jonatan Nyberg <jonatan.nyberg.karl@gmail.com>, 2020
+# Tobias Lekare <lekare@linux.com>, 2020
+# Luna Jernberg <bittin@cafe8bitar.se>, 2020
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-screensaver 1.23.1\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2019-11-04 23:36+0100\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Patrik Nilsson <asavartzeth@gmail.com>, 2019\n"
+"PO-Revision-Date: 2020-02-16 14:34+0000\n"
+"Last-Translator: Luna Jernberg <bittin@cafe8bitar.se>, 2020\n"
 "Language-Team: Swedish (https://www.transifex.com/mate/teams/13566/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,13 +42,13 @@ msgstr "Ställ in dina skärmsläckarinställningar"
 #: data/mate-screensaver-preferences.desktop.in:6
 #: src/mate-screensaver.desktop.in.in:7
 msgid "preferences-desktop-screensaver"
-msgstr ""
+msgstr "preferences-desktop-screensaver"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr ""
+msgstr "MATE;skärmsläckare;inställningar;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
@@ -59,7 +60,7 @@ msgstr "<b>Förhandsgranska skärmsläckare</b>"
 
 #: data/mate-screensaver-preferences.ui:164
 msgid "Screensaver Preferences"
-msgstr "Skärmsläckarinställningar"
+msgstr "Inställningar för skärmsläckare"
 
 #: data/mate-screensaver-preferences.ui:196
 msgid "Power _Management"
@@ -102,7 +103,7 @@ msgstr "Skärmsläckarteman"
 #. file name)!
 #: data/mate-screensaver.directory.desktop.in:7
 msgid "screensaver"
-msgstr ""
+msgstr "screensaver"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
