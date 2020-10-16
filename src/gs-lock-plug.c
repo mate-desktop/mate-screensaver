@@ -2104,6 +2104,30 @@ on_note_text_buffer_changed (GtkTextBuffer *buffer,
 }
 
 static void
+entry_icon_clicked (GtkEntry       *entry,
+                    gint            position,
+                    GdkEventButton *event,
+                    gpointer        data)
+{
+	(void)data;
+
+	if ((position == GTK_ENTRY_ICON_SECONDARY) && (event->type == GDK_DOUBLE_BUTTON_PRESS))
+	{
+		if (g_strcmp0 (gtk_entry_get_icon_name (entry, position), "emblem-readonly"))
+		{
+			gtk_entry_set_icon_from_icon_name (entry, position, "emblem-readonly");
+			gtk_entry_set_icon_tooltip_text (entry, position, _("Show password"));
+			gtk_entry_set_visibility (entry, FALSE);
+		}
+		else
+		{
+			gtk_entry_set_icon_from_icon_name (entry, position, "emblem-unreadable");
+			gtk_entry_set_icon_tooltip_text (entry, position, _("Hide password"));
+			gtk_entry_set_visibility (entry, TRUE);
+		}
+	}
+}
+static void
 gs_lock_plug_init (GSLockPlug *plug)
 {
 	gs_profile_start (NULL);
@@ -2238,6 +2262,10 @@ gs_lock_plug_init (GSLockPlug *plug)
 	                  G_CALLBACK (entry_button_press), NULL);
 	gtk_entry_set_activates_default (GTK_ENTRY (plug->priv->auth_prompt_entry), TRUE);
 	gtk_entry_set_visibility (GTK_ENTRY (plug->priv->auth_prompt_entry), FALSE);
+
+	/* show/hide password */
+	g_signal_connect (plug->priv->auth_prompt_entry, "icon-press",
+	                  G_CALLBACK (entry_icon_clicked), NULL);
 
 	g_signal_connect (plug->priv->auth_unlock_button, "clicked",
 	                  G_CALLBACK (unlock_button_clicked), plug);
