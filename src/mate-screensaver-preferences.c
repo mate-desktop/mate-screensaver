@@ -38,6 +38,7 @@
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
 #include <libmate-desktop/mate-desktop-utils.h>
+#include <libmate-desktop/mate-desktop-thumbnail.h>
 
 #include "gs-debug.h"
 
@@ -89,6 +90,7 @@ static GSJob          *job = NULL;
 static GSettings      *screensaver_settings = NULL;
 static GSettings      *session_settings = NULL;
 static GSettings      *lockdown_settings = NULL;
+static MateDesktopThumbnailFactory *thumb_factory = NULL;
 
 static gint32
 config_get_activate_delay (gboolean *is_writable)
@@ -1521,6 +1523,75 @@ is_program_in_path (const char *program)
 }
 
 static void
+update_picture_filename_preview (GtkFileChooser *file_chooser,
+                                 gpointer        data)
+{
+	GtkWidget *preview;
+	char *uri;
+	gboolean have_preview = FALSE;
+
+	preview = GTK_WIDGET (data);
+	uri = gtk_file_chooser_get_preview_uri (file_chooser);
+	if (uri) {
+		GFile     *file;
+		GFileInfo *file_info;
+		time_t     mtime;
+		guint64    mtime_aux;
+		char      *thumb_path;
+
+		file = g_file_new_for_uri (uri);
+		file_info = g_file_query_info (file,
+		                               G_FILE_ATTRIBUTE_STANDARD_CONTENT_TYPE","G_FILE_ATTRIBUTE_TIME_MODIFIED,
+		                               G_FILE_QUERY_INFO_NONE,
+		                               NULL, NULL);
+		g_object_unref (file);
+
+		if (file_info == NULL)
+			goto no_file_info;
+
+		mtime_aux = g_file_info_get_attribute_uint64 (file_info,
+		                                              G_FILE_ATTRIBUTE_TIME_MODIFIED);
+		mtime = (time_t)mtime_aux;
+		if ((thumb_path = mate_desktop_thumbnail_factory_lookup (thumb_factory, uri, mtime)) != NULL) {
+			/* try to load thumbnail from cache */
+			gtk_image_set_from_file (GTK_IMAGE (preview), thumb_path);
+			have_preview = TRUE;
+			g_free (thumb_path);
+		} else {
+			/* try to generate thumbnail from wallpaper & store to cache */
+			const char *content_type = g_file_info_get_content_type (file_info);
+			if (content_type != NULL) {
+				char *mime_type = g_content_type_get_mime_type (content_type);
+				if (mime_type != NULL) {
+					/* can generate thumbnail and did not fail previously */
+					if (mate_desktop_thumbnail_factory_can_thumbnail (thumb_factory, uri, mime_type, mtime)) {
+						GdkPixbuf *pixbuf;
+						pixbuf =  mate_desktop_thumbnail_factory_generate_thumbnail (thumb_factory,
+				                                                                             uri, mime_type);
+						if (pixbuf != NULL) {
+							gtk_image_set_from_pixbuf (GTK_IMAGE (preview), pixbuf);
+							mate_desktop_thumbnail_factory_save_thumbnail (thumb_factory,
+							                                               pixbuf, uri, mtime);
+							have_preview = TRUE;
+							g_object_unref (pixbuf);
+						} else {
+							mate_desktop_thumbnail_factory_create_failed_thumbnail (thumb_factory,
+							                                                        uri, mtime);
+						}
+					}
+					g_free (mime_type);
+				}
+			}
+		}
+		g_object_unref (file_info);
+
+no_file_info:
+		g_free (uri);
+	}
+	gtk_file_chooser_set_preview_widget_active (file_chooser, have_preview);
+}
+
+static void
 init_capplet (void)
 {
 	GtkWidget *dialog;
@@ -1541,6 +1612,7 @@ init_capplet (void)
 	GtkWidget *fullscreen_preview_next;
 	GtkWidget *fullscreen_preview_close;
 	GtkWidget *picture_filename;
+	GtkWidget *picture_filename_preview;
 	gdouble    activate_delay;
 	gboolean   enabled;
 	gboolean   is_writable;
@@ -1639,9 +1711,14 @@ init_capplet (void)
 	                  G_CALLBACK (lock_checkbox_toggled), NULL);
 
 	char *path = g_settings_get_string (screensaver_settings, "picture-filename");
-	gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (gtk_builder_get_object (builder, "picture_filename")), path);
-	gtk_file_filter_add_pixbuf_formats (GTK_FILE_FILTER (gtk_builder_get_object (builder, "picture_filefilter")));
+	gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (picture_filename), path);
 	g_free (path);
+	gtk_file_filter_add_pixbuf_formats (GTK_FILE_FILTER (gtk_builder_get_object (builder, "picture_filefilter")));
+	picture_filename_preview = gtk_image_new ();
+	gtk_file_chooser_set_preview_widget (GTK_FILE_CHOOSER (picture_filename), picture_filename_preview);
+	thumb_factory = mate_desktop_thumbnail_factory_new (MATE_DESKTOP_THUMBNAIL_SIZE_LARGE);
+	g_signal_connect (picture_filename, "update-preview",
+	                  G_CALLBACK (update_picture_filename_preview), picture_filename_preview);
 	g_signal_connect (picture_filename, "selection-changed",
 	                  G_CALLBACK (picture_filename_changed), NULL);
 
@@ -1719,6 +1796,7 @@ finalize_capplet (void)
 	g_object_unref (screensaver_settings);
 	g_object_unref (session_settings);
 	g_object_unref (lockdown_settings);
+	g_object_unref (thumb_factory);
 }
 
 int
