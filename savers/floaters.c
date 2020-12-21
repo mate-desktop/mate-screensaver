@@ -74,49 +74,6 @@
 #define GAMMA 2.2
 #endif
 
-static gboolean should_show_paths = FALSE;
-static gboolean should_do_rotations = FALSE;
-static gboolean should_print_stats = FALSE;
-static gint max_floater_count = FLOATER_DEFAULT_COUNT;
-static gchar *geometry = NULL;
-static gchar **filenames = NULL;
-
-static GOptionEntry options[] =
-{
-	{
-		"show-paths", 'p', 0, G_OPTION_ARG_NONE, &should_show_paths,
-		N_("Show paths that images follow"), NULL
-	},
-
-	{
-		"do-rotations", 'r', 0, G_OPTION_ARG_NONE, &should_do_rotations,
-		N_("Occasionally rotate images as they move"), NULL
-	},
-
-	{
-		"print-stats", 's', 0, G_OPTION_ARG_NONE, &should_print_stats,
-		N_("Print out frame rate and other statistics"), NULL
-	},
-
-	{
-		"number-of-images", 'n', 0, G_OPTION_ARG_INT, &max_floater_count,
-		N_("The maximum number of images to keep on screen"), N_("MAX_IMAGES")
-	},
-
-	{
-		"geometry", 0, 0, G_OPTION_ARG_STRING, &geometry,
-		N_("The initial size and position of window"), N_("WIDTHxHEIGHT+X+Y")
-	},
-
-	{
-		G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &filenames,
-		N_("The source image to use"), NULL
-	},
-
-	{NULL}
-};
-
-
 typedef struct _Point Point;
 typedef struct _Path Path;
 typedef struct _Rectangle Rectangle;
@@ -1170,9 +1127,29 @@ main (int   argc,
 	ScreenSaver     *screen_saver;
 	GtkWidget       *window;
 	GtkWidget       *drawing_area;
-	GError *error;
+	gboolean         should_show_paths = FALSE;
+	gboolean         should_do_rotations = FALSE;
+	gboolean         should_print_stats = FALSE;
+	gint             max_floater_count = FLOATER_DEFAULT_COUNT;
+	gchar           *geometry = NULL;
+	gchar          **filenames = NULL;
+	GError          *error = NULL;
 
-	error = NULL;
+	GOptionEntry options[] = {
+	        { "show-paths", 'p', 0, G_OPTION_ARG_NONE, &should_show_paths,
+		  N_("Show paths that images follow"), NULL },
+		{ "do-rotations", 'r', 0, G_OPTION_ARG_NONE, &should_do_rotations,
+		  N_("Occasionally rotate images as they move"), NULL },
+		{ "print-stats", 's', 0, G_OPTION_ARG_NONE, &should_print_stats,
+		  N_("Print out frame rate and other statistics"), NULL },
+		{ "number-of-images", 'n', 0, G_OPTION_ARG_INT, &max_floater_count,
+		  N_("The maximum number of images to keep on screen"), N_("MAX_IMAGES") },
+		{ "geometry", 0, 0, G_OPTION_ARG_STRING, &geometry,
+		  N_("The initial size and position of window"), N_("WIDTHxHEIGHT+X+Y") },
+		{ G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &filenames,
+		  N_("The source image to use"), NULL },
+		{NULL}
+	};
 
 	bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");

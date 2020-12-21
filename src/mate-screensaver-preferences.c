@@ -192,7 +192,7 @@ config_get_theme (gboolean *is_writable)
 }
 
 static gchar **
-get_all_theme_ids (GSThemeManager *theme_manager)
+get_all_theme_ids (void)
 {
 	gchar **ids = NULL;
 	GSList *entries;
@@ -228,7 +228,7 @@ config_set_theme (const char *theme_id)
 		mode = GS_MODE_RANDOM;
 
 		/* set the themes key to contain all available screensavers */
-		strv = get_all_theme_ids (theme_manager);
+		strv = get_all_theme_ids ();
 	}
 	else
 	{
@@ -297,8 +297,7 @@ config_set_lock (gboolean lock)
 }
 
 static void
-job_set_theme (GSJob      *job,
-               const char *theme)
+job_set_theme (const char *theme)
 {
 	GSThemeInfo *info;
 	const char  *command;
@@ -362,13 +361,13 @@ preview_set_theme (GtkWidget  *widget,
 	{
 		gchar **themes;
 
-		themes = get_all_theme_ids (theme_manager);
+		themes = get_all_theme_ids ();
 		if (themes != NULL)
 		{
 			gint32  i;
 
 			i = g_random_int_range (0, g_strv_length (themes));
-                        job_set_theme (job, themes[i]);
+                        job_set_theme (themes[i]);
                         g_strfreev (themes);
 
 			gs_job_start (job);
@@ -376,7 +375,7 @@ preview_set_theme (GtkWidget  *widget,
 	}
 	else
 	{
-		job_set_theme (job, theme);
+		job_set_theme (theme);
 		gs_job_start (job);
 	}
 }
@@ -1757,7 +1756,7 @@ init_capplet (void)
 	mode = g_settings_get_enum (screensaver_settings, KEY_MODE);
 	if (mode == GS_MODE_RANDOM) {
 		gchar **list;
-		list = get_all_theme_ids (theme_manager);
+		list = get_all_theme_ids ();
 		g_settings_set_strv (screensaver_settings, KEY_THEMES, (const gchar * const*) list);
 		g_strfreev (list);
 	}
