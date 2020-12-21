@@ -429,7 +429,8 @@ static gboolean popup_dialog_idle(gpointer data)
    If the executable is setuid root, then these initializations
    are run as root, before discarding privileges.
 */
-static gboolean privileged_initialization(int* argc, char** argv, gboolean verbose)
+static gboolean
+privileged_initialization (int* argc, char** argv)
 {
 	gboolean ret;
 	char* nolock_reason;
@@ -471,7 +472,8 @@ static gboolean privileged_initialization(int* argc, char** argv, gboolean verbo
  *
  * Figure out what locking mechanisms are supported.
  */
-static gboolean lock_initialization (int* argc, char** argv, char** nolock_reason, gboolean verbose)
+static gboolean
+lock_initialization (int* argc, char** argv, char** nolock_reason)
 {
 	if (nolock_reason != NULL)
 	{
@@ -560,7 +562,7 @@ int main(int argc, char** argv)
 
 	gs_profile_start(NULL);
 
-	if (!privileged_initialization(&argc, argv, verbose))
+	if (!privileged_initialization (&argc, argv))
 	{
 		response_lock_init_failed();
 		exit(1);
@@ -585,7 +587,7 @@ int main(int argc, char** argv)
 		exit(1);
 	}
 
-	if (!lock_initialization(&argc, argv, &nolock_reason, verbose))
+	if (!lock_initialization(&argc, argv, &nolock_reason))
 	{
 		if (nolock_reason != NULL)
 		{
