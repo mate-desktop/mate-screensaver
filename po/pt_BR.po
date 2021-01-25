@@ -104,7 +104,7 @@ msgstr "Temas de proteção de tela"
 #. file name)!
 #: data/mate-screensaver.directory.desktop.in:7
 msgid "screensaver"
-msgstr "protetor de tela"
+msgstr ""
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.

@@ -35,7 +35,7 @@ msgstr "Подесите поставке чувара екрана"
 #: data/mate-screensaver-preferences.desktop.in:6
 #: src/mate-screensaver.desktop.in.in:7
 msgid "preferences-desktop-screensaver"
-msgstr "preferences-desktop-screensaver"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -96,7 +96,7 @@ msgstr "Теме чувара екрана"
 #. file name)!
 #: data/mate-screensaver.directory.desktop.in:7
 msgid "screensaver"
-msgstr "screensaver"
+msgstr ""
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
