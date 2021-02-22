@@ -25,4 +25,9 @@
   SOFTWARE.
 */
 
+#ifndef __XDG_USER_DIR_LOOKUP_H__
+#define __XDG_USER_DIR_LOOKUP_H__
+
 char * xdg_user_dir_lookup (const char *type);
+
+#endif /* __XDG_USER_DIR_LOOKUP_H__ */
