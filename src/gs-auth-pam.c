@@ -45,6 +45,7 @@
 #include <gtk/gtk.h>
 
 #include "gs-auth.h"
+#include "gs-auth-pam.h"
 
 #include "subprocs.h"
 
@@ -123,33 +124,6 @@ gboolean
 gs_auth_get_verbose (void)
 {
 	return verbose_enabled;
-}
-
-static GSAuthMessageStyle
-pam_style_to_gs_style (int pam_style)
-{
-	GSAuthMessageStyle style;
-
-	switch (pam_style)
-	{
-	case PAM_PROMPT_ECHO_ON:
-		style = GS_AUTH_MESSAGE_PROMPT_ECHO_ON;
-		break;
-	case PAM_PROMPT_ECHO_OFF:
-		style = GS_AUTH_MESSAGE_PROMPT_ECHO_OFF;
-		break;
-	case PAM_ERROR_MSG:
-		style = GS_AUTH_MESSAGE_ERROR_MSG;
-		break;
-	case PAM_TEXT_INFO:
-		style = GS_AUTH_MESSAGE_TEXT_INFO;
-		break;
-	default:
-		g_assert_not_reached ();
-		break;
-	}
-
-	return style;
 }
 
 static gboolean

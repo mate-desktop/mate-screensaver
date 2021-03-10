@@ -816,30 +816,29 @@ fi
 #       all in xscreensaver itself; the external program just does auth.)
 
 have_passwd_helper=no
-with_passwd_helper_req=unspecified
+builtin_helper=no
 
 AC_ARG_WITH(passwd-helper,
 [  --with-passwd-helper    Include support for an external password
                           verification helper program.],
-  [with_passwd_helper="$withval"; with_passwd_helper_req="$withval"],[with_passwd_helper=no])
+  [with_passwd_helper="$withval"],[with_passwd_helper=no])
 # no HANDLE_X_PATH_ARG for this one
 
 if test "$enable_locking" = no ; then
-  with_passwd_helper_req=no
   with_passwd_helper=no
+  builtin_helper=no
 fi
 
 case "$with_passwd_helper" in
   ""|no) : ;;
   /*)
     AC_DEFINE_UNQUOTED(PASSWD_HELPER_PROGRAM, "$with_passwd_helper", [Full pathname of password helper application])
+    builtin_helper=no
     have_passwd_helper=yes;;
   *)
     echo "error: --with-passwd-helper needs full pathname of helper (not '$with_passwd_helper')." >&2
     exit 1
 esac
-AM_CONDITIONAL(HAVE_PASSWD_HELPER, test x$have_passwd_helper = xyes)
-AC_SUBST(HAVE_PASSWD_HELPER)
 
 if test "$need_setuid" = yes -a "$have_pam" != yes ; then
   NEED_SETUID=yes
@@ -863,7 +862,9 @@ if test x$enable_authentication_scheme = xpam -a x$have_pam = xno ; then
 	AC_MSG_ERROR(PAM support requested but not available)
 fi
 if test x$enable_authentication_scheme = xhelper -a x$have_passwd_helper = xno ; then
-	AC_MSG_ERROR(Password helper support requested but not available)
+    builtin_helper=yes
+    have_passwd_helper=yes
+    AC_DEFINE_UNQUOTED(PASSWD_HELPER_PROGRAM, [PKGLIBEXECDIR "/mate-screensaver-pam-helper"], [Full pathname of password helper application])
 fi
 if test x$enable_authentication_scheme = xbsdauth -a x$have_bsdauth = xno ; then
 	AC_MSG_ERROR(bsd_auth(3) support requested but not available)
@@ -892,6 +893,9 @@ else
 fi
 
 AC_SUBST(AUTH_SCHEME)
+AM_CONDITIONAL(HAVE_PASSWD_HELPER, test x$have_passwd_helper = xyes)
+AM_CONDITIONAL(BUILTIN_HELPER, test x$builtin_helper = xyes)
+AC_SUBST(HAVE_PASSWD_HELPER)
 
 dnl ---------------------------------------------------------------------------
 dnl ConsoleKit
@@ -999,6 +1003,14 @@ if test "x$have_libnotify" = "xyes"; then
   AC_SUBST(LIBNOTIFY_LIBS)
   AC_DEFINE(WITH_LIBNOTIFY, 1, [Define for libnotify support])
 fi
+
+dnl ---------------------------------------------------------------------------
+dnl glib headers for pam-helper
+dnl ---------------------------------------------------------------------------
+
+PKG_CHECK_MODULES(PAM_HELPER,
+	glib-2.0 >= $GLIB_REQUIRED_VERSION)
+AC_SUBST(PAM_HELPER_CFLAGS)
 
 dnl ---------------------------------------------------------------------------
 dnl Finish
@@ -1117,6 +1129,7 @@ data/images/cosmos/Makefile
 savers/Makefile
 doc/Makefile
 doc/mate-screensaver.xml
+helper/Makefile
 ])
 
 echo "

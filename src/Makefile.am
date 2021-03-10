@@ -3,7 +3,7 @@ AUTOMAKE_OPTIONS = 1.7
 
 NULL =
 
-saverdir = $(libexecdir)/mate-screensaver
+saverdir = $(pkglibexecdir)
 themesdir = $(pkgdatadir)/themes
 
 AM_CPPFLAGS =							\
@@ -21,6 +21,7 @@ AM_CPPFLAGS =							\
 	-DDATADIR=\""$(datadir)"\"				\
 	-DSYSCONFDIR=\""$(sysconfdir)"\"			\
 	-DMATELOCALEDIR=\""$(datadir)/locale"\"			\
+	-DPKGLIBEXECDIR=\""$(pkglibexecdir)"\"			\
 	-DSAVERDIR=\""$(saverdir)"\"				\
 	-DTHEMESDIR=\""$(themesdir)"\"				\
 	-DGTKBUILDERDIR=\"$(pkgdatadir)\"			\
@@ -69,6 +70,7 @@ mate_screensaver_command_LDADD =	\
 
 AUTH_SOURCES = 			\
 	gs-auth.h		\
+	gs-auth-pam.h		\
 	gs-auth-@AUTH_SCHEME@.c	\
 	$(NULL)
 
@@ -98,6 +100,11 @@ test_passwd_LDADD =			\
 	$(MATE_SCREENSAVER_DIALOG_LIBS)\
 	$(AUTH_LIBS)			\
 	$(NULL)
+
+if HAVE_PASSWD_HELPER
+test_passwd_LDADD +=	\
+	../helper/libhelper-proto.a
+endif
 
 test_watcher_SOURCES =			\
 	test-watcher.c			\
@@ -160,6 +167,11 @@ mate_screensaver_dialog_LDADD =	\
 	$(LIBMATEKBDUI_LIBS)		\
 	$(LIBNOTIFY_LIBS)		\
 	$(NULL)
+
+if HAVE_PASSWD_HELPER
+mate_screensaver_dialog_LDADD +=	\
+	../helper/libhelper-proto.a
+endif
 
 BUILT_SOURCES = 		\
 	gs-marshal.c 		\
