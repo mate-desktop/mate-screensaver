@@ -85,55 +85,55 @@ ext_run (const char *user,
          gpointer   data)
 {
         int pfd[2], r_pfd[2], status;
-	pid_t pid;
+        pid_t pid;
         gboolean verbose = gs_auth_get_verbose ();
 
         if (pipe (pfd) < 0 || pipe (r_pfd) < 0)
-	{
+        {
                 return FALSE;
-	}
+        }
 
-	if (verbose)
-	{
-		g_message ("ext_run (%s, %s)",
-		           PASSWD_HELPER_PROGRAM, user);
-	}
+        if (verbose)
+        {
+                g_message ("ext_run (%s, %s)",
+                           PASSWD_HELPER_PROGRAM, user);
+        }
 
-	block_sigchld ();
+        block_sigchld ();
 
-	if ((pid = fork ()) < 0)
-	{
+        if ((pid = fork ()) < 0)
+        {
                 close (pfd [0]);
                 close (pfd [1]);
                 close (r_pfd [0]);
                 close (r_pfd [1]);
-		return FALSE;
-	}
+                return FALSE;
+        }
 
-	if (pid == 0)
-	{
-		close (pfd [1]);
+        if (pid == 0)
+        {
+                close (pfd [1]);
                 close (r_pfd [0]);
-		if (pfd [0] != 0)
-		{
-			dup2 (pfd [0], 0);
-		}
+                if (pfd [0] != 0)
+                {
+                        dup2 (pfd [0], 0);
+                }
                 if (r_pfd [1] != 1)
                 {
                         dup2 (r_pfd [1], 1);
                 }
 
-		/* Helper is invoked as helper service-name [user] */
-		execlp (PASSWD_HELPER_PROGRAM, PASSWD_HELPER_PROGRAM, "mate-screensaver", user, NULL);
-		if (verbose)
-		{
-			g_message ("%s: %s", PASSWD_HELPER_PROGRAM, g_strerror (errno));
-		}
+                /* Helper is invoked as helper service-name [user] */
+                execlp (PASSWD_HELPER_PROGRAM, PASSWD_HELPER_PROGRAM, "mate-screensaver", user, NULL);
+                if (verbose)
+                {
+                        g_message ("%s: %s", PASSWD_HELPER_PROGRAM, g_strerror (errno));
+                }
 
-		exit (1);
-	}
+                exit (1);
+        }
 
-	close (pfd [0]);
+        close (pfd [0]);
         close (r_pfd [1]);
 
         gboolean ret = FALSE;
@@ -160,21 +160,21 @@ ext_run (const char *user,
 
                 wt = write_msg (pfd [1], input, input_len);
                 if (wt < 0)
-		{
+                {
                         g_message ("Error writing prompt reply (%d)", wt);
                         ret = FALSE;
                         goto exit;
-		}
-	}
+                }
+        }
 
         close (pfd [1]);
         close (r_pfd [0]);
-	unblock_sigchld ();
+        unblock_sigchld ();
 
-	if (! WIFEXITED (status) || WEXITSTATUS (status) != 0)
-	{
+        if (! WIFEXITED (status) || WEXITSTATUS (status) != 0)
+        {
                 ret = FALSE;
-	}
+        }
         else
                 ret = TRUE;
 
