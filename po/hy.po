@@ -9,9 +9,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.23.1\n"
+"Project-Id-Version: mate-screensaver 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-04 23:36+0100\n"
+"POT-Creation-Date: 2020-08-20 18:57+0200\n"
 "PO-Revision-Date: 2020-02-16 14:34+0000\n"
 "Last-Translator: Siranush <ss.m.95@mail.ru>, 2020\n"
 "Language-Team: Armenian (https://www.transifex.com/mate/teams/13566/hy/)\n"
@@ -30,13 +30,6 @@ msgstr "Էկրանապահ"
 msgid "Set your screensaver preferences"
 msgstr "Սահմանել Ձեր Էկրանապահի նախընտրությունները"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver-preferences.desktop.in:6
-#: src/mate-screensaver.desktop.in.in:7
-msgid "preferences-desktop-screensaver"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
@@ -47,39 +40,47 @@ msgstr ""
 msgid "Screensaver Preview"
 msgstr "Էկրանապահի Նախադիտում"
 
-#: data/mate-screensaver-preferences.ui:56
+#: data/mate-screensaver-preferences.ui:59
 msgid "<b>Screensaver preview</b>"
 msgstr "<b>Էկրանապահի Նախադիտում</b>"
 
-#: data/mate-screensaver-preferences.ui:164
+#: data/mate-screensaver-preferences.ui:168
 msgid "Screensaver Preferences"
 msgstr "Էկրանապահի նախընտրություններ"
 
-#: data/mate-screensaver-preferences.ui:196
+#: data/mate-screensaver-preferences.ui:203
 msgid "Power _Management"
 msgstr "Հզորության _Կառավարում"
 
-#: data/mate-screensaver-preferences.ui:212
+#: data/mate-screensaver-preferences.ui:219
 msgid "_Preview"
 msgstr "_Նախնական դիտում"
 
-#: data/mate-screensaver-preferences.ui:272
+#: data/mate-screensaver-preferences.ui:279
 msgid "_Screensaver theme:"
 msgstr "_Էկրանապահ թեման։"
 
-#: data/mate-screensaver-preferences.ui:390
+#: data/mate-screensaver-preferences.ui:397
 msgid "Regard the computer as _idle after:"
 msgstr "Զննել համակարգիչը որպես  _պարապ հետո․"
 
-#: data/mate-screensaver-preferences.ui:433
+#: data/mate-screensaver-preferences.ui:440
 msgid "_Activate screensaver when computer is idle"
 msgstr "_Ակտիվացրեք Էկրանապահին, երբ համակարգիչը պարապ է"
 
-#: data/mate-screensaver-preferences.ui:448
+#: data/mate-screensaver-preferences.ui:455
 msgid "_Lock screen when screensaver is active"
 msgstr "_Արգելափակել էկրանիը, երբ Էկրանապահ ակտիվ է"
 
-#: data/mate-screensaver-preferences.ui:465
+#: data/mate-screensaver-preferences.ui:477
+msgid "Background picture for lock screen:"
+msgstr ""
+
+#: data/mate-screensaver-preferences.ui:496
+msgid "Select Background Image"
+msgstr "Ընտրել Նախադիր պատկեր"
+
+#: data/mate-screensaver-preferences.ui:522
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
 msgstr "<b>Զգուշացում․ էկրանը չի արգելափակվի արմատային օգտատիրոջ համար։</b>"
 
@@ -91,12 +92,6 @@ msgstr "Էկրանապահ"
 #: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
 msgstr "Էկրանապահի թեմաներ"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver.directory.desktop.in:7
-msgid "screensaver"
-msgstr ""
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -313,6 +308,14 @@ msgstr ""
 "Թույլ տալ նիստի կարգավիճակի հաղորդագրությունը կցուցադրել, երբ էկրանը կողպված"
 " է:"
 
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Picture Filename"
+msgstr "Նկարի Ֆայլի անունը"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid "File to use for the background image."
+msgstr "Ֆայլը օգտագործել ֆոնի պատկերի համար։"
+
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "Ցուցադրել սլայդցուցադրումը պատկերներով տիեզերքը"
@@ -450,32 +453,32 @@ msgstr "Չպատահականացնել նկարները գտնվելու դիր�
 msgid "Do not try to stretch images on screen"
 msgstr "Մի փորձիր պատկերները էկրանի վրա երկարացնել"
 
-#: src/copy-theme-dialog.c:184
+#: src/copy-theme-dialog.c:180
 msgid "Copying files"
 msgstr "Ֆայլերի պատճենում "
 
-#: src/copy-theme-dialog.c:203
+#: src/copy-theme-dialog.c:199
 msgid "From:"
 msgstr "–ից: "
 
-#: src/copy-theme-dialog.c:207
+#: src/copy-theme-dialog.c:203
 msgid "To:"
 msgstr "Դեպի։"
 
-#: src/copy-theme-dialog.c:228
+#: src/copy-theme-dialog.c:224
 msgid "Copying themes"
 msgstr "Թեմաների Պատճենում "
 
-#: src/copy-theme-dialog.c:271
+#: src/copy-theme-dialog.c:267
 msgid "Invalid screensaver theme"
 msgstr "Անվավաեր Էկրանապահի թեմա"
 
-#: src/copy-theme-dialog.c:274
+#: src/copy-theme-dialog.c:270
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "%s չի հայտնվում էկրանապահի վավեր թեմա լինելու համար։"
 
-#: src/copy-theme-dialog.c:454
+#: src/copy-theme-dialog.c:450
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "Ֆայլի պատճենում : %u  %u"
@@ -733,11 +736,11 @@ msgstr "%s"
 msgid "Never"
 msgstr "Երբեք"
 
-#: src/mate-screensaver-preferences.c:1554
+#: src/mate-screensaver-preferences.c:1563
 msgid "Could not load the main interface"
 msgstr "Չհաջողվեց բեռնել հիմնական ինտերֆեյսը"
 
-#: src/mate-screensaver-preferences.c:1556
+#: src/mate-screensaver-preferences.c:1565
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Խնդրում ենք համոզվեք, որ Էկրանապահը պատշաճ կերպով է տեղադրված"
 
@@ -781,15 +784,15 @@ msgstr "Չի թույլատրվում մուտք գործել այս պահին�
 msgid "No longer permitted to access the system."
 msgstr "Այլևս չի թույլատրվում է մուտք գործել համակարգ:"
 
-#: src/gs-listener-dbus.c:2247
+#: src/gs-listener-dbus.c:2245
 msgid "failed to register with the message bus"
 msgstr "ձախողվեց հաղորդագրության գրանցումը"
 
-#: src/gs-listener-dbus.c:2258
+#: src/gs-listener-dbus.c:2256
 msgid "not connected to the message bus"
 msgstr "չկա միացված հաղորդագրություն"
 
-#: src/gs-listener-dbus.c:2268 src/gs-listener-dbus.c:2300
+#: src/gs-listener-dbus.c:2266 src/gs-listener-dbus.c:2298
 msgid "screensaver already running in this session"
 msgstr "Էկրանապահը արդեն գործարկվում է այս սեսիայում"
 

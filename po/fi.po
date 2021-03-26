@@ -5,18 +5,18 @@
 # 
 # Translators:
 # Lasse Liehu <larso@gmx.com>, 2020
-# Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Mikko Harhanen <gitti@mikkoharhanen.fi>, 2020
 # nomen omen, 2020
 # Ammuu5, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.23.1\n"
+"Project-Id-Version: mate-screensaver 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-04 23:36+0100\n"
+"POT-Creation-Date: 2020-08-20 18:57+0200\n"
 "PO-Revision-Date: 2020-02-16 14:34+0000\n"
-"Last-Translator: Ammuu5, 2020\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Finnish (https://www.transifex.com/mate/teams/13566/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,13 +33,6 @@ msgstr "Näytönsäästäjä"
 msgid "Set your screensaver preferences"
 msgstr "Aseta näytönsäästäjän asetukset"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver-preferences.desktop.in:6
-#: src/mate-screensaver.desktop.in.in:7
-msgid "preferences-desktop-screensaver"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
@@ -50,39 +43,47 @@ msgstr ""
 msgid "Screensaver Preview"
 msgstr "Näytönsäästäjän esikatselu"
 
-#: data/mate-screensaver-preferences.ui:56
+#: data/mate-screensaver-preferences.ui:59
 msgid "<b>Screensaver preview</b>"
 msgstr "<b>Näytönsäästäjän esikatselu</b>"
 
-#: data/mate-screensaver-preferences.ui:164
+#: data/mate-screensaver-preferences.ui:168
 msgid "Screensaver Preferences"
 msgstr "Näytönsäästäjän asetukset"
 
-#: data/mate-screensaver-preferences.ui:196
+#: data/mate-screensaver-preferences.ui:203
 msgid "Power _Management"
 msgstr "Virran_hallinta"
 
-#: data/mate-screensaver-preferences.ui:212
+#: data/mate-screensaver-preferences.ui:219
 msgid "_Preview"
 msgstr "_Esikatselu"
 
-#: data/mate-screensaver-preferences.ui:272
+#: data/mate-screensaver-preferences.ui:279
 msgid "_Screensaver theme:"
 msgstr "_Näytönsäästäjän teema:"
 
-#: data/mate-screensaver-preferences.ui:390
+#: data/mate-screensaver-preferences.ui:397
 msgid "Regard the computer as _idle after:"
 msgstr "Näytönsäästäjän _käynnistysviive:"
 
-#: data/mate-screensaver-preferences.ui:433
+#: data/mate-screensaver-preferences.ui:440
 msgid "_Activate screensaver when computer is idle"
 msgstr "_Käynnistä näytönsäästäjä, kun tietokone on joutilas"
 
-#: data/mate-screensaver-preferences.ui:448
+#: data/mate-screensaver-preferences.ui:455
 msgid "_Lock screen when screensaver is active"
 msgstr "_Lukitse näyttö, kun näytönsäästäjä on aktiivinen"
 
-#: data/mate-screensaver-preferences.ui:465
+#: data/mate-screensaver-preferences.ui:477
+msgid "Background picture for lock screen:"
+msgstr ""
+
+#: data/mate-screensaver-preferences.ui:496
+msgid "Select Background Image"
+msgstr "Valitse taustakuva"
+
+#: data/mate-screensaver-preferences.ui:522
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
 msgstr "<b>Varoitus: näyttöä ei lukita pääkäyttäjälle (root).</b>"
 
@@ -94,12 +95,6 @@ msgstr "Näytönsäästäjät"
 #: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
 msgstr "Näytönsäästäjän teemat"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver.directory.desktop.in:7
-msgid "screensaver"
-msgstr ""
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -309,6 +304,14 @@ msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr "Salli istunnon tilaviestin näyttäminen, kun istunto on lukittu."
 
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Picture Filename"
+msgstr "Kuvan tiedostonimi"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid "File to use for the background image."
+msgstr "Taustakuvana käytettävän tiedoston nimi."
+
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "Näyttää diaesityksen maailmankaikkeuden kuvista"
@@ -444,32 +447,32 @@ msgstr "Älä sekoita kuvia kuvalähteestä"
 msgid "Do not try to stretch images on screen"
 msgstr "Älä yritä venyttää kuvia näytöllä"
 
-#: src/copy-theme-dialog.c:184
+#: src/copy-theme-dialog.c:180
 msgid "Copying files"
 msgstr "Kopioidaan tiedostoja"
 
-#: src/copy-theme-dialog.c:203
+#: src/copy-theme-dialog.c:199
 msgid "From:"
 msgstr "Mistä:"
 
-#: src/copy-theme-dialog.c:207
+#: src/copy-theme-dialog.c:203
 msgid "To:"
 msgstr "Mihin:"
 
-#: src/copy-theme-dialog.c:228
+#: src/copy-theme-dialog.c:224
 msgid "Copying themes"
 msgstr "Kopioidaan teemoja"
 
-#: src/copy-theme-dialog.c:271
+#: src/copy-theme-dialog.c:267
 msgid "Invalid screensaver theme"
 msgstr "Virheellinen näytönsäästäjäteema"
 
-#: src/copy-theme-dialog.c:274
+#: src/copy-theme-dialog.c:270
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "%s ei näytä olevan kelvollinen näytönsäästäjäteema."
 
-#: src/copy-theme-dialog.c:454
+#: src/copy-theme-dialog.c:450
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "Kopioidaan tiedostoa: %u/%u"
@@ -723,11 +726,11 @@ msgstr "%s"
 msgid "Never"
 msgstr "Ei koskaan"
 
-#: src/mate-screensaver-preferences.c:1554
+#: src/mate-screensaver-preferences.c:1563
 msgid "Could not load the main interface"
 msgstr "Pääkäyttöliittymää ei voitu ladata"
 
-#: src/mate-screensaver-preferences.c:1556
+#: src/mate-screensaver-preferences.c:1565
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Varmista, että näytönsäästäjä on kunnolla asennettu"
 
@@ -771,15 +774,15 @@ msgstr "Pääsy ei ole sallittu tällä hetkellä."
 msgid "No longer permitted to access the system."
 msgstr "Pääsy ei ole enää sallittu järjestelmään."
 
-#: src/gs-listener-dbus.c:2247
+#: src/gs-listener-dbus.c:2245
 msgid "failed to register with the message bus"
 msgstr "viestiväylään rekisteröityminen epäonnistui"
 
-#: src/gs-listener-dbus.c:2258
+#: src/gs-listener-dbus.c:2256
 msgid "not connected to the message bus"
 msgstr "viestiväylään ei ole yhteyttä"
 
-#: src/gs-listener-dbus.c:2268 src/gs-listener-dbus.c:2300
+#: src/gs-listener-dbus.c:2266 src/gs-listener-dbus.c:2298
 msgid "screensaver already running in this session"
 msgstr "näytönsäästäjä on jo käynnissä tässä istunnossa"
 

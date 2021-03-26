@@ -8,9 +8,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.23.1\n"
+"Project-Id-Version: mate-screensaver 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-04 23:36+0100\n"
+"POT-Creation-Date: 2020-08-20 18:57+0200\n"
 "PO-Revision-Date: 2020-02-16 14:34+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Malayalam (https://www.transifex.com/mate/teams/13566/ml/)\n"
@@ -29,13 +29,6 @@ msgstr "സ്ക്രീന്‍സേവര്‍"
 msgid "Set your screensaver preferences"
 msgstr "നിങ്ങളുടെ സ്ക്രീന്‍സേവറിന്റെ മുന്‍ഗണനകള്‍ സജ്ജീകരിയ്ക്കുക"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver-preferences.desktop.in:6
-#: src/mate-screensaver.desktop.in.in:7
-msgid "preferences-desktop-screensaver"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
@@ -46,39 +39,47 @@ msgstr ""
 msgid "Screensaver Preview"
 msgstr "സ്ക്രീന്‍സേവര്‍ കണ്ടു നോക്കുക"
 
-#: data/mate-screensaver-preferences.ui:56
+#: data/mate-screensaver-preferences.ui:59
 msgid "<b>Screensaver preview</b>"
 msgstr "<b>സ്ക്രീന്‍സേവര്‍ കണ്ടു നോക്കുക</b>"
 
-#: data/mate-screensaver-preferences.ui:164
+#: data/mate-screensaver-preferences.ui:168
 msgid "Screensaver Preferences"
 msgstr "സ്ക്രീന്‍സേവറിന്റെ മുന്‍ഗണനകള്‍"
 
-#: data/mate-screensaver-preferences.ui:196
+#: data/mate-screensaver-preferences.ui:203
 msgid "Power _Management"
 msgstr "വൈദ്യുതി _നടത്തിപ്പ്"
 
-#: data/mate-screensaver-preferences.ui:212
+#: data/mate-screensaver-preferences.ui:219
 msgid "_Preview"
 msgstr "_കണ്ടു നോക്കുക"
 
-#: data/mate-screensaver-preferences.ui:272
+#: data/mate-screensaver-preferences.ui:279
 msgid "_Screensaver theme:"
 msgstr "_സ്ക്രീന്‍സേവറിന്റെ പ്രമേയം:"
 
-#: data/mate-screensaver-preferences.ui:390
+#: data/mate-screensaver-preferences.ui:397
 msgid "Regard the computer as _idle after:"
 msgstr "കമ്പ്യൂട്ടര്‍ _ആലസ്യത്തിലാണെന്ന് കരുതേണ്ടത് എത്ര സമയത്തിന് ശേഷം:"
 
-#: data/mate-screensaver-preferences.ui:433
+#: data/mate-screensaver-preferences.ui:440
 msgid "_Activate screensaver when computer is idle"
 msgstr "കമ്പ്യൂട്ടര്‍ ആലസ്യത്തിലാകുമ്പോള്‍ സ്ക്രീന്‍സേവര്‍ _സജീവമാക്കുക"
 
-#: data/mate-screensaver-preferences.ui:448
+#: data/mate-screensaver-preferences.ui:455
 msgid "_Lock screen when screensaver is active"
 msgstr "സ്ക്രീന്‍സേവര്‍ സജീവമാകുമ്പോള്‍ സ്ക്രീന്‍ _പൂട്ടുക"
 
-#: data/mate-screensaver-preferences.ui:465
+#: data/mate-screensaver-preferences.ui:477
+msgid "Background picture for lock screen:"
+msgstr ""
+
+#: data/mate-screensaver-preferences.ui:496
+msgid "Select Background Image"
+msgstr "പശ്ചാത്തല ചിത്രം തെരഞ്ഞെടുക്കുക"
+
+#: data/mate-screensaver-preferences.ui:522
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
 msgstr ""
 "<b>മുന്നറിയിപ്പ്: റൂട്ട് ഉപയോക്താവിന് സ്ക്രീന്‍ പൂട്ടുവാന്‍ സാധിക്കില്ല.</b>"
@@ -91,12 +92,6 @@ msgstr "സ്ക്രീന്‍സേവറുകള്‍"
 #: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
 msgstr "സ്ക്രീന്‍സേവറിന്റെ പ്രമേയങ്ങള്‍"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver.directory.desktop.in:7
-msgid "screensaver"
-msgstr ""
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -316,6 +311,14 @@ msgstr ""
 "സ്ക്രീന്‍ പൂട്ടിയിരിക്കുമ്പോള്‍ പ്രവര്‍ത്തനവേളയുടെ അവസ്ഥാസന്ദേശം "
 "കാണിക്കുവാന്‍ അനുവദിക്കുക."
 
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Picture Filename"
+msgstr "ചിത്രത്തിന്റെ ഫയല്‍നെയിം"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid "File to use for the background image."
+msgstr "പശ്ചാത്തലചിത്രത്തിനുപയോഗിയ്ക്കേണ്ട ഫയല്‍."
+
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "പ്രപഞ്ചത്തിന്റെ ചിത്രങ്ങളൊന്നൊന്നായി പ്രദര്‍ശിപ്പിയ്ക്കുക"
@@ -456,32 +459,32 @@ msgstr ""
 msgid "Do not try to stretch images on screen"
 msgstr "സ്ക്രീനില്‍ ചിത്രങ്ങള്‍ വലിച്ചു് നീട്ടാന്‍ ശ്രമിയ്ക്കരുതു്"
 
-#: src/copy-theme-dialog.c:184
+#: src/copy-theme-dialog.c:180
 msgid "Copying files"
 msgstr "ഫയലുകള്‍ പകര്‍ത്തുന്നു"
 
-#: src/copy-theme-dialog.c:203
+#: src/copy-theme-dialog.c:199
 msgid "From:"
 msgstr "ഇവിടെ നിന്നും:"
 
-#: src/copy-theme-dialog.c:207
+#: src/copy-theme-dialog.c:203
 msgid "To:"
 msgstr "ഇവിടെ വരെ:"
 
-#: src/copy-theme-dialog.c:228
+#: src/copy-theme-dialog.c:224
 msgid "Copying themes"
 msgstr "രംഗവിതാനങ്ങള്‍ പകര്‍ത്തുന്നു"
 
-#: src/copy-theme-dialog.c:271
+#: src/copy-theme-dialog.c:267
 msgid "Invalid screensaver theme"
 msgstr "അസാധുവായ സ്ക്രീന്‍സേവര്‍ പ്രമേയം"
 
-#: src/copy-theme-dialog.c:274
+#: src/copy-theme-dialog.c:270
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "%s സാധുവായ ഒരു സ്ക്രീന്‍സേവര്‍ പ്രമേയമാണെന്നു തോന്നുന്നില്ല."
 
-#: src/copy-theme-dialog.c:454
+#: src/copy-theme-dialog.c:450
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "%2$uയിലെ %1$u: ഫയല്‍ പകര്‍ത്തുന്നു"
@@ -752,11 +755,11 @@ msgstr "%s"
 msgid "Never"
 msgstr "ഒരിക്കലും വേണ്ട"
 
-#: src/mate-screensaver-preferences.c:1554
+#: src/mate-screensaver-preferences.c:1563
 msgid "Could not load the main interface"
 msgstr "പ്രധാന വിനിമയതലം ചേര്‍ക്കുവാന്‍ സാധിച്ചില്ല"
 
-#: src/mate-screensaver-preferences.c:1556
+#: src/mate-screensaver-preferences.c:1565
 msgid "Please make sure that the screensaver is properly installed"
 msgstr ""
 "സ്ക്രീന്‍സേവര്‍ ശരിയായിട്ടാണ് ഇന്‍സ്റ്റാള്‍ ചെയ്തിട്ടുളളത് എന്നുറപ്പ് "
@@ -802,15 +805,15 @@ msgstr "ഈ സമയത്ത് പ്രവേശനത്തിനുളള 
 msgid "No longer permitted to access the system."
 msgstr "സിസ്റ്റത്തിലേക്ക് ഇനി പ്രവേശിക്കുന്നതിനുളള അനുമതിയില്ല."
 
-#: src/gs-listener-dbus.c:2247
+#: src/gs-listener-dbus.c:2245
 msgid "failed to register with the message bus"
 msgstr "മെസ്സേജ് ബസ്സുമായി രജിസ്ടര്‍ ചെയ്യുന്നതില്‍ പരാജയപ്പെട്ടു"
 
-#: src/gs-listener-dbus.c:2258
+#: src/gs-listener-dbus.c:2256
 msgid "not connected to the message bus"
 msgstr "മെസ്സേജ് ബസ്സുമായി ബന്ധിപ്പിച്ചിട്ടില്ല"
 
-#: src/gs-listener-dbus.c:2268 src/gs-listener-dbus.c:2300
+#: src/gs-listener-dbus.c:2266 src/gs-listener-dbus.c:2298
 msgid "screensaver already running in this session"
 msgstr "ഈ സെഷനില്‍ സ്ക്രീന്‍സേവര്‍ പ്രവര്‍ത്തനത്തിലാണ്"
 

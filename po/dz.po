@@ -8,9 +8,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.23.1\n"
+"Project-Id-Version: mate-screensaver 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-04 23:36+0100\n"
+"POT-Creation-Date: 2020-08-20 18:57+0200\n"
 "PO-Revision-Date: 2020-02-16 14:34+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Dzongkha (https://www.transifex.com/mate/teams/13566/dz/)\n"
@@ -29,13 +29,6 @@ msgstr "གསལ་གཞི་ཉེན་སྲུང་།"
 msgid "Set your screensaver preferences"
 msgstr "ཁྱོད་རའི་གསལ་གཞི་ཉེནསྲུང་གི་དགའ་གདམ་ཚུ་ གཞི་སྒྲིག་འབད།"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver-preferences.desktop.in:6
-#: src/mate-screensaver.desktop.in.in:7
-msgid "preferences-desktop-screensaver"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
@@ -46,39 +39,47 @@ msgstr ""
 msgid "Screensaver Preview"
 msgstr "གསལ་གཞི་ཉེན་སྲུང་གི་སྔོན་ལྟ།"
 
-#: data/mate-screensaver-preferences.ui:56
+#: data/mate-screensaver-preferences.ui:59
 msgid "<b>Screensaver preview</b>"
 msgstr "གསལ་གཞི་ཉེན་སྲུང་གི་སྔོན་ལྟ།"
 
-#: data/mate-screensaver-preferences.ui:164
+#: data/mate-screensaver-preferences.ui:168
 msgid "Screensaver Preferences"
 msgstr "གསལ་གཞི་ཉེན་སྲུང་གི་དགའ་གདམ་ཚུ།"
 
-#: data/mate-screensaver-preferences.ui:196
+#: data/mate-screensaver-preferences.ui:203
 msgid "Power _Management"
 msgstr "ནུས་ཤུགས་འཛིན་སྐྱོང་(_M)"
 
-#: data/mate-screensaver-preferences.ui:212
+#: data/mate-screensaver-preferences.ui:219
 msgid "_Preview"
 msgstr "སྔོན་ལྟ།(_P)"
 
-#: data/mate-screensaver-preferences.ui:272
+#: data/mate-screensaver-preferences.ui:279
 msgid "_Screensaver theme:"
 msgstr "གསལ་གཞི་ཉེན་སྲུང་གི་བརྗོད་དོན་:(_S)"
 
-#: data/mate-screensaver-preferences.ui:390
+#: data/mate-screensaver-preferences.ui:397
 msgid "Regard the computer as _idle after:"
 msgstr "ཤུལ་ལས་གློག་རིག་ལས་མེད་སྦེ་ཆ་བཞག་:(_i)"
 
-#: data/mate-screensaver-preferences.ui:433
+#: data/mate-screensaver-preferences.ui:440
 msgid "_Activate screensaver when computer is idle"
 msgstr "གློག་རིག་ལས་མེད་ཨིན་པའི་སྐབས་ གསལ་གཞི་ཉེན་སྲུང་ཤུགས་ལྡན་བཟོ།(_A)"
 
-#: data/mate-screensaver-preferences.ui:448
+#: data/mate-screensaver-preferences.ui:455
 msgid "_Lock screen when screensaver is active"
 msgstr "གསལ་གཞི་ཉེན་སྲུང་ཤུགས་ལྡན་སྐབས་ གསལ་གཞི་ལྡེ་མིག་རྐྱབས།(_L)"
 
-#: data/mate-screensaver-preferences.ui:465
+#: data/mate-screensaver-preferences.ui:477
+msgid "Background picture for lock screen:"
+msgstr ""
+
+#: data/mate-screensaver-preferences.ui:496
+msgid "Select Background Image"
+msgstr "རྒྱབ་གཞིའི་གཟུགས་བརྙན་སེལ་འཐུ་འབད།"
+
+#: data/mate-screensaver-preferences.ui:522
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
 msgstr "<b>ཉེན་བརྡ་: རྩ་བའི་ལག་ལེན་པའི་དོན་ལུ་ གསལ་གཞི་ལྡེ་མིག་མི་བརྐྱབ།</b>"
 
@@ -90,12 +91,6 @@ msgstr "གསལ་གཞི་ཉེན་སྲུང་ཚུ།"
 #: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
 msgstr "གསལ་གཞི་ཉེན་སྲུང་བརྗོད་དོན་ཚུ།"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver.directory.desktop.in:7
-msgid "screensaver"
-msgstr ""
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -315,6 +310,14 @@ msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr ""
 
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Picture Filename"
+msgstr "པར་གྱི་ཡིག་སྣོད་མིང༌།"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid "File to use for the background image."
+msgstr ""
+
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "ཀོསི་མཱོསི་གི་ པར་ཚུ་གི་བཤུད་བརྙན་ཅིག་ བཀྲམ་སྟོན་འབད།"
@@ -452,33 +455,33 @@ msgstr "གནས་ས་ཚུ་ལས་ པར་ཚུ་ གང་འབ�
 msgid "Do not try to stretch images on screen"
 msgstr "གསལ་གཞི་གུ་ལུ་ གཟུགས་བརྙན་ཚུ་ བསྣར་ནིའི་འབད་རྩོལ་མ་བསྐྱེད། "
 
-#: src/copy-theme-dialog.c:184
+#: src/copy-theme-dialog.c:180
 msgid "Copying files"
 msgstr "ཡིག་སྣོད་འདྲ་བཤུས་རྐྱབ་དོ།"
 
-#: src/copy-theme-dialog.c:203
+#: src/copy-theme-dialog.c:199
 msgid "From:"
 msgstr "ལས་:"
 
-#: src/copy-theme-dialog.c:207
+#: src/copy-theme-dialog.c:203
 msgid "To:"
 msgstr "ལུ་:"
 
-#: src/copy-theme-dialog.c:228
+#: src/copy-theme-dialog.c:224
 msgid "Copying themes"
 msgstr "བརྗོད་དོན་ཚུ་ འདྲ་བཤུས་རྐྱབ་དོ་"
 
-#: src/copy-theme-dialog.c:271
+#: src/copy-theme-dialog.c:267
 msgid "Invalid screensaver theme"
 msgstr "ནུས་མེད་གསལ་གཞི་ཉེན་སྲུང་བརྗོད་དོན།"
 
-#: src/copy-theme-dialog.c:274
+#: src/copy-theme-dialog.c:270
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr ""
 "%s དེ་ ནུས་ཅན་གྱི་ གསལ་གཞིའི་ཉེན་སྲུང་གི་ བརྗོད་དོན་ཅིག་སྦེ  མི་འབྱུང་མས། "
 
-#: src/copy-theme-dialog.c:454
+#: src/copy-theme-dialog.c:450
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "ཡིག་སྣོད་%uལས་%uའདྲ་བཤུས་རྐྱབ་དོ།"
@@ -742,11 +745,11 @@ msgstr "%s"
 msgid "Never"
 msgstr "ནམ་ཡང་"
 
-#: src/mate-screensaver-preferences.c:1554
+#: src/mate-screensaver-preferences.c:1563
 msgid "Could not load the main interface"
 msgstr "ངོས་འདྲ་བ་གཙོ་བོ་ མངོན་གསལ་འབད་མ་ཚུགས།"
 
-#: src/mate-screensaver-preferences.c:1556
+#: src/mate-screensaver-preferences.c:1565
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "གསལ་གཞི་ཉེན་སྲུང་དེ་ ཚུལ་ལྡན་སྦེ་ གཞི་བཙུགས་འབད་གནང་།"
 
@@ -790,15 +793,15 @@ msgstr "དུས་ཚོད་འདི་ཁར་ འཛུལ་སྤྱ�
 msgid "No longer permitted to access the system."
 msgstr "ད་ལས་ཕར་ རིམ་ལུགས་ལུ་འཛུལ་སྤྱོད་འབད་ནིའི་གནང་བ་མེད།"
 
-#: src/gs-listener-dbus.c:2247
+#: src/gs-listener-dbus.c:2245
 msgid "failed to register with the message bus"
 msgstr "འཕྲིན་དོན་གྱི་བརྡ་རྟགས་འགྲུལ་ལམ་ལུ་ ཐོ་འགོད་འབད་མ་ཚུགས།"
 
-#: src/gs-listener-dbus.c:2258
+#: src/gs-listener-dbus.c:2256
 msgid "not connected to the message bus"
 msgstr "འཕྲིན་དོན་གྱི་བརྡ་རྟགས་འགྲུལ་ལམ་ལུ་ མ་མཐུད་པས།"
 
-#: src/gs-listener-dbus.c:2268 src/gs-listener-dbus.c:2300
+#: src/gs-listener-dbus.c:2266 src/gs-listener-dbus.c:2298
 msgid "screensaver already running in this session"
 msgstr "ལཱ་ཡུན་འདི་ནང་ གསལ་གཞིང་ཉེན་སྲུང་ ཧེ་མ་ལས་རང་ གཡོག་བཀོལ་བཞིན་འདུག"
 

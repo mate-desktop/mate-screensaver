@@ -4,16 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Asier Iturralde Sarasola <asier.iturralde@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Asier Iturralde Sarasola <asier.iturralde@gmail.com>, 2020
+# David García-Abad <dgarciabad@gmail.com>, 2020
+# Porrumentzio <porrumentzio@riseup.net>, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.23.1\n"
+"Project-Id-Version: mate-screensaver 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-04 23:36+0100\n"
+"POT-Creation-Date: 2020-08-20 18:57+0200\n"
 "PO-Revision-Date: 2020-02-16 14:34+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
+"Last-Translator: Porrumentzio <porrumentzio@riseup.net>, 2020\n"
 "Language-Team: Basque (https://www.transifex.com/mate/teams/13566/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,13 +32,6 @@ msgstr "Pantaila-babeslea"
 msgid "Set your screensaver preferences"
 msgstr "Ezarri pantaila-babeslearen hobespenak"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver-preferences.desktop.in:6
-#: src/mate-screensaver.desktop.in.in:7
-msgid "preferences-desktop-screensaver"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
@@ -47,39 +42,47 @@ msgstr ""
 msgid "Screensaver Preview"
 msgstr "Pantaila-babeslearen aurrebista"
 
-#: data/mate-screensaver-preferences.ui:56
+#: data/mate-screensaver-preferences.ui:59
 msgid "<b>Screensaver preview</b>"
 msgstr "<b>Pantaila-babeslearen aurrebista</b>"
 
-#: data/mate-screensaver-preferences.ui:164
+#: data/mate-screensaver-preferences.ui:168
 msgid "Screensaver Preferences"
 msgstr "Pantaila-babeslearen hobespenak"
 
-#: data/mate-screensaver-preferences.ui:196
+#: data/mate-screensaver-preferences.ui:203
 msgid "Power _Management"
 msgstr "Energia _kudeatzailea"
 
-#: data/mate-screensaver-preferences.ui:212
+#: data/mate-screensaver-preferences.ui:219
 msgid "_Preview"
 msgstr "_Aurrebista"
 
-#: data/mate-screensaver-preferences.ui:272
+#: data/mate-screensaver-preferences.ui:279
 msgid "_Screensaver theme:"
 msgstr "_Pantaila-babeslearen gaia:"
 
-#: data/mate-screensaver-preferences.ui:390
+#: data/mate-screensaver-preferences.ui:397
 msgid "Regard the computer as _idle after:"
 msgstr "Jarri ordenagailua _inaktibo honen ondoren:"
 
-#: data/mate-screensaver-preferences.ui:433
+#: data/mate-screensaver-preferences.ui:440
 msgid "_Activate screensaver when computer is idle"
 msgstr "_Aktibatu pantaila-babeslea ordenagailua inaktibo dagoenean"
 
-#: data/mate-screensaver-preferences.ui:448
+#: data/mate-screensaver-preferences.ui:455
 msgid "_Lock screen when screensaver is active"
 msgstr "_Blokeatu pantaila pantaila-babeslea aktibatzean"
 
-#: data/mate-screensaver-preferences.ui:465
+#: data/mate-screensaver-preferences.ui:477
+msgid "Background picture for lock screen:"
+msgstr "Atzeko-planoak blokeo pantailan izango duen irudia:"
+
+#: data/mate-screensaver-preferences.ui:496
+msgid "Select Background Image"
+msgstr "Hautatu atzeko planoko irudia"
+
+#: data/mate-screensaver-preferences.ui:522
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
 msgstr ""
 "<b>Abisua: pantaila ezin da 'root' erabiltzailearentzako blokeatu.</b>"
@@ -92,12 +95,6 @@ msgstr "Pantaila-babeslea"
 #: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
 msgstr "Pantaila-babeslearen gaiak"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver.directory.desktop.in:7
-msgid "screensaver"
-msgstr ""
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -185,13 +182,16 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:30
 msgid "Time before power management baseline"
-msgstr ""
+msgstr "Energia kudeatzailea indarrean jarri aurretik igaro beharreko denbora"
 
 #: data/org.mate.screensaver.gschema.xml.in:31
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
 msgstr ""
+"Aktibitaterik gabeko segundu kopurua energia kudeatzaileari seinalea bidali "
+"aurretik. Gako hau saioaren energia-kudeatzaile agenteak ezarri eta "
+"mantentzen du."
 
 #: data/org.mate.screensaver.gschema.xml.in:35
 msgid "Time before theme change"
@@ -251,6 +251,9 @@ msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
 msgstr ""
+"Jarri hemen TRUE balioa desblokeatzeko elkarrizketa-koadroan denbora bat "
+"igarota saioa amaitzeko aukera bat gehitzeko. Aipatutako denbora "
+"\"logout_delay\" gakoan zehaztuta dago."
 
 #: data/org.mate.screensaver.gschema.xml.in:60
 msgid "Time before logout option"
@@ -262,6 +265,10 @@ msgid ""
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
 msgstr ""
+"Zehazten du zenbat minutu igaro behar diren behin pantaila-babeslea "
+"aktibatutakoan desblokeatzeko elkarrizketa-koadroan saioa amaitzeko aukera "
+"bat ager dadin. Gako honek bakarrik \"logout_enable\" gakoaren balioa TRUE "
+"izanez gero dauka eragina."
 
 #: data/org.mate.screensaver.gschema.xml.in:65
 msgid "Logout command"
@@ -295,7 +302,7 @@ msgstr "Blokeatze-leihoaren gaia"
 
 #: data/org.mate.screensaver.gschema.xml.in:76
 msgid "Theme to use for the lock dialog"
-msgstr ""
+msgstr "Blokeo leihorako erabili beharreko gaia"
 
 #: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Allow the session status message to be displayed"
@@ -306,6 +313,14 @@ msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr ""
 "Baimendu saioaren egoeraren mezua bistaratzea pantaila blokeatuta dagoenean."
+
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Picture Filename"
+msgstr "Irudiaren fitxategi-izena"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid "File to use for the background image."
+msgstr "Atzeko planoaren irudirako erabiliko den fitxategia."
 
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
@@ -444,32 +459,32 @@ msgstr "Ez ausaz nahastu irudiak kokalekutik"
 msgid "Do not try to stretch images on screen"
 msgstr "Ez saiatu irudiak pantailara luzatzen"
 
-#: src/copy-theme-dialog.c:184
+#: src/copy-theme-dialog.c:180
 msgid "Copying files"
 msgstr "Fitxategiak kopiatzen"
 
-#: src/copy-theme-dialog.c:203
+#: src/copy-theme-dialog.c:199
 msgid "From:"
 msgstr "Nondik:"
 
-#: src/copy-theme-dialog.c:207
+#: src/copy-theme-dialog.c:203
 msgid "To:"
 msgstr "Nora:"
 
-#: src/copy-theme-dialog.c:228
+#: src/copy-theme-dialog.c:224
 msgid "Copying themes"
 msgstr "Gaiak kopiatzen"
 
-#: src/copy-theme-dialog.c:271
+#: src/copy-theme-dialog.c:267
 msgid "Invalid screensaver theme"
 msgstr "Pantaila-babeslearen baliogabeko gaia"
 
-#: src/copy-theme-dialog.c:274
+#: src/copy-theme-dialog.c:270
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "%s badirudi ez dela pantaila-babeslearen baliozko gaia."
 
-#: src/copy-theme-dialog.c:454
+#: src/copy-theme-dialog.c:450
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "Fitxategiak kopiatzen: %u / %u"
@@ -495,6 +510,8 @@ msgstr ""
 #: src/mate-screensaver-command.c:76
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
+"Pantaila-babeslearen prozesuari pantaila berehala desblokeatzeko eskatzen "
+"dio."
 
 #: src/mate-screensaver-command.c:80
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -681,8 +698,8 @@ msgstr "Ausazkoa"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ordu %d"
+msgstr[1] "%d ordu"
 
 #: src/mate-screensaver-preferences.c:950
 #: src/mate-screensaver-preferences.c:959
@@ -695,15 +712,15 @@ msgstr[1] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "minutu %d"
+msgstr[1] "%d minutu"
 
 #: src/mate-screensaver-preferences.c:953
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "segundu %d"
+msgstr[1] "%d segundu"
 
 #: src/mate-screensaver-preferences.c:956
 #: src/mate-screensaver-preferences.c:1003
@@ -728,11 +745,11 @@ msgstr "%s"
 msgid "Never"
 msgstr "Inoiz ez"
 
-#: src/mate-screensaver-preferences.c:1554
+#: src/mate-screensaver-preferences.c:1563
 msgid "Could not load the main interface"
 msgstr "Ezin izan da interfaze nagusia kargatu"
 
-#: src/mate-screensaver-preferences.c:1556
+#: src/mate-screensaver-preferences.c:1565
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Ziurtatu pantaila-babeslea ongi instalatuta dagoela"
 
@@ -746,7 +763,7 @@ msgstr "Gaitu kode arazketa"
 
 #: src/mate-screensaver.desktop.in.in:5
 msgid "Launch screensaver and locker program"
-msgstr ""
+msgstr "Abiarazi pantaila-babesle eta bloketzailea"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -770,21 +787,21 @@ msgstr "Okerreko pasahitza."
 
 #: src/gs-auth-pam.c:499
 msgid "Not permitted to gain access at this time."
-msgstr "Ez duzu sarbidetzeko baimenik une honetan."
+msgstr "Ez duzu sartzeko baimenik une honetan."
 
 #: src/gs-auth-pam.c:507
 msgid "No longer permitted to access the system."
-msgstr "Ez duzu baimenik aurrerantzean sistemara sarbidetzeko."
+msgstr "Ez duzu baimenik aurrerantzean sistemara sartzeko."
 
-#: src/gs-listener-dbus.c:2247
+#: src/gs-listener-dbus.c:2245
 msgid "failed to register with the message bus"
 msgstr "huts egin du mezuaren deia erregistratzean"
 
-#: src/gs-listener-dbus.c:2258
+#: src/gs-listener-dbus.c:2256
 msgid "not connected to the message bus"
 msgstr "ez da mezuaren deira konektatu"
 
-#: src/gs-listener-dbus.c:2268 src/gs-listener-dbus.c:2300
+#: src/gs-listener-dbus.c:2266 src/gs-listener-dbus.c:2298
 msgid "screensaver already running in this session"
 msgstr "pantaila-babeslea jadanik exekutatzen dago saio honetan"
 

@@ -4,19 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # zubr139, 2020
-# Микола Ткач <chistomov@gmail.com>, 2020
 # Denis <prohibiti@gmail.com>, 2020
-# Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2020
+# Микола Ткач <chistomov@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.23.1\n"
+"Project-Id-Version: mate-screensaver 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-04 23:36+0100\n"
+"POT-Creation-Date: 2020-08-20 18:57+0200\n"
 "PO-Revision-Date: 2020-02-16 14:34+0000\n"
-"Last-Translator: Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020\n"
+"Last-Translator: Микола Ткач <chistomov@gmail.com>, 2021\n"
 "Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,13 +33,6 @@ msgstr "Зберігач екрану"
 msgid "Set your screensaver preferences"
 msgstr "Встановити параметри зберігача екрану"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver-preferences.desktop.in:6
-#: src/mate-screensaver.desktop.in.in:7
-msgid "preferences-desktop-screensaver"
-msgstr "preferences-desktop-screensaver"
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
@@ -48,41 +41,49 @@ msgstr "MATE;зберігач екрану;уподобання;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
-msgstr "Передогляд зберігача екрану"
+msgstr "Передпрогляд зберігача екрану"
 
-#: data/mate-screensaver-preferences.ui:56
+#: data/mate-screensaver-preferences.ui:59
 msgid "<b>Screensaver preview</b>"
-msgstr "<b>Передогляд зберігача екрану</b>"
+msgstr "<b>Передпрогляд зберігача екрану</b>"
 
-#: data/mate-screensaver-preferences.ui:164
+#: data/mate-screensaver-preferences.ui:168
 msgid "Screensaver Preferences"
 msgstr "Параметри збереження екрану"
 
-#: data/mate-screensaver-preferences.ui:196
+#: data/mate-screensaver-preferences.ui:203
 msgid "Power _Management"
 msgstr "Керування _живленням"
 
-#: data/mate-screensaver-preferences.ui:212
+#: data/mate-screensaver-preferences.ui:219
 msgid "_Preview"
-msgstr "_Передогляд"
+msgstr "_Передпрогляд"
 
-#: data/mate-screensaver-preferences.ui:272
+#: data/mate-screensaver-preferences.ui:279
 msgid "_Screensaver theme:"
 msgstr "_Тема зберігача екрану:"
 
-#: data/mate-screensaver-preferences.ui:390
+#: data/mate-screensaver-preferences.ui:397
 msgid "Regard the computer as _idle after:"
 msgstr "Вважати сеанс _неактивним через:"
 
-#: data/mate-screensaver-preferences.ui:433
+#: data/mate-screensaver-preferences.ui:440
 msgid "_Activate screensaver when computer is idle"
 msgstr "_Активувати зберігач екрану, коли комп'ютер простоює"
 
-#: data/mate-screensaver-preferences.ui:448
+#: data/mate-screensaver-preferences.ui:455
 msgid "_Lock screen when screensaver is active"
 msgstr "_Блокувати екран, коли зберігач екрану активний"
 
-#: data/mate-screensaver-preferences.ui:465
+#: data/mate-screensaver-preferences.ui:477
+msgid "Background picture for lock screen:"
+msgstr "Тлове зображення для екрану блокування:"
+
+#: data/mate-screensaver-preferences.ui:496
+msgid "Select Background Image"
+msgstr "Зображення тла"
+
+#: data/mate-screensaver-preferences.ui:522
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
 msgstr ""
 "<b>Попередження: екран буде заблоковано, розблокувати зможе користувач "
@@ -96,12 +97,6 @@ msgstr "Зберігачі екрану"
 #: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
 msgstr "Теми зберігача екрану"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver.directory.desktop.in:7
-msgid "screensaver"
-msgstr "зберігач екрану"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -300,15 +295,15 @@ msgid ""
 "different user account."
 msgstr ""
 "Якщо встановлено значення TRUE, діалог розблокування екрану надасть "
-"можливість  увійти в систему під іншим обліковим записом."
+"можливість  увійти в систему під иншим обліковим записом."
 
 #: data/org.mate.screensaver.gschema.xml.in:75
 msgid "Theme for lock dialog"
-msgstr "Тема для діялоґового вікна блокування"
+msgstr "Тема для діалогового вікна блокування"
 
 #: data/org.mate.screensaver.gschema.xml.in:76
 msgid "Theme to use for the lock dialog"
-msgstr "Тема, що використовується для діялоґового вікна блокування екрану"
+msgstr "Тема, що використовується для діалогового вікна блокування екрану"
 
 #: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Allow the session status message to be displayed"
@@ -318,6 +313,14 @@ msgstr "Дозволити показ повідомлення стану сес
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr "Дозволити показ повідомлення стану сесії при заблокованому екрані."
+
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Picture Filename"
+msgstr "Назва файлу малюнку"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid "File to use for the background image."
+msgstr "Файл, що використовуватиметься для зображення тла."
 
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
@@ -341,7 +344,7 @@ msgstr "Логотипи MATE, що виринають по усьому екр�
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr ""
+msgstr "MATE; зберігач екрану; логотип; бульбашки;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -355,7 +358,7 @@ msgstr "Логотипи GNOME, що виринають по усьому екр
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr ""
+msgstr "MATE; зберігач екрану; GNOME;логотип; бульбашки;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -383,7 +386,7 @@ msgstr "Мережа з пульсівних кольорових комірок
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr ""
+msgstr "MATE; зберігач екрану; сітка; пульсівна; кольори;"
 
 #: savers/popsquares.c:49 savers/floaters.c:1191
 #, c-format
@@ -392,7 +395,7 @@ msgstr "%s. Для докладнішої інформації вкажіть --
 
 #: savers/floaters.c:88
 msgid "Show paths that images follow"
-msgstr "Показувати шляхи, за якими слідують зображення"
+msgstr "Показувати шляхи, за якими йдуть зображення"
 
 #: savers/floaters.c:93
 msgid "Occasionally rotate images as they move"
@@ -400,7 +403,7 @@ msgstr "Періодично обертати зображення при їх �
 
 #: savers/floaters.c:98
 msgid "Print out frame rate and other statistics"
-msgstr "Виводити частоту кадрів та іншу статистику"
+msgstr "Виводити частоту кадрів та иншу статистику"
 
 #: savers/floaters.c:103
 msgid "The maximum number of images to keep on screen"
@@ -454,32 +457,32 @@ msgstr "Не змінювати розташування зображень на
 msgid "Do not try to stretch images on screen"
 msgstr "Не намагатися розтягувати зображення на екрані"
 
-#: src/copy-theme-dialog.c:184
+#: src/copy-theme-dialog.c:180
 msgid "Copying files"
 msgstr "Копіювання файлів"
 
-#: src/copy-theme-dialog.c:203
+#: src/copy-theme-dialog.c:199
 msgid "From:"
 msgstr "З:"
 
-#: src/copy-theme-dialog.c:207
+#: src/copy-theme-dialog.c:203
 msgid "To:"
 msgstr "До:"
 
-#: src/copy-theme-dialog.c:228
+#: src/copy-theme-dialog.c:224
 msgid "Copying themes"
 msgstr "Копіювання тем"
 
-#: src/copy-theme-dialog.c:271
+#: src/copy-theme-dialog.c:267
 msgid "Invalid screensaver theme"
 msgstr "Некоректна тема зберігача екрану"
 
-#: src/copy-theme-dialog.c:274
+#: src/copy-theme-dialog.c:270
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "Файл %s не схожий на файл теми зберігача екрану."
 
-#: src/copy-theme-dialog.c:454
+#: src/copy-theme-dialog.c:450
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "Копіюється файл: %u з %u"
@@ -519,7 +522,7 @@ msgstr "Якщо зберігач екрану активний, деактив�
 #: src/mate-screensaver-command.c:92
 msgid "Poke the running screensaver to simulate user activity"
 msgstr ""
-"Штовхнути запущений зберігач екрану для імітації активності користувача"
+"Штовхнути запущений зберігач екрану для імітації активности користувача"
 
 #: src/mate-screensaver-command.c:96
 msgid ""
@@ -590,7 +593,7 @@ msgstr "Показувати кнопку зміни користувача"
 
 #: src/mate-screensaver-dialog.c:62
 msgid "Message to show in the dialog"
-msgstr "Повідомлення, що виводиться у діялоґовому вікні"
+msgstr "Повідомлення, що виводиться у діалоговому вікні"
 
 #: src/mate-screensaver-dialog.c:62 src/mate-screensaver-dialog.c:63
 msgid "MESSAGE"
@@ -657,7 +660,7 @@ msgstr "Потрібно вибрати довший пароль"
 
 #: src/mate-screensaver-dialog.c:181
 msgid "Password has been already used. Choose another."
-msgstr "Пароль вже використовувався. Виберіть інший пароль."
+msgstr "Пароль вже використовувався. Оберіть инший пароль."
 
 #: src/mate-screensaver-dialog.c:182
 msgid "You must wait longer to change your password"
@@ -688,10 +691,10 @@ msgstr "Випадкова"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d година"
+msgstr[1] "%d години"
+msgstr[2] "%d годин"
+msgstr[3] "%d годин"
 
 #: src/mate-screensaver-preferences.c:950
 #: src/mate-screensaver-preferences.c:959
@@ -704,19 +707,19 @@ msgstr[3] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d хвилина"
+msgstr[1] "%d хвилини"
+msgstr[2] "%d хвилин"
+msgstr[3] "%d хвилин"
 
 #: src/mate-screensaver-preferences.c:953
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d секунда"
+msgstr[1] "%d секунди"
+msgstr[2] "%d секунд"
+msgstr[3] "%d секунд"
 
 #: src/mate-screensaver-preferences.c:956
 #: src/mate-screensaver-preferences.c:1003
@@ -741,13 +744,13 @@ msgstr "%s"
 msgid "Never"
 msgstr "Ніколи"
 
-#: src/mate-screensaver-preferences.c:1554
+#: src/mate-screensaver-preferences.c:1563
 msgid "Could not load the main interface"
 msgstr "Не вдається завантажити головний інтерфейс"
 
-#: src/mate-screensaver-preferences.c:1556
+#: src/mate-screensaver-preferences.c:1565
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "Переконайтеся, що зберігач екрану встановлено правильно"
+msgstr "Переконайтесь, що зберігач екрану встановлено правильно"
 
 #: src/mate-screensaver.c:56
 msgid "Don't become a daemon"
@@ -765,7 +768,7 @@ msgstr "Запустити зберігач екрану і програму б�
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr ""
+msgstr "MATE;зберігач екрану;блокування;"
 
 #: src/gs-auth-pam.c:413
 #, c-format
@@ -789,15 +792,15 @@ msgstr "Отримання доступу назараз заборонено."
 msgid "No longer permitted to access the system."
 msgstr "Більше немає дозволу на доступ до системи."
 
-#: src/gs-listener-dbus.c:2247
+#: src/gs-listener-dbus.c:2245
 msgid "failed to register with the message bus"
 msgstr "не вдається зареєструватися на шині повідомлень"
 
-#: src/gs-listener-dbus.c:2258
+#: src/gs-listener-dbus.c:2256
 msgid "not connected to the message bus"
 msgstr "не під’єднаний до шини повідомлень"
 
-#: src/gs-listener-dbus.c:2268 src/gs-listener-dbus.c:2300
+#: src/gs-listener-dbus.c:2266 src/gs-listener-dbus.c:2298
 msgid "screensaver already running in this session"
 msgstr "у цьому сеансі вже запущено зберігач екрану"
 
@@ -813,7 +816,7 @@ msgstr "Час сплив."
 
 #: src/gs-lock-plug.c:434
 msgid "You have the Caps Lock key on."
-msgstr "Натиснута клавіша Caps Lock."
+msgstr "Натиснуто клавіш Caps Lock."
 
 #: src/gs-lock-plug.c:1656
 msgid "S_witch User..."

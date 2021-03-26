@@ -6,19 +6,21 @@
 # Translators:
 # Piotr Drąg <piotrdrag@gmail.com>, 2020
 # Piotr Strębski <strebski@gmail.com>, 2020
-# Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Marcin Kralka <marcink96@gmail.com>, 2020
 # Artur Motyka <slashcraftpl@gmail.com>, 2020
 # Przemek P <ppjg@dami.pl>, 2020
-# pietrasagh <pietrasagh@gmail.com>, 2020
+# pietrasagh <kowalik.piotr@pm.me>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Beniamin Pawlus <kupwzywcu@o2.pl>, 2020
+# No Ne, 2020
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.23.1\n"
+"Project-Id-Version: mate-screensaver 1.24.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-04 23:36+0100\n"
+"POT-Creation-Date: 2020-08-20 18:57+0200\n"
 "PO-Revision-Date: 2020-02-16 14:34+0000\n"
-"Last-Translator: pietrasagh <pietrasagh@gmail.com>, 2020\n"
+"Last-Translator: No Ne, 2020\n"
 "Language-Team: Polish (https://www.transifex.com/mate/teams/13566/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,57 +37,58 @@ msgstr "Wygaszacz ekranu"
 msgid "Set your screensaver preferences"
 msgstr "Preferencje wygaszacza ekranu"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver-preferences.desktop.in:6
-#: src/mate-screensaver.desktop.in.in:7
-msgid "preferences-desktop-screensaver"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr ""
+msgstr "MATE;wygaszacz;ekran;preferencje;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
 msgstr "Podgląd wygaszacza ekranu"
 
-#: data/mate-screensaver-preferences.ui:56
+#: data/mate-screensaver-preferences.ui:59
 msgid "<b>Screensaver preview</b>"
 msgstr "<b>Podgląd wygaszacza ekranu</b>"
 
-#: data/mate-screensaver-preferences.ui:164
+#: data/mate-screensaver-preferences.ui:168
 msgid "Screensaver Preferences"
 msgstr "Preferencje wygaszacza ekranu"
 
-#: data/mate-screensaver-preferences.ui:196
+#: data/mate-screensaver-preferences.ui:203
 msgid "Power _Management"
 msgstr "_Zarządzanie zasilaniem"
 
-#: data/mate-screensaver-preferences.ui:212
+#: data/mate-screensaver-preferences.ui:219
 msgid "_Preview"
 msgstr "_Podgląd"
 
-#: data/mate-screensaver-preferences.ui:272
+#: data/mate-screensaver-preferences.ui:279
 msgid "_Screensaver theme:"
 msgstr "Moty_w wygaszacza ekranu:"
 
-#: data/mate-screensaver-preferences.ui:390
+#: data/mate-screensaver-preferences.ui:397
 msgid "Regard the computer as _idle after:"
 msgstr "Przejście w stan _bezczynności po:"
 
-#: data/mate-screensaver-preferences.ui:433
+#: data/mate-screensaver-preferences.ui:440
 msgid "_Activate screensaver when computer is idle"
 msgstr ""
 "_Uruchomienie wygaszacza ekranu, gdy komputer jest w stanie bezczynności"
 
-#: data/mate-screensaver-preferences.ui:448
+#: data/mate-screensaver-preferences.ui:455
 msgid "_Lock screen when screensaver is active"
 msgstr "Blokowani_e ekranu, gdy wygaszacz jest aktywny"
 
-#: data/mate-screensaver-preferences.ui:465
+#: data/mate-screensaver-preferences.ui:477
+msgid "Background picture for lock screen:"
+msgstr "Obraz tła ekranu blokady:"
+
+#: data/mate-screensaver-preferences.ui:496
+msgid "Select Background Image"
+msgstr "Obraz tła"
+
+#: data/mate-screensaver-preferences.ui:522
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
 msgstr "<b>Uwaga: ekran nie będzie blokowany dla użytkownika root.</b>"
 
@@ -97,12 +100,6 @@ msgstr "Wygaszacze ekranu"
 #: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
 msgstr "Motywy wygaszacza ekranu"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver.directory.desktop.in:7
-msgid "screensaver"
-msgstr ""
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -322,6 +319,14 @@ msgstr ""
 "Zezwolenie na wyświetlenie komunikatu o stanie sesji, gdy ekran jest "
 "zablokowany."
 
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Picture Filename"
+msgstr "Nazwa pliku obrazka"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid "File to use for the background image."
+msgstr "Plik używany jako tło obrazka."
+
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "Wyświetla pokaz zdjęć kosmosu"
@@ -330,7 +335,7 @@ msgstr "Wyświetla pokaz zdjęć kosmosu"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr ""
+msgstr "MATE;wygaszacz;ekran;pokaz;slajdy;kosmos;"
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -344,7 +349,7 @@ msgstr "Wyświetla na ekranie logo MATE"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr ""
+msgstr "MATE;wygaszacz;ekranu;logo;bąbelki;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -358,7 +363,7 @@ msgstr "Wyświetla na ekranie logo GNOME"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr ""
+msgstr "MATE;wygaszacz;ekran;GNOME;logo;bąbelki;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -372,7 +377,7 @@ msgstr "Wyświetla pokaz slajdów z katalogu zdjęć"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
-msgstr ""
+msgstr "MATE;wygaszacz;ekran;niestandardowy;pokaz;slajdy;zdjęcia;katalog;"
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
@@ -386,7 +391,7 @@ msgstr "Wyświetla siatkę kwadratów o pulsujących kolorach."
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr ""
+msgstr "MATE;wygaszacz;ekran;siatka;pulsowanie;kolory;"
 
 #: savers/popsquares.c:49 savers/floaters.c:1191
 #, c-format
@@ -458,32 +463,32 @@ msgstr "Wyłączenie kolejności losowej obrazów z położenia"
 msgid "Do not try to stretch images on screen"
 msgstr "Brak rozciągania obrazów na ekranie"
 
-#: src/copy-theme-dialog.c:184
+#: src/copy-theme-dialog.c:180
 msgid "Copying files"
 msgstr "Kopiowanie plików"
 
-#: src/copy-theme-dialog.c:203
+#: src/copy-theme-dialog.c:199
 msgid "From:"
 msgstr "Z:"
 
-#: src/copy-theme-dialog.c:207
+#: src/copy-theme-dialog.c:203
 msgid "To:"
 msgstr "Do:"
 
-#: src/copy-theme-dialog.c:228
+#: src/copy-theme-dialog.c:224
 msgid "Copying themes"
 msgstr "Kopiowanie motywów"
 
-#: src/copy-theme-dialog.c:271
+#: src/copy-theme-dialog.c:267
 msgid "Invalid screensaver theme"
 msgstr "Nieprawidłowy motyw wygaszacza ekranu"
 
-#: src/copy-theme-dialog.c:274
+#: src/copy-theme-dialog.c:270
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "%s nie jest prawidłowym motywem wygaszacza ekranu."
 
-#: src/copy-theme-dialog.c:454
+#: src/copy-theme-dialog.c:450
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "Kopiowanie pliku %u z %u"
@@ -698,10 +703,10 @@ msgstr "Losowo"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d godzinie"
+msgstr[1] "%d godzinach"
+msgstr[2] "%d godzinach"
+msgstr[3] "%d godzinach"
 
 #: src/mate-screensaver-preferences.c:950
 #: src/mate-screensaver-preferences.c:959
@@ -714,19 +719,19 @@ msgstr[3] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d minucie"
+msgstr[1] "%d minutach"
+msgstr[2] "%d minutach"
+msgstr[3] "%d minutach"
 
 #: src/mate-screensaver-preferences.c:953
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d sekundzie"
+msgstr[1] "%d sekundach"
+msgstr[2] "%d sekundach"
+msgstr[3] "%d sekundach"
 
 #: src/mate-screensaver-preferences.c:956
 #: src/mate-screensaver-preferences.c:1003
@@ -751,11 +756,11 @@ msgstr "%s"
 msgid "Never"
 msgstr "Nigdy"
 
-#: src/mate-screensaver-preferences.c:1554
+#: src/mate-screensaver-preferences.c:1563
 msgid "Could not load the main interface"
 msgstr "Nie można wczytać głównego interfejsu"
 
-#: src/mate-screensaver-preferences.c:1556
+#: src/mate-screensaver-preferences.c:1565
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Proszę upewnić się, że wygaszacz ekranu jest poprawnie zainstalowany"
 
@@ -775,7 +780,7 @@ msgstr "Uruchamia wygaszacz ekranu i program blokujący"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr ""
+msgstr "MATE;wygaszacz;ekran;blokowanie;"
 
 #: src/gs-auth-pam.c:413
 #, c-format
@@ -799,15 +804,15 @@ msgstr "Brak zezwolenia na dostęp w tej chwili."
 msgid "No longer permitted to access the system."
 msgstr "Zezwolenie na dostęp do systemu odwołane."
 
-#: src/gs-listener-dbus.c:2247
+#: src/gs-listener-dbus.c:2245
 msgid "failed to register with the message bus"
 msgstr "zarejestrowanie w magistrali komunikatów się nie powiodło"
 
-#: src/gs-listener-dbus.c:2258
+#: src/gs-listener-dbus.c:2256
 msgid "not connected to the message bus"
 msgstr "brak podłączenia do magistrali komunikatów"
 
-#: src/gs-listener-dbus.c:2268 src/gs-listener-dbus.c:2300
+#: src/gs-listener-dbus.c:2266 src/gs-listener-dbus.c:2298
 msgid "screensaver already running in this session"
 msgstr "wygaszacz ekranu jest już uruchomiony w tej sesji"
 
