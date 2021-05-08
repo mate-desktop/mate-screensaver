@@ -792,7 +792,7 @@ msgstr "screensaver already running in this session"
 #. GDateTime.html#g-date-time-format
 #: src/gs-lock-plug.c:301
 msgid "%A, %B %e"
-msgstr "%A, %B %e"
+msgstr "%A, %e %B"
 
 #: src/gs-lock-plug.c:403
 msgid "Time has expired."
