@@ -233,9 +233,7 @@ main(int argc, char *argv[])
     /*
      * Get the program name
      */
-    if (argc == 0)
-        program_name = "mate-screensaver-pam-helper";
-    else if ((program_name = strrchr(argv[0], '/')) != NULL)
+    if ((program_name = strrchr(argv[0], '/')) != NULL)
         program_name++;
     else
         program_name = argv[0];
