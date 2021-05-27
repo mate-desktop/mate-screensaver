@@ -171,6 +171,8 @@ mate_screensaver_dialog_LDADD =	\
 if HAVE_PASSWD_HELPER
 mate_screensaver_dialog_LDADD +=	\
 	../helper/libhelper-proto.a
+../helper/libhelper-proto.a:
+	$(MAKE) -C ../helper
 endif
 
 BUILT_SOURCES = 		\
