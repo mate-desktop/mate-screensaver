@@ -141,7 +141,7 @@ ext_run (const char *user,
         {
                 int msg_type;
                 char buf[MAXLEN];
-                unsigned int msg_len = MAXLEN;
+                size_t msg_len = MAXLEN;
 
                 msg_type = read_prompt (r_pfd [0], buf, &msg_len);
                 if (0 == msg_type) continue;
@@ -161,7 +161,7 @@ ext_run (const char *user,
                 wt = write_msg (pfd [1], input, input_len);
                 if (wt < 0)
                 {
-                        g_message ("Error writing prompt reply (%d)", wt);
+                        g_message ("Error writing prompt reply (%li)", wt);
                         ret = FALSE;
                         goto exit;
                 }
