@@ -197,23 +197,6 @@ getuidname(uid_t uid)
     return username;
 }
 
-static int
-sane_pam_service(const char *name)
-{
-    const char *sp;
-    char path[PATH_MAX];
-
-    if (strlen(name) > 32)
-        return 0;
-    for (sp = name; *sp; sp++) {
-        if (!isalnum(*sp) && *sp != '_' && *sp != '-')
-            return 0;
-    }
-
-    snprintf(path, sizeof(path), "/etc/pam.d/%s", name);
-    return access(path, R_OK) == 0;
-}
-
 int
 main(int argc, char *argv[])
 {
@@ -253,13 +236,9 @@ main(int argc, char *argv[])
     }
 
     /*
-     * Get the service name and do some sanity checks on it
+     * Get the service name.
      */
     service = argv[1];
-    if (!sane_pam_service(service)) {
-        _log_err(LOG_ERR, "Illegal service name '%s'", service);
-        return UNIX_FAILED;
-    }
 
     /*
      * Discourage users messing around (fat chance)
