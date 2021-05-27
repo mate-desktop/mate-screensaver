@@ -28,6 +28,7 @@
 #include <signal.h>
 #include <fcntl.h>
 #include <ctype.h>
+#include <limits.h>
 
 #include "helper_proto.h"
 #include "gs-auth-pam.h"
@@ -200,7 +201,7 @@ static int
 sane_pam_service(const char *name)
 {
     const char *sp;
-    char path[128];
+    char path[PATH_MAX];
 
     if (strlen(name) > 32)
         return 0;
