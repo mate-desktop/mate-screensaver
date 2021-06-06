@@ -59,6 +59,10 @@
 
 #define KEY_LOCK_DIALOG_THEME "lock-dialog-theme"
 
+#define KEY_LOCK_DIALOG_T_FMT "lock-dialog-time-format"
+#define KEY_LOCK_DIALOG_D_FMT "lock-dialog-date-format"
+
+
 #define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
 #define MDM_FLEXISERVER_ARGS    "--startnew Standard"
 
@@ -294,12 +298,42 @@ date_time_update (GSLockPlug *plug)
 	GDateTime *datetime;
 	gchar *time;
 	gchar *date;
+	gchar *tfmt;
+	gchar *dfmt;
+
 	gchar *str;
 
+	GSettings *settings;
+
+	settings = g_settings_new (GSETTINGS_SCHEMA);
+	tfmt = g_settings_get_string (settings, KEY_LOCK_DIALOG_T_FMT);
+	dfmt = g_settings_get_string (settings, KEY_LOCK_DIALOG_D_FMT);
+	g_object_unref (settings);
+
+	/* Time/Date formating https://developer.gnome.org/glib/stable/glib-GDateTime.html#g-date-time-format */
+
 	datetime = g_date_time_new_now_local ();
-	time = g_date_time_format (datetime, "%X");
-	/* Translators: Date format, see https://developer.gnome.org/glib/stable/glib-GDateTime.html#g-date-time-format */
-	date = g_date_time_format (datetime, _("%A, %B %e"));
+	if (g_strcmp0(tfmt, "locale") == 0)
+	{
+		// Use locale default format
+		time = g_date_time_format (datetime, "%X");
+	}
+	else
+	{
+		// Apply user defined format
+		time = g_date_time_format (datetime, tfmt);
+	}
+
+	if (g_strcmp0(dfmt, "locale") == 0)
+	{
+		// Use locale default format
+		date = g_date_time_format (datetime, _("%A, %B %e"));
+	}
+	else
+	{
+		// Apply user defined format
+		date = g_date_time_format (datetime, dfmt);
+	}
 
 	str = g_strdup_printf ("<span size=\"xx-large\" weight=\"ultrabold\">%s</span>", time);
 	gtk_label_set_text (GTK_LABEL (plug->priv->auth_time_label), str);
@@ -313,6 +347,8 @@ date_time_update (GSLockPlug *plug)
 
 	g_free (time);
 	g_free (date);
+	g_free (tfmt);
+	g_free (dfmt);
 	g_date_time_unref (datetime);
 }
 
