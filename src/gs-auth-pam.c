@@ -4,6 +4,7 @@
  * Copyright (C) 2006 Ray Strode <rstrode@redhat.com>
  * Copyright (C) 2003 Bill Nottingham <notting@redhat.com>
  * Copyright (c) 1993-2003 Jamie Zawinski <jwz@jwz.org>
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as

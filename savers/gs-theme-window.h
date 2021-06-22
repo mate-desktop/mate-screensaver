@@ -3,6 +3,7 @@
  * gs-theme-window.h - special toplevel for screensavers
  *
  * Copyright (C) 2005 Ray Strode <rstrode@redhat.com>
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public

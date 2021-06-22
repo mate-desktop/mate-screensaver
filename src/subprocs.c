@@ -4,6 +4,7 @@
  *
  * xscreensaver, Copyright (c) 1991-2003 Jamie Zawinski <jwz@jwz.org>
  * Modified:     Copyright (c) 2004 William Jon McCann <mccann@jhu.edu>
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * Permission to use, copy, modify, distribute, and sell this software and its
  * documentation for any purpose is hereby granted without fee, provided that

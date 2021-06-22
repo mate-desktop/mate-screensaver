@@ -3,6 +3,7 @@
   Its is under the MIT license, to encourage reuse by cut-and-paste.
 
   Copyright (c) 2007 Red Hat, inc
+  Copyright (C) 2012-2021 MATE Developers
 
   Permission is hereby granted, free of charge, to any person
   obtaining a copy of this software and associated documentation files

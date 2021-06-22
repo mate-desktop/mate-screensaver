@@ -5,6 +5,7 @@
  * Copyright (C) 2006 William Jon McCann <mccann@jhu.edu>
  * Copyright (c) 2009 Antoine Jacoutot <ajacoutot@openbsd.org>
  * Copyright (c) 2017 Robert Nagy <robert@openbsd.org>
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * Permission to use, copy, modify, and distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above

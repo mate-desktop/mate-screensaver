@@ -2,6 +2,7 @@
  *
  * Copyright (C) 2004-2006 William Jon McCann <mccann@jhu.edu>
  * Copyright (C) 2008      Red Hat, Inc.
+ * Copyright (C) 2012-2021 MATE Developers
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
