@@ -52,6 +52,7 @@ X11_REQUIRED_VERSION=1.0
 LIBMATE_MENU_REQUIRED_VERSION=1.21.0
 MATE_DESKTOP_REQUIRED_VERSION=1.17.0
 LIBMATEKBDUI_REQUIRED_VERSION=1.17.0
+RDA_REQUIRED_VERSION=0.0.3
 
 AC_CHECK_HEADERS(unistd.h)
 AC_CHECK_HEADERS(crypt.h sys/select.h)
@@ -426,6 +427,15 @@ if test "$with_xf86gamma" = yes; then
 elif test "$with_xf86gamma" != no; then
   echo "error: must be yes or no: --with-xf86gamma-ext=$with_xf86vmode"
   exit 1
+fi
+
+dnl ---------------------------------------------------------------------------
+dnl - Check if Remote Desktop Awareness support is available
+dnl ---------------------------------------------------------------------------
+
+PKG_CHECK_MODULES(RDA, rda >= $RDA_REQUIRED_VERSION, have_rda=yes, have_rda=no)
+if test "x$have_rda" = "xyes"; then
+  AC_DEFINE(HAVE_RDA, 1, [Have the Remote Desktop Awareness library])
 fi
 
 dnl ---------------------------------------------------------------------------
@@ -1155,6 +1165,7 @@ echo "
         Have enhanced shadow:     ${have_shadow_enhanced}
         Have HPUX shadow:         ${have_shadow_hpux}
         Have password helper:     ${have_passwd_helper}
+        Have RD awareness:        ${have_rda}
         Authentication scheme:    ${AUTH_SCHEME}"
 
 if test "x$need_setuid" = "xyes" -a "x$have_pam" != "xyes" ; then

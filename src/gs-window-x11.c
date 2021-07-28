@@ -33,6 +33,10 @@
 #include <gtk/gtk.h>
 #include <gtk/gtkx.h>
 
+#ifdef HAVE_RDA
+#include <rda/rda.h>
+#endif
+
 #include "gs-window.h"
 #include "gs-marshal.h"
 #include "subprocs.h"
@@ -1725,6 +1729,13 @@ popup_dialog (GSWindow *window)
 	{
 		command = g_string_append (command, " --enable-switch");
 	}
+
+#ifdef HAVE_RDA
+	if (rda_session_is_remote() && rda_session_can_be_suspended())
+	{
+		command = g_string_append (command, " --enable-suspend");
+	}
+#endif /* HAVE_RDA */
 
 	if (gs_debug_enabled ())
 	{

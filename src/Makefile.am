@@ -33,6 +33,7 @@ AM_CPPFLAGS =							\
 	$(LIBNOTIFY_CFLAGS)					\
 	$(SYSTEMD_CFLAGS)					\
 	$(LIBELOGIND_CFLAGS)					\
+	$(RDA_CFLAGS)						\
 	$(NULL)
 
 bin_PROGRAMS = \
@@ -131,6 +132,7 @@ test_window_SOURCES =			\
 test_window_LDADD =			\
 	$(MATE_SCREENSAVER_LIBS)	\
 	$(SAVER_LIBS)			\
+	$(RDA_LIBS)			\
 	$(NULL)
 
 mate_screensaver_dialog_SOURCES = 	\
@@ -159,6 +161,7 @@ mate_screensaver_dialog_LDADD =	\
 	$(AUTH_LIBS)			\
 	$(LIBMATEKBDUI_LIBS)		\
 	$(LIBNOTIFY_LIBS)		\
+	$(RDA_LIBS)			\
 	$(NULL)
 
 BUILT_SOURCES = 		\
@@ -219,6 +222,7 @@ mate_screensaver_LDADD =		\
 	$(SAVER_LIBS)			\
 	$(SYSTEMD_LIBS)			\
 	$(LIBELOGIND_LIBS)		\
+	$(RDA_LIBS)			\
 	$(NULL)
 
 mate_screensaver_LDFLAGS = -export-dynamic
