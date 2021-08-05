@@ -1,7 +1,33 @@
+### mate-screensaver 1.26.0
+
+  * Translations update
+  * Allow change of time and date formats on lock screen v4
+  * update copyright to 2021
+  * xdg-user-dir-lookup: missing include guard
+  * i18n: Do not collect the translation for Icon (data folder)
+  * i18n: Do not collect the translation for Icon
+  * i18n: Do not prepend 'GNU ' prefix to the package name
+  * Removed translation for icon file name
+  * mate-screensaver.directory.desktop: The Encoding key is deprecated
+  * Remove warning -Wshadow
+  * lock-dialog-default: fix deprecations reported by glade
+  * Add Show/Hide password emblem in password entry
+  * mate-screensaver-preferences: Show lock image preview on file chooser
+
 ### mate-screensaver 1.25.0
 
   * Translations update
-
+  * add git.mk to generate .gitignore
+  * Fix invalid gnome-logo-white.svg
+  * build: silent build warnings for distcheck
+  * gs-lock-plug: remove function casting
+  * Remove function casting for g_idle_add (function, data)
+  * build: do not override the default value for MATE_COMPILE_WARNINGS
+  * Custom background image for lock screen
+  * Remove warnings: cast between incompatible function types
+  * Remove warning function declaration isn’t a prototype
+  * gs-window-x11: Remove warning "variable ‘widget’ set but not used"
+  * floaters: use fabs instead of abs for doubles
 
 ### mate-screensaver 1.24.0
 
