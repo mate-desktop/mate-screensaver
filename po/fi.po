@@ -8,15 +8,15 @@
 # Mikko Harhanen <gitti@mikkoharhanen.fi>, 2018
 # nomen omen, 2018
 # Ammuu5, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2019
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.23.1\n"
+"Project-Id-Version: mate-screensaver 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2019-11-04 23:36+0100\n"
+"POT-Creation-Date: 2021-06-22 19:36+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2019\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
 "Language-Team: Finnish (https://www.transifex.com/mate/teams/13566/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,13 +33,6 @@ msgstr "Näytönsäästäjä"
 msgid "Set your screensaver preferences"
 msgstr "Aseta näytönsäästäjän asetukset"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver-preferences.desktop.in:6
-#: src/mate-screensaver.desktop.in.in:7
-msgid "preferences-desktop-screensaver"
-msgstr ""
-
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
@@ -50,56 +43,58 @@ msgstr ""
 msgid "Screensaver Preview"
 msgstr "Näytönsäästäjän esikatselu"
 
-#: data/mate-screensaver-preferences.ui:56
+#: data/mate-screensaver-preferences.ui:59
 msgid "<b>Screensaver preview</b>"
 msgstr "<b>Näytönsäästäjän esikatselu</b>"
 
-#: data/mate-screensaver-preferences.ui:164
+#: data/mate-screensaver-preferences.ui:168
 msgid "Screensaver Preferences"
 msgstr "Näytönsäästäjän asetukset"
 
-#: data/mate-screensaver-preferences.ui:196
+#: data/mate-screensaver-preferences.ui:203
 msgid "Power _Management"
 msgstr "Virran_hallinta"
 
-#: data/mate-screensaver-preferences.ui:212
+#: data/mate-screensaver-preferences.ui:219
 msgid "_Preview"
 msgstr "_Esikatselu"
 
-#: data/mate-screensaver-preferences.ui:272
+#: data/mate-screensaver-preferences.ui:279
 msgid "_Screensaver theme:"
 msgstr "_Näytönsäästäjän teema:"
 
-#: data/mate-screensaver-preferences.ui:390
+#: data/mate-screensaver-preferences.ui:397
 msgid "Regard the computer as _idle after:"
 msgstr "Näytönsäästäjän _käynnistysviive:"
 
-#: data/mate-screensaver-preferences.ui:433
+#: data/mate-screensaver-preferences.ui:440
 msgid "_Activate screensaver when computer is idle"
 msgstr "_Käynnistä näytönsäästäjä, kun tietokone on joutilas"
 
-#: data/mate-screensaver-preferences.ui:448
+#: data/mate-screensaver-preferences.ui:455
 msgid "_Lock screen when screensaver is active"
 msgstr "_Lukitse näyttö, kun näytönsäästäjä on aktiivinen"
 
-#: data/mate-screensaver-preferences.ui:465
+#: data/mate-screensaver-preferences.ui:477
+msgid "Background picture for lock screen:"
+msgstr ""
+
+#: data/mate-screensaver-preferences.ui:496
+msgid "Select Background Image"
+msgstr "Valitse taustakuva"
+
+#: data/mate-screensaver-preferences.ui:522
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
 msgstr "<b>Varoitus: näyttöä ei lukita pääkäyttäjälle (root).</b>"
 
-#: data/mate-screensaver.directory.desktop.in:4
+#: data/mate-screensaver.directory.desktop.in:3
 msgid "Screensavers"
 msgstr "Näytönsäästäjät"
 
-#: data/mate-screensaver.directory.desktop.in:5
+#: data/mate-screensaver.directory.desktop.in:4
 #: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
 msgstr "Näytönsäästäjän teemat"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/mate-screensaver.directory.desktop.in:7
-msgid "screensaver"
-msgstr ""
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -109,33 +104,41 @@ msgstr ""
 msgid "Cosmos"
 msgstr "Maailmankaikkeus"
 
-#: data/lock-dialog-default.ui:100
+#: data/lock-dialog-default.ui:110
 msgid "<span size=\"small\">%U on %h</span>"
 msgstr "<span size=\"small\">%U@%h</span>"
 
-#: data/lock-dialog-default.ui:222
+#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2120
+msgid "Show password"
+msgstr ""
+
+#: data/lock-dialog-default.ui:233
 msgid "_Leave Message"
 msgstr "_Jätä viesti"
 
-#: data/lock-dialog-default.ui:238
+#: data/lock-dialog-default.ui:249
 msgid "_Switch User"
 msgstr "_Vaihda käyttäjää"
 
-#: data/lock-dialog-default.ui:254
+#: data/lock-dialog-default.ui:265
 msgid "_Log Out"
 msgstr "_Kirjaudu ulos"
 
-#: data/lock-dialog-default.ui:270
+#: data/lock-dialog-default.ui:281 data/lock-dialog-default.ui:375
 msgid "_Cancel"
 msgstr "_Peru"
 
-#: data/lock-dialog-default.ui:286 src/gs-lock-plug.c:1676
+#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1681
 msgid "_Unlock"
 msgstr "_Avaa lukitus"
 
-#: data/lock-dialog-default.ui:328
+#: data/lock-dialog-default.ui:339
 msgid "<b>Leave a message for %R:</b>"
 msgstr "<b>Jätä viesti käyttäjälle %R:</b>"
+
+#: data/lock-dialog-default.ui:391
+msgid "_Save"
+msgstr "_Tallenna"
 
 #: data/org.mate.screensaver.gschema.xml.in:10
 msgid "Activate when idle"
@@ -309,6 +312,14 @@ msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr "Salli istunnon tilaviestin näyttäminen, kun istunto on lukittu."
 
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Picture Filename"
+msgstr "Kuvan tiedostonimi"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid "File to use for the background image."
+msgstr "Taustakuvana käytettävän tiedoston nimi."
+
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
 msgstr "Näyttää diaesityksen maailmankaikkeuden kuvista"
@@ -375,142 +386,142 @@ msgstr "Pop-Art-tyylinen ruudukko sykkiviä värejä."
 msgid "MATE;screensaver;grid;pulsing;colors;"
 msgstr ""
 
-#: savers/popsquares.c:49 savers/floaters.c:1191
+#: savers/popsquares.c:50 savers/floaters.c:1169
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. Katso --help jos haluat lisätietoja.\n"
 
-#: savers/floaters.c:88
+#: savers/floaters.c:1141
 msgid "Show paths that images follow"
 msgstr "Näytä polut, joita kuvat seuraavat"
 
-#: savers/floaters.c:93
+#: savers/floaters.c:1143
 msgid "Occasionally rotate images as they move"
 msgstr "Kierrä kuvia silloin tällöin niiden liikkuessa"
 
-#: savers/floaters.c:98
+#: savers/floaters.c:1145
 msgid "Print out frame rate and other statistics"
 msgstr "Näytä ruutunopeus ja muita tilastoja"
 
-#: savers/floaters.c:103
+#: savers/floaters.c:1147
 msgid "The maximum number of images to keep on screen"
 msgstr "Suurin määrä kuvia kerralla näytöllä"
 
-#: savers/floaters.c:103
+#: savers/floaters.c:1147
 msgid "MAX_IMAGES"
 msgstr "MAX_KUVIA"
 
-#: savers/floaters.c:108
+#: savers/floaters.c:1149
 msgid "The initial size and position of window"
 msgstr "Ikkunan koko ja sijainti aloitettaessa"
 
-#: savers/floaters.c:108
+#: savers/floaters.c:1149
 msgid "WIDTHxHEIGHT+X+Y"
 msgstr "LEVEYSxKORKEUS+X+Y"
 
-#: savers/floaters.c:113
+#: savers/floaters.c:1151
 msgid "The source image to use"
 msgstr "Käytettävä lähdekuva"
 
-#: savers/floaters.c:1185
+#: savers/floaters.c:1163
 msgid "image - floats images around the screen"
 msgstr "kuva - kelluttaa kuvia ympäri näyttöä"
 
-#: savers/floaters.c:1200
+#: savers/floaters.c:1178
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr "Yksi kuva täytyy antaa. Katso käyttöohje valitsimella --help.\n"
 
-#: savers/slideshow.c:55
+#: savers/slideshow.c:56
 msgid "Location to get images from"
 msgstr "Sijainti, josta kuvat haetaan"
 
-#: savers/slideshow.c:55
+#: savers/slideshow.c:56
 msgid "PATH"
 msgstr "POLKU"
 
-#: savers/slideshow.c:59
+#: savers/slideshow.c:60
 msgid "Color to use for images background"
 msgstr "Kuvien taustalla käytettävä väri"
 
-#: savers/slideshow.c:59
+#: savers/slideshow.c:60
 msgid "\"#rrggbb\""
 msgstr "\"#rrggbb\""
 
-#: savers/slideshow.c:63
+#: savers/slideshow.c:64
 msgid "Do not randomize pictures from location"
 msgstr "Älä sekoita kuvia kuvalähteestä"
 
-#: savers/slideshow.c:67
+#: savers/slideshow.c:68
 msgid "Do not try to stretch images on screen"
 msgstr "Älä yritä venyttää kuvia näytöllä"
 
-#: src/copy-theme-dialog.c:184
+#: src/copy-theme-dialog.c:181
 msgid "Copying files"
 msgstr "Kopioidaan tiedostoja"
 
-#: src/copy-theme-dialog.c:203
+#: src/copy-theme-dialog.c:200
 msgid "From:"
 msgstr "Mistä:"
 
-#: src/copy-theme-dialog.c:207
+#: src/copy-theme-dialog.c:204
 msgid "To:"
 msgstr "Mihin:"
 
-#: src/copy-theme-dialog.c:228
+#: src/copy-theme-dialog.c:225
 msgid "Copying themes"
 msgstr "Kopioidaan teemoja"
 
-#: src/copy-theme-dialog.c:271
+#: src/copy-theme-dialog.c:268
 msgid "Invalid screensaver theme"
 msgstr "Virheellinen näytönsäästäjäteema"
 
-#: src/copy-theme-dialog.c:274
+#: src/copy-theme-dialog.c:271
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
 msgstr "%s ei näytä olevan kelvollinen näytönsäästäjäteema."
 
-#: src/copy-theme-dialog.c:454
+#: src/copy-theme-dialog.c:449
 #, c-format
 msgid "Copying file: %u of %u"
 msgstr "Kopioidaan tiedostoa: %u/%u"
 
-#: src/mate-screensaver-command.c:60
+#: src/mate-screensaver-command.c:61
 msgid "Causes the screensaver to exit gracefully"
 msgstr "Sammuta näytönsäästäjäohjelma kokonaan"
 
-#: src/mate-screensaver-command.c:64
+#: src/mate-screensaver-command.c:65
 msgid "Query the state of the screensaver"
 msgstr "Näytä näytönsäästäjän tila"
 
-#: src/mate-screensaver-command.c:68
+#: src/mate-screensaver-command.c:69
 msgid "Query the length of time the screensaver has been active"
 msgstr "Näytä, kuinka pitkään näytönsäästäjä on ollut päällä"
 
-#: src/mate-screensaver-command.c:72
+#: src/mate-screensaver-command.c:73
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr "Lukitse näyttö heti käynnissä olevan näytönsäästäjäprosessin avulla"
 
-#: src/mate-screensaver-command.c:76
+#: src/mate-screensaver-command.c:77
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
 
-#: src/mate-screensaver-command.c:80
+#: src/mate-screensaver-command.c:81
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr "Vaihtaa uuteen demoon, jos näytönsäästäjä on käynnissä"
 
-#: src/mate-screensaver-command.c:84
+#: src/mate-screensaver-command.c:85
 msgid "Turn the screensaver on (blank the screen)"
 msgstr "Laita näytönsäästäjä päälle (tyhjentää näytön)"
 
-#: src/mate-screensaver-command.c:88
+#: src/mate-screensaver-command.c:89
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr "Lopeta näytönsäästäjä, jos se on käynnissä (palauta näyttö)"
 
-#: src/mate-screensaver-command.c:92
+#: src/mate-screensaver-command.c:93
 msgid "Poke the running screensaver to simulate user activity"
 msgstr "Simuloi käyttäjän syötettä lähettämällä viesti näytönsäästäjälle"
 
-#: src/mate-screensaver-command.c:96
+#: src/mate-screensaver-command.c:97
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
@@ -518,224 +529,224 @@ msgstr ""
 "Estä näytönsäästäjän käynnistyminen. Komento pysähtyy niin pitkäksi aikaa "
 "kun esto on päällä."
 
-#: src/mate-screensaver-command.c:100
+#: src/mate-screensaver-command.c:101
 msgid "The calling application that is inhibiting the screensaver"
 msgstr "Kutsuva ohjelma, joka estää näytönsäästäjän käynnistymisen"
 
-#: src/mate-screensaver-command.c:104
+#: src/mate-screensaver-command.c:105
 msgid "The reason for inhibiting the screensaver"
 msgstr "Syy näytönsäästäjän käynnistymisen ehkäisemiseen"
 
-#: src/mate-screensaver-command.c:108 src/mate-screensaver-dialog.c:58
-#: src/mate-screensaver.c:55
+#: src/mate-screensaver-command.c:109 src/mate-screensaver-dialog.c:59
+#: src/mate-screensaver.c:56
 msgid "Version of this application"
 msgstr "Tämän ohjelman versio"
 
-#: src/mate-screensaver-command.c:357
+#: src/mate-screensaver-command.c:359
 #, c-format
 msgid "The screensaver is %s\n"
 msgstr "Näytönsäästäjä on %s\n"
 
-#: src/mate-screensaver-command.c:357
+#: src/mate-screensaver-command.c:359
 msgid "active"
 msgstr "käytössä"
 
-#: src/mate-screensaver-command.c:357
+#: src/mate-screensaver-command.c:359
 msgid "inactive"
 msgstr "pois käytöstä"
 
-#: src/mate-screensaver-command.c:373
+#: src/mate-screensaver-command.c:375
 msgid "The screensaver is not inhibited\n"
 msgstr "Näytönsäästäjä ei ole estetty\n"
 
-#: src/mate-screensaver-command.c:381
+#: src/mate-screensaver-command.c:383
 msgid "The screensaver is being inhibited by:\n"
 msgstr "Näytönsäästäjän estää ohjelma:\n"
 
-#: src/mate-screensaver-command.c:416
+#: src/mate-screensaver-command.c:418
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
 msgstr "Näytönsäästäjä on ollut päällä %d sekuntia.\n"
 
-#: src/mate-screensaver-command.c:422
+#: src/mate-screensaver-command.c:424
 msgid "The screensaver is not currently active.\n"
 msgstr "Näytönsäästäjä ei ole tällä hetkellä aktiivinen.\n"
 
-#: src/mate-screensaver-dialog.c:57
+#: src/mate-screensaver-dialog.c:58
 msgid "Show debugging output"
 msgstr "Näytä vianetsintätuloste"
 
-#: src/mate-screensaver-dialog.c:59
+#: src/mate-screensaver-dialog.c:60
 msgid "Show the logout button"
 msgstr "Näytä uloskirjautumispainike"
 
-#: src/mate-screensaver-dialog.c:60
+#: src/mate-screensaver-dialog.c:61
 msgid "Command to invoke from the logout button"
 msgstr "Uloskirjautumispainikkeesta suoritettava komento"
 
-#: src/mate-screensaver-dialog.c:61
+#: src/mate-screensaver-dialog.c:62
 msgid "Show the switch user button"
 msgstr "Näytä käyttäjän vaihtopainike"
 
-#: src/mate-screensaver-dialog.c:62
+#: src/mate-screensaver-dialog.c:63
 msgid "Message to show in the dialog"
 msgstr "Ikkunassa näytettävä viesti"
 
-#: src/mate-screensaver-dialog.c:62 src/mate-screensaver-dialog.c:63
+#: src/mate-screensaver-dialog.c:63 src/mate-screensaver-dialog.c:64
 msgid "MESSAGE"
 msgstr "VIESTI"
 
-#: src/mate-screensaver-dialog.c:63
+#: src/mate-screensaver-dialog.c:64
 msgid "Not used"
 msgstr "Ei käytössä"
 
-#: src/mate-screensaver-dialog.c:165 src/mate-screensaver-dialog.c:166
-#: src/mate-screensaver-dialog.c:167 src/gs-auth-pam.c:745
+#: src/mate-screensaver-dialog.c:167 src/mate-screensaver-dialog.c:168
+#: src/mate-screensaver-dialog.c:169 src/gs-auth-pam.c:750
 msgid "Username:"
 msgstr "Käyttäjätunnus:"
 
-#: src/mate-screensaver-dialog.c:168 src/mate-screensaver-dialog.c:169
-#: src/gs-auth-pam.c:171
+#: src/mate-screensaver-dialog.c:170 src/mate-screensaver-dialog.c:171
+#: src/gs-auth-pam.c:172
 msgid "Password:"
 msgstr "Salasana:"
 
-#: src/mate-screensaver-dialog.c:170
+#: src/mate-screensaver-dialog.c:172
 msgid "You are required to change your password immediately (password aged)"
 msgstr "Salasana täytyy vaihtaa heti (salasana on vanhentunut)"
 
-#: src/mate-screensaver-dialog.c:171
+#: src/mate-screensaver-dialog.c:173
 msgid "You are required to change your password immediately (root enforced)"
 msgstr "Salasana täytyy vaihtaa heti (ylläpitäjän pakottama salasanan vaihto)"
 
-#: src/mate-screensaver-dialog.c:172
+#: src/mate-screensaver-dialog.c:174
 msgid "Your account has expired; please contact your system administrator"
 msgstr "Käyttäjätunnuksesi on vanhentunut; ota yhteyttä ylläpitäjääsi"
 
-#: src/mate-screensaver-dialog.c:173
+#: src/mate-screensaver-dialog.c:175
 msgid "No password supplied"
 msgstr "Salasanaa ei annettu"
 
-#: src/mate-screensaver-dialog.c:174
+#: src/mate-screensaver-dialog.c:176
 msgid "Password unchanged"
 msgstr "Salasanaa ei vaihdettu"
 
-#: src/mate-screensaver-dialog.c:175
+#: src/mate-screensaver-dialog.c:177
 msgid "Can not get username"
 msgstr "Käyttäjätunnusta ei löydy"
 
-#: src/mate-screensaver-dialog.c:176
+#: src/mate-screensaver-dialog.c:178
 msgid "Retype new UNIX password:"
 msgstr "Syötä toiseen kertaan uusi UNIX-salasana:"
 
-#: src/mate-screensaver-dialog.c:177
+#: src/mate-screensaver-dialog.c:179
 msgid "Enter new UNIX password:"
 msgstr "Syötä uusi UNIX-salasana:"
 
-#: src/mate-screensaver-dialog.c:178
+#: src/mate-screensaver-dialog.c:180
 msgid "(current) UNIX password:"
 msgstr "Nykyinen UNIX-salasana:"
 
-#: src/mate-screensaver-dialog.c:179
+#: src/mate-screensaver-dialog.c:181
 msgid "Error while changing NIS password."
 msgstr "Virhe vaihdettaessa NIS-salasanaa."
 
-#: src/mate-screensaver-dialog.c:180
+#: src/mate-screensaver-dialog.c:182
 msgid "You must choose a longer password"
 msgstr "Salasanan täytyy olla pidempi"
 
-#: src/mate-screensaver-dialog.c:181
+#: src/mate-screensaver-dialog.c:183
 msgid "Password has been already used. Choose another."
 msgstr "Salasana on jo käytetty, valitse toinen salasana."
 
-#: src/mate-screensaver-dialog.c:182
+#: src/mate-screensaver-dialog.c:184
 msgid "You must wait longer to change your password"
 msgstr "Et voi vaihtaa salasanaa näin usein"
 
-#: src/mate-screensaver-dialog.c:183
+#: src/mate-screensaver-dialog.c:185
 msgid "Sorry, passwords do not match"
 msgstr "Salasanat eivät vastaa toisiaan"
 
-#: src/mate-screensaver-dialog.c:254
+#: src/mate-screensaver-dialog.c:256
 msgid "Checking..."
 msgstr "Tarkistetaan..."
 
-#: src/mate-screensaver-dialog.c:300 src/gs-auth-pam.c:483
+#: src/mate-screensaver-dialog.c:302 src/gs-auth-pam.c:485
 msgid "Authentication failed."
 msgstr "Tunnistautuminen epäonnistui."
 
-#: src/mate-screensaver-preferences.c:455
+#: src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
 msgstr "Tyhjä näyttö"
 
-#: src/mate-screensaver-preferences.c:461
+#: src/mate-screensaver-preferences.c:463
 msgid "Random"
 msgstr "Satunnainen"
 
-#: src/mate-screensaver-preferences.c:947
-#: src/mate-screensaver-preferences.c:957
+#: src/mate-screensaver-preferences.c:948
+#: src/mate-screensaver-preferences.c:958
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/mate-screensaver-preferences.c:950
-#: src/mate-screensaver-preferences.c:959
-#: src/mate-screensaver-preferences.c:968
-#: src/mate-screensaver-preferences.c:971
-#: src/mate-screensaver-preferences.c:976
-#: src/mate-screensaver-preferences.c:979
-#: src/mate-screensaver-preferences.c:984
-#: src/mate-screensaver-preferences.c:987
+#: src/mate-screensaver-preferences.c:951
+#: src/mate-screensaver-preferences.c:960
+#: src/mate-screensaver-preferences.c:969
+#: src/mate-screensaver-preferences.c:972
+#: src/mate-screensaver-preferences.c:977
+#: src/mate-screensaver-preferences.c:980
+#: src/mate-screensaver-preferences.c:985
+#: src/mate-screensaver-preferences.c:988
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/mate-screensaver-preferences.c:953
+#: src/mate-screensaver-preferences.c:954
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/mate-screensaver-preferences.c:956
-#: src/mate-screensaver-preferences.c:1003
-#: src/mate-screensaver-preferences.c:1016
+#: src/mate-screensaver-preferences.c:957
+#: src/mate-screensaver-preferences.c:1004
+#: src/mate-screensaver-preferences.c:1017
 #, c-format
 msgid "%s %s"
 msgstr "%s, %s"
 
-#: src/mate-screensaver-preferences.c:998
+#: src/mate-screensaver-preferences.c:999
 #, c-format
 msgid "%s %s %s"
 msgstr "%s, %s, %s"
 
-#: src/mate-screensaver-preferences.c:1008
-#: src/mate-screensaver-preferences.c:1021
-#: src/mate-screensaver-preferences.c:1057
+#: src/mate-screensaver-preferences.c:1009
+#: src/mate-screensaver-preferences.c:1022
+#: src/mate-screensaver-preferences.c:1058
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: src/mate-screensaver-preferences.c:1072
+#: src/mate-screensaver-preferences.c:1073
 msgid "Never"
 msgstr "Ei koskaan"
 
-#: src/mate-screensaver-preferences.c:1554
+#: src/mate-screensaver-preferences.c:1635
 msgid "Could not load the main interface"
 msgstr "Pääkäyttöliittymää ei voitu ladata"
 
-#: src/mate-screensaver-preferences.c:1556
+#: src/mate-screensaver-preferences.c:1637
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Varmista, että näytönsäästäjä on kunnolla asennettu"
 
-#: src/mate-screensaver.c:56
+#: src/mate-screensaver.c:57
 msgid "Don't become a daemon"
 msgstr "Älä käynnistä palvelinprosessina"
 
-#: src/mate-screensaver.c:57
+#: src/mate-screensaver.c:58
 msgid "Enable debugging code"
 msgstr "Käytä vianetsintätilaa"
 
@@ -749,66 +760,70 @@ msgstr ""
 msgid "MATE;screensaver;locker;"
 msgstr ""
 
-#: src/gs-auth-pam.c:413
+#: src/gs-auth-pam.c:415
 #, c-format
 msgid "Unable to establish service %s: %s\n"
 msgstr "Palvelua %s ei voi avata: %s\n"
 
-#: src/gs-auth-pam.c:443
+#: src/gs-auth-pam.c:445
 #, c-format
 msgid "Can't set PAM_TTY=%s"
 msgstr "Muuttujaa PAM_TTY=%s ei voi asettaa"
 
-#: src/gs-auth-pam.c:479
+#: src/gs-auth-pam.c:481
 msgid "Incorrect password."
 msgstr "Virheellinen salasana."
 
-#: src/gs-auth-pam.c:499
+#: src/gs-auth-pam.c:501
 msgid "Not permitted to gain access at this time."
 msgstr "Pääsy ei ole sallittu tällä hetkellä."
 
-#: src/gs-auth-pam.c:507
+#: src/gs-auth-pam.c:509
 msgid "No longer permitted to access the system."
 msgstr "Pääsy ei ole enää sallittu järjestelmään."
 
-#: src/gs-listener-dbus.c:2247
+#: src/gs-listener-dbus.c:2246
 msgid "failed to register with the message bus"
 msgstr "viestiväylään rekisteröityminen epäonnistui"
 
-#: src/gs-listener-dbus.c:2258
+#: src/gs-listener-dbus.c:2257
 msgid "not connected to the message bus"
 msgstr "viestiväylään ei ole yhteyttä"
 
-#: src/gs-listener-dbus.c:2268 src/gs-listener-dbus.c:2300
+#: src/gs-listener-dbus.c:2267 src/gs-listener-dbus.c:2299
 msgid "screensaver already running in this session"
 msgstr "näytönsäästäjä on jo käynnissä tässä istunnossa"
 
 #. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
 #. GDateTime.html#g-date-time-format
-#: src/gs-lock-plug.c:301
+#: src/gs-lock-plug.c:302
 msgid "%A, %B %e"
 msgstr ""
 
-#: src/gs-lock-plug.c:403
+#: src/gs-lock-plug.c:408
 msgid "Time has expired."
 msgstr "Aika loppui."
 
-#: src/gs-lock-plug.c:434
+#: src/gs-lock-plug.c:439
 msgid "You have the Caps Lock key on."
 msgstr "Näppäimistössä on Caps Lock päällä."
 
-#: src/gs-lock-plug.c:1656
+#: src/gs-lock-plug.c:1661
 msgid "S_witch User..."
 msgstr "_Vaihda käyttäjää..."
 
-#: src/gs-lock-plug.c:1665
+#: src/gs-lock-plug.c:1670
 msgid "Log _Out"
 msgstr "Kirjaudu _ulos"
 
-#: src/gs-lock-plug.c:1878
+#: src/gs-lock-plug.c:1883
 msgid "%U on %h"
 msgstr "%s@%s"
 
-#: src/gs-lock-plug.c:1893
+#: src/gs-lock-plug.c:1898
 msgid "_Password:"
 msgstr "_Salasana:"
+
+#: src/gs-lock-plug.c:2126
+msgid "Hide password"
+msgstr ""
