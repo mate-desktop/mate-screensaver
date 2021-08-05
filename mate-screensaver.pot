@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mate-screensaver 1.25.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 19:36+0200\n"
+"POT-Creation-Date: 2021-08-05 09:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -99,7 +99,7 @@ msgstr ""
 msgid "<span size=\"small\">%U on %h</span>"
 msgstr ""
 
-#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2120
+#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2156
 msgid "Show password"
 msgstr ""
 
@@ -119,7 +119,7 @@ msgstr ""
 msgid "_Cancel"
 msgstr ""
 
-#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1681
+#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1717
 msgid "_Unlock"
 msgstr ""
 
@@ -269,19 +269,41 @@ msgid "Theme to use for the lock dialog"
 msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:80
-msgid "Allow the session status message to be displayed"
+msgid "Format for time on lock dialog"
 msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
-"Allow the session status message to be displayed when the screen is locked."
+"Format do display the time on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %R for 24H format."
 msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:85
-msgid "Picture Filename"
+msgid "Format for date on lock dialog"
 msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:86
+msgid ""
+"Format do display the date on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %F for ISO 8601 date format."
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:90
+msgid "Allow the session status message to be displayed"
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:91
+msgid ""
+"Allow the session status message to be displayed when the screen is locked."
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:95
+msgid "Picture Filename"
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:96
 msgid "File to use for the background image."
 msgstr ""
 
@@ -751,35 +773,34 @@ msgstr ""
 msgid "screensaver already running in this session"
 msgstr ""
 
-#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-GDateTime.html#g-date-time-format
-#: src/gs-lock-plug.c:302
+#: src/gs-lock-plug.c:330
 msgid "%A, %B %e"
 msgstr ""
 
-#: src/gs-lock-plug.c:408
+#: src/gs-lock-plug.c:444
 msgid "Time has expired."
 msgstr ""
 
-#: src/gs-lock-plug.c:439
+#: src/gs-lock-plug.c:475
 msgid "You have the Caps Lock key on."
 msgstr ""
 
-#: src/gs-lock-plug.c:1661
+#: src/gs-lock-plug.c:1697
 msgid "S_witch User..."
 msgstr ""
 
-#: src/gs-lock-plug.c:1670
+#: src/gs-lock-plug.c:1706
 msgid "Log _Out"
 msgstr ""
 
-#: src/gs-lock-plug.c:1883
+#: src/gs-lock-plug.c:1919
 msgid "%U on %h"
 msgstr ""
 
-#: src/gs-lock-plug.c:1898
+#: src/gs-lock-plug.c:1934
 msgid "_Password:"
 msgstr ""
 
-#: src/gs-lock-plug.c:2126
+#: src/gs-lock-plug.c:2162
 msgid "Hide password"
 msgstr ""
