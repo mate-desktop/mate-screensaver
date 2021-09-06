@@ -1,3 +1,24 @@
+/* Part of mate-screensaver.
+ *
+ * Copyright (C) 2002 SuSE Linux AG.
+ * Copyright (c) 2019-2021 Paul Wolneykien <manowar@altlinux.org>
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301, USA.
+ */
+
 /*
  * Set*id helper program for PAM authentication.
  *
@@ -6,9 +27,6 @@
  * The conversation messages from the PAM stack is transmitted to
  * mate-screensaver dialog via stdout and the received user replies
  * read from stdin are sent back to PAM.
- *
- * Copyright (C) 2002 SuSE Linux AG
- * Copyright (c) 2021 Paul Wolneykien <manowar@altlinux.org>.
  *
  * Based on the helper written by okir@suse.de, loosely based on
  * unix_chkpwd by Andrew Morgan.
