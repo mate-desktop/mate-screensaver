@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
  
-[MATE.master--mate-screensaver]
+[MATE.1-26--mate-screensaver]
 file_filter = po/<lang>.po
 source_file = po/mate-screensaver.pot
 source_lang = en
