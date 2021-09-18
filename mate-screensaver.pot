@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.25.0\n"
+"Project-Id-Version: mate-screensaver 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-08-05 09:22+0200\n"
+"POT-Creation-Date: 2021-09-18 17:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -274,7 +274,7 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
-"Format do display the time on lock dialog. Default is 'locale' which uses "
+"Format to display the time on lock dialog. Default is 'locale' which uses "
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %R for 24H format."
 msgstr ""
@@ -285,7 +285,7 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:86
 msgid ""
-"Format do display the date on lock dialog. Default is 'locale' which uses "
+"Format to display the date on lock dialog. Default is 'locale' which uses "
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %F for ISO 8601 date format."
 msgstr ""
