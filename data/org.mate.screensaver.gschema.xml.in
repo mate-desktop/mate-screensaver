@@ -78,12 +78,12 @@
     <key name="lock-dialog-time-format" type="s">
       <default>'locale'</default>
       <summary>Format for time on lock dialog</summary>
-      <description>Format do display the time on lock dialog. Default is 'locale' which uses default format for current locale. Custom values should be set according to g-date-time-format. Try %R for 24H format.</description>
+      <description>Format to display the time on lock dialog. Default is 'locale' which uses default format for current locale. Custom values should be set according to g-date-time-format. Try %R for 24H format.</description>
     </key>
     <key name="lock-dialog-date-format" type="s">
       <default>'locale'</default>
       <summary>Format for date on lock dialog</summary>
-      <description>Format do display the date on lock dialog. Default is 'locale' which uses default format for current locale. Custom values should be set according to g-date-time-format. Try %F for ISO 8601 date format. </description>
+      <description>Format to display the date on lock dialog. Default is 'locale' which uses default format for current locale. Custom values should be set according to g-date-time-format. Try %F for ISO 8601 date format. </description>
     </key>
     <key name="status-message-enabled" type="b">
       <default>true</default>
