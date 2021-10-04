@@ -112,7 +112,7 @@ static int
 _converse(int num_msg, const struct pam_message **msg,
           struct pam_response **resp, void *appdata_ptr)
 {
-    struct pam_response *reply;
+    struct pam_response *reply = NULL;
     char buf[MAXLEN];
     int num;
     int ret = PAM_SUCCESS;
@@ -149,7 +149,7 @@ _converse(int num_msg, const struct pam_message **msg,
         }
     }
 
-    if (ret != PAM_SUCCESS) {
+    if (ret != PAM_SUCCESS && reply != NULL) {
         for (num = 0; num < num_msg; num++)
             free (reply[num].resp);
         free (reply);
