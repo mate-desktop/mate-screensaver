@@ -152,6 +152,7 @@ _converse(int num_msg, const struct pam_message **msg,
     if (ret != PAM_SUCCESS) {
         for (num = 0; num < num_msg; num++)
             free (reply[num].resp);
+        free (reply);
     } else
         *resp = reply;
 
