@@ -934,10 +934,14 @@ drag_data_received_cb (GtkWidget        *widget,
 static char *
 time_to_string_text (long time)
 {
-	char *secs, *mins, *hours, *string;
-	int   sec, min, hour;
-
-	int n, inc_len, len_minutes;
+	char  *secs, *mins, *hours, *string;
+	char  *chk_hour_str, *chk_minute_str, *chk_hour_minute_str;
+	char  *chk_ascii_str;
+	int    sec, min, hour;
+	size_t chk_ascii_len;
+	int    len_minutes;
+	int    n, inc_len;
+	int    diff;
 
 	sec = time % 60;
 	time = time - sec;
@@ -954,60 +958,63 @@ time_to_string_text (long time)
 	secs = g_strdup_printf (ngettext ("%d second",
 	                                  "%d seconds", sec), sec);
 
-	inc_len = strlen (g_strdup_printf (_("%s %s"),
-	                  g_strdup_printf (ngettext ("%d hour",
-	                                             "%d hours", 1), 1),
-	                  g_strdup_printf (ngettext ("%d minute",
-	                                             "%d minutes", 59), 59))) - 1;
+	/* inc_len = it's the lenght of the string "1 hour 59 minutes" */
+	chk_hour_str = g_strdup_printf (ngettext ("%d hour",
+	                                          "%d hours", 1), 1);
+	chk_minute_str = g_strdup_printf (ngettext ("%d minute",
+	                                            "%d minutes", 59), 59);
+	chk_hour_minute_str = g_strdup_printf (_("%s %s"),
+	                                       chk_hour_str, chk_minute_str);
+	inc_len = strlen (chk_hour_minute_str) - 1;
+	g_free (chk_hour_str);
+	g_free (chk_minute_str);
+	g_free (chk_hour_minute_str);
 
 	len_minutes = 0;
-
 	for (n = 2; n < 60; n++)
 	{
-		if (n < 10)
-		{
-			if ((strlen (g_str_to_ascii (g_strdup_printf (ngettext ("%d minute",
-	                                                                        "%d minutes", n), n), NULL)) - 2) > len_minutes)
+		char   *minute_str    = g_strdup_printf (ngettext ("%d minute",
+		                                                   "%d minutes", n), n);
+		char   *ascii_str     = g_str_to_ascii (minute_str, NULL);
+		size_t  ascii_str_len = strlen (ascii_str);
+		size_t  extra_length  = (n < 10) ? 2 : 3;
 
-				len_minutes = strlen (g_str_to_ascii (g_strdup_printf (ngettext ("%d minute",
-	                                                                                         "%d minutes", n), n), NULL)) - 2;
-		}
-		else
-		{
-			if ((strlen (g_str_to_ascii (g_strdup_printf (ngettext ("%d minute",
-	                                                                        "%d minutes", n), n), NULL)) - 3) > len_minutes)
+		diff = (int) (ascii_str_len - extra_length);
+		if (diff > len_minutes)
+			len_minutes = diff;
 
-				len_minutes = strlen (g_str_to_ascii (g_strdup_printf (ngettext ("%d minute",
-	                                                                                         "%d minutes", n), n), NULL)) - 3;
-		}
+		g_free (minute_str);
+		g_free (ascii_str);
 	}
 
-	if ((strlen (g_str_to_ascii (g_strdup_printf (ngettext ("%d minute",
-	                                                        "%d minutes", 1), 1), NULL)) - 2) > len_minutes)
+	/* check the lenght of the string "1 minute" */
+	chk_minute_str = g_strdup_printf (ngettext ("%d minute",
+	                                            "%d minutes", 1), 1);
+	chk_ascii_str = g_str_to_ascii (chk_minute_str, NULL);
+	chk_ascii_len = strlen (chk_ascii_str);
+	diff = (int) (chk_ascii_len - 2);
 
-		len_minutes = strlen (g_str_to_ascii (g_strdup_printf (ngettext ("%d minute",
-	                                                                         "%d minutes", 1), 1), NULL)) - 2;
+	if (diff > len_minutes)
+		len_minutes = diff;
 
+	g_free (chk_minute_str);
+	g_free (chk_ascii_str);
+
+	/* len_minutes = MAX (1, len_minutes) */
 	if (len_minutes < 1)
 		len_minutes = 1;
 
 	if (hour > 0)
 	{
 		if (sec > 0)
-		{
 			/* hour:minutes:seconds */
 			string = g_strdup_printf (_("%s %s %s"), hours, mins, secs);
-		}
 		else if (min > 0)
-		{
 			/* hour:minutes */
 			string = g_strdup_printf (_("%s %s"), hours, mins);
-		}
 		else
-		{
 			/* hour */
 			string = g_strdup_printf (_("%s"), hours);
-		}
 	}
 	else if (min > 0)
 	{
@@ -1019,36 +1026,28 @@ time_to_string_text (long time)
 		else
 		{
 			/* minutes */
+			size_t max_len;
+
 			string = g_strdup_printf (_("%s"), mins);
 
-			if (min < 10)
-			{
-				if (min == 1)
-					while (strlen (string) != (len_minutes + inc_len + 3))
-					{
-						if (strlen (string) % 2 == 0)
-							string = g_strconcat (string, " ", NULL);
-						else
-							string = g_strconcat (" " , string, NULL);
-					}
-				else
-					while (strlen (string) != (len_minutes + inc_len))
-					{
-						if (strlen (string) % 2 == 0)
-							string = g_strconcat (string, " ", NULL);
-						else
-							string = g_strconcat (" " , string, NULL);
-					}
-			}
+			if (min == 1)
+				max_len = (size_t) (len_minutes + inc_len + 3);
+			else if (min < 10)
+				max_len = (size_t) (len_minutes + inc_len);
 			else
+				max_len = (size_t) (len_minutes + inc_len - 1);
+
+			while (strlen (string) != max_len)
 			{
-				while (strlen (string) != (len_minutes + inc_len - 1))
-				{
-					if (strlen (string) % 2 == 0)
-						string = g_strconcat (string, " ", NULL);
-					else
-						string = g_strconcat (" " , string, NULL);
-				}
+				char *string_aux;
+
+				if (strlen (string) % 2 == 0)
+					string_aux = g_strconcat (string, " ", NULL);
+				else
+					string_aux = g_strconcat (" " , string, NULL);
+
+				g_free (string);
+				string = string_aux;
 			}
 		}
 	}
@@ -1090,7 +1089,11 @@ enabled_checkbox_toggled (GtkToggleButton *button, gpointer user_data)
 static void
 picture_filename_changed (GtkFileChooserButton *button, gpointer user_data)
 {
-	g_settings_set_string (screensaver_settings, "picture-filename", gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (button)));
+	char *picture_filename;
+
+	picture_filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (button));
+	g_settings_set_string (screensaver_settings, "picture-filename", picture_filename);
+	g_free (picture_filename);
 }
 
 static void
