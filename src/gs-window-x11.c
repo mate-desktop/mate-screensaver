@@ -56,6 +56,7 @@ enum
 
 #define MAX_QUEUED_EVENTS 16
 #define INFO_BAR_SECONDS 30
+#define MATE_SCREENSAVER_DIALOG_PATH LIBEXECDIR "/mate-screensaver-dialog"
 
 struct GSWindowPrivate
 {
@@ -1694,14 +1695,11 @@ static void
 popup_dialog (GSWindow *window)
 {
 	gboolean  result;
-	char     *tmp;
 	GString  *command;
 
 	gs_debug ("Popping up dialog");
 
-	tmp = g_build_filename (LIBEXECDIR, "mate-screensaver-dialog", NULL);
-	command = g_string_new (tmp);
-	g_free (tmp);
+	command = g_string_new (MATE_SCREENSAVER_DIALOG_PATH);
 
 	if (is_logout_enabled (window))
 	{
