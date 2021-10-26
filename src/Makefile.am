@@ -25,6 +25,7 @@ AM_CPPFLAGS =							\
 	-DSAVERDIR=\""$(saverdir)"\"				\
 	-DTHEMESDIR=\""$(themesdir)"\"				\
 	-DGTKBUILDERDIR=\"$(pkgdatadir)\"			\
+	-DMATE_SCREENSAVER_GL_HELPER_PATH=\""$(libexecdir)/mate-screensaver-gl-helper"\" \
 	-DPAM_SERVICE_NAME=\""mate-screensaver"\"		\
 	$(WARN_CFLAGS)						\
 	$(AUTH_CFLAGS)						\
