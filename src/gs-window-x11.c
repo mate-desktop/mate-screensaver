@@ -506,7 +506,6 @@ static GdkVisual *
 get_best_visual_for_display (GdkDisplay *display)
 {
 	GdkScreen    *screen;
-	char         *command;
 	char         *std_output;
 	int           exit_status;
 	GError       *error;
@@ -518,19 +517,18 @@ get_best_visual_for_display (GdkDisplay *display)
 	visual = NULL;
 	screen = gdk_display_get_default_screen (display);
 
-	command = g_build_filename (LIBEXECDIR, "mate-screensaver-gl-helper", NULL);
-
 	error = NULL;
 	std_output = NULL;
 	res = spawn_command_line_on_display_sync (display,
-	        command,
+	        MATE_SCREENSAVER_GL_HELPER_PATH,
 	        &std_output,
 	        NULL,
 	        &exit_status,
 	        &error);
 	if (! res)
 	{
-		gs_debug ("Could not run command '%s': %s", command, error->message);
+		gs_debug ("Could not run command '%s': %s",
+		          MATE_SCREENSAVER_GL_HELPER_PATH, error->message);
 		g_error_free (error);
 		goto out;
 	}
@@ -551,7 +549,6 @@ get_best_visual_for_display (GdkDisplay *display)
 	}
 out:
 	g_free (std_output);
-	g_free (command);
 
 	return g_object_ref (visual);
 }
