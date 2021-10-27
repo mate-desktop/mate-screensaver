@@ -65,7 +65,6 @@
 # define PAM_NO_DELAY(pamh) /* */
 #endif /* !HAVE_PAM_FAIL_DELAY */
 
-
 /* On SunOS 5.6, and on Linux with PAM 0.64, pam_strerror() takes two args.
    On some other Linux systems with some other version of PAM (e.g.,
    whichever Debian release comes with a 2.2.5 kernel) it takes one arg.

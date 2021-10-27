@@ -213,7 +213,6 @@ gs_auth_priv_init (void)
 	}
 }
 
-
 gboolean
 gs_auth_init (void)
 {

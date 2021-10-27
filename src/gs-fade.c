@@ -48,7 +48,6 @@
 
 /* XFree86 4.x+ Gamma fading */
 
-
 #ifdef HAVE_XF86VMODE_GAMMA
 
 #include <X11/extensions/xf86vmode.h>
@@ -257,7 +256,6 @@ xf86_whack_gamma (int              screen,
 # define XF86_VIDMODE_GAMMA_RAMP_MIN_MAJOR 2
 # define XF86_VIDMODE_GAMMA_RAMP_MIN_MINOR 1
 
-
 gboolean
 gs_fade_get_enabled (GSFade *fade)
 {
@@ -306,7 +304,6 @@ gamma_fade_setup (GSFade *fade)
 	if (FADE_TYPE_GAMMA_RAMP == screen_priv->fade_type)
 	{
 		/* have ramps */
-
 
 		res = XF86VidModeGetGammaRampSize (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()),
 		                                   GDK_SCREEN_XNUMBER (gdk_screen_get_default ()),

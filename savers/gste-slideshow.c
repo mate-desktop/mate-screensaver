@@ -555,7 +555,6 @@ gste_strcmp_compare_func (gconstpointer string_a, gconstpointer string_b)
 	               string_b == NULL ? "" : string_b);
 }
 
-
 static GdkPixbuf *
 get_pixbuf_from_local_dir (GSTESlideshow *show,
                            const char    *location)
@@ -724,7 +723,6 @@ gste_slideshow_set_images_location (GSTESlideshow *show,
 	g_free (show->priv->images_location);
 	show->priv->images_location = g_strdup (location);
 }
-
 
 void
 gste_slideshow_set_sort_images (GSTESlideshow *show,

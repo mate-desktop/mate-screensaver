@@ -1163,7 +1163,6 @@ main (int   argc,
 	                    _("image - floats images around the screen"),
 	                    options, GETTEXT_PACKAGE, &error);
 
-
 	if (error != NULL)
 	{
 		g_printerr (_("%s. See --help for usage information.\n"),

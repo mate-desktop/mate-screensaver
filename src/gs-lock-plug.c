@@ -62,7 +62,6 @@
 #define KEY_LOCK_DIALOG_T_FMT "lock-dialog-time-format"
 #define KEY_LOCK_DIALOG_D_FMT "lock-dialog-date-format"
 
-
 #define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
 #define MDM_FLEXISERVER_ARGS    "--startnew Standard"
 
@@ -136,7 +135,6 @@ struct _ResponseData
 {
 	gint response_id;
 };
-
 
 enum
 {
@@ -456,7 +454,6 @@ dialog_timed_out (gpointer user_data)
 	return FALSE;
 }
 
-
 static void
 capslock_update (GSLockPlug *plug,
                  gboolean    is_on)
@@ -687,7 +684,6 @@ gs_lock_plug_run (GSLockPlug *plug)
 	return ri.response_id;
 }
 
-
 static cairo_surface_t *
 surface_from_pixbuf (GdkPixbuf *pixbuf)
 {
@@ -872,7 +868,6 @@ frame_pixbuf (GdkPixbuf *source)
 						   h);
 	rowstride = gdk_pixbuf_get_rowstride (dest);
 
-
 	data = g_new0 (guint8, h * rowstride);
 
 	surface = cairo_image_surface_create_for_data (data,
@@ -1055,7 +1050,6 @@ gs_lock_plug_show (GtkWidget *widget)
 	}
 
 	gs_profile_end ("parent");
-
 
 	if (plug->priv->auth_face_image)
 	{

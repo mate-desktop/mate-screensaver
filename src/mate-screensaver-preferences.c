@@ -1420,7 +1420,6 @@ spawn_command_line_on_display_sync (GdkDisplay  *display,
 	return retval;
 }
 
-
 static GdkVisual *
 get_best_visual_for_display (GdkDisplay *display)
 {
@@ -1474,7 +1473,6 @@ out:
 
 	return visual;
 }
-
 
 static void
 widget_set_best_visual (GtkWidget *widget)

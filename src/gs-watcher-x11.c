@@ -642,7 +642,6 @@ disable_builtin_screensaver (GSWatcher *watcher,
 	}
 }
 
-
 /* This timer goes off every few minutes, whether the user is idle or not,
    to try and clean up anything that has gone wrong.
 

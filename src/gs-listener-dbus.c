@@ -2208,7 +2208,6 @@ gs_listener_class_init (GSListenerClass *klass)
 	                                         G_PARAM_READWRITE));
 }
 
-
 static gboolean
 screensaver_is_running (DBusConnection *connection)
 {

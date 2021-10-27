@@ -73,7 +73,6 @@ privileged_initialization (void)
 	return ret;
 }
 
-
 /* Figure out what locking mechanisms are supported.
  */
 static gboolean

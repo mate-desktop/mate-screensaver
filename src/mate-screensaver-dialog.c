@@ -421,7 +421,6 @@ static gboolean popup_dialog_idle(gpointer data)
 	return FALSE;
 }
 
-
 /*
  * Copyright (c) 1991-2004 Jamie Zawinski <jwz@jwz.org>
  * Copyright (c) 2005 William Jon McCann <mccann@jhu.edu>
@@ -465,7 +464,6 @@ privileged_initialization (int* argc, char** argv)
 
 	return ret;
 }
-
 
 /*
  * Copyright (c) 1991-2004 Jamie Zawinski <jwz@jwz.org>
