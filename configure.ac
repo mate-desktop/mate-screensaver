@@ -1133,50 +1133,52 @@ helper/Makefile
 ])
 
 echo "
-                    mate-screensaver $VERSION
-                    ========================
+Configure summary:
 
-        prefix:                   ${prefix}
-        exec_prefix:              ${exec_prefix}
-        libdir:                   ${EXPANDED_LIBDIR}
-        bindir:                   ${EXPANDED_BINDIR}
-        sysconfdir:               ${EXPANDED_SYSCONFDIR}
-        localstatedir:            ${EXPANDED_LOCALSTATEDIR}
-        datadir:                  ${EXPANDED_DATADIR}
-        PAM prefix:               ${PAM_PREFIX}
-        source code location:     ${srcdir}
-        compiler:                 ${CC}
-        cflags:                   ${CFLAGS}
-        Warning flags:            ${WARN_CFLAGS}
-        Base libs:                ${MATE_SCREENSAVER_LIBS}
-        Extension libs:           ${SAVER_LIBS}
-        Maintainer mode:          ${USE_MAINTAINER_MODE}
-        Docs enabled:             ${enable_docbook_docs}
+    ${PACKAGE_STRING}
+    `echo $PACKAGE_STRING | sed "s/./=/g"`
 
-        GL:                       ${have_libgl}
+    prefix .......................: ${prefix}
+    exec_prefix ..................: ${exec_prefix}
+    libdir .......................: ${EXPANDED_LIBDIR}
+    bindir .......................: ${EXPANDED_BINDIR}
+    sysconfdir ...................: ${EXPANDED_SYSCONFDIR}
+    localstatedir ................: ${EXPANDED_LOCALSTATEDIR}
+    datadir ......................: ${EXPANDED_DATADIR}
+    PAM prefix ...................: ${PAM_PREFIX}
+    source code location .........: ${srcdir}
+    compiler .....................: ${CC}
+    cflags .......................: ${CFLAGS}
+    Warning flags ................: ${WARN_CFLAGS}
+    Base libs ....................: ${MATE_SCREENSAVER_LIBS}
+    Extension libs ...............: ${SAVER_LIBS}
+    Maintainer mode ..............: ${USE_MAINTAINER_MODE}
+    Docs enabled .................: ${enable_docbook_docs}
 
-        Screen locking enabled:   ${enable_locking}
-        Show keyboard indicator:  ${with_kbd_layout_indicator}
-        systemd support:          ${use_systemd}
-        elogind support:          ${use_elogind}
-        ConsoleKit support:       ${use_console_kit}
-        libnotify support:        ${have_libnotify}
-        PAM support:              ${have_pam}
-        bsd_auth(3) support:      ${have_bsdauth}
-        Have shadow passwords:    ${have_shadow}
-        Have adjunct shadow:      ${have_shadow_adjunct}
-        Have enhanced shadow:     ${have_shadow_enhanced}
-        Have HPUX shadow:         ${have_shadow_hpux}
-        Have password helper:     ${have_passwd_helper}
-        Authentication scheme:    ${AUTH_SCHEME}"
+    GL ...........................: ${have_libgl}
+
+    Screen locking enabled .......: ${enable_locking}
+    Show keyboard indicator ......: ${with_kbd_layout_indicator}
+    systemd support ..............: ${use_systemd}
+    elogind support ..............: ${use_elogind}
+    ConsoleKit support ...........: ${use_console_kit}
+    libnotify support ............: ${have_libnotify}
+    PAM support ..................: ${have_pam}
+    bsd_auth(3) support ..........: ${have_bsdauth}
+    Have shadow passwords ........: ${have_shadow}
+    Have adjunct shadow ..........: ${have_shadow_adjunct}
+    Have enhanced shadow .........: ${have_shadow_enhanced}
+    Have HPUX shadow .............: ${have_shadow_hpux}
+    Have password helper .........: ${have_passwd_helper}
+    Authentication scheme ........: ${AUTH_SCHEME}"
 
 if test "x$need_setuid" = "xyes" -a "x$have_pam" != "xyes" ; then
 echo \
-"        Need setuid dialog:       yes
+"    Need setuid dialog ...........: yes
 "
 else
 echo \
-"        Need setuid dialog:       no
+"    Need setuid dialog ...........: no
 "
 fi
 
