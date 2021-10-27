@@ -807,11 +807,11 @@ screen_saver_new (GtkWidget       *drawing_area,
 	    g_hash_table_new_full (NULL, NULL, NULL,
 	                           (GDestroyNotify) cached_source_free);
 
-	g_signal_connect_swapped (G_OBJECT (drawing_area), "size-allocate",
+	g_signal_connect_swapped (drawing_area, "size-allocate",
 	                          G_CALLBACK (screen_saver_on_size_allocate),
 	                          screen_saver);
 
-	g_signal_connect_swapped (G_OBJECT (drawing_area), "draw",
+	g_signal_connect_swapped (drawing_area, "draw",
 	                          G_CALLBACK (screen_saver_on_draw),
 	                          screen_saver);
 
@@ -1174,8 +1174,9 @@ main (int   argc,
 
 	window = gs_theme_window_new ();
 
-	g_signal_connect (G_OBJECT (window), "delete-event",
-	                  G_CALLBACK (gtk_main_quit), NULL);
+	g_signal_connect (window, "delete-event",
+	                  G_CALLBACK (gtk_main_quit),
+	                  NULL);
 
 	drawing_area = GTK_WIDGET (gtk_drawing_area_new ());
 

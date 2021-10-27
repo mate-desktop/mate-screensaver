@@ -721,7 +721,7 @@ setup_treeview (GtkWidget *tree,
 
 	select = gtk_tree_view_get_selection (GTK_TREE_VIEW (tree));
 	gtk_tree_selection_set_mode (select, GTK_SELECTION_SINGLE);
-	g_signal_connect (G_OBJECT (select), "changed",
+	g_signal_connect (select, "changed",
 	                  G_CALLBACK (tree_selection_changed_cb),
 	                  preview);
 
