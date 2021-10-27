@@ -115,7 +115,6 @@ gs_prefs_class_init (GSPrefsClass *klass)
 	object_class->get_property = gs_prefs_get_property;
 	object_class->set_property = gs_prefs_set_property;
 
-
 	signals [CHANGED] =
 	    g_signal_new ("changed",
 	                  G_TYPE_FROM_CLASS (object_class),

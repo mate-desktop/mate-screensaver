@@ -51,7 +51,6 @@
 */
 static int block_sigchld_handler = 0;
 
-
 #ifdef HAVE_SIGACTION
 sigset_t
 #else  /* !HAVE_SIGACTION */
@@ -156,7 +155,6 @@ await_dying_children (int      pid,
 			break;
 	}
 }
-
 
 #else  /* VMS */
 static void await_dying_children (saver_info *si)

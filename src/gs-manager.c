@@ -267,7 +267,6 @@ manager_select_theme_for_job (GSManager *manager,
 
 		gs_job_set_command (job, command);
 
-
 		if (info != NULL)
 		{
 			gs_theme_info_unref (info);
@@ -1075,7 +1074,6 @@ remove_unfade_idle (GSManager *manager)
 	}
 }
 
-
 static gboolean
 window_deactivated_idle (gpointer data)
 {
@@ -1229,7 +1227,6 @@ unfade_idle (GSManager *manager)
 	manager->priv->unfade_idle_id = 0;
 	return FALSE;
 }
-
 
 static void
 add_unfade_idle (GSManager *manager)

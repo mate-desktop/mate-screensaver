@@ -156,7 +156,6 @@ set_ids_by_number (uid_t  uid,
 	return FALSE;
 }
 
-
 /* If we've been run as setuid or setgid to someone else (most likely root)
    turn off the extra permissions so that random user-specified programs
    don't get special privileges.  (On some systems it is necessary to install
@@ -228,7 +227,6 @@ hack_uid (char **nolock_reason,
 			}
 		}
 	}
-
 
 	/* Locking can't work when running as root, because we have no way of
 	   knowing what the user id of the logged in user is (so we don't know
