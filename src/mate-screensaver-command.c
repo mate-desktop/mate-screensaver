@@ -108,7 +108,7 @@ static GOptionEntry entries [] =
 		"version", 'V', 0, G_OPTION_ARG_NONE, &do_version,
 		N_("Version of this application"), NULL
 	},
-	{ NULL }
+	{ NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL }
 };
 
 static GMainLoop *loop = NULL;

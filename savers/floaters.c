@@ -1142,7 +1142,7 @@ main (int   argc,
 		  N_("The initial size and position of window"), N_("WIDTHxHEIGHT+X+Y") },
 		{ G_OPTION_REMAINING, 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &filenames,
 		  N_("The source image to use"), NULL },
-		{NULL}
+		{ NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL }
 	};
 
 	bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);

@@ -67,7 +67,7 @@ main (int argc, char **argv)
 			"no-stretch", 0, 0, G_OPTION_ARG_NONE, &no_stretch,
 			N_("Do not try to stretch images on screen"), NULL
 		},
-		{ NULL }
+		{ NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL }
 	};
 
 	bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
