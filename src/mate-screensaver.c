@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 		{"version", 0, 0, G_OPTION_ARG_NONE, &show_version, N_("Version of this application"), NULL},
 		{"no-daemon", 0, 0, G_OPTION_ARG_NONE, &no_daemon, N_("Don't become a daemon"), NULL},
 		{"debug", 0, 0, G_OPTION_ARG_NONE, &debug, N_("Enable debugging code"), NULL},
-		{NULL}
+		{NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL}
 	};
 
 	#ifdef ENABLE_NLS
