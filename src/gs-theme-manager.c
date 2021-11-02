@@ -393,11 +393,25 @@ get_themes_tree (void)
 }
 
 static void
+on_applications_changed (MateMenuTree *menu_tree)
+{
+	GError *error = NULL;
+
+	if (!matemenu_tree_load_sync (menu_tree, &error)) {
+		g_debug ("Load matemenu tree got error: %s\n", error->message);
+		g_error_free (error);
+	}
+}
+
+static void
 gs_theme_manager_init (GSThemeManager *theme_manager)
 {
 	theme_manager->priv = gs_theme_manager_get_instance_private (theme_manager);
 
 	theme_manager->priv->menu_tree = get_themes_tree ();
+	g_signal_connect (theme_manager->priv->menu_tree, "changed",
+	                  G_CALLBACK (on_applications_changed),
+	                  NULL);
 }
 
 static void
