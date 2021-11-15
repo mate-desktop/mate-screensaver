@@ -4,20 +4,19 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Giuseppe Pignataro <rogepix@gmail.com>, 2018
-# Marco Bartolucci <nap.84@live.it>, 2018
-# l3nn4rt, 2018
-# Matteo, 2020
-# Enrico B. <enricobe@hotmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Giuseppe Pignataro <rogepix@gmail.com>, 2021
+# Enrico B. <enricobe@hotmail.com>, 2021
+# Matteo, 2021
+# Marco Bartolucci <nap.84@live.it>, 2021
 # Alessandro Volturno <alelvb@inwind.it>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.25.0\n"
+"Project-Id-Version: mate-screensaver 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 19:36+0200\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
+"POT-Creation-Date: 2021-09-18 17:24+0200\n"
+"PO-Revision-Date: 2021-09-20 18:34+0000\n"
 "Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2021\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
@@ -43,7 +42,7 @@ msgstr "MATE;screensaver;preferences;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
-msgstr "Anteprima del salvaschermo"
+msgstr "Anteprima del Salvaschermo"
 
 #: data/mate-screensaver-preferences.ui:59
 msgid "<b>Screensaver preview</b>"
@@ -110,7 +109,7 @@ msgstr "Cosmo"
 msgid "<span size=\"small\">%U on %h</span>"
 msgstr "<span size=\"small\">%U su %h</span>"
 
-#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2120
+#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2156
 msgid "Show password"
 msgstr "Mostra password"
 
@@ -128,9 +127,9 @@ msgstr "_Termina sessione"
 
 #: data/lock-dialog-default.ui:281 data/lock-dialog-default.ui:375
 msgid "_Cancel"
-msgstr "A_nnulla"
+msgstr "Annulla"
 
-#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1681
+#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1717
 msgid "_Unlock"
 msgstr "S_blocca"
 
@@ -320,21 +319,51 @@ msgid "Theme to use for the lock dialog"
 msgstr "Tema da usare per il dialogo di blocco"
 
 #: data/org.mate.screensaver.gschema.xml.in:80
+msgid "Format for time on lock dialog"
+msgstr "Formato per l'orario nella finestra di dialogo di blocco"
+
+#: data/org.mate.screensaver.gschema.xml.in:81
+msgid ""
+"Format to display the time on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %R for 24H format."
+msgstr ""
+"Il formato per l'orario sulla finestra di dialogo di blocco. Predefinito è "
+"il formato 'locale' che utilizza il formato predefinito per il locale "
+"corrente. I valori personalizzati dovrebbero essere impostati in conformità "
+"a g-date-time-format. Provate %R per il formato 24H."
+
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Format for date on lock dialog"
+msgstr "Formato per la data nella finestra di dialogo di blocco"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid ""
+"Format to display the date on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %F for ISO 8601 date format."
+msgstr ""
+"Il formato per la data sulla finestra di dialogo di blocco. Predefinito è il"
+" formato 'locale' che utilizza il formato predefinito per il locale "
+"corrente. I valori personalizzati dovrebbero essere impostati in conformità "
+"a g-date-time-format. Provate %F per il formato data ISO 8601."
+
+#: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
 msgstr "Consente di mostrare i messaggi di stato della sessione"
 
-#: data/org.mate.screensaver.gschema.xml.in:81
+#: data/org.mate.screensaver.gschema.xml.in:91
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr ""
 "Consente di mostrare i messaggi di stato della sessione quando lo schermo è "
 "bloccato."
 
-#: data/org.mate.screensaver.gschema.xml.in:85
+#: data/org.mate.screensaver.gschema.xml.in:95
 msgid "Picture Filename"
 msgstr "Nome del file immagine"
 
-#: data/org.mate.screensaver.gschema.xml.in:86
+#: data/org.mate.screensaver.gschema.xml.in:96
 msgid "File to use for the background image."
 msgstr "File da usare come immagine di sfondo."
 
@@ -477,7 +506,7 @@ msgstr "Non tentare di adattare le immagini allo schermo"
 
 #: src/copy-theme-dialog.c:181
 msgid "Copying files"
-msgstr "Copia dei file"
+msgstr "Sto copiando i file"
 
 #: src/copy-theme-dialog.c:200
 msgid "From:"
@@ -706,7 +735,7 @@ msgstr "Autenticazione non riuscita."
 
 #: src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
-msgstr "Schermo vuoto"
+msgstr "Schermo nero"
 
 #: src/mate-screensaver-preferences.c:463
 msgid "Random"
@@ -778,7 +807,7 @@ msgstr "Non diventare un demone"
 
 #: src/mate-screensaver.c:58
 msgid "Enable debugging code"
-msgstr "Abilitare il codice di debug"
+msgstr "Abilita il codice di debug"
 
 #: src/mate-screensaver.desktop.in.in:5
 msgid "Launch screensaver and locker program"
@@ -824,36 +853,34 @@ msgstr "non connesso al bus di messaggi"
 msgid "screensaver already running in this session"
 msgstr "salvaschermo già in esecuzione in questa sessione"
 
-#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
-#. GDateTime.html#g-date-time-format
-#: src/gs-lock-plug.c:302
+#: src/gs-lock-plug.c:330
 msgid "%A, %B %e"
 msgstr "%A, %B %e"
 
-#: src/gs-lock-plug.c:408
+#: src/gs-lock-plug.c:444
 msgid "Time has expired."
 msgstr "Tempo scaduto!"
 
-#: src/gs-lock-plug.c:439
+#: src/gs-lock-plug.c:475
 msgid "You have the Caps Lock key on."
 msgstr "Il tasto BlocMaiusc è attivo."
 
-#: src/gs-lock-plug.c:1661
+#: src/gs-lock-plug.c:1697
 msgid "S_witch User..."
 msgstr "_Cambia utente..."
 
-#: src/gs-lock-plug.c:1670
+#: src/gs-lock-plug.c:1706
 msgid "Log _Out"
 msgstr "_Termina sessione"
 
-#: src/gs-lock-plug.c:1883
+#: src/gs-lock-plug.c:1919
 msgid "%U on %h"
 msgstr "%U su %h"
 
-#: src/gs-lock-plug.c:1898
+#: src/gs-lock-plug.c:1934
 msgid "_Password:"
-msgstr "Pass_word:"
+msgstr "_Password:"
 
-#: src/gs-lock-plug.c:2126
+#: src/gs-lock-plug.c:2162
 msgid "Hide password"
 msgstr "Nascondi password"

@@ -4,22 +4,22 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Artopal <artopal+transifex@fastmail.fm>, 2018
-# Lluís Tusquellas <lutusq@gmail.com>, 2018
-# ZenWalker <scow@riseup.net>, 2018
-# Joel Barrios <darkshram@gmail.com>, 2018
-# Adolfo Jayme Barrientos, 2019
-# Benjamin Perez Carrillo <benperezc@gmail.com>, 2020
+# Adolfo Jayme-Barrientos, 2021
+# Artopal <artopal+transifex@fastmail.fm>, 2021
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Lluís Tusquellas <lutusq@gmail.com>, 2021
 # Toni Estévez <toni.estevez@gmail.com>, 2021
+# Benjamin Perez Carrillo <benperezc@gmail.com>, 2021
+# Joel Barrios <darkshram@gmail.com>, 2021
+# ZenWalker <scow@riseup.net>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.25.0\n"
+"Project-Id-Version: mate-screensaver 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 19:36+0200\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Toni Estévez <toni.estevez@gmail.com>, 2021\n"
+"POT-Creation-Date: 2021-09-18 17:24+0200\n"
+"PO-Revision-Date: 2021-09-20 18:34+0000\n"
+"Last-Translator: ZenWalker <scow@riseup.net>, 2021\n"
 "Language-Team: Spanish (https://www.transifex.com/mate/teams/13566/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -88,7 +88,7 @@ msgstr "Seleccione la imagen de fondo"
 
 #: data/mate-screensaver-preferences.ui:522
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>Alerta: la pantalla no se bloqueará para el superusuario.</b>"
+msgstr "<b>Atención: la pantalla no se bloqueará para el superusuario.</b>"
 
 #: data/mate-screensaver.directory.desktop.in:3
 msgid "Screensavers"
@@ -111,7 +111,7 @@ msgstr "Cosmos"
 msgid "<span size=\"small\">%U on %h</span>"
 msgstr "<span size=\"small\">%U en %h</span>"
 
-#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2120
+#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2156
 msgid "Show password"
 msgstr "Mostrar la contraseña"
 
@@ -131,7 +131,7 @@ msgstr "Cerrar la _sesión"
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1681
+#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1717
 msgid "_Unlock"
 msgstr "_Desbloquear"
 
@@ -319,21 +319,43 @@ msgid "Theme to use for the lock dialog"
 msgstr "Tema para usar en el diálogo de bloqueo."
 
 #: data/org.mate.screensaver.gschema.xml.in:80
+msgid "Format for time on lock dialog"
+msgstr "Formato de la hora en el diálogo de bloqueo"
+
+#: data/org.mate.screensaver.gschema.xml.in:81
+msgid ""
+"Format to display the time on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %R for 24H format."
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Format for date on lock dialog"
+msgstr "Formato de la fecha en el diálogo de bloqueo"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid ""
+"Format to display the date on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %F for ISO 8601 date format."
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
 msgstr "Permitir que se muestren los mensajes de estado de la sesión"
 
-#: data/org.mate.screensaver.gschema.xml.in:81
+#: data/org.mate.screensaver.gschema.xml.in:91
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr ""
 "Permitir que se muestren los mensajes de estado de la sesión cuando la "
 "pantalla está bloqueada."
 
-#: data/org.mate.screensaver.gschema.xml.in:85
+#: data/org.mate.screensaver.gschema.xml.in:95
 msgid "Picture Filename"
 msgstr "Nombre del archivo de imagen"
 
-#: data/org.mate.screensaver.gschema.xml.in:86
+#: data/org.mate.screensaver.gschema.xml.in:96
 msgid "File to use for the background image."
 msgstr "El archivo que usar como la imagen de fondo."
 
@@ -395,7 +417,7 @@ msgstr "Cuadrados de arte pop"
 
 #: savers/popsquares.desktop.in.in:4
 msgid "A pop-art-ish grid of pulsing colors."
-msgstr "Una cuadrícula de colores pulsantes de estilo arte pop."
+msgstr "Una rejilla de estilo de arte pop de colores pulsantes."
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -525,8 +547,8 @@ msgstr ""
 #: src/mate-screensaver-command.c:77
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
-"Indica el proceso del protector de pantalla en ejecución que desbloquee la "
-"pantalla inmediatamente"
+"Indica el proceso del salvapantallas en ejecución que desbloquee la pantalla"
+" inmediatamente"
 
 #: src/mate-screensaver-command.c:81
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -706,7 +728,7 @@ msgstr "La autenticación ha fallado."
 
 #: src/mate-screensaver-preferences.c:457
 msgid "Blank screen"
-msgstr "Pantalla oscurecida"
+msgstr "Pantalla en negro"
 
 #: src/mate-screensaver-preferences.c:463
 msgid "Random"
@@ -717,8 +739,8 @@ msgstr "Aleatorio"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d hora"
-msgstr[1] "%d horas"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:951
 #: src/mate-screensaver-preferences.c:960
@@ -731,15 +753,15 @@ msgstr[1] "%d horas"
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minuto"
-msgstr[1] "%d minutos"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:954
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d segundo"
-msgstr[1] "%d segundos"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:957
 #: src/mate-screensaver-preferences.c:1004
@@ -824,36 +846,34 @@ msgstr "no conectado al bus de mensajes"
 msgid "screensaver already running in this session"
 msgstr "el salvapantallas ya se está ejecutando en esta sesión"
 
-#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
-#. GDateTime.html#g-date-time-format
-#: src/gs-lock-plug.c:302
+#: src/gs-lock-plug.c:330
 msgid "%A, %B %e"
 msgstr "%A, %e de %B"
 
-#: src/gs-lock-plug.c:408
+#: src/gs-lock-plug.c:444
 msgid "Time has expired."
 msgstr "Se ha agotado el tiempo."
 
-#: src/gs-lock-plug.c:439
+#: src/gs-lock-plug.c:475
 msgid "You have the Caps Lock key on."
 msgstr "Tiene la tecla de bloqueo de mayúsculas activada."
 
-#: src/gs-lock-plug.c:1661
+#: src/gs-lock-plug.c:1697
 msgid "S_witch User..."
 msgstr "_Cambiar de usuario…"
 
-#: src/gs-lock-plug.c:1670
+#: src/gs-lock-plug.c:1706
 msgid "Log _Out"
 msgstr "Cerrar _sesión"
 
-#: src/gs-lock-plug.c:1883
+#: src/gs-lock-plug.c:1919
 msgid "%U on %h"
 msgstr "%U en %h"
 
-#: src/gs-lock-plug.c:1898
+#: src/gs-lock-plug.c:1934
 msgid "_Password:"
 msgstr "_Contraseña:"
 
-#: src/gs-lock-plug.c:2126
+#: src/gs-lock-plug.c:2162
 msgid "Hide password"
 msgstr "Ocultar la contraseña"

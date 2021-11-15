@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Alban <nofbname@gmail.com>, 2018
-# Indrit Bashkimi <indrit.bashkimi@gmail.com>, 2018
-# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Alban <nofbname@gmail.com>, 2021
 # Ardit Dani <ardit.dani@gmail.com>, 2021
+# Indrit Bashkimi <indrit.bashkimi@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.25.0\n"
+"Project-Id-Version: mate-screensaver 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 19:36+0200\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Ardit Dani <ardit.dani@gmail.com>, 2021\n"
+"POT-Creation-Date: 2021-09-18 17:24+0200\n"
+"PO-Revision-Date: 2021-09-20 18:34+0000\n"
+"Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>, 2021\n"
 "Language-Team: Albanian (https://www.transifex.com/mate/teams/13566/sq/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -107,7 +107,7 @@ msgstr "Kozmos"
 msgid "<span size=\"small\">%U on %h</span>"
 msgstr ""
 
-#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2120
+#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2156
 msgid "Show password"
 msgstr ""
 
@@ -127,7 +127,7 @@ msgstr "_Dil jashtë"
 msgid "_Cancel"
 msgstr "_Anulo"
 
-#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1681
+#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1717
 msgid "_Unlock"
 msgstr "_Liro"
 
@@ -298,19 +298,41 @@ msgid "Theme to use for the lock dialog"
 msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:80
-msgid "Allow the session status message to be displayed"
+msgid "Format for time on lock dialog"
 msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
-"Allow the session status message to be displayed when the screen is locked."
+"Format to display the time on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %R for 24H format."
 msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Format for date on lock dialog"
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid ""
+"Format to display the date on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %F for ISO 8601 date format."
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:90
+msgid "Allow the session status message to be displayed"
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:91
+msgid ""
+"Allow the session status message to be displayed when the screen is locked."
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:95
 msgid "Picture Filename"
 msgstr "Emri i file të figurës"
 
-#: data/org.mate.screensaver.gschema.xml.in:86
+#: data/org.mate.screensaver.gschema.xml.in:96
 msgid "File to use for the background image."
 msgstr "File që duhet përdorur si figurë sfondi."
 
@@ -790,36 +812,34 @@ msgstr "i palidhur me bus e mesazheve"
 msgid "screensaver already running in this session"
 msgstr "ruajtësi i ekranit është në funksion në këtë seancë"
 
-#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
-#. GDateTime.html#g-date-time-format
-#: src/gs-lock-plug.c:302
+#: src/gs-lock-plug.c:330
 msgid "%A, %B %e"
 msgstr ""
 
-#: src/gs-lock-plug.c:408
+#: src/gs-lock-plug.c:444
 msgid "Time has expired."
 msgstr "Koha skadoi."
 
-#: src/gs-lock-plug.c:439
+#: src/gs-lock-plug.c:475
 msgid "You have the Caps Lock key on."
 msgstr "Butoni Caps Lock është i shtypur."
 
-#: src/gs-lock-plug.c:1661
+#: src/gs-lock-plug.c:1697
 msgid "S_witch User..."
 msgstr ""
 
-#: src/gs-lock-plug.c:1670
+#: src/gs-lock-plug.c:1706
 msgid "Log _Out"
 msgstr "_Dil jashtë"
 
-#: src/gs-lock-plug.c:1883
+#: src/gs-lock-plug.c:1919
 msgid "%U on %h"
 msgstr ""
 
-#: src/gs-lock-plug.c:1898
+#: src/gs-lock-plug.c:1934
 msgid "_Password:"
 msgstr "_Fjalëkalimi:"
 
-#: src/gs-lock-plug.c:2126
+#: src/gs-lock-plug.c:2162
 msgid "Hide password"
 msgstr ""

@@ -4,20 +4,21 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# shuyu liu <liushuyu011@gmail.com>, 2018
-# e0c668032ced196bd60f2b6a070d982d_8f72ae0, 2019
-# Mingcong Bai <jeffbai@aosc.xyz>, 2020
-# Mingye Wang <arthur200126@gmail.com>, 2020
-# liulitchi <xingzuo88@qq.com>, 2021
+# e0c668032ced196bd60f2b6a070d982d_8f72ae0, 2021
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# liulitchi <xingzuo88@qq.com>, 2021
+# Mingcong Bai <jeffbai@aosc.xyz>, 2021
+# shuyu liu <liushuyu011@gmail.com>, 2021
+# Mingye Wang <arthur200126@gmail.com>, 2021
+# OkayPJ <1535253694@qq.com>, 2021
 # Wenbin Lv <wenbin816@gmail.com>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.25.0\n"
+"Project-Id-Version: mate-screensaver 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 19:36+0200\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
+"POT-Creation-Date: 2021-09-18 17:24+0200\n"
+"PO-Revision-Date: 2021-09-20 18:34+0000\n"
 "Last-Translator: Wenbin Lv <wenbin816@gmail.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/mate/teams/13566/zh_CN/)\n"
 "MIME-Version: 1.0\n"
@@ -79,7 +80,7 @@ msgstr "屏幕保护程序激活时锁定屏幕(_L)"
 
 #: data/mate-screensaver-preferences.ui:477
 msgid "Background picture for lock screen:"
-msgstr "锁屏背景图"
+msgstr "锁屏背景图："
 
 #: data/mate-screensaver-preferences.ui:496
 msgid "Select Background Image"
@@ -110,7 +111,7 @@ msgstr "宇宙"
 msgid "<span size=\"small\">%U on %h</span>"
 msgstr "<span size=\"small\">%U，登录于 %h</span>"
 
-#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2120
+#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2156
 msgid "Show password"
 msgstr "显示密码"
 
@@ -130,7 +131,7 @@ msgstr "注销(_L)"
 msgid "_Cancel"
 msgstr "取消(_C)"
 
-#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1681
+#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1717
 msgid "_Unlock"
 msgstr "解锁(_U)"
 
@@ -287,19 +288,44 @@ msgid "Theme to use for the lock dialog"
 msgstr "用于锁屏对话框的主题"
 
 #: data/org.mate.screensaver.gschema.xml.in:80
+msgid "Format for time on lock dialog"
+msgstr "锁定对话框中的时间格式"
+
+#: data/org.mate.screensaver.gschema.xml.in:81
+msgid ""
+"Format to display the time on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %R for 24H format."
+msgstr ""
+"在锁定对话框中显示的时间格式。默认为“locale”，也就是使用当前区域设定的默认格式。自定义值应当根据 g-date-time-format "
+
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Format for date on lock dialog"
+msgstr "锁定对话框中的日期格式"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid ""
+"Format to display the date on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %F for ISO 8601 date format."
+msgstr ""
+"在锁定对话框中显示的日期格式。默认为“locale”，即使用当前区域设置的默认格式。自定义值应当根据 g-date-time-format "
+"进行设置。ISO 8601 日期格式请使用 %F。"
+
+#: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
 msgstr "允许显示会话状态消息"
 
-#: data/org.mate.screensaver.gschema.xml.in:81
+#: data/org.mate.screensaver.gschema.xml.in:91
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr "屏幕被锁定时允许显示会话状态消息。"
 
-#: data/org.mate.screensaver.gschema.xml.in:85
+#: data/org.mate.screensaver.gschema.xml.in:95
 msgid "Picture Filename"
 msgstr "图片文件名"
 
-#: data/org.mate.screensaver.gschema.xml.in:86
+#: data/org.mate.screensaver.gschema.xml.in:96
 msgid "File to use for the background image."
 msgstr "用作背景图片的文件。"
 
@@ -668,7 +694,7 @@ msgstr "随机"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d 小时"
+msgstr[0] ""
 
 #: src/mate-screensaver-preferences.c:951
 #: src/mate-screensaver-preferences.c:960
@@ -681,13 +707,13 @@ msgstr[0] "%d 小时"
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d 分钟"
+msgstr[0] ""
 
 #: src/mate-screensaver-preferences.c:954
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d 秒"
+msgstr[0] ""
 
 #: src/mate-screensaver-preferences.c:957
 #: src/mate-screensaver-preferences.c:1004
@@ -772,36 +798,34 @@ msgstr "未连接到消息总线"
 msgid "screensaver already running in this session"
 msgstr "本会话中屏幕保护程序已经运行"
 
-#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
-#. GDateTime.html#g-date-time-format
-#: src/gs-lock-plug.c:302
+#: src/gs-lock-plug.c:330
 msgid "%A, %B %e"
 msgstr "%B%e日%A"
 
-#: src/gs-lock-plug.c:408
+#: src/gs-lock-plug.c:444
 msgid "Time has expired."
 msgstr "时间已到。"
 
-#: src/gs-lock-plug.c:439
+#: src/gs-lock-plug.c:475
 msgid "You have the Caps Lock key on."
 msgstr "您打开了 Caps Lock 键。"
 
-#: src/gs-lock-plug.c:1661
+#: src/gs-lock-plug.c:1697
 msgid "S_witch User..."
 msgstr "切换用户(_W)..."
 
-#: src/gs-lock-plug.c:1670
+#: src/gs-lock-plug.c:1706
 msgid "Log _Out"
 msgstr "注销(_O)"
 
-#: src/gs-lock-plug.c:1883
+#: src/gs-lock-plug.c:1919
 msgid "%U on %h"
 msgstr "%h 上的 %U"
 
-#: src/gs-lock-plug.c:1898
+#: src/gs-lock-plug.c:1934
 msgid "_Password:"
 msgstr "密码(_P)："
 
-#: src/gs-lock-plug.c:2126
+#: src/gs-lock-plug.c:2162
 msgid "Hide password"
 msgstr "隐藏密码"

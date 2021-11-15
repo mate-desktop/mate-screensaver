@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# 83471bf16eb03bd248ce865f88678158_08f49ba <b37580a9d5c210d723d81df1f8c6f8f2_815>, 2018
-# Kenneth Jenssen <kennethjenssen@yahoo.com>, 2018
-# Allan Nordhøy <epost@anotheragency.no>, 2020
+# 83471bf16eb03bd248ce865f88678158_08f49ba <b37580a9d5c210d723d81df1f8c6f8f2_815>, 2021
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Allan Nordhøy <epost@anotheragency.no>, 2021
+# Kenneth Jenssen <kennethjenssen@yahoo.com>, 2021
 # heskjestad <cato@heskjestad.xyz>, 2021
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.25.0\n"
+"Project-Id-Version: mate-screensaver 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 19:36+0200\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
+"POT-Creation-Date: 2021-09-18 17:24+0200\n"
+"PO-Revision-Date: 2021-09-20 18:34+0000\n"
 "Last-Translator: heskjestad <cato@heskjestad.xyz>, 2021\n"
 "Language-Team: Norwegian Bokmål (https://www.transifex.com/mate/teams/13566/nb/)\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgstr "Draktvalg for _skjermsparer:"
 
 #: data/mate-screensaver-preferences.ui:397
 msgid "Regard the computer as _idle after:"
-msgstr "Se på datamaskinen som _inaktiv etter:"
+msgstr "Betrakt datamaskinen som _inaktiv etter:"
 
 #: data/mate-screensaver-preferences.ui:440
 msgid "_Activate screensaver when computer is idle"
@@ -108,7 +108,7 @@ msgstr "Kosmos"
 msgid "<span size=\"small\">%U on %h</span>"
 msgstr "<span size=\"small\">%U på %h</span>"
 
-#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2120
+#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2156
 msgid "Show password"
 msgstr "Vis passord"
 
@@ -128,7 +128,7 @@ msgstr "_Logg ut"
 msgid "_Cancel"
 msgstr "_Avbryt"
 
-#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1681
+#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1717
 msgid "_Unlock"
 msgstr "Lå_s opp"
 
@@ -306,19 +306,47 @@ msgid "Theme to use for the lock dialog"
 msgstr "Drakt som skal brukes for låsningsdialogen"
 
 #: data/org.mate.screensaver.gschema.xml.in:80
+msgid "Format for time on lock dialog"
+msgstr "Formatering av klokkeslett på låseskjermen"
+
+#: data/org.mate.screensaver.gschema.xml.in:81
+msgid ""
+"Format to display the time on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %R for 24H format."
+msgstr ""
+"Formatering av klokkeslett på låseskjermen. Forvalgt verdi er «locale», som "
+"bruker gjeldende lokaltilpassing. Selvvalgte verdier må velges i henhold til"
+" g-date-time-format. Bruk %R for 24 timers klokkeslett."
+
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Format for date on lock dialog"
+msgstr "Formatering av dato på låseskjermen"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid ""
+"Format to display the date on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %F for ISO 8601 date format."
+msgstr ""
+"Formatering av dato på låseskjermen. Forvalgt verdi er «locale», som bruker "
+"gjeldende lokaltilpassing. Selvvalgte verdier må velges i henhold til g"
+"-date-time-format. Bruk %F for å formatere etter ISO 8601."
+
+#: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
 msgstr "Tillat visning av øktstatusmelding"
 
-#: data/org.mate.screensaver.gschema.xml.in:81
+#: data/org.mate.screensaver.gschema.xml.in:91
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr "La statusmeldinger for økta vises når skjermen er låst."
 
-#: data/org.mate.screensaver.gschema.xml.in:85
+#: data/org.mate.screensaver.gschema.xml.in:95
 msgid "Picture Filename"
 msgstr "Bildefilnavn"
 
-#: data/org.mate.screensaver.gschema.xml.in:86
+#: data/org.mate.screensaver.gschema.xml.in:96
 msgid "File to use for the background image."
 msgstr "Fil som skal brukes som bakgrunnsbilde."
 
@@ -537,12 +565,12 @@ msgstr "Programmet som hindrer skjermspareren"
 
 #: src/mate-screensaver-command.c:105
 msgid "The reason for inhibiting the screensaver"
-msgstr "Årsak for hinding av skjermsparer."
+msgstr "Årsak for hindring av skjermsparer."
 
 #: src/mate-screensaver-command.c:109 src/mate-screensaver-dialog.c:59
 #: src/mate-screensaver.c:56
 msgid "Version of this application"
-msgstr "Skjermsparerversjon"
+msgstr "Dette programmets versjon"
 
 #: src/mate-screensaver-command.c:359
 #, c-format
@@ -666,7 +694,7 @@ msgstr "Du må vente lenger før du endrer ditt passord"
 
 #: src/mate-screensaver-dialog.c:185
 msgid "Sorry, passwords do not match"
-msgstr "Beklager, passordene er ikke like"
+msgstr "Beklager, men passordene er ikke like"
 
 #: src/mate-screensaver-dialog.c:256
 msgid "Checking..."
@@ -796,36 +824,34 @@ msgstr "ikke koblet til meldingsbussen"
 msgid "screensaver already running in this session"
 msgstr "skjermsparer kjører allerede i denne økta"
 
-#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
-#. GDateTime.html#g-date-time-format
-#: src/gs-lock-plug.c:302
+#: src/gs-lock-plug.c:330
 msgid "%A, %B %e"
 msgstr "%A, %e. %B"
 
-#: src/gs-lock-plug.c:408
+#: src/gs-lock-plug.c:444
 msgid "Time has expired."
 msgstr "Tiden har løpt ut."
 
-#: src/gs-lock-plug.c:439
+#: src/gs-lock-plug.c:475
 msgid "You have the Caps Lock key on."
 msgstr "Caps-Lock tasten er aktivert."
 
-#: src/gs-lock-plug.c:1661
+#: src/gs-lock-plug.c:1697
 msgid "S_witch User..."
 msgstr "_Bytt bruker …"
 
-#: src/gs-lock-plug.c:1670
+#: src/gs-lock-plug.c:1706
 msgid "Log _Out"
 msgstr "Logg _ut"
 
-#: src/gs-lock-plug.c:1883
+#: src/gs-lock-plug.c:1919
 msgid "%U on %h"
 msgstr "%U på %h"
 
-#: src/gs-lock-plug.c:1898
+#: src/gs-lock-plug.c:1934
 msgid "_Password:"
 msgstr "_Passord:"
 
-#: src/gs-lock-plug.c:2126
+#: src/gs-lock-plug.c:2162
 msgid "Hide password"
 msgstr "Skjul passord"

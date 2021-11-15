@@ -8,10 +8,10 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.25.0\n"
+"Project-Id-Version: mate-screensaver 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 19:36+0200\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
+"POT-Creation-Date: 2021-09-18 17:24+0200\n"
+"PO-Revision-Date: 2021-09-20 18:34+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
 "Language-Team: Panjabi (Punjabi) (https://www.transifex.com/mate/teams/13566/pa/)\n"
 "MIME-Version: 1.0\n"
@@ -104,7 +104,7 @@ msgstr "ਕੋਸਮੋਸ"
 msgid "<span size=\"small\">%U on %h</span>"
 msgstr "<span size=\"small\">%h ਉੱਤੇ %U</span>"
 
-#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2120
+#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2156
 msgid "Show password"
 msgstr ""
 
@@ -124,7 +124,7 @@ msgstr "ਲਾਗਆਉਟ(_L)"
 msgid "_Cancel"
 msgstr "ਰੱਦ ਕਰੋ(_C)"
 
-#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1681
+#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1717
 msgid "_Unlock"
 msgstr "ਤਾਲਾ ਖੋਲ੍ਹੋ(_U)"
 
@@ -298,19 +298,41 @@ msgid "Theme to use for the lock dialog"
 msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:80
+msgid "Format for time on lock dialog"
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:81
+msgid ""
+"Format to display the time on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %R for 24H format."
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Format for date on lock dialog"
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid ""
+"Format to display the date on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %F for ISO 8601 date format."
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
 msgstr "ਸ਼ੈਸ਼ਨ ਹਾਲਤ ਸੁਨੇਹੇ ਵੇਖਾਉਣਾ ਮਨਜ਼ੂਰ"
 
-#: data/org.mate.screensaver.gschema.xml.in:81
+#: data/org.mate.screensaver.gschema.xml.in:91
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr "ਜਦੋਂ ਸਕਰੀਨ ਲਾਕ (ਤਾਲਾਬੰਦ) ਹੋਵੇ ਤਾਂ ਸ਼ੈਸ਼ਨ ਸੁਨੇਹੇ ਵੇਖਾਉਣ ਦੀ ਮਨਜ਼ੂਰੀ ਹੈ।"
 
-#: data/org.mate.screensaver.gschema.xml.in:85
+#: data/org.mate.screensaver.gschema.xml.in:95
 msgid "Picture Filename"
 msgstr "ਤਸਵੀਰ ਫਾਇਲ-ਨਾਂ"
 
-#: data/org.mate.screensaver.gschema.xml.in:86
+#: data/org.mate.screensaver.gschema.xml.in:96
 msgid "File to use for the background image."
 msgstr "ਬੈਕਗਰਾਊਂਡ ਚਿੱਤਰ ਦੇ ਤੌਰ ਤੇ ਵਰਤਣ ਲਈ ਫਾਇਲ"
 
@@ -789,36 +811,34 @@ msgstr "ਸੁਨੇਹਾ ਬਸ ਨਾਲ ਜੁੜਿਆ ਨਹੀਂ ਹੈ"
 msgid "screensaver already running in this session"
 msgstr "ਇਹ ਸ਼ੈਸ਼ਨ ਵਿੱਚ ਪਹਿਲਾਂ ਹੀ ਸਕਰੀਨ-ਸੇਵਰ ਚੱਲ ਰਿਹਾ ਹੈ"
 
-#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
-#. GDateTime.html#g-date-time-format
-#: src/gs-lock-plug.c:302
+#: src/gs-lock-plug.c:330
 msgid "%A, %B %e"
 msgstr ""
 
-#: src/gs-lock-plug.c:408
+#: src/gs-lock-plug.c:444
 msgid "Time has expired."
 msgstr "ਟਾਈਮ ਖਤਮ ਹੋ ਗਿਆ ਹੈ।"
 
-#: src/gs-lock-plug.c:439
+#: src/gs-lock-plug.c:475
 msgid "You have the Caps Lock key on."
 msgstr "ਤੁਹਾਡਾ ਕੈਪਸ (Caps) ਬਟਨ ਦੱਬਿਆ ਹੈ।"
 
-#: src/gs-lock-plug.c:1661
+#: src/gs-lock-plug.c:1697
 msgid "S_witch User..."
 msgstr "ਯੂਜ਼ਰ ਬਦਲੋ(_w)..."
 
-#: src/gs-lock-plug.c:1670
+#: src/gs-lock-plug.c:1706
 msgid "Log _Out"
 msgstr "ਲਾਗ-ਆਉਟ(_O)"
 
-#: src/gs-lock-plug.c:1883
+#: src/gs-lock-plug.c:1919
 msgid "%U on %h"
 msgstr "%h ਉੱਤੇ %U"
 
-#: src/gs-lock-plug.c:1898
+#: src/gs-lock-plug.c:1934
 msgid "_Password:"
 msgstr "ਪਾਸਵਰਡ(_P):"
 
-#: src/gs-lock-plug.c:2126
+#: src/gs-lock-plug.c:2162
 msgid "Hide password"
 msgstr ""
