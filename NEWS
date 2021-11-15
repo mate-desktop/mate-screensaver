@@ -1,3 +1,9 @@
+### mate-screensaver 1.26.1
+
+  * Translations update
+  * gs-theme-manager: reload on menu_tree changed
+  * Prompt-driven auth. helper
+
 ### mate-screensaver 1.26.0
 
   * Translations update
