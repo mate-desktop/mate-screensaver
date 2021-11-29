@@ -869,15 +869,8 @@ screen_saver_free (ScreenSaver *screen_saver)
 static gdouble
 screen_saver_get_timestamp (ScreenSaver *screen_saver)
 {
-	const gdouble microseconds_per_second = (gdouble ) G_USEC_PER_SEC;
-	gdouble timestamp;
-	GTimeVal now = { 0L, /* zero-filled */ };
-
-	g_get_current_time (&now);
-	timestamp = ((microseconds_per_second * now.tv_sec) + now.tv_usec) /
-	            microseconds_per_second;
-
-	return timestamp;
+	gint64 now = g_get_real_time ();
+	return (gdouble) now / (gdouble) G_USEC_PER_SEC;
 }
 
 static void
