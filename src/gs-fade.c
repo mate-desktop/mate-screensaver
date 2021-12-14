@@ -224,9 +224,9 @@ xf86_whack_gamma (int              screen,
 
 		for (i = 0; i < gamma_info->size; i++)
 		{
-			r[i] = gamma_info->r[i] * ratio;
-			g[i] = gamma_info->g[i] * ratio;
-			b[i] = gamma_info->b[i] * ratio;
+			r[i] = (unsigned short) (ratio * (float) gamma_info->r[i]);
+			g[i] = (unsigned short) (ratio * (float) gamma_info->g[i]);
+			b[i] = (unsigned short) (ratio * (float) gamma_info->b[i]);
 		}
 
 		status = XF86VidModeSetGammaRamp (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), screen, gamma_info->size, r, g, b);
@@ -546,9 +546,9 @@ static void xrandr_crtc_whack_gamma (MateRRCrtc *crtc,
 
 	for (i = 0; i < gamma_info->size; i++)
 	{
-		r[i] = gamma_info->r[i] * ratio;
-		g[i] = gamma_info->g[i] * ratio;
-		b[i] = gamma_info->b[i] * ratio;
+		r[i] = (unsigned short) (ratio * (float) gamma_info->r[i]);
+		g[i] = (unsigned short) (ratio * (float) gamma_info->g[i]);
+		b[i] = (unsigned short) (ratio * (float) gamma_info->b[i]);
 	}
 
 	mate_rr_crtc_set_gamma (crtc, gamma_info->size,
@@ -652,7 +652,7 @@ gs_fade_out_iter (GSFade *fade)
 static gboolean
 gs_fade_stop (GSFade *fade)
 {
-	if (fade->priv->timer_id > 0)
+	if (fade->priv->timer_id != 0)
 	{
 		g_source_remove (fade->priv->timer_id);
 		fade->priv->timer_id = 0;
@@ -719,41 +719,28 @@ static void
 gs_fade_start (GSFade *fade,
                guint   timeout)
 {
-	guint steps_per_sec = 60;
-	guint msecs_per_step;
-	gboolean active_fade, res;
-
 	g_return_if_fail (GS_IS_FADE (fade));
 
-	if (fade->priv->screen_priv.fade_type != FADE_TYPE_NONE)
-	{
-		res = fade->priv->screen_priv.fade_setup (fade);
-		if (res == FALSE)
-			return;
-	}
+	if ((fade->priv->screen_priv.fade_type != FADE_TYPE_NONE) &&
+	    (fade->priv->screen_priv.fade_setup (fade) == FALSE))
+		return;
 
-	if (fade->priv->timer_id > 0)
-	{
+	if (fade->priv->timer_id != 0)
 		gs_fade_stop (fade);
-	}
 
 	fade->priv->active = TRUE;
-
 	gs_fade_set_timeout (fade, timeout);
 
-	active_fade = FALSE;
 	if (fade->priv->screen_priv.fade_type != FADE_TYPE_NONE)
-		active_fade = TRUE;
-
-	if (active_fade)
 	{
-		guint num_steps;
+		double steps_per_sec = 60.0;
+		double msecs_per_step = 1000.0 / steps_per_sec;
+		double num_steps = ((double) fade->priv->timeout) / msecs_per_step;
 
-		num_steps = (fade->priv->timeout / 1000.0) * steps_per_sec;
-		msecs_per_step = 1000 / steps_per_sec;
-		fade->priv->alpha_per_iter = 1.0 / (gdouble)num_steps;
-
-		fade->priv->timer_id = g_timeout_add (msecs_per_step, (GSourceFunc)fade_out_timer, fade);
+		fade->priv->alpha_per_iter = 1.0 / num_steps;
+		fade->priv->timer_id = g_timeout_add ((guint) msecs_per_step,
+		                                      (GSourceFunc) fade_out_timer,
+		                                      fade);
 	}
 	else
 	{
