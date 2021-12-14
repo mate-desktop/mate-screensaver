@@ -1723,8 +1723,8 @@ expand_string (const char *text)
 	GString       *str;
 	const char    *p;
 	char          *username;
-	int            i;
-	int            n_chars;
+	glong          i;
+	glong          n_chars;
 	struct utsname name;
 
 	str = g_string_sized_new (strlen (text));
