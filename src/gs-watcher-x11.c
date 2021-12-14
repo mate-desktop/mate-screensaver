@@ -89,11 +89,11 @@ remove_watchdog_timer (GSWatcher *watcher)
 
 static void
 add_watchdog_timer (GSWatcher *watcher,
-                    glong      timeout)
+                    guint      timeout)
 {
 	watcher->priv->watchdog_timer_id = g_timeout_add (timeout,
-	                                   (GSourceFunc)watchdog_timer,
-	                                   watcher);
+	                                                  (GSourceFunc)watchdog_timer,
+	                                                  watcher);
 }
 
 static void
