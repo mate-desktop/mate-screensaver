@@ -93,10 +93,10 @@ static GSettings      *session_settings = NULL;
 static GSettings      *lockdown_settings = NULL;
 static MateDesktopThumbnailFactory *thumb_factory = NULL;
 
-static gint32
+static gdouble
 config_get_activate_delay (gboolean *is_writable)
 {
-	gint32 delay;
+	gint delay;
 
 	if (is_writable)
 	{
@@ -104,14 +104,12 @@ config_get_activate_delay (gboolean *is_writable)
 		               KEY_IDLE_DELAY);
 	}
 
-	delay = g_settings_get_int (session_settings, KEY_IDLE_DELAY);
-
-	if (delay < 1)
+	if ((delay = g_settings_get_int (session_settings, KEY_IDLE_DELAY)) < 1)
 	{
-		delay = 1;
+		return 1.0;
 	}
 
-	return delay;
+	return (gdouble) delay;
 }
 
 static void
@@ -1072,7 +1070,7 @@ format_value_callback_time (GtkScale *scale,
 	if (value == 0)
 		return g_strdup_printf (_("Never"));
 
-	return time_to_string_text (value * 60.0);
+	return time_to_string_text ((long) (value * 60.0));
 }
 
 static void
@@ -1154,7 +1152,7 @@ ui_set_enabled (gboolean enabled)
 }
 
 static void
-ui_set_delay (int delay)
+ui_set_delay (gdouble delay)
 {
 	GtkWidget *widget;
 
@@ -1201,7 +1199,7 @@ key_changed_cb (GSettings *settings, const gchar *key, gpointer data)
 			int delay;
 
 			delay = g_settings_get_int (settings, key);
-                        ui_set_delay (delay);
+			ui_set_delay ((gdouble) delay);
 
 	}
 	else
