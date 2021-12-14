@@ -40,7 +40,6 @@ xdg_user_dir_lookup (const char *type)
 	char buffer[512];
 	char *user_dir;
 	char *p, *d;
-	int len;
 	int relative;
 
 	home_dir = getenv ("HOME");
@@ -71,8 +70,8 @@ xdg_user_dir_lookup (const char *type)
 	while (fgets (buffer, sizeof (buffer), file))
 	{
 		/* Remove newline at end */
-		len = strlen (buffer);
-		if (len > 0 && buffer[len-1] == '\n')
+		size_t len = strlen (buffer);
+		if (len != 0 && buffer[len-1] == '\n')
 			buffer[len-1] = 0;
 
 		p = buffer;
