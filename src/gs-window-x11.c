@@ -615,11 +615,11 @@ remove_watchdog_timer (GSWindow *window)
 
 static void
 add_watchdog_timer (GSWindow *window,
-                    glong     timeout)
+                    guint     timeout)
 {
 	window->priv->watchdog_timer_id = g_timeout_add (timeout,
-	                                  (GSourceFunc)watchdog_timer,
-	                                  window);
+	                                                 (GSourceFunc)watchdog_timer,
+	                                                 window);
 }
 
 static void
