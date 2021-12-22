@@ -215,35 +215,35 @@ static void
 _gs_prefs_set_idle_activation_enabled (GSPrefs *prefs,
                                        gboolean value)
 {
-	prefs->idle_activation_enabled = value;
+	prefs->idle_activation_enabled = (value != FALSE);
 }
 
 static void
 _gs_prefs_set_lock_enabled (GSPrefs *prefs,
                             gboolean value)
 {
-	prefs->lock_enabled = value;
+	prefs->lock_enabled = (value != FALSE);
 }
 
 static void
 _gs_prefs_set_lock_disabled (GSPrefs *prefs,
                              gboolean value)
 {
-	prefs->lock_disabled = value;
+	prefs->lock_disabled = (value != FALSE);
 }
 
 static void
 _gs_prefs_set_user_switch_disabled (GSPrefs *prefs,
                                     gboolean value)
 {
-	prefs->user_switch_disabled = value;
+	prefs->user_switch_disabled = (value != FALSE);
 }
 
 static void
 _gs_prefs_set_keyboard_enabled (GSPrefs *prefs,
                                 gboolean value)
 {
-	prefs->keyboard_enabled = value;
+	prefs->keyboard_enabled = (value != FALSE);
 }
 
 static void
@@ -265,14 +265,14 @@ static void
 _gs_prefs_set_status_message_enabled (GSPrefs  *prefs,
                                       gboolean  enabled)
 {
-	prefs->status_message_enabled = enabled;
+	prefs->status_message_enabled = (enabled != FALSE);
 }
 
 static void
 _gs_prefs_set_logout_enabled (GSPrefs *prefs,
                               gboolean value)
 {
-	prefs->logout_enabled = value;
+	prefs->logout_enabled = (value != FALSE);
 }
 
 static void
@@ -309,7 +309,7 @@ static void
 _gs_prefs_set_user_switch_enabled (GSPrefs *prefs,
                                    gboolean value)
 {
-	prefs->user_switch_enabled = value;
+	prefs->user_switch_enabled = (value != FALSE);
 }
 
 static void

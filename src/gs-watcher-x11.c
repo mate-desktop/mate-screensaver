@@ -203,7 +203,7 @@ _gs_watcher_set_session_idle_notice (GSWatcher *watcher,
 		{
 			gs_debug ("Changing idle notice state: %d", in_effect);
 
-			watcher->priv->idle_notice = in_effect;
+			watcher->priv->idle_notice = (in_effect != FALSE);
 		}
 		else
 		{
@@ -230,7 +230,7 @@ _gs_watcher_set_session_idle (GSWatcher *watcher,
 		{
 			gs_debug ("Changing idle state: %d", is_idle);
 
-			watcher->priv->idle = is_idle;
+			watcher->priv->idle = (is_idle != FALSE);
 		}
 		else
 		{
@@ -269,7 +269,7 @@ _gs_watcher_set_active_internal (GSWatcher *watcher,
 		/* reset state */
 		_gs_watcher_reset_state (watcher);
 
-		watcher->priv->active = active;
+		watcher->priv->active = (active != FALSE);
 	}
 
 	return TRUE;
@@ -309,7 +309,7 @@ gs_watcher_set_enabled (GSWatcher *watcher,
 	{
 		gboolean is_active = gs_watcher_get_active (watcher);
 
-		watcher->priv->enabled = enabled;
+		watcher->priv->enabled = (enabled != FALSE);
 
 		/* if we are disabling the watcher and we are
 		   active shut it down */

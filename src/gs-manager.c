@@ -418,7 +418,7 @@ gs_manager_set_throttled (GSManager *manager,
 	{
 		GSList *l;
 
-		manager->priv->throttled = throttled;
+		manager->priv->throttled = (throttled != FALSE);
 
 		if (! manager->priv->dialog_up)
 		{
@@ -462,7 +462,7 @@ gs_manager_set_lock_active (GSManager *manager,
 	{
 		GSList *l;
 
-		manager->priv->lock_active = lock_active;
+		manager->priv->lock_active = (lock_active != FALSE);
 		for (l = manager->priv->windows; l; l = l->next)
 		{
 			gs_window_set_lock_enabled (l->data, lock_active);
@@ -495,7 +495,7 @@ gs_manager_set_lock_enabled (GSManager *manager,
 
 	if (manager->priv->lock_enabled != lock_enabled)
 	{
-		manager->priv->lock_enabled = lock_enabled;
+		manager->priv->lock_enabled = (lock_enabled != FALSE);
 	}
 }
 
@@ -509,7 +509,7 @@ gs_manager_set_logout_enabled (GSManager *manager,
 	{
 		GSList *l;
 
-		manager->priv->logout_enabled = logout_enabled;
+		manager->priv->logout_enabled = (logout_enabled != FALSE);
 		for (l = manager->priv->windows; l; l = l->next)
 		{
 			gs_window_set_logout_enabled (l->data, logout_enabled);
@@ -527,7 +527,7 @@ gs_manager_set_keyboard_enabled (GSManager *manager,
 	{
 		GSList *l;
 
-		manager->priv->keyboard_enabled = enabled;
+		manager->priv->keyboard_enabled = (enabled != FALSE);
 		for (l = manager->priv->windows; l; l = l->next)
 		{
 			gs_window_set_keyboard_enabled (l->data, enabled);
@@ -545,7 +545,7 @@ gs_manager_set_user_switch_enabled (GSManager *manager,
 	{
 		GSList *l;
 
-		manager->priv->user_switch_enabled = user_switch_enabled;
+		manager->priv->user_switch_enabled = (user_switch_enabled != FALSE);
 		for (l = manager->priv->windows; l; l = l->next)
 		{
 			gs_window_set_user_switch_enabled (l->data, user_switch_enabled);

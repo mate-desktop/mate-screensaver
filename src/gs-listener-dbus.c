@@ -363,7 +363,7 @@ gs_listener_set_throttle (GSListener *listener,
 	{
 		gs_debug ("Changing throttle status: %d", throttled);
 
-		listener->priv->throttled = throttled;
+		listener->priv->throttled = (throttled != FALSE);
 
 		g_signal_emit (listener, signals [THROTTLE_CHANGED], 0, throttled);
 	}
@@ -390,7 +390,7 @@ static gboolean
 listener_set_session_idle_internal (GSListener *listener,
                                     gboolean    idle)
 {
-	listener->priv->session_idle = idle;
+	listener->priv->session_idle = (idle != FALSE);
 
 	if (idle)
 	{
@@ -408,7 +408,7 @@ static gboolean
 listener_set_active_internal (GSListener *listener,
                               gboolean    active)
 {
-	listener->priv->active = active;
+	listener->priv->active = (active != FALSE);
 
 	/* if idle not in sync with active, change it */
 	if (listener->priv->session_idle != active)
@@ -496,7 +496,7 @@ gs_listener_set_session_idle (GSListener *listener,
 		}
 	}
 
-	listener->priv->session_idle = idle;
+	listener->priv->session_idle = (idle != FALSE);
 	res = listener_check_activation (listener);
 
 	/* if activation fails then don't set idle */
@@ -541,7 +541,7 @@ gs_listener_set_activation_enabled (GSListener *listener,
 
 	if (listener->priv->activation_enabled != enabled)
 	{
-		listener->priv->activation_enabled = enabled;
+		listener->priv->activation_enabled = (enabled != FALSE);
 	}
 }
 

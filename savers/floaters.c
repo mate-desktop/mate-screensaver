@@ -825,8 +825,8 @@ screen_saver_new (GtkWidget       *drawing_area,
 	screen_saver->floaters = NULL;
 	screen_saver->max_floater_count = max_floater_count;
 
-	screen_saver->should_show_paths = should_show_paths;
-	screen_saver->should_do_rotations = should_do_rotations;
+	screen_saver->should_show_paths = (should_show_paths != FALSE);
+	screen_saver->should_do_rotations = (should_do_rotations != FALSE);
 
 	screen_saver_get_initial_state (screen_saver);
 
