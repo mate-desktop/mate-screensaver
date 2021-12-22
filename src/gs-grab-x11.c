@@ -149,8 +149,8 @@ gs_grab_get (GSGrab     *grab,
 		                           (gpointer *) &grab->priv->grab_window);
 
 		grab->priv->grab_display = display;
-		grab->priv->no_pointer_grab = no_pointer_grab;
-		grab->priv->hide_cursor = hide_cursor;
+		grab->priv->no_pointer_grab = (no_pointer_grab != FALSE);
+		grab->priv->hide_cursor = (hide_cursor != FALSE);
 	}
 
 	g_object_unref (G_OBJECT (cursor));

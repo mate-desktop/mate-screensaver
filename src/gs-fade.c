@@ -272,7 +272,7 @@ gs_fade_set_enabled (GSFade  *fade,
 
 	if (fade->priv->enabled != enabled)
 	{
-		fade->priv->enabled = enabled;
+		fade->priv->enabled = (enabled != FALSE);
 	}
 }
 

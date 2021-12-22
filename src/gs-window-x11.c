@@ -1533,7 +1533,7 @@ window_set_dialog_up (GSWindow *window,
 		return;
 	}
 
-	window->priv->dialog_up = dialog_up;
+	window->priv->dialog_up = (dialog_up != FALSE);
 	g_object_notify (G_OBJECT (window), "dialog-up");
 }
 
@@ -1814,7 +1814,7 @@ gs_window_set_lock_enabled (GSWindow *window,
 		return;
 	}
 
-	window->priv->lock_enabled = lock_enabled;
+	window->priv->lock_enabled = (lock_enabled != FALSE);
 	g_object_notify (G_OBJECT (window), "lock-enabled");
 }
 
@@ -1832,7 +1832,7 @@ gs_window_set_keyboard_enabled (GSWindow *window,
 {
 	g_return_if_fail (GS_IS_WINDOW (window));
 
-	window->priv->keyboard_enabled = enabled;
+	window->priv->keyboard_enabled = (enabled != FALSE);
 }
 
 void
@@ -1859,7 +1859,7 @@ gs_window_set_logout_enabled (GSWindow *window,
 {
 	g_return_if_fail (GS_IS_WINDOW (window));
 
-	window->priv->logout_enabled = logout_enabled;
+	window->priv->logout_enabled = (logout_enabled != FALSE);
 }
 
 void
@@ -1868,7 +1868,7 @@ gs_window_set_user_switch_enabled (GSWindow *window,
 {
 	g_return_if_fail (GS_IS_WINDOW (window));
 
-	window->priv->user_switch_enabled = user_switch_enabled;
+	window->priv->user_switch_enabled = (user_switch_enabled != FALSE);
 }
 
 void
@@ -2278,7 +2278,7 @@ window_set_obscured (GSWindow *window,
 		return;
 	}
 
-	window->priv->obscured = obscured;
+	window->priv->obscured = (obscured != FALSE);
 	g_object_notify (G_OBJECT (window), "obscured");
 }
 
