@@ -56,6 +56,15 @@ static void gs_prefs_finalize   (GObject      *object);
 #define KEY_KEYBOARD_COMMAND "embedded-keyboard-command"
 #define KEY_STATUS_MESSAGE_ENABLED "status-message-enabled"
 
+#define _gs_prefs_set_idle_activation_enabled(x,y) ((x)->idle_activation_enabled = ((y) != FALSE))
+#define _gs_prefs_set_lock_enabled(x,y) ((x)->lock_enabled = ((y) != FALSE))
+#define _gs_prefs_set_lock_disabled(x,y) ((x)->lock_disabled = ((y) != FALSE))
+#define _gs_prefs_set_user_switch_disabled(x,y) ((x)->user_switch_disabled = ((y) != FALSE))
+#define _gs_prefs_set_keyboard_enabled(x,y) ((x)->keyboard_enabled = ((y) != FALSE))
+#define _gs_prefs_set_status_message_enabled(x,y) ((x)->status_message_enabled = ((y) != FALSE))
+#define _gs_prefs_set_logout_enabled(x,y) ((x)->logout_enabled = ((y) != FALSE))
+#define _gs_prefs_set_user_switch_enabled(x,y) ((x)->user_switch_enabled = ((y) != FALSE))
+
 struct GSPrefsPrivate
 {
 	GSettings *settings;
@@ -212,41 +221,6 @@ _gs_prefs_set_themes (GSPrefs *prefs,
 }
 
 static void
-_gs_prefs_set_idle_activation_enabled (GSPrefs *prefs,
-                                       gboolean value)
-{
-	prefs->idle_activation_enabled = (value != FALSE);
-}
-
-static void
-_gs_prefs_set_lock_enabled (GSPrefs *prefs,
-                            gboolean value)
-{
-	prefs->lock_enabled = (value != FALSE);
-}
-
-static void
-_gs_prefs_set_lock_disabled (GSPrefs *prefs,
-                             gboolean value)
-{
-	prefs->lock_disabled = (value != FALSE);
-}
-
-static void
-_gs_prefs_set_user_switch_disabled (GSPrefs *prefs,
-                                    gboolean value)
-{
-	prefs->user_switch_disabled = (value != FALSE);
-}
-
-static void
-_gs_prefs_set_keyboard_enabled (GSPrefs *prefs,
-                                gboolean value)
-{
-	prefs->keyboard_enabled = (value != FALSE);
-}
-
-static void
 _gs_prefs_set_keyboard_command (GSPrefs    *prefs,
                                 const char *value)
 {
@@ -259,20 +233,6 @@ _gs_prefs_set_keyboard_command (GSPrefs    *prefs,
 
 		prefs->keyboard_command = g_strdup (value);
 	}
-}
-
-static void
-_gs_prefs_set_status_message_enabled (GSPrefs  *prefs,
-                                      gboolean  enabled)
-{
-	prefs->status_message_enabled = (enabled != FALSE);
-}
-
-static void
-_gs_prefs_set_logout_enabled (GSPrefs *prefs,
-                              gboolean value)
-{
-	prefs->logout_enabled = (value != FALSE);
 }
 
 static void
@@ -303,13 +263,6 @@ _gs_prefs_set_logout_timeout (GSPrefs *prefs,
 		value = 480;
 
 	prefs->logout_timeout = value * 60000;
-}
-
-static void
-_gs_prefs_set_user_switch_enabled (GSPrefs *prefs,
-                                   gboolean value)
-{
-	prefs->user_switch_enabled = (value != FALSE);
 }
 
 static void
