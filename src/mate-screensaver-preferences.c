@@ -663,19 +663,20 @@ separator_func (GtkTreeModel *model,
                 GtkTreeIter  *iter,
                 gpointer      data)
 {
-	int   column = GPOINTER_TO_INT (data);
-	char *text;
+	int       column = GPOINTER_TO_INT (data);
+	gboolean  res = FALSE;
+	char     *text;
 
 	gtk_tree_model_get (model, iter, column, &text, -1);
 
 	if (text != NULL && strcmp (text, "__separator") == 0)
 	{
-		return TRUE;
+		res = TRUE;
 	}
 
 	g_free (text);
 
-	return FALSE;
+	return res;
 }
 
 static void
