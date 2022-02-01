@@ -227,7 +227,6 @@ static ScreenSaver *screen_saver_new (GtkWidget       *drawing_area,
                                       gboolean         should_do_rotations,
                                       gboolean         should_show_paths);
 static void screen_saver_free (ScreenSaver *screen_saver);
-static gdouble screen_saver_get_timestamp (ScreenSaver *screen_saver);
 static void screen_saver_get_initial_state (ScreenSaver *screen_saver);
 static void screen_saver_update_state (ScreenSaver *screen_saver,
                                        gdouble      time);
@@ -866,20 +865,6 @@ screen_saver_free (ScreenSaver *screen_saver)
 	g_free (screen_saver);
 }
 
-static gdouble
-screen_saver_get_timestamp (ScreenSaver *screen_saver)
-{
-	const gdouble microseconds_per_second = (gdouble ) G_USEC_PER_SEC;
-	gdouble timestamp;
-	GTimeVal now = { 0L, /* zero-filled */ };
-
-	g_get_current_time (&now);
-	timestamp = ((microseconds_per_second * now.tv_sec) + now.tv_usec) /
-	            microseconds_per_second;
-
-	return timestamp;
-}
-
 static void
 screen_saver_create_floaters (ScreenSaver *screen_saver)
 {
@@ -1049,10 +1034,17 @@ screen_saver_update_state (ScreenSaver *screen_saver,
 	}
 }
 
+static gdouble
+screen_saver_get_timestamp ()
+ {
+	gint64 now = g_get_real_time ();
+	return ((gdouble) now) / (gdouble) G_USEC_PER_SEC;
+}
+
 static void
 screen_saver_get_initial_state (ScreenSaver *screen_saver)
 {
-	screen_saver->first_update_time = screen_saver_get_timestamp (screen_saver);
+	screen_saver->first_update_time = screen_saver_get_timestamp ();
 	screen_saver_update_state (screen_saver, 0.0);
 }
 
@@ -1074,7 +1066,7 @@ screen_saver_do_update_state (ScreenSaver *screen_saver)
 		screen_saver->draw_ops_pending = FALSE;
 	}
 
-	current_update_time = screen_saver_get_timestamp (screen_saver);
+	current_update_time = screen_saver_get_timestamp ();
 	screen_saver_update_state (screen_saver, current_update_time -
 	                           screen_saver->first_update_time);
 	screen_saver->update_count++;
@@ -1087,8 +1079,7 @@ screen_saver_do_update_stats (ScreenSaver *screen_saver)
 	gdouble last_calculated_stats_time, seconds_since_last_stats_update;
 
 	last_calculated_stats_time = screen_saver->current_calculated_stats_time;
-	screen_saver->current_calculated_stats_time =
-	    screen_saver_get_timestamp (screen_saver);
+	screen_saver->current_calculated_stats_time = screen_saver_get_timestamp ();
 	screen_saver->last_calculated_stats_time = last_calculated_stats_time;
 
 	if (fabs (last_calculated_stats_time) <= G_MINDOUBLE)

@@ -106,7 +106,7 @@ typedef struct
 	char    *connection;
 	guint32  cookie;
 	guint32  foreign_cookie;
-	GTimeVal since;
+	gint64   since;
 } GSListenerRefEntry;
 
 enum
@@ -832,9 +832,10 @@ accumulate_ref_entry (gpointer            key,
 {
 	char *description;
 	char *time;
+	GDateTime *dt;
 
-	time = g_time_val_to_iso8601 (&entry->since);
-
+	dt = g_date_time_new_from_unix_utc (entry->since);
+	time = g_date_time_format_iso8601 (dt);
 	description = g_strdup_printf ("Application=\"%s\"; Since=\"%s\"; Reason=\"%s\";",
 	                               entry->application,
 	                               time,
@@ -844,6 +845,7 @@ accumulate_ref_entry (gpointer            key,
 
 	g_free (description);
 	g_free (time);
+	g_date_time_unref (dt);
 }
 
 static DBusHandlerResult
@@ -906,7 +908,7 @@ listener_add_ck_ref_entry (GSListener     *listener,
 	entry->cookie = listener_generate_unique_key (listener, entry_type);
 	entry->application = g_strdup ("ConsoleKit");
 	entry->reason = g_strdup ("Session is not active");
-	g_get_current_time (&entry->since);
+	entry->since = g_get_real_time ();
 
 	/* takes ownership of entry */
 	listener_add_ref_entry (listener, entry_type, entry);
@@ -973,7 +975,7 @@ listener_dbus_add_ref_entry (GSListener     *listener,
 	entry->cookie = listener_generate_unique_key (listener, entry_type);
 	entry->application = g_strdup (application);
 	entry->reason = g_strdup (reason);
-	g_get_current_time (&entry->since);
+	entry->since = g_get_real_time ();
 
 	listener_add_ref_entry (listener, entry_type, entry);
 
