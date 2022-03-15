@@ -89,12 +89,6 @@ main (int    argc,
 	textdomain (GETTEXT_PACKAGE);
 #endif
 
-	if (error)
-	{
-		fprintf (stderr, "%s\n", error->message);
-		exit (1);
-	}
-
 	if (! gtk_init_with_args (&argc, &argv, NULL, NULL, NULL, &error))
 	{
 		fprintf (stderr, "%s", error->message);
