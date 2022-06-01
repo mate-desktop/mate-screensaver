@@ -1115,7 +1115,7 @@ AC_SUBST(themesdir)
 
 # Files
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 po/Makefile.in
 src/Makefile
@@ -1131,6 +1131,7 @@ doc/Makefile
 doc/mate-screensaver.xml
 helper/Makefile
 ])
+AC_OUTPUT
 
 echo "
 Configure summary:
