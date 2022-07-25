@@ -165,7 +165,7 @@ dnl ---------------------------------------------------------------------------
 dnl - Where should we put documentation ?
 dnl ---------------------------------------------------------------------------
 AC_ARG_WITH(doc-dir,
-              [AC_HELP_STRING([--with-doc-dir=<dir>],
+              [AS_HELP_STRING([--with-doc-dir=<dir>],
               [directory to install documentation])])
 if ! test -z "$with_doc_dir"; then
    DOCDIR="$with_doc_dir/mate-screensaver-$VERSION"
@@ -449,7 +449,7 @@ fi
 
 # Check whether to use a xscreensaver hacks configuration directory
 AC_MSG_CHECKING([whether to use xscreensaver hacks configuration])
-AC_ARG_WITH(xscreensaverdir, AC_HELP_STRING([--with-xscreensaverdir=dir], [Use xscreensaver hack configs found in directory],))
+AC_ARG_WITH(xscreensaverdir, AS_HELP_STRING([--with-xscreensaverdir=dir], [Use xscreensaver hack configs found in directory],))
 xscreensaverdir=
 if test "x$with_xscreensaverdir" = "xyes"; then
   if test -d /usr/share/xscreensaver/config; then
@@ -471,7 +471,7 @@ else
 fi
 
 # Path to xscreensaver hack executables
-AC_ARG_WITH(xscreensaverhackdir, AC_HELP_STRING([--with-xscreensaverhackdir=dir], [Look for xscreensaver hack executables in directory],))
+AC_ARG_WITH(xscreensaverhackdir, AS_HELP_STRING([--with-xscreensaverhackdir=dir], [Look for xscreensaver hack executables in directory],))
 AC_MSG_CHECKING([for location of xscreensaver hack executables])
 xscreensaverhackdir=
 if test "x$with_xscreensaverhackdir" = "xyes" -o "x$with_xscreensaverhackdir" = "x"; then
@@ -566,7 +566,7 @@ dnl - Check for PAM
 dnl ---------------------------------------------------------------------------
 
 have_pam=no
-AC_ARG_ENABLE(pam, AC_HELP_STRING([--enable-pam],
+AC_ARG_ENABLE(pam, AS_HELP_STRING([--enable-pam],
                    [Enable PAM support @<:@default=auto@:>@],
                    ),,enable_pam=auto)
 
