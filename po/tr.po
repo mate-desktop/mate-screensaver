@@ -9,14 +9,16 @@
 # mauron, 2019
 # Butterfly <gokhanlnx@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Hüseyin Güç <huseyinguc@outlook.com>, 2022
+# Sabri Ünal <libreajans@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.25.0\n"
+"Project-Id-Version: mate-screensaver 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 19:36+0200\n"
+"POT-Creation-Date: 2022-10-29 15:32+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>, 2022\n"
 "Language-Team: Turkish (https://www.transifex.com/mate/teams/13566/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,7 +39,7 @@ msgstr "Ekran koruyucunuzun tercihlerini belirtin"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr ""
+msgstr "MATE;ekrankoruyucu;tercihler;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
@@ -77,7 +79,7 @@ msgstr "Ekran koruyucu etkinken ekranı ki_litle"
 
 #: data/mate-screensaver-preferences.ui:477
 msgid "Background picture for lock screen:"
-msgstr ""
+msgstr "Kilit ekranı için arka plan resmi:"
 
 #: data/mate-screensaver-preferences.ui:496
 msgid "Select Background Image"
@@ -108,9 +110,9 @@ msgstr "Kozmos"
 msgid "<span size=\"small\">%U on %h</span>"
 msgstr "<span size=\"small\">%h üzerinde %U</span>"
 
-#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2120
+#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2150
 msgid "Show password"
-msgstr ""
+msgstr "Parolayı göster"
 
 #: data/lock-dialog-default.ui:233
 msgid "_Leave Message"
@@ -128,7 +130,7 @@ msgstr "_Çıkış"
 msgid "_Cancel"
 msgstr "_Vazgeç"
 
-#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1681
+#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1711
 msgid "_Unlock"
 msgstr "_Kilidi aç"
 
@@ -317,19 +319,43 @@ msgid "Theme to use for the lock dialog"
 msgstr "Kilit penceresi için kullanılacak tema"
 
 #: data/org.mate.screensaver.gschema.xml.in:80
+msgid "Format for time on lock dialog"
+msgstr "Kilitli iletişim kutusundaki saat formatı"
+
+#: data/org.mate.screensaver.gschema.xml.in:81
+msgid ""
+"Format to display the time on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %R for 24H format."
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Format for date on lock dialog"
+msgstr ""
+" \n"
+"Kilit iletişim kutusundaki tarih formatı"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid ""
+"Format to display the date on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %F for ISO 8601 date format."
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
 msgstr "Oturum durum mesajının gösterilmesine izin ver"
 
-#: data/org.mate.screensaver.gschema.xml.in:81
+#: data/org.mate.screensaver.gschema.xml.in:91
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr "Ekran kilitlendiğinde oturum durum mesajının gösterilmesine izin ver."
 
-#: data/org.mate.screensaver.gschema.xml.in:85
+#: data/org.mate.screensaver.gschema.xml.in:95
 msgid "Picture Filename"
 msgstr "Resim Dosya Adı"
 
-#: data/org.mate.screensaver.gschema.xml.in:86
+#: data/org.mate.screensaver.gschema.xml.in:96
 msgid "File to use for the background image."
 msgstr "Arkaplan görüntüsü için kullanılacak dosya"
 
@@ -341,7 +367,7 @@ msgstr "Kozmosun resimlerini slayt gösterisi şeklinde göster"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr ""
+msgstr "MATE;ekran koruyucu;özel;slayt gösterisi;cosmos;resim;klasör;"
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -355,7 +381,7 @@ msgstr "Ekran üzerinde MATE logosu baloncukları oluşturur"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr ""
+msgstr "MATE;ekrankoruyucu;ekran koruyucu;logo;balonlar;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -369,21 +395,21 @@ msgstr "Ekran üzerinde GNOME logosu baloncukları oluşturur"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr ""
+msgstr "MATE;ekran koruyucu;GNOME;logo;balonlar;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
-msgstr "Resim dizini"
+msgstr "Resim klasörü"
 
 #: savers/personal-slideshow.desktop.in.in:4
 msgid "Display a slideshow from your Pictures folder"
-msgstr "Resim dizininizden bir slayt gösterisi göster"
+msgstr "Resim klasörünüzden bir slayt gösterisi göster"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
-msgstr ""
+msgstr "MATE;ekran koruyucu;özel;slayt gösterisi;resim;klasör;"
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
@@ -397,50 +423,50 @@ msgstr "Bir pop-art-ish nabız gibi atan renklerin ızgarası."
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr ""
+msgstr "MATE;ekran koruyucu;renkler;"
 
-#: savers/popsquares.c:50 savers/floaters.c:1169
+#: savers/popsquares.c:50 savers/floaters.c:1161
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. Kullanım bilgisi için --help çıktısına bakınız.\n"
 
-#: savers/floaters.c:1141
+#: savers/floaters.c:1134
 msgid "Show paths that images follow"
 msgstr "Görüntülerin izlediği yolları göster"
 
-#: savers/floaters.c:1143
+#: savers/floaters.c:1136
 msgid "Occasionally rotate images as they move"
 msgstr "Bazen resimleri hareket ettikçe döndür"
 
-#: savers/floaters.c:1145
+#: savers/floaters.c:1138
 msgid "Print out frame rate and other statistics"
 msgstr "Saniyedeki kare hızını ve diğer istatistikleri yazdır"
 
-#: savers/floaters.c:1147
+#: savers/floaters.c:1140
 msgid "The maximum number of images to keep on screen"
 msgstr "Ekranda tutulacak en fazla görüntü sayısı"
 
-#: savers/floaters.c:1147
+#: savers/floaters.c:1140
 msgid "MAX_IMAGES"
 msgstr "MAK_GÖRÜNTÜLER"
 
-#: savers/floaters.c:1149
+#: savers/floaters.c:1142
 msgid "The initial size and position of window"
 msgstr "Pencerenin ilk baştaki boyutu ve konumu"
 
-#: savers/floaters.c:1149
+#: savers/floaters.c:1142
 msgid "WIDTHxHEIGHT+X+Y"
 msgstr "GENİŞLİKxYÜKSEKLİK+X+Y"
 
-#: savers/floaters.c:1151
+#: savers/floaters.c:1144
 msgid "The source image to use"
 msgstr "Kullanılacak kaynak görüntü"
 
-#: savers/floaters.c:1163
+#: savers/floaters.c:1156
 msgid "image - floats images around the screen"
 msgstr "görüntü - görüntüleri ekran boyunca kaydır"
 
-#: savers/floaters.c:1178
+#: savers/floaters.c:1170
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr ""
 "Bir görüntü belirtmelisiniz.  Kullanım bilgisi için --help çıktısına "
@@ -594,7 +620,7 @@ msgstr "Hata ayıklama çıktısını göster"
 
 #: src/mate-screensaver-dialog.c:60
 msgid "Show the logout button"
-msgstr "Çıkış düğmesini göster"
+msgstr "Oturumu kapat düğmesini göster"
 
 #: src/mate-screensaver-dialog.c:61
 msgid "Command to invoke from the logout button"
@@ -617,12 +643,12 @@ msgid "Not used"
 msgstr "Kullanılmıyor"
 
 #: src/mate-screensaver-dialog.c:167 src/mate-screensaver-dialog.c:168
-#: src/mate-screensaver-dialog.c:169 src/gs-auth-pam.c:750
+#: src/mate-screensaver-dialog.c:169 src/gs-auth-pam.c:723
 msgid "Username:"
 msgstr "Kullanıcı adı:"
 
 #: src/mate-screensaver-dialog.c:170 src/mate-screensaver-dialog.c:171
-#: src/gs-auth-pam.c:172
+#: src/gs-auth-pam.c:145
 msgid "Password:"
 msgstr "Parola:"
 
@@ -686,75 +712,71 @@ msgstr "Üzgünüm, parolalar uyuşmuyor"
 msgid "Checking..."
 msgstr "Kontrol ediliyor..."
 
-#: src/mate-screensaver-dialog.c:302 src/gs-auth-pam.c:485
+#: src/mate-screensaver-dialog.c:302 src/gs-auth-pam.c:458
 msgid "Authentication failed."
 msgstr "Kimlik kontrolü başarısız."
 
-#: src/mate-screensaver-preferences.c:457
+#: src/mate-screensaver-preferences.c:455
 msgid "Blank screen"
 msgstr "Boş ekran"
 
-#: src/mate-screensaver-preferences.c:463
+#: src/mate-screensaver-preferences.c:461
 msgid "Random"
 msgstr "Rastgele"
 
-#: src/mate-screensaver-preferences.c:948
-#: src/mate-screensaver-preferences.c:958
+#: src/mate-screensaver-preferences.c:951
+#: src/mate-screensaver-preferences.c:961
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d saat"
 msgstr[1] "%d saat"
 
-#: src/mate-screensaver-preferences.c:951
-#: src/mate-screensaver-preferences.c:960
-#: src/mate-screensaver-preferences.c:969
-#: src/mate-screensaver-preferences.c:972
-#: src/mate-screensaver-preferences.c:977
-#: src/mate-screensaver-preferences.c:980
-#: src/mate-screensaver-preferences.c:985
-#: src/mate-screensaver-preferences.c:988
+#: src/mate-screensaver-preferences.c:954
+#: src/mate-screensaver-preferences.c:963
+#: src/mate-screensaver-preferences.c:975
+#: src/mate-screensaver-preferences.c:990
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d dakika"
 msgstr[1] "%d dakika"
 
-#: src/mate-screensaver-preferences.c:954
+#: src/mate-screensaver-preferences.c:957
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] "%d saniye"
 msgstr[1] "%d saniye"
 
-#: src/mate-screensaver-preferences.c:957
-#: src/mate-screensaver-preferences.c:1004
-#: src/mate-screensaver-preferences.c:1017
+#: src/mate-screensaver-preferences.c:965
+#: src/mate-screensaver-preferences.c:1013
+#: src/mate-screensaver-preferences.c:1023
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
-#: src/mate-screensaver-preferences.c:999
+#: src/mate-screensaver-preferences.c:1010
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
 
-#: src/mate-screensaver-preferences.c:1009
-#: src/mate-screensaver-preferences.c:1022
-#: src/mate-screensaver-preferences.c:1058
+#: src/mate-screensaver-preferences.c:1016
+#: src/mate-screensaver-preferences.c:1030
+#: src/mate-screensaver-preferences.c:1056
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: src/mate-screensaver-preferences.c:1073
+#: src/mate-screensaver-preferences.c:1071
 msgid "Never"
 msgstr "Asla"
 
-#: src/mate-screensaver-preferences.c:1635
+#: src/mate-screensaver-preferences.c:1632
 msgid "Could not load the main interface"
 msgstr "Ana arayüz yüklenemedi"
 
-#: src/mate-screensaver-preferences.c:1637
+#: src/mate-screensaver-preferences.c:1634
 msgid "Please make sure that the screensaver is properly installed"
 msgstr ""
 "Lütfen ekran koruyucusunun düzgün bir şekilde kurulmuş olduğundan emin olun"
@@ -775,72 +797,70 @@ msgstr "Ekran koruyucu ve kilitleyici programı başlat"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr ""
+msgstr "MATE;ekrankoruyucu;ekran koruyucu;kilitleyen;"
 
-#: src/gs-auth-pam.c:415
+#: src/gs-auth-pam.c:388
 #, c-format
 msgid "Unable to establish service %s: %s\n"
 msgstr "Servis %s kurulamadı: %s\n"
 
-#: src/gs-auth-pam.c:445
+#: src/gs-auth-pam.c:418
 #, c-format
 msgid "Can't set PAM_TTY=%s"
 msgstr "PAM_TTY=%s yapılamadı"
 
-#: src/gs-auth-pam.c:481
+#: src/gs-auth-pam.c:454
 msgid "Incorrect password."
 msgstr "Yanlış parola."
 
-#: src/gs-auth-pam.c:501
+#: src/gs-auth-pam.c:474
 msgid "Not permitted to gain access at this time."
 msgstr "Şu an erişim kazanmaya izinli değil."
 
-#: src/gs-auth-pam.c:509
+#: src/gs-auth-pam.c:482
 msgid "No longer permitted to access the system."
 msgstr "Sisteme erişimine artık izin verilmiyor."
 
-#: src/gs-listener-dbus.c:2246
+#: src/gs-listener-dbus.c:2248
 msgid "failed to register with the message bus"
 msgstr "mesaj veri yoluna kayıt başarısız"
 
-#: src/gs-listener-dbus.c:2257
+#: src/gs-listener-dbus.c:2259
 msgid "not connected to the message bus"
 msgstr "mesaj veri yoluna bağlı değil"
 
-#: src/gs-listener-dbus.c:2267 src/gs-listener-dbus.c:2299
+#: src/gs-listener-dbus.c:2269 src/gs-listener-dbus.c:2301
 msgid "screensaver already running in this session"
 msgstr "Bu oturumda ekran koruyucu zaten çalışmakta"
 
-#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
-#. GDateTime.html#g-date-time-format
-#: src/gs-lock-plug.c:302
+#: src/gs-lock-plug.c:328
 msgid "%A, %B %e"
 msgstr "%e %B %A"
 
-#: src/gs-lock-plug.c:408
+#: src/gs-lock-plug.c:442
 msgid "Time has expired."
 msgstr "Süre doldu."
 
-#: src/gs-lock-plug.c:439
+#: src/gs-lock-plug.c:472
 msgid "You have the Caps Lock key on."
 msgstr "Büyük harf kilidi tuşunuz açık."
 
-#: src/gs-lock-plug.c:1661
+#: src/gs-lock-plug.c:1691
 msgid "S_witch User..."
 msgstr "K_ullanıcı Değiştir..."
 
-#: src/gs-lock-plug.c:1670
+#: src/gs-lock-plug.c:1700
 msgid "Log _Out"
 msgstr "_Oturumu Kapat"
 
-#: src/gs-lock-plug.c:1883
+#: src/gs-lock-plug.c:1913
 msgid "%U on %h"
 msgstr "%h üzerinde %U"
 
-#: src/gs-lock-plug.c:1898
+#: src/gs-lock-plug.c:1928
 msgid "_Password:"
 msgstr "_Parola:"
 
-#: src/gs-lock-plug.c:2126
+#: src/gs-lock-plug.c:2156
 msgid "Hide password"
-msgstr ""
+msgstr "Parolayı gizle"

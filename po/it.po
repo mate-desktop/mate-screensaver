@@ -5,26 +5,25 @@
 # 
 # Translators:
 # Giuseppe Pignataro <rogepix@gmail.com>, 2018
-# Marco Bartolucci <nap.84@live.it>, 2018
+# Marco Bartolucci, 2018
 # l3nn4rt, 2018
 # Matteo, 2020
-# Enrico B. <enricobe@hotmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# Alessandro Volturno <alelvb@inwind.it>, 2021
+# Alessandro Volturno <alelvb@inwind.it>, 2022
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.25.0\n"
+"Project-Id-Version: mate-screensaver 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 19:36+0200\n"
+"POT-Creation-Date: 2022-10-29 15:32+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2021\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2022\n"
 "Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: data/mate-screensaver-preferences.desktop.in:3
 #: src/mate-screensaver.desktop.in.in:4
@@ -55,7 +54,7 @@ msgstr "Preferenze del salvaschermo"
 
 #: data/mate-screensaver-preferences.ui:203
 msgid "Power _Management"
-msgstr "_Gestione alimentazione"
+msgstr "Gestione dell'ali_mentazione"
 
 #: data/mate-screensaver-preferences.ui:219
 msgid "_Preview"
@@ -67,7 +66,7 @@ msgstr "Tema del _salvaschermo:"
 
 #: data/mate-screensaver-preferences.ui:397
 msgid "Regard the computer as _idle after:"
-msgstr "C_onsiderare il computer come inattivo dopo:"
+msgstr "Considerare il computer come _inattivo dopo:"
 
 #: data/mate-screensaver-preferences.ui:440
 msgid "_Activate screensaver when computer is idle"
@@ -75,15 +74,15 @@ msgstr "_Avviare il salvaschermo quando il computer è inattivo"
 
 #: data/mate-screensaver-preferences.ui:455
 msgid "_Lock screen when screensaver is active"
-msgstr "_Bloccare lo schermo quando il salvaschermo viene avviato"
+msgstr "B_loccare lo schermo quando il salvaschermo è attivo"
 
 #: data/mate-screensaver-preferences.ui:477
 msgid "Background picture for lock screen:"
-msgstr "Immagine sfondo della schermata di blocco:"
+msgstr "Immagine di sfondo della schermata di blocco:"
 
 #: data/mate-screensaver-preferences.ui:496
 msgid "Select Background Image"
-msgstr "Seleziona immagine di sfondo"
+msgstr "Seleziona l'immagine per lo sfondo"
 
 #: data/mate-screensaver-preferences.ui:522
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
@@ -91,7 +90,7 @@ msgstr "<b>Attenzione: lo schermo non verrà bloccato per l'utente root.</b>"
 
 #: data/mate-screensaver.directory.desktop.in:3
 msgid "Screensavers"
-msgstr "Salvaschermo"
+msgstr "Salvaschermi"
 
 #: data/mate-screensaver.directory.desktop.in:4
 #: data/org.mate.screensaver.gschema.xml.in:25
@@ -110,13 +109,13 @@ msgstr "Cosmo"
 msgid "<span size=\"small\">%U on %h</span>"
 msgstr "<span size=\"small\">%U su %h</span>"
 
-#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2120
+#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2150
 msgid "Show password"
-msgstr "Mostra password"
+msgstr "Mostra la password"
 
 #: data/lock-dialog-default.ui:233
 msgid "_Leave Message"
-msgstr "_Lascia messaggio"
+msgstr "_Lascia un messaggio"
 
 #: data/lock-dialog-default.ui:249
 msgid "_Switch User"
@@ -130,7 +129,7 @@ msgstr "_Termina sessione"
 msgid "_Cancel"
 msgstr "A_nnulla"
 
-#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1681
+#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1711
 msgid "_Unlock"
 msgstr "S_blocca"
 
@@ -149,7 +148,7 @@ msgstr "Attivare quando inattivo"
 #: data/org.mate.screensaver.gschema.xml.in:11
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
-"Impostare a \"vero\" per attivare il salvaschermo quando la sessione è "
+"Impostare a \"true\" per attivare il salvaschermo quando la sessione è "
 "inattiva."
 
 #: data/org.mate.screensaver.gschema.xml.in:15
@@ -159,12 +158,12 @@ msgstr "Blocca all'attivazione"
 #: data/org.mate.screensaver.gschema.xml.in:16
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
-"Impostare a \"vero\" per bloccare lo schermo quando il salvaschermo viene "
+"Impostare a \"true\" per bloccare lo schermo quando il salvaschermo viene "
 "avviato."
 
 #: data/org.mate.screensaver.gschema.xml.in:20
 msgid "Screensaver theme selection mode"
-msgstr "Modalità selezione tema salvaschermo"
+msgstr "Modalità di selezione del tema del salvaschermo"
 
 #: data/org.mate.screensaver.gschema.xml.in:21
 msgid ""
@@ -178,7 +177,7 @@ msgstr ""
 "per abilitare il salvaschermo senza usare alcun tema all'attivazione, "
 "\"single\" per abilitare il salvaschermo usando solo un tema all'attivazione"
 " (specificato nella chiave \"themes\") e \"random\" per abilitare il "
-"salvaschermo usando un tema scelto a caso all'attivazione."
+"salvaschermo utilizzando all'attivazione un tema scelto a caso."
 
 #: data/org.mate.screensaver.gschema.xml.in:26
 msgid ""
@@ -187,22 +186,22 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
-"Questa chiave specifica l'elenco dei temi usati dal salvaschermo. È ignorata"
-" quando la chiave \"mode\" è \"blank-only\", dovrebbe fornire il nome del "
-"tema quando \"mode\" è \"single\" e dovrebbe fornire un elenco di temi "
-"quando \"mode\" è \"random\"."
+"Questa chiave specifica l'elenco dei temi utilizzati dal salvaschermo. È "
+"ignorata quando la chiave \"mode\" è \"blank-only\", dovrebbe fornire il "
+"nome del tema quando \"mode\" vale \"single\" e dovrebbe fornire un elenco "
+"di temi quando \"mode\" vale \"random\"."
 
 #: data/org.mate.screensaver.gschema.xml.in:30
 msgid "Time before power management baseline"
-msgstr "Tempo prima della linea di base del gestore energetico"
+msgstr "Tempo prima della soglia del gestore energetico"
 
 #: data/org.mate.screensaver.gschema.xml.in:31
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
 msgstr ""
-"Il numero di secondi di assenza di attività prima della segnalazione al "
-"gestore di alimentazione. Questa chiave è impostata e mantenuta dall'agente "
+"Il numero di secondi di inattività prima della segnalazione al gestore "
+"dell'alimentazione. Questa chiave è impostata e mantenuta dall'agente "
 "gestione di alimentazione della sessione."
 
 #: data/org.mate.screensaver.gschema.xml.in:35
@@ -229,7 +228,7 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:45
 msgid "Allow embedding a keyboard into the window"
-msgstr "Consente inserimento di una tastiera nella finestra"
+msgstr "Consente l'inserimento di una tastiera nella finestra"
 
 #: data/org.mate.screensaver.gschema.xml.in:46
 msgid ""
@@ -237,13 +236,13 @@ msgid ""
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
-"Impostare a \"vero\" per consentire l'inserimento di una tastiera nella "
+"Impostare a \"true\" per consentire l'inserimento di una tastiera nella "
 "finestra quando si prova a sbloccare. La chiave \"keyboard_command\" deve "
 "essere impostata con il comando appropriato."
 
 #: data/org.mate.screensaver.gschema.xml.in:50
 msgid "Embedded keyboard command"
-msgstr "Comando tastiera inserita"
+msgstr "Comando della tastiera integrata"
 
 #: data/org.mate.screensaver.gschema.xml.in:51
 msgid ""
@@ -253,26 +252,26 @@ msgid ""
 "output."
 msgstr ""
 "Il comando che viene eseguito, se la chiave \"embedded_keyboard_enabled\" è "
-"impostata a \"vero\", per inserire un oggetto tastiera nella finestra. "
+"impostata a \"true\", per inserire un oggetto tastiera nella finestra. "
 "Questo comando dovrebbe implementare una interfaccia di plug XEMBED e "
 "fornire come output uno XID di finestra sullo standard output."
 
 #: data/org.mate.screensaver.gschema.xml.in:55
 msgid "Allow logout"
-msgstr "Consentire il logout"
+msgstr "Consentire la disconnessione"
 
 #: data/org.mate.screensaver.gschema.xml.in:56
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
 msgstr ""
-"Impostare a \"vero\" per fornire un'opzione nel dialogo di sblocco per poter"
-" effettuare il logout dopo un certo intervallo di tempo. Tale intervallo è "
-"specificato nella chiave \"logout_delay\"."
+"Impostare a \"true\" per fornire un'opzione nel dialogo di sblocco per poter"
+" effettuare la disconnessione dopo un certo intervallo di tempo. Tale "
+"intervallo è specificato nella chiave \"logout_delay\"."
 
 #: data/org.mate.screensaver.gschema.xml.in:60
 msgid "Time before logout option"
-msgstr "Tempo prima dell'opzione logout"
+msgstr "Tempo prima dell'opzione di disconnessione"
 
 #: data/org.mate.screensaver.gschema.xml.in:61
 msgid ""
@@ -281,8 +280,9 @@ msgid ""
 "\"logout_enable\" key is set to TRUE."
 msgstr ""
 "Il numero di minuti dopo l'avvio del salvaschermo prima che appaia "
-"un'opzione per terminare la sessione nel dialogo di sblocco. Questa chiave "
-"ha effetto solo se la chiave \"logout_enable\" è impostata a \"vero\"."
+"un'opzione per terminare la sessione nella finestra di dialogo di sblocco. "
+"Questa chiave ha effetto solo se la chiave \"logout_enable\" è impostata a "
+"\"true\"."
 
 #: data/org.mate.screensaver.gschema.xml.in:65
 msgid "Logout command"
@@ -297,44 +297,74 @@ msgstr ""
 "Il comando da invocare quando si fa clic sul pulsante di logout. Questo "
 "comando dovrebbe semplicemente disconnettere l'utente senza alcuna "
 "interazione. Questa chiave ha effetto solo se la chiave \"logout_enable\" è "
-"impostata a \"vero\"."
+"impostata a \"true\"."
 
 #: data/org.mate.screensaver.gschema.xml.in:70
 msgid "Allow user switching"
-msgstr "Consente il cambio utente"
+msgstr "Consenti il cambio dell'utente"
 
 #: data/org.mate.screensaver.gschema.xml.in:71
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
-"Impostare a \"vero\" per fornire un'opzione nel dialogo di sblocco con cui "
-"passare a un diverso account utente."
+"Impostare a \"true\" per fornire un'opzione nel dialogo di sblocco con cui "
+"passare ad un diverso account utente."
 
 #: data/org.mate.screensaver.gschema.xml.in:75
 msgid "Theme for lock dialog"
-msgstr "Tema per dialogo di blocco"
+msgstr "Tema per la finestra di dialogo di blocco"
 
 #: data/org.mate.screensaver.gschema.xml.in:76
 msgid "Theme to use for the lock dialog"
-msgstr "Tema da usare per il dialogo di blocco"
+msgstr "Tema da usare per la finestra di dialogo di blocco"
 
 #: data/org.mate.screensaver.gschema.xml.in:80
-msgid "Allow the session status message to be displayed"
-msgstr "Consente di mostrare i messaggi di stato della sessione"
+msgid "Format for time on lock dialog"
+msgstr "Formato per l'ora nella finestra di dialogo di blocco"
 
 #: data/org.mate.screensaver.gschema.xml.in:81
+msgid ""
+"Format to display the time on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %R for 24H format."
+msgstr ""
+"Il formato per l'orario sulla finestra di dialogo di blocco. Predefinito è "
+"il formato 'locale' che utilizza il formato predefinito per il locale "
+"corrente. I valori personalizzati dovrebbero essere impostati in conformità "
+"a g-date-time-format. Provate %R per il formato 24H."
+
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Format for date on lock dialog"
+msgstr "Formato per la data nella finestra di dialogo di blocco"
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid ""
+"Format to display the date on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %F for ISO 8601 date format."
+msgstr ""
+"Il formato per la data sulla finestra di dialogo di blocco. Predefinito è il"
+" formato 'locale' che utilizza il formato predefinito per il locale "
+"corrente. I valori personalizzati dovrebbero essere impostati in conformità "
+"a g-date-time-format. Provate %F per il formato data ISO 8601."
+
+#: data/org.mate.screensaver.gschema.xml.in:90
+msgid "Allow the session status message to be displayed"
+msgstr "Consenti di mostrare i messaggi di stato della sessione"
+
+#: data/org.mate.screensaver.gschema.xml.in:91
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr ""
 "Consente di mostrare i messaggi di stato della sessione quando lo schermo è "
 "bloccato."
 
-#: data/org.mate.screensaver.gschema.xml.in:85
+#: data/org.mate.screensaver.gschema.xml.in:95
 msgid "Picture Filename"
 msgstr "Nome del file immagine"
 
-#: data/org.mate.screensaver.gschema.xml.in:86
+#: data/org.mate.screensaver.gschema.xml.in:96
 msgid "File to use for the background image."
 msgstr "File da usare come immagine di sfondo."
 
@@ -404,52 +434,52 @@ msgstr "Una griglia in stile Pop-art di colori pulsanti."
 msgid "MATE;screensaver;grid;pulsing;colors;"
 msgstr "MATE;screensaver;grid;pulsing;colors;"
 
-#: savers/popsquares.c:50 savers/floaters.c:1169
+#: savers/popsquares.c:50 savers/floaters.c:1161
 #, c-format
 msgid "%s. See --help for usage information.\n"
-msgstr "%s. Usare --help per informazioni sull'uso.\n"
+msgstr "%s. Utilizzare --help per le informazioni sull'uso.\n"
 
-#: savers/floaters.c:1141
+#: savers/floaters.c:1134
 msgid "Show paths that images follow"
 msgstr "Mostra i percorsi seguiti dalle immagini"
 
-#: savers/floaters.c:1143
+#: savers/floaters.c:1136
 msgid "Occasionally rotate images as they move"
 msgstr "Occasionalmente ruota le immagini durante lo spostamento"
 
-#: savers/floaters.c:1145
+#: savers/floaters.c:1138
 msgid "Print out frame rate and other statistics"
-msgstr "Stampa frame rate e altre statistiche"
+msgstr "Stampa il frame rate e le altre statistiche"
 
-#: savers/floaters.c:1147
+#: savers/floaters.c:1140
 msgid "The maximum number of images to keep on screen"
 msgstr "Il numero massimo di immagini da tenere sullo schermo"
 
-#: savers/floaters.c:1147
+#: savers/floaters.c:1140
 msgid "MAX_IMAGES"
-msgstr "MAX_IMAGES"
+msgstr "NUMERO_MASSIMO_IMMAGINI"
 
-#: savers/floaters.c:1149
+#: savers/floaters.c:1142
 msgid "The initial size and position of window"
-msgstr "La dimensione e posizione iniziale della finestra"
+msgstr "La dimensione e la posizione iniziale della finestra"
 
-#: savers/floaters.c:1149
+#: savers/floaters.c:1142
 msgid "WIDTHxHEIGHT+X+Y"
-msgstr "WIDTHxHEIGHT+X+Y"
+msgstr "LARGHEZZAxALTEZZA+X+Y"
 
-#: savers/floaters.c:1151
+#: savers/floaters.c:1144
 msgid "The source image to use"
-msgstr "L'immagine sorgente da usare"
+msgstr "L'immagine sorgente da utilizzare"
 
-#: savers/floaters.c:1163
+#: savers/floaters.c:1156
 msgid "image - floats images around the screen"
-msgstr "Image - fa fluttuare immagini sullo schermo"
+msgstr "Image - fa fluttuare le immagini sullo schermo"
 
-#: savers/floaters.c:1178
+#: savers/floaters.c:1170
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr ""
-"È necessario specificare una immagine. Usare --help per informazioni "
-"sull'uso.\n"
+"È necessario specificare una immagine. Utilizzare --help per le informazioni"
+" sull'uso.\n"
 
 #: savers/slideshow.c:56
 msgid "Location to get images from"
@@ -457,11 +487,11 @@ msgstr "Posizione da cui prelevare le immagini"
 
 #: savers/slideshow.c:56
 msgid "PATH"
-msgstr "PATH"
+msgstr "PERCORSO"
 
 #: savers/slideshow.c:60
 msgid "Color to use for images background"
-msgstr "Colore da usare per sfondo immagini"
+msgstr "Colore da usare per lo sfondo delle immagini"
 
 #: savers/slideshow.c:60
 msgid "\"#rrggbb\""
@@ -469,7 +499,7 @@ msgstr "\"#rrggbb\""
 
 #: savers/slideshow.c:64
 msgid "Do not randomize pictures from location"
-msgstr "Non recupera a caso le immagini dalla posizione"
+msgstr "Non recuperare a caso le immagini dalla posizione"
 
 #: savers/slideshow.c:68
 msgid "Do not try to stretch images on screen"
@@ -498,16 +528,16 @@ msgstr "Tema di salvaschermo non valido"
 #: src/copy-theme-dialog.c:271
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
-msgstr "Sembra che «%s» non sia un tema di salvaschermo valido."
+msgstr "Sembra che %s non sia un tema di salvaschermo valido."
 
 #: src/copy-theme-dialog.c:449
 #, c-format
 msgid "Copying file: %u of %u"
-msgstr "Copia del file: %u di %u"
+msgstr "Copia dei file: %u di %u"
 
 #: src/mate-screensaver-command.c:61
 msgid "Causes the screensaver to exit gracefully"
-msgstr "Causa l'uscita non forzosa del salvaschermo"
+msgstr "Causa l'uscita non forzata del salvaschermo"
 
 #: src/mate-screensaver-command.c:65
 msgid "Query the state of the screensaver"
@@ -536,7 +566,7 @@ msgstr ""
 
 #: src/mate-screensaver-command.c:85
 msgid "Turn the screensaver on (blank the screen)"
-msgstr "Avvia il salvaschermo (cancellazione dello schermo)"
+msgstr "Avvia il salvaschermo (cancella lo schermo)"
 
 #: src/mate-screensaver-command.c:89
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
@@ -546,14 +576,14 @@ msgstr ""
 #: src/mate-screensaver-command.c:93
 msgid "Poke the running screensaver to simulate user activity"
 msgstr ""
-"Invia al salvaschermo in esecuzione una segnalazione di attività utente"
+"Invia al salvaschermo in esecuzione una segnalazione di attività dell'utente"
 
 #: src/mate-screensaver-command.c:97
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
 msgstr ""
-"Inibisce l'avvio del salvaschermo. I comandi sono bloccati mentre "
+"Inibisci l'avvio del salvaschermo. I comandi sono bloccati mentre "
 "l'inibizione è attiva."
 
 #: src/mate-screensaver-command.c:101
@@ -588,7 +618,7 @@ msgstr "Il salvaschermo non è inibito\n"
 
 #: src/mate-screensaver-command.c:383
 msgid "The screensaver is being inhibited by:\n"
-msgstr "Il salvaschermo è stato inibito da:\n"
+msgstr "Il salvaschermo è inibito da:\n"
 
 #: src/mate-screensaver-command.c:418
 #, c-format
@@ -601,7 +631,7 @@ msgstr "l salvaschermo non è attivo al momento.\n"
 
 #: src/mate-screensaver-dialog.c:58
 msgid "Show debugging output"
-msgstr "Mostra l'outptut di debug"
+msgstr "Mostra le informazioni di debug"
 
 #: src/mate-screensaver-dialog.c:60
 msgid "Show the logout button"
@@ -609,7 +639,7 @@ msgstr "Mostra il pulsante per terminare la sessione"
 
 #: src/mate-screensaver-dialog.c:61
 msgid "Command to invoke from the logout button"
-msgstr "Comando da invocare col pulsante di termine sessione"
+msgstr "Comando da invocare premendo il pulsante di fine sessione"
 
 #: src/mate-screensaver-dialog.c:62
 msgid "Show the switch user button"
@@ -617,7 +647,7 @@ msgstr "Mostra il pulsante cambia utente"
 
 #: src/mate-screensaver-dialog.c:63
 msgid "Message to show in the dialog"
-msgstr "Messaggio da mostrare nel dialogo"
+msgstr "Il messaggio da mostrare nella finestra di dialogo"
 
 #: src/mate-screensaver-dialog.c:63 src/mate-screensaver-dialog.c:64
 msgid "MESSAGE"
@@ -628,12 +658,12 @@ msgid "Not used"
 msgstr "Non usato"
 
 #: src/mate-screensaver-dialog.c:167 src/mate-screensaver-dialog.c:168
-#: src/mate-screensaver-dialog.c:169 src/gs-auth-pam.c:750
+#: src/mate-screensaver-dialog.c:169 src/gs-auth-pam.c:723
 msgid "Username:"
 msgstr "Nome utente:"
 
 #: src/mate-screensaver-dialog.c:170 src/mate-screensaver-dialog.c:171
-#: src/gs-auth-pam.c:172
+#: src/gs-auth-pam.c:145
 msgid "Password:"
 msgstr "Password:"
 
@@ -649,7 +679,7 @@ msgstr ""
 
 #: src/mate-screensaver-dialog.c:174
 msgid "Your account has expired; please contact your system administrator"
-msgstr "Il proprio account è scaduto; contattare l'amministratore di sistema"
+msgstr "Il vostro account è scaduto; contattare l'amministratore di sistema"
 
 #: src/mate-screensaver-dialog.c:175
 msgid "No password supplied"
@@ -685,7 +715,7 @@ msgstr "È necessario scegliere una password più lunga."
 
 #: src/mate-screensaver-dialog.c:183
 msgid "Password has been already used. Choose another."
-msgstr "La password è stata già usata. Sceglierne un'altra."
+msgstr "La password è già stata usata. Sceglierne un'altra."
 
 #: src/mate-screensaver-dialog.c:184
 msgid "You must wait longer to change your password"
@@ -694,81 +724,80 @@ msgstr ""
 
 #: src/mate-screensaver-dialog.c:185
 msgid "Sorry, passwords do not match"
-msgstr "Le password non corrispondono"
+msgstr "Spiacenti, le password non coincidono"
 
 #: src/mate-screensaver-dialog.c:256
 msgid "Checking..."
 msgstr "Controllo..."
 
-#: src/mate-screensaver-dialog.c:302 src/gs-auth-pam.c:485
+#: src/mate-screensaver-dialog.c:302 src/gs-auth-pam.c:458
 msgid "Authentication failed."
 msgstr "Autenticazione non riuscita."
 
-#: src/mate-screensaver-preferences.c:457
+#: src/mate-screensaver-preferences.c:455
 msgid "Blank screen"
 msgstr "Schermo vuoto"
 
-#: src/mate-screensaver-preferences.c:463
+#: src/mate-screensaver-preferences.c:461
 msgid "Random"
 msgstr "Casuale"
 
-#: src/mate-screensaver-preferences.c:948
-#: src/mate-screensaver-preferences.c:958
+#: src/mate-screensaver-preferences.c:951
+#: src/mate-screensaver-preferences.c:961
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d ora"
 msgstr[1] "%d ore"
+msgstr[2] "%d ore"
 
-#: src/mate-screensaver-preferences.c:951
-#: src/mate-screensaver-preferences.c:960
-#: src/mate-screensaver-preferences.c:969
-#: src/mate-screensaver-preferences.c:972
-#: src/mate-screensaver-preferences.c:977
-#: src/mate-screensaver-preferences.c:980
-#: src/mate-screensaver-preferences.c:985
-#: src/mate-screensaver-preferences.c:988
+#: src/mate-screensaver-preferences.c:954
+#: src/mate-screensaver-preferences.c:963
+#: src/mate-screensaver-preferences.c:975
+#: src/mate-screensaver-preferences.c:990
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d minuto"
 msgstr[1] "%d minuti"
+msgstr[2] "%d minuti"
 
-#: src/mate-screensaver-preferences.c:954
+#: src/mate-screensaver-preferences.c:957
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] "%d secondo"
 msgstr[1] "%d secondi"
+msgstr[2] "%d secondi"
 
-#: src/mate-screensaver-preferences.c:957
-#: src/mate-screensaver-preferences.c:1004
-#: src/mate-screensaver-preferences.c:1017
+#: src/mate-screensaver-preferences.c:965
+#: src/mate-screensaver-preferences.c:1013
+#: src/mate-screensaver-preferences.c:1023
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
-#: src/mate-screensaver-preferences.c:999
+#: src/mate-screensaver-preferences.c:1010
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
 
-#: src/mate-screensaver-preferences.c:1009
-#: src/mate-screensaver-preferences.c:1022
-#: src/mate-screensaver-preferences.c:1058
+#: src/mate-screensaver-preferences.c:1016
+#: src/mate-screensaver-preferences.c:1030
+#: src/mate-screensaver-preferences.c:1056
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: src/mate-screensaver-preferences.c:1073
+#: src/mate-screensaver-preferences.c:1071
 msgid "Never"
 msgstr "Mai"
 
-#: src/mate-screensaver-preferences.c:1635
+#: src/mate-screensaver-preferences.c:1632
 msgid "Could not load the main interface"
-msgstr "Impossibile caricare l'interfaccia principale"
+msgstr "Non è stato possibile caricare l'interfaccia principale"
 
-#: src/mate-screensaver-preferences.c:1637
+#: src/mate-screensaver-preferences.c:1634
 msgid "Please make sure that the screensaver is properly installed"
 msgstr "Assicurarsi che il salvaschermo sia installato in modo corretto"
 
@@ -782,7 +811,7 @@ msgstr "Abilitare il codice di debug"
 
 #: src/mate-screensaver.desktop.in.in:5
 msgid "Launch screensaver and locker program"
-msgstr "Lancia il programma per salvaschermo e per blocco schermo"
+msgstr "Lancia il programma per il salvaschermo e per il blocco dello schermo"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -790,70 +819,68 @@ msgstr "Lancia il programma per salvaschermo e per blocco schermo"
 msgid "MATE;screensaver;locker;"
 msgstr "MATE;screensaver;locker;"
 
-#: src/gs-auth-pam.c:415
+#: src/gs-auth-pam.c:388
 #, c-format
 msgid "Unable to establish service %s: %s\n"
 msgstr "Impossibile stabilire il servizio %s: %s\n"
 
-#: src/gs-auth-pam.c:445
+#: src/gs-auth-pam.c:418
 #, c-format
 msgid "Can't set PAM_TTY=%s"
 msgstr "Impossibile impostare PAM_TTY=%s"
 
-#: src/gs-auth-pam.c:481
+#: src/gs-auth-pam.c:454
 msgid "Incorrect password."
 msgstr "Password non corretta."
 
-#: src/gs-auth-pam.c:501
+#: src/gs-auth-pam.c:474
 msgid "Not permitted to gain access at this time."
 msgstr "Per adesso non è concesso ottenere l'accesso."
 
-#: src/gs-auth-pam.c:509
+#: src/gs-auth-pam.c:482
 msgid "No longer permitted to access the system."
 msgstr "L'accesso al sistema è stato permanentemente revocato."
 
-#: src/gs-listener-dbus.c:2246
+#: src/gs-listener-dbus.c:2248
 msgid "failed to register with the message bus"
 msgstr "registrazione col bus di messaggi non riuscita"
 
-#: src/gs-listener-dbus.c:2257
+#: src/gs-listener-dbus.c:2259
 msgid "not connected to the message bus"
 msgstr "non connesso al bus di messaggi"
 
-#: src/gs-listener-dbus.c:2267 src/gs-listener-dbus.c:2299
+#: src/gs-listener-dbus.c:2269 src/gs-listener-dbus.c:2301
 msgid "screensaver already running in this session"
 msgstr "salvaschermo già in esecuzione in questa sessione"
 
-#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
-#. GDateTime.html#g-date-time-format
-#: src/gs-lock-plug.c:302
+#: src/gs-lock-plug.c:328
 msgid "%A, %B %e"
 msgstr "%A, %B %e"
 
-#: src/gs-lock-plug.c:408
+#: src/gs-lock-plug.c:442
 msgid "Time has expired."
 msgstr "Tempo scaduto!"
 
-#: src/gs-lock-plug.c:439
+#: src/gs-lock-plug.c:472
 msgid "You have the Caps Lock key on."
-msgstr "Il tasto BlocMaiusc è attivo."
+msgstr "Il tasto Blocca Maiuscole è attivo."
 
-#: src/gs-lock-plug.c:1661
+#: src/gs-lock-plug.c:1691
 msgid "S_witch User..."
 msgstr "_Cambia utente..."
 
-#: src/gs-lock-plug.c:1670
+#: src/gs-lock-plug.c:1700
 msgid "Log _Out"
-msgstr "_Termina sessione"
+msgstr "_Termina la sessione"
 
-#: src/gs-lock-plug.c:1883
+#: src/gs-lock-plug.c:1913
 msgid "%U on %h"
 msgstr "%U su %h"
 
-#: src/gs-lock-plug.c:1898
+#: src/gs-lock-plug.c:1928
 msgid "_Password:"
-msgstr "Pass_word:"
+msgstr "_Password:"
 
-#: src/gs-lock-plug.c:2126
+#: src/gs-lock-plug.c:2156
 msgid "Hide password"
-msgstr "Nascondi password"
+msgstr "Nascondi la password"

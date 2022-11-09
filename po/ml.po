@@ -8,9 +8,9 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.25.0\n"
+"Project-Id-Version: mate-screensaver 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2021-06-22 19:36+0200\n"
+"POT-Creation-Date: 2022-10-29 15:32+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
 "Language-Team: Malayalam (https://www.transifex.com/mate/teams/13566/ml/)\n"
@@ -105,7 +105,7 @@ msgstr "പ്രപഞ്ചം"
 msgid "<span size=\"small\">%U on %h</span>"
 msgstr "<span size=\"small\">%U on %h</span>"
 
-#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2120
+#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2150
 msgid "Show password"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr "_പുറത്തിറങ്ങുക"
 msgid "_Cancel"
 msgstr "_റദ്ദാക്കുക"
 
-#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1681
+#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1711
 msgid "_Unlock"
 msgstr "_പൂട്ട് തുറക്കുക"
 
@@ -309,21 +309,43 @@ msgid "Theme to use for the lock dialog"
 msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:80
+msgid "Format for time on lock dialog"
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:81
+msgid ""
+"Format to display the time on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %R for 24H format."
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:85
+msgid "Format for date on lock dialog"
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:86
+msgid ""
+"Format to display the date on lock dialog. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %F for ISO 8601 date format."
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
 msgstr "പ്രവര്‍ത്തനവേളയുടെ അവസ്ഥാസന്ദേശം കാണിക്കുവാന്‍ അനുവദിക്കുക"
 
-#: data/org.mate.screensaver.gschema.xml.in:81
+#: data/org.mate.screensaver.gschema.xml.in:91
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr ""
 "സ്ക്രീന്‍ പൂട്ടിയിരിക്കുമ്പോള്‍ പ്രവര്‍ത്തനവേളയുടെ അവസ്ഥാസന്ദേശം "
 "കാണിക്കുവാന്‍ അനുവദിക്കുക."
 
-#: data/org.mate.screensaver.gschema.xml.in:85
+#: data/org.mate.screensaver.gschema.xml.in:95
 msgid "Picture Filename"
 msgstr "ചിത്രത്തിന്റെ ഫയല്‍നെയിം"
 
-#: data/org.mate.screensaver.gschema.xml.in:86
+#: data/org.mate.screensaver.gschema.xml.in:96
 msgid "File to use for the background image."
 msgstr "പശ്ചാത്തലചിത്രത്തിനുപയോഗിയ്ക്കേണ്ട ഫയല്‍."
 
@@ -394,48 +416,48 @@ msgstr "ഒരു പോപ് കലാപരമായ സ്പന്ദിയ
 msgid "MATE;screensaver;grid;pulsing;colors;"
 msgstr ""
 
-#: savers/popsquares.c:50 savers/floaters.c:1169
+#: savers/popsquares.c:50 savers/floaters.c:1161
 #, c-format
 msgid "%s. See --help for usage information.\n"
 msgstr "%s. ഉപയോഗിയ്ക്കുന്നതിനെക്കുറിച്ചുള്ള വിവരത്തിനായി --help കാണുക.\n"
 
-#: savers/floaters.c:1141
+#: savers/floaters.c:1134
 msgid "Show paths that images follow"
 msgstr "ചിത്രങ്ങള്‍ നീങ്ങുന്ന വഴി കാണിയ്ക്കുക"
 
-#: savers/floaters.c:1143
+#: savers/floaters.c:1136
 msgid "Occasionally rotate images as they move"
 msgstr "ചിലപ്പോഴൊക്കെ നിങ്ങുമ്പോള്‍ ചിത്രങ്ങള്‍ തിരിയ്ക്കുക"
 
-#: savers/floaters.c:1145
+#: savers/floaters.c:1138
 msgid "Print out frame rate and other statistics"
 msgstr "ഫ്രെയിമിന്റെ നിരക്കും മറ്റ് സ്ഥിതിവിവരക്കണക്കുകളും എഴുതിക്കാണിയ്ക്കുക"
 
-#: savers/floaters.c:1147
+#: savers/floaters.c:1140
 msgid "The maximum number of images to keep on screen"
 msgstr "സ്ക്രീനില്‍ സൂക്ഷിയ്ക്കേണ്ട ഏറ്റവും കൂടിയ എണ്ണം ചിത്രങ്ങള്‍"
 
-#: savers/floaters.c:1147
+#: savers/floaters.c:1140
 msgid "MAX_IMAGES"
 msgstr "MAX_IMAGES"
 
-#: savers/floaters.c:1149
+#: savers/floaters.c:1142
 msgid "The initial size and position of window"
 msgstr "ജാലകത്തിന്റെ തുടക്കത്തിലെ സ്ഥാനവും വലിപ്പവും"
 
-#: savers/floaters.c:1149
+#: savers/floaters.c:1142
 msgid "WIDTHxHEIGHT+X+Y"
 msgstr "വീതിxഉയരം+X+Y"
 
-#: savers/floaters.c:1151
+#: savers/floaters.c:1144
 msgid "The source image to use"
 msgstr "ഉപയോഗിയ്ക്കേണ്ട ചിത്രം"
 
-#: savers/floaters.c:1163
+#: savers/floaters.c:1156
 msgid "image - floats images around the screen"
 msgstr "ചിത്രം - ചിത്രങ്ങള്‍ സ്ക്രീനിന് ചുറ്റും പാറിക്കിടക്കും"
 
-#: savers/floaters.c:1178
+#: savers/floaters.c:1170
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr ""
 "നിങ്ങള്‍ ഒരു ചിത്രം വ്യക്തമാക്കണം. ഉപയോഗിയ്ക്കുന്നതിനെക്കുറിച്ചുള്ള "
@@ -624,12 +646,12 @@ msgid "Not used"
 msgstr "ഉപയോഗിച്ചിട്ടില്ല"
 
 #: src/mate-screensaver-dialog.c:167 src/mate-screensaver-dialog.c:168
-#: src/mate-screensaver-dialog.c:169 src/gs-auth-pam.c:750
+#: src/mate-screensaver-dialog.c:169 src/gs-auth-pam.c:723
 msgid "Username:"
 msgstr "ഉപയോക്താവിന്റെ പേര്:"
 
 #: src/mate-screensaver-dialog.c:170 src/mate-screensaver-dialog.c:171
-#: src/gs-auth-pam.c:172
+#: src/gs-auth-pam.c:145
 msgid "Password:"
 msgstr "അടയാളവാക്ക്:"
 
@@ -699,75 +721,71 @@ msgstr "ക്ഷമിക്കണം, അടയാളവാക്കുകള�
 msgid "Checking..."
 msgstr "പരിശോധനയില്‍..."
 
-#: src/mate-screensaver-dialog.c:302 src/gs-auth-pam.c:485
+#: src/mate-screensaver-dialog.c:302 src/gs-auth-pam.c:458
 msgid "Authentication failed."
 msgstr "തിരിച്ചറിയല്‍ പരാജയപ്പെട്ടു."
 
-#: src/mate-screensaver-preferences.c:457
+#: src/mate-screensaver-preferences.c:455
 msgid "Blank screen"
 msgstr "ശൂന്യമായ സ്ക്രീന്‍"
 
-#: src/mate-screensaver-preferences.c:463
+#: src/mate-screensaver-preferences.c:461
 msgid "Random"
 msgstr "ഏതെങ്കിലുമൊന്ന്"
 
-#: src/mate-screensaver-preferences.c:948
-#: src/mate-screensaver-preferences.c:958
+#: src/mate-screensaver-preferences.c:951
+#: src/mate-screensaver-preferences.c:961
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/mate-screensaver-preferences.c:951
-#: src/mate-screensaver-preferences.c:960
-#: src/mate-screensaver-preferences.c:969
-#: src/mate-screensaver-preferences.c:972
-#: src/mate-screensaver-preferences.c:977
-#: src/mate-screensaver-preferences.c:980
-#: src/mate-screensaver-preferences.c:985
-#: src/mate-screensaver-preferences.c:988
+#: src/mate-screensaver-preferences.c:954
+#: src/mate-screensaver-preferences.c:963
+#: src/mate-screensaver-preferences.c:975
+#: src/mate-screensaver-preferences.c:990
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/mate-screensaver-preferences.c:954
+#: src/mate-screensaver-preferences.c:957
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/mate-screensaver-preferences.c:957
-#: src/mate-screensaver-preferences.c:1004
-#: src/mate-screensaver-preferences.c:1017
+#: src/mate-screensaver-preferences.c:965
+#: src/mate-screensaver-preferences.c:1013
+#: src/mate-screensaver-preferences.c:1023
 #, c-format
 msgid "%s %s"
 msgstr "%s %s"
 
-#: src/mate-screensaver-preferences.c:999
+#: src/mate-screensaver-preferences.c:1010
 #, c-format
 msgid "%s %s %s"
 msgstr "%s %s %s"
 
-#: src/mate-screensaver-preferences.c:1009
-#: src/mate-screensaver-preferences.c:1022
-#: src/mate-screensaver-preferences.c:1058
+#: src/mate-screensaver-preferences.c:1016
+#: src/mate-screensaver-preferences.c:1030
+#: src/mate-screensaver-preferences.c:1056
 #, c-format
 msgid "%s"
 msgstr "%s"
 
-#: src/mate-screensaver-preferences.c:1073
+#: src/mate-screensaver-preferences.c:1071
 msgid "Never"
 msgstr "ഒരിക്കലും വേണ്ട"
 
-#: src/mate-screensaver-preferences.c:1635
+#: src/mate-screensaver-preferences.c:1632
 msgid "Could not load the main interface"
 msgstr "പ്രധാന വിനിമയതലം ചേര്‍ക്കുവാന്‍ സാധിച്ചില്ല"
 
-#: src/mate-screensaver-preferences.c:1637
+#: src/mate-screensaver-preferences.c:1634
 msgid "Please make sure that the screensaver is properly installed"
 msgstr ""
 "സ്ക്രീന്‍സേവര്‍ ശരിയായിട്ടാണ് ഇന്‍സ്റ്റാള്‍ ചെയ്തിട്ടുളളത് എന്നുറപ്പ് "
@@ -791,70 +809,68 @@ msgstr ""
 msgid "MATE;screensaver;locker;"
 msgstr ""
 
-#: src/gs-auth-pam.c:415
+#: src/gs-auth-pam.c:388
 #, c-format
 msgid "Unable to establish service %s: %s\n"
 msgstr "%2$s :%1$s എന്ന സേവനം സ്ഥാപിയ്ക്കുവാന്‍ സാധ്യമായില്ല\n"
 
-#: src/gs-auth-pam.c:445
+#: src/gs-auth-pam.c:418
 #, c-format
 msgid "Can't set PAM_TTY=%s"
 msgstr "PAM_TTY=%s എന്ന് സജ്ജീകരിയ്ക്കുവാന്‍ സാധ്യമല്ല"
 
-#: src/gs-auth-pam.c:481
+#: src/gs-auth-pam.c:454
 msgid "Incorrect password."
 msgstr "അടയാളവാക്ക് തെറ്റാണ്."
 
-#: src/gs-auth-pam.c:501
+#: src/gs-auth-pam.c:474
 msgid "Not permitted to gain access at this time."
 msgstr "ഈ സമയത്ത് പ്രവേശനത്തിനുളള അനുമതിയില്ല."
 
-#: src/gs-auth-pam.c:509
+#: src/gs-auth-pam.c:482
 msgid "No longer permitted to access the system."
 msgstr "സിസ്റ്റത്തിലേക്ക് ഇനി പ്രവേശിക്കുന്നതിനുളള അനുമതിയില്ല."
 
-#: src/gs-listener-dbus.c:2246
+#: src/gs-listener-dbus.c:2248
 msgid "failed to register with the message bus"
 msgstr "മെസ്സേജ് ബസ്സുമായി രജിസ്ടര്‍ ചെയ്യുന്നതില്‍ പരാജയപ്പെട്ടു"
 
-#: src/gs-listener-dbus.c:2257
+#: src/gs-listener-dbus.c:2259
 msgid "not connected to the message bus"
 msgstr "മെസ്സേജ് ബസ്സുമായി ബന്ധിപ്പിച്ചിട്ടില്ല"
 
-#: src/gs-listener-dbus.c:2267 src/gs-listener-dbus.c:2299
+#: src/gs-listener-dbus.c:2269 src/gs-listener-dbus.c:2301
 msgid "screensaver already running in this session"
 msgstr "ഈ സെഷനില്‍ സ്ക്രീന്‍സേവര്‍ പ്രവര്‍ത്തനത്തിലാണ്"
 
-#. Translators: Date format, see https://developer.gnome.org/glib/stable/glib-
-#. GDateTime.html#g-date-time-format
-#: src/gs-lock-plug.c:302
+#: src/gs-lock-plug.c:328
 msgid "%A, %B %e"
 msgstr ""
 
-#: src/gs-lock-plug.c:408
+#: src/gs-lock-plug.c:442
 msgid "Time has expired."
 msgstr "സമയം കഴിഞ്ഞിരിക്കുന്നു."
 
-#: src/gs-lock-plug.c:439
+#: src/gs-lock-plug.c:472
 msgid "You have the Caps Lock key on."
 msgstr "നിങ്ങളുടെ കാപ്സ് ലോക്ക് കീ ഓണ്‍ ആണ്."
 
-#: src/gs-lock-plug.c:1661
+#: src/gs-lock-plug.c:1691
 msgid "S_witch User..."
 msgstr "_മറ്റൊരു ഉപയോക്താവാകുക..."
 
-#: src/gs-lock-plug.c:1670
+#: src/gs-lock-plug.c:1700
 msgid "Log _Out"
 msgstr "_പുറത്തിറങ്ങുക"
 
-#: src/gs-lock-plug.c:1883
+#: src/gs-lock-plug.c:1913
 msgid "%U on %h"
 msgstr "%h ല്‍ %U"
 
-#: src/gs-lock-plug.c:1898
+#: src/gs-lock-plug.c:1928
 msgid "_Password:"
 msgstr "_പാസ്‌വേര്‍ഡ്:"
 
-#: src/gs-lock-plug.c:2126
+#: src/gs-lock-plug.c:2156
 msgid "Hide password"
 msgstr ""
