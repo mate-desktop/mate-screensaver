@@ -2,7 +2,7 @@ dnl -*- mode: m4 -*-
 
 AC_PREREQ(2.60)
 AC_INIT([mate-screensaver],
-        [1.26.0],
+        [1.27.0],
         [https://mate-desktop.org/])
 
 AC_CONFIG_SRCDIR(src/mate-screensaver.c)

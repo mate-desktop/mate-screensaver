@@ -1,3 +1,33 @@
+### mate-screensaver 1.27.0
+
+  * tx: sync with transifex
+  * tx: update resource
+  * tx: migrate config file
+  * build warning: AC_OUTPUT should be used without arguments
+  * gs-prefs: macros instead of static methods of one sentence
+  * Fix implicit conversion changes signedness: 'gboolean' to 'guint'
+  * gs-window-x11: Fix -Wshorten-64-to-32 warning
+  * gs-watcher-x11: Fix -Wshorten-64-to-32 warning
+  * gs-lock-plug: Fix -Wshorten-64-to-32 warning
+  * xdg-user-dir-lookup: Fix -Wshorten-64-to-32 warning
+  * mate-screensaver-preferences: Fix -Wfloat-conversion warnings
+  * gs-fade: Fix -Wfloat-conversion warnings
+  * mate-screensaver-preferences: fix memory leak
+  * Unnecessary G_OBJECT cast when calling signal connect function
+  * Fix build warnings about missing field initializer
+  * gs-listener-dbus: GTimeVal deprecation
+  * floaters: GTimeVal deprecation
+  * Don't build the path to mate-screensaver-dialog
+  * Don't build the path to mate-screensaver-gl-helper
+  * ci: drop -Wunused-parameter compiler cflag from debian build
+  * mate-screensaver-preferences: fix memory leak
+  * build: show configure summary using a pretty format
+  * Use a blank line at most
+  * gs-theme-manager: reload on menu_tree changed
+  * Prompt-driven auth. helper
+  * tx: update resource
+  * tx: fix typos reported by translators
+
 ### mate-screensaver 1.26.0
 
   * Translations update
