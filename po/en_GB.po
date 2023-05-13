@@ -5,8 +5,8 @@
 # 
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# Andi Chandler <andi@gowling.com>, 2021
 # Martin Wimpress <code@flexion.org>, 2021
+# Andi Chandler <andi@gowling.com>, 2022
 # 
 msgid ""
 msgstr ""
@@ -14,8 +14,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2021-09-18 17:24+0200\n"
 "PO-Revision-Date: 2021-09-20 18:34+0000\n"
-"Last-Translator: Martin Wimpress <code@flexion.org>, 2021\n"
-"Language-Team: English (United Kingdom) (https://www.transifex.com/mate/teams/13566/en_GB/)\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>, 2022\n"
+"Language-Team: English (United Kingdom) (https://app.transifex.com/mate/teams/13566/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,7 +35,7 @@ msgstr "Set your screensaver preferences"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr ""
+msgstr "MATE;screensaver;preferences;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
@@ -75,7 +75,7 @@ msgstr "_Lock screen when screensaver is active"
 
 #: data/mate-screensaver-preferences.ui:477
 msgid "Background picture for lock screen:"
-msgstr ""
+msgstr "Background picture for lock screen:"
 
 #: data/mate-screensaver-preferences.ui:496
 msgid "Select Background Image"
@@ -108,7 +108,7 @@ msgstr "<span size=\"small\">%U on %h</span>"
 
 #: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2156
 msgid "Show password"
-msgstr ""
+msgstr "Show password"
 
 #: data/lock-dialog-default.ui:233
 msgid "_Leave Message"
@@ -309,7 +309,7 @@ msgstr "Theme to use for the lock dialogue"
 
 #: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Format for time on lock dialog"
-msgstr ""
+msgstr "Format for time on lock dialogue"
 
 #: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
@@ -317,10 +317,13 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %R for 24H format."
 msgstr ""
+"Format to display the time on lock dialogue. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %R for 24H format."
 
 #: data/org.mate.screensaver.gschema.xml.in:85
 msgid "Format for date on lock dialog"
-msgstr ""
+msgstr "Format for date on lock dialogue"
 
 #: data/org.mate.screensaver.gschema.xml.in:86
 msgid ""
@@ -328,6 +331,9 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %F for ISO 8601 date format."
 msgstr ""
+"Format to display the date on lock dialogue. Default is 'locale' which uses "
+"default format for current locale. Custom values should be set according to "
+"g-date-time-format. Try %F for ISO 8601 date format."
 
 #: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
@@ -355,7 +361,7 @@ msgstr "Display a slideshow of pictures of the cosmos"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr ""
+msgstr "MATE;screensaver;slideshow;cosmos;"
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -369,7 +375,7 @@ msgstr "Bubbles the MATE logo around the screen"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr ""
+msgstr "MATE;screensaver;logo;bubbles;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -383,7 +389,7 @@ msgstr "Bubbles the GNOME logo around the screen"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr ""
+msgstr "MATE;screensaver;GNOME;logo;bubbles;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -397,7 +403,7 @@ msgstr "Display a slideshow from your Pictures folder"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
-msgstr ""
+msgstr "MATE;screensaver;custom;slideshow;pictures;folder;"
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
@@ -411,7 +417,7 @@ msgstr "A pop-art-ish grid of pulsing colours."
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr ""
+msgstr "MATE;screensaver;grid;pulsing;colours;"
 
 #: savers/popsquares.c:50 savers/floaters.c:1169
 #, c-format
@@ -531,6 +537,7 @@ msgstr "Tells the running screensaver process to lock the screen immediately"
 #: src/mate-screensaver-command.c:77
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
+"Tells the running screensaver process to unlock the screen immediately"
 
 #: src/mate-screensaver-command.c:81
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -714,8 +721,8 @@ msgstr "Random"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d hour"
+msgstr[1] "%d hours"
 
 #: src/mate-screensaver-preferences.c:951
 #: src/mate-screensaver-preferences.c:960
@@ -728,15 +735,15 @@ msgstr[1] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d minute"
+msgstr[1] "%d minutes"
 
 #: src/mate-screensaver-preferences.c:954
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d second"
+msgstr[1] "%d seconds"
 
 #: src/mate-screensaver-preferences.c:957
 #: src/mate-screensaver-preferences.c:1004
@@ -785,7 +792,7 @@ msgstr "Launch screensaver and locker program"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr ""
+msgstr "MATE;screensaver;locker;"
 
 #: src/gs-auth-pam.c:415
 #, c-format
@@ -851,4 +858,4 @@ msgstr "_Password:"
 
 #: src/gs-lock-plug.c:2162
 msgid "Hide password"
-msgstr ""
+msgstr "Hide password"

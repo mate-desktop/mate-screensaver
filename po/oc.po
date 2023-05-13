@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2021-09-18 17:24+0200\n"
 "PO-Revision-Date: 2021-09-20 18:34+0000\n"
 "Last-Translator: Quentin PAGÈS, 2021\n"
-"Language-Team: Occitan (post 1500) (https://www.transifex.com/mate/teams/13566/oc/)\n"
+"Language-Team: Occitan (post 1500) (https://app.transifex.com/mate/teams/13566/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -173,8 +173,8 @@ msgid ""
 "activation."
 msgstr ""
 "Lo mòde utilizat per l’estalviador d’ecran. Pòt valer « blank-only » per "
-"activar l’estalviador d’ecran sens utilizar cap de tèma a l’activacion, « "
-"single » per activar l’estalviador en utilizant sonque un tèma a "
+"activar l’estalviador d’ecran sens utilizar cap de tèma a l’activacion, "
+"« single » per activar l’estalviador en utilizant sonque un tèma a "
 "l’activacion (especificat dins la clau « themes »), e « random » per activar"
 " l’estalviador d’ecran en utilizant un tèma aleatòri per activar "
 "l’estalviador d’ecran en utilizant un tèma a l’activacion."
@@ -328,6 +328,10 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %R for 24H format."
 msgstr ""
+"Format d’afichatge de l’ora sus la fenèstra de verrolhatge. Per defaut es "
+"« locale » qu’utiliza lo format dels paramètres de region actuals. Las "
+"valors personalizadas deu èsser definida segon g-date-time-format. Ensajatz "
+"%R pel format 24H."
 
 #: data/org.mate.screensaver.gschema.xml.in:85
 msgid "Format for date on lock dialog"
@@ -339,6 +343,10 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %F for ISO 8601 date format."
 msgstr ""
+"Format d’afichatge de la data sus la fenèstra de verrolhatge. Per defaut es "
+"« locale » qu’utiliza lo format dels paramètres de region actuals. Las "
+"valors personalizadas deu èsser definida segon g-date-time-format. Ensajatz "
+"%F pel format en ISO 8601."
 
 #: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
@@ -466,7 +474,7 @@ msgstr "La font d’imatge d’utilizar"
 
 #: savers/floaters.c:1163
 msgid "image - floats images around the screen"
-msgstr ""
+msgstr "image - imatge que flòtan per l’ecran"
 
 #: savers/floaters.c:1178
 msgid "You must specify one image.  See --help for usage information.\n"
@@ -553,6 +561,7 @@ msgstr ""
 #: src/mate-screensaver-command.c:81
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr ""
+"Bascula de demostracion grafica quand l’estalviador d’ecran es activat"
 
 #: src/mate-screensaver-command.c:85
 msgid "Turn the screensaver on (blank the screen)"
@@ -560,25 +569,27 @@ msgstr "Activar l’estalviador d’ecran (ennegrir l’ecran)"
 
 #: src/mate-screensaver-command.c:89
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr ""
+msgstr "Se l’estalviador es activat alara lo desactiva (l’ecran tòrna)"
 
 #: src/mate-screensaver-command.c:93
 msgid "Poke the running screensaver to simulate user activity"
-msgstr ""
+msgstr "Ponchar l’estalviador d’ecran per simular l’activitat de l’utilizaire"
 
 #: src/mate-screensaver-command.c:97
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
 msgstr ""
+"Empacha l’estalviador d’ecran de s’activar. La comanda se bloca pendent "
+"l’inibicion."
 
 #: src/mate-screensaver-command.c:101
 msgid "The calling application that is inhibiting the screensaver"
-msgstr ""
+msgstr "L’aplicacion que demanda la suspension de l’estalviador d’ecran"
 
 #: src/mate-screensaver-command.c:105
 msgid "The reason for inhibiting the screensaver"
-msgstr ""
+msgstr "La rason de l'inibicion de l’estalviador d’ecran"
 
 #: src/mate-screensaver-command.c:109 src/mate-screensaver-dialog.c:59
 #: src/mate-screensaver.c:56
@@ -600,11 +611,11 @@ msgstr "inactiu"
 
 #: src/mate-screensaver-command.c:375
 msgid "The screensaver is not inhibited\n"
-msgstr ""
+msgstr "L’estalviador d’ecran es pas inibit\n"
 
 #: src/mate-screensaver-command.c:383
 msgid "The screensaver is being inhibited by:\n"
-msgstr ""
+msgstr "L’estalviador d’ecran es inibit per :\n"
 
 #: src/mate-screensaver-command.c:418
 #, c-format
@@ -625,11 +636,11 @@ msgstr "Afichar lo boton de desconnexion"
 
 #: src/mate-screensaver-dialog.c:61
 msgid "Command to invoke from the logout button"
-msgstr ""
+msgstr "La comanda d’invocar a partir del boton de desconnexion"
 
 #: src/mate-screensaver-dialog.c:62
 msgid "Show the switch user button"
-msgstr ""
+msgstr "Afichar lo boton de cambiament d’utilizaire"
 
 #: src/mate-screensaver-dialog.c:63
 msgid "Message to show in the dialog"
@@ -659,7 +670,7 @@ msgstr "Vos cal cambiar lo senhal ara meteissa (senhal expirat)"
 
 #: src/mate-screensaver-dialog.c:173
 msgid "You are required to change your password immediately (root enforced)"
-msgstr ""
+msgstr "Devètz cambiar vòstre senhal immediatament (exigéncia de root)"
 
 #: src/mate-screensaver-dialog.c:174
 msgid "Your account has expired; please contact your system administrator"
@@ -819,7 +830,7 @@ msgstr "Senhal invalid."
 
 #: src/gs-auth-pam.c:501
 msgid "Not permitted to gain access at this time."
-msgstr ""
+msgstr "Accès pas permés pel moment."
 
 #: src/gs-auth-pam.c:509
 msgid "No longer permitted to access the system."
@@ -827,7 +838,7 @@ msgstr "Pas mai autorizat a se connectar al sistèma."
 
 #: src/gs-listener-dbus.c:2246
 msgid "failed to register with the message bus"
-msgstr ""
+msgstr "enregistrament fracassat amb lo bus de messatge"
 
 #: src/gs-listener-dbus.c:2257
 msgid "not connected to the message bus"

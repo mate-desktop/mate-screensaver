@@ -7,6 +7,7 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Damir Jerovšek <jierro@windowslive.com>, 2021
 # Helena S <ele@tutamail.com>, 2021
+# Martin Srebotnjak <miles@filmsi.net>, 2022
 # 
 msgid ""
 msgstr ""
@@ -14,8 +15,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2021-09-18 17:24+0200\n"
 "PO-Revision-Date: 2021-09-20 18:34+0000\n"
-"Last-Translator: Helena S <ele@tutamail.com>, 2021\n"
-"Language-Team: Slovenian (https://www.transifex.com/mate/teams/13566/sl/)\n"
+"Last-Translator: Martin Srebotnjak <miles@filmsi.net>, 2022\n"
+"Language-Team: Slovenian (https://app.transifex.com/mate/teams/13566/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,7 +36,7 @@ msgstr "Nastavitve ohranjevalnika zaslona"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr ""
+msgstr "MATE;ohranjevalnik zaslona;nastavitve;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
@@ -75,7 +76,7 @@ msgstr "Zak_leni zaslon, ko je ohranjevalnik zaslona dejaven"
 
 #: data/mate-screensaver-preferences.ui:477
 msgid "Background picture for lock screen:"
-msgstr ""
+msgstr "Slika ozadja za zaklep zaslona:"
 
 #: data/mate-screensaver-preferences.ui:496
 msgid "Select Background Image"
@@ -108,7 +109,7 @@ msgstr "<span size=\"small\">%U na %h</span>"
 
 #: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2156
 msgid "Show password"
-msgstr ""
+msgstr "Pokaži geslo"
 
 #: data/lock-dialog-default.ui:233
 msgid "_Leave Message"
@@ -309,7 +310,7 @@ msgstr "Tema, ki jo uporablja pogovorno okno za zaklepanje."
 
 #: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Format for time on lock dialog"
-msgstr ""
+msgstr "Oblika časa v pogovornem oknu zaklepa"
 
 #: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
@@ -317,10 +318,14 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %R for 24H format."
 msgstr ""
+"Oblika prikaza časa ob zaklepu pogovornega okna. Privzeto je to 'krajevna "
+"nastavitev', ki uporablja privzeto obliko za trenutno krajevno nastavitev. "
+"Vrednosti po meri je treba nastaviti v skladu z notacijo g-datum-čas-oblika."
+" Poskusite %R za 24-urni zapis."
 
 #: data/org.mate.screensaver.gschema.xml.in:85
 msgid "Format for date on lock dialog"
-msgstr ""
+msgstr "Oblika datuma v pogovornem oknu zaklepa"
 
 #: data/org.mate.screensaver.gschema.xml.in:86
 msgid ""
@@ -328,6 +333,10 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %F for ISO 8601 date format."
 msgstr ""
+"Oblika prikaza datuma ob zaklepu pogovornega okna. Privzeto je to 'krajevna "
+"nastavitev', ki uporablja privzeto obliko za trenutno krajevno nastavitev. "
+"Vrednosti po meri je treba nastaviti v skladu z notacijo g-datum-čas-oblika."
+" Poskusite %F za datum v standardiziranem zapisu ISO 8601."
 
 #: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
@@ -354,7 +363,7 @@ msgstr "Prikaži predstavitev slik vesolja"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr ""
+msgstr "MATE;ohranjevalnik zaslona;projekcija;kozmos;"
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -368,7 +377,7 @@ msgstr "Premikanje mehurčkov z logotipom MATE po zaslonu"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr ""
+msgstr "MATE;ohranjevalnik zaslona;logotip;mehurčki;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -382,7 +391,7 @@ msgstr "Ustvari mehurčke z logotipom GNOME po zaslonu"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr ""
+msgstr "MATE;ohranjevalnik zaslona;GNOME;logotip;mehurčki;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -396,7 +405,7 @@ msgstr "Pokaži predstavitev iz mape slike"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
-msgstr ""
+msgstr "MATE;ohranjevalnik zaslona;po meri;projekcija;slike;mapa;"
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
@@ -410,7 +419,7 @@ msgstr "Mreža utripajočih barv v slogu pop-arta."
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr ""
+msgstr "MATE;ohranjevalnik zaslona;mreža;pulziranje;barve;"
 
 #: savers/popsquares.c:50 savers/floaters.c:1169
 #, c-format
@@ -720,10 +729,10 @@ msgstr "Naključno"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d ura"
+msgstr[1] "%d uri"
+msgstr[2] "%d ure"
+msgstr[3] "%d ur"
 
 #: src/mate-screensaver-preferences.c:951
 #: src/mate-screensaver-preferences.c:960
@@ -736,19 +745,19 @@ msgstr[3] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d minuta"
+msgstr[1] "%d minuti"
+msgstr[2] "%d minute"
+msgstr[3] "%d minut"
 
 #: src/mate-screensaver-preferences.c:954
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d sekunda"
+msgstr[1] "%d sekundi"
+msgstr[2] "%d sekunde"
+msgstr[3] "%d sekund"
 
 #: src/mate-screensaver-preferences.c:957
 #: src/mate-screensaver-preferences.c:1004
@@ -797,7 +806,7 @@ msgstr "Zaženi ohranjevalnik zaslona in program za zaklepanje"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr ""
+msgstr "MATE;ohranjevalnik zaslona;omarica;"
 
 #: src/gs-auth-pam.c:415
 #, c-format
@@ -863,4 +872,4 @@ msgstr "_Geslo:"
 
 #: src/gs-lock-plug.c:2162
 msgid "Hide password"
-msgstr ""
+msgstr "Skrij geslo"

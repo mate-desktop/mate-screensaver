@@ -9,6 +9,8 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Butterfly <gokhanlnx@gmail.com>, 2021
 # Sabri Ünal <yakushabb@gmail.com>, 2021
+# Hüseyin Güç <huseyinguc@outlook.com>, 2022
+# Sabri Ünal <libreajans@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
@@ -16,8 +18,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2021-09-18 17:24+0200\n"
 "PO-Revision-Date: 2021-09-20 18:34+0000\n"
-"Last-Translator: Sabri Ünal <yakushabb@gmail.com>, 2021\n"
-"Language-Team: Turkish (https://www.transifex.com/mate/teams/13566/tr/)\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>, 2022\n"
+"Language-Team: Turkish (https://app.transifex.com/mate/teams/13566/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,7 +39,7 @@ msgstr "Ekran koruyucunuzun tercihlerini belirtin"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr ""
+msgstr "MATE;ekrankoruyucu;tercihler;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
@@ -77,7 +79,7 @@ msgstr "Ekran koruyucu etkinken ekranı ki_litle"
 
 #: data/mate-screensaver-preferences.ui:477
 msgid "Background picture for lock screen:"
-msgstr ""
+msgstr "Kilit ekranı için arka plan resmi:"
 
 #: data/mate-screensaver-preferences.ui:496
 msgid "Select Background Image"
@@ -110,7 +112,7 @@ msgstr "<span size=\"small\">%h üzerinde %U</span>"
 
 #: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2156
 msgid "Show password"
-msgstr ""
+msgstr "Parolayı göster"
 
 #: data/lock-dialog-default.ui:233
 msgid "_Leave Message"
@@ -130,7 +132,7 @@ msgstr "_Vazgeç"
 
 #: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1717
 msgid "_Unlock"
-msgstr "_Kilidi aç"
+msgstr "_Kilidi Aç"
 
 #: data/lock-dialog-default.ui:339
 msgid "<b>Leave a message for %R:</b>"
@@ -318,7 +320,7 @@ msgstr "Kilit penceresi için kullanılacak tema"
 
 #: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Format for time on lock dialog"
-msgstr ""
+msgstr "Kilitli iletişim kutusundaki saat formatı"
 
 #: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
@@ -330,6 +332,8 @@ msgstr ""
 #: data/org.mate.screensaver.gschema.xml.in:85
 msgid "Format for date on lock dialog"
 msgstr ""
+" \n"
+"Kilit iletişim kutusundaki tarih formatı"
 
 #: data/org.mate.screensaver.gschema.xml.in:86
 msgid ""
@@ -363,7 +367,7 @@ msgstr "Kozmosun resimlerini slayt gösterisi şeklinde göster"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr ""
+msgstr "MATE;ekran koruyucu;özel;slayt gösterisi;cosmos;resim;klasör;"
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -377,7 +381,7 @@ msgstr "Ekran üzerinde MATE logosu baloncukları oluşturur"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr ""
+msgstr "MATE;ekrankoruyucu;logo;balonlar;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -391,7 +395,7 @@ msgstr "Ekran üzerinde GNOME logosu baloncukları oluşturur"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr ""
+msgstr "MATE;ekran koruyucu;GNOME;logo;balonlar;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -405,7 +409,7 @@ msgstr "Resim dizininizden bir slayt gösterisi göster"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
-msgstr ""
+msgstr "MATE;ekran koruyucu;özel;slayt gösterisi;resim;klasör;"
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
@@ -419,7 +423,7 @@ msgstr "Bir pop-art-ish nabız gibi atan renklerin ızgarası."
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr ""
+msgstr "MATE;ekran koruyucu;renkler;"
 
 #: savers/popsquares.c:50 savers/floaters.c:1169
 #, c-format
@@ -797,7 +801,7 @@ msgstr "Ekran koruyucu ve kilitleyici programı başlat"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr ""
+msgstr "MATE;ekrankoruyucu;ekran koruyucu;kilitleyen;"
 
 #: src/gs-auth-pam.c:415
 #, c-format
@@ -863,4 +867,4 @@ msgstr "_Parola:"
 
 #: src/gs-lock-plug.c:2162
 msgid "Hide password"
-msgstr ""
+msgstr "Parolayı gizle"

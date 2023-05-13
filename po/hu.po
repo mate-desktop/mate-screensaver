@@ -10,6 +10,7 @@
 # István Szőllősi <szollosi.istv4n@gmail.com>, 2021
 # Falu <info@falu.me>, 2021
 # Balázs Meskó <meskobalazs@mailbox.org>, 2021
+# Gergő Doma <domag02@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -17,8 +18,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2021-09-18 17:24+0200\n"
 "PO-Revision-Date: 2021-09-20 18:34+0000\n"
-"Last-Translator: Balázs Meskó <meskobalazs@mailbox.org>, 2021\n"
-"Language-Team: Hungarian (https://www.transifex.com/mate/teams/13566/hu/)\n"
+"Last-Translator: Gergő Doma <domag02@gmail.com>, 2023\n"
+"Language-Team: Hungarian (https://app.transifex.com/mate/teams/13566/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +39,7 @@ msgstr "A képernyővédő tulajdonságainak beállítása"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr ""
+msgstr "MATE;képernyővédő;beállítások;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
@@ -78,7 +79,7 @@ msgstr "Képernyő _zárolása, ha a képernyővédő aktív"
 
 #: data/mate-screensaver-preferences.ui:477
 msgid "Background picture for lock screen:"
-msgstr ""
+msgstr "Zárképernyő háttérképe:"
 
 #: data/mate-screensaver-preferences.ui:496
 msgid "Select Background Image"
@@ -113,7 +114,7 @@ msgstr "<span size=\"small\">%U a következőn: %h</span>"
 
 #: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2156
 msgid "Show password"
-msgstr ""
+msgstr "Jelszó mutatása"
 
 #: data/lock-dialog-default.ui:233
 msgid "_Leave Message"
@@ -315,7 +316,7 @@ msgstr "A zárolási párbeszédablakban használandó téma"
 
 #: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Format for time on lock dialog"
-msgstr ""
+msgstr "A zárolási párbeszédablak időformátuma"
 
 #: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
@@ -323,10 +324,15 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %R for 24H format."
 msgstr ""
+"A zárolási párbeszédablakon megjelenített idő formátuma. Az alapértelmezés "
+"'locale', amely a jelenlegi területi beállítás szerinti alapértelmezett "
+"formátumot használja. Egyedi értékeket a g-date-time-format függvénynek "
+"megfelelő formátumban kell megadni. A 24-órás formátumhoz használd a %R "
+"formátumkódot."
 
 #: data/org.mate.screensaver.gschema.xml.in:85
 msgid "Format for date on lock dialog"
-msgstr ""
+msgstr "A zárolási párbeszédablak dátumformátuma"
 
 #: data/org.mate.screensaver.gschema.xml.in:86
 msgid ""
@@ -334,6 +340,11 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %F for ISO 8601 date format."
 msgstr ""
+"A zárolási párbeszédablakon megjelenített dátum formátuma. Az alapértelmezés"
+" 'locale', amely a jelenlegi területi beállítás szerinti alapértelmezett "
+"formátumot használja. Egyedi értékeket a g-date-time-format függvénynek "
+"megfelelő formátumban kell megadni. Az ISO 8601 formátumhoz használd a %F "
+"formátumkódot."
 
 #: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
@@ -361,7 +372,7 @@ msgstr "Egy diavetítés a kozmosz képeiből"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr ""
+msgstr "MATE;képernyővédő;diavetítés;kozmosz;"
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -375,21 +386,21 @@ msgstr "A MATE logót lebegteti körbe a képernyőn"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr ""
+msgstr "MATE;képernyővédő;logó;lebegtet;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
-msgstr "Lebegő MATE"
+msgstr "Lebegő GNOME"
 
 #: savers/gnomelogo-floaters.desktop.in.in:4
 msgid "Bubbles the GNOME logo around the screen"
-msgstr "A MATE logót lebegteti körbe a képernyőn"
+msgstr "A GNOME logót lebegteti körbe a képernyőn"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr ""
+msgstr "MATE;képernyővédő;GNOME;logó;lebegtet;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -403,7 +414,7 @@ msgstr "Egy diavetítés a Képek mappából"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
-msgstr ""
+msgstr "MATE;képernyővédő;egyedi;diavetítés;képek;mappa;"
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
@@ -417,7 +428,7 @@ msgstr "Pulzáló színek pop-artos rácsa"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr ""
+msgstr "MATE;képernyővédő;rács;pulzáló;színek;"
 
 #: savers/popsquares.c:50 savers/floaters.c:1169
 #, c-format
@@ -723,8 +734,8 @@ msgstr "Véletlen"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d óra"
+msgstr[1] "%d óra"
 
 #: src/mate-screensaver-preferences.c:951
 #: src/mate-screensaver-preferences.c:960
@@ -737,15 +748,15 @@ msgstr[1] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d perc"
+msgstr[1] "%d perc"
 
 #: src/mate-screensaver-preferences.c:954
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d másodperc"
+msgstr[1] "%d másodperc"
 
 #: src/mate-screensaver-preferences.c:957
 #: src/mate-screensaver-preferences.c:1004
@@ -795,7 +806,7 @@ msgstr "Képernyővédő és zároló program indítása"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr ""
+msgstr "MATE;képernyővédő;képernyőzár;"
 
 #: src/gs-auth-pam.c:415
 #, c-format
@@ -861,4 +872,4 @@ msgstr "_Jelszó:"
 
 #: src/gs-lock-plug.c:2162
 msgid "Hide password"
-msgstr ""
+msgstr "Jelszó elrejtése"

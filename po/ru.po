@@ -5,11 +5,13 @@
 # 
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# Alexei Sorokin, 2021
+# XRevan86, 2021
 # Дмитрий Михирев, 2021
-# Anna “CyberTailor” <cyber@sysrq.in>, 2021
+# Cyber Tailor <cyber@sysrq.in>, 2021
 # monsta <monsta@inbox.ru>, 2021
 # Дмитрий Астанков <mornie@basealt.ru>, 2021
+# Павел Коваленко, 2021
+# Sergej A. <Ser82-png@yandex.ru>, 2022
 # 
 msgid ""
 msgstr ""
@@ -17,8 +19,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2021-09-18 17:24+0200\n"
 "PO-Revision-Date: 2021-09-20 18:34+0000\n"
-"Last-Translator: Дмитрий Астанков <mornie@basealt.ru>, 2021\n"
-"Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
+"Last-Translator: Sergej A. <Ser82-png@yandex.ru>, 2022\n"
+"Language-Team: Russian (https://app.transifex.com/mate/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,7 +40,7 @@ msgstr "Параметры хранителя экрана"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr "MATE;скринсейвер;хранитель;настройки;"
+msgstr "MATE;screensaver;preferences;скринсейвер;хранитель;настройки;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
@@ -78,7 +80,7 @@ msgstr "_Блокировать экран, когда запущен храни
 
 #: data/mate-screensaver-preferences.ui:477
 msgid "Background picture for lock screen:"
-msgstr ""
+msgstr "Фоновое изображение для экрана блокировки:"
 
 #: data/mate-screensaver-preferences.ui:496
 msgid "Select Background Image"
@@ -111,7 +113,7 @@ msgstr "<span size=\"small\">%U на %h</span>"
 
 #: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2156
 msgid "Show password"
-msgstr ""
+msgstr "Показать пароль"
 
 #: data/lock-dialog-default.ui:233
 msgid "_Leave Message"
@@ -317,7 +319,7 @@ msgstr "Тема, используемая для диалога блокиро�
 
 #: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Format for time on lock dialog"
-msgstr ""
+msgstr "Формат времени для диалогового окна блокировки"
 
 #: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
@@ -325,10 +327,14 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %R for 24H format."
 msgstr ""
+"Формат времени для диалогового окна блокировки. По умолчанию используются "
+"настройки формата для текущей локали. Пользовательские значения должны быть "
+"установлены в соответствии с форматом g-date-time-format. Попробуйте %R для "
+"24-часового формата."
 
 #: data/org.mate.screensaver.gschema.xml.in:85
 msgid "Format for date on lock dialog"
-msgstr ""
+msgstr "Формат даты для диалогового окна блокировки"
 
 #: data/org.mate.screensaver.gschema.xml.in:86
 msgid ""
@@ -336,6 +342,10 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %F for ISO 8601 date format."
 msgstr ""
+"Формат даты для диалогового окна блокировки. По умолчанию используются "
+"настройки формата для текущей локали. Пользовательские значения должны быть "
+"установлены в соответствии с форматом g-date-time-format. Попробуйте %F для "
+"формата даты ISO 8601."
 
 #: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
@@ -736,10 +746,10 @@ msgstr "Случайным образом"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d час"
+msgstr[1] "%d часа"
+msgstr[2] "%d часов"
+msgstr[3] "%d часов"
 
 #: src/mate-screensaver-preferences.c:951
 #: src/mate-screensaver-preferences.c:960
@@ -752,19 +762,19 @@ msgstr[3] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d минута"
+msgstr[1] "%d минуты"
+msgstr[2] "%d минут"
+msgstr[3] "%d минут"
 
 #: src/mate-screensaver-preferences.c:954
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "%d секунда"
+msgstr[1] "%d секунды"
+msgstr[2] "%d секунд"
+msgstr[3] "%d секунд"
 
 #: src/mate-screensaver-preferences.c:957
 #: src/mate-screensaver-preferences.c:1004
@@ -879,4 +889,4 @@ msgstr "_Пароль:"
 
 #: src/gs-lock-plug.c:2162
 msgid "Hide password"
-msgstr ""
+msgstr "Скрыть пароль"

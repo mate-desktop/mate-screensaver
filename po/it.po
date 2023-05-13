@@ -8,8 +8,8 @@
 # Giuseppe Pignataro <rogepix@gmail.com>, 2021
 # Enrico B. <enricobe@hotmail.com>, 2021
 # Matteo, 2021
-# Marco Bartolucci <nap.84@live.it>, 2021
-# Alessandro Volturno <alelvb@inwind.it>, 2021
+# Marco Bartolucci, 2021
+# Alessandro Volturno <alelvb@inwind.it>, 2022
 # 
 msgid ""
 msgstr ""
@@ -17,13 +17,13 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2021-09-18 17:24+0200\n"
 "PO-Revision-Date: 2021-09-20 18:34+0000\n"
-"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2021\n"
-"Language-Team: Italian (https://www.transifex.com/mate/teams/13566/it/)\n"
+"Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2022\n"
+"Language-Team: Italian (https://app.transifex.com/mate/teams/13566/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: it\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: data/mate-screensaver-preferences.desktop.in:3
 #: src/mate-screensaver.desktop.in.in:4
@@ -748,6 +748,7 @@ msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d ora"
 msgstr[1] "%d ore"
+msgstr[2] "%d ore"
 
 #: src/mate-screensaver-preferences.c:951
 #: src/mate-screensaver-preferences.c:960
@@ -762,6 +763,7 @@ msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d minuto"
 msgstr[1] "%d minuti"
+msgstr[2] "%d minuti"
 
 #: src/mate-screensaver-preferences.c:954
 #, c-format
@@ -769,6 +771,7 @@ msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] "%d secondo"
 msgstr[1] "%d secondi"
+msgstr[2] "%d secondi"
 
 #: src/mate-screensaver-preferences.c:957
 #: src/mate-screensaver-preferences.c:1004
@@ -855,7 +858,7 @@ msgstr "salvaschermo già in esecuzione in questa sessione"
 
 #: src/gs-lock-plug.c:330
 msgid "%A, %B %e"
-msgstr "%A, %B %e"
+msgstr "%A %e %B"
 
 #: src/gs-lock-plug.c:444
 msgid "Time has expired."
