@@ -4,8 +4,8 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Caarmi, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2021
+# Caarmi, 2022
 # 
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:32+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: clefebvre <clement.lefebvre@linuxmint.com>, 2021\n"
-"Language-Team: Interlingue (https://www.transifex.com/mate/teams/13566/ie/)\n"
+"Last-Translator: Caarmi, 2022\n"
+"Language-Team: Interlingue (https://app.transifex.com/mate/teams/13566/ie/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -716,7 +716,7 @@ msgstr ""
 #: src/mate-screensaver-preferences.c:1056
 #, c-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: src/mate-screensaver-preferences.c:1071
 msgid "Never"

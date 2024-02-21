@@ -8,7 +8,7 @@
 # Kenneth Jenssen <kennethjenssen@yahoo.com>, 2018
 # Allan Nordhøy <epost@anotheragency.no>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# heskjestad <cato@heskjestad.xyz>, 2021
+# Kaci Heskjestad, 2021
 # 
 msgid ""
 msgstr ""
@@ -16,8 +16,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:32+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: heskjestad <cato@heskjestad.xyz>, 2021\n"
-"Language-Team: Norwegian Bokmål (https://www.transifex.com/mate/teams/13566/nb/)\n"
+"Last-Translator: Kaci Heskjestad, 2021\n"
+"Language-Team: Norwegian Bokmål (https://app.transifex.com/mate/teams/13566/nb/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"

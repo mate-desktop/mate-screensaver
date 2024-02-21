@@ -5,7 +5,7 @@
 # 
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# Benedikt Straub <benedikt-straub@web.de>, 2021
+# Benedikt Straub <benedikt-straub@web.de>, 2023
 # 
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:32+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Benedikt Straub <benedikt-straub@web.de>, 2021\n"
-"Language-Team: Low German (https://www.transifex.com/mate/teams/13566/nds/)\n"
+"Last-Translator: Benedikt Straub <benedikt-straub@web.de>, 2023\n"
+"Language-Team: Low German (https://app.transifex.com/mate/teams/13566/nds/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -350,7 +350,7 @@ msgstr "Een Döörloop vun Universumsbillers opwiesen"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr ""
+msgstr "MATE;Billschirmschoner;Döörloop;Universum;"
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -364,7 +364,7 @@ msgstr "Dat MATE-Teken flüggt över de Billschirm"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr ""
+msgstr "MATE;Billschirmschoner;Logo;Teken;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -378,7 +378,7 @@ msgstr "Dat GNOME-Teken flüggt över de Billschirm"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr ""
+msgstr "MATE;Billschirmschoner;GNOME;Logo;Teken;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -392,7 +392,7 @@ msgstr "Een Döörloop vu'm Billerverteeknis opwiesen"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
-msgstr ""
+msgstr "MATE;Billschirmschoner;Eegen;Döörloop;Billers;Verteeknis;"
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
@@ -406,7 +406,7 @@ msgstr "Een net vun dollen Klöörs, de as Popart utsehn."
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr ""
+msgstr "MATE;Billschirmschoner;Gadder;Doll;Klöörs;"
 
 #: savers/popsquares.c:50 savers/floaters.c:1161
 #, c-format
@@ -530,6 +530,7 @@ msgstr ""
 #: src/mate-screensaver-command.c:77
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
+"Wiest de lööpend Billschirmschoner an, de Billschirm stracks oftosluten"
 
 #: src/mate-screensaver-command.c:81
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -786,7 +787,7 @@ msgstr "Billschirmschoner un Ofslutprogramm starten"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr ""
+msgstr "MATE;Billschirmschoner;Avsluter;"
 
 #: src/gs-auth-pam.c:388
 #, c-format

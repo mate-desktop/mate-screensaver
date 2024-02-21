@@ -10,7 +10,7 @@
 # Butterfly <gokhanlnx@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Hüseyin Güç <huseyinguc@outlook.com>, 2022
-# Sabri Ünal <libreajans@gmail.com>, 2022
+# Sabri Ünal <libreajans@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -18,8 +18,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:32+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Sabri Ünal <libreajans@gmail.com>, 2022\n"
-"Language-Team: Turkish (https://www.transifex.com/mate/teams/13566/tr/)\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>, 2023\n"
+"Language-Team: Turkish (https://app.transifex.com/mate/teams/13566/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -149,7 +149,7 @@ msgstr "Boştayken etkinleştir"
 #: data/org.mate.screensaver.gschema.xml.in:11
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
-"Oturum boştayken ekran koruyucunun etkin olması bunu doğru/TRUE olarak "
+"Oturum boştayken ekran koruyucunun etkin olması bunu TRUE (doğru) olarak "
 "ayarlayın."
 
 #: data/org.mate.screensaver.gschema.xml.in:15
@@ -159,8 +159,8 @@ msgstr "Aktifleşince kilitle"
 #: data/org.mate.screensaver.gschema.xml.in:16
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
-"Ekran koruyucu etkin olduğu zaman ekranın kilitlenmesi için bu doğru/TRUE "
-"olarak tanımlanmalı."
+"Ekran koruyucu etkin olduğu zaman ekranın kilitlenmesi için bu TRUE (doğru) "
+"olarak ayarlanmalı."
 
 #: data/org.mate.screensaver.gschema.xml.in:20
 msgid "Screensaver theme selection mode"
@@ -266,7 +266,7 @@ msgid ""
 "out after a delay. The delay is specified in the \"logout_delay\" key."
 msgstr ""
 "Kilidi kaldırma penceresinin belli bir süre beklemesinden sonra, oturumu "
-"kapatma seçeneğine izin vermek için bunu doğru/TRUE olarak ayarlayın. "
+"kapatma seçeneğine izin vermek için bunu TRUE (doğru) olarak ayarlayın. "
 "Gecikme \"logout_delay\" anahtarında belirtilir."
 
 #: data/org.mate.screensaver.gschema.xml.in:60
@@ -281,7 +281,8 @@ msgid ""
 msgstr ""
 "Ekran koruyucu etkinleştikten sonra kilidi kaldırma penceresinde oturumu "
 "kapat seçeneğinin görünmesi için geçecek dakikaların sayısı. Bu anahtar "
-"sadece \"logout_enable\" anahtarı doğru/TRUE yapıldığında etkiye sahiptir."
+"sadece \"logout_enable\" anahtarı TRUE (doğru) olarak ayarlandığında etkiye "
+"sahiptir."
 
 #: data/org.mate.screensaver.gschema.xml.in:65
 msgid "Logout command"
@@ -295,8 +296,8 @@ msgid ""
 msgstr ""
 "Oturumu kapat düğmesi tıklandığında çağrılacak komut. Bu komut basitçe "
 "herhangi bir etkileşim olmadan kullanıcının oturum kapatmasını sağlar. Bu "
-"anahtar sadece \"logout_enable\" anahtarı doğru/TRUE olarak ayarlandığında "
-"etkiye sahiptir."
+"anahtar sadece \"logout_enable\" anahtarı TRUE (doğru) olarak ayarlandığında"
+" etkiye sahiptir."
 
 #: data/org.mate.screensaver.gschema.xml.in:70
 msgid "Allow user switching"
@@ -308,7 +309,7 @@ msgid ""
 "different user account."
 msgstr ""
 "Kilidi kaldırma penceresinde başka bir kullanıcı değiştirme seçeneğini "
-"önermek için bunu doğru/TRUE olarak ayarlayın."
+"önermek için bunu TRUE (doğru) olarak ayarlayın."
 
 #: data/org.mate.screensaver.gschema.xml.in:75
 msgid "Theme for lock dialog"
