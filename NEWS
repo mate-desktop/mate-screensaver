@@ -1,6 +1,11 @@
+### mate-screensaver 1.28.0
+
+  * Translations update
+  * configure.ac: The macro 'AC_HELP_STRING' is obsolete
+
 ### mate-screensaver 1.27.0
 
-  * tx: sync with transifex
+  * Translations update
   * tx: update resource
   * tx: migrate config file
   * build warning: AC_OUTPUT should be used without arguments
