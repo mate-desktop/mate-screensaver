@@ -1,0 +1,812 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - mate-screensaver</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(cb) {
+        var elements = document.querySelectorAll("." + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("id-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleSeverity(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+        var elements = document.querySelectorAll(".sev_" + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("severity-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleTool(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+
+        var elements;
+        if (cb.id == "clang-tidy")
+            elements = document.querySelectorAll("[class^=clang-tidy-]");
+        else
+            elements = document.querySelectorAll(".issue:not([class^=clang-tidy-])");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("tool-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll(".idToggle");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var changed = elements[i].checked != elements[0].checked;
+          if (changed) {
+            elements[i].checked = elements[0].checked;
+            toggleDisplay(elements[i]);
+          }
+        }
+      }
+
+      function filterFile(filter) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector("tr").querySelector("td").textContent.toLowerCase().includes(filter.toLowerCase());
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+      }
+
+      function filterText(text) {
+        filter = text.toLowerCase();
+        var elements = document.querySelectorAll(".issue");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = false;
+          var fields = elements[i].querySelectorAll("td");
+          for (var n = 0, num = fields.length; n < num; n++) {
+            if (fields[n].textContent.toLowerCase().includes(filter)) {
+              visible = true;
+              break;
+            }
+          }
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+
+        updateFileRows();
+      }
+
+      function updateFileRows(element) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector(".issue:not(.id-filtered):not(.severity-filtered):not(.tool-filtered):not(.text-filtered)");
+          elements[i].classList.toggle("file-filtered", !visible);
+        }
+      }
+
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+    <div id="header" class="header">
+      <h1>Cppcheck report - mate-screensaver</h1>
+      <div id="filters">
+
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="error"checked/>error</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="warning"disabled/>warning</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="portability"checked/>portability</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="performance"disabled/>performance</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="style"checked/>style</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="information"checked/>information</label>
+        | 
+        <label class="checkBtn"><input type="checkbox" onclick="toggleTool(this)" id="cppcheck"checked/>cppcheck</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleTool(this)" id="clang-tidy"disabled/>clang-tidy</label>
+        | 
+        <label class="severityHeader">File: <input type="text" oninput="filterFile(this.value)"/></label>
+        <label class="severityHeader">Filter: <input type="text" oninput="filterText(this.value)"/></label>
+      </div>
+
+    </div>
+
+    <div id="menu_index">
+     <p><a href="index.html">Defect summary</a> </p>
+
+       <label><input type="checkbox" class="idToggle" onclick="toggleAll()" checked> Toggle all</label>
+       <table>
+           <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="missingIncludeSystem" name="missingIncludeSystem" checked></td><td>360</td><td>missingIncludeSystem</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="missingInclude" name="missingInclude" checked></td><td>40</td><td>missingInclude</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unknownMacro" name="unknownMacro" checked></td><td>16</td><td>unknownMacro</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constParameterPointer" name="constParameterPointer" checked></td><td>15</td><td>constParameterPointer</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unreadVariable" name="unreadVariable" checked></td><td>13</td><td>unreadVariable</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constVariablePointer" name="constVariablePointer" checked></td><td>8</td><td>constVariablePointer</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constParameterCallback" name="constParameterCallback" checked></td><td>3</td><td>constParameterCallback</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="variableScope" name="variableScope" checked></td><td>3</td><td>variableScope</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="arithOperationsOnVoidPointer" name="arithOperationsOnVoidPointer" checked></td><td>2</td><td>arithOperationsOnVoidPointer</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="knownConditionTrueFalse" name="knownConditionTrueFalse" checked></td><td>2</td><td>knownConditionTrueFalse</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="memleakOnRealloc" name="memleakOnRealloc" checked></td><td>2</td><td>memleakOnRealloc</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="redundantAssignment" name="redundantAssignment" checked></td><td>2</td><td>redundantAssignment</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedStructMember" name="unusedStructMember" checked></td><td>2</td><td>unusedStructMember</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="checkersReport" name="checkersReport" checked></td><td>1</td><td>checkersReport</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="leakNoVarFunctionCall" name="leakNoVarFunctionCall" checked></td><td>1</td><td>leakNoVarFunctionCall</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="legacyUninitvar" name="legacyUninitvar" checked></td><td>1</td><td>legacyUninitvar</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="shadowVariable" name="shadowVariable" checked></td><td>1</td><td>shadowVariable</td></tr>
+           <tr><td></td><td>472</td><td>total</td></tr>
+       </table>
+       <p><a href="stats.html">Statistics</a></p>
+    </div>
+    <div id="content_index">
+
+       <table class="summaryTable">
+       <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="66.html"></a></td></tr>
+         <tr class="checkersReport sev_information issue"><td></td><td>checkersReport</td><td></td><td>information</td><td>Active checkers: There was critical errors (use --checkers-report=&lt;filename&gt; to see details)</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="0.html">helper/helper_proto.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="0.html#line-26">26</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="0.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="0.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="0.html#line-38">38</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;rd&apos; can be reduced.</td></tr>
+         <tr class="arithOperationsOnVoidPointer sev_portability issue"><td><a href="0.html#line-45">45</a></td><td>arithOperationsOnVoidPointer</td><td><a href="https://cwe.mitre.org/data/definitions/467.html">467</a></td><td>portability</td><td>&apos;buf&apos; is of type &apos;void *&apos;. When using void pointers in calculations, the behaviour is undefined.</td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="0.html#line-96">96</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td>Condition &apos;rd&gt;0&apos; is always true</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="0.html#line-110">110</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;wt&apos; can be reduced.</td></tr>
+         <tr class="arithOperationsOnVoidPointer sev_portability issue"><td><a href="0.html#line-117">117</a></td><td>arithOperationsOnVoidPointer</td><td><a href="https://cwe.mitre.org/data/definitions/467.html">467</a></td><td>portability</td><td>&apos;buf&apos; is of type &apos;const void *&apos;. When using void pointers in calculations, the behaviour is undefined.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="1.html">helper/helper_proto.h</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="1.html#line-29">29</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="1.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="1.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="2.html">helper/pam-helper.c</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;security/pam_appl.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-36">36</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;security/_pam_macros.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-38">38</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-39">39</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdarg.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-40">40</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-41">41</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-42">42</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-43">43</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;syslog.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-44">44</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-45">45</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;pwd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-46">46</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;signal.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-47">47</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;fcntl.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-48">48</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;ctype.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="2.html#line-49">49</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;limits.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="2.html#line-52">52</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;gs-auth-pam.h&quot; not found.</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="2.html#line-206">206</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;pw&apos; can be declared as pointer to const</td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="2.html#line-223">223</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;program_name&apos; shadows outer variable</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="2.html#line-224">224</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;service&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="2.html#line-224">224</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;user&apos; can be declared as pointer to const</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="2.html#line-241">241</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;program_name&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="2.html#line-243">243</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;program_name&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="3.html">savers/floaters.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="3.html#line-28">28</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="3.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;math.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="3.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="3.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sysexits.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="3.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="3.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="3.html#line-36">36</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="3.html#line-38">38</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="3.html#line-39">39</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="3.html#line-275">275</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;start_point&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="3.html#line-276">276</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;start_control_point&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="3.html#line-277">277</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;end_control_point&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="3.html#line-278">278</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;end_point&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="3.html#line-321">321</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;position&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="3.html#line-356">356</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;screen_saver&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="3.html#line-357">357</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;floater&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="3.html#line-392">392</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;floater&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="3.html#line-467">467</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;floater&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="3.html#line-492">492</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;floater&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="3.html#line-511">511</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;floater&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="3.html#line-902">902</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;screen_saver&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="3.html#line-908">908</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;screen_saver&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="3.html#line-936">936</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;allocation&apos; can be declared as pointer to const. However it seems that &apos;screen_saver_on_size_allocate&apos; is a callback function, if &apos;allocation&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="3.html#line-950">950</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;a&apos; can be declared as pointer to const. However it seems that &apos;compare_floaters&apos; is a callback function, if &apos;a&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="3.html#line-951">951</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;b&apos; can be declared as pointer to const. However it seems that &apos;compare_floaters&apos; is a callback function, if &apos;b&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="6.html">savers/gs-theme-engine-marshal.c</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="6.html#line-3">3</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib-object.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="5.html">savers/gs-theme-engine-marshal.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="5.html#line-5">5</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib-object.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="7.html">savers/gs-theme-engine.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="7.html#line-23">23</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="7.html#line-25">25</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="7.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="7.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="7.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="7.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="7.html#line-44">44</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="8.html">savers/gs-theme-engine.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="8.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="8.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="9.html">savers/gs-theme-window.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="9.html#line-27">27</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="9.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="9.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="9.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="9.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib-object.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="9.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="9.html#line-36">36</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="9.html#line-37">37</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="9.html#line-46">46</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="4.html">savers/gs-theme-window.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="4.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="4.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib-object.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="4.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="10.html">savers/gste-popsquares.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="10.html#line-23">23</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="10.html#line-25">25</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="10.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="10.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="10.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="10.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="10.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="10.html#line-59">59</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="11.html">savers/gste-popsquares.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="11.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="11.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="12.html">savers/gste-slideshow.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="12.html#line-23">23</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="12.html#line-25">25</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="12.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="12.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="12.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="12.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="12.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="12.html#line-91">91</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="13.html">savers/gste-slideshow.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="13.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="13.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="14.html">savers/popsquares.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="14.html#line-23">23</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="14.html#line-25">25</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="14.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="14.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="14.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="15.html">savers/slideshow.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="15.html#line-23">23</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="15.html#line-25">25</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="15.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="15.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="15.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="15.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="15.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="15.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gstdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="15.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="16.html">savers/xdg-user-dir-lookup.c</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="16.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="16.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="16.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="16.html#line-39">39</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;home_dir&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="16.html#line-39">39</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;config_home&apos; can be declared as pointer to const</td></tr>
+         <tr class="leakNoVarFunctionCall sev_error issue"><td><a href="16.html#line-164">164</a></td><td>leakNoVarFunctionCall</td><td><a href="https://cwe.mitre.org/data/definitions/772.html">772</a></td><td>error</td><td class="error">Allocation with xdg_user_dir_lookup, printf doesn&apos;t release it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="17.html">src/copy-theme-dialog.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="17.html#line-21">21</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="17.html#line-23">23</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;limits.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="17.html#line-24">24</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="17.html#line-25">25</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/stat.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="17.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="17.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gstdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="17.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="17.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="17.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gio/gio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="17.html#line-83">83</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="18.html">src/copy-theme-dialog.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="18.html#line-24">24</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="19.html">src/gs-auth-bsdauth.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="19.html#line-23">23</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="19.html#line-25">25</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="19.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;signal.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="19.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="19.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="19.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="19.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;pwd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="19.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="19.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;login_cap.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="19.html#line-36">36</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;bsd_auth.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="legacyUninitvar sev_error issue"><td><a href="19.html#line-84">84</a></td><td>legacyUninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Uninitialized variable: password</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="22.html">src/gs-auth-helper.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="22.html#line-34">34</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="22.html#line-36">36</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="22.html#line-38">38</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="22.html#line-41">41</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="22.html#line-42">42</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="22.html#line-43">43</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="22.html#line-44">44</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;pwd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="22.html#line-45">45</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="22.html#line-46">46</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="22.html#line-48">48</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="22.html#line-49">49</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gstdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="23.html">src/gs-auth-pam.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="23.html#line-26">26</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;fcntl.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-36">36</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-37">37</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;pwd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-38">38</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;grp.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-39">39</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;security/pam_appl.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-40">40</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;signal.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-41">41</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-43">43</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-44">44</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gstdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-45">45</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="23.html#line-46">46</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="23.html#line-255">255</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;res&apos; is assigned a value that is never used.</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="23.html#line-385">385</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;status&apos; is reassigned a value before the old one has been used.</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="23.html#line-429">429</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;ret&apos; is reassigned a value before the old one has been used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="23.html#line-675">675</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;watch_id&apos; is assigned a value that is never used.</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="23.html#line-701">701</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;pwent&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="24.html">src/gs-auth-pwent.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="24.html#line-24">24</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;crypt.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-36">36</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-37">37</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-38">38</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;pwd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-39">39</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;grp.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-42">42</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/param.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-48">48</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-49">49</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-53">53</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;shadow.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-60">60</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/security.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-61">61</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;prot.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-69">69</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/label.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-70">70</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/audit.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-71">71</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;pwdadj.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-79">79</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;hpsecurity.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="24.html#line-80">80</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;prot.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="24.html#line-233">233</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;s&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="20.html">src/gs-auth.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="20.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="25.html">src/gs-debug.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="25.html#line-24">24</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="25.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="25.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="25.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdarg.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="25.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;signal.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="25.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="25.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="25.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="25.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gstdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="25.html#line-136">136</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;args&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="26.html">src/gs-debug.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="26.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdarg.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="26.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="27.html">src/gs-fade.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="27.html#line-25">25</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="27.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="27.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="27.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="27.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="27.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="27.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="27.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="27.html#line-36">36</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="27.html#line-39">39</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="27.html#line-40">40</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="27.html#line-47">47</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;libmate-desktop/mate-rr.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="27.html#line-53">53</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;X11/extensions/xf86vmode.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="27.html#line-120">120</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="28.html">src/gs-fade.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="28.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="29.html">src/gs-grab-x11.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="29.html#line-25">25</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="29.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="29.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="29.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="29.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="29.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="29.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="29.html#line-51">51</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="31.html">src/gs-grab.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="31.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="31.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="32.html">src/gs-job.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="32.html#line-24">24</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="32.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="32.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="32.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;signal.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="32.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="32.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="32.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="32.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="32.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/resource.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="32.html#line-38">38</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="32.html#line-39">39</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gstdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="32.html#line-40">40</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="32.html#line-41">41</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="32.html#line-70">70</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="33.html">src/gs-job.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="33.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="34.html">src/gs-listener-dbus.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="34.html#line-24">24</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="34.html#line-25">25</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="34.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="34.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="34.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="34.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="34.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="34.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;dbus/dbus.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="34.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;dbus/dbus-glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="34.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;dbus/dbus-glib-lowlevel.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="34.html#line-38">38</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;systemd/sd-login.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="34.html#line-150">150</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="35.html">src/gs-listener-dbus.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="35.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="37.html">src/gs-lock-plug.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="37.html#line-24">24</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/utsname.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gprintf.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gstdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-36">36</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-37">37</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkkeysyms.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-38">38</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-39">39</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-40">40</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-41">41</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gio/gio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-44">44</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;libmate-desktop/mate-desktop-utils.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-47">47</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;libmatekbd/matekbd-indicator.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="37.html#line-51">51</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;libnotify/notify.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="37.html#line-157">157</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="38.html">src/gs-lock-plug.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="38.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="39.html">src/gs-manager.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="39.html#line-24">24</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="39.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="39.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="39.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="39.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gio/gio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="39.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;libmate-desktop/mate-bg.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="39.html#line-120">120</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="42.html">src/gs-marshal.c</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="42.html#line-3">3</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib-object.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="36.html">src/gs-marshal.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="36.html#line-5">5</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib-object.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="43.html">src/gs-monitor.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="43.html#line-24">24</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="43.html#line-25">25</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="43.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="43.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="43.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="43.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;X11/extensions/scrnsaver.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="43.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="43.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib-object.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="43.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="43.html#line-61">61</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="46.html">src/gs-monitor.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="46.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="47.html">src/gs-prefs.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="47.html#line-24">24</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="47.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="47.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="47.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib-object.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="47.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gio/gio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="47.html#line-88">88</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="40.html">src/gs-prefs.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="40.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="48.html">src/gs-theme-manager.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="48.html#line-24">24</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="48.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="48.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="48.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="48.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="48.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib-object.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="48.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;matemenu-tree.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="48.html#line-55">55</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="41.html">src/gs-theme-manager.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="41.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="49.html">src/gs-visual-gl.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="49.html#line-24">24</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="49.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="49.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="49.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="49.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="49.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="49.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;GL/gl.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="49.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;GL/glx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="50.html">src/gs-visual-gl.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="50.html#line-25">25</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="51.html">src/gs-watcher-x11.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="51.html#line-25">25</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="51.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="51.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="51.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="51.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="51.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="51.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="51.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;dbus/dbus.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="51.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;dbus/dbus-glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="51.html#line-78">78</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="45.html">src/gs-watcher.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="45.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="52.html">src/gs-window-x11.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="52.html#line-24">24</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="52.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="52.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="52.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="52.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="52.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="52.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkkeysyms.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="52.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="52.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="52.html#line-42">42</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;X11/extensions/shape.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="52.html#line-143">143</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="30.html">src/gs-window.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="30.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="30.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="53.html">src/mate-screensaver-command.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="53.html#line-25">25</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="53.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="53.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;locale.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="53.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="53.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="53.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;dbus/dbus.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="53.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;dbus/dbus-glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="53.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;dbus/dbus-glib-lowlevel.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="memleakOnRealloc sev_error issue"><td><a href="53.html#line-290">290</a></td><td>memleakOnRealloc</td><td><a href="https://cwe.mitre.org/data/definitions/401.html">401</a></td><td>error</td><td class="error">Common realloc mistake: &apos;buffer&apos; nulled but not freed upon failure</td></tr>
+         <tr class="memleakOnRealloc sev_error issue"><td><a href="53.html#line-312">312</a></td><td>memleakOnRealloc</td><td><a href="https://cwe.mitre.org/data/definitions/401.html">401</a></td><td>error</td><td class="error">Common realloc mistake: &apos;buffer&apos; nulled but not freed upon failure</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="53.html#line-430">430</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;reply&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="53.html#line-435">435</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;reply&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="53.html#line-440">440</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;reply&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="53.html#line-445">445</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;reply&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="54.html">src/mate-screensaver-dialog.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="54.html#line-25">25</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="54.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="54.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="54.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="54.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="54.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="54.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="54.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;signal.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="54.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="54.html#line-36">36</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="54.html#line-37">37</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="54.html#line-38">38</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="56.html">src/mate-screensaver-gl-helper.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="56.html#line-23">23</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="56.html#line-25">25</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="56.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="56.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="56.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="56.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="57.html">src/mate-screensaver-preferences-resources.c</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="57.html#line-1">1</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gio/gio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="57.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="57.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="58.html">src/mate-screensaver-preferences.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="58.html#line-26">26</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="58.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="58.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="58.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="58.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="58.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="58.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="58.html#line-36">36</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="58.html#line-38">38</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gio/gio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="58.html#line-41">41</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;libmate-desktop/mate-desktop-utils.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="58.html#line-42">42</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;libmate-desktop/mate-desktop-thumbnail.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="58.html#line-582">582</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;id_a&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="58.html#line-583">583</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;id_b&apos; can be declared as pointer to const</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="58.html#line-1318">1318</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;suid&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="58.html#line-1319">1319</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;sgid&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="58.html#line-1319">1319</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;rgid&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="58.html#line-1320">1320</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;euid&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="58.html#line-1321">1321</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;egid&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="59.html">src/mate-screensaver.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="59.html#line-25">25</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="59.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="59.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="59.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="59.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="59.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="59.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="59.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="59.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="59.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="44.html">src/mate-screensaver.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="44.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="60.html">src/setuid.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="60.html#line-17">17</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="60.html#line-20">20</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="60.html#line-23">23</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="60.html#line-24">24</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="60.html#line-25">25</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="60.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="60.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;pwd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="60.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;grp.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="60.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="60.html#line-213">213</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;authg&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="55.html">src/setuid.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="55.html#line-18">18</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="61.html">src/subprocs.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="61.html#line-18">18</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="61.html#line-20">20</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="61.html#line-21">21</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;ctype.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="61.html#line-22">22</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="61.html#line-23">23</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="61.html#line-26">26</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;errno.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="61.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="61.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="61.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;processes.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="61.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unixio.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="61.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unixlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="61.html#line-40">40</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;signal.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="61.html#line-42">42</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="21.html">src/subprocs.h</a></td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="21.html#line-20">20</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;signal.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="21.html#line-21">21</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="62.html">src/test-fade.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="62.html#line-25">25</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="62.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="62.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="62.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="62.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="62.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="62.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;termios.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="62.html#line-33">33</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;unistd.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="62.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="62.html#line-36">36</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gdk/gdkx.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="62.html#line-37">37</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="62.html#line-43">43</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;X11/extensions/xf86vmode.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="62.html#line-92">92</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/570.html">570</a></td><td>style</td><td>Condition &apos;error&apos; is always false</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="63.html">src/test-passwd.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="63.html#line-25">25</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="63.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="63.html#line-28">28</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;string.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="63.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/time.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="63.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/types.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="63.html#line-31">31</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;sys/wait.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="63.html#line-32">32</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;termios.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="63.html#line-34">34</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="63.html#line-35">35</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="64.html">src/test-watcher.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="64.html#line-25">25</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="64.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="64.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="64.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="65.html">src/test-window.c</a></td></tr>
+         <tr class="missingInclude sev_information issue"><td><a href="65.html#line-25">25</a></td><td>missingInclude</td><td></td><td>information</td><td>Include file: &quot;config.h&quot; not found.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="65.html#line-27">27</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;stdlib.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="65.html#line-29">29</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;glib/gi18n.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+         <tr class="missingIncludeSystem sev_information issue"><td><a href="65.html#line-30">30</a></td><td>missingIncludeSystem</td><td></td><td>information</td><td>Include file: &lt;gtk/gtk.h&gt; not found. Please note: Cppcheck does not need standard library headers to get proper results.</td></tr>
+      </tbody>
+       </table>
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Created by Cppcheck 2.13.0 (<a href="https://cppcheck.sourceforge.io">Sourceforge</a>, <a href="irc://irc.freenode.net/cppcheck">IRC</a>)
+      </p>
+    </div>
+    </div>
+  </body>
+</html>

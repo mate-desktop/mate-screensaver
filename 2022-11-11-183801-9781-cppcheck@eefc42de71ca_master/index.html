@@ -1,0 +1,297 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - mate-screensaver</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(cb) {
+        var elements = document.querySelectorAll("." + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("id-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleSeverity(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+        var elements = document.querySelectorAll(".sev_" + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("severity-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleTool(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+
+        var elements;
+        if (cb.id == "clang-tidy")
+            elements = document.querySelectorAll("[class^=clang-tidy-]");
+        else
+            elements = document.querySelectorAll(".issue:not([class^=clang-tidy-])");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("tool-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll(".idToggle");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var changed = elements[i].checked != elements[0].checked;
+          if (changed) {
+            elements[i].checked = elements[0].checked;
+            toggleDisplay(elements[i]);
+          }
+        }
+      }
+
+      function filterFile(filter) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector("tr").querySelector("td").textContent.toLowerCase().includes(filter.toLowerCase());
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+      }
+
+      function filterText(text) {
+        filter = text.toLowerCase();
+        var elements = document.querySelectorAll(".issue");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = false;
+          var fields = elements[i].querySelectorAll("td");
+          for (var n = 0, num = fields.length; n < num; n++) {
+            if (fields[n].textContent.toLowerCase().includes(filter)) {
+              visible = true;
+              break;
+            }
+          }
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+
+        updateFileRows();
+      }
+
+      function updateFileRows(element) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector(".issue:not(.id-filtered):not(.severity-filtered):not(.tool-filtered):not(.text-filtered)");
+          elements[i].classList.toggle("file-filtered", !visible);
+        }
+      }
+
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+    <div id="header" class="header">
+      <h1>Cppcheck report - mate-screensaver</h1>
+      <div id="filters">
+
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="error"checked/>error</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="warning"disabled/>warning</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="portability"checked/>portability</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="performance"disabled/>performance</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="style"checked/>style</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="information"checked/>information</label>
+        | 
+        <label class="checkBtn"><input type="checkbox" onclick="toggleTool(this)" id="cppcheck"checked/>cppcheck</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleTool(this)" id="clang-tidy"disabled/>clang-tidy</label>
+        | 
+        <label class="severityHeader">File: <input type="text" oninput="filterFile(this.value)"/></label>
+        <label class="severityHeader">Filter: <input type="text" oninput="filterText(this.value)"/></label>
+      </div>
+
+    </div>
+
+    <div id="menu_index">
+     <p><a href="index.html">Defect summary</a> </p>
+
+       <label><input type="checkbox" class="idToggle" onclick="toggleAll()" checked> Toggle all</label>
+       <table>
+           <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unreadVariable" name="unreadVariable" checked></td><td>14</td><td>unreadVariable</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="variableScope" name="variableScope" checked></td><td>9</td><td>variableScope</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="redundantAssignment" name="redundantAssignment" checked></td><td>5</td><td>redundantAssignment</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="knownConditionTrueFalse" name="knownConditionTrueFalse" checked></td><td>3</td><td>knownConditionTrueFalse</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unknownMacro" name="unknownMacro" checked></td><td>3</td><td>unknownMacro</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="ConfigurationNotChecked" name="ConfigurationNotChecked" checked></td><td>2</td><td>ConfigurationNotChecked</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="arithOperationsOnVoidPointer" name="arithOperationsOnVoidPointer" checked></td><td>2</td><td>arithOperationsOnVoidPointer</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constParameter" name="constParameter" checked></td><td>2</td><td>constParameter</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="memleakOnRealloc" name="memleakOnRealloc" checked></td><td>2</td><td>memleakOnRealloc</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedStructMember" name="unusedStructMember" checked></td><td>2</td><td>unusedStructMember</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="missingInclude" name="missingInclude" checked></td><td>1</td><td>missingInclude</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="shadowFunction" name="shadowFunction" checked></td><td>1</td><td>shadowFunction</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="shadowVariable" name="shadowVariable" checked></td><td>1</td><td>shadowVariable</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="uninitvar" name="uninitvar" checked></td><td>1</td><td>uninitvar</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unusedLabel" name="unusedLabel" checked></td><td>1</td><td>unusedLabel</td></tr>
+           <tr><td></td><td>49</td><td>total</td></tr>
+       </table>
+       <p><a href="stats.html">Statistics</a></p>
+    </div>
+    <div id="content_index">
+
+       <table class="summaryTable">
+       <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="21.html"></a></td></tr>
+         <tr class="missingInclude sev_information issue"><td></td><td>missingInclude</td><td></td><td>information</td><td>Cppcheck cannot find all the include files (use --check-config for details)</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="0.html">helper/helper_proto.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="0.html#line-38">38</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;rd&apos; can be reduced.</td></tr>
+         <tr class="arithOperationsOnVoidPointer sev_portability issue"><td><a href="0.html#line-45">45</a></td><td>arithOperationsOnVoidPointer</td><td><a href="https://cwe.mitre.org/data/definitions/467.html">467</a></td><td>portability</td><td>&apos;buf&apos; is of type &apos;void *&apos;. When using void pointers in calculations, the behaviour is undefined.</td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="0.html#line-96">96</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td>Condition &apos;rd&gt;0&apos; is always true</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="0.html#line-110">110</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;wt&apos; can be reduced.</td></tr>
+         <tr class="arithOperationsOnVoidPointer sev_portability issue"><td><a href="0.html#line-117">117</a></td><td>arithOperationsOnVoidPointer</td><td><a href="https://cwe.mitre.org/data/definitions/467.html">467</a></td><td>portability</td><td>&apos;buf&apos; is of type &apos;const void *&apos;. When using void pointers in calculations, the behaviour is undefined.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="1.html">helper/pam-helper.c</a></td></tr>
+         <tr class="shadowVariable sev_style issue"><td><a href="1.html#line-223">223</a></td><td>shadowVariable</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;program_name&apos; shadows outer variable</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="1.html#line-241">241</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;program_name&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="1.html#line-243">243</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;program_name&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="2.html">savers/floaters.c</a></td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="2.html#line-321">321</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;position&apos; can be declared with const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="3.html">savers/gste-popsquares.c</a></td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="3.html#line-232">232</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;wanted&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="4.html">savers/gste-slideshow.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="4.html#line-91">91</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="5.html">src/copy-theme-dialog.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="5.html#line-83">83</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="6.html">src/gs-auth-bsdauth.c</a></td></tr>
+         <tr class="uninitvar sev_error issue"><td><a href="6.html#line-84">84</a></td><td>uninitvar</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Uninitialized variable: password</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="7.html">src/gs-auth-pam.c</a></td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="7.html#line-255">255</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;res&apos; is assigned a value that is never used.</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="7.html#line-385">385</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;status&apos; is reassigned a value before the old one has been used.</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="7.html#line-429">429</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;ret&apos; is reassigned a value before the old one has been used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="8.html">src/gs-debug.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="8.html#line-136">136</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;args&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="9.html">src/gs-fade.c</a></td></tr>
+         <tr class="unusedLabel sev_style issue"><td><a href="9.html#line-342">342</a></td><td>unusedLabel</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Label &apos;test_number&apos; is not used.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="9.html#line-565">565</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;info&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="10.html">src/gs-job.c</a></td></tr>
+         <tr class="ConfigurationNotChecked sev_information issue"><td><a href="10.html#line-245">245</a></td><td>ConfigurationNotChecked</td><td></td><td>information</td><td>Skipping configuration &apos;HAVE_SETPRIORITY;PRIO_PROCESS&apos; since the value of &apos;PRIO_PROCESS&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="11.html">src/gs-listener-dbus.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="11.html#line-150">150</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_DEFINE_TYPE_WITH_PRIVATE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="12.html">src/gs-lock-plug.c</a></td></tr>
+         <tr class="shadowFunction sev_style issue"><td><a href="12.html#line-609">609</a></td><td>shadowFunction</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Local variable &apos;delete_handler&apos; shadows outer function</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="12.html#line-981">981</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;icon_size&apos; can be reduced.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="13.html">src/gs-manager.c</a></td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="13.html#line-1576">1576</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;n_monitors&apos; is assigned a value that is never used.</td></tr>
+         <tr class="constParameter sev_style issue"><td><a href="13.html#line-1600">1600</a></td><td>constParameter</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;monitor&apos; can be declared with const</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="13.html#line-1606">1606</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;n_monitors&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="14.html">src/gs-theme-manager.c</a></td></tr>
+         <tr class="ConfigurationNotChecked sev_information issue"><td><a href="14.html#line-63">63</a></td><td>ConfigurationNotChecked</td><td></td><td>information</td><td>Skipping configuration &apos;XSCREENSAVER_HACK_DIR&apos; since the value of &apos;XSCREENSAVER_HACK_DIR&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="15.html">src/gs-watcher-x11.c</a></td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="15.html#line-601">601</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;desired_server_interval&apos; is reassigned a value before the old one has been used.</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="15.html#line-606">606</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;desired_allow_exp&apos; is reassigned a value before the old one has been used.</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="15.html#line-614">614</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;desired_server_timeout&apos; is reassigned a value before the old one has been used.</td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="15.html#line-618">618</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/570.html">570</a></td><td>style</td><td>Condition &apos;desired_prefer_blank!=current_prefer_blank&apos; is always false</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="16.html">src/gs-window-x11.c</a></td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="16.html#line-149">149</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;display&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="16.html#line-789">789</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;events&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="16.html#line-867">867</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;secondary_markup&apos; can be reduced.</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="16.html#line-869">869</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;secondary_label&apos; can be reduced.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="16.html#line-1026">1026</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;finished&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="16.html#line-1129">1129</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;id&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="16.html#line-1362">1362</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;finished&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="16.html#line-1630">1630</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;finished&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="17.html">src/mate-screensaver-command.c</a></td></tr>
+         <tr class="memleakOnRealloc sev_error issue"><td><a href="17.html#line-290">290</a></td><td>memleakOnRealloc</td><td><a href="https://cwe.mitre.org/data/definitions/401.html">401</a></td><td>error</td><td class="error">Common realloc mistake: &apos;buffer&apos; nulled but not freed upon failure</td></tr>
+         <tr class="memleakOnRealloc sev_error issue"><td><a href="17.html#line-312">312</a></td><td>memleakOnRealloc</td><td><a href="https://cwe.mitre.org/data/definitions/401.html">401</a></td><td>error</td><td class="error">Common realloc mistake: &apos;buffer&apos; nulled but not freed upon failure</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="18.html">src/mate-screensaver-preferences-resources.c</a></td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="18.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::alignment&apos; is never used.</td></tr>
+         <tr class="unusedStructMember sev_style issue"><td><a href="18.html#line-9">9</a></td><td>unusedStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>union member &apos;Anonymous0::ptr&apos; is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="19.html">src/mate-screensaver-preferences.c</a></td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="19.html#line-1318">1318</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;suid&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="19.html#line-1319">1319</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;sgid&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="19.html#line-1320">1320</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;euid&apos; is assigned a value that is never used.</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="19.html#line-1321">1321</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;egid&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="20.html">src/test-fade.c</a></td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="20.html#line-92">92</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/570.html">570</a></td><td>style</td><td>Condition &apos;error&apos; is always false</td></tr>
+      </tbody>
+       </table>
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Created by Cppcheck 2.7.4 (<a href="https://cppcheck.sourceforge.io">Sourceforge</a>, <a href="irc://irc.freenode.net/cppcheck">IRC</a>)
+      </p>
+    </div>
+    </div>
+  </body>
+</html>
