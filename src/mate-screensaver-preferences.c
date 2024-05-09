@@ -118,6 +118,31 @@ config_set_activate_delay (gint32 timeout)
 	g_settings_set_int (session_settings, KEY_IDLE_DELAY, timeout);
 }
 
+static gdouble
+config_get_lock_delay (gboolean *is_writable)
+{
+	gint delay;
+
+	if (is_writable)
+	{
+		*is_writable = g_settings_is_writable (screensaver_settings,
+		               KEY_LOCK_DELAY);
+	}
+
+	if ((delay = g_settings_get_int (screensaver_settings, KEY_LOCK_DELAY)) < 1)
+	{
+		return 0.0;
+	}
+
+	return (gdouble) delay;
+}
+
+static void
+config_set_lock_delay (gint32 timeout)
+{
+	g_settings_set_int (screensaver_settings, KEY_LOCK_DELAY, timeout);
+}
+
 static int
 config_get_mode (gboolean *is_writable)
 {
@@ -576,6 +601,16 @@ activate_delay_value_changed_cb (GtkRange *range,
 	config_set_activate_delay ((gint32)value);
 }
 
+static void
+lock_delay_value_changed_cb (GtkRange *range,
+                             gpointer  user_data)
+{
+	gdouble value;
+
+	value = gtk_range_get_value (range);
+	config_set_lock_delay ((gint32)value);
+}
+
 static int
 compare_theme_names (char *name_a,
                      char *name_b,
@@ -1028,7 +1063,6 @@ time_to_string_text (long time)
 			size_t max_len;
 
 			string = g_strdup_printf (_("%s"), mins);
-
 			if (min == 1)
 				max_len = (size_t) (len_minutes + inc_len + 3);
 			else if (min < 10)
@@ -1067,8 +1101,9 @@ static char *
 format_value_callback_time (GtkScale *scale,
                             gdouble   value)
 {
+	/*You need to make up for 27 characters in length, otherwise the display will split into different lines*/
 	if (value == 0)
-		return g_strdup_printf (_("Never"));
+		return g_strdup_printf (_("Never                      "));
 
 	return time_to_string_text ((long) (value * 60.0));
 }
@@ -1152,11 +1187,11 @@ ui_set_enabled (gboolean enabled)
 }
 
 static void
-ui_set_delay (gdouble delay)
+ui_set_delay (const char *name, gdouble delay)
 {
 	GtkWidget *widget;
 
-	widget = GTK_WIDGET (gtk_builder_get_object (builder, "activate_delay_hscale"));
+	widget = GTK_WIDGET (gtk_builder_get_object (builder, name));
 	gtk_range_set_value (GTK_RANGE (widget), delay);
 }
 
@@ -1199,8 +1234,14 @@ key_changed_cb (GSettings *settings, const gchar *key, gpointer data)
 			int delay;
 
 			delay = g_settings_get_int (settings, key);
-			ui_set_delay ((gdouble) delay);
+			ui_set_delay ("activate_delay_hscale", (gdouble) delay);
+	}
+	else if (strcmp (key, KEY_LOCK_DELAY) == 0)
+	{
+		int delay;
 
+		delay = g_settings_get_int (settings, key);
+		ui_set_delay ("lock_delay_hscale", (gdouble) delay);
 	}
 	else
 	{
@@ -1596,7 +1637,7 @@ init_capplet (void)
 	GtkWidget *treeview;
 	GtkWidget *list_scroller;
 	GtkWidget *activate_delay_hscale;
-	GtkWidget *activate_delay_hbox;
+	GtkWidget *lock_delay_hscale;
 	GtkWidget *label;
 	GtkWidget *enabled_checkbox;
 	GtkWidget *lock_checkbox;
@@ -1645,7 +1686,7 @@ init_capplet (void)
 	treeview           = GTK_WIDGET (gtk_builder_get_object (builder, "savers_treeview"));
 	list_scroller      = GTK_WIDGET (gtk_builder_get_object (builder, "themes_scrolled_window"));
 	activate_delay_hscale = GTK_WIDGET (gtk_builder_get_object (builder, "activate_delay_hscale"));
-	activate_delay_hbox   = GTK_WIDGET (gtk_builder_get_object (builder, "activate_delay_hbox"));
+	lock_delay_hscale  = GTK_WIDGET (gtk_builder_get_object (builder, "lock_delay_hscale"));
 	enabled_checkbox   = GTK_WIDGET (gtk_builder_get_object (builder, "enable_checkbox"));
 	lock_checkbox      = GTK_WIDGET (gtk_builder_get_object (builder, "lock_checkbox"));
 	root_warning_label = GTK_WIDGET (gtk_builder_get_object (builder, "root_warning_label"));
@@ -1660,6 +1701,8 @@ init_capplet (void)
 
 	label              = GTK_WIDGET (gtk_builder_get_object (builder, "activate_delay_label"));
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), activate_delay_hscale);
+	label              = GTK_WIDGET (gtk_builder_get_object (builder, "lock_delay_label"));
+	gtk_label_set_mnemonic_widget (GTK_LABEL (label), lock_delay_hscale);
 	label              = GTK_WIDGET (gtk_builder_get_object (builder, "savers_label"));
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), treeview);
 
@@ -1691,12 +1734,21 @@ init_capplet (void)
 	                  NULL);
 
 	activate_delay = config_get_activate_delay (&is_writable);
-	ui_set_delay (activate_delay);
+	ui_set_delay ("activate_delay_hscale", activate_delay);
 	if (! is_writable)
 	{
-		gtk_widget_set_sensitive (activate_delay_hbox, FALSE);
+		gtk_widget_set_sensitive (activate_delay_hscale, FALSE);
 	}
 	g_signal_connect (activate_delay_hscale, "format-value",
+	                  G_CALLBACK (format_value_callback_time), NULL);
+
+	activate_delay = config_get_lock_delay (&is_writable);
+	ui_set_delay ("lock_delay_hscale", activate_delay);
+	if (! is_writable)
+	{
+		gtk_widget_set_sensitive (lock_delay_hscale, FALSE);
+	}
+	g_signal_connect (lock_delay_hscale, "format-value",
 	                  G_CALLBACK (format_value_callback_time), NULL);
 
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (lock_checkbox), config_get_lock (&is_writable));
@@ -1769,6 +1821,9 @@ init_capplet (void)
 
 	g_signal_connect (activate_delay_hscale, "value-changed",
 	                  G_CALLBACK (activate_delay_value_changed_cb), NULL);
+
+	g_signal_connect (lock_delay_hscale, "value-changed",
+	                  G_CALLBACK (lock_delay_value_changed_cb), NULL);
 
 	g_signal_connect (dialog, "response",
 	                  G_CALLBACK (response_cb), NULL);
