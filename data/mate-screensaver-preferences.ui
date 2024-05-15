@@ -441,6 +441,7 @@
                                             <property name="halign">start</property>
                                             <property name="hexpand">False</property>
                                             <property name="label" translatable="yes">Time before l_ocking:</property>
+                                            <property name="tooltip-text" translatable="yes">Delay before locking the screen after the screensaver activated</property>
                                             <property name="use_underline">True</property>
                                           </object>
                                           <packing>
