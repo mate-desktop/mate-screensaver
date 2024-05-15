@@ -969,13 +969,7 @@ static char *
 time_to_string_text (long time)
 {
 	char  *secs, *mins, *hours, *string;
-	char  *chk_hour_str, *chk_minute_str, *chk_hour_minute_str;
-	char  *chk_ascii_str;
 	int    sec, min, hour;
-	size_t chk_ascii_len;
-	int    len_minutes;
-	int    n, inc_len;
-	int    diff;
 
 	sec = time % 60;
 	time = time - sec;
@@ -991,52 +985,6 @@ time_to_string_text (long time)
 
 	secs = g_strdup_printf (ngettext ("%d second",
 	                                  "%d seconds", sec), sec);
-
-	/* inc_len = it's the lenght of the string "1 hour 59 minutes" */
-	chk_hour_str = g_strdup_printf (ngettext ("%d hour",
-	                                          "%d hours", 1), 1);
-	chk_minute_str = g_strdup_printf (ngettext ("%d minute",
-	                                            "%d minutes", 59), 59);
-	chk_hour_minute_str = g_strdup_printf (_("%s %s"),
-	                                       chk_hour_str, chk_minute_str);
-	inc_len = strlen (chk_hour_minute_str) - 1;
-	g_free (chk_hour_str);
-	g_free (chk_minute_str);
-	g_free (chk_hour_minute_str);
-
-	len_minutes = 0;
-	for (n = 2; n < 60; n++)
-	{
-		char   *minute_str    = g_strdup_printf (ngettext ("%d minute",
-		                                                   "%d minutes", n), n);
-		char   *ascii_str     = g_str_to_ascii (minute_str, NULL);
-		size_t  ascii_str_len = strlen (ascii_str);
-		size_t  extra_length  = (n < 10) ? 2 : 3;
-
-		diff = (int) (ascii_str_len - extra_length);
-		if (diff > len_minutes)
-			len_minutes = diff;
-
-		g_free (minute_str);
-		g_free (ascii_str);
-	}
-
-	/* check the lenght of the string "1 minute" */
-	chk_minute_str = g_strdup_printf (ngettext ("%d minute",
-	                                            "%d minutes", 1), 1);
-	chk_ascii_str = g_str_to_ascii (chk_minute_str, NULL);
-	chk_ascii_len = strlen (chk_ascii_str);
-	diff = (int) (chk_ascii_len - 2);
-
-	if (diff > len_minutes)
-		len_minutes = diff;
-
-	g_free (chk_minute_str);
-	g_free (chk_ascii_str);
-
-	/* len_minutes = MAX (1, len_minutes) */
-	if (len_minutes < 1)
-		len_minutes = 1;
 
 	if (hour > 0)
 	{
@@ -1060,28 +1008,7 @@ time_to_string_text (long time)
 		else
 		{
 			/* minutes */
-			size_t max_len;
-
 			string = g_strdup_printf (_("%s"), mins);
-			if (min == 1)
-				max_len = (size_t) (len_minutes + inc_len + 3);
-			else if (min < 10)
-				max_len = (size_t) (len_minutes + inc_len);
-			else
-				max_len = (size_t) (len_minutes + inc_len - 1);
-
-			while (strlen (string) != max_len)
-			{
-				char *string_aux;
-
-				if (strlen (string) % 2 == 0)
-					string_aux = g_strconcat (string, " ", NULL);
-				else
-					string_aux = g_strconcat (" " , string, NULL);
-
-				g_free (string);
-				string = string_aux;
-			}
 		}
 	}
 	else
@@ -1101,11 +1028,70 @@ static char *
 format_value_callback_time (GtkScale *scale,
                             gdouble   value)
 {
-	/*You need to make up for 27 characters in length, otherwise the display will split into different lines*/
-	if (value == 0)
-		return g_strdup_printf (_("Never                      "));
+	gchar *time_str, *big_time_str;
+	GtkAdjustment *adj;
+	gdouble lower, range, delta;
+	gint pad_size;
 
-	return time_to_string_text ((long) (value * 60.0));
+	/* get the value representation as a string */
+	if (value == 0)
+		time_str = g_strdup (_("Never"));
+	else
+		time_str = time_to_string_text ((long) (value * 60.0));
+
+	/* Now, adjust the string so the representation for the bounds are the
+	 * longest ones, and try and adjust the length as smoothly as possible.
+	 * The issue here is that GTK is using the lower and upper value
+	 * representations to compute the largest expected value's bounding box,
+	 * so those need to be bigger than anything else we might represent,
+	 * otherwise layout gets messed up (wraps and overflows).  To achieve this,
+	 * we pad the values near each bound so its length is at least the same as
+	 * the biggest actual value.  We cannot really do anything perfect here
+	 * because what matters is the pango layout size for the largest value, but
+	 * we don't have access to enough information to create one matching what
+	 * GTK will actually use, and even so it'd be trial-and-error until the
+	 * layout is big enough.  So the silly assumptions below are probably good
+	 * enough. */
+	adj = gtk_range_get_adjustment (GTK_RANGE (scale));
+	lower = gtk_adjustment_get_lower (adj);
+	range = gtk_adjustment_get_upper (adj) - lower;
+	delta = range / 2 - (value - lower);
+	/* the largest (character-wise) time string we expect */
+	big_time_str = time_to_string_text (7199 /* 1:59:59 */);
+	pad_size = ((g_utf8_strlen (big_time_str, -1) * (ABS (delta) / range)) -
+	            g_utf8_strlen (time_str, -1));
+	g_free (big_time_str);
+	if (pad_size > 0)
+	{
+		/* pad string with EM SPACE (U+2003) */
+		GString *padded = g_string_new (NULL);
+
+		/* adjust pad side in RTL locales that aren't actually translated, as
+		 * a properly translated one would have text drawn RTL already */
+		if (gtk_widget_get_direction (GTK_WIDGET (scale)) == GTK_TEXT_DIR_RTL)
+		{
+			const gchar *msg_plural = "%d minutes";
+			if (ngettext ("%d minute", msg_plural, 2) == msg_plural)
+				delta *= -1;
+		}
+
+		if (delta < 0)
+		{
+			for (gint i = 0; i < pad_size; i++)
+				g_string_append_unichar (padded, 0x2003);
+			g_string_append (padded, time_str);
+		}
+		else
+		{
+			g_string_append (padded, time_str);
+			for (gint i = 0; i < pad_size; i++)
+				g_string_append_unichar (padded, 0x2003);
+		}
+		g_free (time_str);
+		time_str = g_string_free (padded, FALSE);
+	}
+
+	return time_str;
 }
 
 static void
