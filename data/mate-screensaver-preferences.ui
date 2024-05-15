@@ -508,7 +508,9 @@
                                       <object class="GtkLabel">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="label" translatable="yes">Background picture for lock screen:</property>
+                                        <property name="label" translatable="yes">_Background picture for lock screen:</property>
+                                        <property name="use-underline">True</property>
+                                        <property name="mnemonic-widget">picture_filename</property>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
