@@ -394,20 +394,21 @@
                                 <property name="spacing">6</property>
                                 <child>
                                   <object class="GtkBox" id="activate_delay_hbox">
--                                   <property name="visible">True</property>
--                                   <property name="can_focus">False</property>
--                                   <property name="spacing">12</property>
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="spacing">12</property>
                                     <child>
                                       <object class="GtkGrid" id="time_grid">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
                                         <property name="hexpand">True</property>
-                                        <property name="column-homogeneous">True</property>
                                         <property name="column_spacing">6</property>
                                         <child>
                                           <object class="GtkLabel" id="activate_delay_label">
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
+                                            <property name="halign">start</property>
+                                            <property name="hexpand">False</property>
                                             <property name="label" translatable="yes">Regard the computer as _idle after:</property>
                                             <property name="use_underline">True</property>
                                           </object>
@@ -422,13 +423,14 @@
                                           <object class="GtkScale" id="activate_delay_hscale">
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
+                                            <property name="hexpand">True</property>
                                             <property name="adjustment">adjustment1</property>
                                             <property name="digits">0</property>
                                           </object>
                                           <packing>
                                             <property name="left_attach">1</property>
                                             <property name="top_attach">0</property>
-                                            <property name="width">3</property>
+                                            <property name="width">1</property>
                                             <property name="height">1</property>
                                           </packing>
                                         </child>
@@ -436,6 +438,8 @@
                                           <object class="GtkLabel" id="lock_delay_label">
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
+                                            <property name="halign">start</property>
+                                            <property name="hexpand">False</property>
                                             <property name="label" translatable="yes">Time before locking:</property>
                                             <property name="use_underline">True</property>
                                           </object>
@@ -450,13 +454,14 @@
                                           <object class="GtkScale" id="lock_delay_hscale">
                                             <property name="visible">True</property>
                                             <property name="can_focus">True</property>
+                                            <property name="hexpand">True</property>
                                             <property name="adjustment">adjustment2</property>
                                             <property name="digits">0</property>
                                           </object>
                                           <packing>
                                             <property name="left_attach">1</property>
                                             <property name="top_attach">1</property>
-                                            <property name="width">3</property>
+                                            <property name="width">1</property>
                                             <property name="height">1</property>
                                           </packing>
                                         </child>
