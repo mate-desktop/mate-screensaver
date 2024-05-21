@@ -1621,7 +1621,6 @@ init_capplet (void)
 	GtkWidget *list_scroller;
 	GtkWidget *activate_delay_hscale;
 	GtkWidget *lock_delay_hscale;
-	GtkWidget *label;
 	GtkWidget *enabled_checkbox;
 	GtkWidget *lock_checkbox;
 	GtkWidget *root_warning_label;
@@ -1681,13 +1680,6 @@ init_capplet (void)
 	fullscreen_preview_previous = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_previous_button"));
 	fullscreen_preview_next = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_next_button"));
 	picture_filename = GTK_WIDGET (gtk_builder_get_object (builder, "picture_filename"));
-
-	label              = GTK_WIDGET (gtk_builder_get_object (builder, "activate_delay_label"));
-	gtk_label_set_mnemonic_widget (GTK_LABEL (label), activate_delay_hscale);
-	label              = GTK_WIDGET (gtk_builder_get_object (builder, "lock_delay_label"));
-	gtk_label_set_mnemonic_widget (GTK_LABEL (label), lock_delay_hscale);
-	label              = GTK_WIDGET (gtk_builder_get_object (builder, "savers_label"));
-	gtk_label_set_mnemonic_widget (GTK_LABEL (label), treeview);
 
 	gtk_widget_set_no_show_all (root_warning_label, TRUE);
 	widget_set_best_visual (preview);
