@@ -286,6 +286,7 @@
                         <property name="label" translatable="yes">_Screensaver theme:</property>
                         <property name="use_markup">True</property>
                         <property name="use_underline">True</property>
+                        <property name="mnemonic-widget">savers_treeview</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -411,6 +412,7 @@
                                             <property name="hexpand">False</property>
                                             <property name="label" translatable="yes">Regard the computer as _idle after:</property>
                                             <property name="use_underline">True</property>
+                                            <property name="mnemonic-widget">activate_delay_hscale</property>
                                           </object>
                                           <packing>
                                             <property name="left_attach">0</property>
@@ -443,6 +445,7 @@
                                             <property name="label" translatable="yes">Time before l_ocking:</property>
                                             <property name="tooltip-text" translatable="yes">Delay before locking the screen after the screensaver activated</property>
                                             <property name="use_underline">True</property>
+                                            <property name="mnemonic-widget">lock_delay_hscale</property>
                                           </object>
                                           <packing>
                                             <property name="left_attach">0</property>
