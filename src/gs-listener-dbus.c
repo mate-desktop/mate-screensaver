@@ -51,9 +51,9 @@ static DBusHandlerResult gs_listener_message_handler    (DBusConnection  *connec
         DBusMessage     *message,
         void            *user_data);
 
-#define GS_LISTENER_SERVICE   "org.mate.ScreenSaver"
-#define GS_LISTENER_PATH      "/org/mate/ScreenSaver"
-#define GS_LISTENER_INTERFACE "org.mate.ScreenSaver"
+#define GS_LISTENER_SERVICE   "org.freedesktop.ScreenSaver"
+#define GS_LISTENER_PATH      "/org/freedesktop/ScreenSaver"
+#define GS_LISTENER_INTERFACE "org.freedesktop.ScreenSaver"
 
 /* systemd logind */
 #define SYSTEMD_LOGIND_SERVICE   "org.freedesktop.login1"
@@ -1370,7 +1370,7 @@ do_introspect (DBusConnection *connection,
 
 	/* ScreenSaver interface */
 	xml = g_string_append (xml,
-	                       "  <interface name=\"org.mate.ScreenSaver\">\n"
+	                       "  <interface name=\"org.freedesktop.ScreenSaver\">\n"
 	                       "    <method name=\"Lock\">\n"
 	                       "    </method>\n"
 	                       "    <method name=\"Unlock\">\n"
