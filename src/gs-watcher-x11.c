@@ -344,6 +344,10 @@ on_idle_timeout (GSWatcher *watcher)
 	_gs_watcher_set_session_idle_notice (watcher, FALSE);
 
 	/* try again if we failed i guess */
+	if (res)
+	{
+		watcher->priv->idle_id = 0;
+	}
 	return !res;
 }
 
