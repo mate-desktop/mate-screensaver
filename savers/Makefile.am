@@ -20,6 +20,7 @@ DESKTOP_IN_IN_FILES = 			 \
 	gnomelogo-floaters.desktop.in.in	 \
 	personal-slideshow.desktop.in.in \
 	popsquares.desktop.in.in	 \
+	starfield.desktop.in.in	 \
 	$(NULL)
 
 cosmos-slideshow.desktop.in: cosmos-slideshow.desktop.in.in Makefile
@@ -31,6 +32,8 @@ gnomelogo-floaters.desktop.in: gnomelogo-floaters.desktop.in.in Makefile
 personal-slideshow.desktop.in: personal-slideshow.desktop.in.in Makefile
 	@$(edit) $< >$@
 popsquares.desktop.in: popsquares.desktop.in.in Makefile
+	@$(edit) $< >$@
+starfield.desktop.in: starfield.desktop.in.in Makefile
 	@$(edit) $< >$@
 
 edit = sed \
@@ -49,6 +52,7 @@ themes_in_files = 			\
 	gnomelogo-floaters.desktop.in    \
 	personal-slideshow.desktop.in	\
 	popsquares.desktop.in		\
+	starfield.desktop.in		\
 	$(NULL)
 themes_DATA = $(themes_in_files:.desktop.in=.desktop)
 
@@ -85,6 +89,7 @@ saver_PROGRAMS = 	\
 	floaters	\
 	popsquares	\
 	slideshow	\
+	starfield	\
 	$(NULL)
 
 floaters_SOURCES =	\
@@ -121,6 +126,18 @@ slideshow_LDADD =     \
 	$(MATE_SCREENSAVER_SAVER_LIBS)	\
 	$(NULL)
 
+starfield_SOURCES = 	\
+	gste-starfield.c	\
+	gste-starfield.h	\
+	starfield.c		\
+	$(NULL)
+
+starfield_LDADD =			\
+	libgs-theme-engine.a 		\
+	$(MATE_SCREENSAVER_SAVER_LIBS)	\
+	-lm                             \
+	$(NULL)
+
 EXTRA_DIST =				\
 	gs-theme-engine-marshal.list	\
 	$(DESKTOP_IN_IN_FILES)		\
@@ -134,6 +151,7 @@ CLEANFILES = 				\
 	gnomelogo-floaters.desktop.in	\
 	popsquares.desktop.in		\
 	personal-slideshow.desktop.in	\
+	starfield.desktop.in	\
 	$(NULL)
 
 DISTCLEANFILES = 			\
@@ -148,6 +166,7 @@ MAINTAINERCLEANFILES =			\
 	gnomelogo-floaters.desktop	\
 	personal-slideshow.desktop	\
 	popsquares.desktop		\
+	starfield.desktop		\
 	$(NULL)
 
 -include $(top_srcdir)/git.mk
