@@ -1034,10 +1034,7 @@ format_value_callback_time (GtkScale *scale,
 	gint pad_size;
 
 	/* get the value representation as a string */
-	if (value == 0)
-		time_str = g_strdup (_("Never"));
-	else
-		time_str = time_to_string_text ((long) (value * 60.0));
+	time_str = time_to_string_text ((long) (value * 60.0));
 
 	/* Now, adjust the string so the representation for the bounds are the
 	 * longest ones, and try and adjust the length as smoothly as possible.
