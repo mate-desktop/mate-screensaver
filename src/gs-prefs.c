@@ -476,6 +476,11 @@ key_changed_cb (GSettings *settings,
 		_gs_prefs_set_user_switch_enabled (prefs, enabled);
 
 	}
+	else if (strcmp (key, "screensaver-arguments") == 0)
+	{
+		/* Screensaver arguments are read directly by gs-job
+		   when starting screensavers, no action needed here */
+	}
 	else
 	{
 		g_warning ("Config key not handled: %s", key);

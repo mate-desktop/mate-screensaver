@@ -37,6 +37,7 @@
 
 #include <glib.h>
 #include <glib/gstdio.h>
+#include <gio/gio.h>
 #include <gdk/gdk.h>
 #include <gdk/gdkx.h>
 
@@ -485,12 +486,62 @@ gs_job_start (GSJob *job)
 		return FALSE;
 	}
 
+	char *final_command = NULL;
+	GSettings *settings = g_settings_new ("org.mate.screensaver");
+	GVariant *args_dict = g_settings_get_value (settings, "screensaver-arguments");
+
+	if (args_dict)
+	{
+		char **argv = NULL;
+
+		/* Get screensaver name from command */
+		if (g_shell_parse_argv (job->priv->command, NULL, &argv, NULL))
+		{
+			const char *saved_args = NULL;
+			char *screensaver_name = NULL;
+
+			screensaver_name = g_path_get_basename (argv[0]);
+
+			/* Lookup arguments in dictionary to see if there's a match */
+			g_variant_lookup (args_dict, screensaver_name, "&s", &saved_args);
+			g_strfreev (argv);
+
+			if (saved_args && saved_args[0] != '\0')
+			{
+				/* Add --help to current list of args to catch invalid arguments */
+				char *test_cmd = g_strdup_printf ("%s %s --help", job->priv->command, saved_args);
+				char *stdout_out = NULL, *stderr_out = NULL;
+				int exit_status = -1;
+
+				/* Only append configured arguments if they are valid */
+				if (g_spawn_command_line_sync (test_cmd, &stdout_out, &stderr_out, &exit_status, NULL) && exit_status == 0)
+				{
+					final_command = g_strdup_printf ("%s %s", job->priv->command, saved_args);
+					gs_debug ("Applying saved configuration: %s", saved_args);
+				}
+
+				g_free (test_cmd);
+				g_free (stdout_out);
+				g_free (stderr_out);
+			}
+
+			g_free (screensaver_name);
+		}
+
+		g_variant_unref (args_dict);
+	}
+	g_object_unref (settings);
+
+	const char *command_to_run = final_command ? final_command : job->priv->command;
+
 	result = spawn_on_widget (job->priv->widget,
-	                          job->priv->command,
+	                          command_to_run,
 	                          &job->priv->pid,
 	                          (GIOFunc)command_watch,
 	                          job,
 	                          &job->priv->watch_id);
+
+	g_free (final_command);
 
 	if (result)
 	{

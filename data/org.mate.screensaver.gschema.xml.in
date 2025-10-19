@@ -95,5 +95,10 @@
       <summary>Picture Filename</summary>
       <description>File to use for the background image.</description>
     </key>
+    <key name="screensaver-arguments" type="a{ss}">
+      <default>{}</default>
+      <summary>Per-screensaver configuration arguments</summary>
+      <description>Dictionary mapping screensaver names to their command-line arguments. Format: {"screensaver-name": "--args"}. Configure manually using gsettings or dconf-editor. Example: gsettings set org.mate.screensaver screensaver-arguments "{\"starfield\": \"--count 50\"}"</description>
+    </key>
   </schema>
 </schemalist>
