@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+"""
+mate-screensaver-configure - Configure screensaver command-line arguments
+
+Usage:
+  mate-screensaver-configure <screensaver-name> [arguments...]
+  mate-screensaver-configure --list
+  mate-screensaver-configure --help
+
+Examples:
+  mate-screensaver-configure starfield --count 500 --speed 10
+  mate-screensaver-configure slideshow --location ~/Pictures
+  mate-screensaver-configure starfield ""  # Remove arguments
+  mate-screensaver-configure --list        # Show current configuration
+
+Also works for XScreenSaver:
+  mate-screensaver-configure fuzzyflakes --speed 25 --random-colors
+
+To manually view or edit configuration:
+  gsettings get org.mate.screensaver screensaver-arguments
+  dconf-editor /org/mate/screensaver/screensaver-arguments
+"""
+
+import sys
+import gi
+gi.require_version('Gio', '2.0')
+from gi.repository import Gio, GLib
+
+SCHEMA = "org.mate.screensaver"
+KEY = "screensaver-arguments"
+
+
+def get_config(settings):
+    """Load current screensaver arguments as a Python dict"""
+    current = settings.get_value(KEY)
+    return {key: current[key] for key in current.keys()}
+
+
+def set_config(settings, config):
+    """Save screensaver arguments dict to GSettings"""
+    settings.set_value(KEY, GLib.Variant('a{ss}', config))
+
+
+def show_config(settings):
+    """Display current screensaver configuration"""
+    config = get_config(settings)
+    if config:
+        print("Current configuration:")
+        for name in sorted(config.keys()):
+            print(f"  {name}: {config[name]}")
+    else:
+        print("No screensaver arguments configured")
+
+
+def main():
+    if len(sys.argv) < 2 or sys.argv[1] in ('-h', '--help'):
+        print(__doc__)
+        sys.exit(0 if len(sys.argv) > 1 else 1)
+
+    settings = Gio.Settings.new(SCHEMA)
+
+    # Handle --list option
+    if sys.argv[1] == '--list':
+        show_config(settings)
+        return
+
+    # Configure screensaver arguments
+    screensaver_name = sys.argv[1]
+    args = ' '.join(sys.argv[2:])
+
+    config = get_config(settings)
+
+    if args:
+        config[screensaver_name] = args
+        print(f"Configured '{screensaver_name}' with arguments: {args}")
+    else:
+        config.pop(screensaver_name, None)
+        print(f"Removed arguments for '{screensaver_name}'")
+
+    set_config(settings, config)
+    print()
+    show_config(settings)
+
+
+if __name__ == '__main__':
+    main()

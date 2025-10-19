@@ -43,6 +43,10 @@ bin_PROGRAMS = \
 	mate-screensaver-preferences	\
 	$(NULL)
 
+bin_SCRIPTS = \
+	mate-screensaver-configure	\
+	$(NULL)
+
 libexec_PROGRAMS = \
 	mate-screensaver-dialog	\
 	mate-screensaver-gl-helper	\
@@ -267,6 +271,7 @@ EXTRA_DIST =				\
 	debug-screensaver.sh		\
 	gs-marshal.list			\
 	mate-screensaver.desktop.in	\
+	mate-screensaver-configure	\
 	$(NULL)
 
 CLEANFILES = 				\
