@@ -685,16 +685,18 @@ gs_lock_plug_run (GSLockPlug *plug)
 }
 
 static cairo_surface_t *
-surface_from_pixbuf (GdkPixbuf *pixbuf)
+surface_from_pixbuf (GdkPixbuf *pixbuf,
+                     double     scale)
 {
 	cairo_surface_t *surface;
 	cairo_t         *cr;
 
 	surface = cairo_image_surface_create (gdk_pixbuf_get_has_alpha (pixbuf) ?
 	                                      CAIRO_FORMAT_ARGB32 : CAIRO_FORMAT_RGB24,
-	                                      gdk_pixbuf_get_width (pixbuf),
-	                                      gdk_pixbuf_get_height (pixbuf));
+	                                      gdk_pixbuf_get_width (pixbuf) * scale,
+	                                      gdk_pixbuf_get_height (pixbuf) * scale);
 	cr = cairo_create (surface);
+	cairo_scale (cr, scale, scale);
 	gdk_cairo_set_source_pixbuf (cr, pixbuf, 0, 0);
 	cairo_paint (cr);
 	cairo_destroy (cr);
@@ -745,138 +747,26 @@ rounded_rectangle (cairo_t *cr,
 	cairo_close_path (cr);
 }
 
-/* copied from gnome-screensaver 3.x */
-
-/**
- * go_cairo_convert_data_to_pixbuf:
- * @src: a pointer to pixel data in cairo format
- * @dst: a pointer to pixel data in pixbuf format
- * @width: image width
- * @height: image height
- * @rowstride: data rowstride
- *
- * Converts the pixel data stored in @src in CAIRO_FORMAT_ARGB32 cairo format
- * to GDK_COLORSPACE_RGB pixbuf format and move them
- * to @dst. If @src == @dst, pixel are converted in place.
- **/
-
-static void
-go_cairo_convert_data_to_pixbuf (unsigned char *dst,
-                                 unsigned char const *src,
-                                 int width,
-                                 int height,
-                                 int rowstride)
+static cairo_surface_t *
+frame_surface (cairo_surface_t *source)
 {
-	int i,j;
-	unsigned int t;
-	unsigned char a, b, c;
-
-	g_return_if_fail (dst != NULL);
-
-#define MULT(d,c,a,t) G_STMT_START { t = (a)? c * 255 / a: 0; d = t;} G_STMT_END
-
-	if (src == dst || src == NULL) {
-		for (i = 0; i < height; i++) {
-			for (j = 0; j < width; j++) {
-#if G_BYTE_ORDER == G_LITTLE_ENDIAN
-				MULT(a, dst[2], dst[3], t);
-				MULT(b, dst[1], dst[3], t);
-				MULT(c, dst[0], dst[3], t);
-				dst[0] = a;
-				dst[1] = b;
-				dst[2] = c;
-#else
-				MULT(a, dst[1], dst[0], t);
-				MULT(b, dst[2], dst[0], t);
-				MULT(c, dst[3], dst[0], t);
-				dst[3] = dst[0];
-				dst[0] = a;
-				dst[1] = b;
-				dst[2] = c;
-#endif
-					dst += 4;
-			}
-			dst += rowstride - width * 4;
-		}
-	} else {
-		for (i = 0; i < height; i++) {
-			for (j = 0; j < width; j++) {
-#if G_BYTE_ORDER == G_LITTLE_ENDIAN
-				MULT(dst[0], src[2], src[3], t);
-				MULT(dst[1], src[1], src[3], t);
-				MULT(dst[2], src[0], src[3], t);
-				dst[3] = src[3];
-#else
-				MULT(dst[0], src[1], src[0], t);
-				MULT(dst[1], src[2], src[0], t);
-				MULT(dst[2], src[3], src[0], t);
-				dst[3] = src[0];
-#endif
-				src += 4;
-				dst += 4;
-			}
-			src += rowstride - width * 4;
-			dst += rowstride - width * 4;
-		}
-	}
-#undef MULT
-}
-
-static void
-cairo_to_pixbuf (guint8    *src_data,
-                 GdkPixbuf *dst_pixbuf)
-{
-	unsigned char *src;
-	unsigned char *dst;
-	guint          w;
-	guint          h;
-	guint          rowstride;
-
-	w = gdk_pixbuf_get_width (dst_pixbuf);
-	h = gdk_pixbuf_get_height (dst_pixbuf);
-	rowstride = gdk_pixbuf_get_rowstride (dst_pixbuf);
-
-	dst = gdk_pixbuf_get_pixels (dst_pixbuf);
-	src = src_data;
-
-	go_cairo_convert_data_to_pixbuf (dst, src, w, h, rowstride);
-}
-
-static GdkPixbuf *
-frame_pixbuf (GdkPixbuf *source)
-{
-	GdkPixbuf       *dest;
+	cairo_surface_t *dest;
 	cairo_t         *cr;
-	cairo_surface_t *surface;
 	guint            w;
 	guint            h;
-	guint            rowstride;
 	int              frame_width;
 	double           radius;
-	guint8          *data;
 
 	frame_width = 5;
 
-	w = gdk_pixbuf_get_width (source) + frame_width * 2;
-	h = gdk_pixbuf_get_height (source) + frame_width * 2;
+	w = cairo_image_surface_get_width (source) + frame_width * 2;
+	h = cairo_image_surface_get_height (source) + frame_width * 2;
 	radius = w / 10;
 
-	dest = gdk_pixbuf_new (GDK_COLORSPACE_RGB,
-						   TRUE,
-						   8,
-						   w,
-						   h);
-	rowstride = gdk_pixbuf_get_rowstride (dest);
-
-	data = g_new0 (guint8, h * rowstride);
-
-	surface = cairo_image_surface_create_for_data (data,
-												   CAIRO_FORMAT_ARGB32,
-												   w,
-												   h,
-												   rowstride);
-	cr = cairo_create (surface);
-	cairo_surface_destroy (surface);
+	dest = cairo_image_surface_create (CAIRO_FORMAT_ARGB32,
+	                                   w,
+	                                   h);
+	cr = cairo_create (dest);
 
 	/* set up image */
 	cairo_rectangle (cr, 0, 0, w, h);
@@ -893,15 +783,10 @@ frame_pixbuf (GdkPixbuf *source)
 	cairo_set_source_rgba (cr, 0.5, 0.5, 0.5, 0.3);
 	cairo_fill_preserve (cr);
 
-	surface = surface_from_pixbuf (source);
-	cairo_set_source_surface (cr, surface, frame_width, frame_width);
+	cairo_set_source_surface (cr, source, frame_width, frame_width);
 	cairo_fill (cr);
-	cairo_surface_destroy (surface);
-
-	cairo_to_pixbuf (data, dest);
 
 	cairo_destroy (cr);
-	g_free (data);
 
 	return dest;
 }
@@ -909,14 +794,17 @@ frame_pixbuf (GdkPixbuf *source)
 /* end copied from gdm-user.c */
 
 static void
-image_set_from_pixbuf (GtkImage  *image,
-                       GdkPixbuf *source)
+image_set_from_surface (GtkImage        *image,
+                        cairo_surface_t *source,
+                        int              scale_factor)
 {
-	GdkPixbuf *pixbuf;
+	cairo_surface_t *surface;
 
-	pixbuf = frame_pixbuf (source);
-	gtk_image_set_from_pixbuf (image, pixbuf);
-	g_object_unref (pixbuf);
+	surface = frame_surface (source);
+	cairo_surface_set_device_scale (surface, scale_factor, scale_factor);
+	gtk_image_set_from_surface (image, surface);
+	cairo_surface_destroy (surface);
+
 }
 
 static gboolean
@@ -975,12 +863,17 @@ check_user_file (const gchar *filename,
 static gboolean
 set_face_image (GSLockPlug *plug)
 {
-	GdkPixbuf    *pixbuf;
-	const char   *homedir;
-	char         *path;
-	int           icon_size = 96;
-	gsize         user_max_file = 65536;
-	uid_t         uid;
+	GdkPixbuf       *pixbuf;
+	cairo_surface_t *surface;
+	const char      *homedir;
+	char            *path;
+	int              icon_size = 96;
+	gsize            user_max_file = 1048576;
+	uid_t            uid;
+	int              scale_factor;
+	int              width;
+	int              height;
+	double           scale;
 
 	homedir = g_get_home_dir ();
 	uid = getuid ();
@@ -990,10 +883,7 @@ set_face_image (GSLockPlug *plug)
 	pixbuf = NULL;
 	if (check_user_file (path, uid, user_max_file, 0, 0))
 	{
-		pixbuf = gdk_pixbuf_new_from_file_at_size (path,
-		         icon_size,
-		         icon_size,
-		         NULL);
+		pixbuf = gdk_pixbuf_new_from_file (path, NULL);
 	}
 
 	g_free (path);
@@ -1003,9 +893,24 @@ set_face_image (GSLockPlug *plug)
 		return FALSE;
 	}
 
-	image_set_from_pixbuf (GTK_IMAGE (plug->priv->auth_face_image), pixbuf);
+	scale_factor = gtk_widget_get_scale_factor (GTK_WIDGET (plug->priv->auth_face_image));
 
+	width = gdk_pixbuf_get_width (pixbuf);
+	height = gdk_pixbuf_get_height (pixbuf);
+
+	scale = 1.0;
+	if (width > icon_size || height > icon_size)
+	{
+		double scale_x = (double) icon_size / width;
+		double scale_y = (double) icon_size / height;
+		scale = MIN (scale_x, scale_y) * scale_factor;
+	}
+
+	surface = surface_from_pixbuf (pixbuf, scale);
 	g_object_unref (pixbuf);
+
+	image_set_from_surface (GTK_IMAGE (plug->priv->auth_face_image), surface, scale_factor);
+	cairo_surface_destroy (surface);
 
 	return TRUE;
 }
