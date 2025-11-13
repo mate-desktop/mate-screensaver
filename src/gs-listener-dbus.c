@@ -55,6 +55,10 @@ static DBusHandlerResult gs_listener_message_handler    (DBusConnection  *connec
 #define GS_LISTENER_PATH      "/org/mate/ScreenSaver"
 #define GS_LISTENER_INTERFACE "org.mate.ScreenSaver"
 
+#define GS_FDO_LISTENER_SERVICE   "org.freedesktop.ScreenSaver"
+#define GS_FDO_LISTENER_PATH      "/org/freedesktop/ScreenSaver"
+#define GS_FDO_LISTENER_INTERFACE "org.freedesktop.ScreenSaver"
+
 /* systemd logind */
 #define SYSTEMD_LOGIND_SERVICE   "org.freedesktop.login1"
 #define SYSTEMD_LOGIND_PATH      "/org/freedesktop/login1"
@@ -1351,8 +1355,7 @@ listener_show_message (GSListener     *listener,
 
 static DBusHandlerResult
 do_introspect (DBusConnection *connection,
-               DBusMessage    *message,
-               dbus_bool_t     local_interface)
+               DBusMessage    *message)
 {
 	DBusMessage *reply;
 	GString     *xml;
@@ -1369,53 +1372,64 @@ do_introspect (DBusConnection *connection,
 	                    "  </interface>\n");
 
 	/* ScreenSaver interface */
-	xml = g_string_append (xml,
-	                       "  <interface name=\"org.mate.ScreenSaver\">\n"
-	                       "    <method name=\"Lock\">\n"
-	                       "    </method>\n"
-	                       "    <method name=\"Unlock\">\n"
-	                       "    </method>\n"
-	                       "    <method name=\"Cycle\">\n"
-	                       "    </method>\n"
-	                       "    <method name=\"SimulateUserActivity\">\n"
-	                       "    </method>\n"
-	                       "    <method name=\"Inhibit\">\n"
-	                       "      <arg name=\"application_name\" direction=\"in\" type=\"s\"/>\n"
-	                       "      <arg name=\"reason\" direction=\"in\" type=\"s\"/>\n"
-	                       "      <arg name=\"cookie\" direction=\"out\" type=\"u\"/>\n"
-	                       "    </method>\n"
-	                       "    <method name=\"UnInhibit\">\n"
-	                       "      <arg name=\"cookie\" direction=\"in\" type=\"u\"/>\n"
-	                       "    </method>\n"
-	                       "    <method name=\"GetInhibitors\">\n"
-	                       "      <arg name=\"list\" direction=\"out\" type=\"as\"/>\n"
-	                       "    </method>\n"
-	                       "    <method name=\"Throttle\">\n"
-	                       "      <arg name=\"application_name\" direction=\"in\" type=\"s\"/>\n"
-	                       "      <arg name=\"reason\" direction=\"in\" type=\"s\"/>\n"
-	                       "      <arg name=\"cookie\" direction=\"out\" type=\"u\"/>\n"
-	                       "    </method>\n"
-	                       "    <method name=\"UnThrottle\">\n"
-	                       "      <arg name=\"cookie\" direction=\"in\" type=\"u\"/>\n"
-	                       "    </method>\n"
-	                       "    <method name=\"GetActive\">\n"
-	                       "      <arg name=\"value\" direction=\"out\" type=\"b\"/>\n"
-	                       "    </method>\n"
-	                       "    <method name=\"GetActiveTime\">\n"
-	                       "      <arg name=\"seconds\" direction=\"out\" type=\"u\"/>\n"
-	                       "    </method>\n"
-	                       "    <method name=\"SetActive\">\n"
-	                       "      <arg name=\"value\" direction=\"in\" type=\"b\"/>\n"
-	                       "    </method>\n"
-	                       "    <method name=\"ShowMessage\">\n"
-	                       "      <arg name=\"summary\" direction=\"in\" type=\"s\"/>\n"
-	                       "      <arg name=\"body\" direction=\"in\" type=\"s\"/>\n"
-	                       "      <arg name=\"icon\" direction=\"in\" type=\"s\"/>\n"
-	                       "    </method>\n"
-	                       "    <signal name=\"ActiveChanged\">\n"
-	                       "      <arg name=\"new_value\" type=\"b\"/>\n"
-	                       "    </signal>\n"
-	                       "  </interface>\n");
+	/* using the message's destination is a bit of a hack, but as our service and
+	 * interface have the same name, it works, and allows discriminating between
+	 * FDO and MATE interfaces */
+	g_string_append_printf (xml, "  <interface name=\"%s\">\n",
+	                        dbus_message_get_destination (message));
+	/* common methods between the FDO and internal interfaces */
+	g_string_append (xml,
+	                 "    <method name=\"Inhibit\">\n"
+	                 "      <arg name=\"application_name\" direction=\"in\" type=\"s\"/>\n"
+	                 "      <arg name=\"reason\" direction=\"in\" type=\"s\"/>\n"
+	                 "      <arg name=\"cookie\" direction=\"out\" type=\"u\"/>\n"
+	                 "    </method>\n"
+	                 "    <method name=\"UnInhibit\">\n"
+	                 "      <arg name=\"cookie\" direction=\"in\" type=\"u\"/>\n"
+	                 "    </method>\n");
+	/* additional methods in the internal interface */
+	if (g_strcmp0 (dbus_message_get_destination (message), GS_FDO_LISTENER_INTERFACE) != 0)
+	{
+		g_string_append (xml,
+		                 "    <method name=\"Lock\">\n"
+		                 "    </method>\n"
+		                 "    <method name=\"Unlock\">\n"
+		                 "    </method>\n"
+		                 "    <method name=\"Cycle\">\n"
+		                 "    </method>\n"
+		                 "    <method name=\"SimulateUserActivity\">\n"
+		                 "    </method>\n"
+		                 "    <method name=\"GetInhibitors\">\n"
+		                 "      <arg name=\"list\" direction=\"out\" type=\"as\"/>\n"
+		                 "    </method>\n"
+		                 "    <method name=\"Throttle\">\n"
+		                 "      <arg name=\"application_name\" direction=\"in\" type=\"s\"/>\n"
+		                 "      <arg name=\"reason\" direction=\"in\" type=\"s\"/>\n"
+		                 "      <arg name=\"cookie\" direction=\"out\" type=\"u\"/>\n"
+		                 "    </method>\n"
+		                 "    <method name=\"UnThrottle\">\n"
+		                 "      <arg name=\"cookie\" direction=\"in\" type=\"u\"/>\n"
+		                 "    </method>\n"
+		                 "    <method name=\"GetActive\">\n"
+		                 "      <arg name=\"value\" direction=\"out\" type=\"b\"/>\n"
+		                 "    </method>\n"
+		                 "    <method name=\"GetActiveTime\">\n"
+		                 "      <arg name=\"seconds\" direction=\"out\" type=\"u\"/>\n"
+		                 "    </method>\n"
+		                 "    <method name=\"SetActive\">\n"
+		                 "      <arg name=\"value\" direction=\"in\" type=\"b\"/>\n"
+		                 "    </method>\n"
+		                 "    <method name=\"ShowMessage\">\n"
+		                 "      <arg name=\"summary\" direction=\"in\" type=\"s\"/>\n"
+		                 "      <arg name=\"body\" direction=\"in\" type=\"s\"/>\n"
+		                 "      <arg name=\"icon\" direction=\"in\" type=\"s\"/>\n"
+		                 "    </method>\n"
+		                 "    <signal name=\"ActiveChanged\">\n"
+		                 "      <arg name=\"new_value\" type=\"b\"/>\n"
+		                 "    </signal>\n");
+	}
+
+	g_string_append (xml, "  </interface>\n");
 
 	reply = dbus_message_new_method_return (message);
 
@@ -1482,11 +1496,13 @@ listener_dbus_handle_session_message (DBusConnection *connection,
 		g_signal_emit (listener, signals [CYCLE], 0);
 		return DBUS_HANDLER_RESULT_HANDLED;
 	}
-	if (dbus_message_is_method_call (message, GS_LISTENER_SERVICE, "Inhibit"))
+	if (dbus_message_is_method_call (message, GS_LISTENER_SERVICE, "Inhibit") ||
+	    dbus_message_is_method_call (message, GS_FDO_LISTENER_SERVICE, "Inhibit"))
 	{
 		return listener_dbus_add_ref_entry (listener, REF_ENTRY_TYPE_INHIBIT, connection, message);
 	}
-	if (dbus_message_is_method_call (message, GS_LISTENER_SERVICE, "UnInhibit"))
+	if (dbus_message_is_method_call (message, GS_LISTENER_SERVICE, "UnInhibit") ||
+	    dbus_message_is_method_call (message, GS_FDO_LISTENER_SERVICE, "UnInhibit"))
 	{
 		return listener_dbus_remove_ref_entry (listener, REF_ENTRY_TYPE_INHIBIT, connection, message);
 	}
@@ -1525,7 +1541,7 @@ listener_dbus_handle_session_message (DBusConnection *connection,
 	}
 	if (dbus_message_is_method_call (message, "org.freedesktop.DBus.Introspectable", "Introspect"))
 	{
-		return do_introspect (connection, message, local_interface);
+		return do_introspect (connection, message);
 	}
 
 	return DBUS_HANDLER_RESULT_NOT_YET_HANDLED;
@@ -2234,6 +2250,7 @@ gs_listener_acquire (GSListener *listener,
                      GError    **error)
 {
 	int       acquired;
+	int       fdo_acquired;
 	DBusError buserror;
 	gboolean  is_connected;
 
@@ -2303,6 +2320,32 @@ gs_listener_acquire (GSListener *listener,
         }
 
 	dbus_error_free (&buserror);
+
+	/* try and register the FDO name, but do not hard-require it for now */
+	fdo_acquired = dbus_bus_request_name (listener->priv->connection,
+	                                      GS_FDO_LISTENER_SERVICE,
+	                                      DBUS_NAME_FLAG_DO_NOT_QUEUE,
+	                                      &buserror);
+	if (dbus_error_is_set (&buserror))
+	{
+		g_warning ("Failed to acquire DBus name %s: %s",
+		           GS_FDO_LISTENER_SERVICE, buserror.message);
+	}
+	else if (fdo_acquired == DBUS_REQUEST_NAME_REPLY_EXISTS)
+	{
+		g_warning ("Failed to acquire DBus name %s: there is already "
+		           "another owner", GS_FDO_LISTENER_SERVICE);
+	}
+	dbus_error_free (&buserror);
+	/* now if we acquired the FDO name, register the path */
+	if (fdo_acquired != -1 &&
+	    ! dbus_connection_register_object_path (listener->priv->connection,
+	                                            GS_FDO_LISTENER_PATH,
+	                                            &gs_listener_vtable,
+	                                            listener))
+	{
+		g_warning ("Failed to register DBus path %s", GS_FDO_LISTENER_PATH);
+	}
 
 	dbus_connection_add_filter (listener->priv->connection, listener_dbus_filter_function, listener, NULL);
 
