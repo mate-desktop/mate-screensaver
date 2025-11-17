@@ -57,6 +57,7 @@ static DBusHandlerResult gs_listener_message_handler    (DBusConnection  *connec
 
 #define GS_FDO_LISTENER_SERVICE   "org.freedesktop.ScreenSaver"
 #define GS_FDO_LISTENER_PATH      "/org/freedesktop/ScreenSaver"
+#define GS_FDO_LISTENER_PATH2     "/ScreenSaver" /* Historical KDE path for compatibility */
 #define GS_FDO_LISTENER_INTERFACE "org.freedesktop.ScreenSaver"
 
 /* systemd logind */
@@ -2337,14 +2338,24 @@ gs_listener_acquire (GSListener *listener,
 		           "another owner", GS_FDO_LISTENER_SERVICE);
 	}
 	dbus_error_free (&buserror);
-	/* now if we acquired the FDO name, register the path */
-	if (fdo_acquired != -1 &&
-	    ! dbus_connection_register_object_path (listener->priv->connection,
-	                                            GS_FDO_LISTENER_PATH,
-	                                            &gs_listener_vtable,
-	                                            listener))
+	/* now if we acquired the FDO name, register the paths */
+	if (fdo_acquired != -1)
 	{
-		g_warning ("Failed to register DBus path %s", GS_FDO_LISTENER_PATH);
+		const gchar *paths[] = {
+			GS_FDO_LISTENER_PATH,
+			GS_FDO_LISTENER_PATH2
+		};
+
+		for (guint i = 0; i < G_N_ELEMENTS (paths); i++)
+		{
+			if (! dbus_connection_register_object_path (listener->priv->connection,
+			                                            paths[i],
+			                                            &gs_listener_vtable,
+			                                            listener))
+			{
+				g_warning ("Failed to register DBus path %s", paths[i]);
+			}
+		}
 	}
 
 	dbus_connection_add_filter (listener->priv->connection, listener_dbus_filter_function, listener, NULL);
