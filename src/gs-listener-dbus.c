@@ -1354,31 +1354,22 @@ listener_show_message (GSListener     *listener,
 	return DBUS_HANDLER_RESULT_HANDLED;
 }
 
-static DBusHandlerResult
-do_introspect (DBusConnection *connection,
-               DBusMessage    *message)
+static void
+add_org_freedesktop_DBus_Introspectable (GString *xml)
 {
-	DBusMessage *reply;
-	GString     *xml;
-	char        *xml_string;
+	g_string_append (xml,
+	                 "  <interface name=\"org.freedesktop.DBus.Introspectable\">\n"
+	                 "    <method name=\"Introspect\">\n"
+	                 "      <arg name=\"data\" direction=\"out\" type=\"s\"/>\n"
+	                 "    </method>\n"
+	                 "  </interface>\n");
+}
 
-	/* standard header */
-	xml = g_string_new ("<!DOCTYPE node PUBLIC \"-//freedesktop//DTD D-BUS Object Introspection 1.0//EN\"\n"
-	                    "\"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd\">\n"
-	                    "<node>\n"
-	                    "  <interface name=\"org.freedesktop.DBus.Introspectable\">\n"
-	                    "    <method name=\"Introspect\">\n"
-	                    "      <arg name=\"data\" direction=\"out\" type=\"s\"/>\n"
-	                    "    </method>\n"
-	                    "  </interface>\n");
-
-	/* ScreenSaver interface */
-	/* using the message's destination is a bit of a hack, but as our service and
-	 * interface have the same name, it works, and allows discriminating between
-	 * FDO and MATE interfaces */
-	g_string_append_printf (xml, "  <interface name=\"%s\">\n",
-	                        dbus_message_get_destination (message));
-	/* common methods between the FDO and internal interfaces */
+static void
+add_screensaver_interface (GString *xml, const gchar *const interface)
+{
+	g_string_append_printf (xml, "  <interface name=\"%s\">\n", interface);
+	/* common methods */
 	g_string_append (xml,
 	                 "    <method name=\"Inhibit\">\n"
 	                 "      <arg name=\"application_name\" direction=\"in\" type=\"s\"/>\n"
@@ -1388,8 +1379,8 @@ do_introspect (DBusConnection *connection,
 	                 "    <method name=\"UnInhibit\">\n"
 	                 "      <arg name=\"cookie\" direction=\"in\" type=\"u\"/>\n"
 	                 "    </method>\n");
-	/* additional methods in the internal interface */
-	if (g_strcmp0 (dbus_message_get_destination (message), GS_FDO_LISTENER_INTERFACE) != 0)
+	/* additional methods of the internal interface */
+	if (strcmp (interface, GS_LISTENER_INTERFACE) == 0)
 	{
 		g_string_append (xml,
 		                 "    <method name=\"Lock\">\n"
@@ -1431,17 +1422,74 @@ do_introspect (DBusConnection *connection,
 	}
 
 	g_string_append (xml, "  </interface>\n");
+}
+
+static DBusHandlerResult
+do_introspect (DBusConnection *connection,
+               DBusMessage    *message)
+{
+	const struct {
+		const gchar *path;
+		const gchar *interface;
+	} paths[] = {
+		{ GS_LISTENER_PATH, GS_LISTENER_INTERFACE },
+		{ GS_FDO_LISTENER_PATH, GS_FDO_LISTENER_INTERFACE },
+		{ GS_FDO_LISTENER_PATH2, GS_FDO_LISTENER_INTERFACE },
+	};
+	DBusMessage *reply;
+	GString     *xml;
+	const gchar *interface;
+	const gchar *path;
+
+	path = dbus_message_get_path (message);
+	/* using the message's destination is a bit of a hack, but as our service and
+	 * interface have the same name, it works, and allows discriminating between
+	 * FDO and MATE interfaces */
+	interface = dbus_message_get_destination (message);
+
+	/* standard header */
+	xml = g_string_new ("<!DOCTYPE node PUBLIC \"-//freedesktop//DTD D-BUS Object Introspection 1.0//EN\"\n"
+	                    "\"http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd\">\n");
+
+	/* node container */
+	g_string_append_printf (xml, "<node name=\"%s\">\n", path);
+
+	for (guint i = 0; i < G_N_ELEMENTS (paths); i++)
+	{
+		const gchar *const path_i = paths[i].path;
+
+		if (strcmp (paths[i].interface, interface) != 0)
+			continue;
+
+		if (strcmp (path_i, path) == 0)
+		{
+			/* add the interfaces */
+			add_org_freedesktop_DBus_Introspectable (xml);
+			add_screensaver_interface (xml, interface);
+		}
+		else if (g_str_has_prefix (path_i, path))
+		{
+			size_t const path_len = strlen (path);
+
+			/* handle both "/foo" and "/" -- note that the latter
+			 * ends with "/", but not the former */
+			if (path_i[path_len] == '/' || path_i[path_len - 1] == '/')
+			{
+				/* add child nodes with relative paths */
+				g_string_append_printf (xml, "<node name=\"%s\"/>\n",
+							&path_i[path_len + (path_i[path_len] == '/')]);
+			}
+		}
+	}
+
+	g_string_append (xml, "</node>\n");
 
 	reply = dbus_message_new_method_return (message);
-
-	xml = g_string_append (xml, "</node>\n");
-	xml_string = g_string_free (xml, FALSE);
-
 	dbus_message_append_args (reply,
-	                          DBUS_TYPE_STRING, &xml_string,
+	                          DBUS_TYPE_STRING, &xml->str,
 	                          DBUS_TYPE_INVALID);
 
-	g_free (xml_string);
+	g_string_free (xml, TRUE);
 
 	if (reply == NULL)
 	{
