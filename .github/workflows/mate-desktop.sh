@@ -29,6 +29,7 @@ arch_requires=(
 # https://salsa.debian.org/debian-mate-team/mate-desktop/-/blob/master/debian/control
 debian_requires=(
 	autoconf-archive
+	autopoint
 	gobject-introspection
 	gtk-doc-tools
 	intltool
@@ -65,6 +66,7 @@ fedora_requires=(
 # https://git.launchpad.net/ubuntu/+source/mate-desktop/tree/debian/control
 ubuntu_requires=(
 	autoconf-archive
+	autopoint
 	gobject-introspection
 	gtk-doc-tools
 	intltool
