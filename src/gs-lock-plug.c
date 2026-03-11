@@ -1964,6 +1964,7 @@ load_theme (GSLockPlug *plug)
 		g_warning ("Couldn't load builder file '%s': %s", gtkbuilder, error->message);
 		g_error_free(error);
 		g_free (gtkbuilder);
+		g_object_unref(builder);
 		return FALSE;
 	}
 	g_free (gtkbuilder);
@@ -2016,6 +2017,7 @@ load_theme (GSLockPlug *plug)
 
 	plug->priv->status_message_label = GTK_WIDGET (gtk_builder_get_object(builder, "status-message-label"));
 
+	g_object_unref(builder);
 	return TRUE;
 }
 
