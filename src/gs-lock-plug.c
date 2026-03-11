@@ -2016,6 +2016,7 @@ load_theme (GSLockPlug *plug)
 
 	plug->priv->status_message_label = GTK_WIDGET (gtk_builder_get_object(builder, "status-message-label"));
 
+	g_object_unref(builder);
 	return TRUE;
 }
 
