@@ -2498,6 +2498,7 @@ query_session_id (GSListener *listener)
 	if (listener->priv->have_systemd) {
 		dbus_uint32_t pid = getpid();
 
+        // firstly try to get session D-bus path by PID
 		message = dbus_message_new_method_call (SYSTEMD_LOGIND_SERVICE,
 		                                        SYSTEMD_LOGIND_PATH,
 							SYSTEMD_LOGIND_INTERFACE,
@@ -2522,19 +2523,60 @@ query_session_id (GSListener *listener)
 			-1, &error);
 		dbus_message_unref (message);
 
-		if (dbus_error_is_set (&error))
+		if (!dbus_error_is_set (&error))
 		{
-			gs_debug ("%s raised:\n %s\n\n", error.name, error.message);
-			dbus_error_free (&error);
+			dbus_message_iter_init (reply, &reply_iter);
+			dbus_message_iter_get_basic (&reply_iter, &ssid);
+
+			dbus_message_unref (reply);
+			return g_strdup (ssid);
+		}
+
+		gs_debug ("%s raised:\n %s\n\n", error.name, error.message);
+		dbus_error_free (&error);
+
+        // if getting session D-bus path by PID failed, try to get it using session Id
+		message = dbus_message_new_method_call (SYSTEMD_LOGIND_SERVICE,
+		                                        SYSTEMD_LOGIND_PATH,
+							SYSTEMD_LOGIND_INTERFACE,
+							"GetSession");
+		if (message == NULL)
+		{
+			gs_debug ("Couldn't allocate the dbus message");
 			return NULL;
 		}
 
-		dbus_message_iter_init (reply, &reply_iter);
-		dbus_message_iter_get_basic (&reply_iter, &ssid);
+        // pass 'auto' as argument
+        // loginctl do it this way
+        // https://github.com/systemd/systemd/blob/10594762c7c26f944d038ed87258d997eb98079c/src/login/loginctl.c#L1066
+		const char* autoSessionId = "auto";
+		if (dbus_message_append_args (message,
+					      DBUS_TYPE_STRING,
+					      &autoSessionId, DBUS_TYPE_INVALID) == FALSE)
+		{
+			gs_debug ("Couldn't add args to the dbus message");
+			return NULL;
+		}
 
-		dbus_message_unref (reply);
+		/* FIXME: use async? */
+		reply = dbus_connection_send_with_reply_and_block (listener->priv->system_connection,
+			message,
+			-1, &error);
+		dbus_message_unref (message);
 
-		return g_strdup (ssid);
+		if (!dbus_error_is_set (&error))
+		{
+			dbus_message_iter_init (reply, &reply_iter);
+			dbus_message_iter_get_basic (&reply_iter, &ssid);
+
+			dbus_message_unref (reply);
+			return g_strdup (ssid);
+		}
+
+		gs_debug ("%s raised:\n %s\n\n", error.name, error.message);
+		dbus_error_free (&error);
+
+		return NULL;
 	}
 #endif
 
