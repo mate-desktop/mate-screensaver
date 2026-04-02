@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-screensaver 1.26.0\n"
+"Project-Id-Version: mate-screensaver 1.28.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
-"POT-Creation-Date: 2022-10-29 15:32+0200\n"
+"POT-Creation-Date: 2026-04-02 10:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,51 +31,59 @@ msgstr ""
 msgid "MATE;screensaver;preferences;"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:20
+#: data/mate-screensaver-preferences.ui:27
 msgid "Screensaver Preview"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:59
+#: data/mate-screensaver-preferences.ui:66
 msgid "<b>Screensaver preview</b>"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:168
+#: data/mate-screensaver-preferences.ui:175
 msgid "Screensaver Preferences"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:203
+#: data/mate-screensaver-preferences.ui:210
 msgid "Power _Management"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:219
+#: data/mate-screensaver-preferences.ui:226
 msgid "_Preview"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:279
+#: data/mate-screensaver-preferences.ui:286
 msgid "_Screensaver theme:"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:397
+#: data/mate-screensaver-preferences.ui:413
 msgid "Regard the computer as _idle after:"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:440
+#: data/mate-screensaver-preferences.ui:445
+msgid "Time before l_ocking:"
+msgstr ""
+
+#: data/mate-screensaver-preferences.ui:446
+msgid "Delay before locking the screen after the screensaver activated"
+msgstr ""
+
+#: data/mate-screensaver-preferences.ui:483
 msgid "_Activate screensaver when computer is idle"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:455
+#: data/mate-screensaver-preferences.ui:498
 msgid "_Lock screen when screensaver is active"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:477
-msgid "Background picture for lock screen:"
+#: data/mate-screensaver-preferences.ui:520
+msgid "_Background picture for lock screen:"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:496
+#: data/mate-screensaver-preferences.ui:541
 msgid "Select Background Image"
 msgstr ""
 
-#: data/mate-screensaver-preferences.ui:522
+#: data/mate-screensaver-preferences.ui:567
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
 msgstr ""
 
@@ -99,7 +107,7 @@ msgstr ""
 msgid "<span size=\"small\">%U on %h</span>"
 msgstr ""
 
-#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2150
+#: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2057
 msgid "Show password"
 msgstr ""
 
@@ -119,7 +127,7 @@ msgstr ""
 msgid "_Cancel"
 msgstr ""
 
-#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1711
+#: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1616
 msgid "_Unlock"
 msgstr ""
 
@@ -305,6 +313,18 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:96
 msgid "File to use for the background image."
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:100
+msgid "Per-screensaver configuration arguments"
+msgstr ""
+
+#: data/org.mate.screensaver.gschema.xml.in:101
+msgid ""
+"Dictionary mapping screensaver names to their command-line arguments. "
+"Format: {\"screensaver-name\": \"--args\"}. Configure manually using "
+"gsettings or dconf-editor. Example: gsettings set org.mate.screensaver "
+"screensaver-arguments \"{\\\"starfield\\\": \\\"--count 50\\\"}\""
 msgstr ""
 
 #: savers/cosmos-slideshow.desktop.in.in:4
@@ -654,67 +674,58 @@ msgstr ""
 msgid "Authentication failed."
 msgstr ""
 
-#: src/mate-screensaver-preferences.c:455
+#: src/mate-screensaver-preferences.c:480
 msgid "Blank screen"
 msgstr ""
 
-#: src/mate-screensaver-preferences.c:461
+#: src/mate-screensaver-preferences.c:486
 msgid "Random"
 msgstr ""
 
-#: src/mate-screensaver-preferences.c:951
-#: src/mate-screensaver-preferences.c:961
+#: src/mate-screensaver-preferences.c:980
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/mate-screensaver-preferences.c:954
-#: src/mate-screensaver-preferences.c:963
-#: src/mate-screensaver-preferences.c:975
-#: src/mate-screensaver-preferences.c:990
+#: src/mate-screensaver-preferences.c:983
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/mate-screensaver-preferences.c:957
+#: src/mate-screensaver-preferences.c:986
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/mate-screensaver-preferences.c:965
-#: src/mate-screensaver-preferences.c:1013
-#: src/mate-screensaver-preferences.c:1023
-#, c-format
-msgid "%s %s"
-msgstr ""
-
-#: src/mate-screensaver-preferences.c:1010
+#: src/mate-screensaver-preferences.c:993
 #, c-format
 msgid "%s %s %s"
 msgstr ""
 
-#: src/mate-screensaver-preferences.c:1016
-#: src/mate-screensaver-preferences.c:1030
-#: src/mate-screensaver-preferences.c:1056
+#: src/mate-screensaver-preferences.c:996
+#: src/mate-screensaver-preferences.c:1006
+#, c-format
+msgid "%s %s"
+msgstr ""
+
+#: src/mate-screensaver-preferences.c:999
+#: src/mate-screensaver-preferences.c:1011
+#: src/mate-screensaver-preferences.c:1017
 #, c-format
 msgid "%s"
 msgstr ""
 
-#: src/mate-screensaver-preferences.c:1071
-msgid "Never"
-msgstr ""
-
-#: src/mate-screensaver-preferences.c:1632
+#: src/mate-screensaver-preferences.c:1655
 msgid "Could not load the main interface"
 msgstr ""
 
-#: src/mate-screensaver-preferences.c:1634
+#: src/mate-screensaver-preferences.c:1657
 msgid "Please make sure that the screensaver is properly installed"
 msgstr ""
 
@@ -757,15 +768,15 @@ msgstr ""
 msgid "No longer permitted to access the system."
 msgstr ""
 
-#: src/gs-listener-dbus.c:2248
+#: src/gs-listener-dbus.c:2314
 msgid "failed to register with the message bus"
 msgstr ""
 
-#: src/gs-listener-dbus.c:2259
+#: src/gs-listener-dbus.c:2325
 msgid "not connected to the message bus"
 msgstr ""
 
-#: src/gs-listener-dbus.c:2269 src/gs-listener-dbus.c:2301
+#: src/gs-listener-dbus.c:2335 src/gs-listener-dbus.c:2367
 msgid "screensaver already running in this session"
 msgstr ""
 
@@ -781,22 +792,22 @@ msgstr ""
 msgid "You have the Caps Lock key on."
 msgstr ""
 
-#: src/gs-lock-plug.c:1691
+#: src/gs-lock-plug.c:1596
 msgid "S_witch User..."
 msgstr ""
 
-#: src/gs-lock-plug.c:1700
+#: src/gs-lock-plug.c:1605
 msgid "Log _Out"
 msgstr ""
 
-#: src/gs-lock-plug.c:1913
+#: src/gs-lock-plug.c:1818
 msgid "%U on %h"
 msgstr ""
 
-#: src/gs-lock-plug.c:1928
+#: src/gs-lock-plug.c:1833
 msgid "_Password:"
 msgstr ""
 
-#: src/gs-lock-plug.c:2156
+#: src/gs-lock-plug.c:2063
 msgid "Hide password"
 msgstr ""
