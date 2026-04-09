@@ -5,10 +5,11 @@
 # 
 # Translators:
 # monsta <monsta@inbox.ru>, 2018
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # shy tzedaka <shaytzedaka123@gmail.com>, 2020
-# Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# Omer I.S. <omeritzicschwartz@gmail.com>, 2021
+# 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e <ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2021
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2024
+# Avi Markovitz <avi.markovitz@gmail.com>, 2024
 # 
 msgid ""
 msgstr ""
@@ -16,22 +17,22 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:32+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Omer I.S. <omeritzicschwartz@gmail.com>, 2021\n"
-"Language-Team: Hebrew (https://www.transifex.com/mate/teams/13566/he/)\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>, 2024\n"
+"Language-Team: Hebrew (https://app.transifex.com/mate/teams/13566/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
+"Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;\n"
 
 #: data/mate-screensaver-preferences.desktop.in:3
 #: src/mate-screensaver.desktop.in.in:4
 msgid "Screensaver"
-msgstr "שומר מסך"
+msgstr "שומר מרקע"
 
 #: data/mate-screensaver-preferences.desktop.in:4
 msgid "Set your screensaver preferences"
-msgstr "קבע את העדפות שומר המסך"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -138,7 +139,7 @@ msgstr "<b>השאר הודעה עבור %R:</b>"
 
 #: data/lock-dialog-default.ui:391
 msgid "_Save"
-msgstr "_שמור"
+msgstr "_שמירה"
 
 #: data/org.mate.screensaver.gschema.xml.in:10
 msgid "Activate when idle"
@@ -147,7 +148,6 @@ msgstr "Activate when idle"
 #: data/org.mate.screensaver.gschema.xml.in:11
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
-"Set this to TRUE to activate the screensaver when the session is idle."
 
 #: data/org.mate.screensaver.gschema.xml.in:15
 msgid "Lock on activation"
@@ -155,11 +155,11 @@ msgstr "Lock on activation"
 
 #: data/org.mate.screensaver.gschema.xml.in:16
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
-msgstr "Set this to TRUE to lock the screen when the screensaver goes active."
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:20
 msgid "Screensaver theme selection mode"
-msgstr "Screensaver theme selection mode"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:21
 msgid ""
@@ -169,11 +169,6 @@ msgid ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 msgstr ""
-"The selection mode used by screensaver. May be \"blank-only\" to enable the "
-"screensaver without using any theme on activation, \"single\" to enable "
-"screensaver using only one theme on activation (specified in \"themes\" "
-"key), and \"random\" to enable the screensaver using a random theme on "
-"activation."
 
 #: data/org.mate.screensaver.gschema.xml.in:26
 msgid ""
@@ -182,10 +177,6 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
-"This key specifies the list of themes to be used by the screensaver. It's "
-"ignored when \"mode\" key is \"blank-only\", should provide the theme name "
-"when \"mode\" is \"single\", and should provide a list of themes when "
-"\"mode\" is \"random\"."
 
 #: data/org.mate.screensaver.gschema.xml.in:30
 msgid "Time before power management baseline"
@@ -203,7 +194,7 @@ msgstr "Time before theme change"
 
 #: data/org.mate.screensaver.gschema.xml.in:36
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr "The number of minutes to run before changing the screensaver theme."
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:40
 msgid "Time before locking"
@@ -214,8 +205,6 @@ msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
 msgstr ""
-"The number of minutes after screensaver activation before locking the "
-"screen."
 
 #: data/org.mate.screensaver.gschema.xml.in:45
 msgid "Allow embedding a keyboard into the window"
@@ -479,7 +468,7 @@ msgstr "אל תנסה למתוח תמוונת על המסך"
 
 #: src/copy-theme-dialog.c:181
 msgid "Copying files"
-msgstr "מעתיק קבצים"
+msgstr "מתבצעת העתקת קבצים"
 
 #: src/copy-theme-dialog.c:200
 msgid "From:"
@@ -491,7 +480,7 @@ msgstr "אל:"
 
 #: src/copy-theme-dialog.c:225
 msgid "Copying themes"
-msgstr "מעתיק ערכות נושא"
+msgstr "מתבצעת העתקת ערכות נושא"
 
 #: src/copy-theme-dialog.c:268
 msgid "Invalid screensaver theme"
@@ -509,19 +498,19 @@ msgstr "מעתיק קובץ: %u מתוך %u"
 
 #: src/mate-screensaver-command.c:61
 msgid "Causes the screensaver to exit gracefully"
-msgstr "Causes the screensaver to exit gracefully"
+msgstr ""
 
 #: src/mate-screensaver-command.c:65
 msgid "Query the state of the screensaver"
-msgstr "Query the state of the screensaver"
+msgstr ""
 
 #: src/mate-screensaver-command.c:69
 msgid "Query the length of time the screensaver has been active"
-msgstr "Query the length of time the screensaver has been active"
+msgstr ""
 
 #: src/mate-screensaver-command.c:73
 msgid "Tells the running screensaver process to lock the screen immediately"
-msgstr "Tells the running screensaver process to lock the screen immediately"
+msgstr ""
 
 #: src/mate-screensaver-command.c:77
 msgid "Tells the running screensaver process to unlock the screen immediately"
@@ -529,35 +518,33 @@ msgstr ""
 
 #: src/mate-screensaver-command.c:81
 msgid "If the screensaver is active then switch to another graphics demo"
-msgstr "If the screensaver is active then switch to another graphics demo"
+msgstr ""
 
 #: src/mate-screensaver-command.c:85
 msgid "Turn the screensaver on (blank the screen)"
-msgstr "Turn the screensaver on (blank the screen)"
+msgstr ""
 
 #: src/mate-screensaver-command.c:89
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr "If the screensaver is active then deactivate it (un-blank the screen)"
+msgstr ""
 
 #: src/mate-screensaver-command.c:93
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "Poke the running screensaver to simulate user activity"
+msgstr ""
 
 #: src/mate-screensaver-command.c:97
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
 msgstr ""
-"Inhibit the screensaver from activating.  Command blocks while inhibit is "
-"active."
 
 #: src/mate-screensaver-command.c:101
 msgid "The calling application that is inhibiting the screensaver"
-msgstr "The calling application that is inhibiting the screensaver"
+msgstr ""
 
 #: src/mate-screensaver-command.c:105
 msgid "The reason for inhibiting the screensaver"
-msgstr "The reason for inhibiting the screensaver"
+msgstr ""
 
 #: src/mate-screensaver-command.c:109 src/mate-screensaver-dialog.c:59
 #: src/mate-screensaver.c:56
@@ -567,7 +554,7 @@ msgstr "הגרסה של יישום זה"
 #: src/mate-screensaver-command.c:359
 #, c-format
 msgid "The screensaver is %s\n"
-msgstr "שומר המסך הוא %s\n"
+msgstr "שומר מרקע הוא %s\n"
 
 #: src/mate-screensaver-command.c:359
 msgid "active"
@@ -579,20 +566,20 @@ msgstr "לא פעיל"
 
 #: src/mate-screensaver-command.c:375
 msgid "The screensaver is not inhibited\n"
-msgstr "שומר המסך אינו מנוע מלפעול\n"
+msgstr "שומר המרקע אינו מנוע מלפעול\n"
 
 #: src/mate-screensaver-command.c:383
 msgid "The screensaver is being inhibited by:\n"
-msgstr "שומר המסך מנוע מלפעול על ידי:\n"
+msgstr "שומר המרקע מנוע מלפעול על ידי:\n"
 
 #: src/mate-screensaver-command.c:418
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
-msgstr "שומר המסך היה פעיל במשך %d שניות.\n"
+msgstr "שומר המרקע היה פעיל במשך %d שניות.\n"
 
 #: src/mate-screensaver-command.c:424
 msgid "The screensaver is not currently active.\n"
-msgstr "שומר המסך אינו פעיל כעת.\n"
+msgstr "שומר המרקע אינו פעיל כעת.\n"
 
 #: src/mate-screensaver-dialog.c:58
 msgid "Show debugging output"
@@ -712,7 +699,6 @@ msgid_plural "%d hours"
 msgstr[0] "שעה"
 msgstr[1] "שעתיים"
 msgstr[2] "%d שעות"
-msgstr[3] "%d שעות"
 
 #: src/mate-screensaver-preferences.c:954
 #: src/mate-screensaver-preferences.c:963
@@ -724,7 +710,6 @@ msgid_plural "%d minutes"
 msgstr[0] "דקה"
 msgstr[1] "%d דקות"
 msgstr[2] "%d דקות"
-msgstr[3] "%d דקות"
 
 #: src/mate-screensaver-preferences.c:957
 #, c-format
@@ -733,7 +718,6 @@ msgid_plural "%d seconds"
 msgstr[0] "שנייה"
 msgstr[1] "%d שניות"
 msgstr[2] "%d שניות"
-msgstr[3] "%d שניות"
 
 #: src/mate-screensaver-preferences.c:965
 #: src/mate-screensaver-preferences.c:1013
@@ -764,7 +748,7 @@ msgstr "לא ניתן להעלות את המנשק הראשי"
 
 #: src/mate-screensaver-preferences.c:1634
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "אנא וודא ששומר המסך מותקן כיאות."
+msgstr "נא לוודא ששומר המרקע מותקן כיאות."
 
 #: src/mate-screensaver.c:57
 msgid "Don't become a daemon"
@@ -816,7 +800,7 @@ msgstr "לא מוחבר ל־message bus"
 
 #: src/gs-listener-dbus.c:2269 src/gs-listener-dbus.c:2301
 msgid "screensaver already running in this session"
-msgstr "שומר המסך כבר רץ עבור התחברות זאת"
+msgstr "שומר מרקע רץ כבר בשיח זה"
 
 #: src/gs-lock-plug.c:328
 msgid "%A, %B %e"
