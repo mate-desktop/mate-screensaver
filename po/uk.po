@@ -9,7 +9,7 @@
 # Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Микола Ткач <chistomov@gmail.com>, 2021
-# Serhii <sergiy@gorichenko.com>, 2022
+# Sergiy <sergiy@gorichenko.com>, 2022
 # 
 msgid ""
 msgstr ""
@@ -17,7 +17,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:32+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Serhii <sergiy@gorichenko.com>, 2022\n"
+"Last-Translator: Sergiy <sergiy@gorichenko.com>, 2022\n"
 "Language-Team: Ukrainian (https://app.transifex.com/mate/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
