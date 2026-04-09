@@ -5,7 +5,7 @@
 # 
 # Translators:
 # Piotr Drąg <piotrdrag@gmail.com>, 2018
-# Piotr Strębski <strebski@gmail.com>, 2018
+# Piotr Strebski <strebski@gmail.com>, 2018
 # Artur Motyka <slashcraftpl@gmail.com>, 2018
 # Przemek P <ppjg@dami.pl>, 2018
 # pietrasagh <kowalik.piotr@pm.me>, 2019
