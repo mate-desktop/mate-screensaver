@@ -4,15 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Efstathios Iosifidis <eiosifidis@gmail.com>, 2018
-# Petros Freris (Πέτρος Φρέρης) <petrosfreris@gmail.com>, 2018
-# alexandros_ <alexandros.venn@gmail.com>, 2018
-# Angel Chraniotis, 2018
-# 437c9d6e19936ed69f57bed9e0fe4716, 2018
-# thunk <thunk77@gmail.com>, 2019
-# Achillefs Zogias <achillefs76@hotmail.com>, 2020
-# Alexandros Kapetanios <alexandros@gnugr.org>, 2020
-# Stefano Karapetsas <stefano@karapetsas.com>, 2021
+# Hakim Oubouali <hakim1bal@protonmail.com>, 2021
 # 
 msgid ""
 msgstr ""
@@ -20,22 +12,22 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:32+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
-"Language-Team: Greek (https://app.transifex.com/mate/teams/13566/el/)\n"
+"Last-Translator: Hakim Oubouali <hakim1bal@protonmail.com>, 2021\n"
+"Language-Team: Central Atlas Tamazight (https://app.transifex.com/mate/teams/13566/tzm/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: el\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: tzm\n"
+"Plural-Forms: nplurals=2; plural=(n == 0 || n == 1 || (n > 10 && n < 100) ? 0 : 1;\n"
 
 #: data/mate-screensaver-preferences.desktop.in:3
 #: src/mate-screensaver.desktop.in.in:4
 msgid "Screensaver"
-msgstr "Προστασία οθόνης"
+msgstr ""
 
 #: data/mate-screensaver-preferences.desktop.in:4
 msgid "Set your screensaver preferences"
-msgstr "Ρύθμιση των προτιμήσεων σας για την προστασία οθόνης"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -45,39 +37,39 @@ msgstr ""
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
-msgstr "Προεπισκόπηση προστασίας οθόνης"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:59
 msgid "<b>Screensaver preview</b>"
-msgstr "<b>Προεπισκόπηση προστασίας οθόνης</b>"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:168
 msgid "Screensaver Preferences"
-msgstr "Προτιμήσεις προστασίας οθόνης"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:203
 msgid "Power _Management"
-msgstr "_Διαχείριση ενέργειας"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:219
 msgid "_Preview"
-msgstr "_Προεπισκόπηση"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:279
 msgid "_Screensaver theme:"
-msgstr "Θέματα προ_στασίας οθόνης:"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:397
 msgid "Regard the computer as _idle after:"
-msgstr "Ορισμός υπολογιστή ως _αδρανή μετά:"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:440
 msgid "_Activate screensaver when computer is idle"
-msgstr "Ε_νεργοποίηση προστασίας οθόνης όταν ο υπολογιστής είναι αδρανής"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:455
 msgid "_Lock screen when screensaver is active"
-msgstr "_Κλείδωμα οθόνης όταν η προστασία οθόνης είναι ενεργή"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:477
 msgid "Background picture for lock screen:"
@@ -85,20 +77,20 @@ msgstr ""
 
 #: data/mate-screensaver-preferences.ui:496
 msgid "Select Background Image"
-msgstr "Επιλογή εικόνας παρασκηνίου"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:522
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr "<b>Προειδοποίηση: η οθόνη δεν θα κλειδώνεται για το χρήστη root.</b>"
+msgstr ""
 
 #: data/mate-screensaver.directory.desktop.in:3
 msgid "Screensavers"
-msgstr "Θέματα"
+msgstr ""
 
 #: data/mate-screensaver.directory.desktop.in:4
 #: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
-msgstr "Θέματα προστασίας οθόνης"
+msgstr ""
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -106,11 +98,11 @@ msgstr "Θέματα προστασίας οθόνης"
 #: data/images/cosmos/cosmos.xml.in.in:7
 #: savers/cosmos-slideshow.desktop.in.in:3
 msgid "Cosmos"
-msgstr "Cosmos"
+msgstr ""
 
 #: data/lock-dialog-default.ui:110
 msgid "<span size=\"small\">%U on %h</span>"
-msgstr "<span size=\"small\">%U σε %h</span>"
+msgstr "<span size=\"small\">%U g %h</span>"
 
 #: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2150
 msgid "Show password"
@@ -118,55 +110,51 @@ msgstr ""
 
 #: data/lock-dialog-default.ui:233
 msgid "_Leave Message"
-msgstr "_Αφήστε μήνυμα"
+msgstr ""
 
 #: data/lock-dialog-default.ui:249
 msgid "_Switch User"
-msgstr "_Αλλαγή χρήστη"
+msgstr ""
 
 #: data/lock-dialog-default.ui:265
 msgid "_Log Out"
-msgstr "_Αποσύνδεση"
+msgstr ""
 
 #: data/lock-dialog-default.ui:281 data/lock-dialog-default.ui:375
 msgid "_Cancel"
-msgstr "Α_κύρωση"
+msgstr "_Sser"
 
 #: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1711
 msgid "_Unlock"
-msgstr "_Ξεκλείδωμα"
+msgstr ""
 
 #: data/lock-dialog-default.ui:339
 msgid "<b>Leave a message for %R:</b>"
-msgstr "<b>Αφήστε μήνυμα για %R:</b>"
+msgstr ""
 
 #: data/lock-dialog-default.ui:391
 msgid "_Save"
-msgstr "Απο_θήκευση"
+msgstr "_Ḥḍu"
 
 #: data/org.mate.screensaver.gschema.xml.in:10
 msgid "Activate when idle"
-msgstr "Ενεργοποίηση στην αδράνεια"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:11
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
-"Ορισμός αυτού σε TRUE για την ενεργοποίηση της προστασίας οθόνης όταν η "
-"συνεδρία είναι σε αδράνεια."
 
 #: data/org.mate.screensaver.gschema.xml.in:15
 msgid "Lock on activation"
-msgstr "Κλείδωμα στην ενεργοποίηση"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:16
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
-"Ορισμός αυτού σε TRUE για να κλειδώνει η οθόνη όταν ενεργοποιείται η "
-"προστασία οθόνης."
 
 #: data/org.mate.screensaver.gschema.xml.in:20
 msgid "Screensaver theme selection mode"
-msgstr "Λειτουργία επιλογής θέματος προστασίας οθόνης"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:21
 msgid ""
@@ -176,12 +164,6 @@ msgid ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 msgstr ""
-"Η λειτουργία επιλογής που χρησιμοποιείται από την προστασία οθόνης. Μπορεί "
-"να είναι \"blank-only\" για ενεργοποίηση της προστασίας οθόνης χωρίς τη "
-"χρήση θέματος,  \"single\" για ενεργοποίηση της προστασίας οθόνης με τη "
-"χρήση μόνο ενός θέματος (που καθορίζεται στο κλειδί \"themes\"), και "
-"\"random\"  για ενεργοποίηση της προστασίας οθόνης με τη χρήση ενόςτυχαίου "
-"θέματος"
 
 #: data/org.mate.screensaver.gschema.xml.in:26
 msgid ""
@@ -190,49 +172,38 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
-"Αυτό το κλειδί καθορίζει τη λίστα θεμάτων της προστασίας οθόνης. Αγνοείται "
-"όταν το κλειδί \"mode\" είναι \"blank-only\". Μπορεί να παρέχει το όνομα "
-"θέματος όταν το κλειδί \"mode\" είναι \"single\", και μπορεί να παρέχει μια "
-"λίστα θεμάτων όταν το κλειδί \"mode\" είναι \"random\"."
 
 #: data/org.mate.screensaver.gschema.xml.in:30
 msgid "Time before power management baseline"
-msgstr "Χρόνος πριν την αναφορά διαχείρισης ενέργειας"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:31
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
 msgstr ""
-"Ο χρόνος δευτερολέπτων αδράνειας πριν τη σηματοδότηση της διαχείρισης "
-"ενέργειας. Το κλειδί είναι ορισμένο και συντηρείται από τη συνεδρία της "
-"διαχείρισης ενέργειας."
 
 #: data/org.mate.screensaver.gschema.xml.in:35
 msgid "Time before theme change"
-msgstr "Χρόνος πριν την αλλαγή θέματος"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:36
 msgid "The number of minutes to run before changing the screensaver theme."
 msgstr ""
-"Το διάστημα του χρόνου σε λεπτά που θα μεσολαβήσει για να γίνει η αλλαγή της"
-" προφύλαξης οθόνης."
 
 #: data/org.mate.screensaver.gschema.xml.in:40
 msgid "Time before locking"
-msgstr "Χρόνος πριν το κλείδωμα"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:41
 msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
 msgstr ""
-"Ο αριθμός των λεπτών αφού ενεργοποιηθεί η προστασίας οθόνης για το κλείδωμα "
-"της οθόνης."
 
 #: data/org.mate.screensaver.gschema.xml.in:45
 msgid "Allow embedding a keyboard into the window"
-msgstr "Να επιτρέπεται η ενσωμάτωση πληκτρολογίου σε ένα παράθυρο"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:46
 msgid ""
@@ -240,13 +211,10 @@ msgid ""
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
-"Ορισμός αυτού σε TRUE για να επιτρέπεται η ενσωμάτωση πληκτρολογίου στο "
-"παράθυρο κατα την προσπάθεια ξεκλειδώματις. Το κλειδί \"keyboard_command\" "
-"πρέπει να ορισθεί με την κατάλληλη εντολή."
 
 #: data/org.mate.screensaver.gschema.xml.in:50
 msgid "Embedded keyboard command"
-msgstr "Εντολή ενσωματωμένου πληκτρολογίου"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:51
 msgid ""
@@ -255,27 +223,20 @@ msgid ""
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
 msgstr ""
-"Αυτή η εντολή θα εκτελείται αν το κλειδί \"embedded_keyboard_enabled\" έχει "
-"ορισθεί σε  TRUE, ώστε να ενσωματωθεί το πληκτρολόγιο σε ένα παράθυρο. Η "
-"εντολή θα πρέπει να εφαρμόζει μια διεπαφή XEMBED plug και να έχει αποτέλεσμα"
-" ένα παράθυρο XID."
 
 #: data/org.mate.screensaver.gschema.xml.in:55
 msgid "Allow logout"
-msgstr "Να επιτρέπεται αποσύνδεση"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:56
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
 msgstr ""
-"Ορισμός αυτού σε TRUE για να προσφέρεται η επιλογή του διαλόγου "
-"ξεκλειδώματος για αποσύνδεση μετά από κάποια καθυστέρηση. Η καθυστέρηση "
-"καθορίζεται στο κλειδί \"logout_delay\"."
 
 #: data/org.mate.screensaver.gschema.xml.in:60
 msgid "Time before logout option"
-msgstr "Χρόνος πριν την επιλογή αποσύνδεσης"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:61
 msgid ""
@@ -283,13 +244,10 @@ msgid ""
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
 msgstr ""
-"Ο αριθμός των λεπτών αφού ενεργοποιηθεί η προστασίας οθόνης μέχρι να "
-"εμφανιστεί η επιλογή αποσύνδεσης. Αυτό το κλειδί έχει αποτέλεσμα μόνο αν το "
-"κλειδί \"logout_enable\" έχει ορισθεί TRUE."
 
 #: data/org.mate.screensaver.gschema.xml.in:65
 msgid "Logout command"
-msgstr "Εντολή αποσύνδεσης"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:66
 msgid ""
@@ -297,30 +255,24 @@ msgid ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 msgstr ""
-"Η εντολή που θα εκτελείται όταν πατιέται το κουμπί της αποσύνδεσης. Αυτή η "
-"εντολή θα πρέπει απλά να αποσυνδέει το χρήστη χωρίς καμία άλλη συναλλαγή. "
-"Αυτό το κλειδί έχει αποτέλεσμα μόνο αν το κλειδί \"logout_enable\" ορισθεί "
-"σε TRUE."
 
 #: data/org.mate.screensaver.gschema.xml.in:70
 msgid "Allow user switching"
-msgstr "Να επιτρέπεται η αλλαγή χρήστη"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:71
 msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
-"Ορισμός αυτού σε TRUE για να προσφέρεται η επιλογή του διαλόγου "
-"ξεκλειδώματος όταν γίνεται αλλαγή σε διαφορετικό λογαριασμό χρήστη."
 
 #: data/org.mate.screensaver.gschema.xml.in:75
 msgid "Theme for lock dialog"
-msgstr "Θέμα για το διάλογο κλειδώματος"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:76
 msgid "Theme to use for the lock dialog"
-msgstr "Θέμα για χρήση στο διάλογο κλειδώματος"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Format for time on lock dialog"
@@ -346,26 +298,24 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
-msgstr "Να επιτρέπεται η εμφάνιση του μηνύματος κατάστασης συνεδρίας"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:91
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr ""
-"Να επιτρέπεται η εμφάνιση του μηνύματος κατάστασης συνεδρίας όταν η οθόνη "
-"είναι κλειδωμένη."
 
 #: data/org.mate.screensaver.gschema.xml.in:95
 msgid "Picture Filename"
-msgstr "Όνομα αρχείου Εικόνας"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:96
 msgid "File to use for the background image."
-msgstr "Αρχείο που θα χρησιμοποιείται για την εικόνα παρασκηνίου."
+msgstr ""
 
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
-msgstr "Προβολή μιας παρουσίασης εικόνων του cosmos"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -375,11 +325,11 @@ msgstr ""
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
-msgstr "Ελεύθερα μετακινούμενο MATE"
+msgstr ""
 
 #: savers/footlogo-floaters.desktop.in.in:4
 msgid "Bubbles the MATE logo around the screen"
-msgstr "Φούσκες του λογότυπου του MATE στην οθόνη"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -389,11 +339,11 @@ msgstr ""
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
-msgstr "Ελεύθερα μετακινούμενο GNOME"
+msgstr ""
 
 #: savers/gnomelogo-floaters.desktop.in.in:4
 msgid "Bubbles the GNOME logo around the screen"
-msgstr "Φούσκες του λογότυπου του GNOME στην οθόνη"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -403,11 +353,11 @@ msgstr ""
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
-msgstr "Φάκελος εικόνων"
+msgstr ""
 
 #: savers/personal-slideshow.desktop.in.in:4
 msgid "Display a slideshow from your Pictures folder"
-msgstr "Προβολή μιας παρουσίασης εικόνων του φακέλου των εικόνων σας"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -417,11 +367,11 @@ msgstr ""
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
-msgstr "Τετράγωνα pop-art"
+msgstr ""
 
 #: savers/popsquares.desktop.in.in:4
 msgid "A pop-art-ish grid of pulsing colors."
-msgstr "Ένα πλέγμα παλλόμενων εικόνων pop-art"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -432,120 +382,117 @@ msgstr ""
 #: savers/popsquares.c:50 savers/floaters.c:1161
 #, c-format
 msgid "%s. See --help for usage information.\n"
-msgstr "%s. Βλέπε --help για πληροφορίες χρήσης.\n"
+msgstr ""
 
 #: savers/floaters.c:1134
 msgid "Show paths that images follow"
-msgstr "Εμφάνιση των διαδρομών  των εικόνων"
+msgstr ""
 
 #: savers/floaters.c:1136
 msgid "Occasionally rotate images as they move"
-msgstr "Περιοδική επιστροφή εικόνων καθώς κινούνται"
+msgstr ""
 
 #: savers/floaters.c:1138
 msgid "Print out frame rate and other statistics"
-msgstr "Εκτύπωση του μέγιστου αριθμού καρέ και άλλων στατιστικών"
+msgstr ""
 
 #: savers/floaters.c:1140
 msgid "The maximum number of images to keep on screen"
-msgstr "Ο μέγιστος αριθμός εικόνων που θα διατηρούνται στην οθόνη"
+msgstr ""
 
 #: savers/floaters.c:1140
 msgid "MAX_IMAGES"
-msgstr "MAX_IMAGES"
+msgstr ""
 
 #: savers/floaters.c:1142
 msgid "The initial size and position of window"
-msgstr "Το αρχικό μέγεθος και θέση του παραθύρου"
+msgstr ""
 
 #: savers/floaters.c:1142
 msgid "WIDTHxHEIGHT+X+Y"
-msgstr "WIDTHxHEIGHT+X+Y"
+msgstr ""
 
 #: savers/floaters.c:1144
 msgid "The source image to use"
-msgstr "Η πηγή εικόνας που θα χρησιμοποιηθεί"
+msgstr ""
 
 #: savers/floaters.c:1156
 msgid "image - floats images around the screen"
-msgstr "εικόνα - πλωτές εικόνες στην οθόνη"
+msgstr ""
 
 #: savers/floaters.c:1170
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr ""
-"Θα πρέπει να καθορίσετε μια εικόνα. Βλέπε --help για πληροφορίες χρήσης.\n"
 
 #: savers/slideshow.c:56
 msgid "Location to get images from"
-msgstr "Τοποθεσία για τη λήψη εικόνων"
+msgstr ""
 
 #: savers/slideshow.c:56
 msgid "PATH"
-msgstr "ΔΙΑΔΡΟΜΗ"
+msgstr ""
 
 #: savers/slideshow.c:60
 msgid "Color to use for images background"
-msgstr "Χρώμα παρασκηνίου που θα έχουν οι εικόνες"
+msgstr ""
 
 #: savers/slideshow.c:60
 msgid "\"#rrggbb\""
-msgstr "\"#rrggbb\""
+msgstr ""
 
 #: savers/slideshow.c:64
 msgid "Do not randomize pictures from location"
-msgstr "Να μην γίνεται τυχαία επιλογή εικόνων από την τοποθεσία"
+msgstr ""
 
 #: savers/slideshow.c:68
 msgid "Do not try to stretch images on screen"
-msgstr "Να μην γίνεται προσπάθεια τεντώματος εικόνων στην οθόνη"
+msgstr ""
 
 #: src/copy-theme-dialog.c:181
 msgid "Copying files"
-msgstr "Αντιγραφή αρχείων"
+msgstr ""
 
 #: src/copy-theme-dialog.c:200
 msgid "From:"
-msgstr "Από:"
+msgstr ""
 
 #: src/copy-theme-dialog.c:204
 msgid "To:"
-msgstr "Σε:"
+msgstr ""
 
 #: src/copy-theme-dialog.c:225
 msgid "Copying themes"
-msgstr "Αντιγραφή θεμάτων"
+msgstr ""
 
 #: src/copy-theme-dialog.c:268
 msgid "Invalid screensaver theme"
-msgstr "Μη έγκυρο θέμα προστασίας οθόνης"
+msgstr ""
 
 #: src/copy-theme-dialog.c:271
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
-msgstr "Το %s δεν φαίνεται να είναι ένα έγκυρο αρχείο προστασίας οθόνης."
+msgstr ""
 
 #: src/copy-theme-dialog.c:449
 #, c-format
 msgid "Copying file: %u of %u"
-msgstr "Αντιγραφή αρχείου: %u από %u"
+msgstr ""
 
 #: src/mate-screensaver-command.c:61
 msgid "Causes the screensaver to exit gracefully"
-msgstr "Προκαλεί την έξοδο της προστασίας οθόνης"
+msgstr ""
 
 #: src/mate-screensaver-command.c:65
 msgid "Query the state of the screensaver"
-msgstr "Ερώτηση της κατάστασης της προστασίας οθόνης"
+msgstr ""
 
 #: src/mate-screensaver-command.c:69
 msgid "Query the length of time the screensaver has been active"
-msgstr "Ερώτημα για το χρόνο που ήταν ενεργή η προστασία οθόνης"
+msgstr ""
 
 #: src/mate-screensaver-command.c:73
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr ""
-"Ειδοποιεί την προστασία οθόνης που εκτελείται για να κλειδώσει την οθόνη "
-"άμεσα."
 
 #: src/mate-screensaver-command.c:77
 msgid "Tells the running screensaver process to unlock the screen immediately"
@@ -554,183 +501,177 @@ msgstr ""
 #: src/mate-screensaver-command.c:81
 msgid "If the screensaver is active then switch to another graphics demo"
 msgstr ""
-"Αν η προστασία οθόνης είναι ενεργή τότε να γίνει αλλαγή σε ένα άλλο graphics"
-" demo"
 
 #: src/mate-screensaver-command.c:85
 msgid "Turn the screensaver on (blank the screen)"
-msgstr "Ενεργοποίηση της προστασίας οθόνης (κενή οθόνη)"
+msgstr ""
 
 #: src/mate-screensaver-command.c:89
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
-msgstr "Αν η προστασία οθόνης είναι ενεργή τότε να γίνει απενεργοποίηση"
+msgstr ""
 
 #: src/mate-screensaver-command.c:93
 msgid "Poke the running screensaver to simulate user activity"
-msgstr "Η εκτελούμενη προστασία οθόνης να εξομοιώνει δρλασεις χρήστη"
+msgstr ""
 
 #: src/mate-screensaver-command.c:97
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
 msgstr ""
-"Παρεμπόδιση της προστασίας οθόνης. Command blocks while inhibit is active."
 
 #: src/mate-screensaver-command.c:101
 msgid "The calling application that is inhibiting the screensaver"
-msgstr "Η εφαρμογή που παρακωλύει την προστασία οθόνης"
+msgstr ""
 
 #: src/mate-screensaver-command.c:105
 msgid "The reason for inhibiting the screensaver"
-msgstr "Ο λόγος για την παρακώλυση της προστασίας οθόνης."
+msgstr ""
 
 #: src/mate-screensaver-command.c:109 src/mate-screensaver-dialog.c:59
 #: src/mate-screensaver.c:56
 msgid "Version of this application"
-msgstr "Η Έκδοση αυτής της εφαρμογής"
+msgstr ""
 
 #: src/mate-screensaver-command.c:359
 #, c-format
 msgid "The screensaver is %s\n"
-msgstr "Η προστασία οθόνης είναι %s\n"
+msgstr ""
 
 #: src/mate-screensaver-command.c:359
 msgid "active"
-msgstr "ενεργή"
+msgstr ""
 
 #: src/mate-screensaver-command.c:359
 msgid "inactive"
-msgstr "ανενεργή"
+msgstr ""
 
 #: src/mate-screensaver-command.c:375
 msgid "The screensaver is not inhibited\n"
-msgstr "Η προστασία οθόνης δεν παρεμποδίζεται\n"
+msgstr ""
 
 #: src/mate-screensaver-command.c:383
 msgid "The screensaver is being inhibited by:\n"
-msgstr "Η προστασία οθόνης παρεμποδίζεται από:\n"
+msgstr ""
 
 #: src/mate-screensaver-command.c:418
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
-msgstr "Η προστασία οθόνης ήταν ενεργή για %d δευτερόλεπτα.\n"
+msgstr ""
 
 #: src/mate-screensaver-command.c:424
 msgid "The screensaver is not currently active.\n"
-msgstr "Η προστασία οθόνης δεν είναι προς το παρόν ενεργή\n"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:58
 msgid "Show debugging output"
-msgstr "Προβολή επιλογών αποσφαλμάτωσης"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:60
 msgid "Show the logout button"
-msgstr "Εμφάνιση του κουμπιού αποσύνδεσης"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:61
 msgid "Command to invoke from the logout button"
-msgstr "Εντολή για εκτέλεση από το κουμπί αποσύνδεσης"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:62
 msgid "Show the switch user button"
-msgstr "Προβολή του κουμπιού αλλαγής χρήστη"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:63
 msgid "Message to show in the dialog"
-msgstr "Μήνυμα που θα εμφανίζεται στον διάλογο"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:63 src/mate-screensaver-dialog.c:64
 msgid "MESSAGE"
-msgstr "ΜΗΝΥΜΑ"
+msgstr "TUZINT"
 
 #: src/mate-screensaver-dialog.c:64
 msgid "Not used"
-msgstr "Δεν χρησιμοποιείται"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:167 src/mate-screensaver-dialog.c:168
 #: src/mate-screensaver-dialog.c:169 src/gs-auth-pam.c:723
 msgid "Username:"
-msgstr "Όνομα χρήστη:"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:170 src/mate-screensaver-dialog.c:171
 #: src/gs-auth-pam.c:145
 msgid "Password:"
-msgstr "Συνθηματικό:"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:172
 msgid "You are required to change your password immediately (password aged)"
 msgstr ""
-"Απαιτείται να αλλάξετε κωδικό άμεσα (ο κωδικός σας έχει ημερομηνία λήξης)"
 
 #: src/mate-screensaver-dialog.c:173
 msgid "You are required to change your password immediately (root enforced)"
-msgstr "Απαιτείται να αλλάξετε κωδικό άμεσα (εξαναγκασμός από το root)"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:174
 msgid "Your account has expired; please contact your system administrator"
 msgstr ""
-"Ο λογαριασμός σας έχει λήξει. Παρακαλώ επικοινωνήστε με το διαχειριστή του "
-"συστήματος σας"
 
 #: src/mate-screensaver-dialog.c:175
 msgid "No password supplied"
-msgstr "Δεν δόθηκε κωδικός"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:176
 msgid "Password unchanged"
-msgstr "Αναλλοίωτος κωδικός"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:177
 msgid "Can not get username"
-msgstr "Αδυναμία λήψης ονόματος χρήστη"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:178
 msgid "Retype new UNIX password:"
-msgstr "Επαπληκτρολόγηση νέου κωδικού UNIX:"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:179
 msgid "Enter new UNIX password:"
-msgstr "Εισαγωγή νέου κωδικού UNIX:"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:180
 msgid "(current) UNIX password:"
-msgstr "(τρέχων) κωδικός UNIX:"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:181
 msgid "Error while changing NIS password."
-msgstr "Σφάλμα κατά την αλλαγή του κωδικού NIS"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:182
 msgid "You must choose a longer password"
-msgstr "Θα πρέπει να επιλέξετε ένα μεγαλύτερο κωδικό."
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:183
 msgid "Password has been already used. Choose another."
-msgstr "Ο Κωδικός χρησιμοποιείται ήδη. Διαλέξτε έναν άλλο."
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:184
 msgid "You must wait longer to change your password"
-msgstr "Θα πρέπει να περιμένετε περισσότερο για να αλλάξετε το κωδικό σας"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:185
 msgid "Sorry, passwords do not match"
-msgstr "Συγγνώμη, οι κωδικοί δεν ταιριάζουν"
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:256
 msgid "Checking..."
-msgstr "Έλεγχος..."
+msgstr ""
 
 #: src/mate-screensaver-dialog.c:302 src/gs-auth-pam.c:458
 msgid "Authentication failed."
-msgstr "Αποτυχία πιστοποίησης."
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:455
 msgid "Blank screen"
-msgstr "Κενή οθόνη"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:461
 msgid "Random"
-msgstr "Τυχαία"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:951
 #: src/mate-screensaver-preferences.c:961
@@ -762,7 +703,7 @@ msgstr[1] ""
 #: src/mate-screensaver-preferences.c:1023
 #, c-format
 msgid "%s %s"
-msgstr "%s %s"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:1010
 #, c-format
@@ -778,28 +719,27 @@ msgstr "%s"
 
 #: src/mate-screensaver-preferences.c:1071
 msgid "Never"
-msgstr "Ποτέ"
+msgstr "Usar"
 
 #: src/mate-screensaver-preferences.c:1632
 msgid "Could not load the main interface"
-msgstr "Αδυναμία φόρτωση της κύριας επιφάνειας χρήσης"
+msgstr ""
 
 #: src/mate-screensaver-preferences.c:1634
 msgid "Please make sure that the screensaver is properly installed"
-msgstr "Βεβαιωθείτε ότι η προστασία οθόνης έχει εγκατασταθεί σωστά"
+msgstr ""
 
 #: src/mate-screensaver.c:57
 msgid "Don't become a daemon"
-msgstr "Να μη γίνει daemon"
+msgstr ""
 
 #: src/mate-screensaver.c:58
 msgid "Enable debugging code"
-msgstr "Ενεργοποίηση κώδικα αποσφαλμάτωσης"
+msgstr ""
 
 #: src/mate-screensaver.desktop.in.in:5
 msgid "Launch screensaver and locker program"
 msgstr ""
-"Έναρξη της προφύλαξης οθόνης και του προγράμματος κλειδώματος υπολογιστή"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -810,64 +750,64 @@ msgstr ""
 #: src/gs-auth-pam.c:388
 #, c-format
 msgid "Unable to establish service %s: %s\n"
-msgstr "Αδυναμία διατήρησης υπηρεσίας %s: %s\n"
+msgstr ""
 
 #: src/gs-auth-pam.c:418
 #, c-format
 msgid "Can't set PAM_TTY=%s"
-msgstr "Αδυναμία ορισμού PAM_TTY=%s"
+msgstr ""
 
 #: src/gs-auth-pam.c:454
 msgid "Incorrect password."
-msgstr "Μη έγκυρος κωδικός."
+msgstr ""
 
 #: src/gs-auth-pam.c:474
 msgid "Not permitted to gain access at this time."
-msgstr "Δεν σας επιτρέπεται η πρόσβαση αυτή τη φορά."
+msgstr ""
 
 #: src/gs-auth-pam.c:482
 msgid "No longer permitted to access the system."
-msgstr "Δεν σας επιτρέπεται πια η πρόσβαση στο σύστημα."
+msgstr ""
 
 #: src/gs-listener-dbus.c:2248
 msgid "failed to register with the message bus"
-msgstr "αποτυχία εγγραφής με το message bus"
+msgstr ""
 
 #: src/gs-listener-dbus.c:2259
 msgid "not connected to the message bus"
-msgstr "δεν υπάρχει σύωδεση με το message bus"
+msgstr ""
 
 #: src/gs-listener-dbus.c:2269 src/gs-listener-dbus.c:2301
 msgid "screensaver already running in this session"
-msgstr "η προστασία οθόνης εκτελείται ήδη σε αυτή τη συνεδρία."
+msgstr ""
 
 #: src/gs-lock-plug.c:328
 msgid "%A, %B %e"
-msgstr "%A, %B %e"
+msgstr ""
 
 #: src/gs-lock-plug.c:442
 msgid "Time has expired."
-msgstr "Ο χρόνος έχει λήξει."
+msgstr ""
 
 #: src/gs-lock-plug.c:472
 msgid "You have the Caps Lock key on."
-msgstr "Έχετε πατημένο το πλήκτρο Caps Lock."
+msgstr ""
 
 #: src/gs-lock-plug.c:1691
 msgid "S_witch User..."
-msgstr "Α_λλαγή χρήστη..."
+msgstr ""
 
 #: src/gs-lock-plug.c:1700
 msgid "Log _Out"
-msgstr "Α_ποσύνδεση"
+msgstr ""
 
 #: src/gs-lock-plug.c:1913
 msgid "%U on %h"
-msgstr "%U σε %h"
+msgstr ""
 
 #: src/gs-lock-plug.c:1928
 msgid "_Password:"
-msgstr "_Κωδικός:"
+msgstr "_Taguri n uzray:"
 
 #: src/gs-lock-plug.c:2156
 msgid "Hide password"
