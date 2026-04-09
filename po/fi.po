@@ -4,12 +4,11 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Lasse Liehu-Inui <larso@gmx.com>, 2018
+# Lasse Liehu <larso@gmx.com>, 2018
 # Mikko Harhanen <gitti@mikkoharhanen.fi>, 2018
 # nomen omen, 2018
 # Ammuu5, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# Tommi Nieminen <translator@legisign.org>, 2026
 # 
 msgid ""
 msgstr ""
@@ -17,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:32+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Tommi Nieminen <translator@legisign.org>, 2026\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
 "Language-Team: Finnish (https://app.transifex.com/mate/teams/13566/fi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,7 +77,7 @@ msgstr "_Lukitse näyttö, kun näytönsäästäjä on aktiivinen"
 
 #: data/mate-screensaver-preferences.ui:477
 msgid "Background picture for lock screen:"
-msgstr "Lukitusnäytön taustakuva:"
+msgstr ""
 
 #: data/mate-screensaver-preferences.ui:496
 msgid "Select Background Image"
@@ -111,7 +110,7 @@ msgstr "<span size=\"small\">%U@%h</span>"
 
 #: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2150
 msgid "Show password"
-msgstr "Näytä salasana"
+msgstr ""
 
 #: data/lock-dialog-default.ui:233
 msgid "_Leave Message"
@@ -192,15 +191,13 @@ msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:30
 msgid "Time before power management baseline"
-msgstr "Aika ennen virranhallinnan lähtötasoa"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:31
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
 msgstr ""
-"Joutoaika sekunteina ennen virranhallinnan signalointia. Tämän asetuksen "
-"tekee ja sitä ylläpitää istunnon virranhallinta-agentti."
 
 #: data/org.mate.screensaver.gschema.xml.in:35
 msgid "Time before theme change"
@@ -304,11 +301,11 @@ msgstr "Lukitusikkunan teema"
 
 #: data/org.mate.screensaver.gschema.xml.in:76
 msgid "Theme to use for the lock dialog"
-msgstr "Lukituksen kyselyikkunassa käytettävä teema"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Format for time on lock dialog"
-msgstr "Lukituksen kyselyikkunan ajan muotoilu"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
@@ -316,13 +313,10 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %R for 24H format."
 msgstr ""
-"Lukituksen kyselyikkunan ajan muotoilu. Oletus on maa-asetuksen mukainen. "
-"Mukautetun arvon voi asettaa g-date-time-formatin mukaisesti. 24 tunnin "
-"muodon saa jonolla %R."
 
 #: data/org.mate.screensaver.gschema.xml.in:85
 msgid "Format for date on lock dialog"
-msgstr "Lukituksen kyselyikkunan päiväyksen muotoilu"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:86
 msgid ""
@@ -360,7 +354,7 @@ msgstr ""
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
-msgstr "Kelluva MATE"
+msgstr ""
 
 #: savers/footlogo-floaters.desktop.in.in:4
 msgid "Bubbles the MATE logo around the screen"
@@ -374,7 +368,7 @@ msgstr ""
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
-msgstr "Kelluva GNOME"
+msgstr ""
 
 #: savers/gnomelogo-floaters.desktop.in.in:4
 msgid "Bubbles the GNOME logo around the screen"
@@ -532,8 +526,6 @@ msgstr "Lukitse näyttö heti käynnissä olevan näytönsäästäjäprosessin a
 #: src/mate-screensaver-command.c:77
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
-"Käskee käynnissä olevan näytönsäästäjäprosessin avata välittömästi näytön "
-"lukitus"
 
 #: src/mate-screensaver-command.c:81
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -717,8 +709,8 @@ msgstr "Satunnainen"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] "%d tunti"
-msgstr[1] "%d tuntia"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:954
 #: src/mate-screensaver-preferences.c:963
@@ -727,15 +719,15 @@ msgstr[1] "%d tuntia"
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d minuutti"
-msgstr[1] "%d minuuttia"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:957
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d sekunti"
-msgstr[1] "%d sekuntia"
+msgstr[0] ""
+msgstr[1] ""
 
 #: src/mate-screensaver-preferences.c:965
 #: src/mate-screensaver-preferences.c:1013
@@ -778,7 +770,7 @@ msgstr "Käytä vianetsintätilaa"
 
 #: src/mate-screensaver.desktop.in.in:5
 msgid "Launch screensaver and locker program"
-msgstr "Käynnistä näytönsäästö- ja lukitusohjelma"
+msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
@@ -822,7 +814,7 @@ msgstr "näytönsäästäjä on jo käynnissä tässä istunnossa"
 
 #: src/gs-lock-plug.c:328
 msgid "%A, %B %e"
-msgstr "%A %e. %Bta"
+msgstr ""
 
 #: src/gs-lock-plug.c:442
 msgid "Time has expired."
@@ -850,4 +842,4 @@ msgstr "_Salasana:"
 
 #: src/gs-lock-plug.c:2156
 msgid "Hide password"
-msgstr "Piilota salasana"
+msgstr ""

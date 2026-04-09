@@ -13,7 +13,7 @@
 # Patrik Nilsson <asavartzeth@gmail.com>, 2019
 # Elmer Blanksvärd <elmerblanksvard@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# Luna Jernberg <droidbittin@gmail.com>, 2024
+# Luna Jernberg <droidbittin@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
@@ -21,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:32+0200\n"
 "PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Luna Jernberg <droidbittin@gmail.com>, 2024\n"
+"Last-Translator: Luna Jernberg <droidbittin@gmail.com>, 2022\n"
 "Language-Team: Swedish (https://app.transifex.com/mate/teams/13566/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -317,7 +317,7 @@ msgstr "Tema att använda för låsdialogen"
 
 #: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Format for time on lock dialog"
-msgstr "Format för tid på lås dialogrutan"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
@@ -325,13 +325,10 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %R for 24H format."
 msgstr ""
-"Format för tid att visa på dialogrutan vid låsning. Standard är 'locale' som"
-" använder standardformat för aktuell lokal. Anpassade värden bör ställas in "
-"enligt g-datum-tids-format. Prova %R för 24T-format."
 
 #: data/org.mate.screensaver.gschema.xml.in:85
 msgid "Format for date on lock dialog"
-msgstr "Format för datum på lås dialogrutan"
+msgstr ""
 
 #: data/org.mate.screensaver.gschema.xml.in:86
 msgid ""
@@ -339,9 +336,6 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %F for ISO 8601 date format."
 msgstr ""
-"Format för datum att visa på dialogrutan vid låsning. Standard är 'locale' "
-"som använder standardformat för aktuell lokal. Anpassade värden bör ställas "
-"in enligt g-datum-tids-format. Prova %F för ISO 8601 datumformat."
 
 #: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
@@ -368,7 +362,7 @@ msgstr "Visa ett bildspel med bilder på kosmos"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr "MATE;skärmsläckare;bildspel;kosmos;"
+msgstr ""
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -382,7 +376,7 @@ msgstr "Bubblar runt MATE loggan på skärmen"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr "MATE;skärmsläckare;logotyp;bubblor;"
+msgstr ""
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -396,7 +390,7 @@ msgstr "Bubblar runt GNOME loggan på skärmen"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr "MATE;skärmsläckare;GNOME;logotyp;bubblor;"
+msgstr ""
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -410,7 +404,7 @@ msgstr "Visa ett bildspel från din Bildmapp"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
-msgstr "MATE;skärmsläckare;anpassad;bildspel;bilder;mapp;"
+msgstr ""
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
@@ -424,7 +418,7 @@ msgstr "En popartigt rutnät med pulserande färger."
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr "MATE;skärmsläckare;rutnät;pulserande;färger;"
+msgstr ""
 
 #: savers/popsquares.c:50 savers/floaters.c:1161
 #, c-format
@@ -546,8 +540,6 @@ msgstr ""
 #: src/mate-screensaver-command.c:77
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
-"Berättar för den körande skärmsläckarprocessen att skärmen ska låsas "
-"omedelbart"
 
 #: src/mate-screensaver-command.c:81
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -798,7 +790,7 @@ msgstr "Kör skärmsläckar och låsprogram"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr "MATE;skärmsläckare;låsskärm"
+msgstr ""
 
 #: src/gs-auth-pam.c:388
 #, c-format
