@@ -1,3 +1,33 @@
+### mate-screensaver 1.28.1
+
+  * add the number of minutes for GUI settings to lock the screen after activating the screen saver (#293)
+  * mate-screensaver-preferences: Add mnemonic for background-picture
+  * mate-screensaver-preferences: Cleanup UI file after lock-delay changes
+  * mate-screensaver-preferences: Add missing mnemonic
+  * mate-screensaver-preferences: Add tooltip for lock-delay
+  * mate-screensaver-preferences: Improve and cleanup time scale formatting (#295)
+  * Fix same travis build failures as in other repos
+  * mate-screensaver-preferences: Fix lock-delay time wording
+  * Added starfield screensaver
+  * Add screensaver configurations in GSettings
+  * Add support for org.freedesktop.ScreenSaver DBus interface
+  * Register DBus interface on historical KDE path /ScreenSaver
+  * DBus: Report correct paths in Introspect()
+  * gs-lock-plug: Fix HiDPI scaling for user face images
+  * ci: migrate from Travis CI to GitHub Actions
+  * build(deps): bump actions/checkout from 5 to 6
+  * mate-screensaver-preferences: Simplify mnemonic widget association
+  * Fix warning due to source being removed twice
+  * fix memleak
+  * Fix mate-screensaver may not respond on logind dbus commands
+  * Refers to https://github.com/mate-desktop/mate-terminal/issues/487 update potfile remove transifex configuration
+  * Retrieve last transifex translations
+  * Revert "Retrieve last transifex translations"
+  * retrieve last transifex translations
+  * add translation coverage badge
+  * remove empty po file
+  * correcting po with errors
+
 ### mate-screensaver 1.28.0
 
   * Translations update
