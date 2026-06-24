@@ -1,27 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the mate-screensaver package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
 # Cédric Valmary <cvalmary@yahoo.fr>, 2018
 # 48c2de07903ce5a77a8e90265f95c4c2_8909374 <837c8d0ab97b27e737893c19f79bd4de_348476>, 2018
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
 # Quentin PAGÈS, 2024
-# 
+# Quentin PAGÈS <quentinantonin@free.fr>, 2026.
+#
+# Translators:
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-screensaver 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:32+0200\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Quentin PAGÈS, 2024\n"
-"Language-Team: Occitan (post 1500) (https://app.transifex.com/mate/teams/13566/oc/)\n"
+"PO-Revision-Date: 2026-06-16 08:10+0000\n"
+"Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
+"Language-Team: Occitan <https://translate.fedoraproject.org/projects/mate-"
+"desktop/mate-screensaver/oc/>\n"
+"Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: oc\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2026.6.1\n"
 
 #: data/mate-screensaver-preferences.desktop.in:3
 #: src/mate-screensaver.desktop.in.in:4
@@ -102,7 +104,7 @@ msgstr "Tèmas d'estalviador d'ecran"
 #: data/images/cosmos/cosmos.xml.in.in:7
 #: savers/cosmos-slideshow.desktop.in.in:3
 msgid "Cosmos"
-msgstr "Cosmos"
+msgstr "Còsmos"
 
 #: data/lock-dialog-default.ui:110
 msgid "<span size=\"small\">%U on %h</span>"
