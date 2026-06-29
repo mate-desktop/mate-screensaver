@@ -278,7 +278,7 @@ config_get_enabled (gboolean *is_writable)
 	if (is_writable)
 	{
 		*is_writable = g_settings_is_writable (screensaver_settings,
-		               KEY_LOCK);
+		               KEY_IDLE_ACTIVATION_ENABLED);
 	}
 
 	enabled = g_settings_get_boolean (screensaver_settings, KEY_IDLE_ACTIVATION_ENABLED);
