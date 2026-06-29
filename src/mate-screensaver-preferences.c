@@ -1117,9 +1117,14 @@ static void
 ui_disable_lock (gboolean disable)
 {
 	GtkWidget *widget;
+	gboolean   is_writable;
 
 	widget = GTK_WIDGET (gtk_builder_get_object (builder, "lock_checkbox"));
-	gtk_widget_set_sensitive (widget, !disable);
+	config_get_lock (&is_writable);
+	if (is_writable)
+	{
+		gtk_widget_set_sensitive (widget, !disable);
+	}
 	if (disable)
 	{
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), FALSE);
