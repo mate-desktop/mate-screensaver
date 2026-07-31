@@ -1,0 +1,21 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build deps
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq build-essential pkg-config libglib2.0-dev             libgtk-3-dev libmate-desktop-2-dev libdbus-glib-1-dev             mate-screensaver 2>/dev/null || true
+      - name: Check source files
+        run: find src -name "*.c" -o -name "*.h" | sort
+      - name: Validate scripts
+        run: |
+          if [ -f tools/diagnose-screensaver.sh ]; then
+            bash -n tools/diagnose-screensaver.sh && echo "diagnose OK"
+          fi
+          if [ -f tools/fix-dbus-activation.sh ]; then
+            bash -n tools/fix-dbus-activation.sh && echo "fix OK"
+          fi
