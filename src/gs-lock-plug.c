@@ -1874,6 +1874,15 @@ unlock_button_clicked (GtkButton  *button,
 }
 
 static void
+entry_activate_handler (GtkEntry   *entry,
+                        GSLockPlug *plug)
+{
+	/* Disable input widget to prevent characters typed
+	 * after Enter from being included in the password. */
+	gtk_widget_set_sensitive (GTK_WIDGET (entry), FALSE);
+}
+
+static void
 cancel_button_clicked (GtkButton  *button,
                        GSLockPlug *plug)
 {
@@ -2198,6 +2207,9 @@ gs_lock_plug_init (GSLockPlug *plug)
 	/* button press handler used to inhibit popup menu */
 	g_signal_connect (plug->priv->auth_prompt_entry, "button_press_event",
 	                  G_CALLBACK (entry_button_press), NULL);
+	/* capture text on Enter before default button activation */
+	g_signal_connect (plug->priv->auth_prompt_entry, "activate",
+	                  G_CALLBACK (entry_activate_handler), plug);
 	gtk_entry_set_activates_default (GTK_ENTRY (plug->priv->auth_prompt_entry), TRUE);
 	gtk_entry_set_visibility (GTK_ENTRY (plug->priv->auth_prompt_entry), FALSE);
 
