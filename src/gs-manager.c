@@ -66,6 +66,7 @@ struct GSManagerPrivate
 	struct wl_registry                  *wl_registry;
 	struct ext_session_lock_manager_v1 *session_lock_manager;
 	struct ext_session_lock_v1         *session_lock;
+	guint                              session_lock_finished_idle_id;
 	gboolean                            session_lock_active;
 	/* raise the unlock dialog as soon as the lock is confirmed
 	   (explicit lock request), as opposed to idle activation where
@@ -194,14 +195,20 @@ manager_session_lock_handle_locked (void                        *data,
 {
 	GSManager *manager = GS_MANAGER (data);
 	GSList    *l;
+	GSList    *snapshot;
 
 	manager->priv->session_lock_active = TRUE;
 	gs_debug ("Session lock confirmed by compositor");
 
-	for (l = manager->priv->windows; l; l = l->next)
+	snapshot = g_slist_copy (manager->priv->windows);
+	for (l = snapshot; l; l = l->next)
 	{
-		gs_window_create_lock_surface (GS_WINDOW (l->data));
+		if (g_slist_find (manager->priv->windows, l->data))
+		{
+			gs_window_create_lock_surface (GS_WINDOW (l->data));
+		}
 	}
+	g_slist_free (snapshot);
 
 	/* Only raise the unlock dialog for an explicit lock request. On idle
 	   activation the saver theme keeps running until real user input
@@ -214,6 +221,18 @@ manager_session_lock_handle_locked (void                        *data,
 	}
 }
 
+static gboolean
+session_lock_finished_idle (gpointer data)
+{
+	GSManager *manager = GS_MANAGER (data);
+
+	manager->priv->session_lock_finished_idle_id = 0;
+
+	gs_manager_deactivate (manager);
+
+	return FALSE;
+}
+
 static void
 manager_session_lock_handle_finished (void                        *data,
                                       struct ext_session_lock_v1 *session_lock)
@@ -222,11 +241,27 @@ manager_session_lock_handle_finished (void                        *data,
 
 	gs_debug ("Session lock finished by compositor");
 
+	/* The protocol requires destroying the lock object on "finished":
+	   unlock_and_destroy() if the locked event was received, plain
+	   destroy() otherwise. */
+	if (manager->priv->session_lock_active)
+	{
+		ext_session_lock_v1_unlock_and_destroy (session_lock);
+	}
+	else
+	{
+		ext_session_lock_v1_destroy (session_lock);
+	}
+
 	manager->priv->session_lock = NULL;
 	manager->priv->session_lock_active = FALSE;
 	gs_wayland_session_lock = NULL;
 
-	gs_manager_deactivate (manager);
+	if (manager->priv->session_lock_finished_idle_id == 0)
+	{
+		manager->priv->session_lock_finished_idle_id =
+			g_idle_add (session_lock_finished_idle, manager);
+	}
 }
 
 static gboolean
@@ -1363,6 +1398,12 @@ find_window_at_pointer (GSManager *manager)
 
 	display = gdk_display_get_default ();
 
+	if (manager->priv->windows == NULL)
+	{
+		gs_debug ("WARNING: No windows to choose from for pointer position");
+		return NULL;
+	}
+
 	device = gdk_seat_get_pointer (gdk_display_get_default_seat (display));
 	gdk_device_get_position (device, NULL, &x, &y);
 	monitor = gdk_display_get_monitor_at_point (display, x, y);
@@ -1407,6 +1448,10 @@ gs_manager_show_message (GSManager  *manager,
 
 	/* Find the GSWindow that contains the pointer */
 	window = find_window_at_pointer (manager);
+	if (window == NULL)
+	{
+		return;
+	}
 	gs_window_show_message (window, summary, body, icon);
 
 	gs_manager_request_unlock (manager);
@@ -1940,19 +1985,22 @@ gs_manager_destroy_windows (GSManager *manager)
 	g_return_if_fail (manager != NULL);
 	g_return_if_fail (GS_IS_MANAGER (manager));
 
+	display = gdk_display_get_default ();
+
+	if (display != NULL)
+	{
+		g_signal_handlers_disconnect_by_func (display,
+		                                      on_display_monitor_removed,
+		                                      manager);
+		g_signal_handlers_disconnect_by_func (display,
+		                                      on_display_monitor_added,
+		                                      manager);
+	}
+
 	if (manager->priv->windows == NULL)
 	{
 		return;
 	}
-
-	display = gdk_display_get_default ();
-
-	g_signal_handlers_disconnect_by_func (display,
-	                                      on_display_monitor_removed,
-	                                      manager);
-	g_signal_handlers_disconnect_by_func (display,
-	                                      on_display_monitor_added,
-	                                      manager);
 
 	for (l = manager->priv->windows; l; l = l->next)
 	{
@@ -2003,6 +2051,12 @@ gs_manager_finalize (GObject *object)
 
 #ifdef ENABLE_WAYLAND
 	manager->priv->compositor = NULL;
+
+	if (manager->priv->session_lock_finished_idle_id != 0)
+	{
+		g_source_remove (manager->priv->session_lock_finished_idle_id);
+		manager->priv->session_lock_finished_idle_id = 0;
+	}
 
 	manager_unlock_session (manager);
 
@@ -2058,10 +2112,21 @@ gs_manager_create_windows (GSManager *manager)
 
 	g_return_if_fail (manager != NULL);
 	g_return_if_fail (GS_IS_MANAGER (manager));
-
-	g_assert (manager->priv->windows == NULL);
+	g_return_if_fail (manager->priv->windows == NULL);
 
 	display = gdk_display_get_default ();
+
+	/* Defensive: never end up with duplicated handlers. */
+	if (display != NULL)
+	{
+		g_signal_handlers_disconnect_by_func (display,
+		                                      on_display_monitor_added,
+		                                      manager);
+		g_signal_handlers_disconnect_by_func (display,
+		                                      on_display_monitor_removed,
+		                                      manager);
+	}
+
 	g_signal_connect (display, "monitor-added",
 	                  G_CALLBACK (on_display_monitor_added),
 	                  manager);

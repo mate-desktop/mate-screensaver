@@ -69,12 +69,14 @@ struct GSWindowWaylandPrivate
 
 	GPid                                lock_pid;
 	gint                                lock_watch_id;
+	guint                               lock_child_watch_id;
 	gint                                dialog_response;
 	gboolean                            dialog_quit_requested;
 
 	guint                               watchdog_timer_id;
 	guint                               popup_dialog_idle_id;
 	guint                               popup_dialog_retry_id;
+	guint                               deactivated_idle_id;
 	guint                               dialog_defer_count;
 	GTimer                             *timer;
 
@@ -170,7 +172,11 @@ wayland_window_set_dialog_up (GSWindow *window,
 static gboolean
 emit_deactivated_idle (gpointer data)
 {
-	GSWindow *window = GS_WINDOW (data);
+	GSWindow             *window = GS_WINDOW (data);
+	GSWindowWaylandPrivate *priv;
+
+	priv = GS_WINDOW_WAYLAND_GET_PRIVATE (window);
+	priv->deactivated_idle_id = 0;
 
 	g_signal_emit (window, gs_window_signals [GS_WINDOW_SIGNAL_DEACTIVATED], 0);
 
@@ -180,7 +186,16 @@ emit_deactivated_idle (gpointer data)
 static void
 add_emit_deactivated_idle (GSWindow *window)
 {
-	g_idle_add (emit_deactivated_idle, window);
+	GSWindowWaylandPrivate *priv;
+
+	priv = GS_WINDOW_WAYLAND_GET_PRIVATE (window);
+
+	if (priv->deactivated_idle_id != 0)
+	{
+		return;
+	}
+
+	priv->deactivated_idle_id = g_idle_add (emit_deactivated_idle, window);
 }
 
 static void
@@ -198,19 +213,53 @@ remove_command_watches (GSWindow *window)
 }
 
 static void
-gs_window_dialog_finish (GSWindow *window)
+reap_dialog_child (GSWindow *window)
 {
 	GSWindowWaylandPrivate *priv;
+	int                     status;
+	int                     i;
+	pid_t                   ret;
 
 	priv = GS_WINDOW_WAYLAND_GET_PRIVATE (window);
 
-	if (priv->lock_pid != 0)
+	if (priv->lock_child_watch_id != 0)
 	{
-		g_spawn_close_pid (priv->lock_pid);
-		priv->lock_pid = 0;
+		g_source_remove (priv->lock_child_watch_id);
+		priv->lock_child_watch_id = 0;
 	}
 
+	if (priv->lock_pid == 0)
+	{
+		return;
+	}
+
+	kill (priv->lock_pid, SIGTERM);
+
+	for (i = 0; i < 200; i++)
+	{
+		ret = waitpid (priv->lock_pid, &status, WNOHANG);
+		if (ret != 0)
+		{
+			break;
+		}
+		g_usleep (10000);
+	}
+
+	if (ret == 0)
+	{
+		kill (priv->lock_pid, SIGKILL);
+		waitpid (priv->lock_pid, &status, 0);
+	}
+
+	g_spawn_close_pid (priv->lock_pid);
+	priv->lock_pid = 0;
+}
+
+static void
+gs_window_dialog_finish (GSWindow *window)
+{
 	remove_command_watches (window);
+	reap_dialog_child (window);
 }
 
 static void
@@ -436,6 +485,24 @@ error_watch (GIOChannel   *source,
 	return TRUE;
 }
 
+static void
+dialog_child_watch_cb (GPid     pid,
+                       gint     status,
+                       gpointer data)
+{
+	GSWindow               *window = GS_WINDOW (data);
+	GSWindowWaylandPrivate *priv;
+
+	priv = GS_WINDOW_WAYLAND_GET_PRIVATE (window);
+
+	/* GLib has already reaped the child in this callback. */
+	if (priv->lock_pid == pid)
+	{
+		priv->lock_pid = 0;
+	}
+	priv->lock_child_watch_id = 0;
+}
+
 static gboolean
 spawn_on_window (GSWindow     *window,
                  const char   *command,
@@ -458,6 +525,8 @@ spawn_on_window (GSWindow     *window,
 	g_return_val_if_fail (GS_IS_WINDOW (window), FALSE);
 	g_return_val_if_fail (command != NULL, FALSE);
 	g_return_val_if_fail (child_pid != NULL, FALSE);
+
+	gs_window_dialog_finish (window);
 
 	error = NULL;
 
@@ -518,6 +587,15 @@ spawn_on_window (GSWindow     *window,
 		g_strfreev (argv);
 		g_strfreev (envp);
 		return FALSE;
+	}
+
+	{
+		GSWindowWaylandPrivate *priv;
+
+		priv = GS_WINDOW_WAYLAND_GET_PRIVATE (window);
+		priv->lock_child_watch_id = g_child_watch_add (*child_pid,
+		                                               dialog_child_watch_cb,
+		                                               window);
 	}
 
 	/* output channel */
@@ -700,11 +778,27 @@ popup_dialog (GSWindow *window)
 static gboolean
 popup_dialog_idle (gpointer data)
 {
-	GSWindow *window = data;
+	GSWindow               *window = data;
+	GSWindowWaylandPrivate *priv;
+	GSource                *source;
+	guint                   id;
 
 	popup_dialog (window);
 
-	GS_WINDOW_WAYLAND_GET_PRIVATE (window)->popup_dialog_idle_id = 0;
+	priv = GS_WINDOW_WAYLAND_GET_PRIVATE (window);
+	source = g_main_current_source ();
+	if (source != NULL)
+	{
+		id = g_source_get_id (source);
+		if (priv->popup_dialog_idle_id == id)
+		{
+			priv->popup_dialog_idle_id = 0;
+		}
+		if (priv->popup_dialog_retry_id == id)
+		{
+			priv->popup_dialog_retry_id = 0;
+		}
+	}
 
 	return FALSE;
 }
@@ -1031,6 +1125,12 @@ gs_window_wayland_real_destroy (GSWindow *window)
 	priv = GS_WINDOW_WAYLAND_GET_PRIVATE (window);
 
 	remove_watchdog_timer (window);
+
+	if (priv->deactivated_idle_id != 0)
+	{
+		g_source_remove (priv->deactivated_idle_id);
+		priv->deactivated_idle_id = 0;
+	}
 
 	popdown_dialog (window);
 
@@ -1370,6 +1470,12 @@ gs_window_wayland_finalize (GObject *object)
 	priv = GS_WINDOW_WAYLAND_GET_PRIVATE (window);
 
 	remove_watchdog_timer (window);
+
+	if (priv->deactivated_idle_id != 0)
+	{
+		g_source_remove (priv->deactivated_idle_id);
+		priv->deactivated_idle_id = 0;
+	}
 
 	remove_key_events (window);
 
