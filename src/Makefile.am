@@ -135,10 +135,8 @@ X11_TEST_WATCHER_SOURCES =		\
 	gs-watcher.c			\
 	gs-watcher.h			\
 	gs-watcher-private.h		\
-	gs-watcher-x11.h		\
-	gs-watcher-x11.c		\
 	gs-marshal.c 			\
-	gs-marshal.h			\
+	gs-marshal.h 			\
 	gs-debug.c			\
 	gs-debug.h			\
 	$(NULL)
@@ -148,9 +146,7 @@ X11_TEST_WINDOW_SOURCES =		\
 	gs-window.c			\
 	gs-window.h			\
 	gs-window-private.h		\
-	gs-window-x11.c			\
 	gs-grab.c			\
-	gs-grab-x11.c			\
 	gs-grab.h			\
 	gs-marshal.c 			\
 	gs-marshal.h			\
@@ -264,9 +260,6 @@ endif
 
 if ENABLE_X11
 X11_SOURCES =			\
-	gs-watcher-x11.c	\
-	gs-window-x11.c		\
-	gs-grab-x11.c		\
 	$(NULL)
 
 X11_LDADD =			\
@@ -279,10 +272,8 @@ endif
 
 if ENABLE_WAYLAND
 WAYLAND_SOURCES =		\
-	gs-watcher-wayland.c	\
-	gs-window-wayland.c	\
-	gs-window-wayland.h	\
-	gs-grab-wayland.c	\
+	gs-session-lock-manager.c	\
+	gs-session-lock-manager.h	\
 	$(NULL)
 
 WAYLAND_GEN_SOURCES =		\
@@ -298,12 +289,9 @@ WAYLAND_LDADD =			\
 	$(NULL)
 
 WAYLAND_TEST_WATCHER_SOURCES =	\
-	gs-watcher-wayland.c	\
 	$(NULL)
 
 WAYLAND_TEST_WINDOW_SOURCES =	\
-	gs-window-wayland.c	\
-	gs-grab-wayland.c	\
 	$(NULL)
 else
 WAYLAND_SOURCES = $(NULL)

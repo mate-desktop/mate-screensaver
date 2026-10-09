@@ -30,9 +30,8 @@
 #endif
 #ifdef ENABLE_WAYLAND
 #include <gdk/gdkwayland.h>
-#include <wayland-client.h>
 #include <libwlembed-gtk3/libwlembed-gtk3.h>
-#include "ext-session-lock-client.h"
+#include "gs-session-lock-manager.h"
 #endif
 
 #include <gio/gio.h>
@@ -63,15 +62,12 @@ struct GSManagerPrivate
 
 #ifdef ENABLE_WAYLAND
 	WleEmbeddedCompositor *compositor;
-	struct wl_registry                  *wl_registry;
-	struct ext_session_lock_manager_v1 *session_lock_manager;
-	struct ext_session_lock_v1         *session_lock;
-	guint                              session_lock_finished_idle_id;
-	gboolean                            session_lock_active;
+	GSSessionLockManager  *lock_manager;
+	guint                  session_lock_finished_idle_id;
 	/* raise the unlock dialog as soon as the lock is confirmed
 	   (explicit lock request), as opposed to idle activation where
 	   the saver theme should keep running until user input */
-	gboolean                            raise_dialog_on_lock;
+	gboolean               raise_dialog_on_lock;
 #endif
 
 	/* Policy */
@@ -142,85 +138,11 @@ static guint         signals [LAST_SIGNAL] = { 0, };
 #ifdef ENABLE_WAYLAND
 static WleEmbeddedCompositor *global_compositor = NULL;
 extern WleEmbeddedCompositor *gs_wayland_compositor;
-extern struct ext_session_lock_v1 *gs_wayland_session_lock;
 #endif
 
 G_DEFINE_TYPE_WITH_PRIVATE (GSManager, gs_manager, G_TYPE_OBJECT)
 
 #ifdef ENABLE_WAYLAND
-static void manager_session_lock_handle_locked   (void                        *data,
-                                                  struct ext_session_lock_v1 *session_lock);
-static void manager_session_lock_handle_finished (void                        *data,
-                                                  struct ext_session_lock_v1 *session_lock);
-
-static const struct ext_session_lock_v1_listener session_lock_listener = {
-	manager_session_lock_handle_locked,
-	manager_session_lock_handle_finished,
-};
-
-static void
-manager_registry_handle_global (void               *data,
-                                struct wl_registry *registry,
-                                uint32_t            name,
-                                const char         *interface,
-                                uint32_t            version)
-{
-	GSManager *manager = GS_MANAGER (data);
-
-	if (strcmp (interface, ext_session_lock_manager_v1_interface.name) == 0)
-	{
-		manager->priv->session_lock_manager = wl_registry_bind (registry,
-		                                                         name,
-		                                                         &ext_session_lock_manager_v1_interface,
-		                                                         1);
-		gs_debug ("Bound session lock manager (global %u)", name);
-	}
-}
-
-static void
-manager_registry_handle_global_remove (void               *data,
-                                       struct wl_registry *registry,
-                                       uint32_t            name)
-{
-}
-
-static const struct wl_registry_listener manager_registry_listener = {
-	manager_registry_handle_global,
-	manager_registry_handle_global_remove,
-};
-
-static void
-manager_session_lock_handle_locked (void                        *data,
-                                    struct ext_session_lock_v1 *session_lock)
-{
-	GSManager *manager = GS_MANAGER (data);
-	GSList    *l;
-	GSList    *snapshot;
-
-	manager->priv->session_lock_active = TRUE;
-	gs_debug ("Session lock confirmed by compositor");
-
-	snapshot = g_slist_copy (manager->priv->windows);
-	for (l = snapshot; l; l = l->next)
-	{
-		if (g_slist_find (manager->priv->windows, l->data))
-		{
-			gs_window_create_lock_surface (GS_WINDOW (l->data));
-		}
-	}
-	g_slist_free (snapshot);
-
-	/* Only raise the unlock dialog for an explicit lock request. On idle
-	   activation the saver theme keeps running until real user input
-	   arrives (same as xfce4-screensaver, which never pops the dialog
-	   from the locked event). */
-	if (manager->priv->raise_dialog_on_lock)
-	{
-		manager->priv->raise_dialog_on_lock = FALSE;
-		gs_manager_request_unlock (manager);
-	}
-}
-
 static gboolean
 session_lock_finished_idle (gpointer data)
 {
@@ -234,137 +156,33 @@ session_lock_finished_idle (gpointer data)
 }
 
 static void
-manager_session_lock_handle_finished (void                        *data,
-                                      struct ext_session_lock_v1 *session_lock)
+manager_session_lock_locked_cb (GSSessionLockManager *lock_manager,
+                                GSManager            *manager)
 {
-	GSManager *manager = GS_MANAGER (data);
-	GSList    *l;
-	GSList    *snapshot;
+	gs_debug ("Session lock confirmed by compositor");
 
+	/* Only raise the unlock dialog for an explicit lock request. On idle
+	   activation the saver theme keeps running until real user input
+	   arrives (same as xfce4-screensaver, which never pops the dialog
+	   from the locked event). */
+	if (manager->priv->raise_dialog_on_lock)
+	{
+		manager->priv->raise_dialog_on_lock = FALSE;
+		gs_manager_request_unlock (manager);
+	}
+}
+
+static void
+manager_session_lock_finished_cb (GSSessionLockManager *lock_manager,
+                                  GSManager            *manager)
+{
 	gs_debug ("Session lock finished by compositor");
-
-	snapshot = g_slist_copy (manager->priv->windows);
-	for (l = snapshot; l; l = l->next)
-	{
-		if (g_slist_find (manager->priv->windows, l->data))
-		{
-			gs_window_forget_lock_surface (GS_WINDOW (l->data));
-		}
-	}
-	g_slist_free (snapshot);
-
-	if (manager->priv->session_lock_active)
-	{
-		ext_session_lock_v1_unlock_and_destroy (session_lock);
-	}
-	else
-	{
-		ext_session_lock_v1_destroy (session_lock);
-	}
-
-	manager->priv->session_lock = NULL;
-	manager->priv->session_lock_active = FALSE;
-	gs_wayland_session_lock = NULL;
 
 	if (manager->priv->session_lock_finished_idle_id == 0)
 	{
 		manager->priv->session_lock_finished_idle_id =
 			g_idle_add (session_lock_finished_idle, manager);
 	}
-}
-
-static gboolean
-manager_request_session_lock (GSManager *manager)
-{
-	if (manager->priv->session_lock != NULL)
-	{
-		return TRUE;
-	}
-
-	if (manager->priv->session_lock_manager == NULL)
-	{
-		g_warning ("The compositor does not expose the ext-session-lock-v1 "
-		           "protocol; locking is unavailable on this Wayland compositor");
-		gs_debug ("No session lock manager available");
-		return FALSE;
-	}
-
-	manager->priv->session_lock = ext_session_lock_manager_v1_lock (manager->priv->session_lock_manager);
-	if (manager->priv->session_lock == NULL)
-	{
-		gs_debug ("Failed to request session lock");
-		return FALSE;
-	}
-
-	gs_wayland_session_lock = manager->priv->session_lock;
-
-	ext_session_lock_v1_add_listener (manager->priv->session_lock,
-	                                 &session_lock_listener,
-	                                 manager);
-
-	wl_display_roundtrip (gdk_wayland_display_get_wl_display (gdk_display_get_default ()));
-
-	gs_debug ("Session lock requested from compositor");
-	return TRUE;
-}
-
-static void
-manager_unlock_session (GSManager *manager)
-{
-	if (manager->priv->session_lock != NULL)
-	{
-		if (manager->priv->session_lock_active)
-		{
-			ext_session_lock_v1_unlock_and_destroy (manager->priv->session_lock);
-			wl_display_roundtrip (gdk_wayland_display_get_wl_display (gdk_display_get_default ()));
-		}
-		else
-		{
-			ext_session_lock_v1_destroy (manager->priv->session_lock);
-		}
-		manager->priv->session_lock = NULL;
-		manager->priv->session_lock_active = FALSE;
-		gs_wayland_session_lock = NULL;
-	}
-}
-
-static void
-manager_bind_session_lock_manager (GSManager *manager)
-{
-	GdkDisplay *display;
-	struct wl_display *wl_display;
-
-	display = gdk_display_get_default ();
-	if (! GDK_IS_WAYLAND_DISPLAY (display))
-	{
-		return;
-	}
-
-	wl_display = gdk_wayland_display_get_wl_display (display);
-	if (wl_display == NULL)
-	{
-		return;
-	}
-
-	manager->priv->wl_registry = wl_display_get_registry (wl_display);
-	wl_registry_add_listener (manager->priv->wl_registry,
-	                          &manager_registry_listener,
-	                          manager);
-	wl_display_roundtrip (wl_display);
-
-	if (manager->priv->session_lock_manager == NULL)
-	{
-		g_warning ("ext-session-lock-v1 protocol unsupported: "
-		           "mate-screensaver will not be able to lock the session");
-	}
-}
-
-struct ext_session_lock_v1 *
-gs_manager_get_session_lock (GSManager *manager)
-{
-	g_return_val_if_fail (GS_IS_MANAGER (manager), NULL);
-
-	return gs_wayland_session_lock;
 }
 #endif
 
@@ -1328,11 +1146,15 @@ gs_manager_init (GSManager *manager)
 		}
 		manager->priv->compositor = global_compositor;
 		gs_wayland_compositor = global_compositor;
-		manager->priv->wl_registry = NULL;
-		manager->priv->session_lock_manager = NULL;
-		manager->priv->session_lock = NULL;
-		manager->priv->session_lock_active = FALSE;
-		manager_bind_session_lock_manager (manager);
+
+		manager->priv->lock_manager = gs_session_lock_manager_new ();
+		if (manager->priv->lock_manager != NULL)
+		{
+			g_signal_connect (manager->priv->lock_manager, "locked",
+			                  G_CALLBACK (manager_session_lock_locked_cb), manager);
+			g_signal_connect (manager->priv->lock_manager, "finished",
+			                  G_CALLBACK (manager_session_lock_finished_cb), manager);
+		}
 	}
 #endif
 
@@ -1878,6 +1700,13 @@ gs_manager_create_window_for_monitor (GSManager  *manager,
 
 	manager->priv->windows = g_slist_append (manager->priv->windows, window);
 
+#ifdef ENABLE_WAYLAND
+	if (manager->priv->lock_manager != NULL)
+	{
+		gs_session_lock_manager_add_window (manager->priv->lock_manager, window);
+	}
+#endif
+
 	if (manager->priv->active && !manager->priv->fading)
 	{
 		gtk_widget_show (GTK_WIDGET (window));
@@ -1909,19 +1738,6 @@ on_display_monitor_added (GdkDisplay *display,
 
 	/* add a new window */
 	gs_manager_create_window_for_monitor (manager, monitor);
-
-#ifdef ENABLE_WAYLAND
-	/* If session lock is already active, create a lock surface for the new window */
-	if (manager->priv->session_lock_active)
-	{
-		GSList *last;
-		last = g_slist_last (manager->priv->windows);
-		if (last != NULL)
-		{
-			gs_window_create_lock_surface (GS_WINDOW (last->data));
-		}
-	}
-#endif
 
 #ifdef ENABLE_X11
 	/* and put unlock dialog up whereever it's supposed to be.
@@ -1970,6 +1786,13 @@ on_display_monitor_removed (GdkDisplay *display,
 			manager_maybe_stop_job_for_window (manager,
 			                                   GS_WINDOW (l->data));
 			g_hash_table_remove (manager->priv->jobs, l->data);
+#ifdef ENABLE_WAYLAND
+			if (manager->priv->lock_manager != NULL)
+			{
+				gs_session_lock_manager_remove_window (manager->priv->lock_manager,
+				                                       GS_WINDOW (l->data));
+			}
+#endif
 			gs_window_destroy (GS_WINDOW (l->data));
 			manager->priv->windows = g_slist_delete_link (manager->priv->windows, l);
 		}
@@ -2013,6 +1836,13 @@ gs_manager_destroy_windows (GSManager *manager)
 
 	for (l = manager->priv->windows; l; l = l->next)
 	{
+#ifdef ENABLE_WAYLAND
+		if (manager->priv->lock_manager != NULL)
+		{
+			gs_session_lock_manager_remove_window (manager->priv->lock_manager,
+			                                       GS_WINDOW (l->data));
+		}
+#endif
 		gs_window_destroy (l->data);
 	}
 	g_slist_free (manager->priv->windows);
@@ -2067,19 +1897,7 @@ gs_manager_finalize (GObject *object)
 		manager->priv->session_lock_finished_idle_id = 0;
 	}
 
-	manager_unlock_session (manager);
-
-	if (manager->priv->session_lock_manager != NULL)
-	{
-		ext_session_lock_manager_v1_destroy (manager->priv->session_lock_manager);
-		manager->priv->session_lock_manager = NULL;
-	}
-
-	if (manager->priv->wl_registry != NULL)
-	{
-		wl_registry_destroy (manager->priv->wl_registry);
-		manager->priv->wl_registry = NULL;
-	}
+	g_clear_object (&manager->priv->lock_manager);
 #endif
 
 	G_OBJECT_CLASS (gs_manager_parent_class)->finalize (object);
@@ -2206,7 +2024,8 @@ gs_manager_activate (GSManager *manager)
 #ifdef ENABLE_WAYLAND
 	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
 	{
-		if (! manager_request_session_lock (manager))
+		if (manager->priv->lock_manager == NULL ||
+		    ! gs_session_lock_manager_lock (manager->priv->lock_manager))
 		{
 			g_warning ("Failed to request session lock on Wayland: "
 			           "locking requires the ext-session-lock-v1 protocol");
@@ -2283,7 +2102,10 @@ gs_manager_deactivate (GSManager *manager)
 	gs_manager_destroy_windows (manager);
 
 #ifdef ENABLE_WAYLAND
-	manager_unlock_session (manager);
+	if (manager->priv->lock_manager != NULL)
+	{
+		gs_session_lock_manager_unlock (manager->priv->lock_manager);
+	}
 #endif
 
 	/* reset state */

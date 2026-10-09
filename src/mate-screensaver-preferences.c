@@ -1510,7 +1510,7 @@ setup_for_root_user (void)
 	gtk_widget_show (label);
 }
 
-/* copied from gs-window-x11.c */
+/* copied from gs-window.c */
 #ifndef _GNU_SOURCE
 extern char **environ;
 #endif

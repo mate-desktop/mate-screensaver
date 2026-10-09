@@ -48,45 +48,58 @@ struct GSWindowPrivate
 	/* Chosen lock screen background, drawn only while the lock is engaged */
 	cairo_surface_t *background_surface;
 
-#ifdef ENABLE_X11
-	GdkRectangle geometry;
-
+	/* State shared by the X11 and Wayland implementations. These fields
+	   must live in the common section: both backends can be compiled in
+	   at the same time, and duplicated names across two #ifdef blocks
+	   would collide. */
 	GtkWidget *vbox;
 	GtkWidget *lock_box;
 	GtkWidget *lock_socket;
+
+	guint      popup_dialog_idle_id;
+	guint      watchdog_timer_id;
+	guint      deactivated_idle_id;
+
+	GPid       lock_pid;
+	gint       lock_watch_id;
+	gint       dialog_response;
+	gboolean   dialog_quit_requested;
+
+	GList     *key_events;
+
+	GTimer    *timer;
+
+#ifdef ENABLE_X11
+	GdkRectangle geometry;
+
 	GtkWidget *keyboard_socket;
 	GtkWidget *info_bar;
 	GtkWidget *info_content;
 
-	guint      popup_dialog_idle_id;
-
-	guint      dialog_map_signal_id;
-	guint      dialog_unmap_signal_id;
-	guint      dialog_response_signal_id;
-
-	guint      watchdog_timer_id;
 	guint      info_bar_timer_id;
 
-	gint       lock_pid;
-	gint       lock_watch_id;
-	gint       dialog_response;
-	gboolean   dialog_quit_requested;
 	gboolean   dialog_shake_in_progress;
 
-	gint       keyboard_pid;
+	GPid       keyboard_pid;
 	gint       keyboard_watch_id;
-
-	GList     *key_events;
 
 	gdouble    last_x;
 	gdouble    last_y;
-
-	GTimer    *timer;
 
 #ifdef HAVE_SHAPE_EXT
 	int        shape_event_base;
 #endif
 #endif /* ENABLE_X11 */
+
+#ifdef ENABLE_WAYLAND
+	gint       lock_child_watch_id;
+	guint      popup_dialog_retry_id;
+	guint      dialog_defer_count;
+
+	gboolean   have_last_motion;
+	gdouble    last_motion_x;
+	gdouble    last_motion_y;
+#endif /* ENABLE_WAYLAND */
 };
 
 G_END_DECLS
