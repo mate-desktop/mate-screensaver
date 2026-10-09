@@ -32,7 +32,14 @@
 #include <sys/types.h>          /* For uid_t, gid_t */
 
 #include <glib/gi18n.h>
+#ifdef ENABLE_X11
 #include <gdk/gdkx.h>
+#include <gtk/gtkx.h>
+#endif
+#ifdef ENABLE_WAYLAND
+#include <gdk/gdkwayland.h>
+#include <libwlembed-gtk3/libwlembed-gtk3.h>
+#endif
 #include <gtk/gtk.h>
 
 #include <gio/gio.h>
@@ -92,6 +99,9 @@ static GSettings      *screensaver_settings = NULL;
 static GSettings      *session_settings = NULL;
 static GSettings      *lockdown_settings = NULL;
 static MateDesktopThumbnailFactory *thumb_factory = NULL;
+#ifdef ENABLE_WAYLAND
+static WleEmbeddedCompositor *compositor = NULL;
+#endif
 
 static gdouble
 config_get_activate_delay (gboolean *is_writable)
@@ -347,30 +357,144 @@ preview_on_draw (GtkWidget *widget,
                  cairo_t   *cr,
                  gpointer   data)
 {
-	if (job == NULL || !gs_job_is_running (job))
-	{
-		cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
-		cairo_set_source_rgb (cr, 0, 0, 0);
-		cairo_paint (cr);
-	}
+	cairo_set_operator (cr, CAIRO_OPERATOR_OVER);
+	cairo_set_source_rgb (cr, 0, 0, 0);
+	cairo_paint (cr);
 
 	return FALSE;
 }
 
+static GtkWidget *
+preview_get_socket (GtkWidget *preview_area)
+{
+	g_return_val_if_fail (preview_area != NULL, NULL);
+
+#ifdef ENABLE_X11
+	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+	{
+		GtkWidget *socket;
+
+		socket = gtk_bin_get_child (GTK_BIN (preview_area));
+		if (socket != NULL)
+		{
+			return socket;
+		}
+	}
+#endif
+#ifdef ENABLE_WAYLAND
+	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+	{
+		GtkWidget *socket;
+
+		socket = gtk_bin_get_child (GTK_BIN (preview_area));
+		if (socket != NULL)
+		{
+			return socket;
+		}
+	}
+#endif
+
+	return preview_area;
+}
+
+#ifdef ENABLE_WAYLAND
+static gboolean
+preview_enter_notify_cb (GtkWidget *widget,
+                         GdkEventCrossing *event,
+                         gpointer data)
+{
+	GdkWindow *window = gtk_widget_get_window (widget);
+	GdkCursor *cursor;
+
+	if (window == NULL)
+	{
+		window = event->window;
+	}
+	if (window == NULL)
+	{
+		return FALSE;
+	}
+
+	/* Work around an issue where the embedded preview grabs the seat
+	 * with a NULL cursor on Wayland, leaving the pointer invisible over
+	 * the preview area.  Re-assert a visible cursor on enter so GTK
+	 * sends a fresh set_cursor with the current serial. */
+	cursor = gdk_cursor_new_from_name (gdk_window_get_display (window),
+	                                   "default");
+	if (cursor == NULL)
+	{
+		cursor = gdk_cursor_new_for_display (gdk_window_get_display (window),
+		                                     GDK_LEFT_PTR);
+	}
+	if (cursor != NULL)
+	{
+		gdk_window_set_cursor (window, NULL);
+		gdk_window_set_cursor (window, cursor);
+		g_object_unref (cursor);
+	}
+
+	return FALSE;
+}
+#endif
+
 static void
-preview_set_theme (GtkWidget  *widget,
-                   const char *theme,
+savers_treeview_realize_cb (GtkWidget *widget,
+                            gpointer data)
+{
+	GdkWindow *window = gtk_widget_get_window (widget);
+	GdkCursor *cursor;
+
+	if (window == NULL)
+	{
+		return;
+	}
+
+	/* Ensure the saver list always shows a visible pointer, even if the
+	 * embedded preview overlaps it. */
+	cursor = gdk_cursor_new_from_name (gdk_display_get_default (), "default");
+	if (cursor == NULL)
+	{
+		cursor = gdk_cursor_new_for_display (gdk_display_get_default (),
+		                                     GDK_LEFT_PTR);
+	}
+	if (cursor != NULL)
+	{
+		gdk_window_set_cursor (window, cursor);
+		g_object_unref (cursor);
+	}
+}
+
+static void
+preview_set_theme (const char *theme,
                    const char *name)
 {
 	GtkWidget *label;
+	GtkWidget *preview;
 	char      *markup;
+
+	preview = preview_get_socket (GTK_WIDGET (gtk_builder_get_object (builder, "preview_area")));
+	if (!gtk_widget_is_visible (preview))
+	{
+		preview = preview_get_socket (GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_area")));
+	}
+
+	gs_debug ("preview_set_theme: theme='%s' name='%s' preview widget=%p (%s) visible=%d",
+	          theme, name, (gpointer)preview,
+	          G_OBJECT_TYPE_NAME (preview),
+	          gtk_widget_is_visible (preview));
 
 	if (job != NULL)
 	{
 		gs_job_stop (job);
+#ifdef ENABLE_WAYLAND
+		if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+		{
+			wle_gtk_socket_destroy_embedded_view (WLE_GTK_SOCKET (preview));
+		}
+#endif
 	}
 
-	gtk_widget_queue_draw (widget);
+	gtk_widget_queue_draw (preview);
 
 	label = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_theme_label"));
 	markup = g_markup_printf_escaped ("<i>%s</i>", name);
@@ -386,7 +510,7 @@ preview_set_theme (GtkWidget  *widget,
 		gchar **themes;
 
 		themes = get_all_theme_ids ();
-		if (themes != NULL)
+		if (themes != NULL && g_strv_length (themes) > 0)
 		{
 			gint32  i;
 
@@ -396,11 +520,18 @@ preview_set_theme (GtkWidget  *widget,
 
 			gs_job_start (job);
 		}
+		else
+		{
+			g_strfreev (themes);
+		}
 	}
 	else
 	{
 		job_set_theme (theme);
-		gs_job_start (job);
+		if (!gs_job_start (job))
+		{
+			gs_debug ("preview_set_theme: gs_job_start failed for theme '%s'", theme);
+		}
 	}
 }
 
@@ -564,7 +695,7 @@ tree_selection_next (GtkTreeSelection *selection)
 
 static void
 tree_selection_changed_cb (GtkTreeSelection *selection,
-                           GtkWidget        *preview)
+                           gpointer          data)
 {
 	GtkTreeIter   iter;
 	GtkTreeModel *model;
@@ -584,7 +715,7 @@ tree_selection_changed_cb (GtkTreeSelection *selection,
 		return;
 	}
 
-	preview_set_theme (preview, theme, name);
+	preview_set_theme (theme, name);
 	config_set_theme (theme);
 
 	g_free (theme);
@@ -713,8 +844,7 @@ separator_func (GtkTreeModel *model,
 }
 
 static void
-setup_treeview (GtkWidget *tree,
-                GtkWidget *preview)
+setup_treeview (GtkWidget *tree)
 {
 	GtkTreeStore      *store;
 	GtkTreeViewColumn *column;
@@ -757,7 +887,7 @@ setup_treeview (GtkWidget *tree,
 	gtk_tree_selection_set_mode (select, GTK_SELECTION_SINGLE);
 	g_signal_connect (select, "changed",
 	                  G_CALLBACK (tree_selection_changed_cb),
-	                  preview);
+	                  NULL);
 
 }
 
@@ -1266,10 +1396,10 @@ fullscreen_preview_cancelled_cb (GtkWidget *button,
 	GtkWidget *preview_area;
 	GtkWidget *dialog;
 
-	preview_area = GTK_WIDGET (gtk_builder_get_object (builder, "preview_area"));
+	preview_area = preview_get_socket (GTK_WIDGET (gtk_builder_get_object (builder, "preview_area")));
 	gs_job_set_widget (job, preview_area);
 
-	fullscreen_preview_area = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_area"));
+	fullscreen_preview_area = preview_get_socket (GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_area")));
 	gtk_widget_queue_draw (fullscreen_preview_area);
 
 	fullscreen_preview_window = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_window"));
@@ -1299,7 +1429,7 @@ fullscreen_preview_start_cb (GtkWidget *widget,
 	gtk_widget_show (fullscreen_preview_window);
 	gtk_widget_grab_focus (fullscreen_preview_window);
 
-	fullscreen_preview_area = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_area"));
+	fullscreen_preview_area = preview_get_socket (GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_area")));
 	gtk_widget_queue_draw (fullscreen_preview_area);
 	gs_job_set_widget (job, fullscreen_preview_area);
 }
@@ -1313,7 +1443,18 @@ constrain_list_size (GtkWidget      *widget,
 	int            max_height;
 
 	/* constrain height to be the tree height up to a max */
-	max_height = (HeightOfScreen (gdk_x11_screen_get_xscreen (gtk_widget_get_screen (widget)))) / 4;
+#ifdef ENABLE_X11
+	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+	{
+		max_height = (HeightOfScreen (gdk_x11_screen_get_xscreen (gtk_widget_get_screen (widget)))) / 4;
+	}
+	else
+#endif
+	{
+		GdkRectangle rect;
+		gdk_monitor_get_geometry (gdk_display_get_monitor_at_window (gdk_display_get_default (), gtk_widget_get_window (widget)), &rect);
+		max_height = rect.height / 4;
+	}
 
 	gtk_widget_get_preferred_size (to_size, &req, NULL);
 	allocation->height = MIN (req.height, max_height);
@@ -1369,7 +1510,7 @@ setup_for_root_user (void)
 	gtk_widget_show (label);
 }
 
-/* copied from gs-window-x11.c */
+/* copied from gs-window.c */
 #ifndef _GNU_SOURCE
 extern char **environ;
 #endif
@@ -1459,6 +1600,14 @@ get_best_visual_for_display (GdkDisplay *display)
 	gboolean      res;
 
 	visual = NULL;
+
+#ifdef ENABLE_X11
+	if (! GDK_IS_X11_DISPLAY (display))
+	{
+		return NULL;
+	}
+#endif
+
 	screen = gdk_display_get_default_screen (display);
 
 	error = NULL;
@@ -1481,6 +1630,7 @@ get_best_visual_for_display (GdkDisplay *display)
 	{
 		if (v != 0)
 		{
+#ifdef ENABLE_X11
 			VisualID      visual_id;
 
 			visual_id = (VisualID) v;
@@ -1489,6 +1639,7 @@ get_best_visual_for_display (GdkDisplay *display)
 			gs_debug ("Found best GL visual for display %s: 0x%x",
 			          gdk_display_get_name (display),
 			          (unsigned int) visual_id);
+#endif
 		}
 	}
 out:
@@ -1516,13 +1667,11 @@ static gboolean
 setup_treeview_idle (gpointer data)
 {
 	(void)data;			/* remove warning unused parameter ‘data’ */
-	GtkWidget *preview;
 	GtkWidget *treeview;
 
-	preview  = GTK_WIDGET (gtk_builder_get_object (builder, "preview_area"));
 	treeview = GTK_WIDGET (gtk_builder_get_object (builder, "savers_treeview"));
 
-	setup_treeview (treeview, preview);
+	setup_treeview (treeview);
 	setup_treeview_selection (treeview);
 
 	return FALSE;
@@ -1681,6 +1830,71 @@ init_capplet (void)
 	fullscreen_preview_next = GTK_WIDGET (gtk_builder_get_object (builder, "fullscreen_preview_next_button"));
 	picture_filename = GTK_WIDGET (gtk_builder_get_object (builder, "picture_filename"));
 
+#ifdef ENABLE_X11
+	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+	{
+		GtkWidget *socket;
+
+		gs_debug ("init_capplet: X11 display detected, creating GtkSockets");
+		socket = gtk_socket_new ();
+		gtk_container_add (GTK_CONTAINER (preview), socket);
+		gtk_widget_show (socket);
+		preview = socket;
+
+		socket = gtk_socket_new ();
+		gtk_container_add (GTK_CONTAINER (fullscreen_preview_area), socket);
+		gtk_widget_show (socket);
+		fullscreen_preview_area = socket;
+	}
+#endif
+#ifdef ENABLE_WAYLAND
+	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+	{
+		GError  *error_wl = NULL;
+		GtkWidget *socket;
+
+		gs_debug ("init_capplet: Wayland display detected, creating embedded compositor");
+		compositor = wle_gtk_create_embedded_compositor ("mate-screensaver-preferences", &error_wl);
+		if (compositor == NULL)
+		{
+			g_warning ("Failed to create embedded compositor: %s", error_wl->message);
+			g_error_free (error_wl);
+		}
+		else
+		{
+			socket = wle_gtk_socket_new (compositor);
+			gtk_container_add (GTK_CONTAINER (preview), socket);
+			g_signal_connect (socket, "enter-notify-event",
+			                  G_CALLBACK (preview_enter_notify_cb), NULL);
+			preview = socket;
+
+			socket = wle_gtk_socket_new (compositor);
+			gtk_container_add (GTK_CONTAINER (fullscreen_preview_area), socket);
+			g_signal_connect (socket, "enter-notify-event",
+			                  G_CALLBACK (preview_enter_notify_cb), NULL);
+			fullscreen_preview_area = socket;
+
+			gs_debug ("init_capplet: sockets created (preview=%p, fullscreen=%p)",
+			          (gpointer)preview, (gpointer)fullscreen_preview_area);
+		}
+	}
+#endif
+
+	gtk_widget_set_app_paintable (preview, TRUE);
+	gtk_widget_set_hexpand (preview, TRUE);
+	gtk_widget_set_vexpand (preview, TRUE);
+	gtk_widget_show (preview);
+
+	g_signal_connect (preview, "plug-removed", G_CALLBACK (gtk_true), NULL);
+
+	g_signal_connect (treeview, "realize",
+	                  G_CALLBACK (savers_treeview_realize_cb), NULL);
+
+	gtk_widget_set_app_paintable (fullscreen_preview_area, TRUE);
+	gtk_widget_show (fullscreen_preview_area);
+
+	g_signal_connect (fullscreen_preview_area, "plug-removed", G_CALLBACK (gtk_true), NULL);
+
 	gtk_widget_set_no_show_all (root_warning_label, TRUE);
 	widget_set_best_visual (preview);
 
@@ -1824,12 +2038,24 @@ finalize_capplet (void)
 	g_object_unref (session_settings);
 	g_object_unref (lockdown_settings);
 	g_object_unref (thumb_factory);
+#ifdef ENABLE_WAYLAND
+	if (compositor != NULL)
+	{
+		g_object_unref (compositor);
+	}
+#endif
 }
 
 int
 main (int    argc,
       char **argv)
 {
+	static gboolean debug = FALSE;
+
+	static GOptionEntry entries[] = {
+		{"debug", 0, 0, G_OPTION_ARG_NONE, &debug, N_("Enable debugging code"), NULL},
+		{NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL}
+	};
 
 #ifdef ENABLE_NLS
 	bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
@@ -1839,7 +2065,10 @@ main (int    argc,
 	textdomain (GETTEXT_PACKAGE);
 #endif
 
-	gtk_init (&argc, &argv);
+	gtk_init_with_args (&argc, &argv, NULL, entries, GETTEXT_PACKAGE, NULL);
+
+	gs_debug_init (debug, FALSE);
+	gs_debug ("initializing mate-screensaver-preferences %s", VERSION);
 
 	job = gs_job_new ();
 	theme_manager = gs_theme_manager_new ();

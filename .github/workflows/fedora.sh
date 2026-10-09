@@ -22,6 +22,7 @@ requires+=(
 	gcc
 	git
 	gtk3-devel
+	gtk-layer-shell-devel
 	libX11-devel
 	libXScrnSaver-devel
 	libXinerama-devel
@@ -40,6 +41,8 @@ requires+=(
 	systemd-devel
 	xmlto
 	xorg-x11-proto-devel
+	xfce4-dev-tools
+	wayland-protocols-devel
 )
 
 infobegin "Update system"

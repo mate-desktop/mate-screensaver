@@ -33,7 +33,9 @@
 #include <unistd.h>
 
 #include <glib/gi18n.h>
+#ifdef ENABLE_X11
 #include <gdk/gdkx.h>
+#endif
 #include <gtk/gtk.h>
 
 #include "gs-fade.h"
@@ -102,6 +104,7 @@ main (int    argc,
 		exit (1);
 	}
 
+#ifdef ENABLE_X11
 	if (! XQueryExtension (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), XF86_VIDMODE_NAME, &op, &event, &err))
 	{
 		g_message ("no " XF86_VIDMODE_NAME " extension");
@@ -124,6 +127,7 @@ main (int    argc,
 		g_message ("no support for display's " XF86_VIDMODE_NAME " extension");
 # endif /* !HAVE_XF86VMODE_GAMMA */
 	}
+#endif /* ENABLE_X11 */
 
 	gs_debug_init (TRUE, FALSE);
 

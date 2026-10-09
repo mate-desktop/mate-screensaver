@@ -24,6 +24,7 @@ requires+=(
 	libdconf-dev
 	libglib2.0-dev
 	libgtk-3-dev
+	libgtk-layer-shell-dev
 	libmate-desktop-dev
 	libmate-menu-dev
 	libmatekbd-dev
@@ -41,7 +42,9 @@ requires+=(
 	x11proto-scrnsaver-dev
 	x11proto-xext-dev
 	x11proto-xf86vidmode-dev
+	xfce4-dev-tools
 	xmlto
+	wayland-protocols
 )
 
 infobegin "Update system"

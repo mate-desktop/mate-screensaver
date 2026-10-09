@@ -25,7 +25,14 @@
 
 #include <time.h>
 #include <gdk/gdk.h>
+#ifdef ENABLE_X11
 #include <gdk/gdkx.h>
+#endif
+#ifdef ENABLE_WAYLAND
+#include <gdk/gdkwayland.h>
+#include <libwlembed-gtk3/libwlembed-gtk3.h>
+#include "gs-session-lock-manager.h"
+#endif
 
 #include <gio/gio.h>
 
@@ -43,6 +50,7 @@
 #include "gs-debug.h"
 
 static void gs_manager_finalize   (GObject        *object);
+static gboolean gs_manager_deactivate (GSManager *manager);
 
 struct GSManagerPrivate
 {
@@ -51,6 +59,16 @@ struct GSManagerPrivate
 
 	GSThemeManager *theme_manager;
 	MateBG        *bg;
+
+#ifdef ENABLE_WAYLAND
+	WleEmbeddedCompositor *compositor;
+	GSSessionLockManager  *lock_manager;
+	guint                  session_lock_finished_idle_id;
+	/* raise the unlock dialog as soon as the lock is confirmed
+	   (explicit lock request), as opposed to idle activation where
+	   the saver theme should keep running until user input */
+	gboolean               raise_dialog_on_lock;
+#endif
 
 	/* Policy */
 	glong        lock_timeout;
@@ -117,7 +135,56 @@ enum
 
 static guint         signals [LAST_SIGNAL] = { 0, };
 
+#ifdef ENABLE_WAYLAND
+static WleEmbeddedCompositor *global_compositor = NULL;
+extern WleEmbeddedCompositor *gs_wayland_compositor;
+#endif
+
 G_DEFINE_TYPE_WITH_PRIVATE (GSManager, gs_manager, G_TYPE_OBJECT)
+
+#ifdef ENABLE_WAYLAND
+static gboolean
+session_lock_finished_idle (gpointer data)
+{
+	GSManager *manager = GS_MANAGER (data);
+
+	manager->priv->session_lock_finished_idle_id = 0;
+
+	gs_manager_deactivate (manager);
+
+	return FALSE;
+}
+
+static void
+manager_session_lock_locked_cb (GSSessionLockManager *lock_manager,
+                                GSManager            *manager)
+{
+	gs_debug ("Session lock confirmed by compositor");
+
+	/* Only raise the unlock dialog for an explicit lock request. On idle
+	   activation the saver theme keeps running until real user input
+	   arrives (same as xfce4-screensaver, which never pops the dialog
+	   from the locked event). */
+	if (manager->priv->raise_dialog_on_lock)
+	{
+		manager->priv->raise_dialog_on_lock = FALSE;
+		gs_manager_request_unlock (manager);
+	}
+}
+
+static void
+manager_session_lock_finished_cb (GSSessionLockManager *lock_manager,
+                                  GSManager            *manager)
+{
+	gs_debug ("Session lock finished by compositor");
+
+	if (manager->priv->session_lock_finished_idle_id == 0)
+	{
+		manager->priv->session_lock_finished_idle_id =
+			g_idle_add (session_lock_finished_idle, manager);
+	}
+}
+#endif
 
 static void
 manager_add_job_for_window (GSManager *manager,
@@ -463,6 +530,16 @@ gs_manager_set_lock_active (GSManager *manager,
 		GSList *l;
 
 		manager->priv->lock_active = (lock_active != FALSE);
+
+		/* an explicit lock request wants the password prompt right away;
+		   idle activation does not (saver keeps running until input) */
+#ifdef ENABLE_WAYLAND
+		if (lock_active)
+		{
+			manager->priv->raise_dialog_on_lock = TRUE;
+		}
+#endif
+
 		for (l = manager->priv->windows; l; l = l->next)
 		{
 			gs_window_set_lock_enabled (l->data, lock_active);
@@ -709,8 +786,6 @@ gs_manager_cycle (GSManager *manager)
 	g_return_val_if_fail (manager != NULL, FALSE);
 	g_return_val_if_fail (GS_IS_MANAGER (manager), FALSE);
 
-	gs_debug ("cycling jobs");
-
 	if (! manager->priv->active)
 	{
 		return FALSE;
@@ -725,6 +800,13 @@ gs_manager_cycle (GSManager *manager)
 	{
 		return FALSE;
 	}
+
+	if (manager->priv->saver_mode != GS_MODE_RANDOM)
+	{
+		return FALSE;
+	}
+
+	gs_debug ("cycling jobs");
 
 	manager_cycle_jobs (manager);
 
@@ -775,7 +857,9 @@ gs_manager_set_cycle_timeout (GSManager *manager,
 
 		manager->priv->cycle_timeout = cycle_timeout;
 
-		if (manager->priv->active && (cycle_timeout >= 0))
+		if (manager->priv->active &&
+		    manager->priv->saver_mode == GS_MODE_RANDOM &&
+		    (cycle_timeout >= 0))
 		{
 			glong timeout;
 			glong elapsed = (time (NULL) - manager->priv->activate_time) * 1000;
@@ -1040,6 +1124,40 @@ gs_manager_init (GSManager *manager)
 	manager->priv->grab = gs_grab_new ();
 	manager->priv->theme_manager = gs_theme_manager_new ();
 
+#ifdef ENABLE_WAYLAND
+	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+	{
+		GError *error = NULL;
+
+		if (global_compositor == NULL)
+		{
+			global_compositor = wle_gtk_create_embedded_compositor ("mate-screensaver", &error);
+			if (global_compositor == NULL)
+			{
+				g_warning ("Failed to create embedded compositor: %s", error->message);
+				g_error_free (error);
+			}
+			else
+			{
+				wle_embedded_compositor_set_manage_child_processes (global_compositor, TRUE);
+				gs_debug ("Created embedded compositor: %s",
+				          wle_embedded_compositor_get_socket_name (global_compositor));
+			}
+		}
+		manager->priv->compositor = global_compositor;
+		gs_wayland_compositor = global_compositor;
+
+		manager->priv->lock_manager = gs_session_lock_manager_new ();
+		if (manager->priv->lock_manager != NULL)
+		{
+			g_signal_connect (manager->priv->lock_manager, "locked",
+			                  G_CALLBACK (manager_session_lock_locked_cb), manager);
+			g_signal_connect (manager->priv->lock_manager, "finished",
+			                  G_CALLBACK (manager_session_lock_finished_cb), manager);
+		}
+	}
+#endif
+
 	manager->priv->bg = mate_bg_new ();
 
 	g_signal_connect (manager->priv->bg,
@@ -1111,6 +1229,12 @@ find_window_at_pointer (GSManager *manager)
 
 	display = gdk_display_get_default ();
 
+	if (manager->priv->windows == NULL)
+	{
+		gs_debug ("WARNING: No windows to choose from for pointer position");
+		return NULL;
+	}
+
 	device = gdk_seat_get_pointer (gdk_display_get_default_seat (display));
 	gdk_device_get_position (device, NULL, &x, &y);
 	monitor = gdk_display_get_monitor_at_point (display, x, y);
@@ -1155,6 +1279,10 @@ gs_manager_show_message (GSManager  *manager,
 
 	/* Find the GSWindow that contains the pointer */
 	window = find_window_at_pointer (manager);
+	if (window == NULL)
+	{
+		return;
+	}
 	gs_window_show_message (window, summary, body, icon);
 
 	gs_manager_request_unlock (manager);
@@ -1270,8 +1398,22 @@ apply_background_to_window (GSManager *manager,
 	GSettings       *settings;
 	char            *filename;
 	cairo_surface_t *surface;
+	GdkWindow       *gdk_window;
 	int              width;
 	int              height;
+
+	gdk_window = gs_window_get_gdk_window (window);
+	if (gdk_window == NULL)
+	{
+		return;
+	}
+
+	width = gdk_window_get_width (gdk_window);
+	height = gdk_window_get_height (gdk_window);
+	if (width <= 0 || height <= 0)
+	{
+		return;
+	}
 
 	mate_bg_load_from_preferences(manager->priv->bg);
 
@@ -1290,11 +1432,9 @@ apply_background_to_window (GSManager *manager,
 		gs_window_set_background_surface (window, NULL);
 	}
 
-	gtk_widget_get_preferred_width (GTK_WIDGET (window), &width, NULL);
-	gtk_widget_get_preferred_height (GTK_WIDGET (window), &height, NULL);
 	gs_debug ("Creating background w:%d h:%d", width, height);
 	surface = mate_bg_create_surface (manager->priv->bg,
-	                                  gs_window_get_gdk_window (window),
+	                                  gdk_window,
 	                                  width,
 	                                  height,
 	                                  FALSE);
@@ -1323,7 +1463,8 @@ manager_show_window (GSManager *manager,
 		add_lock_timer (manager, manager->priv->lock_timeout);
 	}
 
-	if (manager->priv->cycle_timeout >= 10000)
+	if (manager->priv->saver_mode == GS_MODE_RANDOM &&
+	    manager->priv->cycle_timeout >= 10000)
 	{
 		remove_cycle_timer (manager);
 		add_cycle_timer (manager, manager->priv->cycle_timeout);
@@ -1559,6 +1700,13 @@ gs_manager_create_window_for_monitor (GSManager  *manager,
 
 	manager->priv->windows = g_slist_append (manager->priv->windows, window);
 
+#ifdef ENABLE_WAYLAND
+	if (manager->priv->lock_manager != NULL)
+	{
+		gs_session_lock_manager_add_window (manager->priv->lock_manager, window);
+	}
+#endif
+
 	if (manager->priv->active && !manager->priv->fading)
 	{
 		gtk_widget_show (GTK_WIDGET (window));
@@ -1591,8 +1739,16 @@ on_display_monitor_added (GdkDisplay *display,
 	/* add a new window */
 	gs_manager_create_window_for_monitor (manager, monitor);
 
-	/* and put unlock dialog up whereever it's supposed to be */
-	gs_manager_request_unlock (manager);
+#ifdef ENABLE_X11
+	/* and put unlock dialog up whereever it's supposed to be.
+	   On Wayland user input brings it up instead. */
+#ifdef ENABLE_WAYLAND
+	if (! GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+#endif
+	{
+		gs_manager_request_unlock (manager);
+	}
+#endif
 }
 
 static void
@@ -1608,7 +1764,12 @@ on_display_monitor_removed (GdkDisplay *display,
 	gs_debug ("Monitor removed on display %s, now there are %d",
 	          gdk_display_get_name (display), n_monitors);
 
-	gdk_x11_grab_server ();
+#ifdef ENABLE_X11
+	if (GDK_IS_X11_DISPLAY (display))
+	{
+		gdk_x11_grab_server ();
+	}
+#endif
 
 	/* remove the now extra window */
 	l = manager->priv->windows;
@@ -1625,6 +1786,13 @@ on_display_monitor_removed (GdkDisplay *display,
 			manager_maybe_stop_job_for_window (manager,
 			                                   GS_WINDOW (l->data));
 			g_hash_table_remove (manager->priv->jobs, l->data);
+#ifdef ENABLE_WAYLAND
+			if (manager->priv->lock_manager != NULL)
+			{
+				gs_session_lock_manager_remove_window (manager->priv->lock_manager,
+				                                       GS_WINDOW (l->data));
+			}
+#endif
 			gs_window_destroy (GS_WINDOW (l->data));
 			manager->priv->windows = g_slist_delete_link (manager->priv->windows, l);
 		}
@@ -1632,7 +1800,12 @@ on_display_monitor_removed (GdkDisplay *display,
 	}
 
 	gdk_display_flush (display);
-	gdk_x11_ungrab_server ();
+#ifdef ENABLE_X11
+	if (GDK_IS_X11_DISPLAY (display))
+	{
+		gdk_x11_ungrab_server ();
+	}
+#endif
 }
 
 static void
@@ -1644,22 +1817,32 @@ gs_manager_destroy_windows (GSManager *manager)
 	g_return_if_fail (manager != NULL);
 	g_return_if_fail (GS_IS_MANAGER (manager));
 
+	display = gdk_display_get_default ();
+
+	if (display != NULL)
+	{
+		g_signal_handlers_disconnect_by_func (display,
+		                                      on_display_monitor_removed,
+		                                      manager);
+		g_signal_handlers_disconnect_by_func (display,
+		                                      on_display_monitor_added,
+		                                      manager);
+	}
+
 	if (manager->priv->windows == NULL)
 	{
 		return;
 	}
 
-	display = gdk_display_get_default ();
-
-	g_signal_handlers_disconnect_by_func (display,
-	                                      on_display_monitor_removed,
-	                                      manager);
-	g_signal_handlers_disconnect_by_func (display,
-	                                      on_display_monitor_added,
-	                                      manager);
-
 	for (l = manager->priv->windows; l; l = l->next)
 	{
+#ifdef ENABLE_WAYLAND
+		if (manager->priv->lock_manager != NULL)
+		{
+			gs_session_lock_manager_remove_window (manager->priv->lock_manager,
+			                                       GS_WINDOW (l->data));
+		}
+#endif
 		gs_window_destroy (l->data);
 	}
 	g_slist_free (manager->priv->windows);
@@ -1705,6 +1888,18 @@ gs_manager_finalize (GObject *object)
 	g_object_unref (manager->priv->grab);
 	g_object_unref (manager->priv->theme_manager);
 
+#ifdef ENABLE_WAYLAND
+	manager->priv->compositor = NULL;
+
+	if (manager->priv->session_lock_finished_idle_id != 0)
+	{
+		g_source_remove (manager->priv->session_lock_finished_idle_id);
+		manager->priv->session_lock_finished_idle_id = 0;
+	}
+
+	g_clear_object (&manager->priv->lock_manager);
+#endif
+
 	G_OBJECT_CLASS (gs_manager_parent_class)->finalize (object);
 }
 
@@ -1744,10 +1939,21 @@ gs_manager_create_windows (GSManager *manager)
 
 	g_return_if_fail (manager != NULL);
 	g_return_if_fail (GS_IS_MANAGER (manager));
-
-	g_assert (manager->priv->windows == NULL);
+	g_return_if_fail (manager->priv->windows == NULL);
 
 	display = gdk_display_get_default ();
+
+	/* Defensive: never end up with duplicated handlers. */
+	if (display != NULL)
+	{
+		g_signal_handlers_disconnect_by_func (display,
+		                                      on_display_monitor_added,
+		                                      manager);
+		g_signal_handlers_disconnect_by_func (display,
+		                                      on_display_monitor_removed,
+		                                      manager);
+	}
+
 	g_signal_connect (display, "monitor-added",
 	                  G_CALLBACK (on_display_monitor_added),
 	                  manager);
@@ -1815,10 +2021,26 @@ gs_manager_activate (GSManager *manager)
 		return FALSE;
 	}
 
-	res = gs_grab_grab_root (manager->priv->grab, FALSE, FALSE);
-	if (! res)
+#ifdef ENABLE_WAYLAND
+	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
 	{
-		return FALSE;
+		if (manager->priv->lock_manager == NULL ||
+		    ! gs_session_lock_manager_lock (manager->priv->lock_manager))
+		{
+			g_warning ("Failed to request session lock on Wayland: "
+			           "locking requires the ext-session-lock-v1 protocol");
+			gs_debug ("Failed to request session lock on Wayland");
+			return FALSE;
+		}
+	}
+	else
+#endif
+	{
+		res = gs_grab_grab_root (manager->priv->grab, FALSE, FALSE);
+		if (! res)
+		{
+			return FALSE;
+		}
 	}
 
 	if (manager->priv->windows == NULL)
@@ -1879,6 +2101,13 @@ gs_manager_deactivate (GSManager *manager)
 
 	gs_manager_destroy_windows (manager);
 
+#ifdef ENABLE_WAYLAND
+	if (manager->priv->lock_manager != NULL)
+	{
+		gs_session_lock_manager_unlock (manager->priv->lock_manager);
+	}
+#endif
+
 	/* reset state */
 	manager->priv->active = FALSE;
 	manager->priv->activate_time = 0;
@@ -1915,6 +2144,14 @@ gs_manager_get_active (GSManager *manager)
 
 	return manager->priv->active;
 }
+
+#ifdef ENABLE_WAYLAND
+WleEmbeddedCompositor *
+gs_manager_get_compositor (GSManager *manager)
+{
+	return global_compositor;
+}
+#endif
 
 gboolean
 gs_manager_request_unlock (GSManager *manager)

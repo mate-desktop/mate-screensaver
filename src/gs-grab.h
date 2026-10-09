@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
  *
  * Copyright (C) 2004-2006 William Jon McCann <mccann@jhu.edu>
- * Copyright (C) 2012-2021 MATE Developers
+ * Copyright (C) 2012-2026 MATE Developers
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,24 +31,20 @@ G_BEGIN_DECLS
 
 #define GS_TYPE_GRAB         (gs_grab_get_type ())
 #define GS_GRAB(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), GS_TYPE_GRAB, GSGrab))
-#define GS_GRAB_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), GS_TYPE_GRAB, GSGrabClass))
 #define GS_IS_GRAB(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GS_TYPE_GRAB))
-#define GS_IS_GRAB_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GS_TYPE_GRAB))
-#define GS_GRAB_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GS_TYPE_GRAB, GSGrabClass))
 
-typedef struct GSGrabPrivate GSGrabPrivate;
+typedef struct _GSGrab GSGrab;
+typedef struct _GSGrabClass GSGrabClass;
 
-typedef struct
+struct _GSGrab
 {
-	GObject        parent;
-	GSGrabPrivate *priv;
-} GSGrab;
+	GObject parent;
+};
 
-typedef struct
+struct _GSGrabClass
 {
-	GObjectClass   parent_class;
-
-} GSGrabClass;
+	GObjectClass parent_class;
+};
 
 GType     gs_grab_get_type         (void);
 
@@ -63,12 +59,12 @@ gboolean  gs_grab_grab_window      (GSGrab     *grab,
                                     gboolean    no_pointer_grab,
                                     gboolean    hide_cursor);
 
-gboolean  gs_grab_grab_root        (GSGrab    *grab,
-                                    gboolean   no_pointer_grab,
-                                    gboolean   hide_cursor);
-gboolean  gs_grab_grab_offscreen   (GSGrab    *grab,
-                                    gboolean   no_pointer_grab,
-                                    gboolean   hide_cursor);
+gboolean  gs_grab_grab_root        (GSGrab     *grab,
+                                    gboolean    no_pointer_grab,
+                                    gboolean    hide_cursor);
+gboolean  gs_grab_grab_offscreen   (GSGrab     *grab,
+                                    gboolean    no_pointer_grab,
+                                    gboolean    hide_cursor);
 
 void      gs_grab_move_to_window   (GSGrab     *grab,
                                     GdkWindow  *window,

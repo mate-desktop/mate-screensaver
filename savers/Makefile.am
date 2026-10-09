@@ -7,6 +7,7 @@ AM_CPPFLAGS =							\
 	-I.							\
 	-I$(srcdir)						\
 	$(MATE_SCREENSAVER_SAVER_CFLAGS)			\
+	$(LIBWLEMBED_GTK3_CFLAGS)				\
 	$(DISABLE_DEPRECATED_CFLAGS)				\
 	-DLIBEXECDIR=\""$(libexecdir)"\"			\
 	-DMATELOCALEDIR=\""$(datadir)/locale"\"			\
@@ -68,11 +69,16 @@ gs-theme-engine-marshal.c: gs-theme-engine-marshal.list
 gs-theme-engine-marshal.h: gs-theme-engine-marshal.list
 	@GLIB_GENMARSHAL@ $< --prefix=gs_theme_engine_marshal --header > $@
 
+# The bundled libwlembed is built and staged at configure time (see
+# configure.ac), so the staged headers/libraries are already available when
+# the savers are compiled; there is nothing to wait for here.
+
 noinst_LIBRARIES =			\
 	libgs-theme-engine.a
 
 libgs_theme_engine_a_CPPFLAGS =					\
 	$(MATE_SCREENSAVER_SAVER_CFLAGS)			\
+	$(LIBWLEMBED_GTK3_CFLAGS)				\
 	-DDATADIR=\""$(datadir)"\"				\
 	$(NULL)
 
@@ -99,6 +105,7 @@ floaters_SOURCES =	\
 floaters_LDADD =		       \
 	libgs-theme-engine.a		\
 	$(MATE_SCREENSAVER_SAVER_LIBS) \
+	$(LIBWLEMBED_GTK3_LIBS)		\
 	-lm                             \
 	$(NULL)
 
@@ -111,6 +118,7 @@ popsquares_SOURCES = 		\
 popsquares_LDADD =			\
 	libgs-theme-engine.a 		\
 	$(MATE_SCREENSAVER_SAVER_LIBS)	\
+	$(LIBWLEMBED_GTK3_LIBS)		\
 	$(NULL)
 
 slideshow_SOURCES =   \
@@ -124,6 +132,7 @@ slideshow_SOURCES =   \
 slideshow_LDADD =     \
 	libgs-theme-engine.a 		\
 	$(MATE_SCREENSAVER_SAVER_LIBS)	\
+	$(LIBWLEMBED_GTK3_LIBS)		\
 	$(NULL)
 
 starfield_SOURCES = 	\
@@ -135,6 +144,7 @@ starfield_SOURCES = 	\
 starfield_LDADD =			\
 	libgs-theme-engine.a 		\
 	$(MATE_SCREENSAVER_SAVER_LIBS)	\
+	$(LIBWLEMBED_GTK3_LIBS)		\
 	-lm                             \
 	$(NULL)
 

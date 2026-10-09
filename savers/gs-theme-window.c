@@ -33,34 +33,34 @@
 #include <glib-object.h>
 #include <glib/gi18n.h>
 
+#ifdef ENABLE_X11
 #include <gdk/gdkx.h>
+#include <gtk/gtkx.h>
+#endif
+#ifdef ENABLE_WAYLAND
+#include <gdk/gdkwayland.h>
+#include <libwlembed-gtk3/libwlembed-gtk3.h>
+#endif
 #include <gtk/gtk.h>
 
 #include "gs-theme-window.h"
 
 static void gs_theme_window_finalize     (GObject *object);
-static void gs_theme_window_real_realize (GtkWidget *widget);
 
 static GObjectClass   *parent_class = NULL;
 
 G_DEFINE_TYPE (GSThemeWindow, gs_theme_window, GTK_TYPE_WINDOW)
 
-#define MIN_SIZE 10
-
 static void
 gs_theme_window_class_init (GSThemeWindowClass *klass)
 {
 	GObjectClass   *object_class;
-	GtkWidgetClass *widget_class;
 
 	object_class = G_OBJECT_CLASS (klass);
-	widget_class = GTK_WIDGET_CLASS (klass);
 
 	parent_class = g_type_class_peek_parent (klass);
 
 	object_class->finalize = gs_theme_window_finalize;
-
-	widget_class->realize = gs_theme_window_real_realize;
 }
 
 static void
@@ -82,102 +82,67 @@ gs_theme_window_finalize (GObject *object)
 		parent_class->finalize (object);
 }
 
-static void
-gs_theme_window_real_realize (GtkWidget *widget)
-{
-	GdkWindow     *window;
-	Window         remote_xwindow;
-	GtkRequisition requisition;
-	GtkAllocation  allocation;
-	const char    *preview_xid;
-	int            x;
-	int            y;
-	int            width;
-	int            height;
-	int            event_mask;
-
-	event_mask = 0;
-	window = NULL;
-	preview_xid = g_getenv ("XSCREENSAVER_WINDOW");
-
-	if (preview_xid != NULL)
-	{
-		char *end;
-
-		remote_xwindow = (Window) strtoul (preview_xid, &end, 0);
-
-		if ((remote_xwindow != 0) && (end != NULL) &&
-		        ((*end == ' ') || (*end == '\0')) &&
-		        ((remote_xwindow < G_MAXULONG) || (errno != ERANGE)))
-		{
-			window = gdk_x11_window_foreign_new_for_display (gdk_display_get_default (), remote_xwindow);
-			if (window != NULL)
-			{
-				/* This is a kludge; we need to set the same
-				 * flags gs-window-x11.c does, to ensure they
-				 * don't get unset by gtk_window_map() later.
-				 */
-				gtk_window_set_decorated (GTK_WINDOW (widget), FALSE);
-
-				gtk_window_set_skip_taskbar_hint (GTK_WINDOW (widget), TRUE);
-				gtk_window_set_skip_pager_hint (GTK_WINDOW (widget), TRUE);
-
-				gtk_window_set_keep_above (GTK_WINDOW (widget), TRUE);
-
-				gtk_window_fullscreen (GTK_WINDOW (widget));
-
-				event_mask = GDK_EXPOSURE_MASK | GDK_STRUCTURE_MASK;
-				gtk_widget_set_events (widget, gtk_widget_get_events (widget) | event_mask);
-			}
-		}
-	}
-
-	if (window == NULL)
-	{
-		GtkWidgetClass *parent_class;
-
-		parent_class = GTK_WIDGET_CLASS (gs_theme_window_parent_class);
-
-		if (parent_class->realize != NULL)
-			parent_class->realize (widget);
-
-		return;
-	}
-
-	gtk_style_context_set_background (gtk_widget_get_style_context (widget),
-	                                  window);
-	gdk_window_set_decorations (window, (GdkWMDecoration) 0);
-	gdk_window_set_events (window, gdk_window_get_events (window) | event_mask);
-
-	gtk_widget_set_window (widget, window);
-	gdk_window_set_user_data (window, widget);
-	gtk_widget_set_realized (widget, TRUE);
-
-	gdk_window_get_geometry (window, &x, &y, &width, &height);
-
-	if (width < MIN_SIZE || height < MIN_SIZE)
-	{
-		g_critical ("This window is way too small to use");
-		exit (1);
-	}
-
-	gtk_widget_get_preferred_size (widget, &requisition, NULL);
-	allocation.x = x;
-	allocation.y = y;
-	allocation.width = width;
-	allocation.height = height;
-	gtk_widget_size_allocate (widget, &allocation);
-	gtk_window_resize (GTK_WINDOW (widget), width, height);
-}
-
 GtkWidget *
 gs_theme_window_new (void)
 {
-	GSThemeWindow *window;
+	const char *preview_xid;
 
-	window = g_object_new (GS_TYPE_THEME_WINDOW,
-	                       "type", GTK_WINDOW_TOPLEVEL,
-	                       NULL);
+	preview_xid = g_getenv ("XSCREENSAVER_WINDOW");
 
-	return GTK_WIDGET (window);
+#ifdef ENABLE_X11
+	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()) &&
+	    preview_xid != NULL && preview_xid[0] != '\0')
+	{
+		char  *end;
+		gulong remote_xwindow;
+
+		errno = 0;
+		remote_xwindow = strtoul (preview_xid, &end, 0);
+
+		if ((remote_xwindow != 0) &&
+		    (end != NULL) && (*end == '\0') &&
+		    (errno != ERANGE))
+		{
+			GtkWidget *window;
+
+			window = gtk_plug_new_for_display (gdk_display_get_default (),
+			                                   remote_xwindow);
+			gtk_widget_set_app_paintable (window, TRUE);
+
+			g_debug ("gs_theme_window_new: created GtkPlug for window 0x%lX",
+			         remote_xwindow);
+
+			return window;
+		}
+	}
+#endif
+#ifdef ENABLE_WAYLAND
+	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+	{
+		if (preview_xid != NULL && preview_xid[0] != '\0')
+		{
+			GtkWidget *window;
+
+			window = wle_gtk_plug_new (preview_xid);
+			gtk_widget_set_app_paintable (window, TRUE);
+
+			g_debug ("gs_theme_window_new: created WleGtkPlug for token '%s'",
+			         preview_xid);
+
+			return window;
+		}
+	}
+#endif
+
+	{
+		GSThemeWindow *window;
+
+		window = g_object_new (GS_TYPE_THEME_WINDOW,
+		                       "type", GTK_WINDOW_TOPLEVEL,
+		                       NULL);
+
+		g_debug ("gs_theme_window_new: falling back to GSThemeWindow toplevel");
+
+		return GTK_WIDGET (window);
+	}
 }

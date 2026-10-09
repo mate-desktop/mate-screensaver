@@ -37,6 +37,44 @@ GETTEXT_PACKAGE=mate-screensaver
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Name of default gettext domain])
 
+dnl ---------------------------------------------------------------------------
+dnl - Platform selection
+dnl ---------------------------------------------------------------------------
+
+AC_ARG_ENABLE(x11,
+  AS_HELP_STRING([--enable-x11], [Build with X11 support]),
+  [enable_x11=$enableval], [enable_x11=yes])
+
+AC_ARG_ENABLE(wayland,
+  AS_HELP_STRING([--enable-wayland], [Build with Wayland support]),
+  [enable_wayland=$enableval], [enable_wayland=no])
+
+dnl
+dnl Select between the bundled libwlembed submodule (default) and a
+dnl system-installed one. Bundled is always used unless the user opts into a
+dnl system installation via --with-system-libwlembed.
+dnl
+AC_ARG_WITH(system-libwlembed,
+  AS_HELP_STRING([--with-system-libwlembed],
+                 [Use a system-installed libwlembed instead of the bundled submodule (default: no)]),
+  [use_system_libwlembed=$withval], [use_system_libwlembed=no])
+
+case "$use_system_libwlembed" in
+  yes|true|1)
+    use_system_libwlembed=yes
+    ;;
+  no|false|0|"")
+    use_system_libwlembed=no
+    ;;
+  *)
+    AC_MSG_ERROR([Invalid value for --with-system-libwlembed: '$use_system_libwlembed' (expected true/false, yes/no or 1/0)])
+    ;;
+esac
+
+dnl
+dnl Both X11 and Wayland can be enabled simultaneously for runtime session switching
+dnl
+
 dnl
 dnl Enable gsettings schema macros
 dnl
@@ -61,16 +99,33 @@ AC_CHECK_FUNCS(getresuid)
 AC_TYPE_UID_T
 
 AC_CHECK_FUNCS([setresuid setenv unsetenv clearenv])
-PKG_CHECK_MODULES(MATE_SCREENSAVER,
-        x11 >= $X11_REQUIRED_VERSION
-        xscrnsaver
-        gtk+-3.0 >= $GTK_REQUIRED_VERSION
-        dbus-glib-1 >= $DBUS_REQUIRED_VERSION
-        gio-2.0 >= $GLIB_REQUIRED_VERSION
-        mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION
-        libmate-menu >= $LIBMATE_MENU_REQUIRED_VERSION)
-AC_SUBST(MATE_SCREENSAVER_CFLAGS)
-AC_SUBST(MATE_SCREENSAVER_LIBS)
+
+dnl ---------------------------------------------------------------------------
+dnl - X11 dependencies
+dnl ---------------------------------------------------------------------------
+
+if test "x$enable_x11" = "xyes"; then
+  PKG_CHECK_MODULES(MATE_SCREENSAVER,
+          x11 >= $X11_REQUIRED_VERSION
+          xscrnsaver
+          gtk+-3.0 >= $GTK_REQUIRED_VERSION
+          dbus-glib-1 >= $DBUS_REQUIRED_VERSION
+          gio-2.0 >= $GLIB_REQUIRED_VERSION
+          mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION
+          libmate-menu >= $LIBMATE_MENU_REQUIRED_VERSION)
+  AC_SUBST(MATE_SCREENSAVER_CFLAGS)
+  AC_SUBST(MATE_SCREENSAVER_LIBS)
+  AC_DEFINE(ENABLE_X11, 1, [Build with X11 support])
+else
+  PKG_CHECK_MODULES(MATE_SCREENSAVER,
+          gtk+-3.0 >= $GTK_REQUIRED_VERSION
+          dbus-glib-1 >= $DBUS_REQUIRED_VERSION
+          gio-2.0 >= $GLIB_REQUIRED_VERSION
+          mate-desktop-2.0 >= $MATE_DESKTOP_REQUIRED_VERSION
+          libmate-menu >= $LIBMATE_MENU_REQUIRED_VERSION)
+  AC_SUBST(MATE_SCREENSAVER_CFLAGS)
+  AC_SUBST(MATE_SCREENSAVER_LIBS)
+fi
 
 PKG_CHECK_MODULES(MATE_SCREENSAVER_DIALOG,
         gio-2.0 >= $GLIB_REQUIRED_VERSION
@@ -97,7 +152,11 @@ AC_SUBST(MATE_SCREENSAVER_COMMAND_LIBS)
 AC_PATH_XTRA
 
 ALL_X_LIBS="$X_LIBS $X_PRE_LIBS -lXext -lX11 $X_EXTRA_LIBS"
-SAVER_LIBS="$ALL_X_LIBS"
+SAVER_LIBS=""
+
+if test "x$enable_x11" = "xyes"; then
+  SAVER_LIBS="$ALL_X_LIBS"
+fi
 
 AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
 
@@ -123,6 +182,219 @@ case "$host" in
 		AC_CHECK_LIB(resolv, daemon, [MATE_SCREENSAVER_LIBS="$MATE_SCREENSAVER_LIBS -lresolv"])
 	;;
 esac
+
+dnl ---------------------------------------------------------------------------
+dnl - Wayland dependencies
+dnl ---------------------------------------------------------------------------
+
+WAYLAND_CLIENT_CFLAGS=""
+WAYLAND_CLIENT_LIBS=""
+WAYLAND_PROTOCOLS_DATADIR=""
+WAYLAND_SCANNER=""
+LIBWLEMBED_CFLAGS=""
+LIBWLEMBED_LIBS=""
+LIBWLEMBED_GTK3_CFLAGS=""
+LIBWLEMBED_GTK3_LIBS=""
+GDK_WAYLAND_CFLAGS=""
+GDK_WAYLAND_LIBS=""
+GTK_LAYER_SHELL_CFLAGS=""
+GTK_LAYER_SHELL_LIBS=""
+
+if test "x$enable_wayland" = "xyes"; then
+  PKG_CHECK_MODULES(WAYLAND_CLIENT, [wayland-client >= 1.21.0], [have_wayland_client=yes], [have_wayland_client=no])
+  PKG_CHECK_MODULES(WAYLAND_PROTOCOLS, [wayland-protocols >= 1.31], [have_wayland_protocols=yes], [have_wayland_protocols=no])
+  PKG_CHECK_MODULES(GDK_WAYLAND, [gdk-wayland-3.0 >= $GTK_REQUIRED_VERSION], [have_gdk_wayland=yes], [have_gdk_wayland=no])
+
+  LIBWLEMBED_USE_BUNDLED=no
+  if test "x$use_system_libwlembed" = "xyes"; then
+    dnl User explicitly asked for a system libwlembed; require it. Probe it here
+    dnl rather than before the bundled/system choice: pkg.m4 keeps *_CFLAGS/*_LIBS
+    dnl unchanged once they are non-empty, so probing earlier would make the
+    dnl bundled branch inherit the system flags and bypass the staged .pc files.
+    AC_MSG_NOTICE([using the system-installed libwlembed; it will not be installed by this build])
+    PKG_CHECK_MODULES(LIBWLEMBED, [libwlembed-0], [have_libwlembed=yes], [have_libwlembed=no])
+    PKG_CHECK_MODULES(LIBWLEMBED_GTK3, [libwlembed-gtk3-0], [have_libwlembed_gtk3=yes], [have_libwlembed_gtk3=no])
+    if test "x$have_libwlembed" = "xno" || test "x$have_libwlembed_gtk3" = "xno"; then
+      AC_MSG_ERROR([--with-system-libwlembed=true requested but libwlembed is not installed on the system])
+    fi
+  else
+    dnl Default: always use the bundled submodule, regardless of any system install.
+    AC_MSG_NOTICE([using the bundled libwlembed submodule])
+    LIBWLEMBED_USE_BUNDLED=yes
+
+    if test ! -f "$srcdir/submodules/libwlembed/meson.build" \
+        || test ! -d "$srcdir/submodules/libwlembed/protocol/wlr-protocols"; then
+      AC_MSG_ERROR([bundled libwlembed submodule is incomplete.
+Please initialize it (including its nested submodules) with:
+  git submodule update --init --recursive])
+    fi
+
+    AC_PATH_TOOL([MESON], [meson], [])
+    AC_PATH_TOOL([NINJA], [ninja], [])
+    if test -z "$MESON"; then
+      AC_MSG_ERROR([meson not found; it is required to build the bundled libwlembed submodule])
+    fi
+    if test -z "$NINJA"; then
+      AC_MSG_ERROR([ninja not found; it is required to build the bundled libwlembed submodule])
+    fi
+
+    LIBWLEMBED_SUBMODULE_SRCDIR="$srcdir/submodules/libwlembed"
+    LIBWLEMBED_SUBMODULE_BUILDDIR="$ac_pwd/submodules/libwlembed/build"
+    LIBWLEMBED_SUBMODULE_STAGE="$LIBWLEMBED_SUBMODULE_BUILDDIR/stage"
+
+    dnl At this point in configure, prefix and libdir still hold their
+    dnl literal placeholders ("NONE" / "${exec_prefix}/lib") because autotools
+    dnl only resolves them much later. Meson requires absolute paths, so
+    dnl resolve them here to values consistent with what automake would use.
+    LIBWLEMBED_MESON_PREFIX="$ac_default_prefix"
+    if test "x$prefix" != "xNONE"; then
+      LIBWLEMBED_MESON_PREFIX="$prefix"
+    fi
+
+    LIBWLEMBED_MESON_EXEC_PREFIX="$LIBWLEMBED_MESON_PREFIX"
+    if test "x$exec_prefix" != "xNONE"; then
+      LIBWLEMBED_MESON_EXEC_PREFIX="$exec_prefix"
+    fi
+
+    LIBWLEMBED_MESON_LIBDIR="$libdir"
+    case "$LIBWLEMBED_MESON_LIBDIR" in
+      *exec_prefix*)
+        LIBWLEMBED_MESON_LIBDIR="$LIBWLEMBED_MESON_EXEC_PREFIX/lib"
+        ;;
+    esac
+
+    AC_MSG_NOTICE([configuring bundled libwlembed...])
+    if test -f "$LIBWLEMBED_SUBMODULE_BUILDDIR/build.ninja"; then
+      dnl Reuse the existing build tree so a re-configure does not trigger a
+      dnl full rebuild of the submodule.
+      "$MESON" setup --reconfigure \
+          --prefix="$LIBWLEMBED_MESON_PREFIX" \
+          --libdir="$LIBWLEMBED_MESON_LIBDIR" \
+          --buildtype=release \
+          --wrap-mode=nodownload \
+          -Dintrospection=false \
+          -Dexamples=false \
+          "$LIBWLEMBED_SUBMODULE_BUILDDIR" \
+          "$LIBWLEMBED_SUBMODULE_SRCDIR" \
+        || AC_MSG_ERROR([could not (re)configure the bundled libwlembed submodule])
+    else
+      "$MESON" setup \
+          --prefix="$LIBWLEMBED_MESON_PREFIX" \
+          --libdir="$LIBWLEMBED_MESON_LIBDIR" \
+          --buildtype=release \
+          --wrap-mode=nodownload \
+          -Dintrospection=false \
+          -Dexamples=false \
+          "$LIBWLEMBED_SUBMODULE_BUILDDIR" \
+          "$LIBWLEMBED_SUBMODULE_SRCDIR" \
+        || AC_MSG_ERROR([could not configure the bundled libwlembed submodule])
+    fi
+
+    dnl The libwlembed submodule is a meson project and cannot be built as part
+    dnl of the autotools "make". Building it here, at configure time, guarantees
+    dnl the staged headers and libraries exist before autotools ever compiles or
+    dnl links against them, and before the pkg-config checks below run.
+    AC_MSG_NOTICE([building bundled libwlembed...])
+    "$NINJA" -C "$LIBWLEMBED_SUBMODULE_BUILDDIR" \
+      || AC_MSG_ERROR([could not build the bundled libwlembed submodule])
+    AC_MSG_NOTICE([staging bundled libwlembed...])
+    rm -rf "$LIBWLEMBED_SUBMODULE_STAGE"
+    DESTDIR="$LIBWLEMBED_SUBMODULE_STAGE" \
+      "$MESON" install -C "$LIBWLEMBED_SUBMODULE_BUILDDIR" --no-rebuild \
+      || AC_MSG_ERROR([could not stage the bundled libwlembed submodule])
+
+    dnl The staged headers/libs were produced just above, so synthesize the
+    dnl pkg-config files that meson would otherwise generate, and resolve the
+    dnl flags through pkg-config as usual. The prefix below deliberately points
+    dnl at the *stage* directory so that the emitted -I/-L flags reference the
+    dnl staged headers and libraries.
+    LIBWLEMBED_MESON_STAGED_PREFIX="$LIBWLEMBED_SUBMODULE_STAGE$LIBWLEMBED_MESON_PREFIX"
+    dnl Compute the libdir relative to prefix so the .pc files resolve it
+    dnl correctly even on multiarch systems (e.g. /usr/lib/x86_64-linux-gnu).
+    LIBWLEMBED_MESON_REL_LIBDIR="${LIBWLEMBED_MESON_LIBDIR#${LIBWLEMBED_MESON_PREFIX}}"
+    LIBWLEMBED_MESON_PKGCONFIGDIR="$LIBWLEMBED_SUBMODULE_BUILDDIR/pkgconfig"
+    mkdir -p "$LIBWLEMBED_MESON_PKGCONFIGDIR"
+    cat > "$LIBWLEMBED_MESON_PKGCONFIGDIR/libwlembed-0.pc" <<EOF
+prefix=$LIBWLEMBED_MESON_STAGED_PREFIX
+includedir=\${prefix}/include
+libdir=\${prefix}$LIBWLEMBED_MESON_REL_LIBDIR
+
+Name: libwlembed-0
+Description: Library for creating an embedded/nested Wayland compositor
+Version: 0.0.0-dev
+Requires: glib-2.0 >= 2.72, gobject-2.0 >= 2.72
+Requires.private: gio-2.0 >= 2.72, wayland-client >= 1.20, wayland-server >= 1.20, xkbcommon
+Libs: -L\${libdir} -lwlembed-0
+Libs.private: -lm -lrt
+Cflags: -I\${includedir}/libwlembed-0
+EOF
+    cat > "$LIBWLEMBED_MESON_PKGCONFIGDIR/libwlembed-gtk3-0.pc" <<EOF
+prefix=$LIBWLEMBED_MESON_STAGED_PREFIX
+includedir=\${prefix}/include
+libdir=\${prefix}$LIBWLEMBED_MESON_REL_LIBDIR
+
+Name: libwlembed-gtk3-0
+Description: Library for creating an embedded/nested Wayland compositor (GTK3 widgets)
+Version: 0.0.0-dev
+Requires: gtk+-3.0 >= 3.24, libwlembed-0
+Requires.private: glib-2.0 >= 2.72, wayland-server >= 1.20, gobject-2.0 >= 2.72, gtk-layer-shell-0 >= 0.7.0, wayland-client >= 1.20
+Libs: -L\${libdir} -lwlembed-gtk3-0
+Cflags: -I\${includedir}
+EOF
+
+    PKG_CONFIG_PATH="$LIBWLEMBED_MESON_PKGCONFIGDIR${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}"
+    export PKG_CONFIG_PATH
+
+    PKG_CHECK_MODULES(LIBWLEMBED, [libwlembed-0], [have_libwlembed=yes], [have_libwlembed=no])
+    PKG_CHECK_MODULES(LIBWLEMBED_GTK3, [libwlembed-gtk3-0], [have_libwlembed_gtk3=yes], [have_libwlembed_gtk3=no])
+    if test "x$have_libwlembed" = "xno" || test "x$have_libwlembed_gtk3" = "xno"; then
+      AC_MSG_ERROR([could not find the bundled libwlembed even after generating its pkg-config files])
+    fi
+
+    dnl Ensure the final binaries can locate the staged libraries when run
+    dnl from the build tree, and the installed libraries once installed.
+    dnl Use DT_RPATH (--disable-new-dtags) so the rpath also applies to
+    dnl transitively loaded dependencies: mate-screensaver-dialog links
+    dnl libwlembed-gtk3-0 directly but only pulls libwlembed-0 in
+    dnl transitively, and DT_RUNPATH is not inherited by other objects.
+    LIBWLEMBED_LIBS="$LIBWLEMBED_LIBS -Wl,--disable-new-dtags -Wl,-rpath,$LIBWLEMBED_SUBMODULE_STAGE/$LIBWLEMBED_MESON_LIBDIR -Wl,-rpath,$LIBWLEMBED_MESON_LIBDIR"
+    LIBWLEMBED_GTK3_LIBS="$LIBWLEMBED_GTK3_LIBS -Wl,--disable-new-dtags -Wl,-rpath,$LIBWLEMBED_SUBMODULE_STAGE/$LIBWLEMBED_MESON_LIBDIR -Wl,-rpath,$LIBWLEMBED_MESON_LIBDIR"
+  fi
+
+  AC_SUBST([LIBWLEMBED_USE_BUNDLED])
+  AC_SUBST([LIBWLEMBED_SUBMODULE_BUILDDIR])
+  AC_SUBST([LIBWLEMBED_SUBMODULE_STAGE])
+  AC_SUBST([MESON])
+  AC_SUBST([NINJA])
+
+  PKG_CHECK_MODULES(GTK_LAYER_SHELL, [gtk-layer-shell-0], [have_gtk_layer_shell=yes], [have_gtk_layer_shell=no])
+
+  if test "x$have_wayland_protocols" = "xyes"; then
+    WAYLAND_PROTOCOLS_DATADIR=`pkg-config --variable=pkgdatadir wayland-protocols`
+  fi
+
+  PKG_CHECK_VAR([WAYLAND_SCANNER], [wayland-scanner], [wayland_scanner], [],
+                [AC_MSG_ERROR([wayland-scanner not found])])
+
+  if test "x$have_wayland_client" = "xyes" && test "x$have_wayland_protocols" = "xyes" && test "x$have_gdk_wayland" = "xyes" && test "x$have_libwlembed" = "xyes" && test "x$have_libwlembed_gtk3" = "xyes" && test "x$have_gtk_layer_shell" = "xyes"; then
+    AC_DEFINE(ENABLE_WAYLAND, 1, [Build with Wayland support])
+  else
+    AC_MSG_ERROR([Wayland support requested but required dependencies not found])
+  fi
+fi
+
+AC_SUBST(WAYLAND_CLIENT_CFLAGS)
+AC_SUBST(WAYLAND_CLIENT_LIBS)
+AC_SUBST(WAYLAND_PROTOCOLS_DATADIR)
+AC_SUBST(WAYLAND_SCANNER)
+AC_SUBST(LIBWLEMBED_CFLAGS)
+AC_SUBST(LIBWLEMBED_LIBS)
+AC_SUBST(LIBWLEMBED_GTK3_CFLAGS)
+AC_SUBST(LIBWLEMBED_GTK3_LIBS)
+AC_SUBST(GDK_WAYLAND_CFLAGS)
+AC_SUBST(GDK_WAYLAND_LIBS)
+AC_SUBST(GTK_LAYER_SHELL_CFLAGS)
+AC_SUBST(GTK_LAYER_SHELL_LIBS)
 
 # Optional dependencies for the theme engines
 
@@ -1020,6 +1292,10 @@ AC_SUBST(AUTH_LIBS)
 AC_SUBST(SAVER_LIBS)
 AC_SUBST(GL_LIBS)
 
+AM_CONDITIONAL(ENABLE_X11, test "x$enable_x11" = "xyes")
+AM_CONDITIONAL(ENABLE_WAYLAND, test "x$enable_wayland" = "xyes")
+AM_CONDITIONAL(ENABLE_BUNDLED_LIBWLEMBED, test "x$LIBWLEMBED_USE_BUNDLED" = "xyes")
+
 
 REAL_PREFIX=
 if test "x$prefix" = "xNONE"; then
@@ -1157,6 +1433,10 @@ Configure summary:
     Docs enabled .................: ${enable_docbook_docs}
 
     GL ...........................: ${have_libgl}
+
+    X11 support ..................: ${enable_x11}
+    Wayland support ..............: ${enable_wayland}
+    Use system libwlembed ........: ${use_system_libwlembed}
 
     Screen locking enabled .......: ${enable_locking}
     Show keyboard indicator ......: ${with_kbd_layout_indicator}

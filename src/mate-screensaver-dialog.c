@@ -33,9 +33,13 @@
 #include <signal.h>
 
 #include <glib/gi18n.h>
+#ifdef ENABLE_X11
 #include <gdk/gdkx.h>
+#endif
 #include <gtk/gtk.h>
+#ifdef ENABLE_X11
 #include <gtk/gtkx.h>
+#endif
 
 #include "gs-lock-plug.h"
 
@@ -72,7 +76,19 @@ static char* get_id_string(GtkWidget* widget)
 	g_return_val_if_fail(widget != NULL, NULL);
 	g_return_val_if_fail(GTK_IS_WIDGET(widget), NULL);
 
-	id = g_strdup_printf("%" G_GUINT32_FORMAT, (guint32) GDK_WINDOW_XID(gtk_widget_get_window(widget)));
+#ifdef ENABLE_X11
+	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+	{
+		id = g_strdup_printf("%" G_GUINT32_FORMAT, (guint32) GDK_WINDOW_XID(gtk_widget_get_window(widget)));
+	}
+	else
+	{
+		id = g_strdup_printf("%" G_GUINT32_FORMAT, (guint32) 0);
+	}
+#else
+	id = g_strdup_printf("%" G_GUINT32_FORMAT, (guint32) 0);
+#endif
+
 	return id;
 }
 

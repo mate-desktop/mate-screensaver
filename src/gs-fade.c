@@ -36,7 +36,9 @@
 #include <unistd.h>
 #endif /* HAVE_UNISTD_H */
 
+#ifdef ENABLE_X11
 #include <gdk/gdkx.h>
+#endif
 #include <gtk/gtk.h>
 
 #include "gs-fade.h"
@@ -44,20 +46,23 @@
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
 
+#ifdef ENABLE_X11
 #include "libmate-desktop/mate-rr.h"
+#endif
 
 /* XFree86 4.x+ Gamma fading */
 
-#ifdef HAVE_XF86VMODE_GAMMA
+#if defined(ENABLE_X11) && defined(HAVE_XF86VMODE_GAMMA)
 
 #include <X11/extensions/xf86vmode.h>
 
 #define XF86_MIN_GAMMA  0.1
 
-#endif /* HAVE_XF86VMODE_GAMMA */
+#endif /* ENABLE_X11 && HAVE_XF86VMODE_GAMMA */
 
 static void     gs_fade_finalize   (GObject        *object);
 
+#ifdef ENABLE_X11
 struct GSGammaInfo
 {
 	int              size;
@@ -65,19 +70,22 @@ struct GSGammaInfo
 	unsigned short  *g;
 	unsigned short  *b;
 };
+#endif
 
 struct GSFadeScreenPrivate
 {
 	int                 fade_type;
 	int                 num_ramps;
+#ifdef ENABLE_X11
 	/* one per crtc in randr mode */
 	struct GSGammaInfo *info;
 	/* one per screen in theory */
 	MateRRScreen      *rrscreen;
-#ifdef HAVE_XF86VMODE_GAMMA
+#if defined(ENABLE_X11) && defined(HAVE_XF86VMODE_GAMMA)
 	/* one per screen also */
 	XF86VidModeGamma    vmg;
 #endif /* HAVE_XF86VMODE_GAMMA */
+#endif /* ENABLE_X11 */
 	gboolean (*fade_setup)           (GSFade *fade);
 	gboolean (*fade_set_alpha_gamma) (GSFade *fade,
 	                                  gdouble alpha);
@@ -121,7 +129,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (GSFade, gs_fade, G_TYPE_OBJECT)
 
 static gpointer fade_object = NULL;
 
-#ifdef HAVE_XF86VMODE_GAMMA
+#if defined(ENABLE_X11) && defined(HAVE_XF86VMODE_GAMMA)
 
 /* This is needed because the VidMode extension doesn't work
    on remote displays -- but if the remote display has the extension
@@ -276,7 +284,7 @@ gs_fade_set_enabled (GSFade  *fade,
 	}
 }
 
-#ifdef HAVE_XF86VMODE_GAMMA
+#if defined(ENABLE_X11) && defined(HAVE_XF86VMODE_GAMMA)
 static gboolean
 gamma_fade_setup (GSFade *fade)
 {
@@ -374,6 +382,7 @@ FAIL:
 static void
 screen_fade_finish (GSFade *fade)
 {
+#ifdef ENABLE_X11
 	struct GSFadeScreenPrivate *screen_priv;
 	int i;
 	screen_priv = &fade->priv->screen_priv;
@@ -394,9 +403,10 @@ screen_fade_finish (GSFade *fade)
 	g_free (screen_priv->info);
 	screen_priv->info = NULL;
 	screen_priv->num_ramps = 0;
+#endif /* ENABLE_X11 */
 }
 
-#ifdef HAVE_XF86VMODE_GAMMA
+#if defined(ENABLE_X11) && defined(HAVE_XF86VMODE_GAMMA)
 static gboolean
 gamma_fade_set_alpha_gamma (GSFade *fade,
                             gdouble alpha)
@@ -414,8 +424,9 @@ gamma_fade_set_alpha_gamma (GSFade *fade,
 static void
 check_gamma_extension (GSFade *fade)
 {
+#ifdef ENABLE_X11
 	struct GSFadeScreenPrivate *screen_priv;
-#ifdef HAVE_XF86VMODE_GAMMA
+#if defined(ENABLE_X11) && defined(HAVE_XF86VMODE_GAMMA)
 	int      event;
 	int      error;
 	int      major;
@@ -425,7 +436,7 @@ check_gamma_extension (GSFade *fade)
 
 	screen_priv = &fade->priv->screen_priv;
 
-#ifdef HAVE_XF86VMODE_GAMMA
+#if defined(ENABLE_X11) && defined(HAVE_XF86VMODE_GAMMA)
 	res = XF86VidModeQueryExtension (GDK_DISPLAY_XDISPLAY (gdk_display_get_default ()), &event, &error);
 	if (! res)
 		goto fade_none;
@@ -457,10 +468,14 @@ check_gamma_extension (GSFade *fade)
 fade_none:
 #endif
 	screen_priv->fade_type = FADE_TYPE_NONE;
+#else /* !ENABLE_X11 */
+	fade->priv->screen_priv.fade_type = FADE_TYPE_NONE;
+#endif /* ENABLE_X11 */
 }
 
 /* Xrandr support */
 
+#ifdef ENABLE_X11
 static gboolean xrandr_fade_setup (GSFade *fade)
 {
 	struct GSFadeScreenPrivate *screen_priv;
@@ -606,6 +621,7 @@ check_randr_extension (GSFade *fade)
 	screen_priv->fade_finish = screen_fade_finish;
 	screen_priv->fade_set_alpha_gamma = xrandr_fade_set_alpha_gamma;
 }
+#endif /* ENABLE_X11 */
 
 static gboolean
 gs_fade_set_alpha (GSFade *fade,
@@ -883,10 +899,20 @@ gs_fade_init (GSFade *fade)
 	fade->priv->timeout = 1000;
 	fade->priv->current_alpha = 1.0;
 
-	check_randr_extension (fade);
-	if (!fade->priv->screen_priv.fade_type)
-		check_gamma_extension (fade);
-	gs_debug ("Fade type: %d", fade->priv->screen_priv.fade_type);
+#ifdef ENABLE_X11
+	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+	{
+		check_randr_extension (fade);
+		if (!fade->priv->screen_priv.fade_type)
+			check_gamma_extension (fade);
+		gs_debug ("Fade type: %d", fade->priv->screen_priv.fade_type);
+	}
+	else
+#endif
+	{
+		fade->priv->screen_priv.fade_type = FADE_TYPE_NONE;
+		gs_debug ("Fade type: none (Wayland)");
+	}
 }
 
 static void
@@ -901,11 +927,14 @@ gs_fade_finalize (GObject *object)
 
 	g_return_if_fail (fade->priv != NULL);
 
-	fade->priv->screen_priv.fade_finish(fade);
+	if (fade->priv->screen_priv.fade_finish)
+		fade->priv->screen_priv.fade_finish(fade);
 
+#ifdef ENABLE_X11
 	if (fade->priv->screen_priv.rrscreen)
 		g_object_unref (fade->priv->screen_priv.rrscreen);
 	fade->priv->screen_priv.rrscreen = NULL;
+#endif
 
 	G_OBJECT_CLASS (gs_fade_parent_class)->finalize (object);
 }

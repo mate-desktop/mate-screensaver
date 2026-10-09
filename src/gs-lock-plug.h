@@ -44,6 +44,8 @@ typedef enum
 
 typedef struct GSLockPlugPrivate GSLockPlugPrivate;
 
+#ifdef ENABLE_X11
+#include <gtk/gtkx.h>
 typedef struct
 {
 	GtkPlug            parent;
@@ -61,6 +63,25 @@ typedef struct
 	void (* close)    (GSLockPlug *plug);
 
 } GSLockPlugClass;
+#else
+typedef struct
+{
+	GtkWindow          parent;
+
+	GSLockPlugPrivate *priv;
+} GSLockPlug;
+
+typedef struct
+{
+	GtkWindowClass       parent_class;
+
+	void (* response) (GSLockPlug *plug, gint response_id);
+
+	/* Keybinding signals */
+	void (* close)    (GSLockPlug *plug);
+
+} GSLockPlugClass;
+#endif
 
 GType       gs_lock_plug_get_type       (void);
 GtkWidget * gs_lock_plug_new            (void);

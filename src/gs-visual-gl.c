@@ -28,7 +28,9 @@
 #include <string.h>
 
 #include <gdk/gdk.h>
+#ifdef ENABLE_X11
 #include <gdk/gdkx.h>
+#endif
 
 #ifdef HAVE_LIBGL
 #include <GL/gl.h>

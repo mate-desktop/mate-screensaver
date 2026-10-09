@@ -671,7 +671,12 @@ gs_auth_pam_verify_user (pam_handle_t *handle,
 out:
 	if (watch_id != 0)
 	{
-		g_source_remove (watch_id);
+		/* the watch may have already destroyed itself by dispatching
+		 * (returning FALSE) when the auth thread closed its pipe end */
+		if (g_main_context_find_source_by_id (NULL, watch_id) != NULL)
+		{
+			g_source_remove (watch_id);
+		}
 		watch_id = 0;
 	}
 

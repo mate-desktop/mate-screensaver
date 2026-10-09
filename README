@@ -25,6 +25,16 @@ See the file 'INSTALL'
 make
 sudo make install
 
+Wayland support requires libwlembed (https://gitlab.xfce.org/kelnos/libwlembed).
+A system-installed libwlembed is preferred; if it is not found, configure builds
+the bundled copy from the submodules/libwlembed submodule automatically. In that
+case make sure the submodule is initialized before running autogen.sh/configure:
+
+        git submodule update --init --recursive
+
+Building the bundled copy requires meson, ninja and xfce4-dev-tools (for
+xdt-gen-visibility).
+
 
 How to report bugs
 ==================

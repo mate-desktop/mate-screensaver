@@ -35,9 +35,17 @@
 #include <glib/gstdio.h>
 #include <glib/gi18n.h>
 #include <gdk/gdkkeysyms.h>
+#ifdef ENABLE_X11
 #include <gdk/gdkx.h>
+#endif
 #include <gtk/gtk.h>
+#ifdef ENABLE_X11
 #include <gtk/gtkx.h>
+#endif
+#ifdef ENABLE_WAYLAND
+#include <gdk/gdkwayland.h>
+#include <libwlembed-gtk3/libwlembed-gtk3.h>
+#endif
 #include <gio/gio.h>
 
 #define MATE_DESKTOP_USE_UNSTABLE_API
@@ -154,7 +162,100 @@ enum
 
 static guint lock_plug_signals [LAST_SIGNAL] = { 0 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (GSLockPlug, gs_lock_plug, GTK_TYPE_PLUG)
+static void     gs_lock_plug_init       (GSLockPlug      *plug);
+static void     gs_lock_plug_class_init (GSLockPlugClass *klass);
+static gpointer gs_lock_plug_parent_class = NULL;
+static gint     GSLockPlug_private_offset;
+
+/* The parent type cannot be chosen at compile time when both X11 and
+ * Wayland support are built in: on X11 the plug is a GtkPlug that gets
+ * reparented into a GtkSocket, on Wayland it is a WleGtkPlug embedded
+ * through libwlembed. The display backend is known by the time this
+ * type gets registered (after gtk_init), so pick the parent then.
+ *
+ * Both possible parents are GtkWindow-derived with a GtkWindow as the
+ * first member, so the instance and class structs declared in
+ * gs-lock-plug.h are layout compatible with either choice.
+ *
+ * The type registration below mirrors what G_DEFINE_TYPE_WITH_PRIVATE()
+ * expands to, since the macro cannot be used when the parent type has to
+ * be chosen at runtime. In particular the private data offset must come
+ * from g_type_add_instance_private()'s return value and private fields
+ * must be accessed through that offset; the deprecated
+ * g_type_instance_get_private() API computes an offset that collides
+ * with private data registered by parents using G_ADD_PRIVATE() (such as
+ * WleGtkPlug), corrupting their state. */
+static void
+gs_lock_plug_class_intern_init (gpointer klass,
+                                gpointer data)
+{
+	gs_lock_plug_parent_class = g_type_class_peek_parent (klass);
+
+	if (GSLockPlug_private_offset != 0)
+	{
+		g_type_class_adjust_private_offset (klass, &GSLockPlug_private_offset);
+	}
+
+	gs_lock_plug_class_init ((GSLockPlugClass *) klass);
+}
+
+static inline gpointer
+gs_lock_plug_get_instance_private (GSLockPlug *plug)
+{
+	return G_STRUCT_MEMBER_P (plug, GSLockPlug_private_offset);
+}
+
+GType
+gs_lock_plug_get_type (void)
+{
+	static GType type_id = 0;
+
+	if (g_once_init_enter (&type_id))
+	{
+		const GTypeInfo info =
+		{
+			sizeof (GSLockPlugClass),
+			NULL,                            /* base_init           */
+			NULL,                            /* base_finalize       */
+			gs_lock_plug_class_intern_init,
+			NULL,                            /* class_finalize      */
+			NULL,                            /* class_data          */
+			sizeof (GSLockPlug),
+			0,                               /* n_preallocs         */
+			(GInstanceInitFunc) gs_lock_plug_init,
+			NULL                             /* value_table         */
+		};
+		GType id;
+		GType parent_type;
+
+#ifdef ENABLE_WAYLAND
+		if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+		{
+			parent_type = WLE_TYPE_GTK_PLUG;
+		}
+		else
+#endif
+		{
+#ifdef ENABLE_X11
+			parent_type = GTK_TYPE_PLUG;
+#else
+			parent_type = GTK_TYPE_WINDOW;
+#endif
+		}
+
+		id = g_type_register_static (parent_type,
+		                             g_intern_static_string ("GSLockPlug"),
+		                             &info,
+		                             0);
+
+		GSLockPlug_private_offset =
+			g_type_add_instance_private (id, sizeof (GSLockPlugPrivate));
+
+		g_once_init_leave (&type_id, id);
+	}
+
+	return type_id;
+}
 
 static void
 gs_lock_plug_style_set (GtkWidget *widget,
@@ -2126,8 +2227,9 @@ gs_lock_plug_init (GSLockPlug *plug)
 	}
 
 	/* Layout indicator */
-#ifdef WITH_KBD_LAYOUT_INDICATOR
-	if (plug->priv->auth_prompt_kbd_layout_indicator != NULL)
+#if defined(WITH_KBD_LAYOUT_INDICATOR) && defined(ENABLE_X11)
+	if (plug->priv->auth_prompt_kbd_layout_indicator != NULL &&
+	    GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
 	{
 		XklEngine *engine;
 
@@ -2295,7 +2397,37 @@ gs_lock_plug_finalize (GObject *object)
 GtkWidget *
 gs_lock_plug_new (void)
 {
-	GtkWidget *result;
+	GtkWidget  *result;
+
+#ifdef ENABLE_WAYLAND
+	const char *embedding_token;
+
+	embedding_token = g_getenv ("XSCREENSAVER_WINDOW");
+
+	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+	{
+		if (embedding_token != NULL && embedding_token[0] != '\0')
+		{
+			result = g_object_new (GS_TYPE_LOCK_PLUG,
+			                       "embedding-token", embedding_token,
+			                       NULL);
+
+			gs_debug ("Created lock plug with embedding token '%s'",
+			          embedding_token);
+		}
+		else
+		{
+			result = g_object_new (GS_TYPE_LOCK_PLUG, NULL);
+
+			g_warning ("No embedding token in environment; "
+			           "the lock dialog will not be embedded");
+		}
+
+		gtk_window_set_focus_on_map (GTK_WINDOW (result), TRUE);
+
+		return result;
+	}
+#endif
 
 	result = g_object_new (GS_TYPE_LOCK_PLUG, NULL);
 
