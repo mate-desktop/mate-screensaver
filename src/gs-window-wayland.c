@@ -967,6 +967,18 @@ attach_lock_surface (GSWindow *window)
 	}
 }
 
+static void
+gs_window_wayland_forget_lock_surface (GSWindow *window)
+{
+	GSWindowWaylandPrivate *priv;
+
+	g_return_if_fail (GS_IS_WINDOW_WAYLAND (window));
+
+	priv = GS_WINDOW_WAYLAND_GET_PRIVATE (window);
+
+	priv->lock_surface = NULL;
+}
+
 void
 gs_window_wayland_create_lock_surface (GSWindow *window)
 {
@@ -1012,8 +1024,8 @@ gs_window_wayland_cancel_unlock_request (GSWindow *window)
 {
 	g_return_if_fail (GS_IS_WINDOW_WAYLAND (window));
 
-	destroy_lock_surface (window);
-
+	/* Do NOT destroy the lock surface here: it must stay alive for as
+	 * long as the session is locked. This only cancels the unlock dialog. */
 	wayland_window_set_dialog_up (window, FALSE);
 }
 
@@ -1066,8 +1078,6 @@ gs_window_real_hide (GtkWidget *widget)
 	remove_watchdog_timer (window);
 
 	popdown_dialog (window);
-
-	destroy_lock_surface (window);
 
 	if (GTK_WIDGET_CLASS (gs_window_wayland_parent_class)->hide)
 	{
@@ -1144,8 +1154,6 @@ static void
 gs_window_real_unrealize (GtkWidget *widget)
 {
 	remove_watchdog_timer (GS_WINDOW (widget));
-
-	destroy_lock_surface (GS_WINDOW (widget));
 
 	if (GTK_WIDGET_CLASS (gs_window_wayland_parent_class)->unrealize)
 	{
@@ -1368,6 +1376,7 @@ gs_window_wayland_class_init (GSWindowWaylandClass *klass)
 	window_class->request_unlock = gs_window_wayland_request_unlock;
 	window_class->cancel_unlock_request = gs_window_wayland_cancel_unlock_request;
 	window_class->create_lock_surface = gs_window_wayland_create_lock_surface;
+	window_class->forget_lock_surface = gs_window_wayland_forget_lock_surface;
 
 	widget_class->hide                = gs_window_real_hide;
 	widget_class->draw                = gs_window_real_draw;

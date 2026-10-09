@@ -238,12 +238,21 @@ manager_session_lock_handle_finished (void                        *data,
                                       struct ext_session_lock_v1 *session_lock)
 {
 	GSManager *manager = GS_MANAGER (data);
+	GSList    *l;
+	GSList    *snapshot;
 
 	gs_debug ("Session lock finished by compositor");
 
-	/* The protocol requires destroying the lock object on "finished":
-	   unlock_and_destroy() if the locked event was received, plain
-	   destroy() otherwise. */
+	snapshot = g_slist_copy (manager->priv->windows);
+	for (l = snapshot; l; l = l->next)
+	{
+		if (g_slist_find (manager->priv->windows, l->data))
+		{
+			gs_window_forget_lock_surface (GS_WINDOW (l->data));
+		}
+	}
+	g_slist_free (snapshot);
+
 	if (manager->priv->session_lock_active)
 	{
 		ext_session_lock_v1_unlock_and_destroy (session_lock);

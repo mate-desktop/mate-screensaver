@@ -61,6 +61,7 @@ typedef struct
 	void            (* real_destroy)        (GSWindow *window);
 
 	void            (* create_lock_surface) (GSWindow *window);
+	void            (* forget_lock_surface) (GSWindow *window);
 } GSWindowClass;
 
 GType       gs_window_get_type           (void);
@@ -100,6 +101,7 @@ void        gs_window_show_message         (GSWindow   *window,
 void        gs_window_request_unlock     (GSWindow  *window);
 void        gs_window_cancel_unlock_request (GSWindow  *window);
 void        gs_window_create_lock_surface (GSWindow *window);
+void        gs_window_forget_lock_surface (GSWindow *window);
 
 GSWindow  * gs_window_new                (GdkMonitor *monitor,
                                           gboolean   lock_enabled);
