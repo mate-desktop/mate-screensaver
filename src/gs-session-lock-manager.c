@@ -257,7 +257,7 @@ on_window_realize (GtkWidget            *widget,
 	lock_surface->output = wl_output;
 	g_hash_table_insert (manager->lock_surfaces, window, lock_surface);
 
-	wl_display_roundtrip (gdk_wayland_display_get_wl_display (gdk_display_get_default ()));
+	wl_display_flush (gdk_wayland_display_get_wl_display (gdk_display_get_default ()));
 
 	gs_debug ("Lock surface created for monitor %s",
 	          monitor != NULL ? gdk_monitor_get_model (monitor) : "(none)");
@@ -382,7 +382,8 @@ gs_session_lock_manager_lock (GSSessionLockManager *manager)
 	}
 
 	ext_session_lock_v1_add_listener (manager->wl_lock, &lock_listener, manager);
-	wl_display_roundtrip (gdk_wayland_display_get_wl_display (gdk_display_get_default ()));
+
+	wl_display_flush (gdk_wayland_display_get_wl_display (gdk_display_get_default ()));
 
 	return manager->wl_lock != NULL;
 }
@@ -432,7 +433,7 @@ gs_session_lock_manager_unlock (GSSessionLockManager *manager)
 		ext_session_lock_v1_destroy (manager->wl_lock);
 	}
 
-	wl_display_roundtrip (gdk_wayland_display_get_wl_display (gdk_display_get_default ()));
+	wl_display_flush (gdk_wayland_display_get_wl_display (gdk_display_get_default ()));
 
 	manager->wl_lock = NULL;
 	manager->locked = FALSE;

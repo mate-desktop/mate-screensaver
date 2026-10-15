@@ -95,6 +95,7 @@ struct GSWindowPrivate
 	gint       lock_child_watch_id;
 	guint      popup_dialog_retry_id;
 	guint      dialog_defer_count;
+	guint      dialog_embed_timeout_id;
 
 	gboolean   have_last_motion;
 	gdouble    last_motion_x;

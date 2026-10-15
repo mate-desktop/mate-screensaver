@@ -95,6 +95,10 @@ enum
  * before bringing up the unlock dialog anyway (200ms per try) */
 #define MAX_DIALOG_DEFER_TRIES 25
 
+/* How long to wait for the spawned unlock dialog to embed into its
+ * socket before giving up on this attempt and popping it back down */
+#define DIALOG_EMBED_TIMEOUT_MS 5000
+
 /* Minimum pointer travel (pixels) between events before motion
  * counts as real user activity */
 #define MOTION_ACTIVITY_THRESHOLD 4
@@ -107,6 +111,10 @@ static void remove_key_events (GSWindow *window);
 static void popdown_dialog (GSWindow *window);
 static void popup_dialog (GSWindow *window);
 static void remove_watchdog_timer (GSWindow *window);
+
+#ifdef ENABLE_WAYLAND
+static gboolean dialog_embed_timeout (gpointer data);
+#endif
 
 #ifdef ENABLE_X11
 static void create_info_bar (GSWindow *window);
@@ -713,6 +721,12 @@ remove_popup_dialog_sources (GSWindow *window)
 		window->priv->popup_dialog_retry_id = 0;
 	}
 
+	if (window->priv->dialog_embed_timeout_id != 0)
+	{
+		g_source_remove (window->priv->dialog_embed_timeout_id);
+		window->priv->dialog_embed_timeout_id = 0;
+	}
+
 	window->priv->dialog_defer_count = 0;
 #endif
 }
@@ -971,6 +985,14 @@ static void
 lock_plug_added (GtkWidget *widget,
                  GSWindow  *window)
 {
+#ifdef ENABLE_WAYLAND
+	/* The dialog embedded successfully; stop the embed watchdog. */
+	if (window->priv->dialog_embed_timeout_id != 0)
+	{
+		g_source_remove (window->priv->dialog_embed_timeout_id);
+		window->priv->dialog_embed_timeout_id = 0;
+	}
+#endif
 	gtk_widget_show (widget);
 }
 
@@ -1865,6 +1887,27 @@ wayland_spawn_on_window (GSWindow     *window,
 	return TRUE;
 }
 
+static gboolean
+dialog_embed_timeout (gpointer data)
+{
+	GSWindow *window = GS_WINDOW (data);
+
+	window->priv->dialog_embed_timeout_id = 0;
+
+	/* The dialog process started but never embedded its plug into our
+	 * socket. Tear this attempt down instead of leaving an empty socket
+	 * that silently blocks further unlock requests: the session stays
+	 * locked and the next real user activity pops the dialog up again. */
+	if (window->priv->lock_socket != NULL)
+	{
+		gs_debug ("Unlock dialog did not embed within %d ms, popping it down",
+		          DIALOG_EMBED_TIMEOUT_MS);
+		popdown_dialog (window);
+	}
+
+	return FALSE;
+}
+
 static void
 wayland_popup_dialog (GSWindow *window)
 {
@@ -2005,6 +2048,18 @@ wayland_popup_dialog (GSWindow *window)
 		}
 
 		set_invisible_cursor (gtk_widget_get_window (GTK_WIDGET (window)), TRUE);
+	}
+	else
+	{
+		/* Watch for a dialog that starts but never embeds; lock_plug_added
+		 * cancels this once the plug shows up. */
+		if (window->priv->dialog_embed_timeout_id != 0)
+		{
+			g_source_remove (window->priv->dialog_embed_timeout_id);
+		}
+		window->priv->dialog_embed_timeout_id = g_timeout_add (DIALOG_EMBED_TIMEOUT_MS,
+		                                                      dialog_embed_timeout,
+		                                                      window);
 	}
 
 	g_string_free (command, TRUE);
@@ -2851,6 +2906,7 @@ gs_window_init (GSWindow *window)
 	window->priv->lock_child_watch_id = 0;
 	window->priv->popup_dialog_retry_id = 0;
 	window->priv->dialog_defer_count = 0;
+	window->priv->dialog_embed_timeout_id = 0;
 	window->priv->have_last_motion = FALSE;
 	window->priv->last_motion_x = 0;
 	window->priv->last_motion_y = 0;

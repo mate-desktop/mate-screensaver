@@ -604,6 +604,11 @@ wayland_activate_monitoring (GSWatcher *watcher,
     priv->idle = FALSE;
     priv->idle_notice = FALSE;
 
+    remove_idle_notification (watcher, &priv->idle_notification);
+    remove_idle_notification (watcher, &priv->lock_notification);
+    remove_idle_notifier (watcher);
+    remove_registry (watcher);
+
     display = gdk_wayland_display_get_wl_display (gdk_display_get_default ());
     if (display == NULL)
     {
@@ -620,9 +625,6 @@ wayland_activate_monitoring (GSWatcher *watcher,
 
     wl_registry_add_listener (priv->registry, &registry_listener, watcher);
     wl_display_roundtrip (display);
-
-    remove_idle_notification (watcher, &priv->idle_notification);
-    remove_idle_notification (watcher, &priv->lock_notification);
 
     priv->idle_notification = create_idle_notification (watcher,
                                                         timeout_ms,
