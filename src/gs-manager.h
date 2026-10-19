@@ -103,6 +103,11 @@ void        gs_manager_show_message         (GSManager  *manager,
 gboolean    gs_manager_request_unlock       (GSManager  *manager);
 void        gs_manager_cancel_unlock_request (GSManager *manager);
 
+#ifdef ENABLE_WAYLAND
+#include <libwlembed-gtk3/libwlembed-gtk3.h>
+WleEmbeddedCompositor * gs_manager_get_compositor (GSManager *manager);
+#endif
+
 G_END_DECLS
 
 #endif /* __GS_MANAGER_H */

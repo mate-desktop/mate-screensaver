@@ -1,0 +1,3 @@
+[submodule "submodules/libwlembed"]
+	path = submodules/libwlembed
+	url = https://gitlab.xfce.org/kelnos/libwlembed.git

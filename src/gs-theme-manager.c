@@ -305,6 +305,13 @@ gs_theme_manager_lookup_theme_info (GSThemeManager *theme_manager,
 	g_return_val_if_fail (name != NULL, NULL);
 
 	id = g_strdup_printf ("%s.desktop", name);
+
+	if (theme_manager->priv->menu_tree == NULL)
+	{
+		g_free (id);
+		return NULL;
+	}
+
 	info = find_info_for_id (theme_manager->priv->menu_tree, id);
 	g_free (id);
 
@@ -351,6 +358,11 @@ gs_theme_manager_get_info_list (GSThemeManager *theme_manager)
 	MateMenuTreeDirectory *root;
 
 	g_return_val_if_fail (GS_IS_THEME_MANAGER (theme_manager), NULL);
+
+	if (theme_manager->priv->menu_tree == NULL)
+	{
+		return NULL;
+	}
 
 	root = matemenu_tree_get_root_directory (theme_manager->priv->menu_tree);
 
@@ -409,6 +421,11 @@ gs_theme_manager_init (GSThemeManager *theme_manager)
 	theme_manager->priv = gs_theme_manager_get_instance_private (theme_manager);
 
 	theme_manager->priv->menu_tree = get_themes_tree ();
+	if (theme_manager->priv->menu_tree == NULL)
+	{
+		return;
+	}
+
 	g_signal_connect (theme_manager->priv->menu_tree, "changed",
 	                  G_CALLBACK (on_applications_changed),
 	                  NULL);

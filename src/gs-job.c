@@ -39,7 +39,14 @@
 #include <glib/gstdio.h>
 #include <gio/gio.h>
 #include <gdk/gdk.h>
+#ifdef ENABLE_X11
 #include <gdk/gdkx.h>
+#include <gtk/gtkx.h>
+#endif
+#ifdef ENABLE_WAYLAND
+#include <gdk/gdkwayland.h>
+#include <libwlembed-gtk3/libwlembed-gtk3.h>
+#endif
 
 #include "gs-debug.h"
 #include "gs-job.h"
@@ -77,8 +84,40 @@ widget_get_id_string (GtkWidget *widget)
 
 	g_return_val_if_fail (widget != NULL, NULL);
 
-	id = g_strdup_printf ("0x%X",
-	                      (guint32)GDK_WINDOW_XID (gtk_widget_get_window (widget)));
+#ifdef ENABLE_X11
+	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+	{
+		if (GTK_IS_SOCKET (widget))
+		{
+			id = g_strdup_printf ("0x%lX", gtk_socket_get_id (GTK_SOCKET (widget)));
+		}
+		else
+		{
+			id = g_strdup_printf ("0x%X",
+			                      (guint32)GDK_WINDOW_XID (gtk_widget_get_window (widget)));
+		}
+	}
+#endif
+#ifdef ENABLE_WAYLAND
+	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+	{
+		if (WLE_IS_GTK_SOCKET (widget))
+		{
+			id = g_strdup (wle_gtk_socket_get_embedding_token (WLE_GTK_SOCKET (widget)));
+			gs_debug ("widget_get_id_string: WleGtkSocket, embedding token '%s'", id);
+		}
+		else
+		{
+			gs_debug ("widget_get_id_string: Wayland but widget is '%s', no token", G_OBJECT_TYPE_NAME (widget));
+		}
+	}
+#endif
+
+	if (id == NULL)
+	{
+		id = g_strdup_printf ("0x%X", 0);
+	}
+
 	return id;
 }
 
@@ -268,13 +307,36 @@ get_env_vars (GtkWidget *widget)
 		"XAUTHLOCALHOSTNAME",
 		"LANG",
 		"LANGUAGE",
-		"DBUS_SESSION_BUS_ADDRESS"
+		"DBUS_SESSION_BUS_ADDRESS",
+		"G_DEBUG",
+		"G_MESSAGES_DEBUG",
+		"LD_LIBRARY_PATH",
+		"XDG_RUNTIME_DIR"
 	};
 
 	env = g_ptr_array_new ();
 
 	display_name = gdk_display_get_name (gtk_widget_get_display (widget));
-	g_ptr_array_add (env, g_strdup_printf ("DISPLAY=%s", display_name));
+#ifdef ENABLE_X11
+	if (GDK_IS_X11_DISPLAY (gdk_display_get_default ()))
+	{
+		g_ptr_array_add (env, g_strdup_printf ("DISPLAY=%s", display_name));
+	}
+#endif
+#ifdef ENABLE_WAYLAND
+	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+	{
+		const char *xdisplay;
+
+		g_ptr_array_add (env, g_strdup_printf ("WAYLAND_DISPLAY=%s", display_name));
+
+		xdisplay = g_getenv ("DISPLAY");
+		if (xdisplay != NULL)
+		{
+			g_ptr_array_add (env, g_strdup_printf ("DISPLAY=%s", xdisplay));
+		}
+	}
+#endif
 
 	g_ptr_array_add (env, g_strdup_printf ("HOME=%s",
 	                                       g_get_home_dir ()));
@@ -295,9 +357,15 @@ get_env_vars (GtkWidget *widget)
 
 	str = widget_get_id_string (widget);
 	g_ptr_array_add (env, g_strdup_printf ("XSCREENSAVER_WINDOW=%s", str));
+	gs_debug ("get_env_vars: XSCREENSAVER_WINDOW=%s", str);
 	g_free (str);
 
 	g_ptr_array_add (env, NULL);
+
+	for (i = 0; env->pdata[i] != NULL; i++)
+	{
+		gs_debug ("get_env_vars: env[%d]=%s", i, (char *)g_ptr_array_index (env, i));
+	}
 
 	return env;
 }
@@ -335,17 +403,43 @@ spawn_on_widget (GtkWidget  *widget,
 	env = get_env_vars (widget);
 
 	error = NULL;
-	result = g_spawn_async_with_pipes (NULL,
-	         argv,
-	         (char **)env->pdata,
-	         G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD,
-	         NULL,
-	         NULL,
-	         &child_pid,
-	         NULL,
-	         NULL,
-	         &standard_error,
-	         &error);
+#ifdef ENABLE_WAYLAND
+	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()) &&
+	    WLE_IS_GTK_SOCKET (widget))
+	{
+		WleEmbeddedCompositor *compositor;
+
+		gs_debug ("spawn_on_widget: using wle_embedded_compositor_spawn_with_pipes for '%s'", command);
+		compositor = wle_gtk_socket_get_embedded_compositor (WLE_GTK_SOCKET (widget));
+		result = wle_embedded_compositor_spawn_with_pipes (compositor,
+		                                                   NULL,
+		                                                   argv,
+		                                                   (char **)env->pdata,
+		                                                   G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD,
+		                                                   NULL,
+		                                                   NULL,
+		                                                   &child_pid,
+		                                                   NULL,
+		                                                   NULL,
+		                                                   &standard_error,
+		                                                   &error);
+	}
+	else
+#endif
+	{
+		gs_debug ("spawn_on_widget: using g_spawn_async_with_pipes for '%s'", command);
+		result = g_spawn_async_with_pipes (NULL,
+		         argv,
+		         (char **)env->pdata,
+		         G_SPAWN_SEARCH_PATH | G_SPAWN_DO_NOT_REAP_CHILD,
+		         NULL,
+		         NULL,
+		         &child_pid,
+		         NULL,
+		         NULL,
+		         &standard_error,
+		         &error);
+	}
 
 	for (i = 0; i < env->len; i++)
 	{
@@ -360,6 +454,8 @@ spawn_on_widget (GtkWidget  *widget,
 		g_strfreev (argv);
 		return FALSE;
 	}
+
+	gs_debug ("spawn_on_widget: started '%s' with pid %d", command, child_pid);
 
 	g_strfreev (argv);
 
@@ -485,6 +581,45 @@ gs_job_start (GSJob *job)
 		gs_debug ("No command set for job.");
 		return FALSE;
 	}
+
+	/* xscreensaver hacks are plain X11 clients; they cannot draw into the
+	   embedded compositor and die immediately with "Can't open display".
+	   Skip only those so we get a clean blank saver instead. Mate's own
+	   plug-based themes are wle-aware and must keep working. */
+#ifdef ENABLE_WAYLAND
+	if (GDK_IS_WAYLAND_DISPLAY (gdk_display_get_default ()))
+	{
+		char **argv = NULL;
+		char *resolved = NULL;
+		gboolean skip = FALSE;
+
+		if (g_shell_parse_argv (job->priv->command, NULL, &argv, NULL)
+		        && argv[0] != NULL)
+		{
+			if (g_path_is_absolute (argv[0]))
+			{
+				resolved = g_strdup (argv[0]);
+			}
+			else
+			{
+				resolved = g_find_program_in_path (argv[0]);
+			}
+		}
+
+		skip = (resolved != NULL &&
+		        strstr (resolved, G_DIR_SEPARATOR_S "xscreensaver") != NULL);
+
+		g_free (resolved);
+		g_strfreev (argv);
+
+		if (skip)
+		{
+			gs_debug ("Not starting X11 screensaver hack '%s': unsupported on Wayland.",
+			          job->priv->command);
+			return FALSE;
+		}
+	}
+#endif
 
 	char *final_command = NULL;
 	GSettings *settings = g_settings_new ("org.mate.screensaver");

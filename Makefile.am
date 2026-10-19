@@ -38,6 +38,28 @@ EXTRA_DIST =			\
 DISTCLEANFILES =		\
 	$(NULL)
 
+if ENABLE_BUNDLED_LIBWLEMBED
+
+# The bundled libwlembed submodule is built and staged at configure time (see
+# configure.ac), so there is nothing to build during "make". The hook below
+# only needs to copy it from the stage directory into the install prefix.
+
+install-exec-hook:
+	@if test "x@LIBWLEMBED_USE_BUNDLED@" = "xyes"; then \
+		echo "Installing bundled libwlembed..."; \
+		$(MESON) install -C $(LIBWLEMBED_SUBMODULE_BUILDDIR) \
+			--destdir "$(DESTDIR)" --no-rebuild; \
+	fi
+
+distclean-local:
+	rm -rf $(LIBWLEMBED_SUBMODULE_BUILDDIR)
+
+# Do not ship the submodule build directory in tarballs.
+dist-hook:
+	rm -rf $(distdir)/submodules/libwlembed/build
+
+endif
+
 MAINTAINERCLEANFILES =		\
 	*~			\
 	compile			\

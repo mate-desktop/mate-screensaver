@@ -27,7 +27,9 @@
 #include <glib/gi18n.h>
 
 #include <gtk/gtk.h>
+#ifdef ENABLE_X11
 #include <gdk/gdkx.h>
+#endif
 
 #include "gs-visual-gl.h"
 
@@ -68,8 +70,12 @@ main (int    argc,
 
 	if (visual != NULL)
 	{
+#ifdef ENABLE_X11
 		xvisual = gdk_x11_visual_get_xvisual (visual);
 		printf ("0x%x\n", (unsigned int) XVisualIDFromVisual (xvisual));
+#else
+		printf ("none\n");
+#endif
 	}
 	else
 	{

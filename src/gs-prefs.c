@@ -274,65 +274,77 @@ gs_prefs_load_from_settings (GSPrefs *prefs)
 	gchar    **strv;
 	gint       mode;
 
-	bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_IDLE_ACTIVATION_ENABLED);
-	_gs_prefs_set_idle_activation_enabled (prefs, bvalue);
+	if (prefs->priv->settings)
+	{
+		bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_IDLE_ACTIVATION_ENABLED);
+		_gs_prefs_set_idle_activation_enabled (prefs, bvalue);
 
-	bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_LOCK_ENABLED);
-	_gs_prefs_set_lock_enabled (prefs, bvalue);
+		bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_LOCK_ENABLED);
+		_gs_prefs_set_lock_enabled (prefs, bvalue);
+	}
 
-	bvalue = g_settings_get_boolean (prefs->priv->lockdown_settings, KEY_LOCK_DISABLE);
-	_gs_prefs_set_lock_disabled (prefs, bvalue);
+	if (prefs->priv->lockdown_settings)
+	{
+		bvalue = g_settings_get_boolean (prefs->priv->lockdown_settings, KEY_LOCK_DISABLE);
+		_gs_prefs_set_lock_disabled (prefs, bvalue);
 
-	bvalue = g_settings_get_boolean (prefs->priv->lockdown_settings, KEY_USER_SWITCH_DISABLE);
-	_gs_prefs_set_user_switch_disabled (prefs, bvalue);
+		bvalue = g_settings_get_boolean (prefs->priv->lockdown_settings, KEY_USER_SWITCH_DISABLE);
+		_gs_prefs_set_user_switch_disabled (prefs, bvalue);
+	}
 
-	value = g_settings_get_int (prefs->priv->session_settings, KEY_IDLE_DELAY);
-	_gs_prefs_set_timeout (prefs, value);
+	if (prefs->priv->session_settings)
+	{
+		value = g_settings_get_int (prefs->priv->session_settings, KEY_IDLE_DELAY);
+		_gs_prefs_set_timeout (prefs, value);
+	}
 
-	value = g_settings_get_int (prefs->priv->settings, KEY_POWER_DELAY);
-	_gs_prefs_set_power_timeout (prefs, value);
+	if (prefs->priv->settings)
+	{
+		value = g_settings_get_int (prefs->priv->settings, KEY_POWER_DELAY);
+		_gs_prefs_set_power_timeout (prefs, value);
 
-	value = g_settings_get_int (prefs->priv->settings, KEY_LOCK_DELAY);
-	_gs_prefs_set_lock_timeout (prefs, value);
+		value = g_settings_get_int (prefs->priv->settings, KEY_LOCK_DELAY);
+		_gs_prefs_set_lock_timeout (prefs, value);
 
-	value = g_settings_get_int (prefs->priv->settings, KEY_CYCLE_DELAY);
-	_gs_prefs_set_cycle_timeout (prefs, value);
+		value = g_settings_get_int (prefs->priv->settings, KEY_CYCLE_DELAY);
+		_gs_prefs_set_cycle_timeout (prefs, value);
 
-	mode = g_settings_get_enum (prefs->priv->settings, KEY_MODE);
-	_gs_prefs_set_mode (prefs, mode);
+		mode = g_settings_get_enum (prefs->priv->settings, KEY_MODE);
+		_gs_prefs_set_mode (prefs, mode);
 
-	strv = g_settings_get_strv (prefs->priv->settings, KEY_THEMES);
-	_gs_prefs_set_themes (prefs, strv);
-	g_strfreev (strv);
+		strv = g_settings_get_strv (prefs->priv->settings, KEY_THEMES);
+		_gs_prefs_set_themes (prefs, strv);
+		g_strfreev (strv);
 
-	/* Embedded keyboard options */
+		/* Embedded keyboard options */
 
-	bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_KEYBOARD_ENABLED);
-	_gs_prefs_set_keyboard_enabled (prefs, bvalue);
+		bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_KEYBOARD_ENABLED);
+		_gs_prefs_set_keyboard_enabled (prefs, bvalue);
 
-	string = g_settings_get_string (prefs->priv->settings, KEY_KEYBOARD_COMMAND);
-	_gs_prefs_set_keyboard_command (prefs, string);
-	g_free (string);
+		string = g_settings_get_string (prefs->priv->settings, KEY_KEYBOARD_COMMAND);
+		_gs_prefs_set_keyboard_command (prefs, string);
+		g_free (string);
 
-	bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_STATUS_MESSAGE_ENABLED);
-	_gs_prefs_set_status_message_enabled (prefs, bvalue);
+		bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_STATUS_MESSAGE_ENABLED);
+		_gs_prefs_set_status_message_enabled (prefs, bvalue);
 
-	/* Logout options */
+		/* Logout options */
 
-	bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_LOGOUT_ENABLED);
-	_gs_prefs_set_logout_enabled (prefs, bvalue);
+		bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_LOGOUT_ENABLED);
+		_gs_prefs_set_logout_enabled (prefs, bvalue);
 
-	string = g_settings_get_string (prefs->priv->settings, KEY_LOGOUT_COMMAND);
-	_gs_prefs_set_logout_command (prefs, string);
-	g_free (string);
+		string = g_settings_get_string (prefs->priv->settings, KEY_LOGOUT_COMMAND);
+		_gs_prefs_set_logout_command (prefs, string);
+		g_free (string);
 
-	value = g_settings_get_int (prefs->priv->settings, KEY_LOGOUT_DELAY);
-	_gs_prefs_set_logout_timeout (prefs, value);
+		value = g_settings_get_int (prefs->priv->settings, KEY_LOGOUT_DELAY);
+		_gs_prefs_set_logout_timeout (prefs, value);
 
-	/* User switching options */
+		/* User switching options */
 
-	bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_USER_SWITCH_ENABLED);
-	_gs_prefs_set_user_switch_enabled (prefs, bvalue);
+		bvalue = g_settings_get_boolean (prefs->priv->settings, KEY_USER_SWITCH_ENABLED);
+		_gs_prefs_set_user_switch_enabled (prefs, bvalue);
+	}
 }
 
 static void
@@ -495,20 +507,29 @@ gs_prefs_init (GSPrefs *prefs)
 	prefs->priv = gs_prefs_get_instance_private (prefs);
 
 	prefs->priv->settings = g_settings_new (GSETTINGS_SCHEMA);
-	g_signal_connect (prefs->priv->settings,
-			  "changed",
-			  G_CALLBACK (key_changed_cb),
-			  prefs);
+	if (prefs->priv->settings)
+	{
+		g_signal_connect (prefs->priv->settings,
+				  "changed",
+				  G_CALLBACK (key_changed_cb),
+				  prefs);
+	}
 	prefs->priv->lockdown_settings = g_settings_new (LOCKDOWN_SETTINGS_SCHEMA);
-	g_signal_connect (prefs->priv->lockdown_settings,
-			  "changed",
-			  G_CALLBACK (key_changed_cb),
-			  prefs);
+	if (prefs->priv->lockdown_settings)
+	{
+		g_signal_connect (prefs->priv->lockdown_settings,
+				  "changed",
+				  G_CALLBACK (key_changed_cb),
+				  prefs);
+	}
 	prefs->priv->session_settings = g_settings_new (SESSION_SETTINGS_SCHEMA);
-	g_signal_connect (prefs->priv->session_settings,
-			  "changed::" KEY_IDLE_DELAY,
-			  G_CALLBACK (key_changed_cb),
-			  prefs);
+	if (prefs->priv->session_settings)
+	{
+		g_signal_connect (prefs->priv->session_settings,
+				  "changed::" KEY_IDLE_DELAY,
+				  G_CALLBACK (key_changed_cb),
+				  prefs);
+	}
 
 	prefs->idle_activation_enabled = TRUE;
 	prefs->lock_enabled            = TRUE;

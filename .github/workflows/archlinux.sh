@@ -23,6 +23,7 @@ requires+=(
 	gettext
 	git
 	glib2-devel
+	gtk-layer-shell
 	libmatekbd
 	libnotify
 	libxss
@@ -34,6 +35,8 @@ requires+=(
 	mate-session-manager
 	systemd
 	which
+	wayland-protocols
+	xfce4-dev-tools
 )
 
 infobegin "Update system"
