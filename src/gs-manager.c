@@ -64,10 +64,6 @@ struct GSManagerPrivate
 	WleEmbeddedCompositor *compositor;
 	GSSessionLockManager  *lock_manager;
 	guint                  session_lock_finished_idle_id;
-	/* raise the unlock dialog as soon as the lock is confirmed
-	   (explicit lock request), as opposed to idle activation where
-	   the saver theme should keep running until user input */
-	gboolean               raise_dialog_on_lock;
 #endif
 
 	/* Policy */
@@ -160,16 +156,6 @@ manager_session_lock_locked_cb (GSSessionLockManager *lock_manager,
                                 GSManager            *manager)
 {
 	gs_debug ("Session lock confirmed by compositor");
-
-	/* Only raise the unlock dialog for an explicit lock request. On idle
-	   activation the saver theme keeps running until real user input
-	   arrives (same as xfce4-screensaver, which never pops the dialog
-	   from the locked event). */
-	if (manager->priv->raise_dialog_on_lock)
-	{
-		manager->priv->raise_dialog_on_lock = FALSE;
-		gs_manager_request_unlock (manager);
-	}
 }
 
 static void
@@ -530,15 +516,6 @@ gs_manager_set_lock_active (GSManager *manager,
 		GSList *l;
 
 		manager->priv->lock_active = (lock_active != FALSE);
-
-		/* an explicit lock request wants the password prompt right away;
-		   idle activation does not (saver keeps running until input) */
-#ifdef ENABLE_WAYLAND
-		if (lock_active)
-		{
-			manager->priv->raise_dialog_on_lock = TRUE;
-		}
-#endif
 
 		for (l = manager->priv->windows; l; l = l->next)
 		{
