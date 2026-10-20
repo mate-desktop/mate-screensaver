@@ -2,14 +2,16 @@
 
 # Fedora Core
 auth       include	system-auth
-auth       optional     pam_gnome_keyring.so
+-auth       optional     pam_gnome_keyring.so
+-auth       optional     pam_oo7.so
 account    include	system-auth
 password   include	system-auth
 session    include	system-auth
 
 # SuSE/Novell
 #auth       include      common-auth
-#auth       optional     pam_gnome_keyring.so
+#-auth       optional     pam_gnome_keyring.so
+#-auth       optional     pam_oo7.so
 #account    include      common-account
 #password   include      common-password
 #session    include      common-session
