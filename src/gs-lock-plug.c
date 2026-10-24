@@ -52,6 +52,7 @@
 #endif
 
 #include "gs-lock-plug.h"
+#include "gs-media-widget.h"
 
 #include "gs-debug.h"
 
@@ -61,6 +62,38 @@
 
 #define KEY_LOCK_DIALOG_T_FMT "lock-dialog-time-format"
 #define KEY_LOCK_DIALOG_D_FMT "lock-dialog-date-format"
+
+#define KEY_MEDIA_CONTROLS          "lock-dialog-media-controls"
+#define KEY_MEDIA_HIDE_PLAYER_NAME  "lock-dialog-media-hide-player-name"
+#define KEY_MEDIA_HIDE_ALBUM_ART    "lock-dialog-media-hide-album-art"
+#define KEY_MEDIA_HIDE_TRACK_INFO   "lock-dialog-media-hide-track-info"
+#define KEY_MEDIA_PROGRESS          "lock-dialog-media-progress"
+#define KEY_MEDIA_BUTTONS           "lock-dialog-media-buttons"
+#define KEY_MEDIA_PLAYING_ONLY      "lock-dialog-media-playing-only"
+
+/* org.mate.screensaver.MediaControls */
+enum
+{
+    MEDIA_CONTROLS_HIDDEN = 0,
+    MEDIA_CONTROLS_CUSTOM,
+    MEDIA_CONTROLS_FULL
+};
+
+/* org.mate.screensaver.MediaProgress */
+enum
+{
+    MEDIA_PROGRESS_HIDDEN = 0,
+    MEDIA_PROGRESS_BAR,
+    MEDIA_PROGRESS_SLIDER
+};
+
+/* org.mate.screensaver.MediaButtons */
+enum
+{
+    MEDIA_BUTTONS_HIDDEN = 0,
+    MEDIA_BUTTONS_PLAY_PAUSE,
+    MEDIA_BUTTONS_ALL
+};
 
 #define MDM_FLEXISERVER_COMMAND "mdmflexiserver"
 #define MDM_FLEXISERVER_ARGS    "--startnew Standard"
@@ -112,6 +145,10 @@ struct GSLockPlugPrivate
 
 	GtkWidget   *auth_prompt_kbd_layout_indicator;
 
+	GtkWidget   *media_widget;
+	char       **media_players;
+	gboolean     media_playing_only;
+
 	gboolean     caps_lock_on;
 	gboolean     switch_enabled;
 	gboolean     leave_note_enabled;
@@ -149,7 +186,8 @@ enum
     PROP_LOGOUT_ENABLED,
     PROP_LOGOUT_COMMAND,
     PROP_SWITCH_ENABLED,
-    PROP_STATUS_MESSAGE
+    PROP_STATUS_MESSAGE,
+    PROP_MEDIA_PLAYERS
 };
 
 static guint lock_plug_signals [LAST_SIGNAL] = { 0 };
@@ -1100,6 +1138,9 @@ gs_lock_plug_get_property (GObject    *object,
 	case PROP_STATUS_MESSAGE:
 		g_value_set_string (value, self->priv->status_message);
 		break;
+	case PROP_MEDIA_PLAYERS:
+		g_value_set_boxed (value, self->priv->media_players);
+		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 		break;
@@ -1155,6 +1196,36 @@ gs_lock_plug_set_switch_enabled (GSLockPlug *plug,
 }
 
 static void
+update_media_allowed_players (GSLockPlug *plug)
+{
+	static const char * const no_players[] = { NULL };
+
+	if (plug->priv->media_widget == NULL || ! plug->priv->media_playing_only)
+	{
+		return;
+	}
+
+	/* without a list from the daemon only what is playing now is shown */
+	gs_media_widget_set_allowed_players (GS_MEDIA_WIDGET (plug->priv->media_widget),
+	                                     plug->priv->media_players != NULL ?
+	                                     (const char * const *) plug->priv->media_players :
+	                                     no_players);
+}
+
+static void
+gs_lock_plug_set_media_players (GSLockPlug         *plug,
+                                const char * const *media_players)
+{
+	g_return_if_fail (GS_LOCK_PLUG (plug));
+
+	g_strfreev (plug->priv->media_players);
+	plug->priv->media_players = g_strdupv ((char **) media_players);
+	g_object_notify (G_OBJECT (plug), "media-players");
+
+	update_media_allowed_players (plug);
+}
+
+static void
 gs_lock_plug_set_property (GObject            *object,
                            guint               prop_id,
                            const GValue       *value,
@@ -1177,6 +1248,9 @@ gs_lock_plug_set_property (GObject            *object,
 		break;
 	case PROP_SWITCH_ENABLED:
 		gs_lock_plug_set_switch_enabled (self, g_value_get_boolean (value));
+		break;
+	case PROP_MEDIA_PLAYERS:
+		gs_lock_plug_set_media_players (self, g_value_get_boxed (value));
 		break;
 	default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -1264,6 +1338,13 @@ gs_lock_plug_class_init (GSLockPlugClass *klass)
 	                                         NULL,
 	                                         NULL,
 	                                         FALSE,
+	                                         G_PARAM_READWRITE));
+	g_object_class_install_property (object_class,
+	                                 PROP_MEDIA_PLAYERS,
+	                                 g_param_spec_boxed ("media-players",
+	                                         NULL,
+	                                         NULL,
+	                                         G_TYPE_STRV,
 	                                         G_PARAM_READWRITE));
 
 	binding_set = gtk_binding_set_by_class (klass);
@@ -2030,6 +2111,127 @@ load_theme (GSLockPlug *plug)
 	return TRUE;
 }
 
+static void
+media_widget_activity_cb (GSMediaWidget *media_widget,
+                          GSLockPlug    *plug)
+{
+	restart_cancel_timeout (plug);
+}
+
+/* Puts the media widget to the right of the notebook.  This is done in code
+ * rather than in the theme so that every lock dialog theme gets it. */
+static void
+create_media_area (GSLockPlug *plug)
+{
+	GSettings          *settings;
+	GSMediaWidgetParts  parts = GS_MEDIA_WIDGET_PART_ALL;
+	GtkWidget          *parent;
+	GtkWidget          *hbox;
+	GtkWidget          *separator;
+	gboolean            expand = TRUE;
+	gboolean            fill = TRUE;
+	guint               padding = 0;
+	int                 position = -1;
+	int                 mode;
+
+	settings = g_settings_new (GSETTINGS_SCHEMA);
+
+	mode = g_settings_get_enum (settings, KEY_MEDIA_CONTROLS);
+	if (mode == MEDIA_CONTROLS_HIDDEN)
+	{
+		g_object_unref (settings);
+		return;
+	}
+
+	if (mode == MEDIA_CONTROLS_CUSTOM)
+	{
+		if (g_settings_get_boolean (settings, KEY_MEDIA_HIDE_PLAYER_NAME))
+			parts &= ~GS_MEDIA_WIDGET_PART_PLAYER_NAME;
+		if (g_settings_get_boolean (settings, KEY_MEDIA_HIDE_ALBUM_ART))
+			parts &= ~GS_MEDIA_WIDGET_PART_ALBUM_ART;
+		if (g_settings_get_boolean (settings, KEY_MEDIA_HIDE_TRACK_INFO))
+			parts &= ~GS_MEDIA_WIDGET_PART_TRACK_INFO;
+
+		switch (g_settings_get_enum (settings, KEY_MEDIA_PROGRESS))
+		{
+		case MEDIA_PROGRESS_HIDDEN:
+			parts &= ~(GS_MEDIA_WIDGET_PART_PROGRESS | GS_MEDIA_WIDGET_PART_SEEK);
+			break;
+		case MEDIA_PROGRESS_BAR:
+			parts &= ~GS_MEDIA_WIDGET_PART_SEEK;
+			break;
+		default:
+			break;
+		}
+
+		switch (g_settings_get_enum (settings, KEY_MEDIA_BUTTONS))
+		{
+		case MEDIA_BUTTONS_HIDDEN:
+			parts &= ~(GS_MEDIA_WIDGET_PART_PLAY_PAUSE | GS_MEDIA_WIDGET_PART_SKIP);
+			break;
+		case MEDIA_BUTTONS_PLAY_PAUSE:
+			parts &= ~GS_MEDIA_WIDGET_PART_SKIP;
+			break;
+		default:
+			break;
+		}
+	}
+
+	plug->priv->media_playing_only = g_settings_get_boolean (settings, KEY_MEDIA_PLAYING_ONLY);
+	g_object_unref (settings);
+
+	parent = gtk_widget_get_parent (plug->priv->notebook);
+	if (parent == NULL)
+	{
+		return;
+	}
+
+	if (GTK_IS_BOX (parent))
+	{
+		gtk_container_child_get (GTK_CONTAINER (parent), plug->priv->notebook,
+		                         "expand", &expand,
+		                         "fill", &fill,
+		                         "padding", &padding,
+		                         "position", &position,
+		                         NULL);
+	}
+
+	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 18);
+
+	g_object_ref (plug->priv->notebook);
+	gtk_container_remove (GTK_CONTAINER (parent), plug->priv->notebook);
+	gtk_box_pack_start (GTK_BOX (hbox), plug->priv->notebook, TRUE, TRUE, 0);
+	g_object_unref (plug->priv->notebook);
+
+	separator = gtk_separator_new (GTK_ORIENTATION_VERTICAL);
+	gtk_widget_set_no_show_all (separator, TRUE);
+	gtk_box_pack_start (GTK_BOX (hbox), separator, FALSE, FALSE, 0);
+
+	plug->priv->media_widget = gs_media_widget_new ();
+	gs_media_widget_set_parts (GS_MEDIA_WIDGET (plug->priv->media_widget), parts);
+	gtk_box_pack_start (GTK_BOX (hbox), plug->priv->media_widget, FALSE, FALSE, 0);
+
+	/* the media widget shows and hides itself as players come and go */
+	g_object_bind_property (plug->priv->media_widget, "visible",
+	                        separator, "visible",
+	                        G_BINDING_SYNC_CREATE);
+	g_signal_connect (plug->priv->media_widget, "activity",
+	                  G_CALLBACK (media_widget_activity_cb), plug);
+
+	if (GTK_IS_BOX (parent))
+	{
+		gtk_box_pack_start (GTK_BOX (parent), hbox, expand, fill, padding);
+		gtk_box_reorder_child (GTK_BOX (parent), hbox, position);
+	}
+	else
+	{
+		gtk_container_add (GTK_CONTAINER (parent), hbox);
+	}
+	gtk_widget_show (hbox);
+
+	update_media_allowed_players (plug);
+}
+
 static int
 delete_handler (GSLockPlug  *plug,
                 GdkEventAny *event,
@@ -2116,6 +2318,9 @@ gs_lock_plug_init (GSLockPlug *plug)
 		date_time_update (plug);
 		gtk_widget_show_all (plug->priv->vbox);
 	}
+
+	create_media_area (plug);
+
 	plug->priv->datetime_timeout_id = g_timeout_add_seconds (1, G_SOURCE_FUNC (date_time_update), plug);
 
 	if (plug->priv->note_text_view != NULL)
@@ -2281,6 +2486,7 @@ gs_lock_plug_finalize (GObject *object)
 	g_return_if_fail (plug->priv != NULL);
 
 	g_free (plug->priv->logout_command);
+	g_strfreev (plug->priv->media_players);
 
 	remove_response_idle (plug);
 	remove_cancel_timeout (plug);

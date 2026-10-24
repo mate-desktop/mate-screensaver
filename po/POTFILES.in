@@ -23,3 +23,4 @@ src/mate-screensaver.desktop.in.in
 src/gs-auth-pam.c
 src/gs-listener-dbus.c
 src/gs-lock-plug.c
+src/gs-media-widget.c

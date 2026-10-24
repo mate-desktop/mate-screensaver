@@ -84,6 +84,8 @@ void        gs_window_set_logout_command (GSWindow   *window,
         const char *command);
 void        gs_window_set_status_message   (GSWindow   *window,
         const char *status_message);
+void        gs_window_set_media_players    (GSWindow   *window,
+        const char * const *media_players);
 void        gs_window_show_message         (GSWindow   *window,
         const char *summary,
         const char *body,

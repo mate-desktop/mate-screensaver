@@ -62,6 +62,30 @@
 #define KEY_LOCK_DELAY "lock-delay"
 #define KEY_CYCLE_DELAY "cycle-delay"
 #define KEY_THEMES "themes"
+#define KEY_MEDIA_CONTROLS "lock-dialog-media-controls"
+
+/* org.mate.screensaver.MediaControls */
+enum
+{
+	MEDIA_CONTROLS_HIDDEN = 0,
+	MEDIA_CONTROLS_CUSTOM,
+	MEDIA_CONTROLS_FULL
+};
+
+/* enum keys bind to the combo's "active-id", which holds the enum nick */
+static const struct
+{
+	const char *key;
+	const char *widget;
+	const char *property;
+} media_options[] = {
+	{ "lock-dialog-media-hide-player-name", "media_hide_player_name_checkbox", "active" },
+	{ "lock-dialog-media-hide-album-art",   "media_hide_album_art_checkbox",   "active" },
+	{ "lock-dialog-media-hide-track-info",  "media_hide_track_info_checkbox",  "active" },
+	{ "lock-dialog-media-progress",         "media_progress_combo",            "active-id" },
+	{ "lock-dialog-media-buttons",          "media_buttons_combo",             "active-id" },
+	{ "lock-dialog-media-playing-only",     "media_playing_only_checkbox",     "active" }
+};
 
 #define GPM_COMMAND "mate-power-preferences"
 
@@ -1144,6 +1168,77 @@ ui_set_lock (gboolean enabled)
 	ui_disable_lock (lock_disabled);
 }
 
+static const char *
+media_radio_for_mode (int mode)
+{
+	switch (mode)
+	{
+	case MEDIA_CONTROLS_HIDDEN:
+		return "media_hidden_radio";
+	case MEDIA_CONTROLS_CUSTOM:
+		return "media_custom_radio";
+	default:
+		return "media_full_radio";
+	}
+}
+
+static void
+ui_set_media_controls (int mode)
+{
+	GtkWidget *widget;
+
+	widget = GTK_WIDGET (gtk_builder_get_object (builder, media_radio_for_mode (mode)));
+	if (! gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget)))
+	{
+		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), TRUE);
+	}
+
+	widget = GTK_WIDGET (gtk_builder_get_object (builder, "media_hide_grid"));
+	gtk_widget_set_sensitive (widget, mode == MEDIA_CONTROLS_CUSTOM);
+
+	widget = GTK_WIDGET (gtk_builder_get_object (builder, "media_playing_only_checkbox"));
+	gtk_widget_set_sensitive (widget, mode != MEDIA_CONTROLS_HIDDEN);
+}
+
+static void
+media_radio_toggled (GtkToggleButton *button, gpointer user_data)
+{
+	if (gtk_toggle_button_get_active (button))
+	{
+		g_settings_set_enum (screensaver_settings, KEY_MEDIA_CONTROLS, GPOINTER_TO_INT (user_data));
+	}
+}
+
+static void
+setup_media_controls (void)
+{
+	gboolean is_writable;
+	int      mode;
+	guint    i;
+
+	is_writable = g_settings_is_writable (screensaver_settings, KEY_MEDIA_CONTROLS);
+
+	for (mode = MEDIA_CONTROLS_HIDDEN; mode <= MEDIA_CONTROLS_FULL; mode++)
+	{
+		GtkWidget *radio;
+
+		radio = GTK_WIDGET (gtk_builder_get_object (builder, media_radio_for_mode (mode)));
+		gtk_widget_set_sensitive (radio, is_writable);
+		g_signal_connect (radio, "toggled",
+		                  G_CALLBACK (media_radio_toggled), GINT_TO_POINTER (mode));
+	}
+
+	for (i = 0; i < G_N_ELEMENTS (media_options); i++)
+	{
+		g_settings_bind (screensaver_settings, media_options[i].key,
+		                 gtk_builder_get_object (builder, media_options[i].widget),
+		                 media_options[i].property,
+		                 G_SETTINGS_BIND_DEFAULT);
+	}
+
+	ui_set_media_controls (g_settings_get_enum (screensaver_settings, KEY_MEDIA_CONTROLS));
+}
+
 static void
 ui_set_enabled (gboolean enabled)
 {
@@ -1225,6 +1320,10 @@ key_changed_cb (GSettings *settings, const gchar *key, gpointer data)
 
 		delay = g_settings_get_int (settings, key);
 		ui_set_delay ("lock_delay_hscale", (gdouble) delay);
+	}
+	else if (strcmp (key, KEY_MEDIA_CONTROLS) == 0)
+	{
+		ui_set_media_controls (g_settings_get_enum (settings, key));
 	}
 	else
 	{
@@ -1754,6 +1853,8 @@ init_capplet (void)
 	}
 	g_signal_connect (enabled_checkbox, "toggled",
 	                  G_CALLBACK (enabled_checkbox_toggled), NULL);
+
+	setup_media_controls ();
 
 	setup_list_size_constraint (list_scroller, treeview);
 	gtk_widget_set_size_request (preview, 480, 300);

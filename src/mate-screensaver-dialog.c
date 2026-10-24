@@ -53,6 +53,7 @@ static gboolean enable_switch = FALSE;
 static char* logout_command = NULL;
 static char* status_message = NULL;
 static char* away_message = NULL;
+static char** media_players = NULL;
 
 static GOptionEntry entries[] = {
 	{"verbose", 0, 0, G_OPTION_ARG_NONE, &verbose, N_("Show debugging output"), NULL},
@@ -62,6 +63,7 @@ static GOptionEntry entries[] = {
 	{"enable-switch", 0, 0, G_OPTION_ARG_NONE, &enable_switch, N_("Show the switch user button"), NULL},
 	{"status-message", 0, 0, G_OPTION_ARG_STRING, &status_message, N_("Message to show in the dialog"), N_("MESSAGE")},
 	{"away-message", 0, 0, G_OPTION_ARG_STRING, &away_message, N_("Not used"), N_("MESSAGE")},
+	{"media-player", 0, 0, G_OPTION_ARG_STRING_ARRAY, &media_players, N_("Media player that was playing when the screen was locked"), N_("BUS_NAME")},
 	{NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL}
 };
 
@@ -407,6 +409,11 @@ static gboolean popup_dialog_idle(gpointer data)
 	if (status_message)
 	{
 		g_object_set(widget, "status-message", status_message, NULL);
+	}
+
+	if (media_players)
+	{
+		g_object_set(widget, "media-players", media_players, NULL);
 	}
 
 	g_signal_connect(GS_LOCK_PLUG(widget), "response", G_CALLBACK(response_cb), NULL);

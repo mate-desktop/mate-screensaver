@@ -261,98 +261,109 @@
           </packing>
         </child>
         <child>
-          <object class="GtkBox" id="vbox1">
+          <object class="GtkNotebook" id="prefs_notebook">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="border_width">5</property>
-            <property name="orientation">vertical</property>
-            <property name="spacing">12</property>
+            <property name="can_focus">True</property>
             <child>
-              <object class="GtkBox" id="hbox1">
+              <object class="GtkBox" id="vbox1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="border_width">5</property>
+                <property name="orientation">vertical</property>
                 <property name="spacing">12</property>
                 <child>
-                  <object class="GtkBox" id="vbox8">
+                  <object class="GtkBox" id="hbox1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="orientation">vertical</property>
-                    <property name="spacing">6</property>
+                    <property name="spacing">12</property>
                     <child>
-                      <object class="GtkLabel" id="savers_label">
+                      <object class="GtkBox" id="vbox8">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">_Screensaver theme:</property>
-                        <property name="use_markup">True</property>
-                        <property name="use_underline">True</property>
-                        <property name="mnemonic-widget">savers_treeview</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">False</property>
-                        <property name="position">0</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkBox" id="hbox6">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">6</property>
                         <child>
-                          <object class="GtkGrid" id="grid1">
+                          <object class="GtkLabel" id="savers_label">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="row_spacing">6</property>
-                            <property name="column_spacing">6</property>
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">_Screensaver theme:</property>
+                            <property name="use_markup">True</property>
+                            <property name="use_underline">True</property>
+                            <property name="mnemonic-widget">savers_treeview</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">False</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkBox" id="hbox6">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
                             <child>
-                              <object class="GtkScrolledWindow" id="themes_scrolled_window">
+                              <object class="GtkGrid" id="grid1">
                                 <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="vexpand">True</property>
-                                <property name="hscrollbar_policy">never</property>
-                                <property name="shadow_type">in</property>
+                                <property name="can_focus">False</property>
+                                <property name="row_spacing">6</property>
+                                <property name="column_spacing">6</property>
                                 <child>
-                                  <object class="GtkTreeView" id="savers_treeview">
+                                  <object class="GtkScrolledWindow" id="themes_scrolled_window">
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
-                                    <property name="headers_visible">False</property>
-                                    <child internal-child="selection">
-                                      <object class="GtkTreeSelection"/>
+                                    <property name="vexpand">True</property>
+                                    <property name="hscrollbar_policy">never</property>
+                                    <property name="shadow_type">in</property>
+                                    <child>
+                                      <object class="GtkTreeView" id="savers_treeview">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="headers_visible">False</property>
+                                        <child internal-child="selection">
+                                          <object class="GtkTreeSelection"/>
+                                        </child>
+                                        <accessibility>
+                                          <relation type="label-for" target="savers_treeview"/>
+                                        </accessibility>
+                                      </object>
                                     </child>
-                                    <accessibility>
-                                      <relation type="label-for" target="savers_treeview"/>
-                                    </accessibility>
                                   </object>
+                                  <packing>
+                                    <property name="left_attach">0</property>
+                                    <property name="top_attach">0</property>
+                                  </packing>
+                                </child>
+                                <child>
+                                  <object class="GtkDrawingArea" id="preview_area">
+                                    <property name="app_paintable">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="hexpand">True</property>
+                                  </object>
+                                  <packing>
+                                    <property name="left_attach">1</property>
+                                    <property name="top_attach">0</property>
+                                  </packing>
                                 </child>
                               </object>
                               <packing>
-                                <property name="left_attach">0</property>
-                                <property name="top_attach">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkDrawingArea" id="preview_area">
-                                <property name="app_paintable">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="hexpand">True</property>
-                              </object>
-                              <packing>
-                                <property name="left_attach">1</property>
-                                <property name="top_attach">0</property>
+                                <property name="expand">True</property>
+                                <property name="fill">True</property>
+                                <property name="position">0</property>
                               </packing>
                             </child>
                           </object>
                           <packing>
                             <property name="expand">True</property>
                             <property name="fill">True</property>
-                            <property name="position">0</property>
+                            <property name="position">1</property>
                           </packing>
                         </child>
                       </object>
                       <packing>
                         <property name="expand">True</property>
                         <property name="fill">True</property>
-                        <property name="position">1</property>
+                        <property name="position">0</property>
                       </packing>
                     </child>
                   </object>
@@ -362,183 +373,106 @@
                     <property name="position">0</property>
                   </packing>
                 </child>
-              </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkBox" id="hbox2">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <child>
-                  <object class="GtkBox" id="vbox5">
+                  <object class="GtkBox" id="hbox2">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="orientation">vertical</property>
                     <child>
-                      <object class="GtkBox" id="hbox3">
+                      <object class="GtkBox" id="vbox5">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <property name="orientation">vertical</property>
                         <child>
-                          <object class="GtkBox" id="vbox6">
+                          <object class="GtkBox" id="hbox3">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="orientation">vertical</property>
                             <child>
-                              <object class="GtkBox" id="vbox3">
+                              <object class="GtkBox" id="vbox6">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="orientation">vertical</property>
-                                <property name="spacing">6</property>
                                 <child>
-                                  <object class="GtkBox" id="activate_delay_hbox">
+                                  <object class="GtkBox" id="vbox3">
                                     <property name="visible">True</property>
                                     <property name="can_focus">False</property>
-                                    <property name="spacing">12</property>
+                                    <property name="orientation">vertical</property>
+                                    <property name="spacing">6</property>
                                     <child>
-                                      <object class="GtkGrid" id="time_grid">
+                                      <object class="GtkBox" id="activate_delay_hbox">
                                         <property name="visible">True</property>
                                         <property name="can_focus">False</property>
-                                        <property name="hexpand">True</property>
-                                        <property name="column_spacing">6</property>
+                                        <property name="spacing">12</property>
                                         <child>
-                                          <object class="GtkLabel" id="activate_delay_label">
+                                          <object class="GtkGrid" id="time_grid">
                                             <property name="visible">True</property>
                                             <property name="can_focus">False</property>
-                                            <property name="halign">start</property>
-                                            <property name="hexpand">False</property>
-                                            <property name="label" translatable="yes">Regard the computer as _idle after:</property>
-                                            <property name="use_underline">True</property>
-                                            <property name="mnemonic-widget">activate_delay_hscale</property>
-                                          </object>
-                                          <packing>
-                                            <property name="left_attach">0</property>
-                                            <property name="top_attach">0</property>
-                                            <property name="width">1</property>
-                                            <property name="height">1</property>
-                                         </packing>
-                                        </child>
-                                        <child>
-                                          <object class="GtkScale" id="activate_delay_hscale">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
                                             <property name="hexpand">True</property>
-                                            <property name="adjustment">adjustment1</property>
-                                            <property name="digits">0</property>
-                                          </object>
-                                          <packing>
-                                            <property name="left_attach">1</property>
-                                            <property name="top_attach">0</property>
-                                            <property name="width">1</property>
-                                            <property name="height">1</property>
-                                          </packing>
-                                        </child>
-                                        <child>
-                                          <object class="GtkLabel" id="lock_delay_label">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">False</property>
-                                            <property name="halign">start</property>
-                                            <property name="hexpand">False</property>
-                                            <property name="label" translatable="yes">Time before l_ocking:</property>
-                                            <property name="tooltip-text" translatable="yes">Delay before locking the screen after the screensaver activated</property>
-                                            <property name="use_underline">True</property>
-                                            <property name="mnemonic-widget">lock_delay_hscale</property>
-                                          </object>
-                                          <packing>
-                                            <property name="left_attach">0</property>
-                                            <property name="top_attach">1</property>
-                                            <property name="width">1</property>
-                                            <property name="height">1</property>
-                                         </packing>
-                                        </child>
-                                        <child>
-                                          <object class="GtkScale" id="lock_delay_hscale">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">True</property>
-                                            <property name="hexpand">True</property>
-                                            <property name="adjustment">adjustment2</property>
-                                            <property name="digits">0</property>
-                                          </object>
-                                          <packing>
-                                            <property name="left_attach">1</property>
-                                            <property name="top_attach">1</property>
-                                            <property name="width">1</property>
-                                            <property name="height">1</property>
-                                          </packing>
-                                        </child>
-                                      </object>
-                                      <packing>
-                                        <property name="expand">True</property>
-                                        <property name="fill">True</property>
-                                        <property name="position">0</property>
-                                      </packing>
-                                    </child>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkCheckButton" id="enable_checkbox">
-                                    <property name="label" translatable="yes">_Activate screensaver when computer is idle</property>
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">True</property>
-                                    <property name="receives_default">False</property>
-                                    <property name="use_underline">True</property>
-                                    <property name="draw_indicator">True</property>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">1</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkCheckButton" id="lock_checkbox">
-                                    <property name="label" translatable="yes">_Lock screen when screensaver is active</property>
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">True</property>
-                                    <property name="receives_default">False</property>
-                                    <property name="use_underline">True</property>
-                                    <property name="draw_indicator">True</property>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">2</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkBox" id="activate_delay_hbox1">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="spacing">12</property>
-                                    <child>
-                                      <object class="GtkLabel">
-                                        <property name="visible">True</property>
-                                        <property name="can_focus">False</property>
-                                        <property name="label" translatable="yes">_Background picture for lock screen:</property>
-                                        <property name="use-underline">True</property>
-                                        <property name="mnemonic-widget">picture_filename</property>
-                                      </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">True</property>
-                                        <property name="position">0</property>
-                                      </packing>
-                                    </child>
-                                    <child>
-                                      <object class="GtkBox" id="hbox5">
-                                        <property name="visible">True</property>
-                                        <property name="can_focus">False</property>
-                                        <property name="spacing">6</property>
-                                        <child>
-                                          <object class="GtkFileChooserButton" id="picture_filename">
-                                            <property name="visible">True</property>
-                                            <property name="can_focus">False</property>
-                                            <property name="create_folders">False</property>
-                                            <property name="filter">picture_filefilter</property>
-                                            <property name="title" translatable="yes">Select Background Image</property>
+                                            <property name="column_spacing">6</property>
+                                            <child>
+                                              <object class="GtkLabel" id="activate_delay_label">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="halign">start</property>
+                                                <property name="hexpand">False</property>
+                                                <property name="label" translatable="yes">Regard the computer as _idle after:</property>
+                                                <property name="use_underline">True</property>
+                                                <property name="mnemonic-widget">activate_delay_hscale</property>
+                                              </object>
+                                              <packing>
+                                                <property name="left_attach">0</property>
+                                                <property name="top_attach">0</property>
+                                                <property name="width">1</property>
+                                                <property name="height">1</property>
+                                             </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkScale" id="activate_delay_hscale">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="hexpand">True</property>
+                                                <property name="adjustment">adjustment1</property>
+                                                <property name="digits">0</property>
+                                              </object>
+                                              <packing>
+                                                <property name="left_attach">1</property>
+                                                <property name="top_attach">0</property>
+                                                <property name="width">1</property>
+                                                <property name="height">1</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkLabel" id="lock_delay_label">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="halign">start</property>
+                                                <property name="hexpand">False</property>
+                                                <property name="label" translatable="yes">Time before l_ocking:</property>
+                                                <property name="tooltip-text" translatable="yes">Delay before locking the screen after the screensaver activated</property>
+                                                <property name="use_underline">True</property>
+                                                <property name="mnemonic-widget">lock_delay_hscale</property>
+                                              </object>
+                                              <packing>
+                                                <property name="left_attach">0</property>
+                                                <property name="top_attach">1</property>
+                                                <property name="width">1</property>
+                                                <property name="height">1</property>
+                                             </packing>
+                                            </child>
+                                            <child>
+                                              <object class="GtkScale" id="lock_delay_hscale">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="hexpand">True</property>
+                                                <property name="adjustment">adjustment2</property>
+                                                <property name="digits">0</property>
+                                              </object>
+                                              <packing>
+                                                <property name="left_attach">1</property>
+                                                <property name="top_attach">1</property>
+                                                <property name="width">1</property>
+                                                <property name="height">1</property>
+                                              </packing>
+                                            </child>
                                           </object>
                                           <packing>
                                             <property name="expand">True</property>
@@ -547,31 +481,108 @@
                                           </packing>
                                         </child>
                                       </object>
+                                    </child>
+                                    <child>
+                                      <object class="GtkCheckButton" id="enable_checkbox">
+                                        <property name="label" translatable="yes">_Activate screensaver when computer is idle</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">False</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="draw_indicator">True</property>
+                                      </object>
                                       <packing>
-                                        <property name="expand">True</property>
-                                        <property name="fill">True</property>
+                                        <property name="expand">False</property>
+                                        <property name="fill">False</property>
                                         <property name="position">1</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkCheckButton" id="lock_checkbox">
+                                        <property name="label" translatable="yes">_Lock screen when screensaver is active</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">False</property>
+                                        <property name="use_underline">True</property>
+                                        <property name="draw_indicator">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">False</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkBox" id="activate_delay_hbox1">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="spacing">12</property>
+                                        <child>
+                                          <object class="GtkLabel">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="label" translatable="yes">_Background picture for lock screen:</property>
+                                            <property name="use-underline">True</property>
+                                            <property name="mnemonic-widget">picture_filename</property>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">False</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">0</property>
+                                          </packing>
+                                        </child>
+                                        <child>
+                                          <object class="GtkBox" id="hbox5">
+                                            <property name="visible">True</property>
+                                            <property name="can_focus">False</property>
+                                            <property name="spacing">6</property>
+                                            <child>
+                                              <object class="GtkFileChooserButton" id="picture_filename">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">False</property>
+                                                <property name="create_folders">False</property>
+                                                <property name="filter">picture_filefilter</property>
+                                                <property name="title" translatable="yes">Select Background Image</property>
+                                              </object>
+                                              <packing>
+                                                <property name="expand">True</property>
+                                                <property name="fill">True</property>
+                                                <property name="position">0</property>
+                                              </packing>
+                                            </child>
+                                          </object>
+                                          <packing>
+                                            <property name="expand">True</property>
+                                            <property name="fill">True</property>
+                                            <property name="position">1</property>
+                                          </packing>
+                                        </child>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkLabel" id="root_warning_label">
+                                        <property name="can_focus">False</property>
+                                        <property name="halign">start</property>
+                                        <property name="label" translatable="yes">&lt;b&gt;Warning: the screen will not be locked for the root user.&lt;/b&gt;</property>
+                                        <property name="use_markup">True</property>
+                                        <property name="wrap">True</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">False</property>
+                                        <property name="position">4</property>
                                       </packing>
                                     </child>
                                   </object>
                                   <packing>
-                                    <property name="expand">False</property>
+                                    <property name="expand">True</property>
                                     <property name="fill">True</property>
-                                    <property name="position">3</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel" id="root_warning_label">
-                                    <property name="can_focus">False</property>
-                                    <property name="halign">start</property>
-                                    <property name="label" translatable="yes">&lt;b&gt;Warning: the screen will not be locked for the root user.&lt;/b&gt;</property>
-                                    <property name="use_markup">True</property>
-                                    <property name="wrap">True</property>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">4</property>
+                                    <property name="position">0</property>
                                   </packing>
                                 </child>
                               </object>
@@ -597,16 +608,277 @@
                     </child>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="screensaver_tab_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Screensaver</property>
+              </object>
+              <packing>
+                <property name="tab_fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox" id="media_page">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="border_width">12</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">6</property>
+                <child>
+                  <object class="GtkLabel" id="media_controls_label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="label" translatable="yes">Media controls on the lock screen:</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
                     <property name="fill">True</property>
                     <property name="position">0</property>
                   </packing>
                 </child>
+                <child>
+                  <object class="GtkBox" id="media_controls_options_box">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="margin_start">12</property>
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">6</property>
+                    <child>
+                      <object class="GtkRadioButton" id="media_hidden_radio">
+                        <property name="label" translatable="yes">_Do not show media controls</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkRadioButton" id="media_custom_radio">
+                        <property name="label" translatable="yes">_Show selected media controls:</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="draw_indicator">True</property>
+                        <property name="group">media_hidden_radio</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkGrid" id="media_hide_grid">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_start">24</property>
+                        <property name="row_spacing">6</property>
+                        <property name="column_spacing">12</property>
+                        <child>
+                          <object class="GtkLabel" id="media_hide_label">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Hide:</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkBox" id="media_hide_box">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkCheckButton" id="media_hide_player_name_checkbox">
+                                <property name="label" translatable="yes">Player _name</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">False</property>
+                                <property name="use_underline">True</property>
+                                <property name="draw_indicator">True</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">0</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkCheckButton" id="media_hide_album_art_checkbox">
+                                <property name="label" translatable="yes">Album a_rt</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">False</property>
+                                <property name="use_underline">True</property>
+                                <property name="draw_indicator">True</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">1</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkCheckButton" id="media_hide_track_info_checkbox">
+                                <property name="label" translatable="yes">_Track information</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">False</property>
+                                <property name="use_underline">True</property>
+                                <property name="draw_indicator">True</property>
+                              </object>
+                              <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">False</property>
+                                <property name="position">2</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="media_progress_label">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Pro_gress:</property>
+                            <property name="use_underline">True</property>
+                            <property name="mnemonic_widget">media_progress_combo</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBoxText" id="media_progress_combo">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="halign">start</property>
+                            <items>
+                              <item id="hidden" translatable="yes">Hidden</item>
+                              <item id="bar" translatable="yes">Progress bar</item>
+                              <item id="slider" translatable="yes">Seek slider</item>
+                            </items>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="media_buttons_label">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Playback b_uttons:</property>
+                            <property name="use_underline">True</property>
+                            <property name="mnemonic_widget">media_buttons_combo</property>
+                          </object>
+                          <packing>
+                            <property name="left_attach">0</property>
+                            <property name="top_attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBoxText" id="media_buttons_combo">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="halign">start</property>
+                            <items>
+                              <item id="hidden" translatable="yes">Hidden</item>
+                              <item id="play-pause" translatable="yes">Play/pause only</item>
+                              <item id="all" translatable="yes">All controls</item>
+                            </items>
+                          </object>
+                          <packing>
+                            <property name="left_attach">1</property>
+                            <property name="top_attach">2</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkRadioButton" id="media_full_radio">
+                        <property name="label" translatable="yes">Show _everything</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="draw_indicator">True</property>
+                        <property name="group">media_hidden_radio</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="media_playing_only_checkbox">
+                        <property name="label" translatable="yes">Only show media that was pla_ying when the screen was locked</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="tooltip-text" translatable="yes">Media that was paused, stopped or had finished before locking is not shown</property>
+                        <property name="use_underline">True</property>
+                        <property name="draw_indicator">True</property>
+                        <property name="margin_top">6</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">False</property>
+                        <property name="position">4</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
               </object>
               <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
                 <property name="position">1</property>
+              </packing>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="media_tab_label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Media Controls</property>
+              </object>
+              <packing>
+                <property name="position">1</property>
+                <property name="tab_fill">False</property>
               </packing>
             </child>
           </object>

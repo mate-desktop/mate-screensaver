@@ -149,6 +149,12 @@ mate_screensaver_dialog_SOURCES = 	\
 	mate-screensaver-dialog.c	\
 	gs-lock-plug.c			\
 	gs-lock-plug.h			\
+	gs-media-widget.c		\
+	gs-media-widget.h		\
+	gs-mpris-manager.c		\
+	gs-mpris-manager.h		\
+	gs-mpris-player.c		\
+	gs-mpris-player.h		\
 	gs-debug.c			\
 	gs-debug.h			\
 	setuid.c			\
@@ -219,6 +225,10 @@ mate_screensaver_SOURCES =	\
 	gs-grab.h		\
 	gs-fade.c		\
 	gs-fade.h		\
+	gs-mpris-manager.c	\
+	gs-mpris-manager.h	\
+	gs-mpris-player.c	\
+	gs-mpris-player.h	\
 	$(BUILT_SOURCES)	\
 	$(NULL)
 

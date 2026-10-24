@@ -75,6 +75,7 @@ struct GSWindowPrivate
 	char      *logout_command;
 	char      *keyboard_command;
 	char      *status_message;
+	char     **media_players;
 
 	GtkWidget *vbox;
 	GtkWidget *drawing_area;
@@ -1721,6 +1722,20 @@ popup_dialog (GSWindow *window)
 		command = g_string_append (command, " --enable-switch");
 	}
 
+	if (window->priv->media_players)
+	{
+		int i;
+
+		for (i = 0; window->priv->media_players[i] != NULL; i++)
+		{
+			char *quoted;
+
+			quoted = g_shell_quote (window->priv->media_players[i]);
+			g_string_append_printf (command, " --media-player=%s", quoted);
+			g_free (quoted);
+		}
+	}
+
 	if (gs_debug_enabled ())
 	{
 		command = g_string_append (command, " --verbose");
@@ -1913,6 +1928,16 @@ gs_window_set_status_message (GSWindow   *window,
 
 	g_free (window->priv->status_message);
 	window->priv->status_message = g_strdup (status_message);
+}
+
+void
+gs_window_set_media_players (GSWindow           *window,
+                             const char * const *media_players)
+{
+	g_return_if_fail (GS_IS_WINDOW (window));
+
+	g_strfreev (window->priv->media_players);
+	window->priv->media_players = g_strdupv ((char **) media_players);
 }
 
 void
@@ -2521,6 +2546,7 @@ gs_window_finalize (GObject *object)
 
 	g_free (window->priv->logout_command);
 	g_free (window->priv->keyboard_command);
+	g_strfreev (window->priv->media_players);
 
 	if (window->priv->info_bar_timer_id > 0)
 	{

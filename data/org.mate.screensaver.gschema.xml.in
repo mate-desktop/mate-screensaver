@@ -4,6 +4,21 @@
     <value nick="random" value="1"/>
     <value nick="single" value="2"/>
   </enum>
+  <enum id="org.mate.screensaver.MediaControls">
+    <value nick="hidden" value="0"/>
+    <value nick="custom" value="1"/>
+    <value nick="full" value="2"/>
+  </enum>
+  <enum id="org.mate.screensaver.MediaProgress">
+    <value nick="hidden" value="0"/>
+    <value nick="bar" value="1"/>
+    <value nick="slider" value="2"/>
+  </enum>
+  <enum id="org.mate.screensaver.MediaButtons">
+    <value nick="hidden" value="0"/>
+    <value nick="play-pause" value="1"/>
+    <value nick="all" value="2"/>
+  </enum>
   <schema id="org.mate.screensaver" path="/org/mate/screensaver/">
     <key name="idle-activation-enabled" type="b">
       <default>true</default>
@@ -89,6 +104,41 @@
       <default>true</default>
       <summary>Allow the session status message to be displayed</summary>
       <description>Allow the session status message to be displayed when the screen is locked.</description>
+    </key>
+    <key name="lock-dialog-media-controls" enum="org.mate.screensaver.MediaControls">
+      <default>'full'</default>
+      <summary>Media controls on lock dialog</summary>
+      <description>Whether to show the currently playing media next to the unlock prompt. May be "hidden" to never show it, "custom" to show only the parts chosen by the "lock-dialog-media-hide-*", "lock-dialog-media-progress" and "lock-dialog-media-buttons" keys, or "full" to show everything.</description>
+    </key>
+    <key name="lock-dialog-media-hide-player-name" type="b">
+      <default>false</default>
+      <summary>Hide media player name</summary>
+      <description>Set this to TRUE to hide the name of the media player on the lock dialog. Only used when "lock-dialog-media-controls" is "custom".</description>
+    </key>
+    <key name="lock-dialog-media-hide-album-art" type="b">
+      <default>false</default>
+      <summary>Hide album art</summary>
+      <description>Set this to TRUE to hide the album art on the lock dialog. Only used when "lock-dialog-media-controls" is "custom".</description>
+    </key>
+    <key name="lock-dialog-media-hide-track-info" type="b">
+      <default>false</default>
+      <summary>Hide track information</summary>
+      <description>Set this to TRUE to hide the title, artist and album of the current track on the lock dialog. Only used when "lock-dialog-media-controls" is "custom".</description>
+    </key>
+    <key name="lock-dialog-media-progress" enum="org.mate.screensaver.MediaProgress">
+      <default>'slider'</default>
+      <summary>Track progress on lock dialog</summary>
+      <description>How to show the progress of the current track on the lock dialog. May be "hidden", "bar" for a progress bar, or "slider" for a slider that can also be dragged to seek. Only used when "lock-dialog-media-controls" is "custom"; "full" always shows the slider.</description>
+    </key>
+    <key name="lock-dialog-media-buttons" enum="org.mate.screensaver.MediaButtons">
+      <default>'all'</default>
+      <summary>Playback buttons on lock dialog</summary>
+      <description>Which playback buttons to show on the lock dialog. May be "hidden", "play-pause" for only the play/pause button, or "all" to also show the previous and next buttons. Only used when "lock-dialog-media-controls" is "custom"; "full" always shows all of them.</description>
+    </key>
+    <key name="lock-dialog-media-playing-only" type="b">
+      <default>true</default>
+      <summary>Only show media that was playing when locking</summary>
+      <description>Set this to TRUE to only show media players that were playing when the screen was locked, or that are playing now. Players that were paused, stopped or finished before locking are not shown.</description>
     </key>
     <key name="picture-filename" type="s">
       <default>'@datadir@/backgrounds/mate/desktop/Stripes.png'</default>

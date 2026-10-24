@@ -40,6 +40,7 @@
 #include "gs-job.h"
 #include "gs-grab.h"
 #include "gs-fade.h"
+#include "gs-mpris-manager.h"
 #include "gs-debug.h"
 
 static void gs_manager_finalize   (GObject        *object);
@@ -85,6 +86,10 @@ struct GSManagerPrivate
 	GSGrab      *grab;
 	GSFade      *fade;
 	guint        unfade_idle_id;
+
+	/* players that were playing when the lock became active */
+	GSMprisManager *mpris_manager;
+	char       **media_players;
 };
 
 enum
@@ -463,9 +468,18 @@ gs_manager_set_lock_active (GSManager *manager,
 		GSList *l;
 
 		manager->priv->lock_active = (lock_active != FALSE);
+
+		g_strfreev (manager->priv->media_players);
+		manager->priv->media_players = NULL;
+		if (manager->priv->lock_active)
+		{
+			manager->priv->media_players = gs_mpris_manager_get_playing_players (manager->priv->mpris_manager);
+		}
+
 		for (l = manager->priv->windows; l; l = l->next)
 		{
 			gs_window_set_lock_enabled (l->data, lock_active);
+			gs_window_set_media_players (l->data, (const char * const *) manager->priv->media_players);
 		}
 	}
 }
@@ -1039,6 +1053,7 @@ gs_manager_init (GSManager *manager)
 	manager->priv->fade = gs_fade_new ();
 	manager->priv->grab = gs_grab_new ();
 	manager->priv->theme_manager = gs_theme_manager_new ();
+	manager->priv->mpris_manager = gs_mpris_manager_new ();
 
 	manager->priv->bg = mate_bg_new ();
 
@@ -1554,6 +1569,7 @@ gs_manager_create_window_for_monitor (GSManager  *manager,
 	gs_window_set_keyboard_enabled (window, manager->priv->keyboard_enabled);
 	gs_window_set_keyboard_command (window, manager->priv->keyboard_command);
 	gs_window_set_status_message (window, manager->priv->status_message);
+	gs_window_set_media_players (window, (const char * const *) manager->priv->media_players);
 
 	connect_window_signals (manager, window);
 
@@ -1704,6 +1720,8 @@ gs_manager_finalize (GObject *object)
 	g_object_unref (manager->priv->fade);
 	g_object_unref (manager->priv->grab);
 	g_object_unref (manager->priv->theme_manager);
+	g_object_unref (manager->priv->mpris_manager);
+	g_strfreev (manager->priv->media_players);
 
 	G_OBJECT_CLASS (gs_manager_parent_class)->finalize (object);
 }
@@ -1885,6 +1903,8 @@ gs_manager_deactivate (GSManager *manager)
 	manager->priv->lock_active = FALSE;
 	manager->priv->dialog_up = FALSE;
 	manager->priv->fading = FALSE;
+	g_strfreev (manager->priv->media_players);
+	manager->priv->media_players = NULL;
 
 	return TRUE;
 }
