@@ -1,26 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the mate-screensaver package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
 # Rivo Zängov <eraser@eraser.ee>, 2018
 # Ivar Smolin <okul@linux.ee>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2021
-# 
+# Priit Jõerüüt <jrtkbfdr@users.noreply.translate.fedoraproject.org>, 2026.
+#
+# Translators:
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-screensaver 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:32+0200\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2021\n"
-"Language-Team: Estonian (https://app.transifex.com/mate/teams/13566/et/)\n"
+"PO-Revision-Date: 2026-10-23 07:18+0000\n"
+"Last-Translator: Priit Jõerüüt "
+"<jrtkbfdr@users.noreply.translate.fedoraproject.org>\n"
+"Language-Team: Estonian <https://translate.fedoraproject.org/projects/mate-"
+"desktop/applications/mate-screensaver/et/>\n"
+"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: et\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.10.1\n"
 
 #: data/mate-screensaver-preferences.desktop.in:3
 #: src/mate-screensaver.desktop.in.in:4
@@ -35,7 +38,7 @@ msgstr "Ekraanisäästja eelistuste seadmine"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr ""
+msgstr "MATE;screensaver;preferences;eelistused;ekraanisäästja;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
@@ -75,7 +78,7 @@ msgstr "Ekraanisäästja aktiveerimisel _lukustatakse ekraan"
 
 #: data/mate-screensaver-preferences.ui:477
 msgid "Background picture for lock screen:"
-msgstr ""
+msgstr "Lukustusvaate taustapilt:"
 
 #: data/mate-screensaver-preferences.ui:496
 msgid "Select Background Image"
@@ -108,7 +111,7 @@ msgstr "<span size=\"small\">%U hostil %h</span>"
 
 #: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2150
 msgid "Show password"
-msgstr ""
+msgstr "Näita salasõna"
 
 #: data/lock-dialog-default.ui:233
 msgid "_Leave Message"
@@ -124,7 +127,7 @@ msgstr "Logi _välja"
 
 #: data/lock-dialog-default.ui:281 data/lock-dialog-default.ui:375
 msgid "_Cancel"
-msgstr "_Tühista"
+msgstr "_Katkesta"
 
 #: data/lock-dialog-default.ui:297 src/gs-lock-plug.c:1711
 msgid "_Unlock"
@@ -303,11 +306,11 @@ msgstr "Lukustusdialoogi teema"
 
 #: data/org.mate.screensaver.gschema.xml.in:76
 msgid "Theme to use for the lock dialog"
-msgstr "Lukustusdialoogi jaoks kasutatav teema."
+msgstr "Lukustusvaate jaoks kasutatav kujundus"
 
 #: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Format for time on lock dialog"
-msgstr ""
+msgstr "Ajavorming lukustusvaates"
 
 #: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
@@ -315,10 +318,14 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %R for 24H format."
 msgstr ""
+"Aja kuvamise vorming lukustusvaates. Vaikimisi on määratletud „locale“, mis "
+"kasutab praeguse keelekeskkonna vaikimisi vormingut. Kohandatud väärtused "
+"tuleks määrata vastavalt „g-date-time-format“ vormingule. Proovi %R 24-"
+"tunnise vormingu jaoks."
 
 #: data/org.mate.screensaver.gschema.xml.in:85
 msgid "Format for date on lock dialog"
-msgstr ""
+msgstr "Kuupäeva vorming lukustusvaates"
 
 #: data/org.mate.screensaver.gschema.xml.in:86
 msgid ""
@@ -326,6 +333,10 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %F for ISO 8601 date format."
 msgstr ""
+"Kuupäeva kuvamise vorming lukustusvaates. Vaikimisi on määratletud „locale“, "
+"mis kasutab praeguse keelekeskkonna vaikimisi vormingut. Kohandatud "
+"väärtused tuleks määrata vastavalt „g-date-time-format“ vormingule. Proovi "
+"%F ISO 8601 kuupäevavormingu jaoks."
 
 #: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
@@ -352,7 +363,7 @@ msgstr "Kosmosepiltide slaidiesituse kuvamine"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr ""
+msgstr "MATE;screensaver;slideshow;cosmos;ekraanisäästja;"
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -366,7 +377,7 @@ msgstr "MATE logod ekraanil ringi hõljumas"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr ""
+msgstr "MATE;screensaver;logo;bubbles;ekraanisäästja;mullid;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -380,7 +391,7 @@ msgstr "GNOME logod ekraanil ringi hõljumas"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr ""
+msgstr "MATE;screensaver;GNOME;logo;bubbles;ekraanisäästja;mullid;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -395,6 +406,7 @@ msgstr "Slaidiesitluse kuvamine Sinu pildikataloogi põhjal"
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
 msgstr ""
+"MATE;screensaver;custom;slideshow;pictures;folder;ekraanisäästja;pildid;slaidiesitlus;kaust;"
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
@@ -408,7 +420,7 @@ msgstr "Popkunstilik pulseerivate värvidega ristkülikute maatriks."
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr ""
+msgstr "MATE;screensaver;grid;pulsing;colors;ekraanisäästja;värvid;ruudustik;"
 
 #: savers/popsquares.c:50 savers/floaters.c:1161
 #, c-format
@@ -529,7 +541,7 @@ msgstr ""
 
 #: src/mate-screensaver-command.c:77
 msgid "Tells the running screensaver process to unlock the screen immediately"
-msgstr ""
+msgstr "Palun töötaval ekraanisäästja protsessil koheselt avada ekraanilukustus"
 
 #: src/mate-screensaver-command.c:81
 msgid "If the screensaver is active then switch to another graphics demo"
@@ -636,15 +648,15 @@ msgstr "Kasutajanimi:"
 #: src/mate-screensaver-dialog.c:170 src/mate-screensaver-dialog.c:171
 #: src/gs-auth-pam.c:145
 msgid "Password:"
-msgstr "Parool:"
+msgstr "Salasõna:"
 
 #: src/mate-screensaver-dialog.c:172
 msgid "You are required to change your password immediately (password aged)"
-msgstr "Sa pead oma parooli koheselt ära vahetama (parool on aegunud)"
+msgstr "Sa pead oma salasõna koheselt ära vahetama (salasõna on aegunud)"
 
 #: src/mate-screensaver-dialog.c:173
 msgid "You are required to change your password immediately (root enforced)"
-msgstr "Sa pead oma parooli koheselt ära vahetama (juurkasutaja nõue)"
+msgstr "Sa pead oma salasõna koheselt ära vahetama (juurkasutaja nõue)"
 
 #: src/mate-screensaver-dialog.c:174
 msgid "Your account has expired; please contact your system administrator"
@@ -652,11 +664,11 @@ msgstr "Sinu konto on aegunud, palun võta ühendust oma süsteemiülemaga"
 
 #: src/mate-screensaver-dialog.c:175
 msgid "No password supplied"
-msgstr "Parooli pole antud"
+msgstr "Salasõna pole antud"
 
 #: src/mate-screensaver-dialog.c:176
 msgid "Password unchanged"
-msgstr "Parool on muutmata"
+msgstr "Salasõna on muutmata"
 
 #: src/mate-screensaver-dialog.c:177
 msgid "Can not get username"
@@ -664,35 +676,35 @@ msgstr "Kasutajanime pole võimalik hankida"
 
 #: src/mate-screensaver-dialog.c:178
 msgid "Retype new UNIX password:"
-msgstr "Sisesta UNIX-i parool uuesti:"
+msgstr "Sisesta UNIX-i salasõna uuesti:"
 
 #: src/mate-screensaver-dialog.c:179
 msgid "Enter new UNIX password:"
-msgstr "Sisesta UNIX-i parool:"
+msgstr "Sisesta UNIX-i salasõna:"
 
 #: src/mate-screensaver-dialog.c:180
 msgid "(current) UNIX password:"
-msgstr "(praegune) UNIX-i parool:"
+msgstr "(praegune) UNIX-i salasõna:"
 
 #: src/mate-screensaver-dialog.c:181
 msgid "Error while changing NIS password."
-msgstr "Viga NIS-parooli muutmisel."
+msgstr "Viga NIS-salasõna muutmisel."
 
 #: src/mate-screensaver-dialog.c:182
 msgid "You must choose a longer password"
-msgstr "Sa pead valima pikema parooli"
+msgstr "Sa pead valima pikema salasõna"
 
 #: src/mate-screensaver-dialog.c:183
 msgid "Password has been already used. Choose another."
-msgstr "Parool on juba kasutusel. Vali mõni muu parool."
+msgstr "Salasõna on juba kasutusel. Vali mõni muu salasõna."
 
 #: src/mate-screensaver-dialog.c:184
 msgid "You must wait longer to change your password"
-msgstr "Parooli muutmiseks pead sa kauem ootama"
+msgstr "Salasõna muutmiseks pead sa kauem ootama"
 
 #: src/mate-screensaver-dialog.c:185
 msgid "Sorry, passwords do not match"
-msgstr "Vabandust, paroolid ei klapi omavahel"
+msgstr "Vabandust, salasõnad ei klapi omavahel"
 
 #: src/mate-screensaver-dialog.c:256
 msgid "Checking..."
@@ -700,7 +712,7 @@ msgstr "Kontrollimine..."
 
 #: src/mate-screensaver-dialog.c:302 src/gs-auth-pam.c:458
 msgid "Authentication failed."
-msgstr "Tõrge autentimisel."
+msgstr "Autentimine ei õnnestunud."
 
 #: src/mate-screensaver-preferences.c:455
 msgid "Blank screen"
@@ -715,8 +727,8 @@ msgstr "Juhuslik"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d tund"
+msgstr[1] "%d tundi"
 
 #: src/mate-screensaver-preferences.c:954
 #: src/mate-screensaver-preferences.c:963
@@ -725,8 +737,8 @@ msgstr[1] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d minut"
+msgstr[1] "%d minutit"
 
 #: src/mate-screensaver-preferences.c:957
 #, c-format
@@ -782,7 +794,7 @@ msgstr "Ekraanisäästja ja lukustusprogrammi käivitamine"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr ""
+msgstr "MATE;screensaver;locker;ekraanisäästja;lukustusvaade;lukustus;"
 
 #: src/gs-auth-pam.c:388
 #, c-format
@@ -796,7 +808,7 @@ msgstr "PAM_TTY=%s pole võimalik seada"
 
 #: src/gs-auth-pam.c:454
 msgid "Incorrect password."
-msgstr "Vigane parool."
+msgstr "Vigane salasõna."
 
 #: src/gs-auth-pam.c:474
 msgid "Not permitted to gain access at this time."
@@ -844,8 +856,8 @@ msgstr "%U hostil %h"
 
 #: src/gs-lock-plug.c:1928
 msgid "_Password:"
-msgstr "_Parool:"
+msgstr "_Salasõna:"
 
 #: src/gs-lock-plug.c:2156
 msgid "Hide password"
-msgstr ""
+msgstr "Peida salasõna"
