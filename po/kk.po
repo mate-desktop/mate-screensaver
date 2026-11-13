@@ -1,25 +1,26 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
 # This file is distributed under the same license as the mate-screensaver package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2021
-# 
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2021, 2026.
+#
+# Translators:
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: mate-screensaver 1.26.0\n"
 "Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
 "POT-Creation-Date: 2022-10-29 15:32+0200\n"
-"PO-Revision-Date: 2018-03-11 21:02+0000\n"
-"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2021\n"
-"Language-Team: Kazakh (https://app.transifex.com/mate/teams/13566/kk/)\n"
+"PO-Revision-Date: 2026-08-30 04:19+0000\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <https://translate.fedoraproject.org/projects/mate-"
+"desktop/applications/mate-screensaver/kk/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: kk\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.8.1\n"
 
 #: data/mate-screensaver-preferences.desktop.in:3
 #: src/mate-screensaver.desktop.in.in:4
@@ -34,7 +35,7 @@ msgstr "Экран қорғауышы баптауларын орнатыңыз"
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/mate-screensaver-preferences.desktop.in:12
 msgid "MATE;screensaver;preferences;"
-msgstr ""
+msgstr "MATE;screensaver;preferences;экран сақтағышы;баптаулар;"
 
 #: data/mate-screensaver-preferences.ui:20
 msgid "Screensaver Preview"
@@ -62,19 +63,19 @@ msgstr "_Экран қорғауышы темасы:"
 
 #: data/mate-screensaver-preferences.ui:397
 msgid "Regard the computer as _idle after:"
-msgstr ""
+msgstr "Компьютерді келесі уақыттан кейін _іссіз деп санау:"
 
 #: data/mate-screensaver-preferences.ui:440
 msgid "_Activate screensaver when computer is idle"
-msgstr ""
+msgstr "Компьютер іссіз болғанда экран сақтағышын _белсендіру"
 
 #: data/mate-screensaver-preferences.ui:455
 msgid "_Lock screen when screensaver is active"
-msgstr ""
+msgstr "Экран сақтағышы белсенді болғанда экранды _құлыптау"
 
 #: data/mate-screensaver-preferences.ui:477
 msgid "Background picture for lock screen:"
-msgstr ""
+msgstr "Құлыптау экраны үшін фон суреті:"
 
 #: data/mate-screensaver-preferences.ui:496
 msgid "Select Background Image"
@@ -82,16 +83,16 @@ msgstr "Фон суреті файлын таңдау"
 
 #: data/mate-screensaver-preferences.ui:522
 msgid "<b>Warning: the screen will not be locked for the root user.</b>"
-msgstr ""
+msgstr "<b>Ескерту: түбір (root) пайдаланушысы үшін экран құлыпталмайды.</b>"
 
 #: data/mate-screensaver.directory.desktop.in:3
 msgid "Screensavers"
-msgstr ""
+msgstr "Экран сақтағыштары"
 
 #: data/mate-screensaver.directory.desktop.in:4
 #: data/org.mate.screensaver.gschema.xml.in:25
 msgid "Screensaver themes"
-msgstr ""
+msgstr "Экран сақтағышының темалары"
 
 #. Translators: This is the name of a desktop background image that shows
 #. outer space images.
@@ -103,11 +104,11 @@ msgstr "Ғарыш"
 
 #: data/lock-dialog-default.ui:110
 msgid "<span size=\"small\">%U on %h</span>"
-msgstr ""
+msgstr "<span size=\"small\">%h жүйесіндегі %U</span>"
 
 #: data/lock-dialog-default.ui:166 src/gs-lock-plug.c:2150
 msgid "Show password"
-msgstr ""
+msgstr "Парольді көрсету"
 
 #: data/lock-dialog-default.ui:233
 msgid "_Leave Message"
@@ -144,6 +145,8 @@ msgstr "Іссіз кезінде белсендіру"
 #: data/org.mate.screensaver.gschema.xml.in:11
 msgid "Set this to TRUE to activate the screensaver when the session is idle."
 msgstr ""
+"Сеанс іссіз болғанда экран сақтағышын белсендіру үшін мұны АҚИҚАТ деп "
+"орнатыңыз."
 
 #: data/org.mate.screensaver.gschema.xml.in:15
 msgid "Lock on activation"
@@ -152,10 +155,12 @@ msgstr "Белсендіру кезінде блоктау"
 #: data/org.mate.screensaver.gschema.xml.in:16
 msgid "Set this to TRUE to lock the screen when the screensaver goes active."
 msgstr ""
+"Экран сақтағышы белсенді болған кезде экранды құлыптау үшін мұны АҚИҚАТ деп "
+"орнатыңыз."
 
 #: data/org.mate.screensaver.gschema.xml.in:20
 msgid "Screensaver theme selection mode"
-msgstr ""
+msgstr "Экран сақтағышы темасын таңдау режимі"
 
 #: data/org.mate.screensaver.gschema.xml.in:21
 msgid ""
@@ -165,6 +170,10 @@ msgid ""
 "key), and \"random\" to enable the screensaver using a random theme on "
 "activation."
 msgstr ""
+"Экран сақтағышы пайдаланатын таңдау режимі. Белсендіру кезінде ешқандай "
+"теманы пайдаланбай экран сақтағышын іске қосу үшін «blank-only», тек бір "
+"теманы ( «themes» пернесінде көрсетілген) пайдалану үшін «single» және "
+"кездейсоқ теманы пайдалану үшін «random» болуы мүмкін."
 
 #: data/org.mate.screensaver.gschema.xml.in:26
 msgid ""
@@ -173,24 +182,30 @@ msgid ""
 "when \"mode\" is \"single\", and should provide a list of themes when "
 "\"mode\" is \"random\"."
 msgstr ""
+"Бұл перне экран сақтағышы пайдаланатын темалар тізімін көрсетеді. «mode» "
+"пернесі «blank-only» болғанда ол еленбейді, «mode» мәні «single» болғанда "
+"тема атын қамтамасыз етуі керек, ал «mode» мәні «random» болғанда темалар "
+"тізімін қамтамасыз етуі керек."
 
 #: data/org.mate.screensaver.gschema.xml.in:30
 msgid "Time before power management baseline"
-msgstr ""
+msgstr "Қуатты басқарудың негізгі сызығына дейінгі уақыт"
 
 #: data/org.mate.screensaver.gschema.xml.in:31
 msgid ""
 "The number of seconds of inactivity before signalling to power management. "
 "This key is set and maintained by the session power management agent."
 msgstr ""
+"Қуатты басқаруға сигнал бергенге дейінгі әрекетсіздік секундтарының саны. "
+"Бұл пернені сеанс қуатын басқару агенті орнатады және қолдайды."
 
 #: data/org.mate.screensaver.gschema.xml.in:35
 msgid "Time before theme change"
-msgstr ""
+msgstr "Теманы өзгертуге дейінгі уақыт"
 
 #: data/org.mate.screensaver.gschema.xml.in:36
 msgid "The number of minutes to run before changing the screensaver theme."
-msgstr ""
+msgstr "Экран сақтағышы темасын ауыстыру алдында орындалуы тиіс минуттар саны."
 
 #: data/org.mate.screensaver.gschema.xml.in:40
 msgid "Time before locking"
@@ -201,10 +216,12 @@ msgid ""
 "The number of minutes after screensaver activation before locking the "
 "screen."
 msgstr ""
+"Экран сақтағышы белсендірілгеннен кейін экранды құлыптауға дейінгі минуттар "
+"саны."
 
 #: data/org.mate.screensaver.gschema.xml.in:45
 msgid "Allow embedding a keyboard into the window"
-msgstr ""
+msgstr "Терезеге пернетақтаны ендіруге рұқсат ету"
 
 #: data/org.mate.screensaver.gschema.xml.in:46
 msgid ""
@@ -212,10 +229,13 @@ msgid ""
 "to unlock. The \"keyboard_command\" key must be set with the appropriate "
 "command."
 msgstr ""
+"Құлпын ашуға тырысқан кезде терезеге пернетақтаны ендіруге рұқсат ету үшін "
+"мұны АҚИҚАТ деп орнатыңыз. «keyboard_command» пернесі тиісті командамен "
+"орнатылуы керек."
 
 #: data/org.mate.screensaver.gschema.xml.in:50
 msgid "Embedded keyboard command"
-msgstr ""
+msgstr "Ендірілген пернетақта командасы"
 
 #: data/org.mate.screensaver.gschema.xml.in:51
 msgid ""
@@ -224,6 +244,9 @@ msgid ""
 " implement an XEMBED plug interface and output a window XID on the standard "
 "output."
 msgstr ""
+"«embedded_keyboard_enabled» пернесі АҚИҚАТ деп орнатылса, терезеге "
+"пернетақта виджетін ендіру үшін орындалатын команда. Бұл команда XEMBED "
+"интерфейсін іске асыруы және стандартты шығысқа терезе XID-ін шығаруы керек."
 
 #: data/org.mate.screensaver.gschema.xml.in:55
 msgid "Allow logout"
@@ -234,10 +257,13 @@ msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to allow logging "
 "out after a delay. The delay is specified in the \"logout_delay\" key."
 msgstr ""
+"Кідірістен кейін жүйеден шығуға рұқсат беру үшін құлпын ашу сұхбат "
+"терезесінде опцияны ұсыну үшін мұны АҚИҚАТ деп орнатыңыз. Кідіріс «"
+"logout_delay» пернесінде көрсетілген."
 
 #: data/org.mate.screensaver.gschema.xml.in:60
 msgid "Time before logout option"
-msgstr ""
+msgstr "Жүйеден шығу опциясына дейінгі уақыт"
 
 #: data/org.mate.screensaver.gschema.xml.in:61
 msgid ""
@@ -245,6 +271,9 @@ msgid ""
 "option will appear in the unlock dialog. This key has effect only if the "
 "\"logout_enable\" key is set to TRUE."
 msgstr ""
+"Экран сақтағышы белсендірілгеннен кейін құлпын ашу сұхбат терезесінде "
+"жүйеден шығу опциясы пайда болғанға дейінгі минуттар саны. Бұл перне тек «"
+"logout_enable» пернесі АҚИҚАТ деп орнатылса ғана эффект береді."
 
 #: data/org.mate.screensaver.gschema.xml.in:65
 msgid "Logout command"
@@ -256,6 +285,10 @@ msgid ""
 " simply log the user out without any interaction. This key has effect only "
 "if the \"logout_enable\" key is set to TRUE."
 msgstr ""
+"Жүйеден шығу батырмасы шертілгенде шақырылатын команда. Бұл команда "
+"пайдаланушымен ешқандай өзара әрекеттесусіз жай ғана жүйеден шығаруы керек. "
+"Бұл перне тек «logout_enable» пернесі АҚИҚАТ деп орнатылса ғана эффект "
+"береді."
 
 #: data/org.mate.screensaver.gschema.xml.in:70
 msgid "Allow user switching"
@@ -266,18 +299,20 @@ msgid ""
 "Set this to TRUE to offer an option in the unlock dialog to switch to a "
 "different user account."
 msgstr ""
+"Құлпын ашу сұхбат терезесінде басқа пайдаланушы тіркелгісіне ауыстыру "
+"опциясын ұсыну үшін мұны АҚИҚАТ деп орнатыңыз."
 
 #: data/org.mate.screensaver.gschema.xml.in:75
 msgid "Theme for lock dialog"
-msgstr ""
+msgstr "Құлыптау сұхбат терезесінің темасы"
 
 #: data/org.mate.screensaver.gschema.xml.in:76
 msgid "Theme to use for the lock dialog"
-msgstr ""
+msgstr "Құлыптау сұхбат терезесі үшін пайдаланылатын тема"
 
 #: data/org.mate.screensaver.gschema.xml.in:80
 msgid "Format for time on lock dialog"
-msgstr ""
+msgstr "Құлыптау сұхбат терезесіндегі уақыт пішімі"
 
 #: data/org.mate.screensaver.gschema.xml.in:81
 msgid ""
@@ -285,10 +320,13 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %R for 24H format."
 msgstr ""
+"Құлыптау сұхбат терезесінде уақытты көрсету пішімі. Бастапқы мәні — ағымдағы "
+"локаль үшін бастапқы пішімді пайдаланатын «locale». Пайдаланушылық мәндер g-"
+"date-time-format сәйкес орнатылуы керек. 24 сағаттық пішім үшін %R көріңіз."
 
 #: data/org.mate.screensaver.gschema.xml.in:85
 msgid "Format for date on lock dialog"
-msgstr ""
+msgstr "Құлыптау сұхбат терезесіндегі күн пішімі"
 
 #: data/org.mate.screensaver.gschema.xml.in:86
 msgid ""
@@ -296,33 +334,37 @@ msgid ""
 "default format for current locale. Custom values should be set according to "
 "g-date-time-format. Try %F for ISO 8601 date format."
 msgstr ""
+"Құлыптау сұхбат терезесінде күнді көрсету пішімі. Бастапқы мәні — ағымдағы "
+"локаль үшін бастапқы пішімді пайдаланатын «locale». Пайдаланушылық мәндер g-"
+"date-time-format сәйкес орнатылуы керек. ISO 8601 күн пішімі үшін %F көріңіз."
 
 #: data/org.mate.screensaver.gschema.xml.in:90
 msgid "Allow the session status message to be displayed"
-msgstr ""
+msgstr "Сеанс қалып-күйі хабарламасын көрсетуге рұқсат ету"
 
 #: data/org.mate.screensaver.gschema.xml.in:91
 msgid ""
 "Allow the session status message to be displayed when the screen is locked."
 msgstr ""
+"Экран құлыпталған кезде сеанс қалып-күйі хабарламасын көрсетуге рұқсат ету."
 
 #: data/org.mate.screensaver.gschema.xml.in:95
 msgid "Picture Filename"
-msgstr ""
+msgstr "Сурет файлының аты"
 
 #: data/org.mate.screensaver.gschema.xml.in:96
 msgid "File to use for the background image."
-msgstr ""
+msgstr "Фондық сурет үшін пайдаланылатын файл."
 
 #: savers/cosmos-slideshow.desktop.in.in:4
 msgid "Display a slideshow of pictures of the cosmos"
-msgstr ""
+msgstr "Ғарыш суреттерінің слайдшоуын көрсету"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/cosmos-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;slideshow;cosmos;"
-msgstr ""
+msgstr "MATE;screensaver;slideshow;cosmos;экран сақтағышы;слайдшоу;ғарыш;"
 
 #: savers/footlogo-floaters.desktop.in.in:3
 msgid "Floating MATE"
@@ -330,13 +372,13 @@ msgstr "Қалқымалы MATE"
 
 #: savers/footlogo-floaters.desktop.in.in:4
 msgid "Bubbles the MATE logo around the screen"
-msgstr ""
+msgstr "MATE логотипін экран бойымен көпіршіктер түрінде қозғалтады"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/footlogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;logo;bubbles;"
-msgstr ""
+msgstr "MATE;screensaver;logo;bubbles;логотип;көпіршіктер;"
 
 #: savers/gnomelogo-floaters.desktop.in.in:3
 msgid "Floating GNOME"
@@ -344,13 +386,13 @@ msgstr "Қалқымалы GNOME"
 
 #: savers/gnomelogo-floaters.desktop.in.in:4
 msgid "Bubbles the GNOME logo around the screen"
-msgstr ""
+msgstr "GNOME логотипін экран бойымен көпіршіктер түрінде қозғалтады"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/gnomelogo-floaters.desktop.in.in:12
 msgid "MATE;screensaver;GNOME;logo;bubbles;"
-msgstr ""
+msgstr "MATE;screensaver;GNOME;logo;bubbles;логотип;көпіршіктер;"
 
 #: savers/personal-slideshow.desktop.in.in:3
 msgid "Pictures folder"
@@ -358,76 +400,78 @@ msgstr "Суреттер бумасы"
 
 #: savers/personal-slideshow.desktop.in.in:4
 msgid "Display a slideshow from your Pictures folder"
-msgstr ""
+msgstr "Суреттер бумасынан слайдшоу көрсету"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/personal-slideshow.desktop.in.in:12
 msgid "MATE;screensaver;custom;slideshow;pictures;folder;"
 msgstr ""
+"MATE;screensaver;custom;slideshow;pictures;folder;пайдаланушылық;слайдшоу;суреттер;бума;"
 
 #: savers/popsquares.desktop.in.in:3
 msgid "Pop art squares"
-msgstr ""
+msgstr "Поп-арт шаршылары"
 
 #: savers/popsquares.desktop.in.in:4
 msgid "A pop-art-ish grid of pulsing colors."
-msgstr ""
+msgstr "Пульсацияланатын түстердің поп-арт стиліндегі торы."
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: savers/popsquares.desktop.in.in:12
 msgid "MATE;screensaver;grid;pulsing;colors;"
-msgstr ""
+msgstr "MATE;screensaver;grid;pulsing;colors;тор;пульсация;түстер;"
 
 #: savers/popsquares.c:50 savers/floaters.c:1161
 #, c-format
 msgid "%s. See --help for usage information.\n"
-msgstr ""
+msgstr "%s. Пайдалану ақпаратын --help арқылы қараңыз.\n"
 
 #: savers/floaters.c:1134
 msgid "Show paths that images follow"
-msgstr ""
+msgstr "Суреттер ізімен жүретін жолдарды көрсету"
 
 #: savers/floaters.c:1136
 msgid "Occasionally rotate images as they move"
-msgstr ""
+msgstr "Суреттер қозғалған кезде оларды анда-санда бұру"
 
 #: savers/floaters.c:1138
 msgid "Print out frame rate and other statistics"
-msgstr ""
+msgstr "Кадр жиілігін және басқа статистиканы басып шығару"
 
 #: savers/floaters.c:1140
 msgid "The maximum number of images to keep on screen"
-msgstr ""
+msgstr "Экранда сақталатын суреттердің максималды саны"
 
 #: savers/floaters.c:1140
 msgid "MAX_IMAGES"
-msgstr ""
+msgstr "MAX_IMAGES"
 
 #: savers/floaters.c:1142
 msgid "The initial size and position of window"
-msgstr ""
+msgstr "Терезенің бастапқы өлшемі мен орны"
 
 #: savers/floaters.c:1142
 msgid "WIDTHxHEIGHT+X+Y"
-msgstr ""
+msgstr "WIDTHxHEIGHT+X+Y"
 
 #: savers/floaters.c:1144
 msgid "The source image to use"
-msgstr ""
+msgstr "Пайдаланылатын дереккөз сурет"
 
 #: savers/floaters.c:1156
 msgid "image - floats images around the screen"
-msgstr ""
+msgstr "сурет - суреттерді экран бойымен қозғалтады"
 
 #: savers/floaters.c:1170
 msgid "You must specify one image.  See --help for usage information.\n"
 msgstr ""
+"Бір суретті көрсетуіңіз керек. Пайдалану ақпаратын --help арқылы қараңыз.\n"
 
 #: savers/slideshow.c:56
 msgid "Location to get images from"
-msgstr ""
+msgstr "Суреттер алынатын орналасу"
 
 #: savers/slideshow.c:56
 msgid "PATH"
@@ -435,7 +479,7 @@ msgstr "PATH"
 
 #: savers/slideshow.c:60
 msgid "Color to use for images background"
-msgstr ""
+msgstr "Суреттер фоны үшін пайдаланылатын түс"
 
 #: savers/slideshow.c:60
 msgid "\"#rrggbb\""
@@ -443,11 +487,11 @@ msgstr "\"#rrggbb\""
 
 #: savers/slideshow.c:64
 msgid "Do not randomize pictures from location"
-msgstr ""
+msgstr "Орналасудағы суреттерді кездейсоқ етпеу"
 
 #: savers/slideshow.c:68
 msgid "Do not try to stretch images on screen"
-msgstr ""
+msgstr "Суреттерді экранға созуға тырыспау"
 
 #: src/copy-theme-dialog.c:181
 msgid "Copying files"
@@ -463,71 +507,79 @@ msgstr "Қайда:"
 
 #: src/copy-theme-dialog.c:225
 msgid "Copying themes"
-msgstr ""
+msgstr "Темаларды көшіру"
 
 #: src/copy-theme-dialog.c:268
 msgid "Invalid screensaver theme"
-msgstr ""
+msgstr "Экран сақтағышының жарамсыз темасы"
 
 #: src/copy-theme-dialog.c:271
 #, c-format
 msgid "%s does not appear to be a valid screensaver theme."
-msgstr ""
+msgstr "%s экран сақтағышының жарамды темасы сияқты көрінбейді."
 
 #: src/copy-theme-dialog.c:449
 #, c-format
 msgid "Copying file: %u of %u"
-msgstr ""
+msgstr "Файлды көшіру: %u / %u"
 
 #: src/mate-screensaver-command.c:61
 msgid "Causes the screensaver to exit gracefully"
-msgstr ""
+msgstr "Экран сақтағышының дұрыс шығуына себеп болады"
 
 #: src/mate-screensaver-command.c:65
 msgid "Query the state of the screensaver"
-msgstr ""
+msgstr "Экран сақтағышының қалып-күйін сұрау"
 
 #: src/mate-screensaver-command.c:69
 msgid "Query the length of time the screensaver has been active"
-msgstr ""
+msgstr "Экран сақтағышының белсенді болған уақыт ұзындығын сұрау"
 
 #: src/mate-screensaver-command.c:73
 msgid "Tells the running screensaver process to lock the screen immediately"
 msgstr ""
+"Орындалудағы экран сақтағышы процесіне экранды дереу құлыптауды бұйырады"
 
 #: src/mate-screensaver-command.c:77
 msgid "Tells the running screensaver process to unlock the screen immediately"
 msgstr ""
+"Орындалудағы экран сақтағышы процесіне экранның құлпын дереу ашуды бұйырады"
 
 #: src/mate-screensaver-command.c:81
 msgid "If the screensaver is active then switch to another graphics demo"
-msgstr ""
+msgstr "Егер экран сақтағышы белсенді болса, басқа графикалық демоға ауыстырғыш"
 
 #: src/mate-screensaver-command.c:85
 msgid "Turn the screensaver on (blank the screen)"
-msgstr ""
+msgstr "Экран сақтағышын іске қосу (экранды бос ету)"
 
 #: src/mate-screensaver-command.c:89
 msgid "If the screensaver is active then deactivate it (un-blank the screen)"
 msgstr ""
+"Егер экран сақтағышы белсенді болса, оны белсенді емес ету (экранды бос емес "
+"ету)"
 
 #: src/mate-screensaver-command.c:93
 msgid "Poke the running screensaver to simulate user activity"
 msgstr ""
+"Пайдаланушы әрекетін имитациялау үшін орындалудағы экран сақтағышын түртіп "
+"қалу"
 
 #: src/mate-screensaver-command.c:97
 msgid ""
 "Inhibit the screensaver from activating.  Command blocks while inhibit is "
 "active."
 msgstr ""
+"Экран сақтағышының белсендірілуіне блок қою. Блок белсенді болғанша команда "
+"орындалмайды."
 
 #: src/mate-screensaver-command.c:101
 msgid "The calling application that is inhibiting the screensaver"
-msgstr ""
+msgstr "Экран сақтағышына блок қойып жатқан шақырушы қолданба"
 
 #: src/mate-screensaver-command.c:105
 msgid "The reason for inhibiting the screensaver"
-msgstr ""
+msgstr "Экран сақтағышына блок қою себебі"
 
 #: src/mate-screensaver-command.c:109 src/mate-screensaver-dialog.c:59
 #: src/mate-screensaver.c:56
@@ -537,7 +589,7 @@ msgstr "Осы бағдарламасының нұсқасы"
 #: src/mate-screensaver-command.c:359
 #, c-format
 msgid "The screensaver is %s\n"
-msgstr ""
+msgstr "Экран сақтағышы — %s\n"
 
 #: src/mate-screensaver-command.c:359
 msgid "active"
@@ -549,40 +601,40 @@ msgstr "Белсендi емес"
 
 #: src/mate-screensaver-command.c:375
 msgid "The screensaver is not inhibited\n"
-msgstr ""
+msgstr "Экран сақтағышына блок қойылмаған\n"
 
 #: src/mate-screensaver-command.c:383
 msgid "The screensaver is being inhibited by:\n"
-msgstr ""
+msgstr "Экран сақтағышына блок қойып тұрғандар:\n"
 
 #: src/mate-screensaver-command.c:418
 #, c-format
 msgid "The screensaver has been active for %d seconds.\n"
-msgstr ""
+msgstr "Экран сақтағышы %d секунд бойы белсенді.\n"
 
 #: src/mate-screensaver-command.c:424
 msgid "The screensaver is not currently active.\n"
-msgstr ""
+msgstr "Экран сақтағышы қазір белсенді емес.\n"
 
 #: src/mate-screensaver-dialog.c:58
 msgid "Show debugging output"
-msgstr ""
+msgstr "Жөндеу шығысын көрсету"
 
 #: src/mate-screensaver-dialog.c:60
 msgid "Show the logout button"
-msgstr ""
+msgstr "Шығу батырмасын көрсету"
 
 #: src/mate-screensaver-dialog.c:61
 msgid "Command to invoke from the logout button"
-msgstr ""
+msgstr "Шығу батырмасынан шақырылатын команда"
 
 #: src/mate-screensaver-dialog.c:62
 msgid "Show the switch user button"
-msgstr ""
+msgstr "Пайдаланушыны ауыстыру батырмасын көрсету"
 
 #: src/mate-screensaver-dialog.c:63
 msgid "Message to show in the dialog"
-msgstr ""
+msgstr "Сұхбат терезесінде көрсетілетін хабарлама"
 
 #: src/mate-screensaver-dialog.c:63 src/mate-screensaver-dialog.c:64
 msgid "MESSAGE"
@@ -604,15 +656,15 @@ msgstr "Пароль:"
 
 #: src/mate-screensaver-dialog.c:172
 msgid "You are required to change your password immediately (password aged)"
-msgstr ""
+msgstr "Пароліңізді дереу өзгертуіңіз талап етіледі (пароль ескірген)"
 
 #: src/mate-screensaver-dialog.c:173
 msgid "You are required to change your password immediately (root enforced)"
-msgstr ""
+msgstr "Пароліңізді дереу өзгертуіңіз талап етіледі (әкімші мәжбүрлеген)"
 
 #: src/mate-screensaver-dialog.c:174
 msgid "Your account has expired; please contact your system administrator"
-msgstr ""
+msgstr "Тіркелгіңіздің мерзімі біткен; жүйелік әкімшіге хабарласыңыз"
 
 #: src/mate-screensaver-dialog.c:175
 msgid "No password supplied"
@@ -679,8 +731,8 @@ msgstr "Кездейсоқ"
 #, c-format
 msgid "%d hour"
 msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d сағат"
+msgstr[1] "%d сағат"
 
 #: src/mate-screensaver-preferences.c:954
 #: src/mate-screensaver-preferences.c:963
@@ -689,15 +741,15 @@ msgstr[1] ""
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d минут"
+msgstr[1] "%d минут"
 
 #: src/mate-screensaver-preferences.c:957
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d секунд"
+msgstr[1] "%d секунд"
 
 #: src/mate-screensaver-preferences.c:965
 #: src/mate-screensaver-preferences.c:1013
@@ -724,11 +776,11 @@ msgstr "Ешқашан"
 
 #: src/mate-screensaver-preferences.c:1632
 msgid "Could not load the main interface"
-msgstr ""
+msgstr "Негізгі интерфейсті жүктеу мүмкін болмады"
 
 #: src/mate-screensaver-preferences.c:1634
 msgid "Please make sure that the screensaver is properly installed"
-msgstr ""
+msgstr "Экран сақтағышының дұрыс орнатылғанына көз жеткізіңіз"
 
 #: src/mate-screensaver.c:57
 msgid "Don't become a daemon"
@@ -740,23 +792,23 @@ msgstr "Жөндеу кодын іске қосу"
 
 #: src/mate-screensaver.desktop.in.in:5
 msgid "Launch screensaver and locker program"
-msgstr ""
+msgstr "Экран сақтағышын және құлыптау бағдарламасын іске қосу"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: src/mate-screensaver.desktop.in.in:12
 msgid "MATE;screensaver;locker;"
-msgstr ""
+msgstr "MATE;screensaver;locker;экран сақтағышы;құлыптау;"
 
 #: src/gs-auth-pam.c:388
 #, c-format
 msgid "Unable to establish service %s: %s\n"
-msgstr ""
+msgstr "%s қызметін орнату мүмкін емес: %s\n"
 
 #: src/gs-auth-pam.c:418
 #, c-format
 msgid "Can't set PAM_TTY=%s"
-msgstr ""
+msgstr "PAM_TTY=%s орнату мүмкін емес"
 
 #: src/gs-auth-pam.c:454
 msgid "Incorrect password."
@@ -764,23 +816,23 @@ msgstr "Пароль қате."
 
 #: src/gs-auth-pam.c:474
 msgid "Not permitted to gain access at this time."
-msgstr ""
+msgstr "Қазіргі уақытта қол жеткізуге рұқсат етілмеген."
 
 #: src/gs-auth-pam.c:482
 msgid "No longer permitted to access the system."
-msgstr ""
+msgstr "Жүйеге қол жеткізуге бұдан былай рұқсат етілмейді."
 
 #: src/gs-listener-dbus.c:2248
 msgid "failed to register with the message bus"
-msgstr ""
+msgstr "хабарлама шинасында тіркелу сәтсіз аяқталды"
 
 #: src/gs-listener-dbus.c:2259
 msgid "not connected to the message bus"
-msgstr ""
+msgstr "хабарлама шинасына қосылмаған"
 
 #: src/gs-listener-dbus.c:2269 src/gs-listener-dbus.c:2301
 msgid "screensaver already running in this session"
-msgstr ""
+msgstr "осы сеанста экран сақтағышы әлдеқашан орындалуда"
 
 #: src/gs-lock-plug.c:328
 msgid "%A, %B %e"
@@ -812,4 +864,4 @@ msgstr "_Пароль:"
 
 #: src/gs-lock-plug.c:2156
 msgid "Hide password"
-msgstr ""
+msgstr "Парольді жасыру"
